@@ -8,7 +8,7 @@
     "tags": ["Badge"]
   },
   "BADGE_3": {
-    "label": "Vermillion Gym - Leader Lt. Surge Reward",
+    "label": "Vermilion Gym - Leader Lt. Surge Reward",
     "tags": ["Badge"]
   },
   "BADGE_4": {
@@ -66,7 +66,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_BIKE_VOUCHER": {
-    "label": "Vermillion City - Gift from Pokemon Fan Club Chairman",
+    "label": "Vermilion City - Gift from Pokemon Fan Club Chairman",
     "tags": ["KeyItem"]
   },
   "ITEM_SILPH_CO_5F_CARD_KEY": {
@@ -102,7 +102,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
-    "label": "Rocket Hideout BF4 - Rocket Grunt's Item",
+    "label": "Rocket Hideout B4F - Rocket Grunt's Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_METEORITE": {
@@ -118,7 +118,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_ROD": {
-    "label": "Vermillion City - Gift from Fishing Guru in House",
+    "label": "Vermilion City - Gift from Fishing Guru in House",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POKE_FLUTE": {
@@ -146,7 +146,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SILPH_SCOPE": {
-    "label": "Rocket Hideout BF4 - Giovanni's Item",
+    "label": "Rocket Hideout B4F - Giovanni's Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SS_TICKET": {
@@ -174,7 +174,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_VS_SEEKER": {
-    "label": "Vermillion City - Gift from Ace Trainer in Pokemon Center",
+    "label": "Vermilion City - Gift from Ace Trainer in Pokemon Center",
     "tags": ["KeyItem"]
   },
 
@@ -848,7 +848,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL": {
-    "label": "Cerulean City - South Beach Hidden Item",
+    "label": "Memorial Pillar - South Beach Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY": {
@@ -1096,7 +1096,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE": {
-    "label": "Route 11 - Hidden Item Above Eastern Gate",
+    "label": "Route 11 - Northeast Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE12_HYPER_POTION": {
@@ -1344,7 +1344,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE": {
-    "label": "S.S. Anne Exterior - Hidden Item Under Truck",
+    "label": "S.S. Anne Exterior - East Pier Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_CHERI_BERRY": {
@@ -1496,7 +1496,7 @@
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER": {
-    "label": "Vermillion City - Hidden Item Near Pokemon Center",
+    "label": "Vermilion City - Hidden Item Near Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE": {
@@ -1593,7 +1593,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
-    "label": "Vermillion Gym - Gift from Lt. Surge",
+    "label": "Vermilion Gym - Gift from Lt. Surge",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
