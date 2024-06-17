@@ -1,0 +1,1288 @@
+{
+  "REGION_ROUTE1/MAIN": {
+    "parent_map": "MAP_ROUTE1",
+    "locations": [
+      "NPC_GIFT_GOT_POTION_ON_ROUTE_1"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_PALLET_TOWN/MAIN",
+      "REGION_VIRIDIAN_CITY/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE2/SOUTHWEST": {
+    "parent_map": "MAP_ROUTE2",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE2/SOUTHEAST",
+      "REGION_VIRIDIAN_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE2:2,3/MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:0"
+    ]
+  },
+  "REGION_ROUTE2/NORTHWEST": {
+    "parent_map": "MAP_ROUTE2",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE2/NORTHEAST",
+      "REGION_PEWTER_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE2:0,1/MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:1"
+    ]
+  },
+  "REGION_ROUTE2/SOUTHEAST": {
+    "parent_map": "MAP_ROUTE2",
+    "locations": [
+      "ITEM_ROUTE2_ETHER",
+      "ITEM_ROUTE2_PARALYZE_HEAL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE2/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_ROUTE2:8,9/MAP_ROUTE2_EAST_BUILDING:1"
+    ]
+  },
+  "REGION_ROUTE2/EAST": {
+    "parent_map": "MAP_ROUTE2",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE2/NORTHEAST"
+    ],
+    "warps": [
+      "MAP_ROUTE2:6,7/MAP_ROUTE2_EAST_BUILDING:0"
+    ]
+  },
+  "REGION_ROUTE2/NORTHEAST": {
+    "parent_map": "MAP_ROUTE2",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE2/NORTHWEST",
+      "REGION_ROUTE2/EAST"
+    ],
+    "warps": [
+      "MAP_ROUTE2:4/MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1",
+      "MAP_ROUTE2:5/MAP_ROUTE2_HOUSE:0"
+    ]
+  },
+  "REGION_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:0/MAP_ROUTE2:2",
+      "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:1/MAP_VIRIDIAN_FOREST:1"
+    ]
+  },
+  "REGION_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:0/MAP_VIRIDIAN_FOREST:4",
+      "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:1/MAP_ROUTE2:0"
+    ]
+  },
+  "REGION_ROUTE2_EAST_BUILDING/MAIN": {
+    "parent_map": "MAP_ROUTE2_EAST_BUILDING",
+    "locations": [
+      "NPC_GIFT_GOT_HM05"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE2_EAST_BUILDING:0/MAP_ROUTE2:6",
+      "MAP_ROUTE2_EAST_BUILDING:1/MAP_ROUTE2:8"
+    ]
+  },
+  "REGION_ROUTE2_HOUSE/MAIN": {
+    "parent_map": "MAP_ROUTE2_HOUSE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE2_HOUSE:0/MAP_ROUTE2:5"
+    ]
+  },
+  "REGION_ROUTE3/MAIN": {
+    "parent_map": "MAP_ROUTE3",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE3_ORAN_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_PEWTER_CITY/MAIN",
+      "REGION_ROUTE4/WEST"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE4/WEST": {
+    "parent_map": "MAP_ROUTE4",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE4_PERSIM_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE3/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE4:0/MAP_MT_MOON_1F:3",
+      "MAP_ROUTE4:2/MAP_ROUTE4_POKEMON_CENTER_1F:0"
+    ]
+  },
+  "REGION_ROUTE4/EAST": {
+    "parent_map": "MAP_ROUTE4",
+    "locations": [
+      "ITEM_ROUTE4_TM05",
+      "HIDDEN_ITEM_ROUTE4_GREAT_BALL",
+      "HIDDEN_ITEM_ROUTE4_RAZZ_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE4:1/MAP_MT_MOON_B1F:7"
+    ]
+  },
+  "REGION_ROUTE4/NORTHEAST_LEDGE": {
+    "parent_map": "MAP_ROUTE4",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE4/EAST",
+      "REGION_CERULEAN_CITY/CAVE_ENTRANCE"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE4/WATER": {
+    "parent_map": "MAP_ROUTE4",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE4_POKEMON_CENTER_1F/MAIN": {
+    "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE4_POKEMON_CENTER_1F:0/MAP_ROUTE4:2",
+      "MAP_ROUTE4_POKEMON_CENTER_1F:1/MAP_ROUTE4_POKEMON_CENTER_2F:0"
+    ]
+  },
+  "REGION_ROUTE4_POKEMON_CENTER_2F/MAIN": {
+    "parent_map": "MAP_ROUTE4_POKEMON_CENTER_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE4_POKEMON_CENTER_2F:0/MAP_ROUTE4_POKEMON_CENTER_1F:1"
+    ]
+  },
+  "REGION_ROUTE5/MAIN": {
+    "parent_map": "MAP_ROUTE5",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/OUTSKIRTS"
+    ],
+    "warps": [
+      "MAP_ROUTE5:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0",
+      "MAP_ROUTE5:2,3/MAP_ROUTE5_SOUTH_ENTRANCE:0"
+    ]
+  },
+  "REGION_ROUTE5/NORTH_LEDGES": {
+    "parent_map": "MAP_ROUTE5",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE5/SOUTH_LEDGE"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE5/SOUTH_LEDGE": {
+    "parent_map": "MAP_ROUTE5",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE5/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE5:1/MAP_ROUTE5_POKEMON_DAY_CARE:0"
+    ]
+  },
+  "REGION_ROUTE5_POKEMON_DAY_CARE/MAIN": {
+    "parent_map": "MAP_ROUTE5_POKEMON_DAY_CARE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "maps": [
+      "MAP_ROUTE5_POKEMON_DAY_CARE:0/MAP_ROUTE5:1"
+    ]
+  },
+  "REGION_ROUTE5_SOUTH_ENTRANCE/NORTH": {
+    "parent_map": "MAP_ROUTE5_SOUTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE5_SOUTH_ENTRANCE/SOUTH"
+    ],
+    "warps": [
+      "MAP_ROUTE5_SOUTH_ENTRANCE:0/MAP_ROUTE5:2"
+    ]
+  },
+  "REGION_ROUTE5_SOUTH_ENTRANCE/SOUTH": {
+    "parent_map": "MAP_ROUTE5_SOUTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE5_SOUTH_ENTRANCE/NORTH"
+    ],
+    "warps": [
+      "MAP_ROUTE5_SOUTH_ENTRANCE:1/MAP_SAFFRON_CITY:9"
+    ]
+  },
+  "REGION_ROUTE6/MAIN": {
+    "parent_map": "MAP_ROUTE6",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE6_RARE_CANDY",
+      "HIDDEN_ITEM_ROUTE6_SITRUS_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE6/POND",
+      "REGION_VERMILION_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE6:0/MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:0",
+      "MAP_ROUTE6:1,2/MAP_ROUTE6_NORTH_ENTRANCE:1"
+    ]
+  },
+  "REGION_ROUTE6/POND": {
+    "parent_map": "MAP_ROUTE6",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE6/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE6_NORTH_ENTRANCE/SOUTH": {
+    "parent_map": "MAP_ROUTE6_NORTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE6_NORTH_ENTRANCE/NORTH"
+    ],
+    "warps": [
+      "MAP_ROUTE6_NORTH_ENTRANCE:1/MAP_ROUTE6:1"
+    ]
+  },
+  "REGION_ROUTE6_NORTH_ENTRANCE/NORTH": {
+    "parent_map": "MAP_ROUTE6_NORTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE6_NORTH_ENTRANCE/SOUTH"
+    ],
+    "warps": [
+      "MAP_ROUTE6_NORTH_ENTRANCE:0/MAP_SAFFRON_CITY:12"
+    ]
+  },
+  "REGION_ROUTE7/MAIN": {
+    "parent_map": "MAP_ROUTE7",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_CELADON_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE7:0/MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0",
+      "MAP_ROUTE7:1/MAP_ROUTE7_EAST_ENTRANCE:0"
+    ]
+  },
+  "REGION_ROUTE7_EAST_ENTRANCE/WEST": {
+    "parent_map": "MAP_ROUTE7_EAST_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE7_EAST_ENTRANCE/EAST"
+    ],
+    "warps": [
+      "MAP_ROUTE7_EAST_ENTRANCE:0/MAP_ROUTE7:1"
+    ]
+  },
+  "REGION_ROUTE7_EAST_ENTRANCE/EAST": {
+    "parent_map": "MAP_ROUTE7_EAST_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE7_EAST_ENTRANCE/WEST"
+    ],
+    "warps": [
+      "MAP_ROUTE7_EAST_ENTRANCE:1/MAP_SAFFRON_CITY:8"
+    ]
+  },
+  "REGION_ROUTE8/MAIN": {
+    "parent_map": "MAP_ROUTE8",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE8/FENCE",
+      "REGION_LAVENDER_TOWN/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE8:0/MAP_UNDERGROUND_PATH_EAST_ENTRANCE:0",
+      "MAP_ROUTE8:1/MAP_ROUTE8_WEST_ENTRANCE:1"
+    ]
+  },
+  "REGION_ROUTE8/FENCE": {
+    "parent_map": "MAP_ROUTE8",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE8_LEPPA_BERRY",
+      "HIDDEN_ITEM_ROUTE8_LUM_BERRY",
+      "HIDDEN_ITEM_ROUTE8_RAWST_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE8/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE8_WEST_ENTRANCE/EAST": {
+    "parent_map": "MAP_ROUTE8_WEST_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE8_WEST_ENTRANCE/WEST"
+    ],
+    "warps": [
+      "MAP_ROUTE8_WEST_ENTRANCE:1/MAP_ROUTE8:1"
+    ]
+  },
+  "REGION_ROUTE8_WEST_ENTRANCE/WEST": {
+    "parent_map": "MAP_ROUTE8_WEST_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE8_WEST_ENTRANCE/EAST"
+    ],
+    "warps": [
+      "MAP_ROUTE8_WEST_ENTRANCE:0/MAP_SAFFRON_CITY:11"
+    ]
+  },
+  "REGION_ROUTE9/MAIN": {
+    "parent_map": "MAP_ROUTE9",
+    "locations": [
+      "ITEM_ROUTE9_BURN_HEAL",
+      "ITEM_ROUTE9_TM40",
+      "HIDDEN_ITEM_ROUTE9_CHESTO_BERRY",
+      "HIDDEN_ITEM_ROUTE9_ETHER",
+      "HIDDEN_ITEM_ROUTE9_RARE_CANDY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/OUTSKIRTS",
+      "REGION_ROUTE10/NORTH"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE10/NORTH": {
+    "parent_map": "MAP_ROUTE10",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE10_CHERI_BERRY",
+      "HIDDEN_ITEM_ROUTE10_PERSIM_BERRY",
+      "HIDDEN_ITEM_ROUTE10_SUPER_POTION"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE10/WATER",
+      "REGION_ROUTE9/MAIN"
+    ],
+    "maps": [
+      "MAP_ROUTE10:0/MAP_ROCK_TUNNEL_1F:0",
+      "MAP_ROUTE10:3/MAP_ROUTE10_POKEMON_CENTER_1F:0"
+    ]
+  },
+  "REGION_ROUTE10/SOUTH": {
+    "parent_map": "MAP_ROUTE10",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE10_NANAB_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_LAVENDER_TOWN/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE10:1/MAP_ROCK_TUNNEL_1F:5"
+    ]
+  },
+  "REGION_ROUTE10/WATER": {
+    "parent_map": "MAP_ROUTE10",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE10/NORTH",
+      "REGION_ROUTE10/POWER_PLANT"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE10/POWER_PLANT": {
+    "parent_map": "MAP_ROUTE10",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE10_MAX_ETHER"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE10/WATER"
+    ],
+    "warps": [
+      "MAP_ROUTE10:2/MAP_POWER_PLANT:0"
+    ]
+  },
+  "REGION_ROUTE10/POWER_PLANT_LEDGE": {
+    "parent_map": "MAP_ROUTE10",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE10/POWER_PLANT"
+    ],
+    "warps": [
+      "MAP_ROUTE10:4/MAP_POWER_PLANT:1"
+    ]
+  },
+  "REGION_ROUTE10_POKEMON_CENTER_1F/MAIN": {
+    "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
+    "locations": [
+      "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE10_POKEMON_CENTER_1F:0/MAP_ROUTE10:3",
+      "MAP_ROUTE10_POKEMON_CENTER_1F:1/MAP_ROUTE10_POKEMON_CENTER_2F:0"
+    ]
+  },
+  "REGION_ROUTE10_POKEMON_CENTER_2F/MAIN": {
+    "parent_map": "MAP_ROUTE10_POKEMON_CENTER_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE10_POKEMON_CENTER_2F:0/MAP_ROUTE10_POKEMON_CENTER_1F:1"
+    ]
+  },
+  "REGION_ROUTE11/WEST": {
+    "parent_map": "MAP_ROUTE11",
+    "locations": [
+      "ITEM_ROUTE11_AWAKENING",
+      "ITEM_ROUTE11_GREAT_BALL",
+      "ITEM_ROUTE11_X_DEFEND",
+      "HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE11/WATER",
+      "REGION_VERMILION_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE11:0/MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:0",
+      "MAP_ROUTE11:1/MAP_ROUTE11_EAST_ENTRANCE_1F:0"
+    ]
+  },
+  "REGION_ROUTE11/EAST": {
+    "parent_map": "MAP_ROUTE11",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/WEST"
+    ],
+    "warps": [
+      "MAP_ROUTE11:2/MAP_ROUTE11_EAST_ENTRANCE_1F:1"
+    ]
+  },
+  "REGION_ROUTE11/WATER": {
+    "parent_map": "MAP_ROUTE11",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE11/WEST",
+      "REGION_VERMILION_CITY/EAST_WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE11_EAST_ENTRANCE_1F/MAIN": {
+    "parent_map": "MAP_ROUTE11_EAST_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE11_EAST_ENTRANCE_1F:0/MAP_ROUTE11:1",
+      "MAP_ROUTE11_EAST_ENTRANCE_1F:1/MAP_ROUTE11:2",
+      "MAP_ROUTE11_EAST_ENTRANCE_1F:2/MAP_ROUTE11_EAST_ENTRANCE_2F:0"
+    ]
+  },
+  "REGION_ROUTE11_EAST_ENTRANCE_2F": {
+    "parent_map": "MAP_ROUTE11_EAST_ENTRANCE_2F",
+    "locations": [
+      "NPC_GIFT_GOT_ITEMFINDER"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE11_EAST_ENTRANCE_2F:0/MAP_ROUTE11_EAST_ENTRANCE_1F:2"
+    ]
+  },
+  "REGION_ROUTE12/WEST": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/UNDER_SNORLAX",
+      "REGION_ROUTE11/EAST"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE12/ABOVE_NORTH_GATE": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/NORTH_WATER",
+      "REGOION_LAVENDER_TOWN/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE12:1/MAP_ROUTE12_NORTH_ENTRANCE_1F:0"
+    ]
+  },
+  "REGION_ROUTE12/NORTH_WATER": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/ABOVE_NORTH_GATE"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE12/BELOW_NORTH_GATE": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE12_HYPER_POTION"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/SOUTH_WATER",
+      "REGION_ROUTE12/UNDER_SNORLAX"
+    ],
+    "warps": [
+      "MAP_ROUTE12:2/MAP_ROUTE12_NORTH_ENTRANCE_1F:1"
+    ]
+  },
+  "REGION_ROUTE12/SOUTH": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/SOUTH_WATER",
+      "REGION_ROUTE12/BEHIND_NORTH_CUTTABLE_TREE",
+      "REGION_ROUTE12/BEHIND_SOUTH_CUTTABLE_TREE",
+      "REGION_ROUTE12/UNDER_SNORLAX",
+      "REGION_ROUTE13/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE12:0/MAP_ROUTE12_FISHING_HOUSE:0"
+    ]
+  },
+  "REGION_ROUTE12/SOUTH_WATER": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [
+      "ITEM_ROUTE12_TM48"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/BELOW_NORTH_GATE",
+      "REGION_ROUTE12/SOUTH",
+      "REGION_ROUTE13/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE12/BEHIND_NORTH_CUTTABLE_TREE": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [
+      "ITEM_ROUTE12_IRON"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/SOUTH"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE12/BEHIND_SOUTH_CUTTABLE_TREE": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE12_RARE_CANDY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/SOUTH",
+      "REGION_ROUTE13/ISOLATED_AREA"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE12/UNDER_SNORLAX": {
+    "parent_map": "MAP_ROUTE12",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE12_LEFTOVERS"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/WEST",
+      "REGION_ROUTE12/BELOW_NORTH_GATE",
+      "REGION_ROUTE12/SOUTH"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE12_FISHING_HOUSE/MAIN": {
+    "parent_map": "MAP_ROUTE12_FISHING_HOUSE",
+    "locations": [
+      "NPC_GIFT_GOT_SUPER_ROD"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE12_FISHING_HOUSE:0/MAP_ROUTE12:0"
+    ]
+  },
+  "REGION_ROUTE12_NORTH_ENTRANCE_1F/MAIN": {
+    "parent_map": "MAP_ROUTE12_NORTH_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE12_NORTH_ENTRANCE_1F:0/MAP_ROUTE12:1",
+      "MAP_ROUTE12_NORTH_ENTRANCE_1F:1/MAP_ROUTE12:2",
+      "MAP_ROUTE12_NORTH_ENTRANCE_1F:2/MAP_ROUTE12_NORTH_ENTRANCE_2F:0"
+    ]
+  },
+  "REGION_ROUTE12_NORTH_ENTRANCE_2F": {
+    "parent_map": "MAP_ROUTE12_NORTH_ENTRANCE_2F",
+    "locations": [
+      "NPC_GIFT_GOT_TM27"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE12_NORTH_ENTRANCE_2F:0/MAP_ROUTE12_NORTH_ENTRANCE_1F:2"
+    ]
+  },
+  "REGION_ROUTE13/MAIN": {
+    "parent_map": "MAP_ROUTE13",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE13_PP_UP"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE13/WATER",
+      "REGION_ROUTE13/BEHIND_CUTTABLE_TREE",
+      "REGION_ROUTE12/SOUTH",
+      "REGION_ROUTE14/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE13/WATER": {
+    "parent_map": "MAP_ROUTE13",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE13/MAIN",
+      "REGION_ROUTE12/SOUTH_WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE13/BEHIND_CUTTABLE_TREE": {
+    "parent_map": "MAP_ROUTE13",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE13/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE13/ISOLATED_AREA": {
+    "parent_map": "MAP_ROUTE13",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE12/BEHIND_SOUTH_CUTTABLE_TREE"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE14/MAIN": {
+    "parent_map": "MAP_ROUTE14",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE14_PINAP_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE14/BEHIND_NORTH_CUTTABLE_TREE",
+      "REGION_ROUTE14/BEHIND_SOUTH_CUTTABLE_TREE",
+      "REGION_ROUTE13/MAIN",
+      "REGION_ROUTE15/SOUTH"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE14/BEHIND_NORTH_CUTTABLE_TREE": {
+    "parent_map": "MAP_ROUTE14",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE14_ZINC"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE14/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE14/BEHIND_SOUTH_CUTTABLE_TREE": {
+    "parent_map": "MAP_ROUTE14",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE14/MAIN",
+      "REGION_ROUTE15/NORTH"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE15/NORTH": {
+    "parent_map": "MAP_ROUTE15",
+    "locations": [
+      "ITEM_ROUTE15_TM18"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE15/SOUTH",
+      "REGION_ROUTE14/BEHIND_SOUTH_CUTTABLE_TREE"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE15/SOUTH": {
+    "parent_map": "MAP_ROUTE15",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE14/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE15:1/MAP_ROUTE15_WEST_ENTRANCE_1F:1"
+    ]
+  },
+  "REGION_ROUTE15/SOUTHWEST": {
+    "parent_map": "MAP_ROUTE15",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FUCHSIA_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE15:0/MAP_ROUTE15_WEST_ENTRANCE_1F:0"
+    ]
+  },
+  "REGION_ROUTE15_WEST_ENTRANCE_1F/MAIN": {
+    "parent_map": "MAP_ROUTE15_WEST_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE15_WEST_ENTRANCE_1F:0/MAP_ROUTE15:0",
+      "MAP_ROUTE15_WEST_ENTRANCE_1F:1/MAP_ROUTE15:1",
+      "MAP_ROUTE15_WEST_ENTRANCE_1F:2/MAP_ROUTE15_WEST_ENTRANCE_2F:0"
+    ]
+  },
+  "REGION_ROUTE15_WEST_ENTRANCE_2F/MAIN": {
+    "parent_map": "MAP_ROUTE15_WEST_ENTRANCE_2F",
+    "locations": [
+      "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE15_WEST_ENTRANCE_2F:0/MAP_ROUTE15_WEST_ENTRANCE_1F:2"
+    ]
+  },
+  "REGION_ROUTE16/NORTHWEST": {
+    "parent_map": "MAP_ROUTE16",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE16:0/MAP_ROUTE16_HOUSE:0",
+      "MAP_ROUTE16:1/MAP_ROUTE16_NORTH_ENTRANCE_1F:0"
+    ]
+  },
+  "REGION_ROUTE16/NORTHEAST": {
+    "parent_map": "MAP_ROUTE16",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16/SOUTHEAST"
+    ],
+    "warps": [
+      "MAP_ROUTE16:2/MAP_ROUTE16_NORTH_ENTRANCE_1F:1"
+    ]
+  },
+  "REGION_ROUTE16/SOUTHWEST": {
+    "parent_map": "MAP_ROUTE16",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE17/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE16:3/MAP_ROUTE16_NORTH_ENTRANCE_1F:2"
+    ]
+  },
+  "REGION_ROUTE16/SOUTHEAST": {
+    "parent_map": "MAP_ROUTE16",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16/NORTHEAST",
+      "REGION_ROUTE16/UNDER_SNORLAX",
+      "REGION_CELADON_CITY/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE16/PAST_SNORLAX": {
+    "parent_map": "MAP_ROUTE16",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16/UNDER_SNORLAX"
+    ],
+    "warps": [
+      "MAP_ROUTE16:4/MAP_ROUTE16_NORTH_ENTRANCE_1F:3"
+    ]
+  },
+  "REGION_ROUTE16/UNDER_SNORLAX": {
+    "parent_map": "MAP_ROUTE16",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE16_LEFTOVERS"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16/SOUTHEAST",
+      "REGION_ROUTE16/PAST_SNORLAX"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE16_HOUSE/MAIN": {
+    "parent_map": "MAP_ROUTE16_HOUSE",
+    "locations": [
+      "NPC_GIFT_GOT_HM02"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE16_HOUSE:0/MAP_ROUTE16:0"
+    ]
+  },
+  "REGION_ROUTE16_NORTH_ENTRANCE_1F/NORTH": {
+    "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:0/MAP_ROUTE16:1",
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:1/MAP_ROUTE16:2"
+    ]
+  },
+  "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHWEST": {
+    "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHEAST"
+    ],
+    "warps": [
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:2/MAP_ROUTE16:3"
+    ]
+  },
+  "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHEAST": {
+    "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:3/MAP_ROUTE16:4",
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:4/MAP_ROUTE16_NORTH_ENTRANCE_2F:0"
+    ]
+  },
+  "REGION_ROUTE16_NORTH_ENTRANCE_2F": {
+    "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_2F",
+    "locations": [
+      "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE16_NORTH_ENTRANCE_2F:0/MAP_ROUTE16_NORTH_ENTRANCE_1F:4"
+    ]
+  },
+  "REGION_ROUTE17/MAIN": {
+    "parent_map": "MAP_ROUTE17",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE17_FULL_RESTORE",
+      "HIDDEN_ITEM_ROUTE17_MAX_ELIXIR",
+      "HIDDEN_ITEM_ROUTE17_MAX_REVIVE",
+      "HIDDEN_ITEM_ROUTE17_PP_UP",
+      "HIDDEN_ITEM_ROUTE17_RARE_CANDY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE16/SOUTHWEST",
+      "REGION_ROUTE18/WEST"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE18/WEST": {
+    "parent_map": "MAP_ROUTE18",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE17/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE18:0/MAP_ROUTE18_EAST_ENTRANCE_1F:0"
+    ]
+  },
+  "REGION_ROUTE18/EAST": {
+    "parent_map": "MAP_ROUTE18",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FUCHSIA_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE18:1/MAP_ROUTE18_EAST_ENTRANCE_1F:1"
+    ]
+  },
+  "REGION_ROUTE18_EAST_ENTRANCE_1F/WEST": {
+    "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE18_EAST_ENTRANCE_1F/EAST"
+    ],
+    "warps": [
+      "MAP_ROUTE18_EAST_ENTRANCE_1F:0/MAP_ROUTE18:0"
+    ]
+  },
+  "REGION_ROUTE18_EAST_ENTRANCE_1F/EAST": {
+    "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE18_EAST_ENTRANCE_1F/WEST"
+    ],
+    "warps": [
+      "MAP_ROUTE18_EAST_ENTRANCE_1F:1/MAP_ROUTE18:1",
+      "MAP_ROUTE18_EAST_ENTRANCE_1F:2/MAP_ROUTE18_EAST_ENTRANCE_2F:0"
+    ]
+  },
+  "REGION_ROUTE18_EAST_ENTRANCE_2F/MAIN": {
+    "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE18_EAST_ENTRANCE_2F:0/MAP_ROUTE18_EAST_ENTRANCE_1F:2"
+    ]
+  },
+  "REGION_ROUTE19/BEACH": {
+    "parent_map": "MAP_ROUTE19",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE19/WATER",
+      "REGION_FUCHSIA_CITY/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE19/WATER": {
+    "parent_map": "MAP_ROUTE19",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE19/BEACH",
+      "REGION_ROUTE20/EAST_WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE20/EAST_WATER": {
+    "parent_map": "MAP_ROUTE20",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE20/NORTH_BEACH",
+      "REGION_ROUTE19/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE20/WEST_WATER": {
+    "parent_map": "MAP_ROUTE20",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE20_STARDUST"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE20/SOUTH_BEACH",
+      "REGION_CINNABAR_ISLAND/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE20/NORTH_BEACH": {
+    "parent_map": "MAP_ROUTE20",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE20/EAST_WATER"
+    ],
+    "warps": [
+      "MAP_ROUTE20:0/MAP_SEAFOAM_ISLANDS_1F:3"
+    ]
+  },
+  "REGION_ROUTE20/SOUTH_BEACH": {
+    "parent_map": "MAP_ROUTE20",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE20/WEST_WATER"
+    ],
+    "warps": [
+      "MAP_ROUTE20:1/MAP_SEAFOAM_ISLANDS_1F:4"
+    ]
+  },
+  "REGION_ROUTE21/WATER": {
+    "parent_map": "MAP_ROUTE21",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE21_NORTH_PEARL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_PALLET_TOWN/WATER",
+      "REGION_CINNABAR_ISLAND/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE21/LAND": {
+    "parent_map": "MAP_ROUTE21",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE21/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE22/MAIN": {
+    "parent_map": "MAP_ROUTE22",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE22/POND",
+      "REGION_VIRIDIAN_CITY/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE22:0/MAP_ROUTE22_NORTH_ENTRANCE:1"
+    ]
+  },
+  "REGION_ROUTE22/POND": {
+    "parent_map": "MAP_ROUTE22",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE22/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE22_NORTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_ROUTE22_NORTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE22_NORTH_ENTRANCE:0/MAP_ROUTE23:2",
+      "MAP_ROUTE22_NORTH_ENTRANCE:1/MAP_ROUTE22:0"
+    ]
+  },
+  "REGION_ROUTE23/SOUTH": {
+    "parent_map": "MAP_ROUTE23",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE23_LEPPA_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE23/WATER"
+    ],
+    "warps": [
+      "MAP_ROUTE23:2/MAP_ROUTE22_NORTH_ENTRANCE:0"
+    ]
+  },
+  "REGION_ROUTE23/WATER": {
+    "parent_map": "MAP_ROUTE23",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE23_MAX_ETHER"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE23/SOUTH",
+      "REGION_ROUTE23/CENTER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE23/CENTER": {
+    "parent_map": "MAP_ROUTE23",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY",
+      "HIDDEN_ITEM_ROUTE23_FULL_RESTORE",
+      "HIDDEN_ITEM_ROUTE23_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE23/WATER",
+      "REGION_ROUTE23/BEFORE_VICTORY_ROAD"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE23/BEFORE_VICTORY_ROAD": {
+    "parent_map": "MAP_ROUTE23",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE23_SITRUS_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE23/CENTER"
+    ],
+    "warps": [
+      "MAP_ROUTE23:0/MAP_VICTORY_ROAD_1F:1"
+    ]
+  },
+  "REGION_ROUTE23/NORTH": {
+    "parent_map": "MAP_ROUTE23",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE23_LUM_BERRY",
+      "HIDDEN_ITEM_ROUTE23_MAX_ELIXIR"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_INDIGO_PLATEAU_EXTERIOR/MAIN"
+    ],
+    "warps": [
+      "MAP_ROUTE23:1/MAP_VICTORY_ROAD_2F:5"
+    ]
+  },
+  "REGION_ROUTE24/MAIN": {
+    "parent_map": "MAP_ROUTE24",
+    "locations": [
+      "ITEM_ROUTE24_TM45",
+      "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE24/WATER",
+      "REGION_CERULEAN_CITY/MAIN",
+      "REGION_ROUTE25/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE24/WATER": {
+    "parent_map": "MAP_ROUTE24",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE24/MAIN",
+      "REGION_CERULEAN_CITY/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE24/NORTHEAST_LEDGE": {
+    "parent_map": "MAP_ROUTE24",
+    "locations": [
+      "HIDDEN_ITEM_ROUTE24_PECHA_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE24/MAIN",
+      "REGION_ROUTE25/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE24/EAST": {
+    "parent_map": "MAP_ROUTE24",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/MAIN",
+      "REGION_ROUTE25/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE25/MAIN": {
+    "parent_map": "MAP_ROUTE25",
+    "locations": [
+      "ITEM_ROUTE25_TM43",
+      "HIDDEN_ITEM_ROUTE25_BLUK_BERRY",
+      "HIDDEN_ITEM_ROUTE25_ELIXIR",
+      "HIDDEN_ITEM_ROUTE25_ETHER",
+      "HIDDEN_ITEM_ROUTE25_ORAN_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE25/POND",
+      "REGION_ROUTE24/MAIN",
+      "REGION_ROUTE24/NORTHEAST_LEDGE",
+      "REGION_ROUTE24/EAST"
+    ],
+    "warps": [
+      "MAP_ROUTE25:0/MAP_ROUTE25_SEA_COTTAGE:0"
+    ]
+  },
+  "REGION_ROUTE25/POND": {
+    "parent_map": "MAP_ROUTE25",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE25/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE25_SEA_COTTAGE/MAIN": {
+    "parent_map": "MAP_ROUTE25_SEA_COTTAGE",
+    "locations": [
+      "NPC_GIFT_GOT_SS_TICKET"
+    ],
+    "events": [
+      "EVENT_RESCUED_BILL"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_ROUTE25_SEA_COTTAGE:0/MAP_ROUTE25:0"
+    ]
+  }
+}

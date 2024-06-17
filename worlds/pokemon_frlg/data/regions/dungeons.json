@@ -1,0 +1,2864 @@
+{
+  "REGION_VIRIDIAN_FOREST/MAIN": {
+    "parent_map": "MAP_VIRIDIAN_FOREST",
+    "locations": [
+      "ITEM_VIRIDIAN_FOREST_ANTIDOTE",
+      "ITEM_VIRIDIAN_FOREST_POKE_BALL",
+      "ITEM_VIRIDIAN_FOREST_POTION",
+      "ITEM_VIRIDIAN_FOREST_POTION",
+      "HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE",
+      "HIDDEN_ITEM_VIRIDIAN_FOREST_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_VIRIDIAN_FOREST:0,1,2/MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:1",
+      "MAP_VIRIDIAN_FOREST:3,4,5/MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:0"
+    ]
+  },
+  "REGION_MT_MOON_1F/MAIN": {
+    "parent_map": "MAP_MT_MOON_1F",
+    "locations": [
+      "ITEM_MT_MOON_1F_ESCAPE_ROPE",
+      "ITEM_MT_MOON_1F_MOON_STONE",
+      "ITEM_MT_MOON_1F_PARALYZE_HEAL",
+      "ITEM_MT_MOON_1F_POTION",
+      "ITEM_MT_MOON_1F_RARE_CANDY",
+      "ITEM_MT_MOON_1F_TM09"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_1F:0/MAP_MT_MOON_B1F:0",
+      "MAP_MT_MOON_1F:1/MAP_MT_MOON_B1F:1",
+      "MAP_MT_MOON_1F:2/MAP_MT_MOON_B1F:2",
+      "MAP_MT_MOON_1F:3/MAP_ROUTE4:0"
+    ]
+  },
+  "REGION_MT_MOON_B1F/TUNNEL1": {
+    "parent_map": "MAP_MT_MOON_B1F",
+    "locations": [
+      "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM",
+      "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3",
+      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B1F:2/MAP_MT_MOON_1F:2",
+      "MAP_MT_MOON_B1F:5/MAP_MT_MOON_B2F:2"
+    ]
+  },
+  "REGION_MT_MOON_B1F/TUNNEL2": {
+    "parent_map": "MAP_MT_MOON_B1F",
+    "locations": [
+      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B1F:1/MAP_MT_MOON_1F:1",
+      "MAP_MT_MOON_B1F:4/MAP_MT_MOON_B2F:1"
+    ]
+  },
+  "REGION_MT_MOON_B1F/TUNNEL3": {
+    "parent_map": "MAP_MT_MOON_B1F",
+    "locations": [
+      "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B1F:0/MAP_MT_MOON_1F:0",
+      "MAP_MT_MOON_B1F:3/MAP_MT_MOON_B2F:0"
+    ]
+  },
+  "REGION_MT_MOON_B1F/TUNNEL4": {
+    "parent_map": "MAP_MT_MOON_B1F",
+    "locations": [
+      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B1F:6/MAP_MT_MOON_B2F:3",
+      "MAP_MT_MOON_B1F:7/MAP_ROUTE4:1"
+    ]
+  },
+  "REGION_MT_MOON_B2F/MAIN": {
+    "parent_map": "MAP_MT_MOON_B2F",
+    "locations": [
+      "NPC_GIFT_GOT_DOME_FOSSIL",
+      "NPC_GIFT_GOT_HELIX_FOSSIL",
+      "ITEM_MT_MOON_B2F_ANTIDOTE",
+      "ITEM_MT_MOON_B2F_REVIVE",
+      "HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B2F:0/MAP_MT_MOON_B1F:3",
+      "MAP_MT_MOON_B2F:3/MAP_MT_MOON_B1F:6"
+    ]
+  },
+  "REGION_MT_MOON_B2F/ISOLATED_ROOM": {
+    "parent_map": "MAP_MT_MOON_B2F",
+    "locations": [
+      "ITEM_MT_MOON_B2F_STAR_PIECE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B2F:2/MAP_MT_MOON_B1F:5"
+    ]
+  },
+  "REGION_MT_MOON_B2F/NORTHEAST": {
+    "parent_map": "MAP_MT_MOON_B2F",
+    "locations": [
+      "ITEM_MT_MOON_B2F_TM46"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_MOON_B2F:1/MAP_MT_MOON_B1F:4"
+    ]
+  },
+  "REGION_UNDERGROUND_PATH_NORTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0/MAP_ROUTE5:0",
+      "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:1/MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:0"
+    ]
+  },
+  "REGION_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL/MAIN": {
+    "parent_map": "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL",
+    "locations": [
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:1",
+      "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:1/MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:1"
+    ]
+  },
+  "REGION_UNDERGROUND_PATH_SOUTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:0/MAP_ROUTE6:0",
+      "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:1/MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:1"
+    ]
+  },
+  "REGION_SSANNE_EXTERIOR/MAIN": {
+    "parent_map": "MAP_SSANNE_EXTERIOR",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SSANNE_EXTERIOR/WEST_WATER",
+      "REGION_SSANNE_EXTERIOR/EAST_WATER"
+    ],
+    "warps": [
+      "MAP_SSANNE_EXTERIOR:0/MAP_VERMILION_CITY:0",
+      "MAP_SSANNE_EXTERIOR:1/MAP_SSANNE_1F_CORRIDOR:2"
+    ]
+  },
+  "REGION_SSANNE_EXTERIOR/WEST_WATER": {
+    "parent_map": "MAP_SSANNE_EXTERIOR",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SSANNE_EXTERIOR/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SSANNE_EXTERIOR/EAST_WATER": {
+    "parent_map": "MAP_SSANNE_EXTERIOR",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SSANNE_EXTERIOR/MAIN",
+      "REGION_SSANNE_EXTERIOR/EAST_PIER"
+    ],
+    "warps": []
+  },
+  "REGION_SSANNE_EXTERIOR/EAST_PIER": {
+    "parent_map": "MAP_SSANNE_EXTERIOR",
+    "locations": [
+      "HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SSANNE_EXTERIOR/EAST_WATER"
+    ],
+    "warps": []
+  },
+  "REGION_SSANNE_1F_CORRIDOR/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_CORRIDOR",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_CORRIDOR:0/MAP_SSANNE_2F_CORRIDOR:0",
+      "MAP_SSANNE_1F_CORRIDOR:1/MAP_SSANNE_KITCHEN:0",
+      "MAP_SSANNE_1F_CORRIDOR:2/MAP_SSANNE_EXTERIOR:1",
+      "MAP_SSANNE_1F_CORRIDOR:3/MAP_SSANNE_B1F_CORRIDOR:0",
+      "MAP_SSANNE_1F_CORRIDOR:4/MAP_SSANNE_1F_ROOM1:0",
+      "MAP_SSANNE_1F_CORRIDOR:5/MAP_SSANNE_1F_ROOM2:0",
+      "MAP_SSANNE_1F_CORRIDOR:6/MAP_SSANNE_1F_ROOM3:0",
+      "MAP_SSANNE_1F_CORRIDOR:7/MAP_SSANNE_1F_ROOM4:0",
+      "MAP_SSANNE_1F_CORRIDOR:8/MAP_SSANNE_1F_ROOM5:0",
+      "MAP_SSANNE_1F_CORRIDOR:9/MAP_SSANNE_1F_ROOM7:0",
+      "MAP_SSANNE_1F_CORRIDOR:10/MAP_SSANNE_1F_ROOM6:0"
+    ]
+  },
+  "REGION_SSANNE_KITCHEN/MAIN": {
+    "parent_map": "MAP_SSANNE_KITCHEN",
+    "locations": [
+      "ITEM_SSANNE_KITCHEN_GREAT_BALL",
+      "HIDDEN_ITEM_SSANNE_KITCHEN_CHERI_BERRY",
+      "HIDDEN_ITEM_SSANNE_KITCHEN_CHESTO_BERRY",
+      "HIDDEN_ITEM_SSANNE_KITCHEN_PECHA_BERRY"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_KITCHEN:0/MAP_SSANNE_1F_CORRIDOR:1"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM1/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM1",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM1:0/MAP_SSANNE_1F_CORRIDOR:4"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM2/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM2",
+    "locations": [
+      "ITEM_SSANNE_1F_ROOM2_TM31"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM2:0/MAP_SSANNE_1F_CORRIDOR:5"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM3/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM3",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM3:0/MAP_SSANNE_1F_CORRIDOR:6"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM4/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM4",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM4:0/MAP_SSANNE_1F_CORRIDOR:7"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM5/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM5",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM5:0/MAP_SSANNE_1F_CORRIDOR:8"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM6/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM6",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM6:0/MAP_SSANNE_1F_CORRIDOR:10"
+    ]
+  },
+  "REGION_SSANNE_1F_ROOM7/MAIN": {
+    "parent_map": "MAP_SSANNE_1F_ROOM7",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_1F_ROOM7:0/MAP_SSANNE_1F_CORRIDOR:9"
+    ]
+  },
+  "REGION_SSANNE_B1F_CORRIDOR/MAIN": {
+    "parent_map": "MAP_SSANNE_B1F_CORRIDOR",
+    "locations": [
+      "HIDDEN_ITEM_SSANNE_B1F_CORRIDOR_HYPER_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_B1F_CORRIDOR:0/MAP_SSANNE_1F_CORRIDOR:3",
+      "MAP_SSANNE_B1F_CORRIDOR:1/MAP_SSANNE_B1F_ROOM1:0",
+      "MAP_SSANNE_B1F_CORRIDOR:2/MAP_SSANNE_B1F_ROOM2:0",
+      "MAP_SSANNE_B1F_CORRIDOR:3/MAP_SSANNE_B1F_ROOM3:0",
+      "MAP_SSANNE_B1F_CORRIDOR:4/MAP_SSANNE_B1F_ROOM4:0",
+      "MAP_SSANNE_B1F_CORRIDOR:5/MAP_SSANNE_B1F_ROOM5:0"
+    ]
+  },
+  "REGION_SSANNE_B1F_ROOM1/MAIN": {
+    "parent_map": "MAP_SSANNE_B1F_ROOM1",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_B1F_ROOM1:0/MAP_SSANNE_B1F_CORRIDOR:1"
+    ]
+  },
+  "REGION_SSANNE_B1F_ROOM2/MAIN": {
+    "parent_map": "MAP_SSANNE_B1F_ROOM2",
+    "locations": [
+      "ITEM_SSANNE_B1F_ROOM2_TM44"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_B1F_ROOM2:0/MAP_SSANNE_B1F_CORRIDOR:2"
+    ]
+  },
+  "REGION_SSANNE_B1F_ROOM3/MAIN": {
+    "parent_map": "MAP_SSANNE_B1F_ROOM3",
+    "locations": [
+      "ITEM_SSANNE_B1F_ROOM3_ETHER"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_B1F_ROOM3:0/MAP_SSANNE_B1F_CORRIDOR:3"
+    ]
+  },
+  "REGION_SSANNE_B1F_ROOM4/MAIN": {
+    "parent_map": "MAP_SSANNE_B1F_ROOM4",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_B1F_ROOM4:0/MAP_SSANNE_B1F_CORRIDOR:4"
+    ]
+  },
+  "REGION_SSANNE_B1F_ROOM5/MAIN": {
+    "parent_map": "MAP_SSANNE_B1F_ROOM5",
+    "locations": [
+      "ITEM_SSANNE_B1F_ROOM5_SUPER_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_B1F_ROOM5:0/MAP_SSANNE_B1F_CORRIDOR:5"
+    ]
+  },
+  "REGION_SSANNE_2F_CORRIDOR/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_CORRIDOR",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_CORRIDOR:0/MAP_SSANNE_1F_CORRIDOR:0",
+      "MAP_SSANNE_2F_CORRIDOR:1/MAP_SSANNE_3F_CORRIDOR:1",
+      "MAP_SSANNE_2F_CORRIDOR:2/MAP_SSANNE_CAPTAINS_OFFICE:0",
+      "MAP_SSANNE_2F_CORRIDOR:3/MAP_SSANNE_2F_ROOM1:0",
+      "MAP_SSANNE_2F_CORRIDOR:4/MAP_SSANNE_2F_ROOM2:0",
+      "MAP_SSANNE_2F_CORRIDOR:5/MAP_SSANNE_2F_ROOM3:0",
+      "MAP_SSANNE_2F_CORRIDOR:6/MAP_SSANNE_2F_ROOM4:0",
+      "MAP_SSANNE_2F_CORRIDOR:7/MAP_SSANNE_2F_ROOM5:0",
+      "MAP_SSANNE_2F_CORRIDOR:8/MAP_SSANNE_2F_ROOM6:0"
+    ]
+  },
+  "REGION_SSANNE_2F_ROOM1/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_ROOM1",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_ROOM1:0/MAP_SSANNE_2F_CORRIDOR:3"
+    ]
+  },
+  "REGION_SSANNE_2F_ROOM2/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_ROOM2",
+    "locations": [
+      "ITEM_SSANNE_2F_ROOM2_STARDUST"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_ROOM2:0/MAP_SSANNE_2F_CORRIDOR:4"
+    ]
+  },
+  "REGION_SSANNE_2F_ROOM3/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_ROOM3",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_ROOM3:0/MAP_SSANNE_2F_CORRIDOR:5"
+    ]
+  },
+  "REGION_SSANNE_2F_ROOM4/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_ROOM4",
+    "locations": [
+      "ITEM_SSANNE_2F_ROOM4_X_ATTACK"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_ROOM4:0/MAP_SSANNE_2F_CORRIDOR:6"
+    ]
+  },
+  "REGION_SSANNE_2F_ROOM5/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_ROOM5",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_ROOM5:0/MAP_SSANNE_2F_CORRIDOR:7"
+    ]
+  },
+  "REGION_SSANNE_2F_ROOM6/MAIN": {
+    "parent_map": "MAP_SSANNE_2F_ROOM6",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_2F_ROOM6:0/MAP_SSANNE_2F_CORRIDOR:8"
+    ]
+  },
+  "REGION_SSANNE_3F_CORRIDOR/MAIN": {
+    "parent_map": "MAP_SSANNE_3F_CORRIDOR",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_3F_CORRIDOR:0/MAP_SSANNE_DECK:0",
+      "MAP_SSANNE_3F_CORRIDOR:1/MAP_SSANNE_2F_CORRIDOR:1"
+    ]
+  },
+  "REGION_SSANNE_DECK/MAIN": {
+    "parent_map": "MAP_SSANNE_DECK",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_DECK:0,1/MAP_SSANNE_3F_CORRIDOR:0"
+    ]
+  },
+  "REGION_SSANNE_CAPTAINS_OFFICE/MAIN": {
+    "parent_map": "MAP_SSANNE_CAPTAINS_OFFICE",
+    "locations": [
+      "NPC_GIFT_GOT_HM01"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SSANNE_CAPTAINS_OFFICE:0/MAP_SSANNE_2F_CORRIDOR:2"
+    ]
+  },
+  "REGION_DIGLETTS_CAVE_SOUTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:0/MAP_ROUTE11:0",
+      "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:1/MAP_DIGLETTS_CAVE_B1F:1"
+    ]
+  },
+  "REGION_DIGLETTS_CAVE_B1F/MAIN": {
+    "parent_map": "MAP_DIGLETTS_CAVE_B1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_DIGLETTS_CAVE_B1F:0/MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:0",
+      "MAP_DIGLETTS_CAVE_B1F:1/MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:1"
+    ]
+  },
+  "REGION_DIGLETTS_CAVE_NORTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:0/MAP_DIGLETTS_CAVE_B1F:0",
+      "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1/MAP_ROUTE2:4"
+    ]
+  },
+  "REGION_ROCK_TUNNEL_1F/SOUTH": {
+    "parent_map": "MAP_ROCK_TUNNEL_1F",
+    "locations": [
+      "ITEM_ROCK_TUNNEL_1F_PEARL"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0",
+      "MAP_ROCK_TUNNEL_1F:4/MAP_ROCK_TUNNEL_B1F:3"
+    ]
+  },
+  "REGION_ROCK_TUNNEL_1F/NORTHWEST": {
+    "parent_map": "MAP_ROCK_TUNNEL_1F",
+    "locations": [
+      "ITEM_ROCK_TUNNEL_1F_ESCAPE_ROPE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCK_TUNNEL_1F:2/MAP_ROCK_TUNNEL_B1F:1",
+      "MAP_ROCK_TUNNEL_1F:3/MAP_ROCK_TUNNEL_B1F:2"
+    ]
+  },
+  "REGION_ROCK_TUNNEL_1F/NORTHEAST": {
+    "parent_map": "MAP_ROCK_TUNNEL_1F",
+    "locations": [
+      "ITEM_ROCK_TUNNEL_1F_REPEL"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCK_TUNNEL_1F:1/MAP_ROCK_TUNNEL_B1F:0",
+      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1"
+    ]
+  },
+  "REGION_ROCK_TUNNEL_B1F/NORTHWEST": {
+    "parent_map": "MAP_ROCK_TUNNEL_B1F",
+    "locations": [
+      "ITEM_ROCK_TUNNEL_B1F_MAX_ETHER"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3",
+      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4"
+    ]
+  },
+  "REGION_ROCK_TUNNEL_B1F/SOUTHEAST": {
+    "parent_map": "MAP_ROCK_TUNNEL_B1F",
+    "locations": [
+      "ITEM_ROCK_TUNNEL_B1F_REVIVE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3",
+      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4"
+    ]
+  },
+  "REGION_POWER_PLANT/MAIN": {
+    "parent_map": "MAP_POWER_PLANT",
+    "locations": [
+      "ITEM_POWER_PLANT_ELIXIR",
+      "ITEM_POWER_PLANT_MAX_POTION",
+      "ITEM_POWER_PLANT_THUNDER_STONE",
+      "ITEM_POWER_PLANT_TM17",
+      "ITEM_POWER_PLANT_TM25",
+      "HIDDEN_ITEM_POWER_PLANT_MAX_ELIXIR",
+      "HIDDEN_ITEM_POWER_PLANT_THUNDER_STONE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POWER_PLANT:0/MAP_ROUTE10:2",
+      "MAP_POWER_PLANT:1/MAP_ROUTE10:4"
+    ]
+  },
+  "REGION_POKEMON_TOWER_1F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_1F:0/MAP_LAVENDER_TOWN:0",
+      "MAP_POKEMON_TOWER_1F:1/MAP_POKEMON_TOWER_2F:1"
+    ]
+  },
+  "REGION_POKEMON_TOWER_2F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_2F:0/MAP_POKEMON_TOWER_3F:0",
+      "MAP_POKEMON_TOWER_2F:1/MAP_POKEMON_TOWER_1F:1"
+    ]
+  },
+  "REGION_POKEMON_TOWER_3F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_3F",
+    "locations": [
+      "ITEM_POKEMON_TOWER_3F_ESCAPE_ROPE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_3F:0/MAP_POKEMON_TOWER_2F:0",
+      "MAP_POKEMON_TOWER_3F:1/MAP_POKEMON_TOWER_4F:1"
+    ]
+  },
+  "REGION_POKEMON_TOWER_4F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_4F",
+    "locations": [
+      "ITEM_POKEMON_TOWER_4F_AWAKENING",
+      "ITEM_POKEMON_TOWER_4F_ELIXIR",
+      "ITEM_POKEMON_TOWER_4F_GREAT_BALL"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_4F:0/MAP_POKEMON_TOWER_5F:0",
+      "MAP_POKEMON_TOWER_4F:1/MAP_POKEMON_TOWER_3F:1"
+    ]
+  },
+  "REGION_POKEMON_TOWER_5F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_5F",
+    "locations": [
+      "ITEM_POKEMON_TOWER_5F_CLEANSE_TAG",
+      "ITEM_POKEMON_TOWER_5F_NUGGET",
+      "HIDDEN_ITEM_POKEMON_TOWER_5F_BIG_MUSHROOM"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_5F:0/MAP_POKEMON_TOWER_4F:0",
+      "MAP_POKEMON_TOWER_5F:1/MAP_POKEMON_TOWER_6F:1"
+    ]
+  },
+  "REGION_POKEMON_TOWER_6F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_6F",
+    "locations": [
+      "ITEM_POKEMON_TOWER_6F_RARE_CANDY",
+      "ITEM_POKEMON_TOWER_6F_X_ACCURACY"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_6F:0/MAP_POKEMON_TOWER_7F:0",
+      "MAP_POKEMON_TOWER_6F:1/MAP_POKEMON_TOWER_5F:1"
+    ]
+  },
+  "REGION_POKEMON_TOWER_7F/MAIN": {
+    "parent_map": "MAP_POKEMON_TOWER_7F",
+    "locations": [
+      "HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL"
+    ],
+    "events": [
+      "EVENT_RESCUED_MR_FUJI"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_TOWER_7F:0/MAP_POKEMON_TOWER_6F:0"
+    ]
+  },
+  "REGION_UNDERGROUND_PATH_EAST_ENTRANCE/MAIN": {
+    "parent_map": "MAP_UNDERGROUND_PATH_EAST_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_UNDERGROUND_PATH_EAST_ENTRANCE:0/MAP_ROUTE8:0",
+      "MAP_UNDERGROUND_PATH_EAST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:0"
+    ]
+  },
+  "REGION_UNDERGROUND_PATH_EAST_WEST_TUNNEL/MAIN": {
+    "parent_map": "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
+    "locations": [
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL",
+      "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:0/MAP_UNDERGROUND_PATH_EAST_ENTRANCE:1",
+      "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1/MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1"
+    ]
+  },
+  "REGION_UNDERGROUND_PATH_WEST_ENTRANCE/MAIN": {
+    "parent_map": "MAP_UNDERGROUND_PATH_WEST_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0/MAP_ROUTE7:0","MAP_ROUTE7:1",
+      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1"
+    ]
+  },
+  "REGION_ROCKET_HIDEOUT_B1F/MAIN": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
+    "locations": [
+      "ITEM_ROCKET_HIDEOUT_B1F_ESCAPE_ROPE",
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B1F_PP_UP"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROCKET_HIDEOUT_B1F/NEAR_ELEVATOR"
+    ],
+    "warps": [
+      "MAP_ROCKET_HIDEOUT_B1F:0/MAP_CELADON_CITY_GAME_CORNER:1",
+      "MAP_ROCKET_HIDEOUT_B1F:1/MAP_ROCKET_HIDEOUT_B2F:1"
+    ]
+  },
+  "REGION_ROCKET_HIDEOUT_B1F/NEAR_ELEVATOR": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
+    "locations": [],
+    "events": [
+      "EVENT_OPENED_ROCKET_HIDEOUT_B1F_SHUTTER"
+    ],
+    "exits": [
+      "REGION_ROCKET_HIDEOUT_B1F/MAIN",
+      "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROCKET_HIDEOUT_B1F/ISOLATED_ROOM": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
+    "locations": [
+      "ITEM_ROCKET_HIDEOUT_B1F_HYPER_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCKET_HIDEOUT_B1F:2/MAP_ROCKET_HIDEOUT_B2F:2"
+    ]
+  },
+  "REGION_ROCKET_HIDEOUT_B2F/MAIN": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B2F",
+    "locations": [
+      "ITEM_ROCKET_HIDEOUT_B2F_MOON_STONE",
+      "ITEM_ROCKET_HIDEOUT_B2F_SUPER_POTION",
+      "ITEM_ROCKET_HIDEOUT_B2F_TM12",
+      "ITEM_ROCKET_HIDEOUT_B2F_X_SPEED"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_ROCKET_HIDEOUT_B2F:0/MAP_ROCKET_HIDEOUT_B3F:0",
+      "MAP_ROCKET_HIDEOUT_B2F:1/MAP_ROCKET_HIDEOUT_B1F:1",
+      "MAP_ROCKET_HIDEOUT_B2F:2/MAP_ROCKET_HIDEOUT_B1F:2"
+    ]
+  },
+  "REGION_ROCKET_HIDEOUT_B3F/MAIN": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B3F",
+    "locations": [
+      "ITEM_ROCKET_HIDEOUT_B3F_BLACK_GLASSES",
+      "ITEM_ROCKET_HIDEOUT_B3F_RARE_CANDY",
+      "ITEM_ROCKET_HIDEOUT_B3F_TM21",
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B3F_NUGGET"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCKET_HIDEOUT_B3F:0/MAP_ROCKET_HIDEOUT_B2F:0",
+      "MAP_ROCKET_HIDEOUT_B3F:1/MAP_ROCKET_HIDEOUT_B4F:0"
+    ]
+  },
+  "REGION_ROCKET_HIDEOUT_B4F/LIFT_KEY_ROOM": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B4F",
+    "locations": [
+      "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT",
+      "ITEM_ROCKET_HIDEOUT_B4F_MAX_ETHER",
+      "ITEM_ROCKET_HIDEOUT_B4F_TM49"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCKET_HIDEOUT_B4F:0/MAP_ROCKET_HIDEOUT_B3F:1"
+    ]
+  },
+  "REGION_ROCKET_HIDEOUT_B4F/SILPH_SCOPE_ROOM": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_B4F",
+    "locations": [
+      "NPC_GIFT_GOT_SILPH_SCOPE",
+      "ITEM_ROCKET_HIDEOUT_B4F_CALCIUM",
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NEST_BALL",
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN": {
+    "parent_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROCKET_HIDEOUT_B1F/NEAR_ELEVATOR",
+      "REGION_ROCKET_HIDEOUT_B2F/MAIN",
+      "REGION_ROCKET_HIDEOUT_B4F/SILPH_SCOPE_ROOM"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_1F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_1F:0/MAP_SAFFRON_CITY:0",
+      "MAP_SILPH_CO_1F:1/MAP_SILPH_CO_2F:3"
+    ]
+  },
+  "REGION_SILPH_CO_2F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_2F/NORTHWEST_ROOM",
+      "REGION_SILPH_CO_2F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_2F:0/MAP_SILPH_CO_3F:0",
+      "MAP_SILPH_CO_2F:2/MAP_SILPH_CO_8F:5",
+      "MAP_SILPH_CO_2F:3/MAP_SILPH_CO_1F:1",
+      "MAP_SILPH_CO_2F:5/MAP_SILPH_CO_8F:2"
+    ]
+  },
+  "REGION_SILPH_CO_2F/NORTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_2F/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_2F:1/MAP_SILPH_CO_3F:8"
+    ]
+  },
+  "REGION_SILPH_CO_2F/SOUTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_2F",
+    "locations": [
+      "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_2F/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_2F:4/MAP_SILPH_CO_6F:1"
+    ]
+  },
+  "REGION_SILPH_CO_3F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_3F",
+    "locations": [
+      "HIDDEN_ITEM_SILPH_CO_3F_PROTEIN"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_3F/CENTER_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_3F:0/MAP_SILPH_CO_2F:0",
+      "MAP_SILPH_CO_3F:1/MAP_SILPH_CO_5F:1",
+      "MAP_SILPH_CO_3F:3/MAP_SILPH_CO_4F:2",
+      "MAP_SILPH_CO_3F:5/MAP_SILPH_CO_5F:4",
+      "MAP_SILPH_CO_3F:6/MAP_SILPH_CO_3F:7",
+      "MAP_SILPH_CO_3F:7/MAP_SILPH_CO_3F:6",
+      "MAP_SILPH_CO_3F:8/MAP_SILPH_CO_2F:1"
+    ]
+  },
+  "REGION_SILPH_CO_3F/CENTER_ROOM": {
+    "parent_map": "MAP_SILPH_CO_3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_3F/MAIN",
+      "REGION_SILPH_CO_3F/WEST_ROOM"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_3F:2/MAP_SILPH_CO_7F:4"
+    ]
+  },
+  "REGION_SILPH_CO_3F/WEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_3F",
+    "locations": [
+      "ITEM_SILPH_CO_3F_HYPER_POTION"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_3F/CENTER_ROOM"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_3F:4/MAP_SILPH_CO_9F:2"
+    ]
+  },
+  "REGION_SILPH_CO_4F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_4F",
+    "locations": [
+      "ITEM_SILPH_CO_4F_TM41",
+      "HIDDEN_ITEM_SILPH_CO_4F_IRON"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_4F/NORTHWEST_ROOM",
+      "REGION_SILPH_CO_4F/NORTH_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_4F:0/MAP_SILPH_CO_5F:0",
+      "MAP_SILPH_CO_4F:2/MAP_SILPH_CO_3F:3",
+      "MAP_SILPH_CO_4F:4/MAP_SILPH_CO_10F:4",
+      "MAP_SILPH_CO_4F:5/MAP_SILPH_CO_10F:2"
+    ]
+  },
+  "REGION_SILPH_CO_4F/NORTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_4F",
+    "locations": [
+      "ITEM_SILPH_CO_4F_ESCAPE_ROPE",
+      "ITEM_SILPH_CO_4F_FULL_HEAL",
+      "ITEM_SILPH_CO_4F_MAX_REVIVE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_4F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_4F/NORTH_ROOM": {
+    "parent_map": "MAP_SILPH_CO_4F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_4F/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_4F:1/MAP_SILPH_CO_6F:3",
+      "MAP_SILPH_CO_4F:3/MAP_SILPH_CO_10F:1"
+    ]
+  },
+  "REGION_SILPH_CO_5F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_5F",
+    "locations": [
+      "ITEM_SILPH_CO_5F_CARD_KEY",
+      "HIDDEN_ITEM_SILPH_CO_5F_PP_UP"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_5F/NORTHWEST_ROOM",
+      "REGION_SILPH_CO_5F/CENTER_ROOM_ANNEX",
+      "REGION_SILPH_CO_5F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_5F:0/MAP_SILPH_CO_4F:0",
+      "MAP_SILPH_CO_5F:1/MAP_SILPH_CO_3F:1",
+      "MAP_SILPH_CO_5F:2/MAP_SILPH_CO_6F:2",
+      "MAP_SILPH_CO_5F:3/MAP_SILPH_CO_9F:1",
+      "MAP_SILPH_CO_5F:5/MAP_SILPH_CO_7F:2"
+    ]
+  },
+  "REGION_SILPH_CO_5F/NORTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_5F",
+    "locations": [
+      "ITEM_SILPH_CO_5F_PROTEIN"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_5F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_5F/CENTER_ROOM_ANNEX": {
+    "parent_map": "MAP_SILPH_CO_5F",
+    "locations": [
+      "HIDDEN_ITEM_SILPH_CO_5F_ELIXIR"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_5F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_5F/SOUTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_5F",
+    "locations": [
+      "ITEM_SILPH_CO_5F_TM01"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_5F/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_5F:4/MAP_SILPH_CO_3F:5"
+    ]
+  },
+  "REGION_SILPH_CO_6F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_6F",
+    "locations": [
+      "HIDDEN_ITEM_SILPH_CO_6F_CARBOS"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_6F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_6F:0/MAP_SILPH_CO_7F:0",
+      "MAP_SILPH_CO_6F:1/MAP_SILPH_CO_2F:4",
+      "MAP_SILPH_CO_6F:2/MAP_SILPH_CO_5F:2",
+      "MAP_SILPH_CO_6F:3/MAP_SILPH_CO_4F:1"
+    ]
+  },
+  "REGION_SILPH_CO_6F/SOUTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_6F",
+    "locations": [
+      "ITEM_SILPH_CO_6F_HP_UP",
+      "ITEM_SILPH_CO_6F_X_SPECIAL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_6F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_7F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_7F",
+    "locations": [
+      "ITEM_SILPH_CO_7F_CALCIUM"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_7F/CENTER_ROOM",
+      "REGION_SILPH_CO_7F/EAST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_7F:0/MAP_SILPH_CO_6F:0",
+      "MAP_SILPH_CO_7F:3/MAP_SILPH_CO_8F:3"
+    ]
+  },
+  "REGION_SILPH_CO_7F/NORTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_7F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SILPH_CO_7F:1/MAP_SILPH_CO_11F:1",
+      "MAP_SILPH_CO_7F:4/MAP_SILPH_CO_3F:2"
+    ]
+  },
+  "REGION_SILPH_CO_7F/CENTER_ROOM": {
+    "parent_map": "MAP_SILPH_CO_7F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_SILPH_CO_7F/EAST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_7F",
+    "locations": [
+      "ITEM_SILPH_CO_7F_TM08",
+      "HIDDEN_ITEM_SILPH_CO_7F_ZINC"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_7F/MAIN",
+      "REGION_SILPH_CO_7F/SOUTHEAST_ROOM"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_7F/SOUTHEAST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_7F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_7F/EAST_ROOM"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_7F:2/MAP_SILPH_CO_5F:5"
+    ]
+  },
+  "REGION_SILPH_CO_8F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_8F",
+    "locations": [
+      "ITEM_SILPH_CO_8F_IRON",
+      "HIDDEN_ITEM_SILPH_CO_8F_NUGGET"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_8F/WEST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_8F:0/MAP_SILPH_CO_9F:0",
+      "MAP_SILPH_CO_8F:1/MAP_SILPH_CO_8F:4",
+      "MAP_SILPH_CO_8F:2/MAP_SILPH_CO_2F:5",
+      "MAP_SILPH_CO_8F:3/MAP_SILPH_CO_7F:3",
+      "MAP_SILPH_CO_8F:5/MAP_SILPH_CO_2F:2"
+    ]
+  },
+  "REGION_SILPH_CO_8F/WEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_8F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_8F/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_8F:4/MAP_SILPH_CO_8F:1"
+    ]
+  },
+  "REGION_SILPH_CO_9F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_9F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_9F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_9F/EAST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_9F:0/MAP_SILPH_CO_8F:0",
+      "MAP_SILPH_CO_9F:1/MAP_SILPH_CO_5F:3",
+      "MAP_SILPH_CO_9F:3/MAP_SILPH_CO_10F:3"
+    ]
+  },
+  "REGION_SILPH_CO_9F/NORTHWEST_ROOM" : {
+    "parent_map": "MAP_SILPH_CO_9F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_9F/SOUTHWEST_ROOM"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_9F:2/MAP_SILPH_CO_3F:4"
+    ]
+  },
+  "REGION_SILPH_CO_9F/SOUTHWEST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_9F",
+    "locations": [
+      "HIDDEN_ITEM_SILPH_CO_9F_CALCIUM",
+      "HIDDEN_ITEM_SILPH_CO_9F_MAX_POTION"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_9F/MAIN",
+      "REGION_SILPH_CO_9F/NORTHWEST_ROOM"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_9F/EAST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_9F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_9F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_10F/MAIN": {
+    "parent_map": "MAP_SILPH_CO_10F",
+    "locations": [
+      "ITEM_SILPH_CO_10F_CARBOS",
+      "ITEM_SILPH_CO_10F_RARE_CANDY",
+      "ITEM_SILPH_CO_10F_ULTRA_BALL",
+      "HIDDEN_ITEM_SILPH_CO_10F_HP_UP"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_10F/SOUTHEAST_ROOM",
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_10F:0/MAP_SILPH_CO_11F:0",
+      "MAP_SILPH_CO_10F:2/MAP_SILPH_CO_4F:5",
+      "MAP_SILPH_CO_10F:3/MAP_SILPH_CO_9F:3"
+    ]
+  },
+  "REGION_SILPH_CO_10F/SOUTHEAST_ROOM": {
+    "parent_map": "MAP_SILPH_CO_10F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_10F/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_10F:1/MAP_SILPH_CO_4F:3",
+      "MAP_SILPH_CO_10F:4/MAP_SILPH_CO_4F:4"
+    ]
+  },
+  "REGION_SILPH_CO_11F/WEST": {
+    "parent_map": "MAP_SILPH_CO_11F",
+    "locations": [
+      "HIDDEN_ITEM_SILPH_CO_11F_REVIVE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_11F/PRESIDENTS_ROOM"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_11F:1/MAP_SILPH_CO_7F:1"
+    ]
+  },
+  "REGION_SILPH_CO_11F/PRESIDENTS_ROOM": {
+    "parent_map": "MAP_SILPH_CO_11F",
+    "locations": [
+      "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH"
+    ],
+    "events": [
+      "EVENT_CLEARED_SILPH_CO"
+    ],
+    "exits": [
+      "REGION_SILPH_CO_11F/WEST"
+    ],
+    "warps": []
+  },
+  "REGION_SILPH_CO_11F/EAST": {
+    "parent_map": "MAP_SILPH_CO_11F",
+    "locations": [
+      "ITEM_SILPH_CO_11F_ZINC"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_ELEVATOR/MAIN"
+    ],
+    "warps": [
+      "MAP_SILPH_CO_11F:0/MAP_SILPH_CO_10F:0"
+    ]
+  },
+  "REGION_SILPH_CO_ELEVATOR/MAIN": {
+    "parent_map": "MAP_SILPH_CO_ELEVATOR",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SILPH_CO_2F/MAIN",
+      "REGION_SILPH_CO_3F/MAIN",
+      "REGION_SILPH_CO_4F/MAIN",
+      "REGION_SILPH_CO_5F/MAIN",
+      "REGION_SILPH_CO_6F/MAIN",
+      "REGION_SILPH_CO_7F/MAIN",
+      "REGION_SILPH_CO_8F/MAIN",
+      "REGION_SILPH_CO_9F/MAIN",
+      "REGION_SILPH_CO_10F/MAIN",
+      "REGION_SILPH_CO_11F/EAST"
+    ],
+    "warps": []
+  },
+  "REGION_SAFARI_ZONE_CENTER/NORTHWEST": {
+    "parent_map": "MAP_SAFARI_ZONE_CENTER",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_CENTER/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_CENTER:4,5/MAP_SAFARI_ZONE_WEST:4,5"
+    ]
+  },
+  "REGION_SAFARI_ZONE_CENTER/NORTHEAST": {
+    "parent_map": "MAP_SAFARI_ZONE_CENTER",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_CENTER/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_CENTER:2,3/MAP_SAFARI_ZONE_NORTH:6,7"
+    ]
+  },
+  "REGION_SAFARI_ZONE_CENTER/SOUTH": {
+    "parent_map": "MAP_SAFARI_ZONE_CENTER",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_CENTER/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_CENTER:0,1/MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:0",
+      "MAP_SAFARI_ZONE_CENTER:8/MAP_SAFARI_ZONE_CENTER_REST_HOUSE:0",
+      "MAP_SAFARI_ZONE_CENTER:6,7/MAP_SAFARI_ZONE_EAST:2,3"
+    ]
+  },
+  "REGION_SAFARI_ZONE_CENTER/WATER": {
+    "parent_map": "MAP_SAFARI_ZONE_CENTER",
+    "locations": [
+      "ITEM_SAFARI_ZONE_CENTER_NUGGET",
+      "HIDDEN_ITEM_SAFARI_ZONE_CENTER_LEAF_STONE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_CENTER/NORTHWEST",
+      "REGION_SAFARI_ZONE_CENTER/NORTHEAST",
+      "REGION_SAFARI_ZONE_CENTER/SOUTH"
+    ],
+    "warps": []
+  },
+  "REGION_SAFARI_ZONE_EAST/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_EAST",
+    "locations": [
+      "ITEM_SAFARI_ZONE_EAST_FULL_RESTORE",
+      "ITEM_SAFARI_ZONE_EAST_LEAF_STONE",
+      "ITEM_SAFARI_ZONE_EAST_MAX_POTION",
+      "ITEM_SAFARI_ZONE_EAST_TM11"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_EAST/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_EAST:0,1/MAP_SAFARI_ZONE_NORTH:4,5",
+      "MAP_SAFARI_ZONE_EAST:2,3/MAP_SAFARI_ZONE_CENTER:6,7",
+      "MAP_SAFARI_ZONE_EAST:4/MAP_SAFARI_ZONE_EAST_REST_HOUSE:0"
+    ]
+  },
+  "REGION_SAFARI_ZONE_EAST/WATER": {
+    "parent_map": "MAP_SAFARI_ZONE_EAST",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_EAST/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SAFARI_ZONE_NORTH/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_NORTH",
+    "locations": [
+      "ITEM_SAFARI_ZONE_NORTH_PROTEIN",
+      "ITEM_SAFARI_ZONE_NORTH_QUICK_CLAW",
+      "ITEM_SAFARI_ZONE_NORTH_TM47"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_NORTH/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_NORTH:0,1/MAP_SAFARI_ZONE_WEST:0,1",
+      "MAP_SAFARI_ZONE_NORTH:2,3/MAP_SAFARI_ZONE_WEST:2,3",
+      "MAP_SAFARI_ZONE_NORTH:4,5/MAP_SAFARI_ZONE_EAST:0,1",
+      "MAP_SAFARI_ZONE_NORTH:6,7/MAP_SAFARI_ZONE_CENTER:2,3",
+      "MAP_SAFARI_ZONE_NORTH:8/MAP_SAFARI_ZONE_NORTH_REST_HOUSE:0"
+    ]
+  },
+  "REGION_SAFARI_ZONE_NORTH/WATER": {
+    "parent_map": "MAP_SAFARI_ZONE_NORTH",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_NORTH/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SAFARI_ZONE_WEST/NORTH": {
+    "parent_map": "MAP_SAFARI_ZONE_WEST",
+    "locations": [
+      "ITEM_SAFARI_ZONE_WEST_GOLD_TEETH",
+      "ITEM_SAFARI_ZONE_WEST_TM32",
+      "HIDDEN_ITEM_SAFARI_ZONE_WEST_REVIVE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_WEST/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_WEST:0,1/MAP_SAFARI_ZONE_NORTH:0,1",
+      "MAP_SAFARI_ZONE_WEST:6/MAP_SAFARI_ZONE_SECRET_HOUSE:0"
+    ]
+  },
+  "REGION_SAFARI_ZONE_WEST/SOUTH": {
+    "parent_map": "MAP_SAFARI_ZONE_WEST",
+    "locations": [
+      "ITEM_SAFARI_ZONE_WEST_MAX_POTION",
+      "ITEM_SAFARI_ZONE_WEST_MAX_REVIVE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_WEST/WATER"
+    ],
+    "warps": [
+      "MAP_SAFARI_ZONE_WEST:2,3/MAP_SAFARI_ZONE_NORTH:2,3",
+      "MAP_SAFARI_ZONE_WEST:4,5/MAP_SAFARI_ZONE_CENTER:4,5",
+      "MAP_SAFARI_ZONE_WEST:7/MAP_SAFARI_ZONE_WEST_REST_HOUSE:0"
+    ]
+  },
+  "REGION_SAFARI_ZONE_WEST/WATER": {
+    "parent_map": "MAP_SAFARI_ZONE_WEST",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SAFARI_ZONE_WEST/NORTH",
+      "REGION_SAFARI_ZONE_WEST/SOUTH"
+    ],
+    "warps": []
+  },
+  "REGION_SAFARI_ZONE_CENTER_REST_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_CENTER_REST_HOUSE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFARI_ZONE_CENTER_REST_HOUSE:0/MAP_SAFARI_ZONE_CENTER:8"
+    ]
+  },
+  "REGION_SAFARI_ZONE_EAST_REST_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_EAST_REST_HOUSE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFARI_ZONE_EAST_REST_HOUSE:0/MAP_SAFARI_ZONE_EAST:4"
+    ]
+  },
+  "REGION_SAFARI_ZONE_NORTH_REST_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_NORTH_REST_HOUSE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFARI_ZONE_NORTH_REST_HOUSE:0/MAP_SAFARI_ZONE_NORTH:8"
+    ]
+  },
+  "REGION_SAFARI_ZONE_WEST_REST_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_WEST_REST_HOUSE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFARI_ZONE_WEST_REST_HOUSE:0/MAP_SAFARI_ZONE_WEST:7"
+    ]
+  },
+  "REGION_SAFARI_ZONE_SECRET_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFARI_ZONE_SECRET_HOUSE",
+    "locations": [
+      "NPC_GIFT_GOT_HM03"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFARI_ZONE_SECRET_HOUSE:0/MAP_SAFARI_ZONE_WEST:6"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_1F/WEST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_1F",
+    "locations": [
+      "ITEM_SEAFOAM_ISLANDS_1F_ICE_HEAL"
+    ],
+    "events": [
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_1F_LEFT_BOULDER",
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_1F_RIGHT_BOULDER"
+    ],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B1F/MAIN",
+      "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_1F:0/MAP_SEAFOAM_ISLANDS_B1F:0",
+      "MAP_SEAFOAM_ISLANDS_1F:1/MAP_SEAFOAM_ISLANDS_B1F:1",
+      "MAP_SEAFOAM_ISLANDS_1F:3/MAP_ROUTE20:0"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_1F/EAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_1F:2/MAP_SEAFOAM_ISLANDS_B1F:2",
+      "MAP_SEAFOAM_ISLANDS_1F:4/MAP_ROUTE20:1"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B1F/MAIN": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
+    "locations": [
+      "ITEM_SEAFOAM_ISLANDS_B1F_REVIVE"
+    ],
+    "events": [
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_B1F_LEFT_BOULDER"
+    ],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B1F:0/MAP_SEAFOAM_ISLANDS_1F:0",
+      "MAP_SEAFOAM_ISLANDS_B1F:2/MAP_SEAFOAM_ISLANDS_1F:2",
+      "MAP_SEAFOAM_ISLANDS_B1F:3/MAP_SEAFOAM_ISLANDS_B2F:3",
+      "MAP_SEAFOAM_ISLANDS_B1F:4/MAP_SEAFOAM_ISLANDS_B2F:4",
+      "MAP_SEAFOAM_ISLANDS_B1F:6/MAP_SEAFOAM_ISLANDS_B2F:6"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
+    "locations": [],
+    "events": [
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_B1F_RIGHT_BOULDER"
+    ],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B1F:1/MAP_SEAFOAM_ISLANDS_1F:1"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B1F/SOUTH": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
+    "locations": [
+      "ITEM_SEAFOAM_ISLANDS_B1F_WATER_STONE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B1F:5/MAP_SEAFOAM_ISLANDS_B2F:5"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "locations": [],
+    "events": [
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_B2F_LEFT_BOULDER"
+    ],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B2F:3/MAP_SEAFOAM_ISLANDS_B1F:3"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "locations": [],
+    "events": [
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_B2F_RIGHT_BOULDER"
+    ],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B2F:1/MAP_SEAFOAM_ISLANDS_B3F:1"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B2F/SOUTHWEST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "locations": [
+      "ITEM_SEAFOAM_ISLANDS_B2F_BIG_PEARL"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B2F:0/MAP_SEAFOAM_ISLANDS_B3F:0",
+      "MAP_SEAFOAM_ISLANDS_B2F:4/MAP_SEAFOAM_ISLANDS_B1F:4",
+      "MAP_SEAFOAM_ISLANDS_B2F:5/MAP_SEAFOAM_ISLANDS_B1F:5"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B2F/SOUTHEAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B2F:2/MAP_SEAFOAM_ISLANDS_B3F:2",
+      "MAP_SEAFOAM_ISLANDS_B2F:6/MAP_SEAFOAM_ISLANDS_B1F:6"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/WEST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "locations": [
+      "HIDDEN_ITEM_SEAFOAM_ISLANDS_B3F_NUGGET"
+    ],
+    "events": [
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_B3F_LEFT_BOULDER",
+      "EVENT_DROPPED_SEAFOAM_ISLANDS_B3F_RIGHT_BOULDER"
+    ],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER",
+      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0",
+      "MAP_SEAFOAM_ISLANDS_B3F:3/MAP_SEAFOAM_ISLANDS_B4F:0"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B3F:1/MAP_SEAFOAM_ISLANDS_B2F:1",
+      "MAP_SEAFOAM_ISLANDS_B3F:4/MAP_SEAFOAM_ISLANDS_B4F:1"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B3F:2/MAP_SEAFOAM_ISLANDS_B2F:2"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/WATER": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B3F/WEST",
+      "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST",
+      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER"
+    ],
+    "warps": []
+  },
+  "REGION_SEAFOAM_ISLANDS_B4F/MAIN": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
+    "locations": [
+      "ITEM_SEAFOAM_ISLANDS_B4F_ULTRA_BALL",
+      "HIDDEN_ITEM_SEAFOAM_ISLANDS_B4F_WATER_STONE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER",
+      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER"
+    ],
+    "warps": [
+      "MAP_SEAFOAM_ISLANDS_B4F:0/MAP_SEAFOAM_ISLANDS_B3F:3",
+      "MAP_SEAFOAM_ISLANDS_B4F:1/MAP_SEAFOAM_ISLANDS_B3F:4"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B4F/ISOLATED_ISLAND": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER"
+    ],
+    "warps": []
+  },
+  "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B4F/MAIN",
+      "REGION_SEAFOAM_ISLANDS_B4F/ISOLATED_ISLAND"
+    ]
+  },
+  "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B4F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_POKEMON_MANSION_1F/MAIN": {
+    "parent_map": "MAP_POKEMON_MANSION_1F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_1F_ESCAPE_ROPE",
+      "ITEM_POKEMON_MANSION_1F_PROTEIN",
+      "HIDDEN_ITEM_POKEMON_MANSION_1F_MOON_STONE"
+    ],
+    "events": [
+      "EVENT_PRESSED_MANSION_STATUE"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_MANSION_1F:0/MAP_CINNABAR_ISLAND:0",
+      "MAP_POKEMON_MANSION_1F:1/MAP_POKEMON_MANSION_2F:2"
+    ]
+  },
+  "REGION_POKEMON_MANSION_1F/NEAR_B1F_STAIRS": {
+    "parent_map": "MAP_POKEMON_MANSION_1F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_1F_CARBOS"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_POKEMON_MANSION_1F/OTHER_EXIT"
+    ],
+    "warps": [
+      "MAP_POKEMON_MANSION_1F:2/MAP_POKEMON_MANSION_B1F:0"
+    ]
+  },
+  "REGION_POKEMON_MANSION_1F/OTHER_EXIT": {
+    "parent_map": "MAP_POKEMON_MANSION_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_POKEMON_MANSION_1F/NEAR_B1F_STAIRS"
+    ],
+    "warps": [
+      "MAP_POKEMON_MANSION_1F:3/MAP_CINNABAR_ISLAND:0!"
+    ]
+  },
+  "REGION_POKEMON_MANSION_2F/MAIN": {
+    "parent_map": "MAP_POKEMON_MANSION_2F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_2F_CALCIUM",
+      "ITEM_POKEMON_MANSION_2F_ZINC"
+    ],
+    "events": [
+      "EVENT_PRESSED_MANSION_STATUE"
+    ],
+    "exits": [
+      "REGION_POKEMON_MANSION_2F/BEHIND_GATE"
+    ],
+    "warps": [
+      "MAP_POKEMON_MANSION_2F:0/MAP_POKEMON_MANSION_3F:0",
+      "MAP_POKEMON_MANSION_2F:2/MAP_POKEMON_MANSION_1F:1",
+      "MAP_POKEMON_MANSION_2F:3/MAP_POKEMON_MANSION_3F:2"
+    ]
+  },
+  "REGION_POKEMON_MANSION_2F/BEHIND_GATE": {
+    "parent_map": "MAP_POKEMON_MANSION_2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_POKEMON_MANSION_2F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_POKEMON_MANSION_2F/EAST_BALCONY": {
+    "parent_map": "MAP_POKEMON_MANSION_2F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_2F_HP_UP"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_MANSION_2F:1/MAP_POKEMON_MANSION_3F:1"
+    ]
+  },
+  "REGION_POKEMON_MANSION_3F/NORTH": {
+    "parent_map": "MAP_POKEMON_MANSION_3F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_3F_IRON"
+    ],
+    "events": [
+      "EVENT_PRESSED_MANSION_STATUE"
+    ],
+    "exits": [
+      "REGION_POKEMON_MANSION_3F/SOUTHEAST"
+    ],
+    "warps": [
+      "MAP_POKEMON_MANSION_3F:0/MAP_POKEMON_MANSION_2F:0"
+    ]
+  },
+  "REGION_POKEMON_MANSION_3F/SOUTHWEST": {
+    "parent_map": "MAP_POKEMON_MANSION_3F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_3F_MAX_POTION"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_MANSION_3F:2/MAP_POKEMON_MANSION_2F:3"
+    ]
+  },
+  "REGION_POKEMON_MANSION_3F/SOUTHEAST": {
+    "parent_map": "MAP_POKEMON_MANSION_3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_POKEMON_MANSION_3F/NORTH",
+      "REGION_POKEMON_MANSION_1F/NEAR_B1F_STAIRS",
+      "REGION_POKEMON_MANSION_2F/BEHIND_GATE"
+    ],
+    "warps": [
+      "MAP_POKEMON_MANSION_3F:1/MAP_POKEMON_MANSION_2F:1"
+    ]
+  },
+  "REGION_POKEMON_MANSION_B1F": {
+    "parent_map": "MAP_POKEMON_MANSION_B1F",
+    "locations": [
+      "ITEM_POKEMON_MANSION_B1F_SECRET_KEY",
+      "ITEM_POKEMON_MANSION_B1F_FULL_RESTORE",
+      "ITEM_POKEMON_MANSION_B1F_TM14",
+      "ITEM_POKEMON_MANSION_B1F_TM22",
+      "HIDDEN_ITEM_POKEMON_MANSION_B1F_ELIXIR"
+    ],
+    "events": [
+      "EVENT_PRESSED_MANSION_STATUE"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_POKEMON_MANSION_B1F:0/MAP_POKEMON_MANSION_1F:2"
+    ]
+  },
+  "REGION_VICTORY_ROAD_1F/SOUTH": {
+    "parent_map": "MAP_VICTORY_ROAD_1F",
+    "locations": [],
+    "events": [
+      "EVENT_REMOVED_VICTORY_ROAD_1F_ROCKS"
+    ],
+    "exits": [
+      "REGION_VICTORY_ROAD_1F/NORTH"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_1F:1/MAP_ROUTE23:0"
+    ]
+  },
+  "REGION_VICTORY_ROAD_1F/NORTH": {
+    "parent_map": "MAP_VICTORY_ROAD_1F",
+    "locations": [
+      "ITEM_VICTORY_ROAD_1F_RARE_CANDY",
+      "ITEM_VICTORY_ROAD_1F_TM02",
+      "HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE",
+      "HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_VICTORY_ROAD_1F/SOUTH"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_1F:0/MAP_VICTORY_ROAD_2F:0"
+    ]
+  },
+  "REGION_VICTORY_ROAD_2F/SOUTHWEST": {
+    "parent_map": "MAP_VICTORY_ROAD_2F",
+    "locations": [],
+    "events": [
+      "EVENT_REMOVED_VICTORY_ROAD_2F_LEFT_ROCKS"
+    ],
+    "exits": [
+      "REGION_VICTORY_ROAD_2F/MAIN"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_2F:0/MAP_VICTORY_ROAD_1F:0"
+    ]
+  },
+  "REGION_VICTORY_ROAD_2F/MAIN": {
+    "parent_map": "MAP_VICTORY_ROAD_2F",
+    "locations": [
+      "ITEM_VICTORY_ROAD_2F_FULL_HEAL",
+      "ITEM_VICTORY_ROAD_2F_TM07",
+      "ITEM_VICTORY_ROAD_2F_TM37"
+    ],
+    "events": [
+      "EVENT_REMOVED_VICTORY_ROAD_2F_RIGHT_ROCKS"
+    ],
+    "exits": [
+      "REGION_VICTORY_ROAD_2F/SOUTHWEST",
+      "REGION_VICTORY_ROAD_2F/PLATEAU_LADDER"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_2F:2/MAP_VICTORY_ROAD_3F:1"
+    ]
+  },
+  "REGION_VICTORY_ROAD_2F/PLATEAU_LADDER": {
+    "parent_map": "MAP_VICTORY_ROAD_2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_VICTORY_ROAD_2F/MAIN"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_2F:4/MAP_VICTORY_ROAD_3F:3"
+    ]
+  },
+  "REGION_VICTORY_ROAD_2F/NORTHWEST": {
+    "parent_map": "MAP_VICTORY_ROAD_2F",
+    "locations": [
+      "ITEM_VICTORY_ROAD_2F_GUARD_SPEC"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_VICTORY_ROAD_2F/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_2F:1/MAP_VICTORY_ROAD_3F:0"
+    ]
+  },
+  "REGION_VICTORY_ROAD_2F/EAST": {
+    "parent_map": "MAP_VICTORY_ROAD_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_VICTORY_ROAD_2F:3/MAP_VICTORY_ROAD_3F:2",
+      "MAP_VICTORY_ROAD_2F:5/MAP_ROUTE23:1"
+    ]
+  },
+  "REGION_VICTORY_ROAD_3F/NORTH": {
+    "parent_map": "MAP_VICTORY_ROAD_3F",
+    "locations": [
+      "ITEM_VICTORY_ROAD_3F_MAX_REVIVE",
+      "ITEM_VICTORY_ROAD_3F_TM50"
+    ],
+    "events": [
+      "EVENT_REMOVED_VICTORY_ROAD_3F_ROCKS"
+    ],
+    "exits": [
+      "REGION_VICTORY_ROAD_3F/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_3F:0/MAP_VICTORY_ROAD_2F:1",
+      "MAP_VICTORY_ROAD_3F:1/MAP_VICTORY_ROAD_2F:2"
+    ]
+  },
+  "REGION_VICTORY_ROAD_3F/SOUTHWEST": {
+    "parent_map": "MAP_VICTORY_ROAD_3F",
+    "locations": [],
+    "events": [
+      "EVENT_DROPPED_VICTORY_ROAD_3F_BOULDER"
+    ],
+    "exits": [
+      "REGION_VICTORY_ROAD_3F/NORTH",
+      "REGION_VICTORY_ROAD_2F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_VICTORY_ROAD_3F/SOUTHEAST": {
+    "parent_map": "MAP_VICTORY_ROAD_3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_VICTORY_ROAD_3F/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_VICTORY_ROAD_3F:2/MAP_VICTORY_ROAD_2F:3",
+      "MAP_VICTORY_ROAD_3F:3/MAP_VICTORY_ROAD_2F:4"
+    ]
+  },
+  "REGION_MT_EMBER_EXTERIOR/SOUTH": {
+    "parent_map": "MAP_MT_EMBER_EXTERIOR",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_EXTERIOR/CENTER"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_EXTERIOR:0,1/MAP_ONE_ISLAND_KINDLE_ROAD:0,1",
+      "MAP_MT_EMBER_EXTERIOR:5/MAP_MT_EMBER_RUBY_PATH_1F:0"
+    ]
+  },
+  "REGION_MT_EMBER_EXTERIOR/CENTER": {
+    "parent_map": "MAP_MT_EMBER_EXTERIOR",
+    "locations": [
+      "ITEM_MT_EMBER_EXTERIOR_DIRE_HIT",
+      "HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_EXTERIOR/SOUTH"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_EXTERIOR:2/MAP_MT_EMBER_SUMMIT_PATH_1F:0"
+    ]
+  },
+  "REGION_MT_EMBER_EXTERIOR/NORTH": {
+    "parent_map": "MAP_MT_EMBER_EXTERIOR",
+    "locations": [
+      "ITEM_MT_EMBER_EXTERIOR_FIRE_STONE",
+      "ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL",
+      "HIDDEN_ITEM_MT_EMBER_EXTERIOR_FIRE_STONE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_EXTERIOR/CENTER"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_EXTERIOR:3/MAP_MT_EMBER_SUMMIT_PATH_3F:1",
+      "MAP_MT_EMBER_EXTERIOR:4/MAP_MT_EMBER_SUMMIT:0"
+    ]
+  },
+  "REGION_MT_EMBER_SUMMIT_PATH_1F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_SUMMIT_PATH_1F:0/MAP_MT_EMBER_EXTERIOR:2",
+      "MAP_MT_EMBER_SUMMIT_PATH_1F:1/MAP_MT_EMBER_SUMMIT_PATH_2F:0"
+    ]
+  },
+  "REGION_MT_EMBER_SUMMIT_PATH_2F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_SUMMIT_PATH_2F:0/MAP_MT_EMBER_SUMMIT_PATH_1F:1",
+      "MAP_MT_EMBER_SUMMIT_PATH_2F:1/MAP_MT_EMBER_SUMMIT_PATH_3F:0"
+    ]
+  },
+  "REGION_MT_EMBER_SUMMIT_PATH_3F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_3F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_SUMMIT_PATH_3F:0/MAP_MT_EMBER_SUMMIT_PATH_2F:1",
+      "MAP_MT_EMBER_SUMMIT_PATH_3F:1/MAP_MT_EMBER_EXTERIOR:3"
+    ]
+  },
+  "REGION_MT_EMBER_SUMMIT/MAIN": {
+    "parent_map": "MAP_MT_EMBER_SUMMIT",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_1F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_1F:0/MAP_MT_EMBER_EXTERIOR:5",
+      "MAP_MT_EMBER_RUBY_PATH_1F:1/MAP_MT_EMBER_RUBY_PATH_B1F:0"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_1F/LEDGE": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_RUBY_PATH_1F/MAIN"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_1F:2/MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B1F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B1F:0/MAP_MT_EMBER_RUBY_PATH_1F:1",
+      "MAP_MT_EMBER_RUBY_PATH_B1F:1/MAP_MT_EMBER_RUBY_PATH_B2F:0"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B1F_STAIRS/": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0/MAP_MT_EMBER_RUBY_PATH_B3F:1",
+      "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:0"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B2F/WEST": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_RUBY_PATH_B2F/EAST"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B2F:0/MAP_MT_EMBER_RUBY_PATH_B1F:1"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B2F/EAST": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_RUBY_PATH_B2F/WEST"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B2F:1/MAP_MT_EMBER_RUBY_PATH_B3F:0"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B2F_STAIRS/MAIN": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:0/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:1",
+      "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_1F:2"
+    ]
+  },
+  "MAP_MT_EMBER_RUBY_PATH_B3F/NORTHWEST": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST",
+      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B3F:0/MAP_MT_EMBER_RUBY_PATH_B2F:1"
+    ]
+  },
+  "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "MAP_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
+      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B3F:2/MAP_MT_EMBER_RUBY_PATH_B4F:1"
+    ]
+  },
+  "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "MAP_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
+      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B3F:1/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B4F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B4F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B4F:0/MAP_MT_EMBER_RUBY_PATH_B5F:0",
+      "MAP_MT_EMBER_RUBY_PATH_B4F:1/MAP_MT_EMBER_RUBY_PATH_B3F:2"
+    ]
+  },
+  "REGION_MT_EMBER_RUBY_PATH_B5F/MAIN": {
+    "parent_map": "MAP_MT_EMBER_RUBY_PATH_B5F",
+    "locations": [
+      "NPC_GIFT_GOT_RUBY"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_MT_EMBER_RUBY_PATH_B5F:0/MAP_MT_EMBER_RUBY_PATH_B4F:0"
+    ]
+  },
+  "REGION_THREE_ISLAND_BERRY_FOREST/ENTRANCE": {
+    "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
+    "locations": [
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAZZ_BERRY"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_THREE_ISLAND_BERRY_FOREST/MAIN"
+    ],
+    "warps": [
+      "MAP_THREE_ISLAND_BERRY_FOREST:0,1,2/MAP_THREE_ISLAND_BOND_BRIDGE:0,1"
+    ]
+  },
+  "REGION_THREE_ISLAND_BERRY_FOREST/MAIN": {
+    "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
+    "locations": [
+      "ITEM_THREE_ISLAND_BERRY_FOREST_FULL_HEAL",
+      "ITEM_THREE_ISLAND_BERRY_FOREST_MAX_ETHER",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHESTO_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PECHA_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PINAP_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAWST_BERRY",
+      "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_WEPEAR_BERRY",
+      "NPC_GIFT_RESCUED_LOSTELLE"
+    ],
+    "events": [
+      "EVENT_RESCUED_LOSTELLE"
+    ],
+    "exits": [
+      "REGION_THREE_ISLAND_BERRY_FOREST/ENTRANCE",
+      "REGION_THREE_ISLAND_BERRY_FOREST/POND"
+    ],
+    "warps": []
+  },
+  "REGION_THREE_ISLAND_BERRY_FOREST/POND": {
+    "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
+    "locations": [
+      "ITEM_THREE_ISLAND_BERRY_FOREST_MAX_ELIXIR"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ENTRANCE": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:0/MAP_FOUR_ISLAND:3"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ENTRANCE",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/LOWER_AREA",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ABOVE_WATERFALL"
+    ],
+    "warps": []
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/LOWER_AREA": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ABOVE_WATERFALL": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/UPPER_AREA"
+    ],
+    "warps": []
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/UPPER_AREA": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ABOVE_WATERFALL"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+    "locations": [
+      "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/TOP_LADDER"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/EAST": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/NORTHEAST": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/ICE_MAZE"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/SOUTHEAST": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+    "locations": [
+      "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/NORTHWEST": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2",
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5/MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/TOP_LADDER": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/ICE_MAZE": {
+    "parent_map":"MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "locations": [
+      "ITEM_FOUR_ISLAND_ICEFALL_CAVE_B1F_FULL_RESTORE",
+      "ITEM_FOUR_ISLAND_ICEFALL_CAVE_B1F_NEVER_MELT_ICE"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/TOP_LADDER"
+    ],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4"
+    ]
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_BACK": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+    "locations": [],
+    "events": [
+      "EVENT_HELPED_LORELEI"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5"
+    ]
+  },
+  "REGION_FIVE_ISLAND_ROCKET_WAREHOUSE/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE",
+    "locations": [
+      "NPC_GIFT_RECOVERED_SAPPHIRE",
+      "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_BIG_PEARL",
+      "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_PEARL",
+      "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_TM36",
+      "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_UP_GRADE",
+      "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL",
+      "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NET_BALL"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE:0/MAP_FIVE_ISLAND_MEADOW:0"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ENTRANCE/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:0/MAP_FIVE_ISLAND_RESORT_GORGEOUS:0",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:0"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM1/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:0/MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:1",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:3",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM2/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:2!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM11:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM3/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM4/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM12:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM5/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM6/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM13:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:1!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM7/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM8/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:3!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM14:0!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM9/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM10:0!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM10/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10",
+    "locations": [
+      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM11/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11",
+    "locations": [
+      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM11_LAX_INCENSE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM12/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12",
+    "locations": [
+      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM12_SEA_INCENSE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM13/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13",
+    "locations": [
+      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM13_MAX_REVIVE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
+    ]
+  },
+  "REGION_FIVE_ISLAND_LOST_CAVE_ROOM14/MAIN": {
+    "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14",
+    "locations": [
+      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM14_RARE_CANDY"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!"
+    ]
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SIX_ISLAND_DOTTED_HOLE_B1F/MAIN"
+    ],
+    "warps": [
+      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:0/MAP_SIX_ISLAND_RUIN_VALLEY:0"
+    ]
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_1F/LEDGE": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN"
+    ],
+    "warps": [
+      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:2/MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:0"
+    ]
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_B1F/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
+      "REGION_SIX_ISLAND_DOTTED_HOLE_B2F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_B2F/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B2F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
+      "REGION_SIX_ISLAND_DOTTED_HOLE_B3F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_B3F/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B3F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
+      "REGION_SIX_ISLAND_DOTTED_HOLE_B4F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_B4F/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B4F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
+      "REGION_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM",
+    "locations": [],
+    "events": [
+      "EVENT_LEARNED_ROCKET_WAREHOUSE_PASSWORD"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:0/MAP_SIX_ISLAND_DOTTED_HOLE_1F:2"
+    ]
+  },
+  "REGION_SIX_ISLAND_PATTERN_BUSH/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SIX_ISLAND_PATTERN_BUSH:0,1,2/MAP_SIX_ISLAND_GREEN_PATH:0,1",
+      "MAP_SIX_ISLAND_PATTERN_BUSH:3,4,5/MAP_SIX_ISLAND_GREEN_PATH:2,3"
+    ]
+  },
+  "REGION_SIX_ISLAND_ALTERING_CAVE/MAIN": {
+    "parent_map": "MAP_SIX_ISLAND_ALTERING_CAVE",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SIX_ISLAND_ALTERING_CAVE:0/MAP_SIX_ISLAND_OUTCAST_ISLAND:0"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY": {
+    "parent_map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY",
+    "locations": [],
+    "events": [
+      "EVENT_SPAWNED_UNOWN"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY:0/MAP_SEVEN_ISLAND_SEVAULT_CANYON:0"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:0"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:1"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:2"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:3"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:4"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:5"
+    ]
+  },
+  "REGION_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER/MAIN": {
+    "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:6"
+    ]
+  },
+  "REGION_TRAINER_TOWER_LOBBY/MAIN": {
+    "parent_map": "MAP_TRAINER_TOWER_LOBBY",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_TRAINER_TOWER_LOBBY:1/MAP_SEVEN_ISLAND_TRAINER_TOWER:0"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_1F/ENTRANCE": {
+    "parent_map": "MAP_CERULEAN_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CAVE_1F/WATER"
+    ],
+    "warps": [
+      "MAP_CERULEAN_CAVE_1F:0/MAP_CERULEAN_CITY:8"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_1F/WATER": {
+    "parent_map": "MAP_CERULEAN_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CAVE_1F/NORTHEAST",
+      "REGION_CERULEAN_CAVE_1F/MAIN"
+    ],
+    "warps": []
+  },
+  "REGION_CERULEAN_CAVE_1F/NORTHEAST": {
+    "parent_map": "MAP_CERULEAN_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CAVE_1F/WATER"
+    ],
+    "warps": [
+      "MAP_CERULEAN_CAVE_1F:1/MAP_CERULEAN_CAVE_2F:0"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_1F/MAIN": {
+    "parent_map": "MAP_CERULEAN_CAVE_1F",
+    "locations": [
+      "ITEM_CERULEAN_CAVE_1F_FULL_RESTORE",
+      "ITEM_CERULEAN_CAVE_1F_MAX_ELIXIR",
+      "ITEM_CERULEAN_CAVE_1F_NUGGET",
+      "HIDDEN_ITEM_CERULEAN_CAVE_1F_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CAVE_1F/WATER"
+    ],
+    "warps": [
+      "MAP_CERULEAN_CAVE_1F:3/MAP_CERULEAN_CAVE_2F:1",
+      "MAP_CERULEAN_CAVE_1F:4/MAP_CERULEAN_CAVE_2F:2",
+      "MAP_CERULEAN_CAVE_1F:5/MAP_CERULEAN_CAVE_2F:3",
+      "MAP_CERULEAN_CAVE_1F:6/MAP_CERULEAN_CAVE_2F:4"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_1F/NORTHWEST": {
+    "parent_map": "MAP_CERULEAN_CAVE_1F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_CERULEAN_CAVE_1F:2/MAP_CERULEAN_CAVE_B1F:0",
+      "MAP_CERULEAN_CAVE_1F:7/MAP_CERULEAN_CAVE_2F:5"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_2F/NORTHEAST": {
+    "parent_map": "MAP_CERULEAN_CAVE_2F",
+    "locations": [
+      "ITEM_CERULEAN_CAVE_2F_FULL_RESTORE"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_CERULEAN_CAVE_2F:0/MAP_CERULEAN_CAVE_1F:1"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_2F/NORTHWEST": {
+    "parent_map": "MAP_CERULEAN_CAVE_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_CERULEAN_CAVE_2F:1/MAP_CERULEAN_CAVE_1F:3"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_2F/WEST": {
+    "parent_map": "MAP_CERULEAN_CAVE_2F",
+    "locations": [
+      "ITEM_CERULEAN_CAVE_2F_PP_UP"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_CERULEAN_CAVE_2F:2/MAP_CERULEAN_CAVE_1F:4"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_2F/CENTER": {
+    "parent_map": "MAP_CERULEAN_CAVE_2F",
+    "locations": [
+      "ITEM_CERULEAN_CAVE_2F_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_CERULEAN_CAVE_2F:3/MAP_CERULEAN_CAVE_1F:5"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_2F/MAIN": {
+    "parent_map": "MAP_CERULEAN_CAVE_2F",
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_CERULEAN_CAVE_2F:4/MAP_CERULEAN_CAVE_1F:6",
+      "MAP_CERULEAN_CAVE_2F:5/MAP_CERULEAN_CAVE_1F:7"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_B1F/MAIN": {
+    "parent_map": "MAP_CERULEAN_CAVE_B1F",
+    "locations": [
+      "ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE",
+      "ITEM_CERULEAN_CAVE_B1F_ULTRA_BALL"
+    ],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CAVE_B1F/WATER"
+    ],
+    "warps": [
+      "MAP_CERULEAN_CAVE_B1F:0/MAP_CERULEAN_CAVE_1F:2"
+    ]
+  },
+  "REGION_CERULEAN_CAVE_B1F/WATER": {
+    "parent_map": "MAP_CERULEAN_CAVE_B1F",
+    "locations": [],
+    "events": [
+      "EVENT_DEFEATED_MEWTWO"
+    ],
+    "exits": [],
+    "warps": []
+  }
+}
