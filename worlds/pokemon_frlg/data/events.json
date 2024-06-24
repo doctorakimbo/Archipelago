@@ -1,0 +1,915 @@
+{
+  "EVENT_FLY_PALLET_TOWN": {
+    "name": "Pallet Town - Visit Pallet Town",
+    "item": "Fly Pallet Town"
+  },
+  "EVENT_FLY_VIRIDIAN_CITY": {
+    "name": "Viridian City - Visit Viridian City",
+    "item": "Fly Viridian City"
+  },
+  "EVENT_FLY_PEWTER_CITY": {
+    "name": "Pewter City - Visit Pewter City",
+    "item": "Fly Pewter City"
+  },
+  "EVENT_FLY_CERULEAN_CITY": {
+    "name": "Cerulean City - Visit Cerulean City",
+    "item": "Fly Cerulean City"
+  },
+  "EVENT_FLY_VERMILION_CITY": {
+    "name": "Vermilion City - Visit Vermilion City",
+    "item": "Fly Vermilion City"
+  },
+  "EVENT_FLY_LAVENDER_TOWN": {
+    "name": "Lavender Town - Visit Lavender Town",
+    "item": "Fly Lavender Town"
+  },
+  "EVENT_FLY_CELADON_CITY": {
+    "name": "Celadon City - Visit Celadon City",
+    "item": "Fly Celadon City"
+  },
+  "EVENT_FLY_FUCHSIA_CITY": {
+    "name": "Fuchsia City - Visit Fuchsia City",
+    "item": "Fly Fuchsia City"
+  },
+  "EVENT_FLY_SAFFRON_CITY": {
+    "name": "Saffron City - Visit Saffron City",
+    "item": "Fly Saffron City"
+  },
+  "EVENT_FLY_CINNABAR_ISLAND": {
+    "name": "Cinnabar Island - Visit Cinnabar Island",
+    "item": "Fly Cinnabar Island"
+  },
+  "EVENT_FLY_ONE_ISLAND": {
+    "name": "One Island - Visit One Island",
+    "item": "Fly One Island"
+  },
+  "EVENT_FLY_TWO_ISLAND": {
+    "name": "Two Island - Visit Two Island",
+    "item": "Fly Two Island"
+  },
+  "EVENT_FLY_THREE_ISLAND": {
+    "name": "Three Island - Visit Three Island",
+    "item": "Fly Three Island"
+  },
+  "EVENT_FLY_FOUR_ISLAND": {
+    "name": "Four Island - Visit Four Island",
+    "item": "Fly Four Island"
+  },
+  "EVENT_FLY_FIVE_ISLAND": {
+    "name": "Five Island - Visit Five Island",
+    "item": "Fly Five Island"
+  },
+  "EVENT_FLY_SIX_ISLAND": {
+    "name": "Six Island - Visit Six Island",
+    "item": "Fly Six Island"
+  },
+  "EVENT_FLY_SEVEN_ISLAND": {
+    "name": "Seven Island - Visit Seven Island",
+    "item": "Fly Seven Island"
+  },
+
+  "EVENT_DEFEAT_ROUTE22_RIVAL": {
+    "labal": "Route 22 - Rival Battle",
+    "item": "Defeat Route 22 Rival"
+  },
+  "EVENT_DEFEAT_BROCK": {
+    "name": "Pewter Gym - Gym Leader Battle",
+    "item": "Defeat Brock"
+  },
+  "EVENT_DEFEAT_MISTY": {
+    "name": "Cerulean Gym - Gym Leader Battle",
+    "item": "Defeat Misty"
+  },
+  "EVENT_DEFEAT_LT_SURGE": {
+    "name": "Vermilion Gym - Gym Leader Battle",
+    "item": "Defeat Lt. Surge"
+  },
+  "EVENT_DEFEAT_ERIKA": {
+    "name": "Celadon Gym - Gym Leader Battle",
+    "item": "Defeat Erika"
+  },
+  "EVENT_DEFEAT_KOGA": {
+    "name": "Fuchsia Gym - Gym Leader Battle",
+    "item": "Defeat Koga"
+  },
+  "EVENT_DEFEAT_SABRINA": {
+    "name": "Saffron Gym - Gym Leader Battle",
+    "item": "Defeat Sabrina"
+  },
+  "EVENT_DEFEAT_BLAINE": {
+    "name": "Cinnabar Gym - Gym Leader Battle",
+    "item": "Defeat Blaine"
+  },
+  "EVENT_DEFEAT_GIOVANNI": {
+    "name": "Viridian Gym - Gym Leader Battle",
+    "item": "Defeat Giovanni"
+  },
+  "EVENT_DEFEAT_CHAMPION": {
+    "name": "Pokemon League - Champion Battle",
+    "item": "Defeat Champion"
+  },
+
+  "EVENT_DELIVER_OAKS_PARCEL": {
+    "name": "Pallet Town - Professor Oak's Delivery",
+    "item": "Deliver Oak's Parcel"
+  },
+  "EVENT_SAVE_BILL": {
+    "name": "Route 25 Sea Cottage - Cell Seperation System",
+    "item": "Save Bill"
+  },
+  "EVENT_BUY_VENDING_MACHINE_LEMONADE": {
+    "name": "Celadon City - Vending Machine",
+    "item": "Buy Lemonade"
+  },
+  "EVENT_RESCUE_MR_FUJI": {
+    "name": "Pokemon Tower 7F - Hostage",
+    "item": "Rescue Mr. Fuji"
+  },
+  "EVENT_LIBERATE_SILPH_CO": {
+    "name": "Silph Co. 11F - Giovanni Battle",
+    "item": "Liberate Silph Co."
+  },
+  "EVENT_RESTORE_POKEMON_NETWORK_MACHINE": {
+    "name": "One Island - Help Celio",
+    "item": "Restore Pokemon Network Machine"
+  },
+  "EVENT_BUY_MARKET_LEMONADE": {
+    "name": "Two Island - Market Stall",
+    "item": "Buy Lemonade"
+  },
+  "EVENT_DELIVER_METEORITE": {
+    "name": "Two Island - Gift for Lostelle's Father",
+    "item": "Deliver Meteorite"
+  },
+  "EVENT_RESCUE_LOSTELLE": {
+    "name": "Berry Forest - Hypno Battle",
+    "item": "Rescue Lostelle"
+  },
+  "EVENT_HELP_LORELEI": {
+    "name": "Icefall Cave Back - Battle Team Rocket Grunt",
+    "item": "Help Lorelei"
+  },
+  "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD": {
+    "name": "Dotted Hole - Gideon Steal Sapphire",
+    "item": "Learn Rocket Warehouse Password"
+  },
+  "EVENT_SPAWN_UNOWN": {
+    "name": "Tanoby Key - Solve Puzzle",
+    "item": "Spawn Unown"
+  },
+
+  "EVENT_OPEN_ROCKET_HIDEOUT_B1F_BARRIER": {
+    "name": "Rocket Hideout B1F - Defeat Team Rocket Grunt",
+    "item": "Open Rocket Hideout B1F Barrier"
+  },
+  "EVENT_DROP_SEAFOAM_ISLANDS_1F_BOULDERS": {
+    "name": "Seafoam Islands 1F - Drop Boulders",
+    "item": "Drop Seafoam Islands 1F Boulders"
+  },
+  "EVENT_DROP_SEAFOAM_ISLANDS_B1F_LEFT_BOULDER": {
+    "name": "Seafoam Islands B1F - Drop Left Boulder",
+    "item": "Drop Seafoam Islands B1F Left Boulder"
+  },
+  "EVENT_DROP_SEAFOAM_ISLANDS_B1F_RIGHT_BOULDER": {
+    "name": "Seafoam Islands B1F - Drop Right Boulder",
+    "item": "Drop Seafoam Islands B1F Right Boulder"
+  },
+  "EVENT_DROP_SEAFOAM_ISLANDS_B2F_LEFT_BOULDER": {
+    "name": "Seafoam Islands B2F - Drop Left Boulder",
+    "item": "Drop Seafoam Islands B2F Left Boulder"
+  },
+  "EVENT_DROP_SEAFOAM_ISLANDS_B2F_RIGHT_BOULDER": {
+    "name": "Seafoam Islands B2F - Drop Right Boulder",
+    "item": "Drop Seafoam Islands B2F Right Boulder"
+  },
+  "EVENT_DROP_SEAFOAM_ISLANDS_B3F_BOULDERS": {
+    "name": "Seafoam Islands B3F - Drop Boulders",
+    "item": "Drop Seafoam Islands B3F Boulders"
+  },
+  "EVENT_PRESS_MANSION_1F_STATUE": {
+    "name": "Pokemon Mansion 1F - Press Statue",
+    "item": "Press Pokemon Mansion Statue"
+  },
+  "EVENT_PRESS_MANSION_2F_STATUE": {
+    "name": "Pokemon Mansion 2F - Press Statue",
+    "item": "Press Pokemon Mansion Statue"
+  },
+  "EVENT_PRESS_MANSION_3F_STATUE": {
+    "name": "Pokemon Mansion 3F - Press Statue",
+    "item": "Press Pokemon Mansion Statue"
+  },
+  "EVENT_PRESS_MANSION_B1F_STATUE": {
+    "name": "Pokemon Mansion B1F - Press Statue",
+    "item": "Press Pokemon Mansion Statue"
+  },
+  "EVENT_REMOVE_VICTORY_ROAD_2F_LEFT_ROCKS": {
+    "name": "Victory Road 2F - Remove Left Rocks",
+    "item": "Remove Victory Road Left Rocks"
+  },
+  "EVENT_REMOVE_VICTORY_ROAD_2F_RIGHT_ROCKS": {
+    "name": "Victory Road 2F - Remove Right Rocks",
+    "item": "Remove Victory Road Right Rocks"
+  },
+  "EVENT_DROP_VICTORY_ROAD_3F_BOULDER": {
+    "name": "Victory Road 3F - Drop Boulder",
+    "item": "Drop Victory Road 3F Boulder"
+  },
+
+  "TRADE_POKEMON_MR_MIME": {
+    "name": "Route 2 - Trade Abra",
+    "item": "Static Pokemon"
+  },
+  "GIFT_POKEMON_MAGIKARP": {
+    "name": "Route 4 - Salesman Purchase",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_JYNX": {
+    "name": "Cerulean City - Trade Poliwhirl",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_NIDORAN": {
+    "name": "Underground Path (North-South) - Trade Nidoran M",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_FARFETCHD": {
+    "name": "Vermilion City - Trade Spearow",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_NIDORINOA": {
+    "name": "Route 11 - Trade Nidorino",
+    "item": "Static Pokemon"
+  },
+  "CELADON_PRIZE_POKEMON_1": {
+    "name": "Celadon City - Prize Pokemon Abra",
+    "item": "Pokemon"
+  },
+  "CELADON_PRIZE_POKEMON_2": {
+    "name": "Celadon City - Prize Pokemon Clefairy",
+    "item": "Pokemon"
+  },
+  "CELADON_PRIZE_POKEMON_3": {
+    "name": "Celadon City - Prize Pokemon Dratini",
+    "item": "Pokemon"
+  },
+  "CELADON_PRIZE_POKEMON_4": {
+    "name": "Celadon City - Prize Pokemon Scyther",
+    "item": "Pokemon"
+  },
+  "CELADON_PRIZE_POKEMON_5": {
+    "name": "Celadon City - Prize Pokemon Porygon",
+    "item": "Pokemon"
+  },
+  "GIFT_POKEMON_EEVEE": {
+    "name": "Celadon City - Condominiums Roof Room Item",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_LICKITUNG": {
+    "name": "Route 18 - Trade Golduck",
+    "item": "Static Pokemon"
+  },
+  "GIFT_POKEMON_LAPRAS": {
+    "name": "Silph Co. 7F - Northwest Room Employee",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_ELECTRODE": {
+    "name": "Cinnabar Island - Trade Raichu",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_TANGELA": {
+    "name": "Cinnabar Island - Trade Venonat",
+    "item": "Static Pokemon"
+  },
+  "GIFT_POKEMON_OMANYTE": {
+    "name": "Cinnabar Island - Revive Helix Fossil",
+    "item": "Static Pokemon"
+  },
+  "GIFT_POKEMON_KABUTO": {
+    "name": "Cinnabar Island - Revive Dome Fossil",
+    "item": "Static Pokemon"
+  },
+  "GIFT_POKEMON_AERODACTYL": {
+    "name": "Cinnabar Island - Revive Old Amber",
+    "item": "Static Pokemon"
+  },
+  "TRADE_POKEMON_SEEL": {
+    "name": "Cinnabar Island - Trade Ponyta",
+    "item": "Static Pokemon"
+  },
+  "EGG_POKEMON_TOGEPI": {
+    "name": "Water Labyrinth - Pokemon Egg",
+    "item": "Static Pokemon"
+  },
+
+  "EVOLVE_BULBASAUR": {
+    "name": "Evolution - Bulbasaur",
+    "item": "Ivysaur"
+  },
+  "EVOLVE_IVYSAUR": {
+    "name": "Evolution - Ivysaur",
+    "item": "Venusaur"
+  },
+  "EVOLVE_CHARMANDER": {
+    "name": "Evolution - Charmander",
+    "item": "Charmeleon"
+  },
+  "EVOLVE_CHARMELEON": {
+    "name": "Evolution - Charmeleon",
+    "item": "Charizard"
+  },
+  "EVOLVE_SQUIRTLE": {
+    "name": "Evolution - Squirtle",
+    "item": "Wartortle"
+  },
+  "EVOLVE_WARTORTLE": {
+    "name": "Evolution - Wartortle",
+    "item": "Blastoise"
+  },
+  "EVOLVE_CATERPIE": {
+    "name": "Evolution - Caterpie",
+    "item": "Metapod"
+  },
+  "EVOLVE_METAPOD": {
+    "name": "Evolution - Metapod",
+    "item": "Butterfree"
+  },
+  "EVOLVE_WEEDLE": {
+    "name": "Evolution - Weedle",
+    "item": "Kakuna"
+  },
+  "EVOLVE_KAKUNA": {
+    "name": "Evolution - Kakuna",
+    "item": "Beedrill"
+  },
+  "EVOLVE_PIDGEY": {
+    "name": "Evolution - Pidgey",
+    "item": "Pidgeotto"
+  },
+  "EVOLVE_PIDGEOTTO": {
+    "name": "Evolution - Pidgeotto",
+    "item": "Pidgeot"
+  },
+  "EVOLVE_RATTATA": {
+    "name": "Evolution - Rattata",
+    "item": "Raticate"
+  },
+  "EVOLVE_SPEAROW": {
+    "name": "Evolution - Spearow",
+    "item": "Fearow"
+  },
+  "EVOLVE_EKANS": {
+    "name": "Evolution - Ekans",
+    "item": "Arbok"
+  },
+  "EVOLVE_SANDSHREW": {
+    "name": "Evolution - Sandshrew",
+    "item": "Sandslash"
+  },
+  "EVOLVE_NIDORAN_F": {
+    "name": "Evolution - Nidoran F",
+    "item": "Nidorina"
+  },
+  "EVOLVE_NIDORAN_M": {
+    "name": "Evolution - Nidoran M",
+    "item": "Nidorino"
+  },
+  "EVOLVE_ZUBAT": {
+    "name": "Evolution - Zubat",
+    "item": "Golbat"
+  },
+  "EVOLVE_GOLBAT": {
+    "name": "Evolution - Golbat",
+    "item": "Crobat"
+  },
+  "EVOLVE_ODDISH": {
+    "name": "Evolution - Oddish",
+    "item": "Gloom"
+  },
+  "EVOLVE_PARAS": {
+    "name": "Evolution - Paras",
+    "item": "Parasect"
+  },
+  "EVOLVE_VENONAT": {
+    "name": "Evolution - Venonat",
+    "item": "Venomoth"
+  },
+  "EVOLVE_DIGLETT": {
+    "name": "Evolution - Diglett",
+    "item": "Dugtrio"
+  },
+  "EVOLVE_MEOWTH": {
+    "name": "Evolution - Meowth",
+    "item": "Persian"
+  },
+  "EVOLVE_PSYDUCK": {
+    "name": "Evolution - Psyduck",
+    "item": "Golduck"
+  },
+  "EVOLVE_MANKEY": {
+    "name": "Evolution - Mankey",
+    "item": "Primeape"
+  },
+  "EVOLVE_POLIWAG": {
+    "name": "Evolution - Poliwag",
+    "item": "Poliwhirl"
+  },
+  "EVOLVE_ABRA": {
+    "name": "Evolution - Abra",
+    "item": "Kadabra"
+  },
+  "EVOLVE_KADABRA": {
+    "name": "Evolution - Kadabra",
+    "item": "Alakazam"
+  },
+  "EVOLVE_MACHOP": {
+    "name": "Evolution - Machop",
+    "item": "Machoke"
+  },
+  "EVOLVE_MACHOKE": {
+    "name": "Evolution - Machoke",
+    "item": "Machamp"
+  },
+  "EVOLVE_BELLSPROUT": {
+    "name": "Evolution - Bellsprout",
+    "item": "Weepinbell"
+  },
+  "EVOLVE_TENTACOOL": {
+    "name": "Evolution - Tentacool",
+    "item": "Tentacruel"
+  },
+  "EVOLVE_GEODUDE": {
+    "name": "Evolution - Geodude",
+    "item": "Graveler"
+  },
+  "EVOLVE_GRAVELER": {
+    "name": "Evolution - Graveler",
+    "item": "Golem"
+  },
+  "EVOLVE_PONYTA": {
+    "name": "Evolution - Ponyta",
+    "item": "Rapidash"
+  },
+  "EVOLVE_SLOWPOKE": {
+    "name": "Evolution - Slowpoke",
+    "item": "Slowbro"
+  },
+  "EVOLVE_MAGNEMITE": {
+    "name": "Evolution - Magnemite",
+    "item": "Magneton"
+  },
+  "EVOLVE_DODUO": {
+    "name": "Evolution - Doduo",
+    "item": "Dodrio"
+  },
+  "EVOLVE_SEEL": {
+    "name": "Evolution - Seel",
+    "item": "Dewgong"
+  },
+  "EVOLVE_GRIMER": {
+    "name": "Evolution - Grimer",
+    "item": "Muk"
+  },
+  "EVOLVE_GASTLY": {
+    "name": "Evolution - Gastly",
+    "item": "Haunter"
+  },
+  "EVOLVE_HAUNTER": {
+    "name": "Evolution - Haunter",
+    "item": "Gengar"
+  },
+  "EVOLVE_DROWZEE": {
+    "name": "Evolution - Drowzee",
+    "item": "Hypno"
+  },
+  "EVOLVE_KRABBY": {
+    "name": "Evolution - Krabby",
+    "item": "Kingler"
+  },
+  "EVOLVE_VOLTORB": {
+    "name": "Evolution - Voltorb",
+    "item": "Electrode"
+  },
+  "EVOLVE_CUBONE": {
+    "name": "Evolution - Cubone",
+    "item": "Marowak"
+  },
+  "EVOLVE_KOFFING": {
+    "name": "Evolution - Koffing",
+    "item": "Weezing"
+  },
+  "EVOLVE_RHYHORN": {
+    "name": "Evolution - Rhyhorn",
+    "item": "Rhydon"
+  },
+  "EVOLVE_CHANSEY": {
+    "name": "Evolution - Chansey",
+    "item": "Blissey"
+  },
+  "EVOLVE_HORSEA": {
+    "name": "Evolution - Horsea",
+    "item": "Seadra"
+  },
+  "EVOLVE_GOLDEEN": {
+    "name": "Evolution - Goldeen",
+    "item": "Seaking"
+  },
+  "EVOLVE_MAGIKARP": {
+    "name": "Evolution - Magikarp",
+    "item": "Gyarados"
+  },
+  "EVOLVE_OMANYTE": {
+    "name": "Evolution - Omanyte",
+    "item": "Omastar"
+  },
+  "EVOLVE_KABUTO": {
+    "name": "Evolution - Kabuto",
+    "item": "Kabutops"
+  },
+  "EVOLVE_DRATINI": {
+    "name": "Evolution - Dratini",
+    "item": "Dragonair"
+  },
+  "EVOLVE_DRAGONAIR": {
+    "name": "Evolution - Dragonair",
+    "item": "Dragonite"
+  },
+  "EVOLVE_CHIKORITA": {
+    "name": "Evolution - Chikorita",
+    "item": "Bayleef"
+  },
+  "EVOLVE_BAYLEEF": {
+    "name": "Evolution - Bayleef",
+    "item": "Meganium"
+  },
+  "EVOLVE_CYNDAQUIL": {
+    "name": "Evolution - Cyndaquil",
+    "item": "Quilava"
+  },
+  "EVOLVE_QUILAVA": {
+    "name": "Evolution - Quilava",
+    "item": "Typhlosion"
+  },
+  "EVOLVE_TOTODILE": {
+    "name": "Evolution - Totodile",
+    "item": "Croconaw"
+  },
+  "EVOLVE_CROCONAW": {
+    "name": "Evolution - Croconaw",
+    "item": "Feraligatr"
+  },
+  "EVOLVE_SENTRET": {
+    "name": "Evolution - Sentret",
+    "item": "Furret"
+  },
+  "EVOLVE_HOOTHOOT": {
+    "name": "Evolution - Hoothoot",
+    "item": "Noctowl"
+  },
+  "EVOLVE_LEDYBA": {
+    "name": "Evolution - Ledyba",
+    "item": "Ledian"
+  },
+  "EVOLVE_SPINARAK": {
+    "name": "Evolution - Spinarak",
+    "item": "Ariados"
+  },
+  "EVOLVE_CHINCHOU": {
+    "name": "Evolution - Chinchou",
+    "item": "Lanturn"
+  },
+  "EVOLVE_PICHU": {
+    "name": "Evolution - Pichu",
+    "item": "Pikachu"
+  },
+  "EVOLVE_CLEFFA": {
+    "name": "Evolution - Cleffa",
+    "item": "Clefairy"
+  },
+  "EVOLVE_IGGLYBUFF": {
+    "name": "Evolution - Igglybuff",
+    "item": "Jigglypuff"
+  },
+  "EVOLVE_TOGEPI": {
+    "name": "Evolution - Togepi",
+    "item": "Togetic"
+  },
+  "EVOLVE_NATU": {
+    "name": "Evolution - Natu",
+    "item": "Xatu"
+  },
+  "EVOLVE_MAREEP": {
+    "name": "Evolution - Mareep",
+    "item": "Flaaffy"
+  },
+  "EVOLVE_FLAAFFY": {
+    "name": "Evolution - Flaaffy",
+    "item": "Ampharos"
+  },
+  "EVOLVE_MARILL": {
+    "name": "Evolution - Marill",
+    "item": "Azumarill"
+  },
+  "EVOLVE_HOPPIP": {
+    "name": "Evolution - Hoppip",
+    "item": "Skiploom"
+  },
+  "EVOLVE_SKIPLOOM": {
+    "name": "Evolution - Skiploom",
+    "item": "Jumpluff"
+  },
+  "EVOLVE_WOOPER": {
+    "name": "Evolution - Wooper",
+    "item": "Quagsire"
+  },
+  "EVOLVE_PINECO": {
+    "name": "Evolution - Wooper",
+    "item": "Forretress"
+  },
+  "EVOLVE_SNUBBULL": {
+    "name": "Evolution - Snubbull",
+    "item": "Granbull"
+  },
+  "EVOLVE_TEDDIURSA": {
+    "name": "Evolution - Teddiursa",
+    "item": "Ursaring"
+  },
+  "EVOLVE_SLUGMA": {
+    "name": "Evolution - Slugma",
+    "item": "Magcargo"
+  },
+  "EVOLVE_SWINUB": {
+    "name": "Evolution - Swinub",
+    "item": "Piloswine"
+  },
+  "EVOLVE_REMORAID": {
+    "name": "Evolution - Remoraid",
+    "item": "Octillery"
+  },
+  "EVOLVE_HOUNDOUR": {
+    "name": "Evolution - Houndour",
+    "item": "Houndoom"
+  },
+  "EVOLVE_PHANPY": {
+    "name": "Evolution - Phanpy",
+    "item": "Donphan"
+  },
+  "EVOLVE_TYROGUE_ATK_LT_DEF": {
+    "name": "Evolution - Tyrogue (Atk < Def)",
+    "item": "Hitmonchan"
+  },
+  "EVOLVE_TYROGUE_ATK_GT_DEF": {
+    "name": "Evolution - Tyrogue (Atk > Def)",
+    "item": "Hitmonlee"
+  },
+  "EVOLVE_TYROGUE_ATK_EQ_DEF": {
+    "name": "Evolution - Tyrogue (Atk = Def)",
+    "item": "Hitmontop"
+  },
+  "EVOLVE_SMOOCHUM": {
+    "name": "Evolution - Smoochum",
+    "item": "Jynx"
+  },
+  "EVOLVE_ELEKID": {
+    "name": "Evolution - Elekid",
+    "item": "Electabuzz"
+  },
+  "EVOLVE_MAGBY": {
+    "name": "Evolution - Magby",
+    "item": "Magmar"
+  },
+  "EVOLVE_LARVITAR": {
+    "name": "Evolution - Larvitar",
+    "item": "Pupitar"
+  },
+  "EVOLVE_PUPITAR": {
+    "name": "Evolution - Pupitar",
+    "item": "Tyranitar"
+  },
+  "EVOLVE_TREECKO": {
+    "name": "Evolution - Treecko",
+    "item": "Grovyle"
+  },
+  "EVOLVE_GROVYLE": {
+    "name": "Evolution - Grovyle",
+    "item": "Sceptile"
+  },
+  "EVOLVE_TORCHIC": {
+    "name": "Evolution - Torchic",
+    "item": "Combusken"
+  },
+  "EVOLVE_COMBUSKEN": {
+    "name": "Evolution - Combusken",
+    "item": "Blaziken"
+  },
+  "EVOLVE_MUDKIP": {
+    "name": "Evolution - Mudkip",
+    "item": "Marshtomp"
+  },
+  "EVOLVE_MARSHTOMP": {
+    "name": "Evolution - Marshtomp",
+    "item": "Swampert"
+  },
+  "EVOLVE_POOCHYENA": {
+    "name": "Evolution - Poochyena",
+    "item": "Mightyena"
+  },
+  "EVOLVE_ZIGZAGOON": {
+    "name": "Evolution - Zigzagoon",
+    "item": "Linoone"
+  },
+  "EVOLVE_WURMPLE_LOW_PERSONALITY": {
+    "name": "Evolution - Wurmple (Low Personality)",
+    "item": "Silcoon"
+  },
+  "EVOLVE_WURMPLE_HIGH_PERSONALITY": {
+    "name": "Evolution - Wurmple (High Personality)",
+    "item": "Cascoon"
+  },
+  "EVOLVE_SILCOON": {
+    "name": "Evolution - Silcoon",
+    "item": "Beautifly"
+  },
+  "EVOLVE_CASCOON": {
+    "name": "Evolution - Cascoon",
+    "item": "Dustox"
+  },
+  "EVOLVE_LOTAD": {
+    "name": "Evolution - Lotad",
+    "item": "Lombre"
+  },
+  "EVOLVE_SEEDOT": {
+    "name": "Evolution - Seedot",
+    "item": "Nuzleaf"
+  },
+  "EVOLVE_NINCADA": {
+    "name": "Evolution - Nincada",
+    "item": "Ninjask"
+  },
+  "EVOLVE_NINCADA_EXTRA": {
+    "name": "Evolution - Nincada (Extra)",
+    "item": "Shedinja"
+  },
+  "EVOLVE_TAILLOW": {
+    "name": "Evolution - Taillow",
+    "item": "Swellow"
+  },
+  "EVOLVE_SHROOMISH": {
+    "name": "Evolution - Shroomish",
+    "item": "Breloom"
+  },
+  "EVOLVE_WINGULL": {
+    "name": "Evolution - Wingull",
+    "item": "Pelipper"
+  },
+  "EVOLVE_SURSKIT": {
+    "name": "Evolution - Surskit",
+    "item": "Masquerain"
+  },
+  "EVOLVE_WAILMER": {
+    "name": "Evolution - Wailmer",
+    "item": "Wailord"
+  },
+  "EVOLVE_BALTOY": {
+    "name": "Evolution - Baltoy",
+    "item": "Claydol"
+  },
+  "EVOLVE_BARBOACH": {
+    "name": "Evolution - Barboach",
+    "item": "Whiscash"
+  },
+  "EVOLVE_CORPHISH": {
+    "name": "Evolution - Corphish",
+    "item": "Crawdaunt"
+  },
+  "EVOLVE_FEEBAS": {
+    "name": "Evolution - Feebas",
+    "item": "Milotic"
+  },
+  "EVOLVE_CARVANHA": {
+    "name": "Evolution - Carvanha",
+    "item": "Sharpedo"
+  },
+  "EVOLVE_TRAPINCH": {
+    "name": "Evolution - Trapinch",
+    "item": "Vibrava"
+  },
+  "EVOLVE_VIBRAVA": {
+    "name": "Evolution - Vibrava",
+    "item": "Flygon"
+  },
+  "EVOLVE_MAKUHITA": {
+    "name": "Evolution - Makuhita",
+    "item": "Hariyama"
+  },
+  "EVOLVE_ELECTRIKE": {
+    "name": "Evolution - Electrike",
+    "item": "Manectric"
+  },
+  "EVOLVE_NUMEL": {
+    "name": "Evolution - Numel",
+    "item": "Camerupt"
+  },
+  "EVOLVE_SPHEAL": {
+    "name": "Evolution - Spheal",
+    "item": "Sealeo"
+  },
+  "EVOLVE_SEALEO": {
+    "name": "Evolution - Sealeo",
+    "item": "Walrein"
+  },
+  "EVOLVE_CACNEA": {
+    "name": "Evolution - Cacnea",
+    "item": "Cacturne"
+  },
+  "EVOLVE_SNORUNT": {
+    "name": "Evolution - Snorunt",
+    "item": "Glalie"
+  },
+  "EVOLVE_AZURILL": {
+    "name": "Evolution - Azurill",
+    "item": "Marill"
+  },
+  "EVOLVE_SPOINK": {
+    "name": "Evolution - Spoink",
+    "item": "Grumpig"
+  },
+  "EVOLVE_MEDITITE": {
+    "name": "Evolution - Meditite",
+    "item": "Medicham"
+  },
+  "EVOLVE_SWABLU": {
+    "name": "Evolution - Swablu",
+    "item": "Altaria"
+  },
+  "EVOLVE_WYNAUT": {
+    "name": "Evolution - Wynaut",
+    "item": "Wobbuffet"
+  },
+  "EVOLVE_DUSKULL": {
+    "name": "Evolution - Duskull",
+    "item": "Dusclops"
+  },
+  "EVOLVE_SLAKOTH": {
+    "name": "Evolution - Slakoth",
+    "item": "Vigoroth"
+  },
+  "EVOLVE_VIGOROTH": {
+    "name": "Evolution - Vigoroth",
+    "item": "Slaking"
+  },
+  "EVOLVE_GULPIN": {
+    "name": "Evolution - Gulpin",
+    "item": "Swalot"
+  },
+  "EVOLVE_WHISMUR": {
+    "name": "Evolution - Whismur",
+    "item": "Loudred"
+  },
+  "EVOLVE_LOUDRED": {
+    "name": "Evolution - Loudred",
+    "item": "Exploud"
+  },
+  "EVOLVE_SHUPPET": {
+    "name": "Evolution - Shuppet",
+    "item": "Banette"
+  },
+  "EVOLVE_ARON": {
+    "name": "Evolution - Aron",
+    "item": "Lairon"
+  },
+  "EVOLVE_LAIRON": {
+    "name": "Evolution - Lairon",
+    "item": "Aggron"
+  },
+  "EVOLVE_LILEEP": {
+    "name": "Evolution - Lileep",
+    "item": "Cradily"
+  },
+  "EVOLVE_ANORITH": {
+    "name": "Evolution - Anorith",
+    "item": "Armaldo"
+  },
+  "EVOLVE_RALTS": {
+    "name": "Evolution - Ralts",
+    "item": "Kirlia"
+  },
+  "EVOLVE_KIRLIA": {
+    "name": "Evolution - Kirlia",
+    "item": "Gardevoir"
+  },
+  "EVOLVE_BAGON": {
+    "name": "Evolution - Bagon",
+    "item": "Shelgon"
+  },
+  "EVOLVE_SHELGON": {
+    "name": "Evolution - Shelgon",
+    "item": "Salamence"
+  },
+  "EVOLVE_BELDUM": {
+    "name": "Evolution - Beldum",
+    "item": "Metang"
+  },
+  "EVOLVE_METANG": {
+    "name": "Evolution - Metang",
+    "item": "Metagross"
+  }
+}

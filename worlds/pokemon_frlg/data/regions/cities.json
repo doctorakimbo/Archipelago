@@ -1,9 +1,212 @@
 {
-  "REGION_PALLET_TOWN/MAIN": {
+  "REGION_EVOLUTION": {
     "parent_map": "MAP_PALLET_TOWN",
+    "name": "Evolution",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [
-      "EVENT_VISITED_PALLET_TOWN"
+      "EVOLVE_BULBASAUR",
+      "EVOLVE_IVYSAUR",
+      "EVOLVE_CHARMANDER",
+      "EVOLVE_CHARMELEON",
+      "EVOLVE_SQUIRTLE",
+      "EVOLVE_WARTORTLE",
+      "EVOLVE_CATERPIE",
+      "EVOLVE_METAPOD",
+      "EVOLVE_WEEDLE",
+      "EVOLVE_KAKUNA",
+      "EVOLVE_PIDGEY",
+      "EVOLVE_PIDGEOTTO",
+      "EVOLVE_RATTATA",
+      "EVOLVE_SPEAROW",
+      "EVOLVE_EKANS",
+      "EVOLVE_SANDSHREW",
+      "EVOLVE_NIDORAN_F",
+      "EVOLVE_NIDORAN_M",
+      "EVOLVE_ZUBAT",
+      "EVOLVE_GOLBAT",
+      "EVOLVE_ODDISH",
+      "EVOLVE_PARAS",
+      "EVOLVE_VENONAT",
+      "EVOLVE_DIGLETT",
+      "EVOLVE_MEOWTH",
+      "EVOLVE_PSYDUCK",
+      "EVOLVE_MANKEY",
+      "EVOLVE_POLIWAG",
+      "EVOLVE_ABRA",
+      "EVOLVE_KADABRA",
+      "EVOLVE_MACHOP",
+      "EVOLVE_MACHOKE",
+      "EVOLVE_BELLSPROUT",
+      "EVOLVE_TENTACOOL",
+      "EVOLVE_GEODUDE",
+      "EVOLVE_GRAVELER",
+      "EVOLVE_PONYTA",
+      "EVOLVE_SLOWPOKE",
+      "EVOLVE_MAGNEMITE",
+      "EVOLVE_DODUO",
+      "EVOLVE_SEEL",
+      "EVOLVE_GRIMER",
+      "EVOLVE_GASTLY",
+      "EVOLVE_HAUNTER",
+      "EVOLVE_DROWZEE",
+      "EVOLVE_KRABBY",
+      "EVOLVE_VOLTORB",
+      "EVOLVE_CUBONE",
+      "EVOLVE_KOFFING",
+      "EVOLVE_RHYHORN",
+      "EVOLVE_CHANSEY",
+      "EVOLVE_HORSEA",
+      "EVOLVE_GOLDEEN",
+      "EVOLVE_MAGIKARP",
+      "EVOLVE_OMANYTE",
+      "EVOLVE_KABUTO",
+      "EVOLVE_DRATINI",
+      "EVOLVE_DRAGONAIR",
+      "EVOLVE_CHIKORITA",
+      "EVOLVE_BAYLEEF",
+      "EVOLVE_CYNDAQUIL",
+      "EVOLVE_QUILAVA",
+      "EVOLVE_TOTODILE",
+      "EVOLVE_CROCONAW",
+      "EVOLVE_SENTRET",
+      "EVOLVE_HOOTHOOT",
+      "EVOLVE_LEDYBA",
+      "EVOLVE_SPINARAK",
+      "EVOLVE_CHINCHOU",
+      "EVOLVE_PICHU",
+      "EVOLVE_CLEFFA",
+      "EVOLVE_IGGLYBUFF",
+      "EVOLVE_TOGEPI",
+      "EVOLVE_NATU",
+      "EVOLVE_MAREEP",
+      "EVOLVE_FLAAFFY",
+      "EVOLVE_MARILL",
+      "EVOLVE_HOPPIP",
+      "EVOLVE_SKIPLOOM",
+      "EVOLVE_WOOPER",
+      "EVOLVE_PINECO",
+      "EVOLVE_SNUBBULL",
+      "EVOLVE_TEDDIURSA",
+      "EVOLVE_SLUGMA",
+      "EVOLVE_SWINUB",
+      "EVOLVE_REMORAID",
+      "EVOLVE_HOUNDOUR",
+      "EVOLVE_PHANPY",
+      "EVOLVE_TYROGUE_ATK_LT_DEF",
+      "EVOLVE_TYROGUE_ATK_GT_DEF",
+      "EVOLVE_TYROGUE_ATK_EQ_DEF",
+      "EVOLVE_SMOOCHUM",
+      "EVOLVE_ELEKID",
+      "EVOLVE_MAGBY",
+      "EVOLVE_LARVITAR",
+      "EVOLVE_PUPITAR",
+      "EVOLVE_TREECKO",
+      "EVOLVE_GROVYLE",
+      "EVOLVE_TORCHIC",
+      "EVOLVE_COMBUSKEN",
+      "EVOLVE_MUDKIP",
+      "EVOLVE_MARSHTOMP",
+      "EVOLVE_POOCHYENA",
+      "EVOLVE_ZIGZAGOON",
+      "EVOLVE_WURMPLE_LOW_PERSONALITY",
+      "EVOLVE_WURMPLE_HIGH_PERSONALITY",
+      "EVOLVE_SILCOON",
+      "EVOLVE_CASCOON",
+      "EVOLVE_LOTAD",
+      "EVOLVE_SEEDOT",
+      "EVOLVE_NINCADA",
+      "EVOLVE_NINCADA_EXTRA",
+      "EVOLVE_TAILLOW",
+      "EVOLVE_SHROOMISH",
+      "EVOLVE_WINGULL",
+      "EVOLVE_SURSKIT",
+      "EVOLVE_WAILMER",
+      "EVOLVE_BALTOY",
+      "EVOLVE_BARBOACH",
+      "EVOLVE_CORPHISH",
+      "EVOLVE_FEEBAS",
+      "EVOLVE_CARVANHA",
+      "EVOLVE_TRAPINCH",
+      "EVOLVE_VIBRAVA",
+      "EVOLVE_MAKUHITA",
+      "EVOLVE_ELECTRIKE",
+      "EVOLVE_NUMEL",
+      "EVOLVE_SPHEAL",
+      "EVOLVE_SEALEO",
+      "EVOLVE_CACNEA",
+      "EVOLVE_SNORUNT",
+      "EVOLVE_AZURILL",
+      "EVOLVE_SPOINK",
+      "EVOLVE_MEDITITE",
+      "EVOLVE_SWABLU",
+      "EVOLVE_WYNAUT",
+      "EVOLVE_DUSKULL",
+      "EVOLVE_SLAKOTH",
+      "EVOLVE_VIGOROTH",
+      "EVOLVE_GULPIN",
+      "EVOLVE_WHISMUR",
+      "EVOLVE_LOUDRED",
+      "EVOLVE_SHUPPET",
+      "EVOLVE_ARON",
+      "EVOLVE_LAIRON",
+      "EVOLVE_LILEEP",
+      "EVOLVE_ANORITH",
+      "EVOLVE_RALTS",
+      "EVOLVE_KIRLIA",
+      "EVOLVE_BAGON",
+      "EVOLVE_SHELGON",
+      "EVOLVE_BELDUM",
+      "EVOLVE_METANG"
+    ],
+    "exits": [],
+    "warps": []
+  },
+
+  "REGION_SKY": {
+    "parent_map": "MAP_PALLET_TOWN",
+    "name": "Sky",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_PALLET_TOWN/MAIN",
+      "REGION_VIRIDIAN_CITY/SOUTH",
+      "REGION_PEWTER_CITY/MAIN",
+      "REGION_CERULEAN_CITY/MAIN",
+      "REGION_VERMILION_CITY/MAIN",
+      "REGION_LAVENDER_TOWN/MAIN",
+      "REGION_CELADON_CITY/MAIN",
+      "REGION_SAFFRON_CITY/MAIN",
+      "REGION_FUCHSIA_CITY/MAIN",
+      "REGION_CINNABAR_ISLAND/MAIN",
+      "REGION_INDIGO_PLATEAU_EXTERIOR/MAIN",
+      "REGION_ONE_ISLAND/MAIN",
+      "REGION_TWO_ISLAND/MAIN",
+      "REGION_THREE_ISLAND/MAIN",
+      "REGION_FOUR_ISLAND/MAIN",
+      "REGION_FIVE_ISLAND/MAIN",
+      "REGION_SIX_ISLAND/MAIN",
+      "REGION_SEVEN_ISLAND/MAIN"
+    ]
+  },
+
+  "REGION_PALLET_TOWN/MAIN": {
+    "parent_map": "MAP_PALLET_TOWN",
+    "name": "Pallet Town",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
+    "locations": [
+      "NPC_GIFT_RECEIVED_AURORA_TICKET",
+      "NPC_GIFT_RECEIVED_MYSTIC_TICKET"
+    ],
+    "events": [
+      "EVENT_FLY_PALLET_TOWN"
     ],
     "exits": [
       "REGION_PALLET_TOWN/WATER",
@@ -17,6 +220,10 @@
   },
   "REGION_PALLET_TOWN/WATER": {
     "parent_map": "MAP_PALLET_TOWN",
+    "name": "Pallet Town Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -27,6 +234,10 @@
   },
   "REGION_PALLET_TOWN_PLAYERS_HOUSE_1F/MAIN": {
     "parent_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_1F",
+    "name": "Pallet Town Player's House 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -37,15 +248,26 @@
   },
   "REGION_PALLET_TOWN_PLAYERS_HOUSE_2F/MAIN": {
     "parent_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_2F",
+    "name": "Pallet Town Player's House 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [],
+    "exits": [
+      "REGION_SKY",
+      "REGION_EVOLUTION"
+    ],
     "warps": [
       "MAP_PALLET_TOWN_PLAYERS_HOUSE_2F:0/MAP_PALLET_TOWN_PLAYERS_HOUSE_1F:1"
     ]
   },
   "REGION_PALLET_TOWN_RIVALS_HOUSE/MAIN": {
     "parent_map": "MAP_PALLET_TOWN_RIVALS_HOUSE",
+    "name": "Pallet Town Rival's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_TOWN_MAP"
     ],
@@ -57,63 +279,84 @@
   },
   "REGION_PALLET_TOWN_PROFESSOR_OAKS_LAB/MAIN": {
     "parent_map": "MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB",
+    "name": "Pallet Town Oak's Lab",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
-      "NPC_GIFT_GOT_FIRST_POKEBALLS"
+      "NPC_GIFT_GOT_FIRST_POKEBALLS",
+      "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL"
     ],
     "events": [
-      "EVENT_DELIVERED_OAKS_PARCEL"
+      "EVENT_DELIVER_OAKS_PARCEL"
     ],
     "exits": [],
     "warps": [
       "MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB:0/MAP_PALLET_TOWN:2"
     ]
   },
-  "REGION_VIRIDIAN_CITY/MAIN": {
+  "REGION_VIRIDIAN_CITY/SOUTH": {
     "parent_map": "MAP_VIRIDIAN_CITY",
+    "name": "Viridian City South",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "NPC_GIFT_GOT_TEACHY_TV",
       "ITEM_VIRIDIAN_CITY_POTION"
     ],
     "events": [
-      "EVENT_VISITED_VIRIDIAN_CITY"
+      "EVENT_FLY_VIRIDIAN_CITY"
     ],
     "exits": [
+      "REGION_VIRIDIAN_CITY/NORTH",
       "REGION_VIRIDIAN_CITY/POND",
       "REGION_VIRIDIAN_CITY/ACROSS_POND",
       "REGION_ROUTE1/MAIN",
-      "REGION_ROUTE2/SOUTHWEST",
       "REGION_ROUTE22/MAIN"
     ],
     "warps": [
       "MAP_VIRIDIAN_CITY:0/MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F:0",
       "MAP_VIRIDIAN_CITY:1/MAP_VIRIDIAN_CITY_HOUSE:0",
-      "MAP_VIRIDIAN_CITY:2/MAP_VIRIDIAN_CITY_GYM:0",
       "MAP_VIRIDIAN_CITY:3/MAP_VIRIDIAN_CITY_SCHOOL:0",
       "MAP_VIRIDIAN_CITY:4/MAP_VIRIDIAN_CITY_MART:0"
     ]
   },
+  "REGION_VIRIDIAN_CITY/NORTH": {
+    "parent_map": "MAP_VIRIDIAN_CITY",
+    "name": "Viridian City North",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_VIRIDIAN_CITY/SOUTH",
+      "REGION_ROUTE2/SOUTHWEST"
+    ],
+    "warps": [
+      "MAP_VIRIDIAN_CITY:2/MAP_VIRIDIAN_CITY_GYM:0"
+    ]
+  },
   "REGION_VIRIDIAN_CITY/POND": {
     "parent_map": "MAP_VIRIDIAN_CITY",
+    "name": "Viridian City Pond",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_VIRIDIAN_CITY/MAIN",
       "REGION_VIRIDIAN_CITY/ACROSS_POND"
-    ],
-    "warps": []
-  },
-  "REGION_VIRIDIAN_CITY/ACROSS_POND": {
-    "parent_map": "MAP_VIRIDIAN_CITY",
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_VIRIDIAN_CITY/MAIN",
-      "REGION_VIRIDIAN_CITY/POND"
     ],
     "warps": []
   },
   "REGION_VIRIDIAN_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F",
+    "name": "Viridian City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -124,6 +367,10 @@
   },
   "REGION_VIRIDIAN_CITY_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_2F",
+    "name": "Viridian City Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -133,6 +380,10 @@
   },
   "REGION_VIRIDIAN_CITY_HOUSE/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_HOUSE",
+    "name": "Viridian City House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -142,13 +393,17 @@
   },
   "REGION_VIRIDIAN_CITY_GYM/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_GYM",
+    "name": "Viridian Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_8",
       "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE",
       "NPC_GIFT_GOT_TM26_FROM_GIOVANNI"
     ],
     "events": [
-      "EVENT_DEFEATED_GIOVANNI"
+      "EVENT_DEFEAT_GIOVANNI"
     ],
     "exits": [],
     "warps": [
@@ -157,6 +412,10 @@
   },
   "REGION_VIRIDIAN_CITY_SCHOOL/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_SCHOOL",
+    "name": "Viridian City School",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -166,6 +425,10 @@
   },
   "REGION_VIRIDIAN_CITY_MART/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_MART",
+    "name": "Viridian City Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_OAKS_PARCEL"
     ],
@@ -177,11 +440,15 @@
   },
   "REGION_PEWTER_CITY/MAIN": {
     "parent_map": "MAP_PEWTER_CITY",
+    "name": "Pewter City",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL"
     ],
     "events": [
-      "EVENT_VISITED_PEWTER_CITY"
+      "EVENT_FLY_PEWTER_CITY"
     ],
     "exits": [
       "REGION_PEWTER_CITY/BEHIND_CUTTABLE_TREE",
@@ -199,6 +466,10 @@
   },
   "REGION_PEWTER_CITY/BEHIND_CUTTABLE_TREE": {
     "parent_map": "MAP_PEWTER_CITY",
+    "name": "Pewter City Museum Back Entrance",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -210,6 +481,10 @@
   },
   "REGION_MAP_PEWTER_CITY_MUSEUM_1F/WEST": {
     "parent_map": "MAP_PEWTER_CITY_MUSEUM_1F",
+    "name": "Pewter City Museum 1F Front Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -220,6 +495,10 @@
   },
   "REGION_MAP_PEWTER_CITY_MUSEUM_1F/EAST": {
     "parent_map": "MAP_PEWTER_CITY_MUSEUM_1F",
+    "name": "Pewter City Museum 1F Back Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_OLD_AMBER"
     ],
@@ -231,6 +510,10 @@
   },
   "REGION_MAP_PEWTER_CITY_MUSEUM_2F/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_MUSEUM_2F",
+    "name": "Pewter City Museum 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -240,12 +523,16 @@
   },
   "REGION_MAP_PEWTER_CITY_GYM/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_GYM",
+    "name": "Pewter Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_1",
       "NPC_GIFT_GOT_TM39_FROM_BROCK"
     ],
     "events": [
-      "EVENT_DEFEATED_BROCK"
+      "EVENT_DEFEAT_BROCK"
     ],
     "exits": [],
     "warps": [
@@ -254,6 +541,10 @@
   },
   "REGION_PEWTER_CITY_MART/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_MART",
+    "name": "Pewter City Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -263,6 +554,10 @@
   },
   "REGION_PEWTER_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_HOUSE1",
+    "name": "Pewter City Northeast House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -272,6 +567,10 @@
   },
   "REGION_PEWTER_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_POKEMON_CENTER_1F",
+    "name": "Pewter City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -282,6 +581,10 @@
   },
   "REGION_PEWTER_CITY_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_POKEMON_CENTER_2F",
+    "name": "Pewter City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -291,6 +594,10 @@
   },
   "REGION_PEWTER_CITY_HOUSE2/MAIN": {
     "parent_map": "MAP_PEWTER_CITY_HOUSE2",
+    "name": "Pewter City Southwest House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -300,11 +607,15 @@
   },
   "REGION_CERULEAN_CITY/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_FAME_CHECKER"
     ],
     "events": [
-      "EVENT_VISITED_CERULEAN_CITY"
+      "EVENT_FLY_CERULEAN_CITY"
     ],
     "exits": [
       "REGION_CERULEAN_CITY/OUTSKIRTS",
@@ -325,6 +636,10 @@
   },
   "REGION_CERULEAN_CITY/BACKYARD": {
     "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City Backyard",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY"
     ],
@@ -336,6 +651,10 @@
   },
   "REGION_CERULEAN_CITY/OUTSKIRTS": {
     "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City Outskirts",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_TM28_FROM_ROCKET"
     ],
@@ -352,6 +671,10 @@
   },
   "REGION_CERULEAN_CITY/SOUTH_LEDGE": {
     "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City South Ledges",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -361,6 +684,10 @@
   },
   "REGION_CERULEAN_CITY/WATER": {
     "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -372,6 +699,10 @@
   },
   "REGION_CERULEAN_CITY/CAVE_ENTRANCE": {
     "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City Near Cerulean Cave",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -384,6 +715,10 @@
   },
   "REGION_CERULEAN_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE1",
+    "name": "Cerulean City Northwest House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -394,6 +729,10 @@
   },
   "REGION_CERULEAN_CITY_HOUSE2/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE2",
+    "name": "Cerulean City Robbed House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -404,8 +743,14 @@
   },
   "REGION_CERULEAN_CITY_HOUSE3/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE3",
+    "name": "Cerulean City Center House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "TRADE_POKEMON_JYNX"
+    ],
     "exits": [],
     "warps": [
       "MAP_CERULEAN_CITY_HOUSE3:0/MAP_CERULEAN_CITY:2"
@@ -413,6 +758,10 @@
   },
   "REGION_CERULEAN_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_POKEMON_CENTER_1F",
+    "name": "Cerulean City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -423,6 +772,10 @@
   },
   "REGION_CERULEAN_CITY_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_POKEMON_CENTER_2F",
+    "name": "Cerulean City Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -432,12 +785,16 @@
   },
   "REGION_CERULEAN_CITY_GYM/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_GYM",
+    "name": "Cerulean Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_2",
       "NPC_GIFT_GOT_TM03_FROM_MISTY"
     ],
     "events": [
-      "EVENT_DEFEATED_MISTY"
+      "EVENT_DEFEAT_MISTY"
     ],
     "exits": [],
     "warps": [
@@ -446,6 +803,10 @@
   },
   "REGION_CERULEAN_CITY_BIKE_SHOP/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_BIKE_SHOP",
+    "name": "Cerulean City Bike Shop",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_BICYCLE"
     ],
@@ -457,6 +818,10 @@
   },
   "REGION_CERULEAN_CITY_MART/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_MART",
+    "name": "Cerulean City Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -466,6 +831,10 @@
   },
   "REGION_CERULEAN_CITY_HOUSE4/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE4",
+    "name": "Cerulean City South House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -475,6 +844,10 @@
   },
   "REGION_CERULEAN_CITY_HOUSE5/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE5",
+    "name": "Cerulean City Berry Powder Man's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_POWDER_JAR"
     ],
@@ -486,11 +859,15 @@
   },
   "REGION_VERMILION_CITY/MAIN": {
     "parent_map": "MAP_VERMILION_CITY",
+    "name": "Vermilion City",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER"
     ],
     "events": [
-      "EVENT_VISITED_VERMILION_CITY"
+      "EVENT_FLY_VERMILION_CITY"
     ],
     "exits": [
       "REGION_VERMILION_CITY/GYM",
@@ -520,6 +897,10 @@
   },
   "REGION_VERMILION_CITY/GYM": {
     "parent_map": "MAP_VERMILION_CITY",
+    "name": "Vermilion City Near Gym Entrance",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -530,28 +911,27 @@
       "MAP_VERMILION_CITY:7/MAP_VERMILION_CITY_GYM:0"
     ]
   },
-  "REGION_VERMILION_CITY/WEST_WATER": {
+  "REGION_VERMILION_CITY/WATER": {
     "parent_map": "MAP_VERMILION_CITY",
+    "name": "Vermilion City Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
       "REGION_VERMILION_CITY/MAIN",
-      "REGION_VERMILION_CITY/GYM"
-    ],
-    "warps": []
-  },
-  "REGION_VERMILION_CITY/EAST_WATER": {
-    "parent_map": "MAP_VERMILION_CITY",
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_VERMILION_CITY/MAIN",
+      "REGION_VERMILION_CITY/GYM",
       "REGION_ROUTE11/WATER"
     ],
     "warps": []
   },
   "REGION_VERMILION_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_HOUSE1",
+    "name": "Vermilion City Fishing Guru's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_OLD_ROD"
     ],
@@ -563,6 +943,10 @@
   },
   "REGION_VERMILION_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_POKEMON_CENTER_1F",
+    "name": "Vermilion City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_VS_SEEKER"
     ],
@@ -575,6 +959,10 @@
   },
   "REGION_VERMILION_CITY_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_POKEMON_CENTER_2F",
+    "name": "Vermilion City Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -584,6 +972,10 @@
   },
   "REGION_VERMILION_CITY_POKEMON_FAN_CLUB/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_POKEMON_FAN_CLUB",
+    "name": "Vermilion City Pokemon Fan Club",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_BIKE_VOUCHER"
     ],
@@ -595,8 +987,14 @@
   },
   "REGION_VERMILION_CITY_HOUSE2/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_HOUSE2",
+    "name": "Vermilion City Center House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "TRADE_POKEMON_FARFETCHD"
+    ],
     "exits": [],
     "warps": [
       "MAP_VERMILION_CITY_HOUSE2:0/MAP_VERMILION_CITY:4"
@@ -604,6 +1002,10 @@
   },
   "REGION_VERMILION_CITY_MART/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_MART",
+    "name": "Vermilion City Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -613,6 +1015,10 @@
   },
   "REGION_VERMILION_CITY_HOUSE3/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_HOUSE3",
+    "name": "Vermilion City South House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -622,12 +1028,16 @@
   },
   "REGION_VERMILION_CITY_GYM/MAIN": {
     "parent_map": "MAP_VERMILION_CITY_GYM",
+    "name": "Vermilion City Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_3",
       "NPC_GIFT_GOT_TM34_FROM_SURGE"
     ],
     "events": [
-      "EVENT_DEFEATED_LT_SURGE"
+      "EVENT_DEFEAT_LT_SURGE"
     ],
     "exits": [],
     "warps": [
@@ -636,9 +1046,13 @@
   },
   "REGION_LAVENDER_TOWN/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN",
+    "name": "Lavender Town",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [
-      "EVENT_VISITED_LAVENDER_TOWN"
+      "EVENT_FLY_LAVENDER_TOWN"
     ],
     "exits": [
       "REGION_ROUTE8/MAIN",
@@ -656,6 +1070,10 @@
   },
   "REGION_LAVENDER_TOWN_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_POKEMON_CENTER_1F",
+    "name": "Lavender Town Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -666,6 +1084,10 @@
   },
   "REGION_LAVENDER_TOWN_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_POKEMON_CENTER_2F",
+    "name": "Lavender Town Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -675,6 +1097,10 @@
   },
   "REGION_LAVENDER_TOWN_VOLUNTEER_POKEMON_HOUSE/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_VOLUNTEER_POKEMON_HOUSE",
+    "name": "Lavender Town Volunteer Pokemon House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_POKE_FLUTE"
     ],
@@ -686,6 +1112,10 @@
   },
   "REGION_LAVENDER_TOWN_HOUSE1/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_HOUSE1",
+    "name": "Lavender Town Southwest House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -695,6 +1125,10 @@
   },
   "REGION_LAVENDER_TOWN_HOUSE2/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_HOUSE2",
+    "name": "Lavender Town South House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -704,6 +1138,10 @@
   },
   "REGION_LAVENDER_TOWN_MART/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_MART",
+    "name": "Lavender Town Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -713,12 +1151,16 @@
   },
   "REGION_CELADON_CITY/MAIN": {
     "parent_map": "MAP_CELADON_CITY",
+    "name": "Celadon City",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "ITEM_CELADON_CITY_ETHER",
       "HIDDEN_ITEM_CELADON_CITY_PP_UP"
     ],
     "events": [
-      "EVENT_VISITED_CELADON_CITY"
+      "EVENT_FLY_CELADON_CITY"
     ],
     "exits": [
       "REGION_CELADON_CITY/GYM",
@@ -741,6 +1183,10 @@
   },
   "REGION_CELADON_CITY/GYM": {
     "parent_map": "MAP_CELADON_CITY",
+    "name": "Celadon City Near Gym Entrance",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -752,25 +1198,21 @@
   },
   "REGION_CELADON_CITY/POND": {
     "parent_map": "MAP_CELADON_CITY",
+    "name": "Celadon City Pond",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_CELADON_CITY/MAIN",
-      "REGION_CELADON_CITY/ACROSS_POND"
-    ],
-    "warps": []
-  },
-  "REGION_CELADON_CITY/ACROSS_POND": {
-    "parent_map": "MAP_CELADON_CITY",
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_CELADON_CITY/POND"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_CELADON_CITY_GAME_CORNER/MAIN": {
     "parent_map": "MAP_CELADON_CITY_GAME_CORNER",
+    "name": "Celadon City Game Corner",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -781,6 +1223,10 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_1F/MAIN": {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_1F",
+    "name": "Celadon City Department Store 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -794,6 +1240,10 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_2F/MAIN" : {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_2F",
+    "name": "Celadon City Department Store 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -806,6 +1256,10 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_3F/MAIN" : {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_3F",
+    "name": "Celadon City Department Store 3F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -818,6 +1272,10 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_4F/MAIN" : {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_4F",
+    "name": "Celadon City Department Store 4F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -830,6 +1288,10 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_5F/MAIN" : {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_5F",
+    "name": "Celadon City Department Store 5F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -842,8 +1304,18 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_ROOF/MAIN": {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_ROOF",
-    "locations": [],
-    "events": [],
+    "name": "Celadon City Department Store Roof",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [
+      "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL",
+      "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL",
+      "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL"
+    ],
+    "events": [
+      "EVENT_BUY_VENDING_MACHINE_LEMONADE"
+    ],
     "exits": [],
     "warps": [
       "MAP_CELADON_CITY_DEPARTMENT_STORE_ROOF:0/MAP_CELADON_CITY_DEPARTMENT_STORE_5F:2"
@@ -851,6 +1323,10 @@
   },
   "REGION_CELADON_CITY_DEPARTMENT_STORE_ELEVATOR/MAIN": {
     "parent_map": "MAP_CELADON_CITY_DEPARTMENT_STORE_ELEVATOR",
+    "name": "Celadon City Department Store Elevator",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -864,6 +1340,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_1F/FRONT": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_1F",
+    "name": "Celadon City Condominiums 1F Front",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_TEA"
     ],
@@ -876,6 +1356,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_1F/BACK": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_1F",
+    "name": "Celadon City Condominiums 1F Back",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -886,6 +1370,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_2F/FRONT": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_2F",
+    "name": "Celadon City Condominiums 2F Front",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -896,6 +1384,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_2F/BACK": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_2F",
+    "name": "Celadon City Condominiums 2F Back",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -906,6 +1398,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_3F/FRONT": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_3F",
+    "name": "Celadon City Condominiums 3F Front",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -916,6 +1412,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_3F/BACK": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_3F",
+    "name": "Celadon City Condominiums 3F Back",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -926,6 +1426,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_ROOF/FRONT": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF",
+    "name": "Celadon City Condominiums Roof Front",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -935,6 +1439,10 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_ROOF/BACK": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF",
+    "name": "Celadon City Condominiums Roof Back",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -945,8 +1453,14 @@
   },
   "REGION_CELADON_CITY_CONDOMINIUMS_ROOF_ROOM/MAIN": {
     "parent_map": "MAP_CELADON_CITY_CONDOMINIUMS_ROOF_ROOM",
+    "name": "Celadon City Condominiums Roof Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "GIFT_POKEMON_EEVEE"
+    ],
     "exits": [],
     "warps": [
       "MAP_CELADON_CITY_CONDOMINIUMS_ROOF_ROOM:0/MAP_CELADON_CITY_CONDOMINIUMS_ROOF:2"
@@ -954,6 +1468,10 @@
   },
   "REGION_CELADON_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_CELADON_CITY_POKEMON_CENTER_1F",
+    "name": "Celadon City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -964,6 +1482,10 @@
   },
   "REGION_CELADON_CITY_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_CELADON_CITY_POKEMON_CENTER_2F",
+    "name": "Celadon City Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -973,8 +1495,18 @@
   },
   "REGION_CELADON_CITY_GAME_CORNER_PRIZE_ROOM/MAIN": {
     "parent_map": "MAP_CELADON_CITY_GAME_CORNER_PRIZE_ROOM",
+    "name": "Celadon City Game Corner Prize Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "CELADON_PRIZE_POKEMON_1",
+      "CELADON_PRIZE_POKEMON_2",
+      "CELADON_PRIZE_POKEMON_3",
+      "CELADON_PRIZE_POKEMON_4",
+      "CELADON_PRIZE_POKEMON_5"
+    ],
     "exits": [],
     "warps": [
       "MAP_CELADON_CITY_GAME_CORNER_PRIZE_ROOM:0/MAP_CELADON_CITY:5"
@@ -982,6 +1514,10 @@
   },
   "REGION_CELADON_CITY_GYM/MAIN": {
     "parent_map": "MAP_CELADON_CITY_GYM",
+    "name": "Celadon Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -993,20 +1529,26 @@
   },
   "REGION_CELADON_CITY_GYM/BEHIND_CUTTABLE_TREES": {
     "parent_map": "MAP_CELADON_CITY_GYM",
+    "name": "Celadon Gym Enclosed Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_4",
       "NPC_GIFT_GOT_TM19_FROM_ERIKA"
     ],
     "events": [
-      "EVENT_DEFEATED_ERIKA"
+      "EVENT_DEFEAT_ERIKA"
     ],
-    "exits": [
-      "REGION_CELADON_CITY_GYM/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_CELADON_CITY_RESTAURANT/MAIN": {
     "parent_map": "MAP_CELADON_CITY_RESTAURANT",
+    "name": "Celadon City Restaurant",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_COIN_CASE"
     ],
@@ -1018,6 +1560,10 @@
   },
   "REGION_CELADON_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_CELADON_CITY_HOUSE1",
+    "name": "Celadon City House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1027,6 +1573,10 @@
   },
   "REGION_CELADON_CITY_HOTEL/MAIN": {
     "parent_map": "MAP_CELADON_CITY_HOTEL",
+    "name": "Celadon City Hotel",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1034,229 +1584,15 @@
       "MAP_CELADON_CITY_HOTEL:0/MAP_CELADON_CITY:9"
     ]
   },
-  "REGION_SAFFRON_CITY/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY",
-    "locations": [],
-    "events": [
-      "EVENT_VISITED_SAFFRON_CITY"
-    ],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY:0/MAP_SILPH_CO_1F:0",
-      "MAP_SAFFRON_CITY:1/MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:0",
-      "MAP_SAFFRON_CITY:2/MAP_SAFFRON_CITY_DOJO:0",
-      "MAP_SAFFRON_CITY:3/MAP_SAFFRON_CITY_GYM:0",
-      "MAP_SAFFRON_CITY:4/MAP_SAFFRON_CITY_HOUSE:0",
-      "MAP_SAFFRON_CITY:5/MAP_SAFFRON_CITY_MART:0",
-      "MAP_SAFFRON_CITY:6/MAP_SAFFRON_CITY_POKEMON_CENTER_1F:0",
-      "MAP_SAFFRON_CITY:7/MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE:0",
-      "MAP_SAFFRON_CITY:8/MAP_ROUTE7_EAST_ENTRANCE:1",
-      "MAP_SAFFRON_CITY:9,10/MAP_ROUTE5_SOUTH_ENTRANCE:1",
-      "MAP_SAFFRON_CITY:11/MAP_ROUTE8_WEST_ENTRANCE:0",
-      "MAP_SAFFRON_CITY:12,13/MAP_ROUTE6_NORTH_ENTRANCE:0",
-      "MAP_SAFFRON_CITY:14/MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0"
-    ]
-  },
-  "REGION_SAFFRON_CITY_COPYCATS_HOUSE_1F/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:0/MAP_SAFFRON_CITY:1",
-      "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:1/MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F:0"
-    ]
-  },
-  "REGION_SAFFRON_CITY_COPYCATS_HOUSE_2F/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F",
-    "locations": [
-      "HIDDEN_ITEM_SAFFRON_CITY_COPYCATS_HOUSE_2F_NUGGET"
-    ],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F:0/MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:1"
-    ]
-  },
-  "REGION_SAFFRON_CITY_DOJO/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_DOJO",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_DOJO:0/MAP_SAFFRON_CITY:2"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/NORTHWEST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:2/MAP_SAFFRON_CITY_GYM:20",
-      "MAP_SAFFRON_CITY_GYM:3/MAP_SAFFRON_CITY_GYM:18",
-      "MAP_SAFFRON_CITY_GYM:8/MAP_SAFFRON_CITY_GYM:16",
-      "MAP_SAFFRON_CITY_GYM:9/MAP_SAFFRON_CITY_GYM:5"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/NORTH": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:14/MAP_SAFFRON_CITY_GYM:22",
-      "MAP_SAFFRON_CITY_GYM:15/MAP_SAFFRON_CITY_GYM:10",
-      "MAP_SAFFRON_CITY_GYM:16/MAP_SAFFRON_CITY_GYM:8",
-      "MAP_SAFFRON_CITY_GYM:17/MAP_SAFFRON_CITY_GYM:7"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/NORTHEAST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:19/MAP_SAFFRON_CITY_GYM:21",
-      "MAP_SAFFRON_CITY_GYM:20/MAP_SAFFRON_CITY_GYM:2",
-      "MAP_SAFFRON_CITY_GYM:25/MAP_SAFFRON_CITY_GYM:23",
-      "MAP_SAFFRON_CITY_GYM:26/MAP_SAFFRON_CITY_GYM:6"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/WEST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:4/MAP_SAFFRON_CITY_GYM:28",
-      "MAP_SAFFRON_CITY_GYM:5/MAP_SAFFRON_CITY_GYM:9",
-      "MAP_SAFFRON_CITY_GYM:10/MAP_SAFFRON_CITY_GYM:15",
-      "MAP_SAFFRON_CITY_GYM:11/MAP_SAFFRON_CITY_GYM:13"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/CENTER": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [
-      "BADGE_6",
-      "NPC_GIFT_GOT_TM04_FROM_SABRINA"
-    ],
-    "events": [
-      "EVENT_DEFEATED_SABRINA"
-    ],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:18/MAP_SAFFRON_CITY_GYM:3"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/EAST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:21/MAP_SAFFRON_CITY_GYM:19",
-      "MAP_SAFFRON_CITY_GYM:22/MAP_SAFFRON_CITY_GYM:14",
-      "MAP_SAFFRON_CITY_GYM:27/MAP_SAFFRON_CITY_GYM:29",
-      "MAP_SAFFRON_CITY_GYM:28/MAP_SAFFRON_CITY_GYM:4"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/SOUTHWEST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:6/MAP_SAFFRON_CITY_GYM:26",
-      "MAP_SAFFRON_CITY_GYM:7/MAP_SAFFRON_CITY_GYM:17",
-      "MAP_SAFFRON_CITY_GYM:12/MAP_SAFFRON_CITY_GYM:24",
-      "MAP_SAFFRON_CITY_GYM:13/MAP_SAFFRON_CITY_GYM:11"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/SOUTH": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:0/MAP_SAFFRON_CITY:3",
-      "MAP_SAFFRON_CITY_GYM:1/MAP_SAFFRON_CITY_GYM:30"
-    ]
-  },
-  "REGION_SAFFRON_CITY_GYM/SOUTHEAST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_GYM:23/MAP_SAFFRON_CITY_GYM:25",
-      "MAP_SAFFRON_CITY_GYM:24/MAP_SAFFRON_CITY_GYM:12",
-      "MAP_SAFFRON_CITY_GYM:29/MAP_SAFFRON_CITY_GYM:27",
-      "MAP_SAFFRON_CITY_GYM:30/MAP_SAFFRON_CITY_GYM:1"
-    ]
-  },
-  "REGION_SAFFRON_CITY_HOUSE/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_HOUSE",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_HOUSE:0/MAP_SAFFRON_CITY:4"
-    ]
-  },
-  "REGION_SAFFRON_CITY_MART/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_MART",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_MART:0/MAP_SAFFRON_CITY:5"
-    ]
-  },
-  "REGION_SAFFRON_CITY_POKEMON_CENTER_1F/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_POKEMON_CENTER_1F",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_POKEMON_CENTER_1F:0/MAP_SAFFRON_CITY:6",
-      "MAP_SAFFRON_CITY_POKEMON_CENTER_1F:1/MAP_SAFFRON_CITY_POKEMON_CENTER_2F:0"
-    ]
-  },
-  "REGION_SAFFRON_CITY_POKEMON_CENTER_2F/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_POKEMON_CENTER_2F",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_POKEMON_CENTER_2F:0/MAP_SAFFRON_CITY_POKEMON_CENTER_1F:1"
-    ]
-  },
-  "REGION_SAFFRON_CITY_MR_PSYCHICS_HOUSE/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE",
-    "locations": [
-      "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC"
-    ],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE:0/MAP_SAFFRON_CITY:7"
-    ]
-  },
-  "REGION_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB/MAIN": {
-    "parent_map": "MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB",
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0/MAP_SAFFRON_CITY:14"
-    ]
-  },
   "REGION_FUCHSIA_CITY/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY",
+    "name": "Fuchsia City",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [
-      "EVENT_VISITED_FUCHSIA_CITY"
+      "EVENT_FLY_FUCHSIA_CITY"
     ],
     "exits": [
       "REGION_ROUTE15/SOUTHWEST",
@@ -1277,6 +1613,10 @@
   },
   "REGION_FUCHSIA_CITY/BACKYARD": {
     "parent_map": "MAP_FUCHSIA_CITY",
+    "name": "Fuchsia City Backyard",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE"
     ],
@@ -1290,11 +1630,13 @@
   },
   "REGION_FUCHSIA_CITY/POND": {
     "parent_map": "MAP_FUCHSIA_CITY",
+    "name": "Fuchsia City Pond",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_FUCHSIA_CITY/BACKYARD"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE/MAIN": {
@@ -1309,6 +1651,10 @@
   },
   "REGION_FUCHSIA_CITY_WARDENS_HOUSE/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_WARDENS_HOUSE",
+    "name": "Fuchsia City Warden's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_HM04",
       "ITEM_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY"
@@ -1321,6 +1667,10 @@
   },
   "REGION_FUCHSIA_CITY_MART/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_MART",
+    "name": "Fuchsia City Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1330,6 +1680,10 @@
   },
   "REGION_FUCHSIA_CITY_SAFARI_ZONE_OFFICE/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE",
+    "name": "Fuchsia City Safari Zone Office",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1339,12 +1693,16 @@
   },
   "REGION_FUCHSIA_CITY_GYM/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_GYM",
+    "name": "Fuchsia Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_5",
       "NPC_GIFT_GOT_TM06_FROM_KOGA"
     ],
     "events": [
-      "EVENT_DEFEATED_KOGA"
+      "EVENT_DEFEAT_KOGA"
     ],
     "exits": [],
     "warps": [
@@ -1353,6 +1711,10 @@
   },
   "REGION_FUCHSIA_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_HOUSE1",
+    "name": "Fuchsia City Southwest House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1362,6 +1724,10 @@
   },
   "REGION_FUCHSIA_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_POKEMON_CENTER_1F",
+    "name": "Fuchsia City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1372,6 +1738,10 @@
   },
   "REGION_FUCHSIA_CITY_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_POKEMON_CENTER_2F",
+    "name": "Fuchsia City Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1381,6 +1751,10 @@
   },
   "REGION_FUCHSIA_CITY_HOUSE2/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_HOUSE2",
+    "name": "Fuchsia City Fishing House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_GOOD_ROD"
     ],
@@ -1393,6 +1767,10 @@
   },
   "REGION_FUCHSIA_CITY_HOUSE3/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_HOUSE3",
+    "name": "Fuchsia City Move Deleter's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1400,13 +1778,309 @@
       "MAP_FUCHSIA_CITY_HOUSE3:0/MAP_FUCHSIA_CITY:9"
     ]
   },
-  "REGION_CINNABAR_ISLAND/MAIN": {
-    "parent_map": "MAP_CINNABAR_ISLAND",
+  "REGION_SAFFRON_CITY/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY",
+    "name": "Saffron City",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_SAFFRON_CITY"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY:0/MAP_SILPH_CO_1F:0",
+      "MAP_SAFFRON_CITY:1/MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:0",
+      "MAP_SAFFRON_CITY:2/MAP_SAFFRON_CITY_DOJO:0",
+      "MAP_SAFFRON_CITY:3/MAP_SAFFRON_CITY_GYM:0",
+      "MAP_SAFFRON_CITY:4/MAP_SAFFRON_CITY_HOUSE:0",
+      "MAP_SAFFRON_CITY:5/MAP_SAFFRON_CITY_MART:0",
+      "MAP_SAFFRON_CITY:6/MAP_SAFFRON_CITY_POKEMON_CENTER_1F:0",
+      "MAP_SAFFRON_CITY:7/MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE:0",
+      "MAP_SAFFRON_CITY:8/MAP_ROUTE7_EAST_ENTRANCE:1",
+      "MAP_SAFFRON_CITY:9,10/MAP_ROUTE5_SOUTH_ENTRANCE:1",
+      "MAP_SAFFRON_CITY:11/MAP_ROUTE8_WEST_ENTRANCE:0",
+      "MAP_SAFFRON_CITY:12,13/MAP_ROUTE6_NORTH_ENTRANCE:0",
+      "MAP_SAFFRON_CITY:14/MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0"
+    ]
+  },
+  "REGION_SAFFRON_CITY_COPYCATS_HOUSE_1F/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F",
+    "name": "Saffron City Copycat's House 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:0/MAP_SAFFRON_CITY:1",
+      "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:1/MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F:0"
+    ]
+  },
+  "REGION_SAFFRON_CITY_COPYCATS_HOUSE_2F/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F",
+    "name": "Saffron City Copycat's House 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
-      "NPC_GIFT_GOT_TRI_PASS"
+      "HIDDEN_ITEM_SAFFRON_CITY_COPYCATS_HOUSE_2F_NUGGET"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F:0/MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:1"
+    ]
+  },
+  "REGION_SAFFRON_CITY_DOJO/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_DOJO",
+    "name": "Saffron City Dojo",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_DOJO:0/MAP_SAFFRON_CITY:2"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/NORTHWEST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Northwest",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:2/MAP_SAFFRON_CITY_GYM:20",
+      "MAP_SAFFRON_CITY_GYM:3/MAP_SAFFRON_CITY_GYM:18",
+      "MAP_SAFFRON_CITY_GYM:8/MAP_SAFFRON_CITY_GYM:16",
+      "MAP_SAFFRON_CITY_GYM:9/MAP_SAFFRON_CITY_GYM:5"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/NORTH": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym North",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:14/MAP_SAFFRON_CITY_GYM:22",
+      "MAP_SAFFRON_CITY_GYM:15/MAP_SAFFRON_CITY_GYM:10",
+      "MAP_SAFFRON_CITY_GYM:16/MAP_SAFFRON_CITY_GYM:8",
+      "MAP_SAFFRON_CITY_GYM:17/MAP_SAFFRON_CITY_GYM:7"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/NORTHEAST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Northeast",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:19/MAP_SAFFRON_CITY_GYM:21",
+      "MAP_SAFFRON_CITY_GYM:20/MAP_SAFFRON_CITY_GYM:2",
+      "MAP_SAFFRON_CITY_GYM:25/MAP_SAFFRON_CITY_GYM:23",
+      "MAP_SAFFRON_CITY_GYM:26/MAP_SAFFRON_CITY_GYM:6"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/WEST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym West",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:4/MAP_SAFFRON_CITY_GYM:28",
+      "MAP_SAFFRON_CITY_GYM:5/MAP_SAFFRON_CITY_GYM:9",
+      "MAP_SAFFRON_CITY_GYM:10/MAP_SAFFRON_CITY_GYM:15",
+      "MAP_SAFFRON_CITY_GYM:11/MAP_SAFFRON_CITY_GYM:13"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/CENTER": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Center",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [
+      "BADGE_6",
+      "NPC_GIFT_GOT_TM04_FROM_SABRINA"
     ],
     "events": [
-      "EVENT_VISITED_CINNABAR_ISLAND"
+      "EVENT_DEFEAT_SABRINA"
+    ],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:18/MAP_SAFFRON_CITY_GYM:3"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/EAST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym East",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:21/MAP_SAFFRON_CITY_GYM:19",
+      "MAP_SAFFRON_CITY_GYM:22/MAP_SAFFRON_CITY_GYM:14",
+      "MAP_SAFFRON_CITY_GYM:27/MAP_SAFFRON_CITY_GYM:29",
+      "MAP_SAFFRON_CITY_GYM:28/MAP_SAFFRON_CITY_GYM:4"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/SOUTHWEST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Southwest",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:6/MAP_SAFFRON_CITY_GYM:26",
+      "MAP_SAFFRON_CITY_GYM:7/MAP_SAFFRON_CITY_GYM:17",
+      "MAP_SAFFRON_CITY_GYM:12/MAP_SAFFRON_CITY_GYM:24",
+      "MAP_SAFFRON_CITY_GYM:13/MAP_SAFFRON_CITY_GYM:11"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/SOUTH": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym South",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:0/MAP_SAFFRON_CITY:3",
+      "MAP_SAFFRON_CITY_GYM:1/MAP_SAFFRON_CITY_GYM:30"
+    ]
+  },
+  "REGION_SAFFRON_CITY_GYM/SOUTHEAST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Southeast",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_GYM:23/MAP_SAFFRON_CITY_GYM:25",
+      "MAP_SAFFRON_CITY_GYM:24/MAP_SAFFRON_CITY_GYM:12",
+      "MAP_SAFFRON_CITY_GYM:29/MAP_SAFFRON_CITY_GYM:27",
+      "MAP_SAFFRON_CITY_GYM:30/MAP_SAFFRON_CITY_GYM:1"
+    ]
+  },
+  "REGION_SAFFRON_CITY_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_HOUSE",
+    "name": "Saffron City House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_HOUSE:0/MAP_SAFFRON_CITY:4"
+    ]
+  },
+  "REGION_SAFFRON_CITY_MART/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_MART",
+    "name": "Saffron City Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_MART:0/MAP_SAFFRON_CITY:5"
+    ]
+  },
+  "REGION_SAFFRON_CITY_POKEMON_CENTER_1F/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_POKEMON_CENTER_1F",
+    "name": "Saffron City Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_POKEMON_CENTER_1F:0/MAP_SAFFRON_CITY:6",
+      "MAP_SAFFRON_CITY_POKEMON_CENTER_1F:1/MAP_SAFFRON_CITY_POKEMON_CENTER_2F:0"
+    ]
+  },
+  "REGION_SAFFRON_CITY_POKEMON_CENTER_2F/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_POKEMON_CENTER_2F",
+    "name": "Saffron City Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_POKEMON_CENTER_2F:0/MAP_SAFFRON_CITY_POKEMON_CENTER_1F:1"
+    ]
+  },
+  "REGION_SAFFRON_CITY_MR_PSYCHICS_HOUSE/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE",
+    "name": "Saffron City Mr. Psychic's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [
+      "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE:0/MAP_SAFFRON_CITY:7"
+    ]
+  },
+  "REGION_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB/MAIN": {
+    "parent_map": "MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB",
+    "name": "Saffron City Pokemon Trainer Fan Club",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0/MAP_SAFFRON_CITY:14"
+    ]
+  },
+  "REGION_CINNABAR_ISLAND/MAIN": {
+    "parent_map": "MAP_CINNABAR_ISLAND",
+    "name": "Cinnabar Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_CINNABAR_ISLAND"
     ],
     "exits": [
       "REGION_CINNABAR_ISLAND/WATER"
@@ -1421,6 +2095,10 @@
   },
   "REGION_CINNABAR_ISLAND/WATER": {
     "parent_map": "MAP_CINNABAR_ISLAND",
+    "name": "Cinnabar Island Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1429,14 +2107,18 @@
     ],
     "warps": []
   },
-  "REGION_CINNABAR_ISLAND_GYM": {
+  "REGION_CINNABAR_ISLAND_GYM/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_GYM",
+    "name": "Cinnabar Gym",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "BADGE_7",
       "NPC_GIFT_GOT_TM38_FROM_BLAINE"
     ],
     "events": [
-      "EVENT_DEFEATED_BLAINE"
+      "EVENT_DEFEAT_BLAINE"
     ],
     "exits": [],
     "warps": [
@@ -1445,6 +2127,10 @@
   },
   "REGION_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE",
+    "name": "Cinnabar Island Pokemon Lab Entrance",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1457,8 +2143,15 @@
   },
   "REGION_CINNABAR_ISLAND_POKEMON_LAB_LOUNGE/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_POKEMON_LAB_LOUNGE",
+    "name": "Cinnabar Island Pokemon Lab Lounge",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "TRADE_POKEMON_ELECTRODE",
+      "TRADE_POKEMON_TANGELA"
+    ],
     "exits": [],
     "warps": [
       "MAP_CINNABAR_ISLAND_POKEMON_LAB_LOUNGE:0/MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE:1"
@@ -1466,6 +2159,10 @@
   },
   "REGION_CINNABAR_ISLAND_POKEMON_LAB_RESEARCH_ROOM/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_POKEMON_LAB_RESEARCH_ROOM",
+    "name": "Cinnabar Island Pokemon Lab Research Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1475,8 +2172,17 @@
   },
   "REGION_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM",
+    "name": "Cinnabar Island Pokemon Lab Experiment Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "GIFT_POKEMON_OMANYTE",
+      "GIFT_POKEMON_KABUTO",
+      "GIFT_POKEMON_AERODACTYL",
+      "TRADE_POKEMON_SEEL"
+    ],
     "exits": [],
     "warps": [
       "MAP_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM:0/MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE:3"
@@ -1484,7 +2190,13 @@
   },
   "REGION_CINNABAR_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F",
-    "locations": [],
+    "name": "Cinnabar Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [
+      "NPC_GIFT_GOT_TRI_PASS"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -1494,6 +2206,10 @@
   },
   "REGION_CINNABAR_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_POKEMON_CENTER_2F",
+    "name": "Cinnabar Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1503,6 +2219,10 @@
   },
   "REGION_CINNABAR_ISLAND_MART/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_MART",
+    "name": "Cinnabar Island Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1512,6 +2232,10 @@
   },
   "REGION_INDIGO_PLATEAU_EXTERIOR/MAIN": {
     "parent_map": "MAP_INDIGO_PLATEAU_EXTERIOR",
+    "name": "Indigo Plateau Exterior",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -1523,6 +2247,10 @@
   },
   "REGION_INDIGO_PLATEAU_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F",
+    "name": "Indigo Plateau Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1534,6 +2262,10 @@
   },
   "REGION_INDIGO_PLATEAU_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER_2F",
+    "name": "Indigo Plateau Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1543,6 +2275,10 @@
   },
   "REGION_POKEMON_LEAGUE_LORELEIS_ROOM/MAIN": {
     "parent_map": "MAP_POKEMON_LEAGUE_LORELEIS_ROOM",
+    "name": "Pokemon League Lorelei's Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1553,6 +2289,10 @@
   },
   "REGION_POKEMON_LEAGUE_BRUNOS_ROOM/MAIN": {
     "parent_map": "MAP_POKEMON_LEAGUE_BRUNOS_ROOM",
+    "name": "Pokemon League Bruno's Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1563,6 +2303,10 @@
   },
   "REGION_POKEMON_LEAGUE_AGATHAS_ROOM/MAIN": {
     "parent_map": "MAP_POKEMON_LEAGUE_AGATHAS_ROOM",
+    "name": "Pokemon League Agatha's Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1573,6 +2317,10 @@
   },
   "REGION_POKEMON_LEAGUE_LANCES_ROOM/MAIN": {
     "parent_map": "MAP_POKEMON_LEAGUE_LANCES_ROOM",
+    "name": "Pokemon League Lance's Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1583,6 +2331,10 @@
   },
   "REGION_POKEMON_LEAGUE_CHAMPIONS_ROOM/MAIN": {
     "parent_map": "MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM",
+    "name": "Pokemon League Champion's Room",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1593,9 +2345,13 @@
   },
   "REGION_POKEMON_LEAGUE_HALL_OF_FAME/MAIN": {
     "parent_map": "MAP_POKEMON_LEAGUE_HALL_OF_FAME",
+    "name": "Pokemon League Hall of Fame",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [
-      "EVENT_DEFEATED_CHAMPION"
+      "EVENT_DEFEAT_CHAMPION"
     ],
     "exits": [],
     "warps": [

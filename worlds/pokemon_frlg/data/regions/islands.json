@@ -1,6 +1,10 @@
 {
   "REGION_ONE_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_HARBOR",
+    "name": "One Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -10,9 +14,7 @@
       "REGION_FOUR_ISLAND_HARBOR/MAIN",
       "REGION_FIVE_ISLAND_HARBOR/MAIN",
       "REGION_SIX_ISLAND_HARBOR/MAIN",
-      "REGION_SEVEN_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SEVEN_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_ONE_ISLAND_HARBOR:0/MAP_ONE_ISLAND:3"
@@ -20,9 +22,13 @@
   },
   "REGION_ONE_ISLAND/MAIN": {
     "parent_map": "MAP_ONE_ISLAND",
+    "name": "One Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [
-      "EVENT_VISITED_ONE_ISLAND"
+      "EVENT_FLY_ONE_ISLAND"
     ],
     "exits": [
       "REGION_ONE_ISLAND/WATER",
@@ -37,22 +43,29 @@
   },
   "REGION_ONE_ISLAND/WATER": {
     "parent_map": "MAP_ONE_ISLAND",
+    "name": "One Island Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ONE_ISLAND/MAIN",
       "REGION_ONE_ISLAND_TREASURE_BEACH/WATER"
     ],
     "warps": []
   },
   "REGION_ONE_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_POKEMON_CENTER_1F",
+    "name": "One Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_METEORITE",
       "NPC_GIFT_GOT_RAINBOW_PASS"
     ],
     "events": [
-      "EVENT_RESTORED_POKEMON_NETWORK_MACHINE"
+      "EVENT_RESTORE_POKEMON_NETWORK_MACHINE"
     ],
     "exits": [],
     "warps": [
@@ -62,6 +75,10 @@
   },
   "REGION_ONE_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_POKEMON_CENTER_2F",
+    "name": "One Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -71,6 +88,10 @@
   },
   "REGION_ONE_ISLAND_HOUSE1/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_HOUSE1",
+    "name": "One Island East House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -80,6 +101,10 @@
   },
   "REGION_ONE_ISLAND_HOUSE2/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_HOUSE2",
+    "name": "One Island West House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -89,16 +114,23 @@
   },
   "REGION_ONE_ISLAND_TREASURE_BEACH/WATER": {
     "parent_map": "MAP_ONE_ISLAND_TREASURE_BEACH",
+    "name": "Treasure Beach Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ONE_ISLAND_TREASURE_BEACH/BEACH",
-      "REGION_ONE_ISLAND/WATER"
+      "REGION_ONE_ISLAND_TREASURE_BEACH/BEACH"
     ],
     "warps": []
   },
   "REGION_ONE_ISLAND_TREASURE_BEACH/BEACH": {
     "parent_map": "MAP_ONE_ISLAND_TREASURE_BEACH",
+    "name": "Treasure Beach",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL",
       "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL",
@@ -110,13 +142,15 @@
       "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2"
     ],
     "events": [],
-    "exits": [
-      "REGION_ONE_ISLAND_TREASURE_BEACH/WATER"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_ONE_ISLAND_KINDLE_ROAD/SOUTH_BEACH": {
     "parent_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+    "name": "Kindle Road South Beach",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -127,6 +161,10 @@
   },
   "REGION_ONE_ISLAND_KINDLE_ROAD/SOUTH_WATER": {
     "parent_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+    "name": "Kindle Road South Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "ITEM_ONE_ISLAND_KINDLE_ROAD_MAX_REPEL"
     ],
@@ -139,6 +177,10 @@
   },
   "REGION_ONE_ISLAND_KINDLE_ROAD/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+    "name": "Kindle Road Main Area",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "ITEM_ONE_ISLAND_KINDLE_ROAD_CARBOS",
       "ITEM_ONE_ISLAND_KINDLE_ROAD_ETHER"
@@ -154,6 +196,10 @@
   },
   "REGION_ONE_ISLAND_KINDLE_ROAD/NORTH_WATER": {
     "parent_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+    "name": "Kindle Road North Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -163,6 +209,10 @@
   },
   "REGION_ONE_ISLAND_KINDLE_ROAD/NORTH_BEACH": {
     "parent_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+    "name": "Kindle Road North Beach",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -174,6 +224,10 @@
   },
   "REGION_ONE_ISLAND_KINDLE_ROAD_EMBER_SPA/MAIN": {
     "parent_map": "MAP_ONE_ISLAND_KINDLE_ROAD_EMBER_SPA",
+    "name": "Ember Spa",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_HM06"
     ],
@@ -185,6 +239,10 @@
   },
   "REGION_TWO_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_HARBOR",
+    "name": "Two Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -194,9 +252,7 @@
       "REGION_FOUR_ISLAND_HARBOR/MAIN",
       "REGION_FIVE_ISLAND_HARBOR/MAIN",
       "REGION_SIX_ISLAND_HARBOR/MAIN",
-      "REGION_SEVEN_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SEVEN_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_TWO_ISLAND_HARBOR:0/MAP_TWO_ISLAND:3"
@@ -204,11 +260,16 @@
   },
   "REGION_TWO_ISLAND/MAIN": {
     "parent_map": "MAP_TWO_ISLAND",
+    "name": "Two Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "ITEM_TWO_ISLAND_REVIVE"
     ],
     "events": [
-      "EVENT_VISITED_TWO_ISLAND"
+      "EVENT_FLY_TWO_ISLAND",
+      "EVENT_BUY_MARKET_LEMONADE"
     ],
     "exits": [
       "REGION_TWO_ISLAND_CAPE_BRINK/MAIN"
@@ -222,11 +283,15 @@
   },
   "REGION_TWO_ISLAND_JOYFUL_GAME_CORNER/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_JOYFUL_GAME_CORNER",
+    "name": "Two Island Game Corner",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER"
     ],
     "events": [
-      "EVENT_DELIVERED_METEORITE"
+      "EVENT_DELIVER_METEORITE"
     ],
     "exits": [],
     "warps": [
@@ -235,6 +300,10 @@
   },
   "REGION_TWO_ISLAND_HOUSE/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_HOUSE",
+    "name": "Two Island House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -244,6 +313,10 @@
   },
   "REGION_TWO_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_POKEMON_CENTER_1F",
+    "name": "Two Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -254,6 +327,10 @@
   },
   "REGION_TWO_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_POKEMON_CENTER_2F",
+    "name": "Two Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -263,6 +340,10 @@
   },
   "REGION_TWO_ISLAND_CAPE_BRINK/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_CAPE_BRINK",
+    "name": "Cape Brink",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_RARE_CANDY"
     ],
@@ -277,17 +358,23 @@
   },
   "REGION_TWO_ISLAND_CAPE_BRINK/POND": {
     "parent_map": "MAP_TWO_ISLAND_CAPE_BRINK",
+    "name": "Cape Brink Pond",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_PP_MAX"
     ],
     "events": [],
-    "exits": [
-      "REGION_TWO_ISLAND_CAPE_BRINK/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_TWO_ISLAND_CAPE_BRINK_HOUSE/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_CAPE_BRINK_HOUSE",
+    "name": "Cape Brink House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -297,6 +384,10 @@
   },
   "REGION_THREE_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_HARBOR",
+    "name": "Three Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -306,9 +397,7 @@
       "REGION_FOUR_ISLAND_HARBOR/MAIN",
       "REGION_FIVE_ISLAND_HARBOR/MAIN",
       "REGION_SIX_ISLAND_HARBOR/MAIN",
-      "REGION_SEVEN_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SEVEN_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_THREE_ISLAND_HARBOR:0/MAP_THREE_ISLAND_PORT:2"
@@ -316,6 +405,10 @@
   },
   "REGION_THREE_ISLAND_PORT/WEST": {
     "parent_map": "MAP_THREE_ISLAND_PORT",
+    "name": "Three Isle Port West Side",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -328,6 +421,10 @@
   },
   "REGION_THREE_ISLAND_PORT/EAST": {
     "parent_map": "MAP_THREE_ISLAND_PORT",
+    "name": "Three Isle Port East Side",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -337,6 +434,10 @@
   },
   "REGION_THREE_ISLAND_DUNSPARCE_TUNNEL/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_DUNSPARCE_TUNNEL",
+    "name": "Dunsparce Tunnel",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET",
       "NPC_GIFT_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL"
@@ -350,11 +451,15 @@
   },
   "REGION_THREE_ISLAND/MAIN": {
     "parent_map": "MAP_THREE_ISLAND",
+    "name": "Three Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER"
     ],
     "events": [
-      "EVENT_VISITED_THREE_ISLAND"
+      "EVENT_FLY_THREE_ISLAND"
     ],
     "exits": [
       "REGION_THREE_ISLAND/BEHIND_EAST_FENCE",
@@ -373,28 +478,36 @@
   },
   "REGION_THREE_ISLAND/BEHIND_EAST_FENCE": {
     "parent_map": "MAP_THREE_ISLAND",
+    "name": "Three Island East Fenced Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "ITEM_THREE_ISLAND_ZINC"
     ],
     "events": [],
-    "exits": [
-      "REGION_THREE_ISLAND/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_THREE_ISLAND/BEHIND_WEST_FENCE": {
     "parent_map": "MAP_THREE_ISLAND",
+    "name": "Three Island West Fenced Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_THREE_ISLAND_PP_UP"
     ],
     "events": [],
-    "exits": [
-      "REGION_THREE_ISLAND_BOND_BRIDGE/BEHIND_CUTTABLE_TREE"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_THREE_ISLAND_HOUSE1/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_HOUSE1",
+    "name": "Three Island Lostelle's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -404,6 +517,10 @@
   },
   "REGION_THREE_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_POKEMON_CENTER_1F",
+    "name": "Three Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -414,6 +531,10 @@
   },
   "REGION_THREE_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_POKEMON_CENTER_2F",
+    "name": "Three Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -423,6 +544,10 @@
   },
   "REGION_THREE_ISLAND_MART/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_MART",
+    "name": "Three Island Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -432,6 +557,10 @@
   },
   "REGION_THREE_ISLAND_HOUSE2/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_HOUSE2",
+    "name": "Three Island Northwest House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -441,6 +570,10 @@
   },
   "REGION_THREE_ISLAND_HOUSE3/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_HOUSE3",
+    "name": "Three Island Northeast House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -450,6 +583,10 @@
   },
   "REGION_THREE_ISLAND_HOUSE4/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_HOUSE4",
+    "name": "Three Island North House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -459,6 +596,10 @@
   },
   "REGION_THREE_ISLAND_HOUSE5/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_HOUSE5",
+    "name": "Three Island Center House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -468,6 +609,10 @@
   },
   "REGION_THREE_ISLAND_BOND_BRIDGE/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+    "name": "Bond Bridge",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_MAX_REPEL",
       "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL",
@@ -484,25 +629,34 @@
   },
   "REGION_THREE_ISLAND_BOND_BRIDGE/WATER": {
     "parent_map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+    "name": "Bond Bridge Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_THREE_ISLAND_BOND_BRIDGE/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_THREE_ISLAND_BOND_BRIDGE/BEHIND_CUTTABLE_TREE": {
     "parent_map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+    "name": "Bond Bridge Fenced Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_THREE_ISLAND_BOND_BRIDGE/MAIN",
       "REGION_THREE_ISLAND/BEHIND_WEST_FENCE"
     ],
     "warps": []
   },
   "REGION_FOUR_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_HARBOR",
+    "name": "Four Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -512,9 +666,7 @@
       "REGION_THREE_ISLAND_HARBOR/MAIN",
       "REGION_FIVE_ISLAND_HARBOR/MAIN",
       "REGION_SIX_ISLAND_HARBOR/MAIN",
-      "REGION_SEVEN_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SEVEN_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_HARBOR:0/MAP_FOUR_ISLAND:6"
@@ -522,13 +674,17 @@
   },
   "REGION_FOUR_ISLAND/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND",
+    "name": "Four Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "ITEM_FOUR_ISLAND_STAR_PIECE",
       "HIDDEN_ITEM_FOUR_ISLAND_PEARL",
       "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL"
     ],
     "events": [
-      "EVENT_VISITED_FOUR_ISLAND"
+      "EVENT_FLY_FOUR_ISLAND"
     ],
     "exits": [
       "REGION_FOUR_ISLAND/POND"
@@ -545,6 +701,10 @@
   },
   "REGION_FOUR_ISLAND/POND": {
     "parent_map": "MAP_FOUR_ISLAND",
+    "name": "Four Island Pond",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "ITEM_FOUR_ISLAND_STARDUST"
     ],
@@ -557,6 +717,10 @@
   },
   "REGION_FOUR_ISLAND/ACROSS_POND": {
     "parent_map": "MAP_FOUR_ISLAND",
+    "name": "Four Island Near Icefall Cavern",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -568,6 +732,10 @@
   },
   "REGION_FOUR_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_POKEMON_CENTER_1F",
+    "name": "Four Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -578,6 +746,10 @@
   },
   "REGION_FOUR_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_POKEMON_CENTER_2F",
+    "name": "Four Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -585,8 +757,25 @@
       "MAP_FOUR_ISLAND_POKEMON_CENTER_2F:0/MAP_FOUR_ISLAND_POKEMON_CENTER_1F:1"
     ]
   },
+  "REGION_FOUR_ISLAND_POKEMON_DAY_CARE/MAIN": {
+    "parent_map": "MAP_FOUR_ISLAND_POKEMON_DAY_CARE",
+    "name": "Four Island Pokemon Day Care",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_FOUR_ISLAND_POKEMON_DAY_CARE:0/MAP_FOUR_ISLAND:1"
+    ]
+  },
   "REGION_FOUR_ISLAND_HOUSE1/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_HOUSE1",
+    "name": "Four Island Move Tutor's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -596,6 +785,10 @@
   },
   "REGION_FOUR_ISLAND_LORELEIS_HOUSE/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_LORELEIS_HOUSE",
+    "name": "Four Island Lorelei's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -605,6 +798,10 @@
   },
   "REGION_FOUR_ISLAND_HOUSE2/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_HOUSE2",
+    "name": "Four Island Sticker Man's House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -614,6 +811,10 @@
   },
   "REGION_FOUR_ISLAND_MART/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_MART",
+    "name": "Four Island Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -623,6 +824,10 @@
   },
   "REGION_FIVE_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_HARBOR",
+    "name": "Five Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -632,9 +837,7 @@
       "REGION_THREE_ISLAND_HARBOR/MAIN",
       "REGION_FOUR_ISLAND_HARBOR/MAIN",
       "REGION_SIX_ISLAND_HARBOR/MAIN",
-      "REGION_SEVEN_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SEVEN_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_FIVE_ISLAND_HARBOR:0/MAP_FIVE_ISLAND:0"
@@ -642,9 +845,13 @@
   },
   "REGION_FIVE_ISLAND/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND",
+    "name": "Five Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [
-      "EVENT_VISITED_FIVE_ISLAND"
+      "EVENT_FLY_FIVE_ISLAND"
     ],
     "exits": [
       "REGION_FIVE_ISLAND/WATER",
@@ -659,6 +866,10 @@
   },
   "REGION_FIVE_ISLAND/WATER": {
     "parent_map": "MAP_FIVE_ISLAND",
+    "name": "Five Island Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -669,6 +880,10 @@
   },
   "REGION_FIVE_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_POKEMON_CENTER_1F",
+    "name": "Five Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -679,6 +894,10 @@
   },
   "REGION_FIVE_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_POKEMON_CENTER_2F",
+    "name": "Five Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -688,6 +907,10 @@
   },
   "REGION_FIVE_ISLAND_HOUSE1/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_HOUSE1",
+    "name": "Five Island West House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -697,6 +920,10 @@
   },
   "REGION_FIVE_ISLAND_HOUSE2/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_HOUSE2",
+    "name": "Five Island East House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -706,6 +933,10 @@
   },
   "REGION_FIVE_ISLAND_MEADOW/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_MEADOW",
+    "name": "Five Isle Meadow",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "ITEM_FIVE_ISLAND_MEADOW_MAX_POTION"
     ],
@@ -714,22 +945,30 @@
       "REGION_FIVE_ISLAND_MEADOW/WATER"
     ],
     "warps": [
-      "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE:0/MAP_FIVE_ISLAND_MEADOW:0"
+      "MAP_FIVE_ISLAND_MEADOW:0/MAP_FIVE_ISLAND_ROCKET_WAREHOUSE:0"
     ]
   },
   "REGION_FIVE_ISLAND_MEADOW/WATER": {
     "parent_map": "MAP_FIVE_ISLAND_MEADOW",
+    "name": "Five Isle Meadow Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "ITEM_FIVE_ISLAND_MEADOW_PP_UP"
     ],
     "events": [],
     "exits": [
-      "REGION_FIVE_ISLAND_MEADOW/MAIN"
+      "REGION_FIVE_ISLAND_MEMORIAL_PILLAR/MAIN"
     ],
     "warps": []
   },
   "REGION_FIVE_ISLAND_MEMORIAL_PILLAR/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_MEMORIAL_PILLAR",
+    "name": "Memorial Pillar",
+    "has_land": true,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_METAL_COAT",
       "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL",
@@ -744,8 +983,14 @@
   },
   "REGION_FIVE_ISLAND_WATER_LABYRINTH/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_WATER_LABYRINTH",
+    "name": "Water Labyrinth",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
-    "events": [],
+    "events": [
+      "EGG_POKEMON_TOGEPI"
+    ],
     "exits": [
       "REGION_FIVE_ISLAND/WATER",
       "REGION_FIVE_ISLAND_RESORT_GORGEOUS/WATER"
@@ -754,6 +999,10 @@
   },
   "REGION_FIVE_ISLAND_RESORT_GORGEOUS/WATER": {
     "parent_map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS",
+    "name": "Resort Gorgeous Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL"
     ],
@@ -767,6 +1016,10 @@
   },
   "REGION_FIVE_ISLAND_RESORT_GORGEOUS/RESORT_ISLAND": {
     "parent_map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS",
+    "name": "Resort Gorgeous Resort Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST",
       "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2",
@@ -782,6 +1035,10 @@
   },
   "REGION_FIVE_ISLAND_RESORT_GORGEOUS/LOST_CAVE_ISLAND": {
     "parent_map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS",
+    "name": "Resort Gorgeous Lost Cave Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -793,6 +1050,10 @@
   },
   "REGION_FIVE_ISLAND_RESORT_GORGEOUS_HOUSE/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_RESORT_GORGEOUS_HOUSE",
+    "name": "Resort Gorgeous House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -802,6 +1063,10 @@
   },
   "REGION_SIX_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_HARBOR",
+    "name": "Six Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -811,9 +1076,7 @@
       "REGION_THREE_ISLAND_HARBOR/MAIN",
       "REGION_FOUR_ISLAND_HARBOR/MAIN",
       "REGION_FIVE_ISLAND_HARBOR/MAIN",
-      "REGION_SEVEN_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SEVEN_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_SIX_ISLAND_HARBOR:0/MAP_SIX_ISLAND:0"
@@ -821,11 +1084,15 @@
   },
   "REGION_SIX_ISLAND/MAIN": {
     "parent_map": "MAP_SIX_ISLAND",
+    "name": "Six Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY"
     ],
     "events": [
-      "EVENT_VISITED_SIX_ISLAND"
+      "EVENT_FLY_SIX_ISLAND"
     ],
     "exits": [
       "REGION_SIX_ISLAND_WATER_PATH/SOUTH"
@@ -839,6 +1106,10 @@
   },
   "REGION_SIX_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
+    "name": "Six Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -849,6 +1120,10 @@
   },
   "REGION_SIX_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_POKEMON_CENTER_2F",
+    "name": "Six Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -858,6 +1133,10 @@
   },
   "REGION_SIX_ISLAND_HOUSE/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_HOUSE",
+    "name": "Six Island House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -867,6 +1146,10 @@
   },
   "REGION_SIX_ISLAND_MART/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_MART",
+    "name": "Six Island Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -876,6 +1159,10 @@
   },
   "REGION_SIX_ISLAND_WATER_PATH/SOUTH": {
     "parent_map": "MAP_SIX_ISLAND_WATER_PATH",
+    "name": "Water Path South Area",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY",
       "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_PINAP_BERRY"
@@ -890,6 +1177,10 @@
   },
   "REGION_SIX_ISLAND_WATER_PATH/WATER": {
     "parent_map": "MAP_SIX_ISLAND_WATER_PATH",
+    "name": "Water Path Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "ITEM_SIX_ISLAND_WATER_PATH_DRAGON_SCALE",
       "ITEM_SIX_ISLAND_WATER_PATH_ELIXIR"
@@ -903,6 +1194,10 @@
   },
   "REGION_SIX_ISLAND_WATER_PATH/NORTH": {
     "parent_map": "MAP_SIX_ISLAND_WATER_PATH",
+    "name": "Water Path North Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ORAN_BERRY"
     ],
@@ -918,6 +1213,10 @@
   },
   "REGION_SIX_ISLAND_WATER_PATH_HOUSE1/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_WATER_PATH_HOUSE1",
+    "name": "Water Path Northwest House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -927,6 +1226,10 @@
   },
   "REGION_SIX_ISLAND_WATER_PATH_HOUSE2/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_WATER_PATH_HOUSE2",
+    "name": "Water Path Southeast House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -936,6 +1239,10 @@
   },
   "REGION_SIX_ISLAND_RUIN_VALLEY/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_RUIN_VALLEY",
+    "name": "Ruin Valley",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "ITEM_SIX_ISLAND_RUIN_VALLEY_FULL_RESTORE",
       "ITEM_SIX_ISLAND_RUIN_VALLEY_HP_UP",
@@ -943,14 +1250,30 @@
     ],
     "events": [],
     "exits": [
+      "REGION_SIX_ISLAND_RUIN_VALLEY/POND",
       "REGION_SIX_ISLAND_WATER_PATH/SOUTH"
     ],
     "warps": [
       "MAP_SIX_ISLAND_RUIN_VALLEY:0/MAP_SIX_ISLAND_DOTTED_HOLE_1F:0"
     ]
   },
+  "REGION_SIX_ISLAND_RUIN_VALLEY/POND": {
+    "parent_map": "MAP_SIX_ISLAND_RUIN_VALLEY",
+    "name": "Ruin Valley Pond",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": []
+  },
   "REGION_SIX_ISLAND_GREEN_PATH/EAST_PATTERN_BUSH": {
     "parent_map": "MAP_SIX_ISLAND_GREEN_PATH",
+    "name": "Green Path East Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -962,6 +1285,10 @@
   },
   "REGION_SIX_ISLAND_GREEN_PATH/WEST_PATTERN_BUSH": {
     "parent_map": "MAP_SIX_ISLAND_GREEN_PATH",
+    "name": "Green Path West Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -973,6 +1300,10 @@
   },
   "REGION_SIX_ISLAND_GREEN_PATH/WATER": {
     "parent_map": "MAP_SIX_ISLAND_GREEN_PATH",
+    "name": "Green Path Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL"
     ],
@@ -985,6 +1316,10 @@
   },
   "REGION_SIX_ISLAND_OUTCAST_ISLAND/WATER": {
     "parent_map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
+    "name": "Outcast Island Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [
       "ITEM_SIX_ISLAND_OUTCAST_ISLAND_PP_UP",
       "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE"
@@ -998,6 +1333,10 @@
   },
   "REGION_SIX_ISLAND_OUTCAST_ISLAND/BEACH": {
     "parent_map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
+    "name": "Outcast Island Beach",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL"
     ],
@@ -1011,6 +1350,10 @@
   },
   "REGION_SEVEN_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_HARBOR",
+    "name": "Seven Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -1020,9 +1363,7 @@
       "REGION_THREE_ISLAND_HARBOR/MAIN",
       "REGION_FOUR_ISLAND_HARBOR/MAIN",
       "REGION_FIVE_ISLAND_HARBOR/MAIN",
-      "REGION_SIX_ISLAND_HARBOR/MAIN",
-      "REGION_NAVEL_ROCK_HARBOR/MAIN",
-      "REGION_BIRTH_ISLAND_HARBOR/MAIN"
+      "REGION_SIX_ISLAND_HARBOR/MAIN"
     ],
     "warps": [
       "MAP_SEVEN_ISLAND_HARBOR:0/MAP_SEVEN_ISLAND:3"
@@ -1030,9 +1371,13 @@
   },
   "REGION_SEVEN_ISLAND/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND",
+    "name": "Seven Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [
-      "EVENT_VISITED_SEVEN_ISLAND"
+      "EVENT_FLY_SEVEN_ISLAND"
     ],
     "exits": [
       "REGION_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE/MAIN",
@@ -1047,6 +1392,10 @@
   },
   "REGION_SEVEN_ISLAND_HOUSE_ROOM1/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_HOUSE_ROOM1",
+    "name": "Seven Island House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1056,6 +1405,10 @@
   },
   "REGION_SEVEN_ISLAND_MART/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_MART",
+    "name": "Seven Island Poke Mart",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1065,6 +1418,10 @@
   },
   "REGION_SEVEN_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_POKEMON_CENTER_1F",
+    "name": "Seven Island Pokemon Center 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1075,6 +1432,10 @@
   },
   "REGION_SEVEN_ISLAND_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_POKEMON_CENTER_2F",
+    "name": "Seven Island Pokemon Center 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1084,6 +1445,10 @@
   },
   "REGION_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE",
+    "name": "Canyon Entrance",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
     ],
@@ -1096,6 +1461,10 @@
   },
   "REGION_SEVEN_ISLAND_SEVAULT_CANYON/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON",
+    "name": "Sevault Canyon",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_KINGS_ROCK",
       "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_MAX_ELIXIR",
@@ -1114,6 +1483,10 @@
   },
   "REGION_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE",
+    "name": "Sevault Canyon House",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE_LUCKY_PUNCH"
     ],
@@ -1125,6 +1498,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/NORTH": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1135,6 +1512,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/WATER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1151,6 +1532,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/VIAPOIS_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Viapois Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_4"
     ],
@@ -1164,6 +1549,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/RIXY_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Rixy Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1175,6 +1564,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/SCUFIB_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Scufib Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE"
     ],
@@ -1188,6 +1581,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/DILFORD_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Dilford Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1199,6 +1596,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/WEEPTH_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Weepth Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2"
     ],
@@ -1212,6 +1613,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/LIPTOO_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Liptoo Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1223,6 +1628,10 @@
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS/MONEAN_CHAMBER": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS",
+    "name": "Tanoby Ruins Monean Chamber Island",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3"
     ],
@@ -1236,6 +1645,10 @@
   },
   "REGION_SEVEN_ISLAND_TRAINER_TOWER/SOUTH": {
     "parent_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
+    "name": "Trainer Tower Exterior South Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL",
       "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY",
@@ -1250,6 +1663,10 @@
   },
   "REGION_SEVEN_ISLAND_TRAINER_TOWER/WATER": {
     "parent_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
+    "name": "Trainer Tower Exterior Water",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1260,6 +1677,10 @@
   },
   "REGION_SEVEN_ISLAND_TRAINER_TOWER/NORTH": {
     "parent_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
+    "name": "Trainer Tower Exterior North Area",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
@@ -1271,6 +1692,10 @@
   },
   "REGION_NAVEL_ROCK_HARBOR/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_HARBOR",
+    "name": "Navel Rock Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -1282,6 +1707,10 @@
   },
   "REGION_NAVEL_ROCK_EXTERIOR/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_EXTERIOR",
+    "name": "Navel Rock Exterior",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1292,6 +1721,10 @@
   },
   "REGION_NAVEL_ROCK_1F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_1F",
+    "name": "Navel Rock 1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1302,6 +1735,10 @@
   },
   "REGION_NAVEL_ROCK_B1F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_B1F",
+    "name": "Navel Rock B1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1312,6 +1749,10 @@
   },
   "REGION_NAVEL_ROCK_FORK/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_FORK",
+    "name": "Navel Rock Fork",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1323,6 +1764,10 @@
   },
   "REGION_NAVEL_ROCK_SUMMIT_PATH_2F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_SUMMIT_PATH_2F",
+    "name": "Navel Rock Summit Path 2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1333,6 +1778,10 @@
   },
   "REGION_NAVEL_ROCK_SUMMIT_PATH_3F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_SUMMIT_PATH_3F",
+    "name": "Navel Rock Summit Path 3F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1343,6 +1792,10 @@
   },
   "REGION_NAVEL_ROCK_SUMMIT_PATH_4F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_SUMMIT_PATH_4F",
+    "name": "Navel Rock Summit Path 4F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1353,6 +1806,10 @@
   },
   "REGION_NAVEL_ROCK_SUMMIT_PATH_5F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_SUMMIT_PATH_5F",
+    "name": "Navel Rock Summit Path 5F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1363,6 +1820,10 @@
   },
   "REGION_NAVEL_ROCK_SUMMIT/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_SUMMIT",
+    "name": "Navel Rock Summit",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [
       "HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH"
     ],
@@ -1374,6 +1835,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B1F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B1F",
+    "name": "Navel Rock Base Path B1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1384,6 +1849,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B2F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B2F",
+    "name": "Navel Rock Base Path B2F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1394,6 +1863,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B3F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B3F",
+    "name": "Navel Rock Base Path B3F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1404,6 +1877,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B4F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B4F",
+    "name": "Navel Rock Base Path B4F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1414,6 +1891,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B5F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B5F",
+    "name": "Navel Rock Base Path B5F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1424,6 +1905,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B6F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B6F",
+    "name": "Navel Rock Base Path B6F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1434,6 +1919,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B7F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B7F",
+    "name": "Navel Rock Base Path B7F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1444,6 +1933,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B8F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B8F",
+    "name": "Navel Rock Base Path B8F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1454,6 +1947,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B9F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B9F",
+    "name": "Navel Rock Base Path B9F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1464,6 +1961,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B10F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B10F",
+    "name": "Navel Rock Base Path B10F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1474,6 +1975,10 @@
   },
   "REGION_NAVEL_ROCK_BASE_PATH_B11F/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE_PATH_B11F",
+    "name": "Navel Rock Base Path B11F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1484,6 +1989,10 @@
   },
   "REGION_NAVEL_ROCK_BASE/MAIN": {
     "parent_map": "MAP_NAVEL_ROCK_BASE",
+    "name": "Navel Rock Base",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
@@ -1493,6 +2002,10 @@
   },
   "REGION_BIRTH_ISLAND_HARBOR/MAIN": {
     "parent_map": "MAP_BIRTH_ISLAND_HARBOR",
+    "name": "Birth Island Harbor",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
@@ -1504,6 +2017,10 @@
   },
   "REGION_BIRTH_ISLAND_EXTERIOR/MAIN": {
     "parent_map": "MAP_BIRTH_ISLAND_EXTERIOR",
+    "name": "Birth Island Exterior",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [

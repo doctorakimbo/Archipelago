@@ -1,1615 +1,1639 @@
 {
   "BADGE_1": {
-    "label": "Pewter Gym - Leader Brock Reward",
+    "name": "Pewter Gym - Leader Brock Prize",
     "tags": ["Badge"]
   },
   "BADGE_2": {
-    "label": "Cerulean Gym - Leader Misty Reward",
+    "name": "Cerulean Gym - Leader Misty Prize",
     "tags": ["Badge"]
   },
   "BADGE_3": {
-    "label": "Vermilion Gym - Leader Lt. Surge Reward",
+    "name": "Vermilion Gym - Leader Lt. Surge Prize",
     "tags": ["Badge"]
   },
   "BADGE_4": {
-    "label": "Celadon Gym - Leader Erika Reward",
+    "name": "Celadon Gym - Leader Erika Prize",
     "tags": ["Badge"]
   },
   "BADGE_5": {
-    "label": "Fuchsia Gym - Leader Koga Reward",
+    "name": "Fuchsia Gym - Leader Koga Prize",
     "tags": ["Badge"]
   },
   "BADGE_6": {
-    "label": "Saffron Gym - Leader Sabrina Reward",
+    "name": "Saffron Gym - Leader Sabrina Prize",
     "tags": ["Badge"]
   },
   "BADGE_7": {
-    "label": "Cinnabar Gym - Leader Blaine Reward",
+    "name": "Cinnabar Gym - Leader Blaine Prize",
     "tags": ["Badge"]
   },
   "BADGE_8": {
-    "label": "Viridian Gym - Leader Giovanni Reward",
+    "name": "Viridian Gym - Leader Giovanni Prize",
     "tags": ["Badge"]
   },
 
   "NPC_GIFT_GOT_HM01": {
-    "label": "S.S. Anne 3F - Gift from Captain",
+    "name": "S.S. Anne 3F - Captain",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM02": {
-    "label": "Route 16 - Gift from Girl in House",
+    "name": "Route 16 House - Woman",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM03": {
-    "label": "Safari Zone West - Gift from Man in Secret House",
+    "name": "Safari Zone Secret House - Attendent",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM04": {
-    "label": "Fuchsia City - Gift from Safari Zone Warden",
+    "name": "Fuchsia City - Safari Zone Warden",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM05": {
-    "label": "Route 2 - Gift from Professor Oak's Aide",
+    "name": "Route 2 - Professor Oak's Aide",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM06": {
-    "label": "Ember Spa - Gift from Old Man",
+    "name": "Ember Spa - Rock Smash Man",
     "tags": ["HM"]
   },
   "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07": {
-    "label": "Icefall Cave 1F - Southeast Ledge Item",
+    "name": "Icefall Cave 1F - Southeast Ledge Item",
     "tags": ["HM"]
   },
 
   "NPC_GIFT_GOT_BICYCLE": {
-    "label": "Cerulean City - Gift from Bike Shop Owner",
+    "name": "Cerulean City - Bike Shop Owner",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_BIKE_VOUCHER": {
-    "label": "Vermilion City - Gift from Pokemon Fan Club Chairman",
+    "name": "Vermilion City - Pokemon Fan Club Chairman",
     "tags": ["KeyItem"]
   },
   "ITEM_SILPH_CO_5F_CARD_KEY": {
-    "label": "Silph Co. 5F - South Hallway Item",
+    "name": "Silph Co. 5F - South Hallway Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_COIN_CASE": {
-    "label": "Celadon City - Gift from Man in Restaurant",
+    "name": "Celadon City Restaurant - Coin Case Man",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_DOME_FOSSIL": {
-    "label": "Mt. Moon B2F - Dome Fossil",
+    "name": "Mt. Moon B2F - Dome Fossil",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_FAME_CHECKER": {
-    "label": "Cerulean City - Rival Reward",
+    "name": "Cerulean City - Rival Reward",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_GOOD_ROD": {
-    "label": "Fuchsia City - Gift from Fishing Guru in House",
+    "name": "Fuchsia City Southeast House - Fishing Guru's Brother",
     "tags": ["KeyItem"]
   },
   "ITEM_SAFARI_ZONE_WEST_GOLD_TEETH": {
-    "label": "Safari Zone West - Northeast Item",
+    "name": "Safari Zone West - Northeast Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_HELIX_FOSSIL": {
-    "label": "Mt. Moon B2F - Helix Fossil",
+    "name": "Mt. Moon B2F - Helix Fossil",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "label": "Route 11 - Gift from Prof. Oak's Aide",
+    "name": "Route 11 - Professor Oak's Aide",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
-    "label": "Rocket Hideout B4F - Rocket Grunt's Item",
+    "name": "Rocket Hideout B4F - Rocket Grunt's Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_METEORITE": {
-    "label": "One Island - Gift from Bill in Pokemon Network Center",
+    "name": "One Island Pokemon Network Center - Bill",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OAKS_PARCEL": {
-    "label": "Viridian City - Gift from Poke Mart Clerk",
+    "name": "Viridian City - Poke Mart Clerk",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_AMBER": {
-    "label": "Pewter City - Gift from Scientist in Museum Back Room",
+    "name": "Pewter City Museum Back Room - Scientist",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_ROD": {
-    "label": "Vermilion City - Gift from Fishing Guru in House",
+    "name": "Vermilion City Northwest House - Fishing Guru",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POKE_FLUTE": {
-    "label": "Lavender Town - Gift from Mr. Fuji in Volunteer Pokemon House",
+    "name": "Lavender Town - Mr. Fuji",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POWDER_JAR": {
-    "label": "Cerulean City - Gift from Old Man in House",
+    "name": "Cerulean City Northwest House - Berry Powder Man",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RAINBOW_PASS": {
-    "label": "One Island - Gift from Celio in Pokemon Network Center",
+    "name": "One Island Pokemon Network Center - Celio",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RUBY": {
-    "label": "Mt. Ember Ruby Path B5F - Ruby",
+    "name": "Mt. Ember Ruby Path B5F - Ruby",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_RECOVERED_SAPPHIRE": {
-    "label": "Rocket Warehouse - Scientist Gideon Reward",
+    "name": "Rocket Warehouse - Scientist Gideon Reward",
     "tags": ["KeyItem"]
   },
   "ITEM_POKEMON_MANSION_B1F_SECRET_KEY": {
-    "label": "Pokemon Mansion B1F - Northwest Room Item",
+    "name": "Pokemon Mansion B1F - Northwest Room Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SILPH_SCOPE": {
-    "label": "Rocket Hideout B4F - Giovanni's Item",
+    "name": "Rocket Hideout B4F - Giovanni's Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SS_TICKET": {
-    "label": "Route 25 - Gift from Bill in Sea Cottage",
+    "name": "Route 25 Sea Cottage - Bill",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SUPER_ROD": {
-    "label": "Route 12 - Gift from Fishing Guru in House",
+    "name": "Route 12 House - Fishing Guru's Brother",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEA": {
-    "label": "Celadon City - Gift from Manager in Celadon Mansion",
+    "name": "Celadon City Condominiums - Tea Woman",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEACHY_TV": {
-    "label": "Viridian City - Gift from Old Man",
+    "name": "Viridian City - Old Man",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TOWN_MAP": {
-    "label": "Pallet Town - Gift from Daisy in Rival's House",
+    "name": "Pallet Town - Daisy",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TRI_PASS": {
-    "label": "Cinnabar Island - Gift from Bill",
+    "name": "Cinnabar Island Pokemon Center - Bill",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_VS_SEEKER": {
-    "label": "Vermilion City - Gift from Ace Trainer in Pokemon Center",
+    "name": "Vermilion City Pokemon Center - Vs. Seeker Woman",
     "tags": ["KeyItem"]
   },
 
   "ITEM_CELADON_CITY_ETHER": {
-    "label": "Celadon City - Northwest Item",
+    "name": "Celadon City - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_1F_FULL_RESTORE": {
-    "label": "Cerulean Cave 1F - Southwest Item",
+    "name": "Cerulean Cave 1F - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_1F_MAX_ELIXIR": {
-    "label": "Cerulean Cave 1F - East Plateau Item",
+    "name": "Cerulean Cave 1F - East Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_1F_NUGGET": {
-    "label": "Cerulean Cave 1F - West Plateau Item",
+    "name": "Cerulean Cave 1F - West Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_2F_FULL_RESTORE": {
-    "label": "Cerulean Cave 2F - East Item",
+    "name": "Cerulean Cave 2F - East Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_2F_PP_UP": {
-    "label": "Cerulean Cave 2F - West Item",
+    "name": "Cerulean Cave 2F - West Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_2F_ULTRA_BALL": {
-    "label": "Cerulean Cave 2F - Center Item",
+    "name": "Cerulean Cave 2F - Center Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE": {
-    "label": "Cerulean Cave B1F - Northeast Item",
+    "name": "Cerulean Cave B1F - Northeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_CERULEAN_CAVE_B1F_ULTRA_BALL": {
-    "label": "Cerulean Cave B1F - East Plateau Item",
+    "name": "Cerulean Cave B1F - East Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF": {
-    "label": "Lost Cave Room 10 - Item",
+    "name": "Lost Cave Room 10 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM11_LAX_INCENSE": {
-    "label": "Lost Cave Room 11 - Item",
+    "name": "Lost Cave Room 11 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM12_SEA_INCENSE": {
-    "label": "Lost Cave Room 12 - Item",
+    "name": "Lost Cave Room 12 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM13_MAX_REVIVE": {
-    "label": "Lost Cave Room 13 - Item",
+    "name": "Lost Cave Room 13 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM14_RARE_CANDY": {
-    "label": "Lost Cave Room 14 - Item",
+    "name": "Lost Cave Room 14 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_MEADOW_MAX_POTION": {
-    "label": "Five Isle Meadow - Item Behind Cuttable Tree",
+    "name": "Five Isle Meadow - Item Behind Cuttable Tree",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_MEADOW_PP_UP": {
-    "label": "Five Isle Meadow - Southwest Island Item",
+    "name": "Five Isle Meadow - Southwest Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_METAL_COAT": {
-    "label": "Memorial Pillar - South Island Item",
+    "name": "Memorial Pillar - South Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_BIG_PEARL": {
-    "label": "Rocket Warehouse - Maze South Item",
+    "name": "Rocket Warehouse - Maze South Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_PEARL": {
-    "label": "Rocket Warehouse - Maze West Item",
+    "name": "Rocket Warehouse - Maze West Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_TM36": {
-    "label": "Rocket Warehouse - North Room Item",
+    "name": "Rocket Warehouse - North Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_UP_GRADE": {
-    "label": "Rocket Warehouse - Northwest Room Item",
+    "name": "Rocket Warehouse - Northwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_ULTRA_BALL": {
-    "label": "Icefall Cave 1F - Center Item",
+    "name": "Icefall Cave 1F - Center Item",
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_ICEFALL_CAVE_B1F_FULL_RESTORE": {
-    "label": "Icefall Cave B1F - Southwest Item",
+    "name": "Icefall Cave B1F - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_ICEFALL_CAVE_B1F_NEVER_MELT_ICE": {
-    "label": "Icefall Cave B1F - East Item",
+    "name": "Icefall Cave B1F - East Item",
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_STARDUST": {
-    "label": "Four Island - Northeast Island Item",
+    "name": "Four Island - Northeast Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_STAR_PIECE": {
-    "label": "Four Island - Beach Item",
+    "name": "Four Island - Beach Item",
     "tags": ["Overworld"]
   },
   "ITEM_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY": {
-    "label": "Fuchsia City - Warden's House Item",
+    "name": "Fuchsia City - Warden's House Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_EMBER_EXTERIOR_DIRE_HIT": {
-    "label": "Mt. Ember Exterior - East Item",
+    "name": "Mt. Ember Exterior - East Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_EMBER_EXTERIOR_FIRE_STONE": {
-    "label": "Mt. Ember Exterior - Item Near Summit",
+    "name": "Mt. Ember Exterior - Item Near Summit",
     "tags": ["Overworld"]
   },
   "ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL": {
-    "label": "Mt. Ember Exterior - West Item",
+    "name": "Mt. Ember Exterior - West Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_ESCAPE_ROPE": {
-    "label": "Mt. Moon 1F - East Item",
+    "name": "Mt. Moon 1F - East Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_MOON_STONE": {
-    "label": "Mt. Moon 1F - Northwest Item",
+    "name": "Mt. Moon 1F - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_PARALYZE_HEAL": {
-    "label": "Mt. Moon 1F - West Item",
+    "name": "Mt. Moon 1F - West Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_POTION": {
-    "label": "Mt. Moon 1F - South Item",
+    "name": "Mt. Moon 1F - South Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_RARE_CANDY": {
-    "label": "Mt. Moon 1F - Southeast Item",
+    "name": "Mt. Moon 1F - Southeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_TM09": {
-    "label": "Mt. Moon 1F - Southwest Item",
+    "name": "Mt. Moon 1F - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_B2F_ANTIDOTE": {
-    "label": "Mt. Moon B2F - Northwest Item",
+    "name": "Mt. Moon B2F - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_B2F_REVIVE": {
-    "label": "Mt. Moon B2F - North Item",
+    "name": "Mt. Moon B2F - North Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_B2F_STAR_PIECE": {
-    "label": "Mt. Moon B2F - Isolated Room Item",
+    "name": "Mt. Moon B2F - Isolated Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_B2F_TM46": {
-    "label": "Mt. Moon B2F - Northeast Plateau Item",
+    "name": "Mt. Moon B2F - Northeast Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_ONE_ISLAND_KINDLE_ROAD_CARBOS": {
-    "label": "Kindle Road - Plateau Item",
+    "name": "Kindle Road - Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_ONE_ISLAND_KINDLE_ROAD_ETHER": {
-    "label": "Kindle Road - Item Behind Smashable Rock",
+    "name": "Kindle Road - Item Behind Smashable Rock",
     "tags": ["Overworld"]
   },
   "ITEM_ONE_ISLAND_KINDLE_ROAD_MAX_REPEL": {
-    "label": "Kindle Road - Isolated Beach Item",
+    "name": "Kindle Road - Isolated Beach Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_1F_CARBOS": {
-    "label": "Pokemon Mansion 1F - Item Near B1F Stairs",
+    "name": "Pokemon Mansion 1F - Item Near B1F Stairs",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_1F_ESCAPE_ROPE": {
-    "label": "Pokemon Mansion 1F - Item Between North Pillars",
+    "name": "Pokemon Mansion 1F - Item Between North Pillars",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_1F_PROTEIN": {
-    "label": "Pokemon Mansion 1F - Item Behind Gate",
+    "name": "Pokemon Mansion 1F - Item Behind Gate",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_2F_CALCIUM": {
-    "label": "Pokemon Mansion 2F - Northeast Room Item",
+    "name": "Pokemon Mansion 2F - Northeast Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_2F_HP_UP": {
-    "label": "Pokemon Mansion 2F - Item Near East Balcony",
+    "name": "Pokemon Mansion 2F - Item Near East Balcony",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_2F_ZINC": {
-    "label": "Pokemon Mansion 2F - West Balcony Item",
+    "name": "Pokemon Mansion 2F - West Balcony Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_3F_IRON": {
-    "label": "Pokemon Mansion 3F - Northeast Room Item",
+    "name": "Pokemon Mansion 3F - Northeast Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_3F_MAX_POTION": {
-    "label": "Pokemon Mansion 3F - Southwest Room Item",
+    "name": "Pokemon Mansion 3F - Southwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_B1F_FULL_RESTORE": {
-    "label": "Pokemon Mansion B1F - Southwest Hallway Item",
+    "name": "Pokemon Mansion B1F - Southwest Hallway Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_B1F_TM14": {
-    "label": "Pokemon Mansion B1F - North Room Item",
+    "name": "Pokemon Mansion B1F - North Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_MANSION_B1F_TM22": {
-    "label": "Pokemon Mansion B1F - West Room Item",
+    "name": "Pokemon Mansion B1F - West Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_3F_ESCAPE_ROPE": {
-    "label": "Pokemon Tower 3F - North Item",
+    "name": "Pokemon Tower 3F - North Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_4F_AWAKENING": {
-    "label": "Pokemon Tower 4F - Center Item (Left)",
+    "name": "Pokemon Tower 4F - Center Item (Left)",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_4F_ELIXIR": {
-    "label": "Pokemon Tower 4F - Center Item (Right)",
+    "name": "Pokemon Tower 4F - Center Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_4F_GREAT_BALL": {
-    "label": "Pokemon Tower 4F - South Item",
+    "name": "Pokemon Tower 4F - South Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_5F_CLEANSE_TAG": {
-    "label": "Pokemon Tower 5F - Healing Area Item",
+    "name": "Pokemon Tower 5F - Healing Area Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_5F_NUGGET": {
-    "label": "Pokemon Tower 5F - Southwest Item",
+    "name": "Pokemon Tower 5F - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_6F_RARE_CANDY": {
-    "label": "Pokemon Tower 6F - Southwest Item",
+    "name": "Pokemon Tower 6F - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_POKEMON_TOWER_6F_X_ACCURACY": {
-    "label": "Pokemon Tower 6F - Southeast Item",
+    "name": "Pokemon Tower 6F - Southeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_ELIXIR": {
-    "label": "Power Plant - Long Center Room Item (Left)",
+    "name": "Power Plant - Long Center Room Item (Left)",
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_MAX_POTION": {
-    "label": "Power Plant - Item Near Entrance",
+    "name": "Power Plant - Item Near Entrance",
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_THUNDER_STONE": {
-    "label": "Power Plant - Northeast Room Item",
+    "name": "Power Plant - Northeast Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_TM17": {
-    "label": "Power Plant - Long Center Room Item (Right)",
+    "name": "Power Plant - Long Center Room Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_TM25": {
-    "label": "Power Plant - Southeast Room Item",
+    "name": "Power Plant - Southeast Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B1F_ESCAPE_ROPE": {
-    "label": "Rocket Hideout B1F - West Room Item",
+    "name": "Rocket Hideout B1F - West Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B1F_HYPER_POTION": {
-    "label": "Rocket Hideout B1F - Southwest Room Item",
+    "name": "Rocket Hideout B1F - Southwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B2F_MOON_STONE": {
-    "label": "Rocket Hideout B2F - Maze Northwest Item (Left)",
+    "name": "Rocket Hideout B2F - Maze Northwest Item (Left)",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B2F_SUPER_POTION": {
-    "label": "Rocket Hideout B2F - Maze Southwest Item",
+    "name": "Rocket Hideout B2F - Maze Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B2F_TM12": {
-    "label": "Rocket Hideout B2F - Maze Northwest Item (Right)",
+    "name": "Rocket Hideout B2F - Maze Northwest Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B2F_X_SPEED": {
-    "label": "Rocket Hideout B2F - Maze Northeast Item",
+    "name": "Rocket Hideout B2F - Maze Northeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B3F_BLACK_GLASSES": {
-    "label": "Rocket Hideout B3F - Item Near B4F Stairs",
+    "name": "Rocket Hideout B3F - Item Near B4F Stairs",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B3F_RARE_CANDY": {
-    "label": "Rocket Hideout B3F - Maze Item",
+    "name": "Rocket Hideout B3F - Maze Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B3F_TM21": {
-    "label": "Rocket Hideout B3F - East Room Item",
+    "name": "Rocket Hideout B3F - East Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B4F_CALCIUM": {
-    "label": "Rocket Hideout B4F - Southwest Room Item",
+    "name": "Rocket Hideout B4F - Southwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B4F_MAX_ETHER": {
-    "label": "Rocket Hideout B4F - West Room Item",
+    "name": "Rocket Hideout B4F - West Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCKET_HIDEOUT_B4F_TM49": {
-    "label": "Rocket Hideout B4F - Northwest Room Item",
+    "name": "Rocket Hideout B4F - Northwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCK_TUNNEL_1F_ESCAPE_ROPE": {
-    "label": "Rock Tunnel 1F - Northwest Area Item",
+    "name": "Rock Tunnel 1F - Northwest Area Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCK_TUNNEL_1F_PEARL": {
-    "label": "Rock Tunnel 1F - South Area Item",
+    "name": "Rock Tunnel 1F - South Area Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCK_TUNNEL_1F_REPEL": {
-    "label": "Rock Tunnel 1F - Northeast Area Item",
+    "name": "Rock Tunnel 1F - Northeast Area Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCK_TUNNEL_B1F_MAX_ETHER": {
-    "label": "Rock Tunnel B1F - Northwest Area Item",
+    "name": "Rock Tunnel B1F - Northwest Area Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROCK_TUNNEL_B1F_REVIVE": {
-    "label": "Rock Tunnel B1F - Southeast Area Item",
+    "name": "Rock Tunnel B1F - Southeast Area Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE2_ETHER": {
-    "label": "Route 2 - North Item",
+    "name": "Route 2 - North Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE2_PARALYZE_HEAL": {
-    "label": "Route 2 - South Item",
+    "name": "Route 2 - South Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE4_TM05": {
-    "label": "Route 4 - East Ledges Item",
+    "name": "Route 4 - East Ledges Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE9_BURN_HEAL": {
-    "label": "Route 9 - Southeast Item",
+    "name": "Route 9 - Southeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE9_TM40": {
-    "label": "Route 9 - Southwest Item",
+    "name": "Route 9 - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE11_AWAKENING": {
-    "label": "Route 11 - Northwest Item",
+    "name": "Route 11 - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE11_GREAT_BALL": {
-    "label": "Route 11 - Item Behind Trees",
+    "name": "Route 11 - Item Behind Trees",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE11_X_DEFEND": {
-    "label": "Route 11 - Tall Grass Item",
+    "name": "Route 11 - Tall Grass Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE12_IRON": {
-    "label": "Route 12 - Item Behind Cuttable Tree",
+    "name": "Route 12 - Item Behind Cuttable Tree",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE12_TM48": {
-    "label": "Route 12 - North Island Item",
+    "name": "Route 12 - North Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE15_TM18": {
-    "label": "Route 15 - Northwest Item",
+    "name": "Route 15 - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE24_TM45": {
-    "label": "Route 24 - Northwest Ledge Item",
+    "name": "Route 24 - Northwest Ledge Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE25_TM43": {
-    "label": "Route 25 - Item Near Bush",
+    "name": "Route 25 - Item Near Bush",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_CENTER_NUGGET": {
-    "label": "Safari Zone Center - Center Island Item",
+    "name": "Safari Zone Center - Center Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_FULL_RESTORE": {
-    "label": "Safari Zone East - Item Near Rest House",
+    "name": "Safari Zone East - Item Near Rest House",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_LEAF_STONE": {
-    "label": "Safari Zone East - Southeast Plateau Item",
+    "name": "Safari Zone East - Southeast Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_MAX_POTION": {
-    "label": "Safari Zone East - Item Near Bush",
+    "name": "Safari Zone East - Item Near Bush",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_TM11": {
-    "label": "Safari Zone East - Tall Grass Item",
+    "name": "Safari Zone East - Tall Grass Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_NORTH_PROTEIN": {
-    "label": "Safari Zone North - North Item",
+    "name": "Safari Zone North - North Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_NORTH_QUICK_CLAW": {
-    "label": "Safari Zone North - South Item",
+    "name": "Safari Zone North - South Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_NORTH_TM47": {
-    "label": "Safari Zone North - Center Item",
+    "name": "Safari Zone North - Center Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_WEST_MAX_POTION": {
-    "label": "Safari Zone West - Southwest Item",
+    "name": "Safari Zone West - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_WEST_MAX_REVIVE": {
-    "label": "Safari Zone West - Southeast Item",
+    "name": "Safari Zone West - Southeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_WEST_TM32": {
-    "label": "Safari Zone West - Northwest Item",
+    "name": "Safari Zone West - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEAFOAM_ISLANDS_1F_ICE_HEAL": {
-    "label": "Seafoam Islands 1F - Plateau Item",
+    "name": "Seafoam Islands 1F - Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEAFOAM_ISLANDS_B1F_REVIVE": {
-    "label": "Seafoam Islands B1F - Center Plateau Item",
+    "name": "Seafoam Islands B1F - Center Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEAFOAM_ISLANDS_B1F_WATER_STONE": {
-    "label": "Seafoam Islands B1F - South Item",
+    "name": "Seafoam Islands B1F - South Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEAFOAM_ISLANDS_B2F_BIG_PEARL": {
-    "label": "Seafoam Islands B2F - Item Below Center Plateau",
+    "name": "Seafoam Islands B2F - Item Below Center Plateau",
     "tags": ["Overworld"]
   },
   "ITEM_SEAFOAM_ISLANDS_B4F_ULTRA_BALL": {
-    "label": "Seafoam Islands B4F - South Peninsula Item",
+    "name": "Seafoam Islands B4F - South Peninsula Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE_LUCKY_PUNCH": {
-    "label": "Sevault Canyon - Dance House Item",
+    "name": "Sevault Canyon - Dance House Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_KINGS_ROCK": {
-    "label": "Sevault Canyon - Item Behind Smashable Rocks",
+    "name": "Sevault Canyon - Item Behind Smashable Rocks",
     "tags": ["Overworld"]
   },
   "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_MAX_ELIXIR": {
-    "label": "Sevault Canyon - Tall Grass Item",
+    "name": "Sevault Canyon - Tall Grass Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_NUGGET": {
-    "label": "Sevault Canyon - North Item",
+    "name": "Sevault Canyon - North Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_3F_HYPER_POTION": {
-    "label": "Silph Co. 3F - West Room Item",
+    "name": "Silph Co. 3F - West Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_4F_ESCAPE_ROPE": {
-    "label": "Silph Co. 4F - West Room Item (Right)",
+    "name": "Silph Co. 4F - West Room Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_4F_FULL_HEAL": {
-    "label": "Silph Co. 4F - West Room Item (Left)",
+    "name": "Silph Co. 4F - West Room Item (Left)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_4F_MAX_REVIVE": {
-    "label": "Silph Co. 4F - West Room Item (Middle)",
+    "name": "Silph Co. 4F - West Room Item (Middle)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_4F_TM41": {
-    "label": "Silph Co. 4F - East Room Item",
+    "name": "Silph Co. 4F - East Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_5F_PROTEIN": {
-    "label": "Silph Co. 5F - Northwest Room Item",
+    "name": "Silph Co. 5F - Northwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_5F_TM01": {
-    "label": "Silph Co. 5F - Southwest Room Item",
+    "name": "Silph Co. 5F - Southwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_6F_HP_UP": {
-    "label": "Silph Co. 6F - Southwest Room Item (Top)",
+    "name": "Silph Co. 6F - Southwest Room Item (Top)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_6F_X_SPECIAL": {
-    "label": "Silph Co. 6F - Southwest Room Item (Bottom)",
+    "name": "Silph Co. 6F - Southwest Room Item (Bottom)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_7F_CALCIUM": {
-    "label": "Silph Co. 7F - Southwest Room Item",
+    "name": "Silph Co. 7F - Southwest Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_7F_TM08": {
-    "label": "Silph Co. 7F - East Room Item",
+    "name": "Silph Co. 7F - East Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_8F_IRON": {
-    "label": "Silph Co. 8F - East Room Item",
+    "name": "Silph Co. 8F - East Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_10F_CARBOS": {
-    "label": "Silph Co. 10F - Southwest Room Item (Right)",
+    "name": "Silph Co. 10F - Southwest Room Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_10F_RARE_CANDY": {
-    "label": "Silph Co. 10F - Southwest Room Item (Bottom)",
+    "name": "Silph Co. 10F - Southwest Room Item (Bottom)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_10F_ULTRA_BALL": {
-    "label": "Silph Co. 10F - Southwest Room Item (Left)",
+    "name": "Silph Co. 10F - Southwest Room Item (Left)",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_11F_ZINC": {
-    "label": "Silph Co. 11F - East Hallway Item",
+    "name": "Silph Co. 11F - East Hallway Item",
     "tags": ["Overworld"]
   },
   "ITEM_SIX_ISLAND_OUTCAST_ISLAND_PP_UP": {
-    "label": "Outcast Island - North Beach Item",
+    "name": "Outcast Island - North Beach Item",
     "tags": ["Overworld"]
   },
   "ITEM_SIX_ISLAND_RUIN_VALLEY_FULL_RESTORE": {
-    "label": "Ruin Valley - Plateau Item",
+    "name": "Ruin Valley - Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_SIX_ISLAND_RUIN_VALLEY_HP_UP": {
-    "label": "Ruin Valley - Southwest Item",
+    "name": "Ruin Valley - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_SIX_ISLAND_RUIN_VALLEY_SUN_STONE": {
-    "label": "Ruin Valley - Southeast Item",
+    "name": "Ruin Valley - Southeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_SIX_ISLAND_WATER_PATH_DRAGON_SCALE": {
-    "label": "Water Path - South Island Item",
+    "name": "Water Path - South Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_SIX_ISLAND_WATER_PATH_ELIXIR": {
-    "label": "Water Path - North Island Item",
+    "name": "Water Path - North Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_1F_ROOM2_TM31": {
-    "label": "S.S. Anne 1F - Room 2 Item",
+    "name": "S.S. Anne 1F - Room 2 Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_KITCHEN_GREAT_BALL": {
-    "label": "S.S. Anne 1F - Kitchen Item",
+    "name": "S.S. Anne 1F - Kitchen Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_2F_ROOM2_STARDUST": {
-    "label": "S.S. Anne 2F - Room 2 Item",
+    "name": "S.S. Anne 2F - Room 2 Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_2F_ROOM4_X_ATTACK": {
-    "label": "S.S. Anne 2F - Room 4 Item",
+    "name": "S.S. Anne 2F - Room 4 Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_B1F_ROOM2_TM44": {
-    "label": "S.S. Anne B1F - Room 2 Item",
+    "name": "S.S. Anne B1F - Room 2 Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_B1F_ROOM3_ETHER": {
-    "label": "S.S. Anne B1F - Room 3 Item",
+    "name": "S.S. Anne B1F - Room 3 Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_B1F_ROOM5_SUPER_POTION": {
-    "label": "S.S. Anne B1F - Room 5 Item",
+    "name": "S.S. Anne B1F - Room 5 Item",
     "tags": ["Overworld"]
   },
   "ITEM_THREE_ISLAND_BERRY_FOREST_FULL_HEAL": {
-    "label": "Berry Forest - Item Near North Pond",
+    "name": "Berry Forest - Item Near North Pond",
     "tags": ["Overworld"]
   },
   "ITEM_THREE_ISLAND_BERRY_FOREST_MAX_ELIXIR": {
-    "label": "Berry Forest - Item Past Southwest Pond",
+    "name": "Berry Forest - Item Past Southwest Pond",
     "tags": ["Overworld"]
   },
   "ITEM_THREE_ISLAND_BERRY_FOREST_MAX_ETHER": {
-    "label": "Berry Forest - Northwest Item",
+    "name": "Berry Forest - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_THREE_ISLAND_ZINC": {
-    "label": "Three Island - Item Behind East Fence",
+    "name": "Three Island - Item Behind East Fence",
     "tags": ["Overworld"]
   },
   "ITEM_TWO_ISLAND_REVIVE": {
-    "label": "Two Island - Item Near Tree",
+    "name": "Two Island - Item Behind Cuttable Tree",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_1F_RARE_CANDY": {
-    "label": "Victory Road 1F - North Item (Left)",
+    "name": "Victory Road 1F - North Item (Left)",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_1F_TM02": {
-    "label": "Victory Road 1F - North Item (Right)",
+    "name": "Victory Road 1F - North Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_2F_FULL_HEAL": {
-    "label": "Victory Road 2F - Item Above Plateau",
+    "name": "Victory Road 2F - Item Above Plateau",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_2F_GUARD_SPEC": {
-    "label": "Victory Road 2F - Southwest Item",
+    "name": "Victory Road 2F - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_2F_TM07": {
-    "label": "Victory Road 2F - Northeast Item",
+    "name": "Victory Road 2F - Northeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_2F_TM37": {
-    "label": "Victory Road 2F - Item Below Plateau",
+    "name": "Victory Road 2F - Item Below Plateau",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_3F_MAX_REVIVE": {
-    "label": "Victory Road 3F - Northeast Item",
+    "name": "Victory Road 3F - Northeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_3F_TM50": {
-    "label": "Victory Road 3F - Northwest Item",
+    "name": "Victory Road 3F - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_CITY_POTION": {
-    "label": "Viridian City - Item Near Cuttable Tree",
+    "name": "Viridian City - Item Near Cuttable Tree",
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_FOREST_ANTIDOTE": {
-    "label": "Viridian Forest - Northeast Item",
+    "name": "Viridian Forest - Northeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_FOREST_POKE_BALL": {
-    "label": "Viridian Forest - West Item",
+    "name": "Viridian Forest - West Item",
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_FOREST_POTION": {
-    "label": "Viridian Forest - Center Item",
+    "name": "Viridian Forest - Center Item",
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_FOREST_POTION_2": {
-    "label": "Viridian Forest - Southeast Item",
+    "name": "Viridian Forest - Southeast Item",
     "tags": ["Overworld"]
   },
 
   "HIDDEN_ITEM_CELADON_CITY_PP_UP": {
-    "label": "Celadon City - Hidden Item Near Cuttable Tree",
+    "name": "Celadon City - Hidden Item Near Cuttable Tree",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_CERULEAN_CAVE_1F_ULTRA_BALL": {
-    "label": "Cerulean Cave 1F - West Plateau Hidden Item",
+    "name": "Cerulean Cave 1F - West Plateau Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY": {
-    "label": "Cerulean City - Hidden Item Behind Gym Badge Man's House",
+    "name": "Cerulean City - Hidden Item Behind Gym Badge Man's House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL": {
-    "label": "Memorial Pillar - South Beach Hidden Item",
+    "name": "Memorial Pillar - South Beach Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY": {
-    "label": "Memorial Pillar - Tall Grass South Hidden Item (Left)",
+    "name": "Memorial Pillar - Tall Grass South Hidden Item (Left)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_RAZZ_BERRY": {
-    "label": "Memorial Pillar - Tall Grass North Hidden Item",
+    "name": "Memorial Pillar - Tall Grass North Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_SITRUS_BERRY": {
-    "label": "Memorial Pillar - Tall Grass South Hidden Item (Right)",
+    "name": "Memorial Pillar - Tall Grass South Hidden Item (Right)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL": {
-    "label": "Resort Gorgeous - West Island Hidden Item",
+    "name": "Resort Gorgeous - West Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST": {
-    "label": "Resort Gorgeous - Main Island Southwest Hidden Item",
+    "name": "Resort Gorgeous - Main Island Southwest Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2": {
-    "label": "Resort Gorgeous - Main Island Northwest Hidden Item",
+    "name": "Resort Gorgeous - Main Island Northwest Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE": {
-    "label": "Resort Gorgeous - Main Island Southeast Hidden Item",
+    "name": "Resort Gorgeous - Main Island Southeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL": {
-    "label": "Rocket Warehouse - Northeast Room Box Hidden Item",
+    "name": "Rocket Warehouse - Northeast Room Box Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NET_BALL": {
-    "label": "Rocket Warehouse - Maze Center Box Hidden Item",
+    "name": "Rocket Warehouse - Maze Center Box Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_PEARL": {
-    "label": "Four Island - Beach Southeast Hidden Item",
+    "name": "Four Island - Beach Southeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL": {
-    "label": "Four Island - Beach Northwest Hidden Item",
+    "name": "Four Island - Beach Northwest Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE": {
-    "label": "Fuchsia City - Hidden Item Behind Fishing Guru's House",
+    "name": "Fuchsia City - Hidden Item Behind Fishing Guru's House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_EMBER_EXTERIOR_FIRE_STONE": {
-    "label": "Mt. Ember Exterior - Northwest Rock Hidden Item",
+    "name": "Mt. Ember Exterior - Northwest Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL": {
-    "label": "Mt. Ember Exterior - Rock Near West Cave Entrance Hidden Item",
+    "name": "Mt. Ember Exterior - Rock Near West Cave Entrance Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM": {
-    "label": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
+    "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2": {
-    "label": "Mt. Moon B1F - Third Tunnel Rock Hidden Item",
+    "name": "Mt. Moon B1F - Third Tunnel Rock Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3": {
-    "label": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
+    "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM": {
-    "label": "Mt. Moon B1F - Second Tunnel Rock Hidden Item",
+    "name": "Mt. Moon B1F - Second Tunnel Rock Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2": {
-    "label": "Mt. Moon B1F - Fourth Tunnel Rock Hidden Item",
+    "name": "Mt. Moon B1F - Fourth Tunnel Rock Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3": {
-    "label": "Mt. Moon B1F - First Tunnel East Rock Hidden Item",
+    "name": "Mt. Moon B1F - First Tunnel East Rock Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B2F_ETHER": {
-    "label": "Mt. Moon B2F - Northeast Rock Hidden Item",
+    "name": "Mt. Moon B2F - Northeast Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE": {
-    "label": "Mt. Moon B2F - Rock Near Fossils Hidden Item",
+    "name": "Mt. Moon B2F - Rock Near Fossils Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH": {
-    "label": "Navel Rock - Hidden Item Near Ho-Oh",
+    "name": "Navel Rock - Hidden Item Near Ho-Oh",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL": {
-    "label": "Treasure Beach - Tall Grass Northwest Hidden Item",
+    "name": "Treasure Beach - Tall Grass Northwest Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL": {
-    "label": "Treasure Beach - Tall Grass Center Hidden Item",
+    "name": "Treasure Beach - Tall Grass Center Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2": {
-    "label": "Treasure Beach - Tall Grass Southwest Hidden Item",
+    "name": "Treasure Beach - Tall Grass Southwest Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST": {
-    "label": "Treasure Beach - Beach West Hidden Item",
+    "name": "Treasure Beach - Beach West Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2": {
-    "label": "Treasure Beach - Tall Grass Northeast Hidden Item",
+    "name": "Treasure Beach - Tall Grass Northeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE": {
-    "label": "Treasure Beach - Tall Grass East Hidden Item",
+    "name": "Treasure Beach - Tall Grass East Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL": {
-    "label": "Treasure Beach - Beach East Hidden Item",
+    "name": "Treasure Beach - Beach East Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2": {
-    "label": "Treasure Beach - Tall Grass Southeast Hidden Item",
+    "name": "Treasure Beach - Tall Grass Southeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL": {
-    "label": "Pewter City - Northwest Hidden Item",
+    "name": "Pewter City - Northwest Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POKEMON_MANSION_1F_MOON_STONE": {
-    "label": "Pokemon Mansion 1F - West Rubble Hidden Item",
+    "name": "Pokemon Mansion 1F - West Rubble Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POKEMON_MANSION_3F_RARE_CANDY": {
-    "label": "Pokemon Mansion 3F - East Hallway Hidden Item",
+    "name": "Pokemon Mansion 3F - East Hallway Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POKEMON_MANSION_B1F_ELIXIR": {
-    "label": "Pokemon Mansion B1F - Northeast Room Hidden Item",
+    "name": "Pokemon Mansion B1F - Northeast Room Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POKEMON_TOWER_5F_BIG_MUSHROOM": {
-    "label": "Pokemon Tower 5F - Northwest Hidden Item",
+    "name": "Pokemon Tower 5F - Northwest Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL": {
-    "label": "Pokemon Tower 7F - Hidden Item Between Statues",
+    "name": "Pokemon Tower 7F - Hidden Item Between Statues",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POWER_PLANT_MAX_ELIXIR": {
-    "label": "Power Plant - Center Machine Room Hidden Item",
+    "name": "Power Plant - Center Machine Room Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POWER_PLANT_THUNDER_STONE": {
-    "label": "Power Plant - Hidden Item Near Zapdos",
+    "name": "Power Plant - Hidden Item Near Zapdos",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B1F_PP_UP": {
-    "label": "Rocket Hideout B1F - Southeast Plant Hidden Item",
+    "name": "Rocket Hideout B1F - Southeast Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B3F_NUGGET": {
-    "label": "Rocket Hideout B3F - Northwest Hidden Item",
+    "name": "Rocket Hideout B3F - Northwest Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NEST_BALL": {
-    "label": "Rocket Hideout B4F - Giovanni's Room Southeast Plant Hidden Item",
+    "name": "Rocket Hideout B4F - Giovanni's Room Southeast Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL": {
-    "label": "Rocket Hideout B4F - Giovanni's Room Southwest Plant Hidden Item",
+    "name": "Rocket Hideout B4F - Giovanni's Room Southwest Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
-    "label": "Route 3 - Hidden Item Between Ledges",
+    "name": "Route 3 - Hidden Item Between Ledges",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE4_GREAT_BALL": {
-    "label": "Route 4 - Hidden Item Near Move Tutors",
+    "name": "Route 4 - Hidden Item Near Move Tutors",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE4_PERSIM_BERRY": {
-    "label": "Route 4 - Hidden Item Near Pokemon Center",
+    "name": "Route 4 - Hidden Item Near Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE4_RAZZ_BERRY": {
-    "label": "Route 4 - Hidden Item Below South Ledge",
+    "name": "Route 4 - Hidden Item Below South Ledge",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE6_RARE_CANDY": {
-    "label": "Route 6 - Northeast Hidden Item",
+    "name": "Route 6 - Northeast Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE6_SITRUS_BERRY": {
-    "label": "Route 6 - Northwest Hidden Item",
+    "name": "Route 6 - Northwest Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY": {
-    "label": "Route 7 - Southeast Hidden Item",
+    "name": "Route 7 - Southeast Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE8_LEPPA_BERRY": {
-    "label": "Route 8 - Tall Grass Northeast Hidden Item",
+    "name": "Route 8 - Tall Grass Northeast Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE8_LUM_BERRY": {
-    "label": "Route 8 - Tall Grass Southeast Hidden Item",
+    "name": "Route 8 - Tall Grass Southeast Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE8_RAWST_BERRY": {
-    "label": "Route 8 - Tall Grass Northwest Hidden Item",
+    "name": "Route 8 - Tall Grass Northwest Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE9_CHESTO_BERRY": {
-    "label": "Route 9 - Northeast Ledge Hidden Item (Left)",
+    "name": "Route 9 - Northeast Ledge Hidden Item (Left)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE9_ETHER": {
-    "label": "Route 9 - Northwest Ledge Rock Hidden Item",
+    "name": "Route 9 - Northwest Ledge Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE9_RARE_CANDY": {
-    "label": "Route 9 - Northeast Ledge Hidden Item (Right)",
+    "name": "Route 9 - Northeast Ledge Hidden Item (Right)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE10_CHERI_BERRY": {
-    "label": "Route 10 - West Hidden Item Near Pokemon Center",
+    "name": "Route 10 - West Hidden Item Near Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE10_MAX_ETHER": {
-    "label": "Route 10 - Hidden Item Near Power Plant Entrance",
+    "name": "Route 10 - Hidden Item Near Power Plant Entrance",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE10_NANAB_BERRY": {
-    "label": "Route 10 - Hidden Item Near Rock Tunnel South Entrance",
+    "name": "Route 10 - Hidden Item Near Rock Tunnel South Entrance",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE10_PERSIM_BERRY": {
-    "label": "Route 10 - Southeast Hidden Item Near Pokemon Center",
+    "name": "Route 10 - Southeast Hidden Item Near Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE10_SUPER_POTION": {
-    "label": "Route 10 - Hidden Item Behind Cuttable Tree",
+    "name": "Route 10 - Hidden Item Behind Cuttable Tree",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE": {
-    "label": "Route 11 - Northeast Rock Hidden Item",
+    "name": "Route 11 - Northeast Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE12_HYPER_POTION": {
-    "label": "Route 12 - Grass Hidden Item",
+    "name": "Route 12 - Grass Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE12_LEFTOVERS": {
-    "label": "Route 12 - Hidden Item Under Snorlax",
+    "name": "Route 12 - Hidden Item Under Snorlax",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE12_RARE_CANDY": {
-    "label": "Route 12 - Tall Grass Hidden Item",
+    "name": "Route 12 - Tall Grass Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE13_PP_UP": {
-    "label": "Route 13 - Maze South Hidden Item",
+    "name": "Route 13 - Maze South Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE14_PINAP_BERRY": {
-    "label": "Route 14 - Southeast Hidden Item",
+    "name": "Route 14 - Southeast Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE14_ZINC": {
-    "label": "Route 14 - Hidden Item Behind Cuttable Tree",
+    "name": "Route 14 - Hidden Item Behind Cuttable Tree",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE16_LEFTOVERS": {
-    "label": "Route 16 - Hidden Item Under Snorlax",
+    "name": "Route 16 - Hidden Item Under Snorlax",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE17_FULL_RESTORE": {
-    "label": "Route 17 - Dirt Path Hidden Item",
+    "name": "Route 17 - Dirt Path Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE17_MAX_ELIXIR": {
-    "label": "Route 17 - Southeast Stone Path Hidden Item",
+    "name": "Route 17 - Southeast Stone Path Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE17_MAX_REVIVE": {
-    "label": "Route 17 - West Stone Path Hidden Item (Bottom)",
+    "name": "Route 17 - West Stone Path Hidden Item (Bottom)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE17_PP_UP": {
-    "label": "Route 17 - West Stone Path Hidden Item (Top)",
+    "name": "Route 17 - West Stone Path Hidden Item (Top)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE17_RARE_CANDY": {
-    "label": "Route 17 - East Stone Path Hidden Item",
+    "name": "Route 17 - East Stone Path Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE20_STARDUST": {
-    "label": "Route 20 - Northwest Island Hidden Item",
+    "name": "Route 20 - Northwest Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ROUTE21_NORTH_PEARL": {
-    "label": "Route 21 - East Island Hidden Item",
+    "name": "Route 21 - East Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY": {
-    "label": "Route 23 - Hidden Item Before Sixth Checkpoint",
+    "name": "Route 23 - Hidden Item Before Sixth Checkpoint",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_FULL_RESTORE": {
-    "label": "Route 23 -  Northeast Rock Hidden Item",
+    "name": "Route 23 -  Northeast Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_LEPPA_BERRY": {
-    "label": "Route 23 - Hidden Item After Second Checkpoint",
+    "name": "Route 23 - Hidden Item After Second Checkpoint",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_LUM_BERRY": {
-    "label": "Route 23 - Hidden Item After Victory Road",
+    "name": "Route 23 - Hidden Item After Victory Road",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_MAX_ELIXIR": {
-    "label": "Route 23 - Stone Maze Hidden Item",
+    "name": "Route 23 - Stone Maze Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_MAX_ETHER": {
-    "label": "Route 23 - Island Hidden Item",
+    "name": "Route 23 - Island Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_SITRUS_BERRY": {
-    "label": "Route 23 - Hidden Item Near Victory Road Entrance",
+    "name": "Route 23 - Hidden Item Near Victory Road Entrance",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_ULTRA_BALL": {
-    "label": "Route 23 - Hidden Item Between Statues",
+    "name": "Route 23 - Hidden Item Between Statues",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE24_PECHA_BERRY": {
-    "label": "Route 24 - Northeast Ledge Hidden Item",
+    "name": "Route 24 - Northeast Ledge Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE25_BLUK_BERRY": {
-    "label": "Route 25 - Hidden Item Near North Flowers",
+    "name": "Route 25 - Hidden Item Near North Flowers",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE25_ELIXIR": {
-    "label": "Route 25 - Northwest Hidden Item Near Bush",
+    "name": "Route 25 - Northwest Hidden Item Near Bush",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE25_ETHER": {
-    "label": "Route 25 - Hidden Item Past Sea Cottage",
+    "name": "Route 25 - Hidden Item Past Sea Cottage",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE25_ORAN_BERRY": {
-    "label": "Route 25 - Hidden Item Near South Flowers",
+    "name": "Route 25 - Hidden Item Near South Flowers",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFARI_ZONE_CENTER_LEAF_STONE": {
-    "label": "Safari Zone Center - Center Island Hidden Item",
+    "name": "Safari Zone Center - Center Island Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFARI_ZONE_WEST_REVIVE": {
-    "label": "Safari Zone West - Hidden Item Near Secret House",
+    "name": "Safari Zone West - Hidden Item Near Secret House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFFRON_CITY_COPYCATS_HOUSE_2F_NUGGET": {
-    "label": "Saffron City - Copycat's House Hidden Item",
+    "name": "Saffron City - Copycat's House Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEAFOAM_ISLANDS_B3F_NUGGET": {
-    "label": "Seafoam Islands B3F - West Plateau Rock Hidden Item",
+    "name": "Seafoam Islands B3F - West Plateau Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEAFOAM_ISLANDS_B4F_WATER_STONE": {
-    "label": "Seafoam Islands B4F - West Rock Hidden Item",
+    "name": "Seafoam Islands B4F - West Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_CHERI_BERRY": {
-    "label": "Sevault Canyon - Hidden Item Near Dance House",
+    "name": "Sevault Canyon - Hidden Item Near Dance House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY": {
-    "label": "Canyon Entrance - Southwest Hidden Item",
+    "name": "Canyon Entrance - Southwest Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE": {
-    "label": "Tanoby Ruins - Scufib Chamber Island Hidden Item",
+    "name": "Tanoby Ruins - Scufib Chamber Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2": {
-    "label": "Tanoby Ruins - Weepth Chamber Island Hidden Item",
+    "name": "Tanoby Ruins - Weepth Chamber Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3": {
-    "label": "Tanoby Ruins - Monean Chamber Island Hidden Item",
+    "name": "Tanoby Ruins - Monean Chamber Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_4": {
-    "label": "Tanoby Ruins - Viapois Chamber Island Hidden Item",
+    "name": "Tanoby Ruins - Viapois Chamber Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL": {
-    "label": "Trainer Tower - Beach North Hidden Item",
+    "name": "Trainer Tower - Beach North Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY": {
-    "label": "Trainer Tower - Hidden Item Near Fence",
+    "name": "Trainer Tower - Hidden Item Near Fence",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL": {
-    "label": "Trainer Tower - Beach West Hidden Item",
+    "name": "Trainer Tower - Beach West Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL": {
-    "label": "Silph Co. 2F - Southwest Room Plant Hidden Item",
+    "name": "Silph Co. 2F - Southwest Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_3F_PROTEIN": {
-    "label": "Silph Co. 3F - Southeast Plant Hidden Item",
+    "name": "Silph Co. 3F - Southeast Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_4F_IRON": {
-    "label": "Silph Co. 4F - Southeast Room Plant Hidden Item",
+    "name": "Silph Co. 4F - Southeast Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_5F_ELIXIR": {
-    "label": "Silph Co. 5F - Center Room Southwest Plant Hidden Item",
+    "name": "Silph Co. 5F - Center Room Southwest Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_5F_PP_UP": {
-    "label": "Silph Co. 5F - Center Room Northeast Plant Hidden Item",
+    "name": "Silph Co. 5F - Center Room Northeast Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_6F_CARBOS": {
-    "label": "Silph Co. 6F - Northwest Room Plant Hidden Item",
+    "name": "Silph Co. 6F - Northwest Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_7F_ZINC": {
-    "label": "Silph Co. 7F - East Room Plant Hidden Item",
+    "name": "Silph Co. 7F - East Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_8F_NUGGET": {
-    "label": "Silph Co. 8F - East Room Plant Hidden Item",
+    "name": "Silph Co. 8F - East Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_9F_CALCIUM": {
-    "label": "Silph Co. 9F - West Room Plant Hidden Item",
+    "name": "Silph Co. 9F - West Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_9F_MAX_POTION": {
-    "label": "Silph Co. 9F - West Room Hidden Item Near Boxes",
+    "name": "Silph Co. 9F - West Room Hidden Item Near Boxes",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_10F_HP_UP": {
-    "label": "Silph Co. 10F - East Room Plant Hidden Item",
+    "name": "Silph Co. 10F - East Room Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SILPH_CO_11F_REVIVE": {
-    "label": "Silph Co. 11F - South Hallway Plant Hidden Item",
+    "name": "Silph Co. 11F - South Hallway Plant Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL": {
-    "label": "Green Path - West Island Hidden Item",
+    "name": "Green Path - West Island Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY": {
-    "label": "Six Island - Hidden Item Behind Pokemon Center",
+    "name": "Six Island - Hidden Item Behind Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL": {
-    "label": "Outcast Island - West Beach Hidden Item",
+    "name": "Outcast Island - West Beach Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE": {
-    "label": "Outcast Island - East Beach Hidden Item",
+    "name": "Outcast Island - East Beach Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY": {
-    "label": "Water Path - Tall Grass South Hidden Item",
+    "name": "Water Path - Tall Grass South Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ORAN_BERRY": {
-    "label": "Water Path - North Island Hidden Item",
+    "name": "Water Path - North Island Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_PINAP_BERRY": {
-    "label": "Water Path - Tall Grass North Hidden Item",
+    "name": "Water Path - Tall Grass North Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_B1F_CORRIDOR_HYPER_POTION": {
-    "label": "S.S. Anne B1F - Trash Can Hidden Item",
+    "name": "S.S. Anne B1F - Trash Can Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE": {
-    "label": "S.S. Anne Exterior - East Pier Hidden Item",
+    "name": "S.S. Anne Exterior - East Pier Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_CHERI_BERRY": {
-    "label": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Middle)",
+    "name": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Middle)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_CHESTO_BERRY": {
-    "label": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Bottom)",
+    "name": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Bottom)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_PECHA_BERRY": {
-    "label": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Top)",
+    "name": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Top)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY": {
-    "label": "Berry Forest - North Hidden Item",
+    "name": "Berry Forest - North Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY": {
-    "label": "Berry Forest - Northwest Hidden Item (Bottom)",
+    "name": "Berry Forest - Northwest Hidden Item (Bottom)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY": {
-    "label": "Berry Forest - Hidden Item Near West Pond (Right)",
+    "name": "Berry Forest - Hidden Item Near West Pond (Right)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHESTO_BERRY": {
-    "label": "Berry Forest - Northeast Hidden Item",
+    "name": "Berry Forest - Northeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY": {
-    "label": "Berry Forest - Hidden Item Near Lostelle",
+    "name": "Berry Forest - Hidden Item Near Lostelle",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY": {
-    "label": "Berry Forest - Center Hidden Item (Left)",
+    "name": "Berry Forest - Center Hidden Item (Left)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY": {
-    "label": "Berry Forest - East Hidden Item (Left)",
+    "name": "Berry Forest - East Hidden Item (Left)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PECHA_BERRY": {
-    "label": "Berry Forest - Hidden Item Near Southwest Pond",
+    "name": "Berry Forest - Hidden Item Near Southwest Pond",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY": {
-    "label": "Berry Forest - Southeast Hidden Item",
+    "name": "Berry Forest - Southeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PINAP_BERRY": {
-    "label": "Berry Forest - East Hidden Item (Right)",
+    "name": "Berry Forest - East Hidden Item (Right)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAWST_BERRY": {
-    "label": "Berry Forest - Northwest Hidden Item (Top)",
+    "name": "Berry Forest - Northwest Hidden Item (Top)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAZZ_BERRY": {
-    "label": "Berry Forest - Center Hidden Item (Right)",
+    "name": "Berry Forest - Center Hidden Item (Right)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_WEPEAR_BERRY": {
-    "label": "Berry Forest - Hidden Item Near West Pond (Left)",
+    "name": "Berry Forest - Hidden Item Near West Pond (Left)",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_MAX_REPEL": {
-    "label": "Bond Bridge - Rock Hidden Item",
+    "name": "Bond Bridge - Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL": {
-    "label": "Bond Bridge - East Beach Item",
+    "name": "Bond Bridge - East Beach Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST": {
-    "label": "Bond Bridge - West Beach Item",
+    "name": "Bond Bridge - West Beach Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET": {
-    "label": "Three Isle Path - Rock Hidden Item",
+    "name": "Three Isle Path - Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_PP_UP": {
-    "label": "Three Island - Hidden Item Behind West Fence",
+    "name": "Three Island - Hidden Item Behind West Fence",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_PP_MAX": {
-    "label": "Cape Brink - Hidden Item Behind House",
+    "name": "Cape Brink - Hidden Item Across Pond",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_RARE_CANDY": {
-    "label": "Cape Brink - Hidden Item Across Water",
+    "name": "Cape Brink - Hidden Item Behind House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE": {
-    "label": "Underground Path (East-West) - Far East Hidden Item",
+    "name": "Underground Path (East-West) - Far East Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING": {
-    "label": "Underground Path (East-West) - West Hidden Item",
+    "name": "Underground Path (East-West) - West Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL": {
-    "label": "Underground Path (East-West) - Center Hidden Item",
+    "name": "Underground Path (East-West) - Center Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER": {
-    "label": "Underground Path (East-West) - East Hidden Item",
+    "name": "Underground Path (East-West) - East Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL": {
-    "label": "Underground Path (East-West) - Farthest East Hidden Item",
+    "name": "Underground Path (East-West) - Farthest East Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL": {
-    "label": "Underground Path (East-West) - Far West Hidden Item",
+    "name": "Underground Path (East-West) - Far West Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION": {
-    "label": "Underground Path (East-West) - Farthest West Hidden Item",
+    "name": "Underground Path (East-West) - Farthest West Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE": {
-    "label": "Underground Path (North-South) - Farthest North Hidden Item",
+    "name": "Underground Path (North-South) - Farthest North Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING": {
-    "label": "Underground Path (North-South) - North Hidden Item",
+    "name": "Underground Path (North-South) - North Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL": {
-    "label": "Underground Path (North-South) - Farthest South Hidden Item",
+    "name": "Underground Path (North-South) - Farthest South Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER": {
-    "label": "Underground Path (North-South) - South Hidden Item",
+    "name": "Underground Path (North-South) - South Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL": {
-    "label": "Underground Path (North-South) - Far South Hidden Item",
+    "name": "Underground Path (North-South) - Far South Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL": {
-    "label": "Underground Path (North-South) - Far North Hidden Item",
+    "name": "Underground Path (North-South) - Far North Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION": {
-    "label": "Underground Path (North-South) - Center Hidden Item",
+    "name": "Underground Path (North-South) - Center Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER": {
-    "label": "Vermilion City - Hidden Item Near Pokemon Center",
+    "name": "Vermilion City - Hidden Item Near Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE": {
-    "label": "Victory Road 1F - North Rock Hidden Item",
+    "name": "Victory Road 1F - North Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL": {
-    "label": "Victory Road 1F - Center Rock Hidden Item",
+    "name": "Victory Road 1F - Center Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE": {
-    "label": "Viridian Gym - Hidden Item Under Giovanni",
+    "name": "Viridian Gym - Hidden Item Under Giovanni",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE": {
-    "label": "Viridian Forest - Hidden Item Near South Entrance",
+    "name": "Viridian Forest - Hidden Item Near South Entrance",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_VIRIDIAN_FOREST_POTION": {
-    "label": "Viridian Forest - Hidden Item Near North Entrance",
+    "name": "Viridian Forest - Hidden Item Near North Entrance",
     "tags": ["Hidden"]
   },
 
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
-    "label": "Route 16 - Gift from Professor Oak's Aide in Gate",
+    "name": "Route 16 - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
-    "label": "Route 10 - Gift from Professor Oak's Aide in Pokemon Center",
+    "name": "Route 10 - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "label": "Route 15 - Gift from Professor Oak's Aide in Gate",
+    "name": "Route 15 - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FIRST_POKEBALLS": {
-    "label": "Pallet Town - Gift from Professor Oak",
+    "name": "Pallet Town - Professor Oak's Parcel Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
-    "label": "Three Island - Gift from Employee",
+    "name": "Three Island - Anti-Biker",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH": {
-    "label": "Silph Co. 11F - Gift from President",
+    "name": "Silph Co. 11F - President",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER": {
-    "label": "Three Island - Gift from Lostelle's Father",
+    "name": "Two Island - Lostelle's Father",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL": {
-    "label": "Three Isle Path - Gift from Gold Miner",
+    "name": "Three Isle Path - Prospector",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT": {
-    "label": "Route 24 - Team Rocket Grunt Reward",
+    "name": "Route 24 - Team Rocket Grunt Reward",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL": {
+    "name":"Pallet Town - Professor Oak's Post Route 22 Rival Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POTION_ON_ROUTE_1": {
-    "label": "Route 1 - Gift from Poke Mart Employee",
+    "name": "Route 1 - Poke Mart Employee",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM03_FROM_MISTY": {
-    "label": "Cerulean Gym - Gift from Misty",
+    "name": "Cerulean Gym - Leader Misty Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM04_FROM_SABRINA": {
-    "label": "Saffron Gym - Gift from Sabrina",
+    "name": "Saffron Gym - Leader Sabrina Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM06_FROM_KOGA": {
-    "label": "Fuchsia Gym - Gift from Koga",
+    "name": "Fuchsia Gym - Leader Koga Reward",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL": {
+    "name": "Celadon City Department Store Roof - Girl's Fresh Water Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
-    "label": "Celadon Gym - Gift from Erika",
+    "name": "Celadon Gym - Leader Erika Reward",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
+    "name": "Celadon City Department Store Roof - Girl's Soda Pop Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
-    "label": "Viridian Gym - Gift from Giovanni",
+    "name": "Viridian Gym - Leader Giovanni Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM27": {
-    "label": "Route 12 - Gift from Girl in Gate",
+    "name": "Route 12 Gate - Lass",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM28_FROM_ROCKET": {
-    "label": "Cerulean City - Team Rocket Grunt Reward",
+    "name": "Cerulean City - Team Rocket Grunt Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC": {
-    "label": "Saffron City - Gift from Mr. Psychic in House",
+    "name": "Saffron City - Mr. Psychic",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL": {
+    "name": "Celadon City Department Store Roof - Girl's Lemonade Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
-    "label": "Vermilion Gym - Gift from Lt. Surge",
+    "name": "Vermilion Gym - Leader Lt. Surge Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
-    "label": "Cinnabar Gym - Gift from Blaine",
+    "name": "Cinnabar Gym - Leader Blaine Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM39_FROM_BROCK": {
-    "label": "Pewter Gym - Gift from Brock",
+    "name": "Pewter Gym - Leader Brock Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR": {
-    "label": "Memorial Pillar - Gift from Mourning Trainer",
+    "name": "Memorial Pillar - Memorial Man",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_RECEIVED_AURORA_TICKET": {
+    "name": "Pallet Town - Professor Oak's Post Champion Reward 1",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
+    "name": "Pallet Town - Professor Oak's Post Champion Reward 2",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {
-    "label": "Berry Forest - Gift from Lostelle",
+    "name": "Berry Forest - Lostelle",
     "tags": ["NPCGift"]
   }
 }
