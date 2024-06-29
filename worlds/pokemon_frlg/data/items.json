@@ -43,37 +43,37 @@
   "ITEM_HM_CUT": {
     "name": "HM01 Cut",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
   "ITEM_HM_FLY": {
     "name": "HM02 Fly",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
   "ITEM_HM_SURF": {
     "name": "HM03 Surf",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
   "ITEM_HM_STRENGTH": {
     "name": "HM04 Strength",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
   "ITEM_HM_FLASH": {
     "name": "HM05 Flash",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
   "ITEM_HM_ROCK_SMASH": {
     "name": "HM06 Rock Smash",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
   "ITEM_HM_WATERFALL": {
     "name": "HM07 Waterfall",
     "classification": "PROGRESSION",
-    "tags": ["HM", "Unique"]
+    "tags": ["Unique"]
   },
 
   "ITEM_AURORA_TICKET": {
@@ -974,7 +974,7 @@
     "tags": ["Held"]
   },
   "ITEM_SOOTHE_BELL": {
-    "name": "Quick Claw",
+    "name": "Soothe Bell",
     "classification": "USEFUL",
     "tags": ["Held"]
   },

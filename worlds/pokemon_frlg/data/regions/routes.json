@@ -2,6 +2,7 @@
   "REGION_ROUTE1/MAIN": {
     "parent_map": "MAP_ROUTE1",
     "name": "Route 1",
+    "encounter_region": "Route 1",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -17,7 +18,8 @@
   },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 Southwest Area",
+    "name": "Route 2 - Southwest",
+    "encounter_region": "Route 2",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -33,7 +35,8 @@
   },
   "REGION_ROUTE2/NORTHWEST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 Northwest Area",
+    "name": "Route 2 - Northwest",
+    "encounter_region": "Route 2",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -49,7 +52,8 @@
   },
   "REGION_ROUTE2/NORTHEAST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 Northeast Area",
+    "name": "Route 2 - Northeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -66,7 +70,8 @@
   },
   "REGION_ROUTE2/EAST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 East Area",
+    "name": "Route 2 - East",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -81,7 +86,8 @@
   },
   "REGION_ROUTE2/SOUTHEAST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 Southeast Area",
+    "name": "Route 2 - Southeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -100,6 +106,7 @@
   "REGION_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE",
     "name": "Viridian Forest South Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -114,6 +121,7 @@
   "REGION_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE",
     "name": "Viridian Forest North Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -128,6 +136,7 @@
   "REGION_ROUTE2_EAST_BUILDING/MAIN": {
     "parent_map": "MAP_ROUTE2_EAST_BUILDING",
     "name": "Route 2 East Building",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -143,7 +152,8 @@
   },
   "REGION_ROUTE2_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE2_HOUSE",
-    "name": "Route 2 House",
+    "name": "Route 2 Trade House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -159,6 +169,7 @@
   "REGION_ROUTE3/MAIN": {
     "parent_map": "MAP_ROUTE3",
     "name": "Route 3",
+    "encounter_region": "Route 3",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -174,7 +185,8 @@
   },
   "REGION_ROUTE4/WEST": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 West Area",
+    "name": "Route 4 - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -192,7 +204,8 @@
   },
   "REGION_ROUTE4/EAST": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 East Area",
+    "name": "Route 4 - East",
+    "encounter_region": "Route 4",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -211,7 +224,8 @@
   },
   "REGION_ROUTE4/WATER": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 Water",
+    "name": "Route 4 - Water",
+    "encounter_region": "Route 4",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -222,23 +236,24 @@
     ],
     "warps": []
   },
-  "REGION_ROUTE4/NORTHEAST_LEDGE": {
+  "REGION_ROUTE4/LEDGE": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 Northeast Ledge",
+    "name": "Route 4 - Ledge",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE4/EAST",
-      "REGION_CERULEAN_CITY/CAVE_ENTRANCE"
+      "REGION_ROUTE4/EAST"
     ],
     "warps": []
   },
   "REGION_ROUTE4_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
     "name": "Route 4 Pokemon Center 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -255,6 +270,7 @@
   "REGION_ROUTE4_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_2F",
     "name": "Route 4 Pokemon Center 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -268,7 +284,8 @@
   "REGION_ROUTE5/MAIN": {
     "parent_map": "MAP_ROUTE5",
     "name": "Route 5",
-    "has_land": false,
+    "encounter_region": "Route 5",
+    "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
@@ -278,83 +295,43 @@
     ],
     "warps": [
       "MAP_ROUTE5:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0",
+      "MAP_ROUTE5:1/MAP_ROUTE5_POKEMON_DAY_CARE:0",
       "MAP_ROUTE5:2,3/MAP_ROUTE5_SOUTH_ENTRANCE:0"
-    ]
-  },
-  "REGION_ROUTE5/NORTH_LEDGES": {
-    "parent_map": "MAP_ROUTE5",
-    "name": "Route 5 North Ledges",
-    "has_land": true,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE5/SOUTH_LEDGE"
-    ],
-    "warps": []
-  },
-  "REGION_ROUTE5/SOUTH_LEDGE": {
-    "parent_map": "MAP_ROUTE5",
-    "name": "Route 5 South Ledge",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE5/MAIN"
-    ],
-    "warps": [
-      "MAP_ROUTE5:1/MAP_ROUTE5_POKEMON_DAY_CARE:0"
     ]
   },
   "REGION_ROUTE5_POKEMON_DAY_CARE/MAIN": {
     "parent_map": "MAP_ROUTE5_POKEMON_DAY_CARE",
     "name": "Route 5 Pokemon Day Care",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "maps": [
+    "warps": [
       "MAP_ROUTE5_POKEMON_DAY_CARE:0/MAP_ROUTE5:1"
     ]
   },
-  "REGION_ROUTE5_SOUTH_ENTRANCE/NORTH": {
+  "REGION_ROUTE5_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE5_SOUTH_ENTRANCE",
     "name": "Route 5 South Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_ROUTE5_SOUTH_ENTRANCE/SOUTH"
-    ],
+    "exits": [],
     "warps": [
-      "MAP_ROUTE5_SOUTH_ENTRANCE:0/MAP_ROUTE5:2"
-    ]
-  },
-  "REGION_ROUTE5_SOUTH_ENTRANCE/SOUTH": {
-    "parent_map": "MAP_ROUTE5_SOUTH_ENTRANCE",
-    "name": "Saffron City North Entrance",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE5_SOUTH_ENTRANCE/NORTH"
-    ],
-    "warps": [
+      "MAP_ROUTE5_SOUTH_ENTRANCE:0/MAP_ROUTE5:2",
       "MAP_ROUTE5_SOUTH_ENTRANCE:1/MAP_SAFFRON_CITY:9"
     ]
   },
   "REGION_ROUTE6/MAIN": {
     "parent_map": "MAP_ROUTE6",
     "name": "Route 6",
+    "encounter_region": "Route 6",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -364,7 +341,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE6/POND",
+      "REGION_ROUTE6/WATER",
       "REGION_VERMILION_CITY/MAIN"
     ],
     "warps": [
@@ -372,9 +349,10 @@
       "MAP_ROUTE6:1,2/MAP_ROUTE6_NORTH_ENTRANCE:1"
     ]
   },
-  "REGION_ROUTE6/POND": {
+  "REGION_ROUTE6/WATER": {
     "parent_map": "MAP_ROUTE6",
-    "name": "Route 6 Pond",
+    "name": "Route 6 - Water",
+    "encounter_region": "Route 6",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -383,39 +361,25 @@
     "exits": [],
     "warps": []
   },
-  "REGION_ROUTE6_NORTH_ENTRANCE/SOUTH": {
+  "REGION_ROUTE6_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE6_NORTH_ENTRANCE",
     "name": "Route 6 North Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_ROUTE6_NORTH_ENTRANCE/NORTH"
-    ],
+    "exits": [],
     "warps": [
+      "MAP_ROUTE6_NORTH_ENTRANCE:0/MAP_SAFFRON_CITY:12",
       "MAP_ROUTE6_NORTH_ENTRANCE:1/MAP_ROUTE6:1"
-    ]
-  },
-  "REGION_ROUTE6_NORTH_ENTRANCE/NORTH": {
-    "parent_map": "MAP_ROUTE6_NORTH_ENTRANCE",
-    "name": "Saffron City South Entrance",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE6_NORTH_ENTRANCE/SOUTH"
-    ],
-    "warps": [
-      "MAP_ROUTE6_NORTH_ENTRANCE:0/MAP_SAFFRON_CITY:12"
     ]
   },
   "REGION_ROUTE7/MAIN": {
     "parent_map": "MAP_ROUTE7",
     "name": "Route 7",
+    "encounter_region": "Route 7",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -431,46 +395,32 @@
       "MAP_ROUTE7:1/MAP_ROUTE7_EAST_ENTRANCE:0"
     ]
   },
-  "REGION_ROUTE7_EAST_ENTRANCE/WEST": {
+  "REGION_ROUTE7_EAST_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE7_EAST_ENTRANCE",
     "name": "Route 7 East Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_ROUTE7_EAST_ENTRANCE/EAST"
-    ],
+    "exits": [],
     "warps": [
-      "MAP_ROUTE7_EAST_ENTRANCE:0/MAP_ROUTE7:1"
-    ]
-  },
-  "REGION_ROUTE7_EAST_ENTRANCE/EAST": {
-    "parent_map": "MAP_ROUTE7_EAST_ENTRANCE",
-    "name": "Saffron City West Entrance",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE7_EAST_ENTRANCE/WEST"
-    ],
-    "warps": [
+      "MAP_ROUTE7_EAST_ENTRANCE:0/MAP_ROUTE7:1",
       "MAP_ROUTE7_EAST_ENTRANCE:1/MAP_SAFFRON_CITY:8"
     ]
   },
   "REGION_ROUTE8/MAIN": {
     "parent_map": "MAP_ROUTE8",
     "name": "Route 8",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE8/FENCE",
+      "REGION_ROUTE8/TREE",
       "REGION_LAVENDER_TOWN/MAIN"
     ],
     "warps": [
@@ -478,9 +428,10 @@
       "MAP_ROUTE8:1/MAP_ROUTE8_WEST_ENTRANCE:1"
     ]
   },
-  "REGION_ROUTE8/FENCE": {
+  "REGION_ROUTE8/TREE": {
     "parent_map": "MAP_ROUTE8",
-    "name": "Route 8 Fenced Area",
+    "name": "Route 8 - Tree",
+    "encounter_region": "Route 8",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -493,39 +444,25 @@
     "exits": [],
     "warps": []
   },
-  "REGION_ROUTE8_WEST_ENTRANCE/EAST": {
+  "REGION_ROUTE8_WEST_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE8_WEST_ENTRANCE",
     "name": "Route 8 West Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_ROUTE8_WEST_ENTRANCE/WEST"
-    ],
+    "exits": [],
     "warps": [
+      "MAP_ROUTE8_WEST_ENTRANCE:0/MAP_SAFFRON_CITY:11",
       "MAP_ROUTE8_WEST_ENTRANCE:1/MAP_ROUTE8:1"
-    ]
-  },
-  "REGION_ROUTE8_WEST_ENTRANCE/WEST": {
-    "parent_map": "MAP_ROUTE8_WEST_ENTRANCE",
-    "name": "Saffron City East Entrance",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE8_WEST_ENTRANCE/EAST"
-    ],
-    "warps": [
-      "MAP_ROUTE8_WEST_ENTRANCE:0/MAP_SAFFRON_CITY:11"
     ]
   },
   "REGION_ROUTE9/MAIN": {
     "parent_map": "MAP_ROUTE9",
     "name": "Route 9",
+    "encounter_region": "Route 9",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -545,7 +482,8 @@
   },
   "REGION_ROUTE10/NORTH": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 North Area",
+    "name": "Route 10 - North",
+    "encounter_region": "Route 10",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -559,14 +497,15 @@
       "REGION_ROUTE10/WATER",
       "REGION_ROUTE9/MAIN"
     ],
-    "maps": [
+    "warps": [
       "MAP_ROUTE10:0/MAP_ROCK_TUNNEL_1F:0",
       "MAP_ROUTE10:3/MAP_ROUTE10_POKEMON_CENTER_1F:0"
     ]
   },
   "REGION_ROUTE10/SOUTH": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 South Area",
+    "name": "Route 10 - South",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -583,7 +522,8 @@
   },
   "REGION_ROUTE10/WATER": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 Water",
+    "name": "Route 10 - Water",
+    "encounter_region": "Route 10",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -597,7 +537,8 @@
   },
   "REGION_ROUTE10/POWER_PLANT": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 Power Plant",
+    "name": "Route 10 - Power Plant",
+    "encounter_region": "Route 10",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -614,7 +555,8 @@
   },
   "REGION_ROUTE10/POWER_PLANT_LEDGE": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 Power Plant Ledge",
+    "name": "Route 10 - Power Plant Ledge",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -630,6 +572,7 @@
   "REGION_ROUTE10_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
     "name": "Route 10 Pokemon Center 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -646,6 +589,7 @@
   "REGION_ROUTE10_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_2F",
     "name": "Route 10 Pokemon Center 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -658,7 +602,8 @@
   },
   "REGION_ROUTE11/WEST": {
     "parent_map": "MAP_ROUTE11",
-    "name": "Route 11 West Area",
+    "name": "Route 11 - West",
+    "encounter_region": "Route 11",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -680,7 +625,8 @@
   },
   "REGION_ROUTE11/EAST": {
     "parent_map": "MAP_ROUTE11",
-    "name": "Route 11 East Area",
+    "name": "Route 11 - East",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -695,21 +641,20 @@
   },
   "REGION_ROUTE11/WATER": {
     "parent_map": "MAP_ROUTE11",
-    "name": "Route 11 Water",
+    "name": "Route 11 - Water",
+    "encounter_region": "Route 11",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_ROUTE11/WEST",
-      "REGION_VERMILION_CITY/EAST_WATER"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_ROUTE11_EAST_ENTRANCE_1F/MAIN": {
     "parent_map": "MAP_ROUTE11_EAST_ENTRANCE_1F",
     "name": "Route 11 East Entrance 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -725,6 +670,7 @@
   "REGION_ROUTE11_EAST_ENTRANCE_2F": {
     "parent_map": "MAP_ROUTE11_EAST_ENTRANCE_2F",
     "name": "Route 11 East Entrance 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -741,21 +687,23 @@
   },
   "REGION_ROUTE12/WEST": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 West Area",
+    "name": "Route 12 - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE12/UNDER_SNORLAX",
+      "REGION_ROUTE12/SNORLAX",
       "REGION_ROUTE11/EAST"
     ],
     "warps": []
   },
-  "REGION_ROUTE12/ABOVE_NORTH_GATE": {
+  "REGION_ROUTE12/NORTH": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 Above North Entrance",
+    "name": "Route 12 - North",
+    "encounter_region": "Route 12",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -763,7 +711,7 @@
     "events": [],
     "exits": [
       "REGION_ROUTE12/NORTH_WATER",
-      "REGOION_LAVENDER_TOWN/MAIN"
+      "REGION_LAVENDER_TOWN/MAIN"
     ],
     "warps": [
       "MAP_ROUTE12:1/MAP_ROUTE12_NORTH_ENTRANCE_1F:0"
@@ -771,7 +719,8 @@
   },
   "REGION_ROUTE12/NORTH_WATER": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 North Water",
+    "name": "Route 12 - Water N",
+    "encounter_region": "Route 12",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -780,9 +729,10 @@
     "exits": [],
     "warps": []
   },
-  "REGION_ROUTE12/BELOW_NORTH_GATE": {
+  "REGION_ROUTE12/CENTER": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 Below North Entrance",
+    "name": "Route 12 - Center",
+    "encounter_region": "Route 12",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -792,7 +742,7 @@
     "events": [],
     "exits": [
       "REGION_ROUTE12/SOUTH_WATER",
-      "REGION_ROUTE12/UNDER_SNORLAX"
+      "REGION_ROUTE12/SNORLAX"
     ],
     "warps": [
       "MAP_ROUTE12:2/MAP_ROUTE12_NORTH_ENTRANCE_1F:1"
@@ -800,7 +750,8 @@
   },
   "REGION_ROUTE12/SOUTH": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 South Area",
+    "name": "Route 12 - South",
+    "encounter_region": "Route 12",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -808,9 +759,9 @@
     "events": [],
     "exits": [
       "REGION_ROUTE12/SOUTH_WATER",
-      "REGION_ROUTE12/BEHIND_NORTH_CUTTABLE_TREE",
-      "REGION_ROUTE12/BEHIND_SOUTH_CUTTABLE_TREE",
-      "REGION_ROUTE12/UNDER_SNORLAX",
+      "REGION_ROUTE12/NORTH_TREE",
+      "REGION_ROUTE12/SOUTH_TREE",
+      "REGION_ROUTE12/SNORLAX",
       "REGION_ROUTE13/MAIN"
     ],
     "warps": [
@@ -819,7 +770,8 @@
   },
   "REGION_ROUTE12/SOUTH_WATER": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 South Water",
+    "name": "Route 12 - Water S",
+    "encounter_region": "Route 12",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -828,15 +780,16 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE12/BELOW_NORTH_GATE",
+      "REGION_ROUTE12/CENTER",
       "REGION_ROUTE12/SOUTH",
       "REGION_ROUTE13/WATER"
     ],
     "warps": []
   },
-  "REGION_ROUTE12/UNDER_SNORLAX": {
+  "REGION_ROUTE12/SNORLAX": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 Under Snorlax",
+    "name": "Route 12 - Snorlax",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -846,14 +799,15 @@
     "events": [],
     "exits": [
       "REGION_ROUTE12/WEST",
-      "REGION_ROUTE12/BELOW_NORTH_GATE",
+      "REGION_ROUTE12/CENTER",
       "REGION_ROUTE12/SOUTH"
     ],
     "warps": []
   },
-  "REGION_ROUTE12/BEHIND_NORTH_CUTTABLE_TREE": {
+  "REGION_ROUTE12/NORTH_TREE": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 North Enclosed Area",
+    "name": "Route 12 - Tree N",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -864,9 +818,10 @@
     "exits": [],
     "warps": []
   },
-  "REGION_ROUTE12/BEHIND_SOUTH_CUTTABLE_TREE": {
+  "REGION_ROUTE12/SOUTH_TREE": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 South Enclosed Area",
+    "name": "Route 12 - Tree S",
+    "encounter_region": "Route 12",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -875,13 +830,14 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE13/ISOLATED_AREA"
+      "REGION_ROUTE13/NORTH"
     ],
     "warps": []
   },
   "REGION_ROUTE12_FISHING_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE12_FISHING_HOUSE",
     "name": "Route 12 Fishing House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -897,6 +853,7 @@
   "REGION_ROUTE12_NORTH_ENTRANCE_1F/MAIN": {
     "parent_map": "MAP_ROUTE12_NORTH_ENTRANCE_1F",
     "name": "Route 12 North Entrance 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -912,6 +869,7 @@
   "REGION_ROUTE12_NORTH_ENTRANCE_2F/MAIN": {
     "parent_map": "MAP_ROUTE12_NORTH_ENTRANCE_2F",
     "name": "Route 12 North Entrance 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -927,6 +885,7 @@
   "REGION_ROUTE13/MAIN": {
     "parent_map": "MAP_ROUTE13",
     "name": "Route 13",
+    "encounter_region": "Route 13",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -936,15 +895,16 @@
     "events": [],
     "exits": [
       "REGION_ROUTE13/WATER",
-      "REGION_ROUTE13/BEHIND_CUTTABLE_TREE",
+      "REGION_ROUTE13/TREE",
       "REGION_ROUTE12/SOUTH",
       "REGION_ROUTE14/MAIN"
     ],
     "warps": []
   },
-  "REGION_ROUTE13/BEHIND_CUTTABLE_TREE": {
+  "REGION_ROUTE13/TREE": {
     "parent_map": "MAP_ROUTE13",
-    "name": "Route 13 Enclosed Area",
+    "name": "Route 13 - Tree",
+    "encounter_region": "Route 13",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -953,9 +913,10 @@
     "exits": [],
     "warps": []
   },
-  "REGION_ROUTE13/ISOLATED_AREA": {
+  "REGION_ROUTE13/NORTH": {
     "parent_map": "MAP_ROUTE13",
-    "name": "Route 13 Isolated Area",
+    "name": "Route 13 - North",
+    "encounter_region": "Route 13",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -966,7 +927,8 @@
   },
   "REGION_ROUTE13/WATER": {
     "parent_map": "MAP_ROUTE13",
-    "name": "Route 13 Water",
+    "name": "Route 13 - Water",
+    "encounter_region": "Route 13",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -981,6 +943,7 @@
   "REGION_ROUTE14/MAIN": {
     "parent_map": "MAP_ROUTE14",
     "name": "Route 14",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -989,16 +952,17 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE14/BEHIND_NORTH_CUTTABLE_TREE",
-      "REGION_ROUTE14/BEHIND_SOUTH_CUTTABLE_TREE",
+      "REGION_ROUTE14/TREE",
+      "REGION_ROUTE14/LEDGE",
       "REGION_ROUTE13/MAIN",
       "REGION_ROUTE15/SOUTH"
     ],
     "warps": []
   },
-  "REGION_ROUTE14/BEHIND_NORTH_CUTTABLE_TREE": {
+  "REGION_ROUTE14/TREE": {
     "parent_map": "MAP_ROUTE14",
-    "name": "Route 14 Enclosed Area",
+    "name": "Route 14 - Tree",
+    "encounter_region": "Route 14",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1009,9 +973,10 @@
     "exits": [],
     "warps": []
   },
-  "REGION_ROUTE14/BEHIND_SOUTH_CUTTABLE_TREE": {
+  "REGION_ROUTE14/LEDGE": {
     "parent_map": "MAP_ROUTE14",
-    "name": "Route 14 Ledge",
+    "name": "Route 14 - Ledge",
+    "encounter_region": "Route 13",
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1025,7 +990,8 @@
   },
   "REGION_ROUTE15/SOUTH": {
     "parent_map": "MAP_ROUTE15",
-    "name": "Route 15 South Area",
+    "name": "Route 15 - South",
+    "encounter_region": "Route 15",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1040,7 +1006,8 @@
   },
   "REGION_ROUTE15/NORTH": {
     "parent_map": "MAP_ROUTE15",
-    "name": "Route 15 North Area",
+    "name": "Route 15 - North",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1050,13 +1017,14 @@
     "events": [],
     "exits": [
       "REGION_ROUTE15/SOUTH",
-      "REGION_ROUTE14/BEHIND_SOUTH_CUTTABLE_TREE"
+      "REGION_ROUTE14/LEDGE"
     ],
     "warps": []
   },
   "REGION_ROUTE15/SOUTHWEST": {
     "parent_map": "MAP_ROUTE15",
-    "name": "Route 15 Southwest Area",
+    "name": "Route 15 - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1072,6 +1040,7 @@
   "REGION_ROUTE15_WEST_ENTRANCE_1F/MAIN": {
     "parent_map": "MAP_ROUTE15_WEST_ENTRANCE_1F",
     "name": "Route 15 West Entrance 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1087,6 +1056,7 @@
   "REGION_ROUTE15_WEST_ENTRANCE_2F/MAIN": {
     "parent_map": "MAP_ROUTE15_WEST_ENTRANCE_2F",
     "name": "Route 15 West Entrance 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1101,7 +1071,8 @@
   },
   "REGION_ROUTE16/SOUTHEAST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 Southeast Area",
+    "name": "Route 16 - Southeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1109,14 +1080,15 @@
     "events": [],
     "exits": [
       "REGION_ROUTE16/NORTHEAST",
-      "REGION_ROUTE16/UNDER_SNORLAX",
+      "REGION_ROUTE16/SNORLAX",
       "REGION_CELADON_CITY/MAIN"
     ],
     "warps": []
   },
   "REGION_ROUTE16/NORTHEAST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 Northeast Area",
+    "name": "Route 16 - Northeast",
+    "encounter_region": "Route 16",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1131,7 +1103,8 @@
   },
   "REGION_ROUTE16/NORTHWEST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 Northwest Area",
+    "name": "Route 16 - Northwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1143,9 +1116,10 @@
       "MAP_ROUTE16:1/MAP_ROUTE16_NORTH_ENTRANCE_1F:0"
     ]
   },
-  "REGION_ROUTE16/UNDER_SNORLAX": {
+  "REGION_ROUTE16/SNORLAX": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 Under Snorlax",
+    "name": "Route 16 - Snorlax",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1155,20 +1129,21 @@
     "events": [],
     "exits": [
       "REGION_ROUTE16/SOUTHEAST",
-      "REGION_ROUTE16/PAST_SNORLAX"
+      "REGION_ROUTE16/CENTER"
     ],
     "warps": []
   },
-  "REGION_ROUTE16/PAST_SNORLAX": {
+  "REGION_ROUTE16/CENTER": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 Center Area",
+    "name": "Route 16 - Center",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE16/UNDER_SNORLAX"
+      "REGION_ROUTE16/SNORLAX"
     ],
     "warps": [
       "MAP_ROUTE16:4/MAP_ROUTE16_NORTH_ENTRANCE_1F:3"
@@ -1176,7 +1151,8 @@
   },
   "REGION_ROUTE16/SOUTHWEST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 Southeast Area",
+    "name": "Route 16 - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1191,7 +1167,8 @@
   },
   "REGION_ROUTE16_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE16_HOUSE",
-    "name": "Route 16 House",
+    "name": "Route 16 Fly House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1206,7 +1183,8 @@
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_1F/NORTH": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
-    "name": "Route 16 North Entrance 1F North Area",
+    "name": "Route 16 North Entrance 1F - North",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1220,7 +1198,8 @@
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHEAST": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
-    "name": "Route 16 North Entrance 1F Southeast Area",
+    "name": "Route 16 North Entrance 1F - Southeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1236,7 +1215,8 @@
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHWEST": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
-    "name": "Route 16 North Entrance 1F Southwest Area",
+    "name": "Route 16 North Entrance 1F - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1252,6 +1232,7 @@
   "REGION_ROUTE16_NORTH_ENTRANCE_2F": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_2F",
     "name": "Route 16 North Entrance 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1267,6 +1248,7 @@
   "REGION_ROUTE17/MAIN": {
     "parent_map": "MAP_ROUTE17",
     "name": "Route 17",
+    "encounter_region": "Route 17",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1286,7 +1268,8 @@
   },
   "REGION_ROUTE18/WEST": {
     "parent_map": "MAP_ROUTE18",
-    "name": "Route 18 West Area",
+    "name": "Route 18 - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1301,7 +1284,8 @@
   },
   "REGION_ROUTE18/EAST": {
     "parent_map": "MAP_ROUTE18",
-    "name": "Route 18 East Area",
+    "name": "Route 18 - East",
+    "encounter_region": "Route 18",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1316,7 +1300,8 @@
   },
   "REGION_ROUTE18_EAST_ENTRANCE_1F/WEST": {
     "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_1F",
-    "name": "Route 18 East Entrance 1F West Area",
+    "name": "Route 18 East Entrance 1F - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1331,7 +1316,8 @@
   },
   "REGION_ROUTE18_EAST_ENTRANCE_1F/EAST": {
     "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_1F",
-    "name": "Route 18 East Entrance 1F East Area",
+    "name": "Route 18 East Entrance 1F - East",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1348,6 +1334,7 @@
   "REGION_ROUTE18_EAST_ENTRANCE_2F/MAIN": {
     "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_2F",
     "name": "Route 18 East Entrance 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1360,9 +1347,10 @@
       "MAP_ROUTE18_EAST_ENTRANCE_2F:0/MAP_ROUTE18_EAST_ENTRANCE_1F:2"
     ]
   },
-  "REGION_ROUTE19/BEACH": {
+  "REGION_ROUTE19/MAIN": {
     "parent_map": "MAP_ROUTE19",
-    "name": "Route 19 Beach",
+    "name": "Route 19",
+    "encounter_region": "Route 19",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -1376,65 +1364,70 @@
   },
   "REGION_ROUTE19/WATER": {
     "parent_map": "MAP_ROUTE19",
-    "name": "Route 19 Water",
+    "name": "Route 19 - Water",
+    "encounter_region": "Route 19",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE19/BEACH",
-      "REGION_ROUTE20/EAST_WATER"
+      "REGION_ROUTE19/MAIN",
+      "REGION_ROUTE20/EAST"
     ],
     "warps": []
   },
-  "REGION_ROUTE20/EAST_WATER": {
+  "REGION_ROUTE20/EAST": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 East Water",
+    "name": "Route 20 - East",
+    "encounter_region": "Route 20",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE20/NORTH_BEACH",
+      "REGION_ROUTE20/NORTH_CAVE",
       "REGION_ROUTE19/WATER"
     ],
     "warps": []
   },
-  "REGION_ROUTE20/NORTH_BEACH": {
+  "REGION_ROUTE20/NORTH_CAVE": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 North Beach",
+    "name": "Route 20 - Cave N",
+    "encounter_region": "Route 20",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE20/EAST_WATER"
+      "REGION_ROUTE20/EAST"
     ],
     "warps": [
       "MAP_ROUTE20:0/MAP_SEAFOAM_ISLANDS_1F:3"
     ]
   },
-  "REGION_ROUTE20/SOUTH_BEACH": {
+  "REGION_ROUTE20/SOUTH_CAVE": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 South Beach",
+    "name": "Route 20 - Cave S",
+    "encounter_region": "Route 20",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE20/WEST_WATER"
+      "REGION_ROUTE20/WEST"
     ],
     "warps": [
       "MAP_ROUTE20:1/MAP_SEAFOAM_ISLANDS_1F:4"
     ]
   },
-  "REGION_ROUTE20/WEST_WATER": {
+  "REGION_ROUTE20/WEST": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 West Water",
+    "name": "Route 20 - West",
+    "encounter_region": "Route 20",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1443,15 +1436,16 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE20/SOUTH_BEACH",
+      "REGION_ROUTE20/SOUTH_CAVE",
       "REGION_CINNABAR_ISLAND/WATER"
     ],
     "warps": []
   },
-  "REGION_ROUTE21/WATER": {
-    "parent_map": "MAP_ROUTE21",
-    "name": "Route 21 Water",
-    "has_land": false,
+  "REGION_ROUTE21/MAIN": {
+    "parent_map": "MAP_ROUTE21_NORTH",
+    "name": "Route 21",
+    "encounter_region": "Route 21",
+    "has_land": true,
     "has_water": true,
     "has_fishing": true,
     "locations": [
@@ -1459,26 +1453,15 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE21/LAND",
       "REGION_PALLET_TOWN/WATER",
       "REGION_CINNABAR_ISLAND/WATER"
     ],
     "warps": []
   },
-  "REGION_ROUTE21/LAND": {
-    "parent_map": "MAP_ROUTE21",
-    "name": "Route 21 Land",
-    "has_land": true,
-    "has_water": false,
-    "has_fishing": true,
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": []
-  },
   "REGION_ROUTE22/MAIN": {
     "parent_map": "MAP_ROUTE22",
     "name": "Route 22",
+    "encounter_region": "Route 22",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1487,16 +1470,17 @@
       "EVENT_DEFEAT_ROUTE22_RIVAL"
     ],
     "exits": [
-      "REGION_ROUTE22/POND",
+      "REGION_ROUTE22/WATER",
       "REGION_VIRIDIAN_CITY/SOUTH"
     ],
     "warps": [
       "MAP_ROUTE22:0/MAP_ROUTE22_NORTH_ENTRANCE:1"
     ]
   },
-  "REGION_ROUTE22/POND": {
+  "REGION_ROUTE22/WATER": {
     "parent_map": "MAP_ROUTE22",
-    "name": "Route 22 Pond",
+    "name": "Route 22 - Water",
+    "encounter_region": "Route 22",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1508,6 +1492,7 @@
   "REGION_ROUTE22_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE22_NORTH_ENTRANCE",
     "name": "Route 22 North Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1521,7 +1506,8 @@
   },
   "REGION_ROUTE23/SOUTH": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 South Area",
+    "name": "Route 23 - South",
+    "encounter_region": "Route 23",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -1538,7 +1524,8 @@
   },
   "REGION_ROUTE23/WATER": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 Water",
+    "name": "Route 23 - Water",
+    "encounter_region": "Route 23",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1554,7 +1541,8 @@
   },
   "REGION_ROUTE23/CENTER": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 Center Area",
+    "name": "Route 23 - Center",
+    "encounter_region": "Route 23",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1566,13 +1554,14 @@
     "events": [],
     "exits": [
       "REGION_ROUTE23/WATER",
-      "REGION_ROUTE23/BEFORE_VICTORY_ROAD"
+      "REGION_ROUTE23/CAVE"
     ],
     "warps": []
   },
-  "REGION_ROUTE23/BEFORE_VICTORY_ROAD": {
+  "REGION_ROUTE23/CAVE": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 Past Guard",
+    "name": "Route 23 - Cave",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1589,7 +1578,8 @@
   },
   "REGION_ROUTE23/NORTH": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 North Area",
+    "name": "Route 23 - North",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1608,6 +1598,7 @@
   "REGION_ROUTE24/MAIN": {
     "parent_map": "MAP_ROUTE24",
     "name": "Route 24",
+    "encounter_region": "Route 24",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1625,7 +1616,8 @@
   },
   "REGION_ROUTE24/WATER": {
     "parent_map": "MAP_ROUTE24",
-    "name": "Route 24 Water",
+    "name": "Route 24 - Water",
+    "encounter_region": "Route 24",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1637,9 +1629,10 @@
     ],
     "warps": []
   },
-  "REGION_ROUTE24/NORTHEAST_LEDGE": {
+  "REGION_ROUTE24/LEDGE": {
     "parent_map": "MAP_ROUTE24",
-    "name": "Route 24 Northeast Ledge",
+    "name": "Route 24 - Ledge",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1656,6 +1649,7 @@
   "REGION_ROUTE25/MAIN": {
     "parent_map": "MAP_ROUTE25",
     "name": "Route 25",
+    "encounter_region": "Route 25",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1668,17 +1662,18 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE25/POND",
+      "REGION_ROUTE25/WATER",
       "REGION_ROUTE24/MAIN",
-      "REGION_ROUTE24/NORTHEAST_LEDGE"
+      "REGION_ROUTE24/LEDGE"
     ],
     "warps": [
       "MAP_ROUTE25:0/MAP_ROUTE25_SEA_COTTAGE:0"
     ]
   },
-  "REGION_ROUTE25/POND": {
+  "REGION_ROUTE25/WATER": {
     "parent_map": "MAP_ROUTE25",
-    "name": "Route 25 Pond",
+    "name": "Route 25 - Water",
+    "encounter_region": "Route 25",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1690,6 +1685,7 @@
   "REGION_ROUTE25_SEA_COTTAGE/MAIN": {
     "parent_map": "MAP_ROUTE25_SEA_COTTAGE",
     "name": "Route 25 Sea Cottage",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,

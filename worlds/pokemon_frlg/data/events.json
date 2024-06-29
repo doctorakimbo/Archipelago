@@ -1,4 +1,9 @@
 {
+  "EVENT_FREE_FLY_LOCATION": {
+    "name": "Free Fly Location",
+    "item": "Fly Pallet Town"
+  },
+
   "EVENT_FLY_PALLET_TOWN": {
     "name": "Pallet Town - Visit Pallet Town",
     "item": "Fly Pallet Town"
@@ -69,7 +74,7 @@
   },
 
   "EVENT_DEFEAT_ROUTE22_RIVAL": {
-    "labal": "Route 22 - Rival Battle",
+    "name": "Route 22 - Rival Battle",
     "item": "Defeat Route 22 Rival"
   },
   "EVENT_DEFEAT_BROCK": {
@@ -110,15 +115,15 @@
   },
 
   "EVENT_DELIVER_OAKS_PARCEL": {
-    "name": "Pallet Town - Professor Oak's Delivery",
+    "name": "Professor Oak's Lab - Oak's Delivery",
     "item": "Deliver Oak's Parcel"
   },
   "EVENT_SAVE_BILL": {
-    "name": "Route 25 Sea Cottage - Cell Seperation System",
+    "name": "Route 25 Sea Cottage - Cell Separation System",
     "item": "Save Bill"
   },
   "EVENT_BUY_VENDING_MACHINE_LEMONADE": {
-    "name": "Celadon City - Vending Machine",
+    "name": "Celadon Department Store Roof - Vending Machine",
     "item": "Buy Lemonade"
   },
   "EVENT_RESCUE_MR_FUJI": {
@@ -138,7 +143,7 @@
     "item": "Buy Lemonade"
   },
   "EVENT_DELIVER_METEORITE": {
-    "name": "Two Island - Gift for Lostelle's Father",
+    "name": "Two Island Game Corner - Gift for Lostelle's Father",
     "item": "Deliver Meteorite"
   },
   "EVENT_RESCUE_LOSTELLE": {
@@ -150,7 +155,7 @@
     "item": "Help Lorelei"
   },
   "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD": {
-    "name": "Dotted Hole - Gideon Steal Sapphire",
+    "name": "Dotted Hole Sapphire Room - Gideon Steals Sapphire",
     "item": "Learn Rocket Warehouse Password"
   },
   "EVENT_SPAWN_UNOWN": {
@@ -216,88 +221,115 @@
   },
 
   "TRADE_POKEMON_MR_MIME": {
-    "name": "Route 2 - Trade Abra",
-    "item": "Static Pokemon"
+    "name": "Route 2 Trade House - Trade Abra",
+    "item": "Static Mr. Mime"
   },
   "GIFT_POKEMON_MAGIKARP": {
-    "name": "Route 4 - Salesman Purchase",
-    "item": "Static Pokemon"
+    "name": "Route 4 Pokemon Center 1F - Salesman Purchase",
+    "item": "Static Magikarp"
   },
   "TRADE_POKEMON_JYNX": {
-    "name": "Cerulean City - Trade Poliwhirl",
-    "item": "Static Pokemon"
+    "name": "Cerulean Trade House - Trade Poliwhirl",
+    "item": "Static Jynx"
   },
   "TRADE_POKEMON_NIDORAN": {
-    "name": "Underground Path (North-South) - Trade Nidoran M",
-    "item": "Static Pokemon"
+    "name": [
+      "Underground Path North Entrance - Trade Nidoran M",
+      "Underground Path North Entrance - Trade Nidoran F"
+    ],
+    "item": [
+      "Static Nidoran F",
+      "Static Nidoran M"
+      ]
   },
   "TRADE_POKEMON_FARFETCHD": {
-    "name": "Vermilion City - Trade Spearow",
-    "item": "Static Pokemon"
+    "name": "Vermilion Trade House - Trade Spearow",
+    "item": "Static Farfetch'd"
   },
   "TRADE_POKEMON_NIDORINOA": {
-    "name": "Route 11 - Trade Nidorino",
-    "item": "Static Pokemon"
+    "name": [
+      "Route 11 East Entrance 2F - Trade Nidorino",
+      "Route 11 East Entrance 2F - Trade Nidorina"
+    ],
+    "item": [
+      "Static Nidorina",
+      "Static Nidorino"
+      ]
   },
   "CELADON_PRIZE_POKEMON_1": {
-    "name": "Celadon City - Prize Pokemon Abra",
-    "item": "Pokemon"
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon Abra",
+    "item": "Abra"
   },
   "CELADON_PRIZE_POKEMON_2": {
-    "name": "Celadon City - Prize Pokemon Clefairy",
-    "item": "Pokemon"
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon Clefairy",
+    "item": "Clefairy"
   },
   "CELADON_PRIZE_POKEMON_3": {
-    "name": "Celadon City - Prize Pokemon Dratini",
-    "item": "Pokemon"
+    "name": [
+      "Celadon Game Corner Prize Room - Prize Pokemon Dratini",
+      "Celadon Game Corner Prize Room - Prize Pokemon Pinsir"
+    ],
+    "item": [
+      "Dratini",
+      "Pinsir"
+      ]
   },
   "CELADON_PRIZE_POKEMON_4": {
-    "name": "Celadon City - Prize Pokemon Scyther",
-    "item": "Pokemon"
+    "name": [
+      "Celadon Game Corner Prize Room - Prize Pokemon Scyther",
+      "Celadon Game Corner Prize Room - Prize Pokemon Dratini"
+    ],
+    "item": [
+      "Scyther",
+      "Dratini"
+      ]
   },
   "CELADON_PRIZE_POKEMON_5": {
-    "name": "Celadon City - Prize Pokemon Porygon",
-    "item": "Pokemon"
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon Porygon",
+    "item": "Porygon"
   },
   "GIFT_POKEMON_EEVEE": {
-    "name": "Celadon City - Condominiums Roof Room Item",
-    "item": "Static Pokemon"
+    "name": "Celadon Condominiums Roof Room - Item",
+    "item": "Static Eevee"
   },
   "TRADE_POKEMON_LICKITUNG": {
-    "name": "Route 18 - Trade Golduck",
-    "item": "Static Pokemon"
+    "name": [
+      "Route 18 East Entrance 2F - Trade Golduck",
+      "Route 18 East Entrance 2F - Trade Slowbro"
+    ],
+    "item": "Static Lickitung"
   },
   "GIFT_POKEMON_LAPRAS": {
-    "name": "Silph Co. 7F - Northwest Room Employee",
-    "item": "Static Pokemon"
+    "name": "Silph Co. 7F - Employee Pokemon",
+    "item": "Static Lapras"
   },
   "TRADE_POKEMON_ELECTRODE": {
-    "name": "Cinnabar Island - Trade Raichu",
-    "item": "Static Pokemon"
+    "name": "Cinnabar Pokemon Lab Lounge - Trade Raichu",
+    "item": "Static Electrode"
   },
   "TRADE_POKEMON_TANGELA": {
-    "name": "Cinnabar Island - Trade Venonat",
-    "item": "Static Pokemon"
+    "name": "Cinnabar Pokemon Lab Lounge - Trade Venonat",
+    "item": "Static Tangela"
   },
   "GIFT_POKEMON_OMANYTE": {
-    "name": "Cinnabar Island - Revive Helix Fossil",
-    "item": "Static Pokemon"
+    "name": "Cinnabar Pokemon Lab Experiment Room - Revive Helix Fossil",
+    "item": "Static Omanyte"
   },
   "GIFT_POKEMON_KABUTO": {
-    "name": "Cinnabar Island - Revive Dome Fossil",
-    "item": "Static Pokemon"
+    "name": "Cinnabar Pokemon Lab Experiment Room - Revive Dome Fossil",
+    "item": "Static Kabuto"
   },
   "GIFT_POKEMON_AERODACTYL": {
-    "name": "Cinnabar Island - Revive Old Amber",
-    "item": "Static Pokemon"
+    "name": "Cinnabar Pokemon Lab Experiment Room - Revive Old Amber",
+    "item": "Static Aerodactyl"
   },
   "TRADE_POKEMON_SEEL": {
-    "name": "Cinnabar Island - Trade Ponyta",
-    "item": "Static Pokemon"
+    "name": "Cinnabar Pokemon Lab Experiment Room - Trade Ponyta",
+    "item": "Static Seel"
   },
   "EGG_POKEMON_TOGEPI": {
     "name": "Water Labyrinth - Pokemon Egg",
-    "item": "Static Pokemon"
+    "item": "Static Togepi"
   },
 
   "EVOLVE_BULBASAUR": {
@@ -621,7 +653,7 @@
     "item": "Quagsire"
   },
   "EVOLVE_PINECO": {
-    "name": "Evolution - Wooper",
+    "name": "Evolution - Pineco",
     "item": "Forretress"
   },
   "EVOLVE_SNUBBULL": {

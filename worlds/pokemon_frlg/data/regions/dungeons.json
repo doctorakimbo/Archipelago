@@ -2,6 +2,7 @@
   "REGION_VIRIDIAN_FOREST/MAIN": {
     "parent_map": "MAP_VIRIDIAN_FOREST",
     "name": "Viridian Forest",
+    "encounter_region": "Viridian Forest",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -9,7 +10,7 @@
       "ITEM_VIRIDIAN_FOREST_ANTIDOTE",
       "ITEM_VIRIDIAN_FOREST_POKE_BALL",
       "ITEM_VIRIDIAN_FOREST_POTION",
-      "ITEM_VIRIDIAN_FOREST_POTION",
+      "ITEM_VIRIDIAN_FOREST_POTION_2",
       "HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE",
       "HIDDEN_ITEM_VIRIDIAN_FOREST_POTION"
     ],
@@ -23,6 +24,7 @@
   "REGION_MT_MOON_1F/MAIN": {
     "parent_map": "MAP_MT_MOON_1F",
     "name": "Mt. Moon 1F",
+    "encounter_region": "Mt. Moon 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -45,7 +47,8 @@
   },
   "REGION_MT_MOON_B1F/TUNNEL1": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F First Tunnel",
+    "name": "Mt. Moon B1F - Tunnel 1",
+    "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -63,7 +66,8 @@
   },
   "REGION_MT_MOON_B1F/TUNNEL2": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F Second Tunnel",
+    "name": "Mt. Moon B1F - Tunnel 2",
+    "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -79,7 +83,8 @@
   },
   "REGION_MT_MOON_B1F/TUNNEL3": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F Third Tunnel",
+    "name": "Mt. Moon B1F - Tunnel 3",
+    "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -95,7 +100,8 @@
   },
   "REGION_MT_MOON_B1F/TUNNEL4": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F Fourth Tunnel",
+    "name": "Mt. Moon B1F - Tunnel 4",
+    "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -112,6 +118,7 @@
   "REGION_MT_MOON_B2F/MAIN": {
     "parent_map": "MAP_MT_MOON_B2F",
     "name": "Mt. Moon B2F",
+    "encounter_region": "Mt. Moon B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -129,9 +136,10 @@
       "MAP_MT_MOON_B2F:3/MAP_MT_MOON_B1F:6"
     ]
   },
-  "REGION_MT_MOON_B2F/ISOLATED_ROOM": {
+  "REGION_MT_MOON_B2F/CENTER": {
     "parent_map": "MAP_MT_MOON_B2F",
-    "name": "Mt. Moon B2F Isolated Room",
+    "name": "Mt. Moon B2F - Center",
+    "encounter_region": "Mt. Moon B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -146,7 +154,8 @@
   },
   "REGION_MT_MOON_B2F/NORTHEAST": {
     "parent_map": "MAP_MT_MOON_B2F",
-    "name": "Mt. Moon B2F Northeast Area",
+    "name": "Mt. Moon B2F - Northeast",
+    "encounter_region": "Mt. Moon B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -163,6 +172,7 @@
   "REGION_UNDERGROUND_PATH_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE",
     "name": "Underground Path North Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -179,6 +189,7 @@
   "REGION_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL",
     "name": "Underground Path North-South Tunnel",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -201,6 +212,7 @@
   "REGION_UNDERGROUND_PATH_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE",
     "name": "Underground Path South Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -215,6 +227,7 @@
   "REGION_SSANNE_EXTERIOR/MAIN": {
     "parent_map": "MAP_SSANNE_EXTERIOR",
     "name": "S.S. Anne Exterior",
+    "encounter_region": "S.S. Anne Exterior",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -230,22 +243,10 @@
   },
   "REGION_SSANNE_EXTERIOR/WATER": {
     "parent_map": "MAP_SSANNE_EXTERIOR",
-    "name": "S.S. Anne Exterior Water",
+    "name": "S.S. Anne Exterior - Water",
+    "encounter_region": "S.S. Anne Exterior",
     "has_land": false,
     "has_water": true,
-    "has_fishing": true,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SSANNE_EXTERIOR/EAST_PIER"
-    ],
-    "warps": []
-  },
-  "REGION_SSANNE_EXTERIOR/EAST_PIER": {
-    "parent_map": "MAP_SSANNE_EXTERIOR",
-    "name": "S.S. Anne Exterior East Pier",
-    "has_land": false,
-    "has_water": false,
     "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE"
@@ -257,6 +258,7 @@
   "REGION_SSANNE_1F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_1F_CORRIDOR",
     "name": "S.S. Anne 1F Corridor",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -280,6 +282,7 @@
   "REGION_SSANNE_KITCHEN/MAIN": {
     "parent_map": "MAP_SSANNE_KITCHEN",
     "name": "S.S. Anne Kitchen",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -298,6 +301,7 @@
   "REGION_SSANNE_1F_ROOM1/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM1",
     "name": "S.S. Anne 1F Room 1",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -311,6 +315,7 @@
   "REGION_SSANNE_1F_ROOM2/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM2",
     "name": "S.S. Anne 1F Room 2",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -326,6 +331,7 @@
   "REGION_SSANNE_1F_ROOM3/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM3",
     "name": "S.S. Anne 1F Room 3",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -339,6 +345,7 @@
   "REGION_SSANNE_1F_ROOM4/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM4",
     "name": "S.S. Anne 1F Room 4",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -352,6 +359,7 @@
   "REGION_SSANNE_1F_ROOM5/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM5",
     "name": "S.S. Anne 1F Room 5",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -365,6 +373,7 @@
   "REGION_SSANNE_1F_ROOM6/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM6",
     "name": "S.S. Anne 1F Room 6",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -378,6 +387,7 @@
   "REGION_SSANNE_1F_ROOM7/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM7",
     "name": "S.S. Anne 1F Room 7",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -391,6 +401,7 @@
   "REGION_SSANNE_B1F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_CORRIDOR",
     "name": "S.S. Anne B1F Corridor",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -411,6 +422,7 @@
   "REGION_SSANNE_B1F_ROOM1/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM1",
     "name": "S.S. Anne B1F Room 1",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -424,6 +436,7 @@
   "REGION_SSANNE_B1F_ROOM2/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM2",
     "name": "S.S. Anne B1F Room 2",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -439,6 +452,7 @@
   "REGION_SSANNE_B1F_ROOM3/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM3",
     "name": "S.S. Anne B1F Room 3",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -454,6 +468,7 @@
   "REGION_SSANNE_B1F_ROOM4/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM4",
     "name": "S.S. Anne B1F Room 4",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -467,6 +482,7 @@
   "REGION_SSANNE_B1F_ROOM5/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM5",
     "name": "S.S. Anne B1F Room 5",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -482,6 +498,7 @@
   "REGION_SSANNE_2F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_2F_CORRIDOR",
     "name": "S.S. Anne 2F Corridor",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -503,6 +520,7 @@
   "REGION_SSANNE_2F_ROOM1/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM1",
     "name": "S.S. Anne 2F Room 1",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -516,6 +534,7 @@
   "REGION_SSANNE_2F_ROOM2/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM2",
     "name": "S.S. Anne 2F Room 2",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -531,6 +550,7 @@
   "REGION_SSANNE_2F_ROOM3/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM3",
     "name": "S.S. Anne 2F Room 3",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -544,6 +564,7 @@
   "REGION_SSANNE_2F_ROOM4/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM4",
     "name": "S.S. Anne 2F Room 4",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -559,6 +580,7 @@
   "REGION_SSANNE_2F_ROOM5/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM5",
     "name": "S.S. Anne 2F Room 5",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -572,6 +594,7 @@
   "REGION_SSANNE_2F_ROOM6/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM6",
     "name": "S.S. Anne 2F Room 6",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -585,6 +608,7 @@
   "REGION_SSANNE_3F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_3F_CORRIDOR",
     "name": "S.S. Anne 3F Corridor",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -599,6 +623,7 @@
   "REGION_SSANNE_DECK/MAIN": {
     "parent_map": "MAP_SSANNE_DECK",
     "name": "S.S. Anne Deck",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -612,6 +637,7 @@
   "REGION_SSANNE_CAPTAINS_OFFICE/MAIN": {
     "parent_map": "MAP_SSANNE_CAPTAINS_OFFICE",
     "name": "S.S. Anne Captain's Office",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -627,6 +653,7 @@
   "REGION_DIGLETTS_CAVE_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
     "name": "Diglett's Cave South Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -641,6 +668,7 @@
   "REGION_DIGLETTS_CAVE_B1F/MAIN": {
     "parent_map": "MAP_DIGLETTS_CAVE_B1F",
     "name": "Diglett's Cave B1F",
+    "encounter_region": "Diglett's Cave B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -655,6 +683,7 @@
   "REGION_DIGLETTS_CAVE_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE",
     "name": "Diglett's Cave North Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -668,7 +697,8 @@
   },
   "REGION_ROCK_TUNNEL_1F/SOUTH": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F South Area",
+    "name": "Rock Tunnel 1F - South",
+    "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -684,7 +714,8 @@
   },
   "REGION_ROCK_TUNNEL_1F/NORTHWEST": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F Northwest Area",
+    "name": "Rock Tunnel 1F - Northwest",
+    "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -700,7 +731,8 @@
   },
   "REGION_ROCK_TUNNEL_1F/NORTHEAST": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F Northeast Area",
+    "name": "Rock Tunnel 1F - Northeast",
+    "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -716,7 +748,8 @@
   },
   "REGION_ROCK_TUNNEL_B1F/NORTHWEST": {
     "parent_map": "MAP_ROCK_TUNNEL_B1F",
-    "name": "Rock Tunnel B1F Northwest Area",
+    "name": "Rock Tunnel B1F - Northwest",
+    "encounter_region": "Rock Tunnel B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -732,7 +765,8 @@
   },
   "REGION_ROCK_TUNNEL_B1F/SOUTHEAST": {
     "parent_map": "MAP_ROCK_TUNNEL_B1F",
-    "name": "Rock Tunnel B1F Southeast Area",
+    "name": "Rock Tunnel B1F - Southeast",
+    "encounter_region": "Rock Tunnel B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -742,13 +776,14 @@
     "events": [],
     "exits": [],
     "warps": [
-      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3",
-      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4"
+      "MAP_ROCK_TUNNEL_B1F:0/MAP_ROCK_TUNNEL_1F:1",
+      "MAP_ROCK_TUNNEL_B1F:1/MAP_ROCK_TUNNEL_1F:2"
     ]
   },
   "REGION_POWER_PLANT/MAIN": {
     "parent_map": "MAP_POWER_PLANT",
     "name": "Power Plant",
+    "encounter_region": "Power Plant",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -771,6 +806,7 @@
   "REGION_POKEMON_TOWER_1F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_1F",
     "name": "Pokemon Tower 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -785,6 +821,7 @@
   "REGION_POKEMON_TOWER_2F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_2F",
     "name": "Pokemon Tower 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -799,6 +836,7 @@
   "REGION_POKEMON_TOWER_3F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_3F",
     "name": "Pokemon Tower 3F",
+    "encounter_region": "Pokemon Tower 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -815,6 +853,7 @@
   "REGION_POKEMON_TOWER_4F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_4F",
     "name": "Pokemon Tower 4F",
+    "encounter_region": "Pokemon Tower 4F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -833,6 +872,7 @@
   "REGION_POKEMON_TOWER_5F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_5F",
     "name": "Pokemon Tower 5F",
+    "encounter_region": "Pokemon Tower 5F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -851,6 +891,7 @@
   "REGION_POKEMON_TOWER_6F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_6F",
     "name": "Pokemon Tower 6F",
+    "encounter_region": "Pokemon Tower 6F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -868,6 +909,7 @@
   "REGION_POKEMON_TOWER_7F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_7F",
     "name": "Pokemon Tower 7F",
+    "encounter_region": "Pokemon Tower 7F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -885,6 +927,7 @@
   "REGION_UNDERGROUND_PATH_EAST_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_EAST_ENTRANCE",
     "name": "Underground Path East Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -899,6 +942,7 @@
   "REGION_UNDERGROUND_PATH_EAST_WEST_TUNNEL/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
     "name": "Underground Path East-West Tunnel",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -921,6 +965,7 @@
   "REGION_UNDERGROUND_PATH_WEST_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_WEST_ENTRANCE",
     "name": "Underground Path West Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -928,13 +973,14 @@
     "events": [],
     "exits": [],
     "warps": [
-      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0/MAP_ROUTE7:0","MAP_ROUTE7:1",
+      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0/MAP_ROUTE7:0",
       "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1"
     ]
   },
   "REGION_ROCKET_HIDEOUT_B1F/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
     "name": "Rocket Hideout B1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -944,16 +990,17 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROCKET_HIDEOUT_B1F/NEAR_ELEVATOR"
+      "REGION_ROCKET_HIDEOUT_B1F/SOUTHEAST"
     ],
     "warps": [
       "MAP_ROCKET_HIDEOUT_B1F:0/MAP_CELADON_CITY_GAME_CORNER:1",
       "MAP_ROCKET_HIDEOUT_B1F:1/MAP_ROCKET_HIDEOUT_B2F:1"
     ]
   },
-  "REGION_ROCKET_HIDEOUT_B1F/PAST_BARRIER": {
+  "REGION_ROCKET_HIDEOUT_B1F/SOUTHEAST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
-    "name": "Rocket Hideout B1F Past Barrier",
+    "name": "Rocket Hideout B1F - Southeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -967,9 +1014,10 @@
     ],
     "warps": []
   },
-  "REGION_ROCKET_HIDEOUT_B1F/SOUTHWEST_ROOM": {
+  "REGION_ROCKET_HIDEOUT_B1F/SOUTHWEST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
-    "name": "Rocket Hideout B1F Southwest Room",
+    "name": "Rocket Hideout B1F - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -985,6 +1033,7 @@
   "REGION_ROCKET_HIDEOUT_B2F/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B2F",
     "name": "Rocket Hideout B2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1007,6 +1056,7 @@
   "REGION_ROCKET_HIDEOUT_B3F/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B3F",
     "name": "Rocket Hideout B3F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1023,9 +1073,10 @@
       "MAP_ROCKET_HIDEOUT_B3F:1/MAP_ROCKET_HIDEOUT_B4F:0"
     ]
   },
-  "REGION_ROCKET_HIDEOUT_B4F/LIFT_KEY_ROOM": {
+  "REGION_ROCKET_HIDEOUT_B4F/WEST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B4F",
-    "name": "Rocket Hideout B4F West Room",
+    "name": "Rocket Hideout B4F - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1040,9 +1091,10 @@
       "MAP_ROCKET_HIDEOUT_B4F:0/MAP_ROCKET_HIDEOUT_B3F:1"
     ]
   },
-  "REGION_ROCKET_HIDEOUT_B4F/SILPH_SCOPE_ROOM": {
+  "REGION_ROCKET_HIDEOUT_B4F/EAST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B4F",
-    "name": "Rocket Hideout B4F East Room",
+    "name": "Rocket Hideout B4F - East",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1061,21 +1113,23 @@
   "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
     "name": "Rocket Hideout Elevator",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROCKET_HIDEOUT_B1F/NEAR_ELEVATOR",
+      "REGION_ROCKET_HIDEOUT_B1F/SOUTHEAST",
       "REGION_ROCKET_HIDEOUT_B2F/MAIN",
-      "REGION_ROCKET_HIDEOUT_B4F/SILPH_SCOPE_ROOM"
+      "REGION_ROCKET_HIDEOUT_B4F/EAST"
     ],
     "warps": []
   },
   "REGION_SAFARI_ZONE_CENTER/SOUTH": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center South Area",
+    "name": "Safari Zone Center - South",
+    "encounter_region": "Safari Zone Center",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1092,7 +1146,8 @@
   },
   "REGION_SAFARI_ZONE_CENTER/NORTHEAST": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center Northeast Area",
+    "name": "Safari Zone Center - Northeast",
+    "encounter_region": "Safari Zone Center",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1107,7 +1162,8 @@
   },
   "REGION_SAFARI_ZONE_CENTER/NORTHWEST": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center Northwest Area",
+    "name": "Safari Zone Center - Northwest",
+    "encounter_region": "Safari Zone Center",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1122,7 +1178,8 @@
   },
   "REGION_SAFARI_ZONE_CENTER/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center Water",
+    "name": "Safari Zone Center - Water",
+    "encounter_region": "Safari Zone Center",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1141,6 +1198,7 @@
   "REGION_SAFARI_ZONE_EAST/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_EAST",
     "name": "Safari Zone East",
+    "encounter_region": "Safari Zone East",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1162,7 +1220,8 @@
   },
   "REGION_SAFARI_ZONE_EAST/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_EAST",
-    "name": "Safari Zone East Water",
+    "name": "Safari Zone East - Water",
+    "encounter_region": "Safari Zone East",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1174,6 +1233,7 @@
   "REGION_SAFARI_ZONE_NORTH/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_NORTH",
     "name": "Safari Zone North",
+    "encounter_region": "Safari Zone North",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1196,7 +1256,8 @@
   },
   "REGION_SAFARI_ZONE_NORTH/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_NORTH",
-    "name": "Safari Zone North Water",
+    "name": "Safari Zone North - Water",
+    "encounter_region": "Safari Zone North",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1207,7 +1268,8 @@
   },
   "REGION_SAFARI_ZONE_WEST/NORTH": {
     "parent_map": "MAP_SAFARI_ZONE_WEST",
-    "name": "Safari Zone West North Area",
+    "name": "Safari Zone West - North",
+    "encounter_region": "Safari Zone West",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -1227,7 +1289,8 @@
   },
   "REGION_SAFARI_ZONE_WEST/SOUTH": {
     "parent_map": "MAP_SAFARI_ZONE_WEST",
-    "name": "Safari Zone West South Area",
+    "name": "Safari Zone West - South",
+    "encounter_region": "Safari Zone West",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1247,7 +1310,8 @@
   },
   "REGION_SAFARI_ZONE_WEST/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_WEST",
-    "name": "Safari Zone West Water",
+    "name": "Safari Zone West - Water",
+    "encounter_region": "Safari Zone West",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1262,6 +1326,7 @@
   "REGION_SAFARI_ZONE_CENTER_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER_REST_HOUSE",
     "name": "Safari Zone Center Rest House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1275,6 +1340,7 @@
   "REGION_SAFARI_ZONE_EAST_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_EAST_REST_HOUSE",
     "name": "Safari Zone East Rest House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1288,6 +1354,7 @@
   "REGION_SAFARI_ZONE_NORTH_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_NORTH_REST_HOUSE",
     "name": "Safari Zone North Rest House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1301,6 +1368,7 @@
   "REGION_SAFARI_ZONE_WEST_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_WEST_REST_HOUSE",
     "name": "Safari Zone West Rest House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1314,6 +1382,7 @@
   "REGION_SAFARI_ZONE_SECRET_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_SECRET_HOUSE",
     "name": "Safari Zone Secret House",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1329,6 +1398,7 @@
   "REGION_SILPH_CO_1F/MAIN": {
     "parent_map": "MAP_SILPH_CO_1F",
     "name": "Silph Co. 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1345,14 +1415,15 @@
   "REGION_SILPH_CO_2F/MAIN": {
     "parent_map": "MAP_SILPH_CO_2F",
     "name": "Silph Co. 2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_2F/NORTHWEST_ROOM",
-      "REGION_SILPH_CO_2F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_2F/NORTHWEST",
+      "REGION_SILPH_CO_2F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1362,9 +1433,10 @@
       "MAP_SILPH_CO_2F:5/MAP_SILPH_CO_8F:2"
     ]
   },
-  "REGION_SILPH_CO_2F/NORTHWEST_ROOM": {
+  "REGION_SILPH_CO_2F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_2F",
-    "name": "Silph Co. 2F Northwest Room",
+    "name": "Silph Co. 2F - Northwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1377,9 +1449,10 @@
       "MAP_SILPH_CO_2F:1/MAP_SILPH_CO_3F:8"
     ]
   },
-  "REGION_SILPH_CO_2F/SOUTHWEST_ROOM": {
+  "REGION_SILPH_CO_2F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_2F",
-    "name": "Silph Co. 2F Southwest Room",
+    "name": "Silph Co. 2F - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1397,6 +1470,7 @@
   "REGION_SILPH_CO_3F/MAIN": {
     "parent_map": "MAP_SILPH_CO_3F",
     "name": "Silph Co. 3F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1405,7 +1479,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_3F/CENTER_ROOM",
+      "REGION_SILPH_CO_3F/CENTER",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1418,9 +1492,10 @@
       "MAP_SILPH_CO_3F:8/MAP_SILPH_CO_2F:1"
     ]
   },
-  "REGION_SILPH_CO_3F/CENTER_ROOM": {
+  "REGION_SILPH_CO_3F/CENTER": {
     "parent_map": "MAP_SILPH_CO_3F",
-    "name": "Silph Co. 3F Center Room",
+    "name": "Silph Co. 3F - Center",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1428,15 +1503,16 @@
     "events": [],
     "exits": [
       "REGION_SILPH_CO_3F/MAIN",
-      "REGION_SILPH_CO_3F/WEST_ROOM"
+      "REGION_SILPH_CO_3F/WEST"
     ],
     "warps": [
       "MAP_SILPH_CO_3F:2/MAP_SILPH_CO_7F:4"
     ]
   },
-  "REGION_SILPH_CO_3F/WEST_ROOM": {
+  "REGION_SILPH_CO_3F/WEST": {
     "parent_map": "MAP_SILPH_CO_3F",
-    "name": "Silph Co. 3F West Room",
+    "name": "Silph Co. 3F - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1445,7 +1521,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_3F/CENTER_ROOM"
+      "REGION_SILPH_CO_3F/CENTER"
     ],
     "warps": [
       "MAP_SILPH_CO_3F:4/MAP_SILPH_CO_9F:2"
@@ -1454,6 +1530,7 @@
   "REGION_SILPH_CO_4F/MAIN": {
     "parent_map": "MAP_SILPH_CO_4F",
     "name": "Silph Co. 4F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1463,8 +1540,8 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_4F/NORTHWEST_ROOM",
-      "REGION_SILPH_CO_4F/NORTH_ROOM",
+      "REGION_SILPH_CO_4F/NORTHWEST",
+      "REGION_SILPH_CO_4F/NORTH",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1474,9 +1551,10 @@
       "MAP_SILPH_CO_4F:5/MAP_SILPH_CO_10F:2"
     ]
   },
-  "REGION_SILPH_CO_4F/NORTHWEST_ROOM": {
+  "REGION_SILPH_CO_4F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_4F",
-    "name": "Silph Co. 4F Northwest Room",
+    "name": "Silph Co. 4F - Northwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1486,14 +1564,13 @@
       "ITEM_SILPH_CO_4F_MAX_REVIVE"
     ],
     "events": [],
-    "exits": [
-      "REGION_SILPH_CO_4F/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
-  "REGION_SILPH_CO_4F/NORTH_ROOM": {
+  "REGION_SILPH_CO_4F/NORTH": {
     "parent_map": "MAP_SILPH_CO_4F",
-    "name": "Silph Co. 4F North Room",
+    "name": "Silph Co. 4F - North",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1510,6 +1587,7 @@
   "REGION_SILPH_CO_5F/MAIN": {
     "parent_map": "MAP_SILPH_CO_5F",
     "name": "Silph Co. 5F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1519,9 +1597,9 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_5F/NORTHWEST_ROOM",
-      "REGION_SILPH_CO_5F/CENTER_ROOM_ANNEX",
-      "REGION_SILPH_CO_5F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_5F/NORTHWEST",
+      "REGION_SILPH_CO_5F/CENTER",
+      "REGION_SILPH_CO_5F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1532,9 +1610,10 @@
       "MAP_SILPH_CO_5F:5/MAP_SILPH_CO_7F:2"
     ]
   },
-  "REGION_SILPH_CO_5F/NORTHWEST_ROOM": {
+  "REGION_SILPH_CO_5F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_5F",
-    "name": "Silph Co. 5F Northwest Room",
+    "name": "Silph Co. 5F - Northwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1542,14 +1621,13 @@
       "ITEM_SILPH_CO_5F_PROTEIN"
     ],
     "events": [],
-    "exits": [
-      "REGION_SILPH_CO_5F/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
-  "REGION_SILPH_CO_5F/CENTER_ROOM_ANNEX": {
+  "REGION_SILPH_CO_5F/CENTER": {
     "parent_map": "MAP_SILPH_CO_5F",
-    "name": "Silph Co. 5F Center Room Annex",
+    "name": "Silph Co. 5F - Center",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1557,14 +1635,13 @@
       "HIDDEN_ITEM_SILPH_CO_5F_ELIXIR"
     ],
     "events": [],
-    "exits": [
-      "REGION_SILPH_CO_5F/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
-  "REGION_SILPH_CO_5F/SOUTHWEST_ROOM": {
+  "REGION_SILPH_CO_5F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_5F",
-    "name": "Silph Co. 5F Southwest Room",
+    "name": "Silph Co. 5F - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1582,6 +1659,7 @@
   "REGION_SILPH_CO_6F/MAIN": {
     "parent_map": "MAP_SILPH_CO_6F",
     "name": "Silph Co. 6F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1590,7 +1668,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_6F/SOUTHWEST_ROOM",
+      "REGION_SILPH_CO_6F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1600,9 +1678,10 @@
       "MAP_SILPH_CO_6F:3/MAP_SILPH_CO_4F:1"
     ]
   },
-  "REGION_SILPH_CO_6F/SOUTHWEST_ROOM": {
+  "REGION_SILPH_CO_6F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_6F",
-    "name": "Silph Co. 6F Southwest Room",
+    "name": "Silph Co. 6F - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1611,14 +1690,13 @@
       "ITEM_SILPH_CO_6F_X_SPECIAL"
     ],
     "events": [],
-    "exits": [
-      "REGION_SILPH_CO_6F/MAIN"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_SILPH_CO_7F/MAIN": {
     "parent_map": "MAP_SILPH_CO_7F",
     "name": "Silph Co. 7F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1627,8 +1705,8 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_7F/CENTER_ROOM",
-      "REGION_SILPH_CO_7F/EAST_ROOM",
+      "REGION_SILPH_CO_7F/CENTER",
+      "REGION_SILPH_CO_7F/EAST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1636,9 +1714,10 @@
       "MAP_SILPH_CO_7F:3/MAP_SILPH_CO_8F:3"
     ]
   },
-  "REGION_SILPH_CO_7F/NORTHWEST_ROOM": {
+  "REGION_SILPH_CO_7F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F Northwest Room",
+    "name": "Silph Co. 7F - Northwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1652,9 +1731,10 @@
       "MAP_SILPH_CO_7F:4/MAP_SILPH_CO_3F:2"
     ]
   },
-  "REGION_SILPH_CO_7F/CENTER_ROOM": {
+  "REGION_SILPH_CO_7F/CENTER": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F Center Room",
+    "name": "Silph Co. 7F - Center",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1663,9 +1743,10 @@
     "exits": [],
     "warps": []
   },
-  "REGION_SILPH_CO_7F/EAST_ROOM": {
+  "REGION_SILPH_CO_7F/EAST": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F East Room",
+    "name": "Silph Co. 7F - East",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1676,20 +1757,21 @@
     "events": [],
     "exits": [
       "REGION_SILPH_CO_7F/MAIN",
-      "REGION_SILPH_CO_7F/SOUTHEAST_ROOM"
+      "REGION_SILPH_CO_7F/SOUTHEAST"
     ],
     "warps": []
   },
-  "REGION_SILPH_CO_7F/SOUTHEAST_ROOM": {
+  "REGION_SILPH_CO_7F/SOUTHEAST": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F Southeast Room",
+    "name": "Silph Co. 7F - Southeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_7F/EAST_ROOM"
+      "REGION_SILPH_CO_7F/EAST"
     ],
     "warps": [
       "MAP_SILPH_CO_7F:2/MAP_SILPH_CO_5F:5"
@@ -1698,6 +1780,7 @@
   "REGION_SILPH_CO_8F/MAIN": {
     "parent_map": "MAP_SILPH_CO_8F",
     "name": "Silph Co. 8F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1707,7 +1790,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_8F/WEST_ROOM",
+      "REGION_SILPH_CO_8F/WEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1718,9 +1801,10 @@
       "MAP_SILPH_CO_8F:5/MAP_SILPH_CO_2F:2"
     ]
   },
-  "REGION_SILPH_CO_8F/WEST_ROOM": {
+  "REGION_SILPH_CO_8F/WEST": {
     "parent_map": "MAP_SILPH_CO_8F",
-    "name": "Silph Co. 8F West Room",
+    "name": "Silph Co. 8F - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1736,14 +1820,14 @@
   "REGION_SILPH_CO_9F/MAIN": {
     "parent_map": "MAP_SILPH_CO_9F",
     "name": "Silph Co. 9F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_9F/SOUTHWEST_ROOM",
-      "REGION_SILPH_CO_9F/EAST_ROOM",
+      "REGION_SILPH_CO_9F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1752,24 +1836,26 @@
       "MAP_SILPH_CO_9F:3/MAP_SILPH_CO_10F:3"
     ]
   },
-  "REGION_SILPH_CO_9F/NORTHWEST_ROOM" : {
+  "REGION_SILPH_CO_9F/NORTHWEST" : {
     "parent_map": "MAP_SILPH_CO_9F",
-    "name": "Silph Co. 9F Northwest Room",
+    "name": "Silph Co. 9F - Northwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_9F/SOUTHWEST_ROOM"
+      "REGION_SILPH_CO_9F/SOUTHWEST"
     ],
     "warps": [
       "MAP_SILPH_CO_9F:2/MAP_SILPH_CO_3F:4"
     ]
   },
-  "REGION_SILPH_CO_9F/SOUTHWEST_ROOM": {
+  "REGION_SILPH_CO_9F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_9F",
-    "name": "Silph Co. 9F Southwest Room",
+    "name": "Silph Co. 9F - Southwest",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1780,26 +1866,14 @@
     "events": [],
     "exits": [
       "REGION_SILPH_CO_9F/MAIN",
-      "REGION_SILPH_CO_9F/NORTHWEST_ROOM"
-    ],
-    "warps": []
-  },
-  "REGION_SILPH_CO_9F/EAST_ROOM": {
-    "parent_map": "MAP_SILPH_CO_9F",
-    "name": "Silph Co. 9F East Room",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SILPH_CO_9F/MAIN"
+      "REGION_SILPH_CO_9F/NORTHWEST"
     ],
     "warps": []
   },
   "REGION_SILPH_CO_10F/MAIN": {
     "parent_map": "MAP_SILPH_CO_10F",
     "name": "Silph Co. 10F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1811,7 +1885,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_10F/SOUTHEAST_ROOM",
+      "REGION_SILPH_CO_10F/SOUTHEAST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
     "warps": [
@@ -1820,9 +1894,10 @@
       "MAP_SILPH_CO_10F:3/MAP_SILPH_CO_9F:3"
     ]
   },
-  "REGION_SILPH_CO_10F/SOUTHEAST_ROOM": {
+  "REGION_SILPH_CO_10F/SOUTHEAST": {
     "parent_map": "MAP_SILPH_CO_10F",
-    "name": "Silph Co. 10F Southeast Room",
+    "name": "Silph Co. 10F - Southeast",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1838,7 +1913,8 @@
   },
   "REGION_SILPH_CO_11F/EAST": {
     "parent_map": "MAP_SILPH_CO_11F",
-    "name": "Silph Co. 11F East Hallway",
+    "name": "Silph Co. 11F - East",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1855,7 +1931,8 @@
   },
   "REGION_SILPH_CO_11F/WEST": {
     "parent_map": "MAP_SILPH_CO_11F",
-    "name": "Silph Co. 11F West Hallway",
+    "name": "Silph Co. 11F - West",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1864,15 +1941,16 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_11F/PRESIDENTS_ROOM"
+      "REGION_SILPH_CO_11F/PRESIDENT"
     ],
     "warps": [
       "MAP_SILPH_CO_11F:1/MAP_SILPH_CO_7F:1"
     ]
   },
-  "REGION_SILPH_CO_11F/PRESIDENTS_ROOM": {
+  "REGION_SILPH_CO_11F/PRESIDENT": {
     "parent_map": "MAP_SILPH_CO_11F",
-    "name": "Silph Co. 11F President's Room",
+    "name": "Silph Co. 11F - President",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1882,14 +1960,13 @@
     "events": [
       "EVENT_LIBERATE_SILPH_CO"
     ],
-    "exits": [
-      "REGION_SILPH_CO_11F/WEST"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_SILPH_CO_ELEVATOR/MAIN": {
     "parent_map": "MAP_SILPH_CO_ELEVATOR",
     "name": "Silph Co. Elevator",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1912,6 +1989,7 @@
   "REGION_SEAFOAM_ISLANDS_1F/MAIN": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_1F",
     "name": "Seafoam Islands 1F",
+    "encounter_region": "Seafoam Islands 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1922,8 +2000,8 @@
       "EVENT_DROP_SEAFOAM_ISLANDS_1F_BOULDERS"
     ],
     "exits": [
-      "REGION_SEAFOAM_ISLANDS_B1F/WEST",
-      "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST"
+      "REGION_SEAFOAM_ISLANDS_B1F/WEST_DROP",
+      "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST_DROP"
     ],
     "warps": [
       "MAP_SEAFOAM_ISLANDS_1F:0/MAP_SEAFOAM_ISLANDS_B1F:0",
@@ -1933,8 +2011,9 @@
   },
   "REGION_SEAFOAM_ISLANDS_1F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_1F",
-    "name": "Seafoam Islands 1F Southeast",
-    "has_land": false,
+    "name": "Seafoam Islands 1F - Southeast",
+    "encounter_region": "Seafoam Islands 1F",
+    "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
@@ -1945,9 +2024,24 @@
       "MAP_SEAFOAM_ISLANDS_1F:4/MAP_ROUTE20:1"
     ]
   },
+  "REGION_SEAFOAM_ISLANDS_B1F/WEST_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
+    "name": "Seafoam Islands B1F - West (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B1F/WEST"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B1F/WEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F West",
+    "name": "Seafoam Islands B1F - West",
+    "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1958,7 +2052,7 @@
       "EVENT_DROP_SEAFOAM_ISLANDS_B1F_LEFT_BOULDER"
     ],
     "exits": [
-      "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST"
+      "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST_DROP"
     ],
     "warps": [
       "MAP_SEAFOAM_ISLANDS_B1F:0/MAP_SEAFOAM_ISLANDS_1F:0",
@@ -1966,9 +2060,24 @@
       "MAP_SEAFOAM_ISLANDS_B1F:4/MAP_SEAFOAM_ISLANDS_B2F:4"
     ]
   },
+  "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
+    "name": "Seafoam Islands B1F - Northeast (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F Northeast",
+    "name": "Seafoam Islands B1F - Northeast",
+    "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -1977,7 +2086,7 @@
       "EVENT_DROP_SEAFOAM_ISLANDS_B1F_RIGHT_BOULDER"
     ],
     "exits": [
-      "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST"
+      "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST_DROP"
     ],
     "warps": [
       "MAP_SEAFOAM_ISLANDS_B1F:1/MAP_SEAFOAM_ISLANDS_1F:1"
@@ -1985,7 +2094,8 @@
   },
   "REGION_SEAFOAM_ISLANDS_B1F/SOUTH": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F South",
+    "name": "Seafoam Islands B1F - South",
+    "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2000,7 +2110,8 @@
   },
   "REGION_SEAFOAM_ISLANDS_B1F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F Southeast",
+    "name": "Seafoam Islands B1F - Southeast",
+    "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2012,9 +2123,24 @@
       "MAP_SEAFOAM_ISLANDS_B1F:6/MAP_SEAFOAM_ISLANDS_B2F:6"
     ]
   },
+  "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "name": "Seafoam Islands B2F - Northwest (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F Northwest",
+    "name": "Seafoam Islands B2F - Northwest",
+    "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2023,7 +2149,7 @@
       "EVENT_DROP_SEAFOAM_ISLANDS_B2F_LEFT_BOULDER"
     ],
     "exits": [
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP"
     ],
     "warps": [
       "MAP_SEAFOAM_ISLANDS_B2F:3/MAP_SEAFOAM_ISLANDS_B1F:3"
@@ -2031,7 +2157,8 @@
   },
   "REGION_SEAFOAM_ISLANDS_B2F/SOUTHWEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F Southwest",
+    "name": "Seafoam Islands B2F - Southwest",
+    "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2046,9 +2173,24 @@
       "MAP_SEAFOAM_ISLANDS_B2F:5/MAP_SEAFOAM_ISLANDS_B1F:5"
     ]
   },
+  "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "name": "Seafoam Islands B2F - Northeast (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F Northeast",
+    "name": "Seafoam Islands B2F - Northeast",
+    "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2057,7 +2199,7 @@
       "EVENT_DROP_SEAFOAM_ISLANDS_B2F_RIGHT_BOULDER"
     ],
     "exits": [
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP"
     ],
     "warps": [
       "MAP_SEAFOAM_ISLANDS_B2F:1/MAP_SEAFOAM_ISLANDS_B3F:1"
@@ -2065,7 +2207,8 @@
   },
   "REGION_SEAFOAM_ISLANDS_B2F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F Southeast",
+    "name": "Seafoam Islands B2F - Southeast",
+    "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2079,7 +2222,8 @@
   },
   "REGION_SEAFOAM_ISLANDS_B3F/WEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F West",
+    "name": "Seafoam Islands B3F - West",
+    "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -2091,7 +2235,7 @@
     ],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WATER",
-      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER"
+      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER_DROP"
     ],
     "warps": [
       "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0",
@@ -2100,7 +2244,8 @@
   },
   "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F Northeast",
+    "name": "Seafoam Islands B3F - Northeast",
+    "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2112,9 +2257,24 @@
       "MAP_SEAFOAM_ISLANDS_B3F:4/MAP_SEAFOAM_ISLANDS_B4F:1"
     ]
   },
+  "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "name": "Seafoam Islands B3F - Water (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B3F/WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F Water",
+    "name": "Seafoam Islands B3F - Water",
+    "encounter_region": "Seafoam Islands B3F",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -2123,13 +2283,14 @@
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WEST",
       "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST",
-      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER"
+      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER_DROP"
     ],
     "warps": []
   },
   "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F Southeast",
+    "name": "Seafoam Islands B3F - Southeast",
+    "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -2145,6 +2306,7 @@
   "REGION_SEAFOAM_ISLANDS_B4F/MAIN": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
     "name": "Seafoam Islands B4F",
+    "encounter_region": "Seafoam Islands B4F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -2162,9 +2324,24 @@
       "MAP_SEAFOAM_ISLANDS_B4F:1/MAP_SEAFOAM_ISLANDS_B3F:4"
     ]
   },
+  "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
+    "name": "Seafoam Islands B4F - Water E (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F East Water",
+    "name": "Seafoam Islands B4F - Water E",
+    "encounter_region": "Seafoam Islands B4F",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -2175,9 +2352,24 @@
     ],
     "warps": []
   },
+  "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER_DROP": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
+    "name": "Seafoam Islands B4F - Water W (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER"
+    ],
+    "warps": []
+  },
   "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F West Water",
+    "name": "Seafoam Islands B4F - Water W",
+    "encounter_region": "Seafoam Islands B4F",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -2185,12 +2377,14 @@
     "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B4F/MAIN",
-      "REGION_SEAFOAM_ISLANDS_B4F/ISOLATED_ISLAND"
-    ]
+      "REGION_SEAFOAM_ISLANDS_B4F/ARTICUNO"
+    ],
+    "warps": []
   },
-  "REGION_SEAFOAM_ISLANDS_B4F/ISOLATED_ISLAND": {
+  "REGION_SEAFOAM_ISLANDS_B4F/ARTICUNO": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F Isolated Island",
+    "name": "Seafoam Islands B4F - Articuno",
+    "encounter_region": "Seafoam Islands B4F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -2202,6 +2396,7 @@
   "REGION_POKEMON_MANSION_1F/MAIN": {
     "parent_map": "MAP_POKEMON_MANSION_1F",
     "name": "Pokemon Mansion 1F",
+    "encounter_region": "Pokemon Mansion 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2219,9 +2414,24 @@
       "MAP_POKEMON_MANSION_1F:1/MAP_POKEMON_MANSION_2F:2"
     ]
   },
-  "REGION_POKEMON_MANSION_1F/NEAR_B1F_STAIRS": {
+  "REGION_POKEMON_MANSION_1F/SOUTH_DROP": {
     "parent_map": "MAP_POKEMON_MANSION_1F",
-    "name": "Pokemon Mansion 1F South Room",
+    "name": "Pokemon Mansion 1F - South (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_POKEMON_MANSION_1F/SOUTH"
+    ],
+    "warps": []
+  },
+  "REGION_POKEMON_MANSION_1F/SOUTH": {
+    "parent_map": "MAP_POKEMON_MANSION_1F",
+    "name": "Pokemon Mansion 1F - South",
+    "encounter_region": "Pokemon Mansion 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2230,22 +2440,23 @@
     ],
     "events": [],
     "exits": [
-      "REGION_POKEMON_MANSION_1F/OTHER_EXIT"
+      "REGION_POKEMON_MANSION_1F/SOUTHEAST"
     ],
     "warps": [
       "MAP_POKEMON_MANSION_1F:2/MAP_POKEMON_MANSION_B1F:0"
     ]
   },
-  "REGION_POKEMON_MANSION_1F/OTHER_EXIT": {
+  "REGION_POKEMON_MANSION_1F/SOUTHEAST": {
     "parent_map": "MAP_POKEMON_MANSION_1F",
-    "name": "Pokemon Mansion 1F Southeast Room",
+    "name": "Pokemon Mansion 1F - Southeast",
+    "encounter_region": "Pokemon Mansion 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_POKEMON_MANSION_1F/NEAR_B1F_STAIRS"
+      "REGION_POKEMON_MANSION_1F/SOUTH"
     ],
     "warps": [
       "MAP_POKEMON_MANSION_1F:3/MAP_CINNABAR_ISLAND:0!"
@@ -2254,6 +2465,7 @@
   "REGION_POKEMON_MANSION_2F/MAIN": {
     "parent_map": "MAP_POKEMON_MANSION_2F",
     "name": "Pokemon Mansion 2F",
+    "encounter_region": "Pokemon Mansion 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2265,7 +2477,7 @@
       "EVENT_PRESS_MANSION_2F_STATUE"
     ],
     "exits": [
-      "REGION_POKEMON_MANSION_2F/BEHIND_GATE"
+      "REGION_POKEMON_MANSION_2F/CENTER"
     ],
     "warps": [
       "MAP_POKEMON_MANSION_2F:0/MAP_POKEMON_MANSION_3F:0",
@@ -2273,9 +2485,24 @@
       "MAP_POKEMON_MANSION_2F:3/MAP_POKEMON_MANSION_3F:2"
     ]
   },
-  "REGION_POKEMON_MANSION_2F/BEHIND_GATE": {
+  "REGION_POKEMON_MANSION_2F/CENTER_DROP": {
     "parent_map": "MAP_POKEMON_MANSION_2F",
-    "name": "Pokemon Mansion 2F Behind Gate",
+    "name": "Pokemon Mansion 2F - Center (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_POKEMON_MANSION_2F/CENTER"
+    ],
+    "warps": []
+  },
+  "REGION_POKEMON_MANSION_2F/CENTER": {
+    "parent_map": "MAP_POKEMON_MANSION_2F",
+    "name": "Pokemon Mansion 2F - Center",
+    "encounter_region": "Pokemon Mansion 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2286,9 +2513,10 @@
     ],
     "warps": []
   },
-  "REGION_POKEMON_MANSION_2F/EAST_BALCONY": {
+  "REGION_POKEMON_MANSION_2F/EAST": {
     "parent_map": "MAP_POKEMON_MANSION_2F",
-    "name": "Pokemon Mansion 2F East Balcony",
+    "name": "Pokemon Mansion 2F - East",
+    "encounter_region": "Pokemon Mansion 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2303,7 +2531,8 @@
   },
   "REGION_POKEMON_MANSION_3F/SOUTHWEST": {
     "parent_map": "MAP_POKEMON_MANSION_3F",
-    "name": "Pokemon Mansion 3F Southwest Room",
+    "name": "Pokemon Mansion 3F - Southwest",
+    "encounter_region": "Pokemon Mansion 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2318,7 +2547,8 @@
   },
   "REGION_POKEMON_MANSION_3F/NORTH": {
     "parent_map": "MAP_POKEMON_MANSION_3F",
-    "name": "Pokemon Mansion 3F North Room",
+    "name": "Pokemon Mansion 3F - North",
+    "encounter_region": "Pokemon Mansion 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2337,16 +2567,19 @@
   },
   "REGION_POKEMON_MANSION_3F/SOUTHEAST": {
     "parent_map": "MAP_POKEMON_MANSION_3F",
-    "name": "Pokemon Mansion 3F Southeast Room",
+    "name": "Pokemon Mansion 3F - Southeast",
+    "encounter_region": "Pokemon Mansion 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "HIDDEN_ITEM_POKEMON_MANSION_3F_RARE_CANDY"
+    ],
     "events": [],
     "exits": [
       "REGION_POKEMON_MANSION_3F/NORTH",
-      "REGION_POKEMON_MANSION_1F/NEAR_B1F_STAIRS",
-      "REGION_POKEMON_MANSION_2F/BEHIND_GATE"
+      "REGION_POKEMON_MANSION_1F/SOUTH_DROP",
+      "REGION_POKEMON_MANSION_2F/CENTER_DROP"
     ],
     "warps": [
       "MAP_POKEMON_MANSION_3F:1/MAP_POKEMON_MANSION_2F:1"
@@ -2355,6 +2588,7 @@
   "REGION_POKEMON_MANSION_B1F": {
     "parent_map": "MAP_POKEMON_MANSION_B1F",
     "name": "Pokemon Mansion B1F",
+    "encounter_region": "Pokemon Mansion B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2375,7 +2609,8 @@
   },
   "REGION_VICTORY_ROAD_1F/SOUTH": {
     "parent_map": "MAP_VICTORY_ROAD_1F",
-    "name": "Victory Road 1F South Area",
+    "name": "Victory Road 1F - South",
+    "encounter_region": "Victory Road 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2390,7 +2625,8 @@
   },
   "REGION_VICTORY_ROAD_1F/NORTH": {
     "parent_map": "MAP_VICTORY_ROAD_1F",
-    "name": "Victory Road 1F North Area",
+    "name": "Victory Road 1F - North",
+    "encounter_region": "Victory Road 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2410,7 +2646,8 @@
   },
   "REGION_VICTORY_ROAD_2F/SOUTHWEST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F Southwest Area",
+    "name": "Victory Road 2F - Southwest",
+    "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2419,15 +2656,30 @@
       "EVENT_REMOVE_VICTORY_ROAD_2F_LEFT_ROCKS"
     ],
     "exits": [
-      "REGION_VICTORY_ROAD_2F/MAIN"
+      "REGION_VICTORY_ROAD_2F/CENTER"
     ],
     "warps": [
       "MAP_VICTORY_ROAD_2F:0/MAP_VICTORY_ROAD_1F:0"
     ]
   },
+  "REGION_VICTORY_ROAD_2F/CENTER_DROP": {
+    "parent_map": "MAP_VICTORY_ROAD_2F",
+    "name": "Victory Road 2F - Center (Drop)",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_VICTORY_ROAD_2F/CENTER"
+    ],
+    "warps": []
+  },
   "REGION_VICTORY_ROAD_2F/CENTER": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F Center Area",
+    "name": "Victory Road 2F - Center",
+    "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2437,26 +2689,27 @@
       "ITEM_VICTORY_ROAD_2F_TM37"
     ],
     "events": [
-      "EVENT_REMOVED_VICTORY_ROAD_2F_RIGHT_ROCKS"
+      "EVENT_REMOVE_VICTORY_ROAD_2F_RIGHT_ROCKS"
     ],
     "exits": [
       "REGION_VICTORY_ROAD_2F/SOUTHWEST",
-      "REGION_VICTORY_ROAD_2F/PLATEAU_LADDER"
+      "REGION_VICTORY_ROAD_2F/SOUTHEAST"
     ],
     "warps": [
       "MAP_VICTORY_ROAD_2F:2/MAP_VICTORY_ROAD_3F:1"
     ]
   },
-  "REGION_VICTORY_ROAD_2F/PLATEAU_LADDER": {
+  "REGION_VICTORY_ROAD_2F/SOUTHEAST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F Plateau Ladder",
+    "name": "Victory Road 2F - Southeast",
+    "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_VICTORY_ROAD_2F/MAIN"
+      "REGION_VICTORY_ROAD_2F/CENTER"
     ],
     "warps": [
       "MAP_VICTORY_ROAD_2F:4/MAP_VICTORY_ROAD_3F:3"
@@ -2464,7 +2717,8 @@
   },
   "REGION_VICTORY_ROAD_2F/NORTHWEST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F Northwest Area",
+    "name": "Victory Road 2F - Northwest",
+    "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2481,7 +2735,8 @@
   },
   "REGION_VICTORY_ROAD_2F/EAST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F East Area",
+    "name": "Victory Road 2F - East",
+    "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2495,7 +2750,8 @@
   },
   "REGION_VICTORY_ROAD_3F/NORTH": {
     "parent_map": "MAP_VICTORY_ROAD_3F",
-    "name": "Victory Road 3F North Area",
+    "name": "Victory Road 3F - North",
+    "encounter_region": "Victory Road 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2514,7 +2770,8 @@
   },
   "REGION_VICTORY_ROAD_3F/SOUTHWEST": {
     "parent_map": "MAP_VICTORY_ROAD_3F",
-    "name": "Victory Road 3F Southwest Area",
+    "name": "Victory Road 3F - Southwest",
+    "encounter_region": "Victory Road 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2524,13 +2781,14 @@
     ],
     "exits": [
       "REGION_VICTORY_ROAD_3F/NORTH",
-      "REGION_VICTORY_ROAD_2F/MAIN"
+      "REGION_VICTORY_ROAD_2F/CENTER_DROP"
     ],
     "warps": []
   },
   "REGION_VICTORY_ROAD_3F/SOUTHEAST": {
     "parent_map": "MAP_VICTORY_ROAD_3F",
-    "name": "Victory Road 3F Southeast Area",
+    "name": "Victory Road 3F - Southeast",
+    "encounter_region": "Victory Road 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2546,7 +2804,8 @@
   },
   "REGION_MT_EMBER_EXTERIOR/SOUTH": {
     "parent_map": "MAP_MT_EMBER_EXTERIOR",
-    "name": "Mt. Ember Exterior South Area",
+    "name": "Mt. Ember Exterior - South",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -2562,7 +2821,8 @@
   },
   "REGION_MT_EMBER_EXTERIOR/CENTER": {
     "parent_map": "MAP_MT_EMBER_EXTERIOR",
-    "name": "Mt. Ember Exterior Center Area",
+    "name": "Mt. Ember Exterior - Center",
+    "encounter_region": "Mt. Ember Exterior",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2580,7 +2840,8 @@
   },
   "REGION_MT_EMBER_EXTERIOR/NORTH": {
     "parent_map": "MAP_MT_EMBER_EXTERIOR",
-    "name": "Mt. Ember Exterior North Area",
+    "name": "Mt. Ember Exterior - North",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -2601,6 +2862,7 @@
   "REGION_MT_EMBER_SUMMIT_PATH_1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_1F",
     "name": "Mt. Ember Summit Path 1F",
+    "encounter_region": "Mt. Ember Summit Path 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2615,6 +2877,7 @@
   "REGION_MT_EMBER_SUMMIT_PATH_2F/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_2F",
     "name": "Mt. Ember Summit Path 2F",
+    "encounter_region": "Mt. Ember Summit Path 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2629,6 +2892,7 @@
   "REGION_MT_EMBER_SUMMIT_PATH_3F/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_3F",
     "name": "Mt. Ember Summit Path 3F",
+    "encounter_region": "Mt. Ember Summit Path 3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2643,6 +2907,7 @@
   "REGION_MT_EMBER_SUMMIT/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT",
     "name": "Mt. Ember Summit",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -2656,6 +2921,7 @@
   "REGION_MT_EMBER_RUBY_PATH_1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",
     "name": "Mt. Ember Ruby Path 1F",
+    "encounter_region": "Mt. Ember Ruby Path 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2669,7 +2935,8 @@
   },
   "REGION_MT_EMBER_RUBY_PATH_1F/LEDGE": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",
-    "name": "Mt. Ember Ruby Path 1F Ledge",
+    "name": "Mt. Ember Ruby Path 1F - Ledge",
+    "encounter_region": "Mt. Ember Ruby Path 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2685,6 +2952,7 @@
   "REGION_MT_EMBER_RUBY_PATH_B1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
     "name": "Mt. Ember Ruby Path B1F",
+    "encounter_region": "Mt. Ember Ruby Path B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2696,9 +2964,10 @@
       "MAP_MT_EMBER_RUBY_PATH_B1F:1/MAP_MT_EMBER_RUBY_PATH_B2F:0"
     ]
   },
-  "REGION_MT_EMBER_RUBY_PATH_B1F_STAIRS/": {
+  "REGION_MT_EMBER_RUBY_PATH_B1F_STAIRS/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS",
     "name": "Mt. Ember Ruby Path B1F Stairs",
+    "encounter_region": "Mt. Ember Ruby Path B1F Stairs",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2712,7 +2981,8 @@
   },
   "REGION_MT_EMBER_RUBY_PATH_B2F/WEST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
-    "name": "Mt. Ember Ruby Path B2F West Area",
+    "name": "Mt. Ember Ruby Path B2F - West",
+    "encounter_region": "Mt. Ember Ruby Path B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2727,7 +2997,8 @@
   },
   "REGION_MT_EMBER_RUBY_PATH_B2F/EAST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
-    "name": "Mt. Ember Ruby Path B2F East Area",
+    "name": "Mt. Ember Ruby Path B2F - East",
+    "encounter_region": "Mt. Ember Ruby Path B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2743,6 +3014,7 @@
   "REGION_MT_EMBER_RUBY_PATH_B2F_STAIRS/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS",
     "name": "Mt. Ember Ruby Path B2F Stairs",
+    "encounter_region": "Mt. Ember Ruby Path B2F Stairs",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2754,49 +3026,52 @@
       "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_1F:2"
     ]
   },
-  "MAP_MT_EMBER_RUBY_PATH_B3F/NORTHWEST": {
+  "REGION_MT_EMBER_RUBY_PATH_B3F/NORTHWEST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
-    "name": "Mt. Ember Ruby Path B3F Northwest Area",
+    "name": "Mt. Ember Ruby Path B3F - Northwest",
+    "encounter_region": "Mt. Ember Ruby Path B3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST",
-      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
+      "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST",
+      "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
     ],
     "warps": [
       "MAP_MT_EMBER_RUBY_PATH_B3F:0/MAP_MT_EMBER_RUBY_PATH_B2F:1"
     ]
   },
-  "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST": {
+  "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
-    "name": "Mt. Ember Ruby Path B3F Southwest Area",
+    "name": "Mt. Ember Ruby Path B3F - Southwest",
+    "encounter_region": "Mt. Ember Ruby Path B3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "MAP_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
-      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
+      "REGION_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
+      "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
     ],
     "warps": [
       "MAP_MT_EMBER_RUBY_PATH_B3F:2/MAP_MT_EMBER_RUBY_PATH_B4F:1"
     ]
   },
-  "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST": {
+  "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
-    "name": "Mt. Ember Ruby Path B3F Southeast Area",
+    "name": "Mt. Ember Ruby Path B3F - Southeast",
+    "encounter_region": "Mt. Ember Ruby Path B3F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "MAP_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
-      "MAP_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST"
+      "REGION_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
+      "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST"
     ],
     "warps": [
       "MAP_MT_EMBER_RUBY_PATH_B3F:1/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0"
@@ -2805,6 +3080,7 @@
   "REGION_MT_EMBER_RUBY_PATH_B4F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B4F",
     "name": "Mt. Ember Ruby Path B4F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -2819,6 +3095,7 @@
   "REGION_MT_EMBER_RUBY_PATH_B5F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B5F",
     "name": "Mt. Ember Ruby Path B5F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -2834,6 +3111,7 @@
   "REGION_THREE_ISLAND_BERRY_FOREST/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
     "name": "Berry Forest",
+    "encounter_region": "Berry Forest",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -2859,16 +3137,16 @@
       "EVENT_RESCUE_LOSTELLE"
     ],
     "exits": [
-      "REGION_THREE_ISLAND_BERRY_FOREST/ENTRANCE",
-      "REGION_THREE_ISLAND_BERRY_FOREST/POND"
+      "REGION_THREE_ISLAND_BERRY_FOREST/WATER"
     ],
     "warps": [
       "MAP_THREE_ISLAND_BERRY_FOREST:0,1,2/MAP_THREE_ISLAND_BOND_BRIDGE:0,1"
     ]
   },
-  "REGION_THREE_ISLAND_BERRY_FOREST/POND": {
+  "REGION_THREE_ISLAND_BERRY_FOREST/WATER": {
     "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
-    "name": "Berry Forest Pond",
+    "name": "Berry Forest - Water",
+    "encounter_region": "Berry Forest",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -2879,75 +3157,80 @@
     "exits": [],
     "warps": []
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ENTRANCE": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance South Lower Area",
+    "name": "Icefall Cave Entrance - South",
+    "encounter_region": "Icefall Cave Entrance",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:0/MAP_FOUR_ISLAND:3"
     ]
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance Below Waterfall",
+    "name": "Icefall Cave Entrance - Water S",
+    "encounter_region": "Icefall Cave Entrance",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ENTRANCE",
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/LOWER_AREA",
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ABOVE_WATERFALL"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/CENTER",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH_WATER"
     ],
     "warps": []
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/LOWER_AREA": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/CENTER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance North Lower Area",
+    "name": "Icefall Cave Entrance - Center",
+    "encounter_region": "Icefall Cave Entrance",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0"
     ]
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ABOVE_WATERFALL": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH_WATER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance Above Waterfall",
+    "name": "Icefall Cave Entrance - Water N",
+    "encounter_region": "Icefall Cave Entrance",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/BELOW_WATERFALL",
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/UPPER_AREA"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH"
     ],
     "warps": []
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/UPPER_AREA": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance Upper Area",
+    "name": "Icefall Cave Entrance - North",
+    "encounter_region": "Icefall Cave Entrance",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/ABOVE_WATERFALL"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH_WATER"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1"
@@ -2956,6 +3239,7 @@
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
     "name": "Icefall Cave 1F",
+    "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2964,8 +3248,8 @@
     ],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST",
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/TOP_LADDER"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST_DROP",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH_DROP"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1"
@@ -2973,7 +3257,8 @@
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/EAST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave East Ledge",
+    "name": "Icefall Cave - East",
+    "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -2988,14 +3273,15 @@
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/NORTHEAST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave Northeast Area",
+    "name": "Icefall Cave - Northeast",
+    "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/ICE_MAZE"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST_DROP"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1"
@@ -3003,7 +3289,8 @@
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/SOUTHEAST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave 1F Southeast Ledge",
+    "name": "Icefall Cave 1F - Southeast",
+    "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3020,7 +3307,8 @@
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/NORTHWEST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave 1F Northwest Ledge",
+    "name": "Icefall Cave 1F - Northwest",
+    "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3034,9 +3322,24 @@
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5/MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0"
     ]
   },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST_DROP": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "name": "Icefall Cave B1F - West (Drop)",
+    "encounter_region": "Icefall Cave B1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST"
+    ],
+    "warps": []
+  },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F West Area",
+    "name": "Icefall Cave B1F - West",
+    "encounter_region": "Icefall Cave B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3047,9 +3350,24 @@
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2"
     ]
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/TOP_LADDER": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH_DROP": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F Top Ladder",
+    "name": "Icefall Cave B1F - North (Drop)",
+    "encounter_region": "Icefall Cave B1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH"
+    ],
+    "warps": []
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "name": "Icefall Cave B1F - North",
+    "encounter_region": "Icefall Cave B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3060,9 +3378,24 @@
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3"
     ]
   },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/ICE_MAZE": {
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST_DROP": {
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "name": "Icefall Cave B1F - East (Drop)",
+    "encounter_region": "Icefall Cave B1F",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST"
+    ],
+    "warps": []
+  },
+  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST": {
     "parent_map":"MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F Ice Maze",
+    "name": "Icefall Cave B1F - East",
+    "encounter_region": "Icefall Cave B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3072,7 +3405,7 @@
     ],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/TOP_LADDER"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH"
     ],
     "warps": [
       "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4"
@@ -3081,6 +3414,7 @@
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_BACK/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
     "name": "Icefall Cave Back",
+    "encounter_region": "Icefall Cave Back",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3097,7 +3431,8 @@
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_BACK/WATER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
-    "name": "Icefall Cave Back Water",
+    "name": "Icefall Cave Back - Water",
+    "encounter_region": "Icefall Cave Back",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -3109,6 +3444,7 @@
   "REGION_FIVE_ISLAND_ROCKET_WAREHOUSE/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE",
     "name": "Rocket Warehouse",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3130,6 +3466,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ENTRANCE/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE",
     "name": "Lost Cave Entrance",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3144,6 +3481,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM1/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1",
     "name": "Lost Cave Room 1",
+    "encounter_region": "Lost Cave Room 1",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3161,6 +3499,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM2/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2",
     "name": "Lost Cave Room 2",
+    "encounter_region": "Lost Cave Room 2",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3177,6 +3516,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM3/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3",
     "name": "Lost Cave Room 3",
+    "encounter_region": "Lost Cave Room 3",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3193,6 +3533,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM4/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4",
     "name": "Lost Cave Room 4",
+    "encounter_region": "Lost Cave Room 4",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3209,6 +3550,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM5/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5",
     "name": "Lost Cave Room 5",
+    "encounter_region": "Lost Cave Room 5",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3225,6 +3567,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM6/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6",
     "name": "Lost Cave Room 6",
+    "encounter_region": "Lost Cave Room 6",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3241,6 +3584,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM7/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7",
     "name": "Lost Cave Room 7",
+    "encounter_region": "Lost Cave Room 7",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3257,6 +3601,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM8/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8",
     "name": "Lost Cave Room 8",
+    "encounter_region": "Lost Cave Room 8",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3273,6 +3618,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM9/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9",
     "name": "Lost Cave Room 9",
+    "encounter_region": "Lost Cave Room 9",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3289,6 +3635,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM10/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10",
     "name": "Lost Cave Room 10",
+    "encounter_region": "Lost Cave Room 10",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3304,6 +3651,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM11/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11",
     "name": "Lost Cave Room 11",
+    "encounter_region": "Lost Cave Room 11",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3319,6 +3667,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM12/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12",
     "name": "Lost Cave Room 12",
+    "encounter_region": "Lost Cave Room 12",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3334,6 +3683,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM13/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13",
     "name": "Lost Cave Room 13",
+    "encounter_region": "Lost Cave Room 13",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3349,6 +3699,7 @@
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM14/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14",
     "name": "Lost Cave Room 14",
+    "encounter_region": "Lost Cave Room 14",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3364,6 +3715,7 @@
   "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
     "name": "Dotted Hole 1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3378,7 +3730,8 @@
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_1F/LEDGE": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
-    "name": "Dotted Hole 1F Ledge",
+    "name": "Dotted Hole 1F - Ledge",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3394,6 +3747,7 @@
   "REGION_SIX_ISLAND_DOTTED_HOLE_B1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B1F",
     "name": "Dotted Hole B1F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3408,6 +3762,7 @@
   "REGION_SIX_ISLAND_DOTTED_HOLE_B2F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B2F",
     "name": "Dotted Hole B2F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3422,6 +3777,7 @@
   "REGION_SIX_ISLAND_DOTTED_HOLE_B3F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B3F",
     "name": "Dotted Hole B3F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3436,6 +3792,7 @@
   "REGION_SIX_ISLAND_DOTTED_HOLE_B4F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B4F",
     "name": "Dotted Hole B4F",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3450,6 +3807,7 @@
   "REGION_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM",
     "name": "Dotted Hole Sapphire Room",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3465,6 +3823,7 @@
   "REGION_SIX_ISLAND_PATTERN_BUSH/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
     "name": "Pattern Bush",
+    "encounter_region": "Pattern Bush",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3479,6 +3838,7 @@
   "REGION_SIX_ISLAND_ALTERING_CAVE/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_ALTERING_CAVE",
     "name": "Altering Cave",
+    "encounter_region": "Altering Cave",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3492,6 +3852,7 @@
   "REGION_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY": {
     "parent_map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY",
     "name": "Tanoby Key",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3507,6 +3868,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER",
     "name": "Monean Chamber",
+    "encounter_region": "Monean Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3520,6 +3882,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER",
     "name": "Liptoo Chamber",
+    "encounter_region": "Liptoo Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3533,6 +3896,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER",
     "name": "Weepth Chamber",
+    "encounter_region": "Weepth Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3546,6 +3910,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
     "name": "Dilford Chamber",
+    "encounter_region": "Dilford Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3559,6 +3924,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER",
     "name": "Scufib Chamber",
+    "encounter_region": "Scufib Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3572,6 +3938,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER",
     "name": "Rixy Chamber",
+    "encounter_region": "Rixy Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3585,6 +3952,7 @@
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER",
     "name": "Viapois Chamber",
+    "encounter_region": "Viapos Chamber",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3598,6 +3966,7 @@
   "REGION_TRAINER_TOWER_LOBBY/MAIN": {
     "parent_map": "MAP_TRAINER_TOWER_LOBBY",
     "name": "Trainer Tower Lobby",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -3608,9 +3977,10 @@
       "MAP_TRAINER_TOWER_LOBBY:1/MAP_SEVEN_ISLAND_TRAINER_TOWER:0"
     ]
   },
-  "REGION_CERULEAN_CAVE_1F/ENTRANCE": {
+  "REGION_CERULEAN_CAVE_1F/SOUTHEAST": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F Entrance",
+    "name": "Cerulean Cave 1F - Southeast",
+    "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3625,13 +3995,15 @@
   },
   "REGION_CERULEAN_CAVE_1F/WATER": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F Water",
+    "name": "Cerulean Cave 1F - Water",
+    "encounter_region": "Cerulean Cave 1F",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [
+      "REGION_CERULEAN_CAVE_1F/SOUTHEAST",
       "REGION_CERULEAN_CAVE_1F/NORTHEAST",
       "REGION_CERULEAN_CAVE_1F/MAIN"
     ],
@@ -3639,7 +4011,8 @@
   },
   "REGION_CERULEAN_CAVE_1F/NORTHEAST": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F Northeast Area",
+    "name": "Cerulean Cave 1F - Northeast",
+    "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3654,7 +4027,8 @@
   },
   "REGION_CERULEAN_CAVE_1F/MAIN": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F Main Area",
+    "name": "Cerulean Cave 1F",
+    "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3677,7 +4051,8 @@
   },
   "REGION_CERULEAN_CAVE_1F/NORTHWEST": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F Northwest Area",
+    "name": "Cerulean Cave 1F - Northwest",
+    "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3691,7 +4066,8 @@
   },
   "REGION_CERULEAN_CAVE_2F/NORTHEAST": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F Northeast Maze",
+    "name": "Cerulean Cave 2F - Northeast",
+    "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3706,7 +4082,8 @@
   },
   "REGION_CERULEAN_CAVE_2F/NORTHWEST": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F Northwest Maze",
+    "name": "Cerulean Cave 2F - Northwest",
+    "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3719,7 +4096,8 @@
   },
   "REGION_CERULEAN_CAVE_2F/WEST": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F West Maze",
+    "name": "Cerulean Cave 2F - West",
+    "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3734,7 +4112,8 @@
   },
   "REGION_CERULEAN_CAVE_2F/CENTER": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F Center Maze",
+    "name": "Cerulean Cave 2F - Center",
+    "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3749,7 +4128,8 @@
   },
   "REGION_CERULEAN_CAVE_2F/MAIN": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F Main Maze",
+    "name": "Cerulean Cave 2F",
+    "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3764,6 +4144,7 @@
   "REGION_CERULEAN_CAVE_B1F/MAIN": {
     "parent_map": "MAP_CERULEAN_CAVE_B1F",
     "name": "Cerulean Cave B1F",
+    "encounter_region": "Cerulean Cave B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3781,7 +4162,8 @@
   },
   "REGION_CERULEAN_CAVE_B1F/WATER": {
     "parent_map": "MAP_CERULEAN_CAVE_B1F",
-    "name": "Cerulean Cave B1F Water",
+    "name": "Cerulean Cave B1F - Water",
+    "encounter_region": "Cerulean Cave B1F",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,

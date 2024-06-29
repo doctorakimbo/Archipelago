@@ -33,11 +33,11 @@
   },
 
   "NPC_GIFT_GOT_HM01": {
-    "name": "S.S. Anne 3F - Captain",
+    "name": "S.S. Anne Captain's Office - Captain",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM02": {
-    "name": "Route 16 House - Woman",
+    "name": "Route 16 Fly House - Woman",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM03": {
@@ -45,11 +45,11 @@
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM04": {
-    "name": "Fuchsia City - Safari Zone Warden",
+    "name": "Fuchsia Warden's House - Safari Zone Warden",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM05": {
-    "name": "Route 2 - Professor Oak's Aide",
+    "name": "Route 2 East Building - Professor Oak's Aide",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM06": {
@@ -62,11 +62,11 @@
   },
 
   "NPC_GIFT_GOT_BICYCLE": {
-    "name": "Cerulean City - Bike Shop Owner",
+    "name": "Cerulean Bike Shop - Owner",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_BIKE_VOUCHER": {
-    "name": "Vermilion City - Pokemon Fan Club Chairman",
+    "name": "Vermilion Pokemon Fan Club - Chairman",
     "tags": ["KeyItem"]
   },
   "ITEM_SILPH_CO_5F_CARD_KEY": {
@@ -74,7 +74,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_COIN_CASE": {
-    "name": "Celadon City Restaurant - Coin Case Man",
+    "name": "Celadon Restaurant - Coin Case Man",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_DOME_FOSSIL": {
@@ -86,7 +86,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_GOOD_ROD": {
-    "name": "Fuchsia City Southeast House - Fishing Guru's Brother",
+    "name": "Fuchsia Fishing House - Fishing Guru's Brother",
     "tags": ["KeyItem"]
   },
   "ITEM_SAFARI_ZONE_WEST_GOLD_TEETH": {
@@ -98,7 +98,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "name": "Route 11 - Professor Oak's Aide",
+    "name": "Route 11 East Entrance 2F - Professor Oak's Aide",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
@@ -106,31 +106,31 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_METEORITE": {
-    "name": "One Island Pokemon Network Center - Bill",
+    "name": "One Island Pokemon Center 1F - Bill",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OAKS_PARCEL": {
-    "name": "Viridian City - Poke Mart Clerk",
+    "name": "Viridian Poke Mart - Clerk",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_AMBER": {
-    "name": "Pewter City Museum Back Room - Scientist",
+    "name": "Pewter Museum 1F - Scientist",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_ROD": {
-    "name": "Vermilion City Northwest House - Fishing Guru",
+    "name": "Vermilion Fishing House - Fishing Guru",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POKE_FLUTE": {
-    "name": "Lavender Town - Mr. Fuji",
+    "name": "Lavender Volunteer Pokemon House - Mr. Fuji",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POWDER_JAR": {
-    "name": "Cerulean City Northwest House - Berry Powder Man",
+    "name": "Cerulean Berry Powder Man's House - Berry Powder Man",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RAINBOW_PASS": {
-    "name": "One Island Pokemon Network Center - Celio",
+    "name": "One Island Pokemon Center 1F - Celio",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RUBY": {
@@ -154,11 +154,11 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SUPER_ROD": {
-    "name": "Route 12 House - Fishing Guru's Brother",
+    "name": "Route 12 Fishing House - Fishing Guru's Brother",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEA": {
-    "name": "Celadon City Condominiums - Tea Woman",
+    "name": "Celadon City Condominiums 1F - Tea Woman",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEACHY_TV": {
@@ -166,15 +166,15 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TOWN_MAP": {
-    "name": "Pallet Town - Daisy",
+    "name": "Rival's House - Daisy",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TRI_PASS": {
-    "name": "Cinnabar Island Pokemon Center - Bill",
+    "name": "Cinnabar Pokemon Center 1F - Bill",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_VS_SEEKER": {
-    "name": "Vermilion City Pokemon Center - Vs. Seeker Woman",
+    "name": "Vermilion Pokemon Center 1F - Vs. Seeker Woman",
     "tags": ["KeyItem"]
   },
 
@@ -283,7 +283,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY": {
-    "name": "Fuchsia City - Warden's House Item",
+    "name": "Fuchsia Warden's House - Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_EMBER_EXTERIOR_DIRE_HIT": {
@@ -631,7 +631,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE_LUCKY_PUNCH": {
-    "name": "Sevault Canyon - Dance House Item",
+    "name": "Sevault Canyon Chansey House - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_KINGS_ROCK": {
@@ -735,31 +735,31 @@
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_1F_ROOM2_TM31": {
-    "name": "S.S. Anne 1F - Room 2 Item",
+    "name": "S.S. Anne 1F Room 2 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_KITCHEN_GREAT_BALL": {
-    "name": "S.S. Anne 1F - Kitchen Item",
+    "name": "S.S. Anne 1F Kitchen - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_2F_ROOM2_STARDUST": {
-    "name": "S.S. Anne 2F - Room 2 Item",
+    "name": "S.S. Anne 2F Room 2 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_2F_ROOM4_X_ATTACK": {
-    "name": "S.S. Anne 2F - Room 4 Item",
+    "name": "S.S. Anne 2F Room 4 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_B1F_ROOM2_TM44": {
-    "name": "S.S. Anne B1F - Room 2 Item",
+    "name": "S.S. Anne B1F Room 2 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_B1F_ROOM3_ETHER": {
-    "name": "S.S. Anne B1F - Room 3 Item",
+    "name": "S.S. Anne B1F Room 3 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_SSANNE_B1F_ROOM5_SUPER_POTION": {
-    "name": "S.S. Anne B1F - Room 5 Item",
+    "name": "S.S. Anne B1F Room 5 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_THREE_ISLAND_BERRY_FOREST_FULL_HEAL": {
@@ -844,12 +844,12 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY": {
-    "name": "Cerulean City - Hidden Item Behind Gym Badge Man's House",
+    "name": "Cerulean City - Hidden Item Behind Badge Guy's House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL": {
     "name": "Memorial Pillar - South Beach Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY": {
     "name": "Memorial Pillar - Tall Grass South Hidden Item (Left)",
@@ -865,19 +865,19 @@
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL": {
     "name": "Resort Gorgeous - West Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST": {
     "name": "Resort Gorgeous - Main Island Southwest Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2": {
     "name": "Resort Gorgeous - Main Island Northwest Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE": {
     "name": "Resort Gorgeous - Main Island Southeast Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL": {
     "name": "Rocket Warehouse - Northeast Room Box Hidden Item",
@@ -889,11 +889,11 @@
   },
   "HIDDEN_ITEM_FOUR_ISLAND_PEARL": {
     "name": "Four Island - Beach Southeast Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL": {
     "name": "Four Island - Beach Northwest Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE": {
     "name": "Fuchsia City - Hidden Item Behind Fishing Guru's House",
@@ -909,27 +909,27 @@
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM": {
     "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2": {
     "name": "Mt. Moon B1F - Third Tunnel Rock Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3": {
     "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM": {
     "name": "Mt. Moon B1F - Second Tunnel Rock Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2": {
     "name": "Mt. Moon B1F - Fourth Tunnel Rock Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3": {
     "name": "Mt. Moon B1F - First Tunnel East Rock Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B2F_ETHER": {
     "name": "Mt. Moon B2F - Northeast Rock Hidden Item",
@@ -945,35 +945,35 @@
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL": {
     "name": "Treasure Beach - Tall Grass Northwest Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL": {
     "name": "Treasure Beach - Tall Grass Center Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2": {
     "name": "Treasure Beach - Tall Grass Southwest Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST": {
     "name": "Treasure Beach - Beach West Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2": {
     "name": "Treasure Beach - Tall Grass Northeast Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE": {
     "name": "Treasure Beach - Tall Grass East Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL": {
     "name": "Treasure Beach - Beach East Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2": {
     "name": "Treasure Beach - Tall Grass Southeast Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL": {
     "name": "Pewter City - Northwest Hidden Item",
@@ -1149,11 +1149,11 @@
   },
   "HIDDEN_ITEM_ROUTE20_STARDUST": {
     "name": "Route 20 - Northwest Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ROUTE21_NORTH_PEARL": {
     "name": "Route 21 - East Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY": {
     "name": "Route 23 - Hidden Item Before Sixth Checkpoint",
@@ -1216,7 +1216,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFFRON_CITY_COPYCATS_HOUSE_2F_NUGGET": {
-    "name": "Saffron City - Copycat's House Hidden Item",
+    "name": "Saffron Copycat's House 2F - Desk Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEAFOAM_ISLANDS_B3F_NUGGET": {
@@ -1237,23 +1237,23 @@
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE": {
     "name": "Tanoby Ruins - Scufib Chamber Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2": {
     "name": "Tanoby Ruins - Weepth Chamber Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3": {
     "name": "Tanoby Ruins - Monean Chamber Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_4": {
     "name": "Tanoby Ruins - Viapois Chamber Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL": {
     "name": "Trainer Tower - Beach North Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY": {
     "name": "Trainer Tower - Hidden Item Near Fence",
@@ -1261,7 +1261,7 @@
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL": {
     "name": "Trainer Tower - Beach West Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL": {
     "name": "Silph Co. 2F - Southwest Room Plant Hidden Item",
@@ -1313,7 +1313,7 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL": {
     "name": "Green Path - West Island Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY": {
     "name": "Six Island - Hidden Item Behind Pokemon Center",
@@ -1321,11 +1321,11 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL": {
     "name": "Outcast Island - West Beach Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE": {
     "name": "Outcast Island - East Beach Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY": {
     "name": "Water Path - Tall Grass South Hidden Item",
@@ -1340,7 +1340,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_B1F_CORRIDOR_HYPER_POTION": {
-    "name": "S.S. Anne B1F - Trash Can Hidden Item",
+    "name": "S.S. Anne B1F Corridor - Trash Can Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE": {
@@ -1348,68 +1348,68 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_CHERI_BERRY": {
-    "name": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Middle)",
+    "name": "S.S. Anne Kitchen - Trash Can Hidden Item (Middle)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_CHESTO_BERRY": {
-    "name": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Bottom)",
+    "name": "S.S. Anne Kitchen - Trash Can Hidden Item (Bottom)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_KITCHEN_PECHA_BERRY": {
-    "name": "S.S. Anne 1F - Kitchen Trash Can Hidden Item (Top)",
+    "name": "S.S. Anne Kitchen - Trash Can Hidden Item (Top)",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY": {
     "name": "Berry Forest - North Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY": {
     "name": "Berry Forest - Northwest Hidden Item (Bottom)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY": {
     "name": "Berry Forest - Hidden Item Near West Pond (Right)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHESTO_BERRY": {
     "name": "Berry Forest - Northeast Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY": {
     "name": "Berry Forest - Hidden Item Near Lostelle",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY": {
     "name": "Berry Forest - Center Hidden Item (Left)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY": {
     "name": "Berry Forest - East Hidden Item (Left)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PECHA_BERRY": {
     "name": "Berry Forest - Hidden Item Near Southwest Pond",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY": {
     "name": "Berry Forest - Southeast Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PINAP_BERRY": {
     "name": "Berry Forest - East Hidden Item (Right)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAWST_BERRY": {
     "name": "Berry Forest - Northwest Hidden Item (Top)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAZZ_BERRY": {
     "name": "Berry Forest - Center Hidden Item (Right)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_WEPEAR_BERRY": {
     "name": "Berry Forest - Hidden Item Near West Pond (Left)",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_MAX_REPEL": {
     "name": "Bond Bridge - Rock Hidden Item",
@@ -1417,11 +1417,11 @@
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL": {
     "name": "Bond Bridge - East Beach Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST": {
     "name": "Bond Bridge - West Beach Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET": {
     "name": "Three Isle Path - Rock Hidden Item",
@@ -1441,59 +1441,59 @@
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE": {
     "name": "Underground Path (East-West) - Far East Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING": {
     "name": "Underground Path (East-West) - West Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL": {
     "name": "Underground Path (East-West) - Center Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER": {
     "name": "Underground Path (East-West) - East Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL": {
     "name": "Underground Path (East-West) - Farthest East Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL": {
     "name": "Underground Path (East-West) - Far West Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION": {
     "name": "Underground Path (East-West) - Farthest West Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE": {
     "name": "Underground Path (North-South) - Farthest North Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING": {
     "name": "Underground Path (North-South) - North Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL": {
     "name": "Underground Path (North-South) - Farthest South Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER": {
     "name": "Underground Path (North-South) - South Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL": {
     "name": "Underground Path (North-South) - Far South Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL": {
     "name": "Underground Path (North-South) - Far North Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION": {
     "name": "Underground Path (North-South) - Center Hidden Item",
-    "tags": ["Hidden", "Recurring"]
+    "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER": {
     "name": "Vermilion City - Hidden Item Near Pokemon Center",
@@ -1521,19 +1521,19 @@
   },
 
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
-    "name": "Route 16 - Professor Oak's Aide",
+    "name": "Route 16 North Entrance 2F - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
-    "name": "Route 10 - Professor Oak's Aide",
+    "name": "Route 10 Pokemon Center 1F - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 - Professor Oak's Aide",
+    "name": "Route 15 West Entrance 2F - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FIRST_POKEBALLS": {
-    "name": "Pallet Town - Professor Oak's Parcel Reward",
+    "name": "Professor Oak's Lab - Oak's Parcel Delivery Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
@@ -1545,7 +1545,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER": {
-    "name": "Two Island - Lostelle's Father",
+    "name": "Two Island Game Corner - Lostelle's Father",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL": {
@@ -1557,7 +1557,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL": {
-    "name":"Pallet Town - Professor Oak's Post Route 22 Rival Reward",
+    "name":"Professor Oak's Lab - Oak's Post Route 22 Rival Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POTION_ON_ROUTE_1": {
@@ -1577,7 +1577,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL": {
-    "name": "Celadon City Department Store Roof - Girl's Fresh Water Reward",
+    "name": "Celadon Department Store Roof - Girl's Fresh Water Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
@@ -1585,7 +1585,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
-    "name": "Celadon City Department Store Roof - Girl's Soda Pop Reward",
+    "name": "Celadon Department Store Roof - Girl's Soda Pop Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
@@ -1593,7 +1593,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM27": {
-    "name": "Route 12 Gate - Lass",
+    "name": "Route 12 North Entrance 2F - Lass",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM28_FROM_ROCKET": {
@@ -1601,11 +1601,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC": {
-    "name": "Saffron City - Mr. Psychic",
+    "name": "Saffron Mr Psychic's House - Mr. Psychic",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL": {
-    "name": "Celadon City Department Store Roof - Girl's Lemonade Reward",
+    "name": "Celadon Department Store Roof - Girl's Lemonade Reward",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
@@ -1625,11 +1625,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Pallet Town - Professor Oak's Post Champion Reward 1",
+    "name": "Pallet Town - Oak's Post Champion Reward 2",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
-    "name": "Pallet Town - Professor Oak's Post Champion Reward 2",
+    "name": "Pallet Town - Oak's Post Champion Reward 1",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {
