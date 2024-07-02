@@ -3,7 +3,7 @@
 ## Required Software
 
 * [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases) v0.5.0
-* [Pokémon FireRed and LeafGreen apworld]() (place into )
+* [Pokémon FireRed and LeafGreen apworld](https://github.com/vyneras/Archipelago/releases/latest)
 * [Bizhawk](https://tasvideos.org/BizHawk/ReleaseHistory) (Has only been tested on v2.9.1)
 * An English FireRed or LeafGreen 1.0 ROM
   * FireRed `sha1: 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc`

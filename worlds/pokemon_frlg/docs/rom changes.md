@@ -28,8 +28,9 @@ predetermined priority
 * The S.S. Anne will never depart
 * The Saffron City guards will block your way from both directions (this only matters if your free fly is Saffron City)
 * Only the last guard on Route 23 will check for badges or gyms
+* Professor Oak will give you the Mystic and Aurora Ticket in Pallet Town after beating the game
 * Much of the Sevii Islands has been reworked:
-  * The cutscene after Cinnabar Gym where Bill takes you to the Sevii Islands has been removed. Instead, Bill can be found in the Pokémon Center after beating the Gym and will give you an item that corresponds to the Tri Pass
+  * The cutscene after Cinnabar Gym where Bill takes you to the Sevii Islands has been removed. Instead, Bill can be found in the Pokémon Center after beating the Gym and will give you the Tri Pass
   * The Tri Pass allows you to sail to the 1-3 Islands and the Rainbow Pass allows you to sail to the 4-7 Islands from Vermilion City
   * You will never be trapped on the Sevii Islands and your PC will never be disabled there
   * Several cutscenes in the One Island Pokémon Center have been reworked or removed
