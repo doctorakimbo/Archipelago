@@ -72,7 +72,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM"
+      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2"
     ],
     "events": [],
     "exits": [],
@@ -106,7 +106,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2"
+      "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM"
     ],
     "events": [],
     "exits": [],
