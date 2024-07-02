@@ -137,6 +137,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                                     ItemClassification.progression,
                                                     None,
                                                     world.player))
+            event.show_in_spoiler = False
             new_region.locations.append(event)
 
         for region_exit in region_data.exits:

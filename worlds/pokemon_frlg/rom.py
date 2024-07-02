@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING, List, Tuple
 from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
+from .items import reverse_offset_item_value
 from .options import ItemfinderRequired, ShuffleHiddenItems, ViridianCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -72,7 +73,7 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
             patch.write_token(
                 APTokenTypes.WRITE,
                 location.item_address,
-                struct.pack("<H", location.item.code)
+                struct.pack("<H", reverse_offset_item_value(location.item.code))
             )
         else:
             patch.write_token(
@@ -112,17 +113,11 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
                 f"Changing amount to 999"
             )
             quantity = 999
-        elif quantity == 0:
-            logging.info(
-                f"{world.multiworld.get_file_safe_player_name(world.player)} specified a quantity of 0 for {item}"
-                f"Item will not be added to starting inventory"
-            )
-            continue
         pc_slots.append([item, quantity])
 
     for i, slot in enumerate(pc_slots, 1):
         address = data.rom_addresses[game_version]["gNewGamePCItems"] + (i * 4)
-        item = world.item_name_to_id[slot[0]]
+        item = reverse_offset_item_value(world.item_name_to_id[slot[0]])
         patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", item))
         patch.write_token(APTokenTypes.WRITE, address + 2, struct.pack("<H", slot[1]))
 

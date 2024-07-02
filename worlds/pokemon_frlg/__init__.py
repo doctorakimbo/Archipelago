@@ -4,8 +4,8 @@ Archipelago World definition for Pokemon FireRed/LeafGreen
 import copy
 import settings
 import pkgutil
-from typing import ClassVar, List, Dict, Any, TextIO
-from BaseClasses import Tutorial, MultiWorld, ItemClassification, Item, Location
+from typing import ClassVar, List, Dict, Any
+from BaseClasses import Tutorial, MultiWorld, ItemClassification
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
@@ -212,14 +212,6 @@ class PokemonFRLGWorld(World):
                         location.item.classification = ItemClassification.useful
                     else:
                         found_mons.add(key)
-
-    def write_spoiler(self, spoiler_handle: TextIO) -> None:
-        spoiler_handle.write(f"\n\nPokémon Locations ({self.multiworld.player_name[self.player]}):\n\n")
-        pokemon_locations: List[PokemonFRLGLocation] = [
-            location for location in self.multiworld.get_locations() if "Wild" in location.tags
-        ]
-        for location in pokemon_locations:
-            spoiler_handle.write(location.name + ": " + location.item.name + "\n")
 
     def modify_multidata(self, multidata: Dict[str, Any]):
         import base64

@@ -47,7 +47,7 @@ class ItemfinderRequired(Choice):
     - Required: The Itemfinder is required to pickup Hidden Items.
     """
     display_name = "Itemfinder Required"
-    default = 0
+    default = 1
     option_off = 0
     option_logic = 1
     option_required = 2

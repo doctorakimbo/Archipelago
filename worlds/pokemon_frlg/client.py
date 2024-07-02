@@ -3,6 +3,8 @@ from NetUtils import ClientStatus
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
 from .data import data
+from .items import reverse_offset_item_value
+from .locations import offset_flag
 
 if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
@@ -139,8 +141,9 @@ class PokemonFRLGClient(BizHawkClient):
                     if byte & (1 << i) != 0:
                         flag_id = byte_i * 8 + i
 
-                        if flag_id in ctx.server_locations:
-                            local_checked_locations.add(flag_id)
+                        location_id = offset_flag(flag_id)
+                        if location_id in ctx.server_locations:
+                            local_checked_locations.add(location_id)
 
                         for j in DEFEATED_CHAMPION_FLAGS:
                             if flag_id == j:
@@ -194,7 +197,7 @@ class PokemonFRLGClient(BizHawkClient):
             next_item = ctx.items_received[num_received_items]
             should_display = 1 if next_item.flags & 1 or next_item.player == ctx.slot else 0
             await bizhawk.write(ctx.bizhawk_ctx, [
-                (received_item_address, next_item.item.to_bytes(2, "little"), "System Bus"),
+                (received_item_address, reverse_offset_item_value(next_item.item).to_bytes(2, "little"), "System Bus"),
                 (received_item_address + 2, (num_received_items + 1).to_bytes(2, "little"), "System Bus"),
                 (received_item_address + 4, [1], "System Bus"),
                 (received_item_address + 5, [should_display], "System Bus")

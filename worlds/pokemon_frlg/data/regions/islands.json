@@ -1750,8 +1750,8 @@
   },
   "REGION_SEVEN_ISLAND_TRAINER_TOWER/SOUTH": {
     "parent_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
-    "name": "Trainer Tower - South",
-    "encounter_region": "Trainer Tower",
+    "name": "Trainer Tower Exterior - South",
+    "encounter_region": "Trainer Tower Exterior",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -1769,8 +1769,8 @@
   },
   "REGION_SEVEN_ISLAND_TRAINER_TOWER/WATER": {
     "parent_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
-    "name": "Trainer Tower - Water",
-    "encounter_region": "Trainer Tower",
+    "name": "Trainer Tower Exterior - Water",
+    "encounter_region": "Trainer Tower Exterior",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1784,8 +1784,8 @@
   },
   "REGION_SEVEN_ISLAND_TRAINER_TOWER/NORTH": {
     "parent_map": "MAP_SEVEN_ISLAND_TRAINER_TOWER",
-    "name": "Trainer Tower - North",
-    "encounter_region": "Trainer Tower",
+    "name": "Trainer Tower Exterior - North",
+    "encounter_region": "Trainer Tower Exterior",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,

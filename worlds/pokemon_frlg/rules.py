@@ -720,8 +720,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Tanoby Ruins - Monean Chamber", "Tanoby Ruins - Water"), lambda state: can_surf(state))
 
     # Trainer Tower
-    set_rule(get_entrance("Trainer Tower - South", "Trainer Tower - Water"), lambda state: can_surf(state))
-    set_rule(get_entrance("Trainer Tower - North", "Trainer Tower - Water"), lambda state: can_surf(state))
+    set_rule(get_entrance("Trainer Tower Exterior - South", "Trainer Tower Exterior - Water"),
+             lambda state: can_surf(state))
+    set_rule(get_entrance("Trainer Tower Exterior - North", "Trainer Tower Exterior - Water"),
+             lambda state: can_surf(state))
 
     # Cerulean Cave
     set_rule(get_location("Cerulean Cave 2F - East Item"), lambda state: can_rock_smash(state))
@@ -738,6 +740,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_location("Viridian Gym - Hidden Item Under Giovanni"),
                  lambda state: state.has("Itemfinder", player))
 
+        # Pokemon Tower
+        set_rule(get_location("Pokemon Tower 7F - Hidden Item Between Statues"),
+                 lambda state: state.has("Itemfinder", player))
+
         # Route 12
         set_rule(get_location("Route 12 - Hidden Item Under Snorlax"), lambda state: state.has("Itemfinder", player))
 
@@ -747,6 +753,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         # Cape Brink
         set_rule(get_location("Cape Brink - Hidden Item Across Pond"),
                  lambda state: state.has("Itemfinder", player))
+
+        # Navel Rock
+        set_rule(get_location("Navel Rock - Hidden Item Near Ho-Oh"), lambda state: state.has("Itemfinder", player))
 
         # Add rules for hidden items
         if world.options.itemfinder_required != ItemfinderRequired.option_off:

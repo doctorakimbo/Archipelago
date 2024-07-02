@@ -158,7 +158,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEA": {
-    "name": "Celadon City Condominiums 1F - Tea Woman",
+    "name": "Celadon Condominiums 1F - Tea Woman",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEACHY_TV": {
@@ -567,7 +567,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_CENTER_NUGGET": {
-    "name": "Safari Zone Center - Center Island Item",
+    "name": "Safari Zone Center - Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_FULL_RESTORE": {
@@ -663,7 +663,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_4F_TM41": {
-    "name": "Silph Co. 4F - East Room Item",
+    "name": "Silph Co. 4F - Southeast Room Item",
     "tags": ["Overworld"]
   },
   "ITEM_SILPH_CO_5F_PROTEIN": {
@@ -815,7 +815,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_CITY_POTION": {
-    "name": "Viridian City - Item Near Cuttable Tree",
+      "name": "Viridian City - Item Near Cuttable Tree",
     "tags": ["Overworld"]
   },
   "ITEM_VIRIDIAN_FOREST_ANTIDOTE": {
@@ -904,7 +904,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL": {
-    "name": "Mt. Ember Exterior - Rock Near West Cave Entrance Hidden Item",
+    "name": "Mt. Ember Exterior - Hidden Item Near West Cave Entrance",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM": {
@@ -1016,11 +1016,11 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NEST_BALL": {
-    "name": "Rocket Hideout B4F - Giovanni's Room Southeast Plant Hidden Item",
+    "name": "Rocket Hideout B4F - Giovanni's Room Hidden Item Between East Plants",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL": {
-    "name": "Rocket Hideout B4F - Giovanni's Room Southwest Plant Hidden Item",
+    "name": "Rocket Hideout B4F - Giovanni's Room Hidden Item Between West Plants",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
@@ -1052,15 +1052,15 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE8_LEPPA_BERRY": {
-    "name": "Route 8 - Tall Grass Northeast Hidden Item",
-    "tags": ["Hidden"]
-  },
-  "HIDDEN_ITEM_ROUTE8_LUM_BERRY": {
     "name": "Route 8 - Tall Grass Southeast Hidden Item",
     "tags": ["Hidden"]
   },
-  "HIDDEN_ITEM_ROUTE8_RAWST_BERRY": {
+  "HIDDEN_ITEM_ROUTE8_LUM_BERRY": {
     "name": "Route 8 - Tall Grass Northwest Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE8_RAWST_BERRY": {
+    "name": "Route 8 - Tall Grass Northeast Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE9_CHESTO_BERRY": {
@@ -1208,7 +1208,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFARI_ZONE_CENTER_LEAF_STONE": {
-    "name": "Safari Zone Center - Center Island Hidden Item",
+    "name": "Safari Zone Center - Island Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFARI_ZONE_WEST_REVIVE": {
@@ -1228,7 +1228,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_CHERI_BERRY": {
-    "name": "Sevault Canyon - Hidden Item Near Dance House",
+    "name": "Sevault Canyon - Hidden Item Near Chansey House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY": {
@@ -1252,15 +1252,15 @@
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL": {
-    "name": "Trainer Tower - Beach North Hidden Item",
+    "name": "Trainer Tower Exterior - Beach North Hidden Item",
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY": {
-    "name": "Trainer Tower - Hidden Item Near Fence",
+    "name": "Trainer Tower Exterior - Hidden Item Near Fence",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL": {
-    "name": "Trainer Tower - Beach West Hidden Item",
+    "name": "Trainer Tower Exterior - Beach West Hidden Item",
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL": {
@@ -1416,11 +1416,11 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL": {
-    "name": "Bond Bridge - East Beach Item",
+    "name": "Bond Bridge - East Beach Hidden Item",
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST": {
-    "name": "Bond Bridge - West Beach Item",
+    "name": "Bond Bridge - West Beach Hidden Item",
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET": {

@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, Dict, Optional, FrozenSet, Iterable, List
 from BaseClasses import Location, Region, ItemClassification
-from .data import data
-from .items import PokemonFRLGItem
+from .data import data, BASE_OFFSET
+from .items import offset_item_value, PokemonFRLGItem
 from .options import ViridianCityRoadblock, PewterCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -44,9 +44,21 @@ class PokemonFRLGLocation(Location):
             default_item_id: Optional[int] = None,
             tags: FrozenSet[str] = frozenset()) -> None:
         super().__init__(player, name, address, parent)
-        self.default_item_id = default_item_id
+        self.default_item_id =  None if default_item_id is None else offset_item_value(default_item_id)
         self.item_address = item_address
         self.tags = tags
+
+
+def offset_flag(flag: int) -> int:
+    if flag is None:
+        return None
+    return flag + BASE_OFFSET
+
+
+def reverse_offset_flag(location_id: int) -> int:
+    if location_id is None:
+        return None
+    return location_id - BASE_OFFSET
 
 
 def create_location_name_to_id_map() -> Dict[str, int]:
@@ -57,7 +69,7 @@ def create_location_name_to_id_map() -> Dict[str, int]:
     for region_data in data.regions.values():
         for location_id in region_data.locations:
             location_data = data.locations[location_id]
-            name_to_id_mapping[location_data.name] = location_data.flag
+            name_to_id_mapping[location_data.name] = offset_flag(location_data.flag)
 
     return name_to_id_mapping
 
@@ -74,12 +86,14 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
         region = regions[region_data.name]
         included_locations = [loc for loc in region_data.locations if len(tags & data.locations[loc].tags) > 0]
 
-        for location_id in included_locations:
-            location_data = data.locations[location_id]
+        for location_flag in included_locations:
+            location_data = data.locations[location_flag]
+
+            location_id = offset_flag(location_data.flag)
             location = PokemonFRLGLocation(
                 world.player,
                 location_data.name,
-                location_data.flag,
+                location_id,
                 region,
                 location_data.address[game_version],
                 location_data.default_item,

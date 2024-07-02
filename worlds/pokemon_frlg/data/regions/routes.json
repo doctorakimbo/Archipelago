@@ -829,9 +829,7 @@
       "HIDDEN_ITEM_ROUTE12_RARE_CANDY"
     ],
     "events": [],
-    "exits": [
-      "REGION_ROUTE13/NORTH"
-    ],
+    "exits": [],
     "warps": []
   },
   "REGION_ROUTE12_FISHING_HOUSE/MAIN": {
@@ -904,18 +902,6 @@
   "REGION_ROUTE13/TREE": {
     "parent_map": "MAP_ROUTE13",
     "name": "Route 13 - Tree",
-    "encounter_region": "Route 13",
-    "has_land": true,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [],
-    "warps": []
-  },
-  "REGION_ROUTE13/NORTH": {
-    "parent_map": "MAP_ROUTE13",
-    "name": "Route 13 - North",
     "encounter_region": "Route 13",
     "has_land": true,
     "has_water": false,
