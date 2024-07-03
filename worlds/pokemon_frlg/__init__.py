@@ -105,6 +105,9 @@ class PokemonFRLGWorld(World):
 
         assert validate_regions()
 
+    def get_filler_item_name(self) -> str:
+        return "Poke Ball"
+
     def create_regions(self) -> None:
         from .regions import create_regions
 
@@ -131,6 +134,9 @@ class PokemonFRLGWorld(World):
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
         self.multiworld.itempool += itempool
 
+    def generate_early(self) -> None:
+        self.create_hm_compatability_dict()
+
     def set_rules(self) -> None:
         from .rules import set_rules
         set_rules(self)
@@ -140,7 +146,6 @@ class PokemonFRLGWorld(World):
         self.auth = self.random.getrandbits(16 * 8).to_bytes(16, "little")
 
         set_free_fly(self)
-        self.create_hm_compatability_dict()
 
     def pre_fill(self) -> None:
         # If badges aren't shuffled among all locations, shuffle them among themselves
