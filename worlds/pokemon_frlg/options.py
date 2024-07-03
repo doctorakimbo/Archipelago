@@ -20,9 +20,9 @@ class GameRevision(Choice):
     Select FireRed or LeafGreen revision.
     """
     display_name = "Game Revision"
+    default = 0
     option_rev0 = 0
     option_rev1 = 1
-    default = "random"
 
 
 class ShuffleBadges(Toggle):

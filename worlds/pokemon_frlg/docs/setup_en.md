@@ -11,7 +11,7 @@
   * LeafGreen 1.0 `sha1: 574fa542ffebb14be69902d1d36f1ec0a4afd71e`
   * LeafGreen 1.1 `sha1: 7862c67bdecbe21d1d69ce082ce34327e1c6ed5e`
 
- Place the `pokemon_frlg.apworld` file in your Archipelago installation's `lib/worlds` folder (Default location for Windows: `%programdata%/Archipelago`).
+ Place the `pokemon_frlg.apworld` file in your Archipelago installation's `lib/worlds` or `custom_worlds` folder (Default location for Windows: `%programdata%/Archipelago`). Do not place it into both folders.
 
 It is recommended you follow the setup guide for Bizhawk in the [Pokémon Emerald Setup Guide](https://archipelago.gg/tutorial/Pokemon%20Emerald/setup/en#configuring-bizhawk).
 
@@ -21,9 +21,8 @@ It is recommended you follow the setup guide for Bizhawk in the [Pokémon Emeral
 
 ## Generating and Patching
 
-1. Download and modify the [template YAML](https://gist.github.com/vyneras/af12ebb1f7e98a5a999b6c084f446cb3)
-2. Follow the general Archipelago instructions for [generating a game](../../Archipelago/setup/en#generating-a-game).
-This will generate an output file for you. Your patch file will have one of the following file extensions:
+1. Download and modify the [template YAML](https://gist.github.com/vyneras/af12ebb1f7e98a5a999b6c084f446cb3) and place it in your Archipelago installation's `Players` folder
+2. Launch `ArchipelagoGenerate.exe`. This will generate an output file for you. Your patch file will have one of the following file extensions:
    * `.apfirered`
    * `.apleafgreen`
    * `.apfireredrev1`

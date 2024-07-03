@@ -31,17 +31,46 @@ DEFEATED_CHAMPION_FLAGS: List[int] = {
 }
 
 
+TRACKER_EVENT_FLAGS = [
+    "FLAG_DEFEATED_BROCK",
+    "FLAG_DEFEATED_MISTY",
+    "FLAG_DEFEATED_LT_SURGE",
+    "FLAG_DEFEATED_ERIKA",
+    "FLAG_DEFEATED_KOGA",
+    "FLAG_DEFEATED_SABRINA",
+    "FLAG_DEFEATED_BLAINE",
+    "FLAG_DEFEATED_LEADER_GIOVANNI",
+    "FLAG_DELIVERED_OAKS_PARCEL",
+    "FLAG_DEFEATED_ROUTE22_RIVAL",
+    "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
+    "FLAG_RESCUED_MR_FUJI",
+    "FLAG_HIDE_SAFFRON_ROCKETS",  # Liberated Silph Co.
+    "FLAG_SYS_CAN_LINK_WITH_RS",  # Restored Pokemon Network Machine
+    "FLAG_RESCUED_LOSTELLE",
+    "FLAG_SEVII_DETOUR_FINISHED",  # Gave Meteorite to Lostelle's Dad
+    "FLAG_HIDE_RUIN_VALLEY_SCIENTIST",  # Helped Lorelei in Icefall Cave
+    "FLAG_LEARNED_YES_NAH_CHANSEY",
+    "FLAG_DEFEATED_CHAMP",
+    "FLAG_PURCHASED_LEMONADE"
+]
+EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_EVENT_FLAGS}
+
+
 class PokemonFRLGClient(BizHawkClient):
     game = "Pokemon FireRed and LeafGreen"
     system = "GBA"
     patch_suffix = (".apfirered", ".apleafgreen", ".apfireredrev1", ".apleafgreenrev1")
     game_version: str
     local_checked_locations: Set[int]
+    local_set_events: Dict[str, bool]
+    caught_pokemon: int
 
     def __init__(self) -> None:
         super().__init__()
         self.game_version = None
         self.local_checked_locations = set()
+        self.local_set_events = {}
+        self.caught_pokemon = 0
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -108,14 +137,18 @@ class PokemonFRLGClient(BizHawkClient):
                 ctx.bizhawk_ctx,
                 [
                     (data.ram_addresses[self.game_version]["gSaveBlock1Ptr"], 4, "System Bus"),
+                    (data.ram_addresses[self.game_version]["gSaveBlock2Ptr"], 4, "System Bus")
                 ]
             )
 
             # Check that the save data hasn't moved
             guards["SAVE BLOCK 1"] = (data.ram_addresses[self.game_version]["gSaveBlock1Ptr"],
                                       read_result[0], "System Bus")
+            guards["SAVE BLOCK 2"] = (data.ram_addresses[self.game_version]["gSaveBlock2Ptr"],
+                                      read_result[1], "System Bus")
 
             sb1_address = int.from_bytes(guards["SAVE BLOCK 1"][1], "little")
+            sb2_address = int.from_bytes(guards["SAVE BLOCK 2"][1], "little")
 
             await self.handle_received_items(ctx, guards)
 
@@ -128,6 +161,7 @@ class PokemonFRLGClient(BizHawkClient):
 
             if read_result is None:  # Not in overworld or save block moved
                 return
+
             flag_bytes = read_result[0]
 
             read_result = await bizhawk.guarded_read(
@@ -139,8 +173,21 @@ class PokemonFRLGClient(BizHawkClient):
             if read_result is not None:
                 flag_bytes += read_result[0]
 
+            read_result = await bizhawk.guarded_read(
+                ctx.bizhawk_ctx,
+                [(sb2_address + 0x018 + 0x10, 0x34, "System Bus")],  # Caught Pokemon
+                [guards["IN OVERWORLD"], guards["SAVE BLOCK 2"]]
+            )
+
+            if read_result is None:  # Not in overworld or save block moved
+                return
+
+            pokemon_caught_bytes = read_result[0]
+
             game_clear = False
+            local_set_events = {flag_name: False for flag_name in TRACKER_EVENT_FLAGS}
             local_checked_locations = set()
+            caught_pokemon = 0
 
             # Check set flags
             for byte_i, byte in enumerate(flag_bytes):
@@ -155,6 +202,18 @@ class PokemonFRLGClient(BizHawkClient):
                         for j in DEFEATED_CHAMPION_FLAGS:
                             if flag_id == j:
                                 game_clear = True
+
+                        if flag_id == data.constants["FLAG_DEFEATED_CHAMP"]:
+                            game_clear = True
+
+                        if flag_id in EVENT_FLAG_MAP:
+                            local_set_events[EVENT_FLAG_MAP[flag_id]] = True
+
+            # Get caught pokemon count
+            for byte_i, byte in enumerate(pokemon_caught_bytes):
+                for i in range(8):
+                    if byte & (1 << i) != 0:
+                        caught_pokemon += 1
 
             # Send locations
             if local_checked_locations != self.local_checked_locations:
@@ -172,6 +231,34 @@ class PokemonFRLGClient(BizHawkClient):
                     "cmd": "StatusUpdate",
                     "status": ClientStatus.CLIENT_GOAL,
                 }])
+
+            # Send tracker event flags
+            if local_set_events != self.local_set_events and ctx.slot is not None:
+                event_bitfield = 0
+                for i, flag_name in enumerate(TRACKER_EVENT_FLAGS):
+                    if local_set_events[flag_name]:
+                        event_bitfield |= 1 << i
+
+                await ctx.send_msgs([{
+                    "cmd": "Set",
+                    "key": f"pokemon_frlg_events_{ctx.team}_{ctx.slot}",
+                    "default": 0,
+                    "want_reply": False,
+                    "operations": [{"operation": "or", "value": event_bitfield}],
+                }])
+                self.local_set_events = local_set_events
+
+            # Send caught pokemon amount
+            if caught_pokemon != self.caught_pokemon and ctx.slot is not None:
+                await ctx.send_msgs([{
+                    "cmd": "Set",
+                    "key": f"pokemon_frlg_pokedex_{ctx.team}_{ctx.slot}",
+                    "default": 0,
+                    "want_reply": False,
+                    "operations": [{"operation": "replace", "value": caught_pokemon},]
+                }])
+                self.caught_pokemon = caught_pokemon
+
         except bizhawk.RequestFailedError:
             # Exit handler and return to main loop to reconnect
             pass

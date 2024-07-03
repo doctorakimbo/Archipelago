@@ -4,7 +4,7 @@ from .data import data, BASE_OFFSET
 
 
 class PokemonFRLGItem(Item):
-    game: str = "Pokemon FireRed and LeafGreen",
+    game: str = "Pokemon FireRed and LeafGreen"
     tags: FrozenSet[str]
 
     def __init__(self, name: str, classification: ItemClassification, code: Optional[int], player: int) -> None:

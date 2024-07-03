@@ -243,7 +243,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_2.value * 1.2)))
     set_rule(get_entrance("Route 2 - Southwest", "Route 2 - Southeast"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 - Northwest", "Route 2 - Northeast"), lambda state: can_cut(state))
-    set_rule(get_entrance("Route 2 - Northeast", "Route 2 - Northwest"), lambda state: can_cut(state))
+    # set_rule(get_entrance("Route 2 - Northeast", "Route 2 - Northwest"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 - Northeast", "Route 2 - East"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 - East", "Route 2 - Northeast"), lambda state: can_cut(state))
 
