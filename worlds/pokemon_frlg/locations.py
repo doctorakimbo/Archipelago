@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING, Dict, Optional, FrozenSet, Iterable, List
 from BaseClasses import Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import offset_item_value, PokemonFRLGItem
-from .options import ViridianCityRoadblock, PewterCityRoadblock
+from .options import GameRevision, ViridianCityRoadblock, PewterCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -80,6 +80,10 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
     those locations include any of the provided tags.
     """
     game_version = world.options.game_version.current_key
+
+    if world.options.game_revision == GameRevision.option_rev1:
+        game_version = f'{game_version}_rev1'
+
     tags = set(tags)
 
     for region_data in data.regions.values():

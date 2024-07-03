@@ -10,7 +10,7 @@ from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
 from .items import reverse_offset_item_value
-from .options import ItemfinderRequired, ShuffleHiddenItems, ViridianCityRoadblock
+from .options import GameRevision, ItemfinderRequired, ShuffleHiddenItems, ViridianCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -29,6 +29,25 @@ class PokemonFireRedProcedurePatch(APProcedurePatch, APTokenMixin):
     @classmethod
     def get_source_data(cls) -> bytes:
         with open(get_settings().pokemon_frlg_settings.firered_rom_file, "rb") as infile:
+            base_rom_bytes = bytes(infile.read())
+
+        return base_rom_bytes
+
+
+class PokemonFireRedRev1ProcedurePatch(APProcedurePatch, APTokenMixin):
+    game = "Pokemon FireRed and LeafGreen"
+    hash = "51901a6e40661b3914aa333c802e24e8"
+    patch_file_ending = ".apfireredrev1"
+    result_file_ending = ".gba"
+
+    procedure = [
+        ("apply_bsdiff4", ["base_patch_firered_rev1.bsdiff4"]),
+        ("apply_tokens", ["token_data.bin"])
+    ]
+
+    @classmethod
+    def get_source_data(cls) -> bytes:
+        with open(get_settings().pokemon_frlg_settings.firered_rev1_rom_file, "rb") as infile:
             base_rom_bytes = bytes(infile.read())
 
         return base_rom_bytes
@@ -53,8 +72,30 @@ class PokemonLeafGreenProcedurePatch(APProcedurePatch, APTokenMixin):
         return base_rom_bytes
 
 
+class PokemonLeafGreenRev1ProcedurePatch(APProcedurePatch, APTokenMixin):
+    game = "Pokemon FireRed and LeafGreen"
+    hash = "9d33a02159e018d09073e700e1fd10fd"
+    patch_file_ending = ".apleafgreenrev1"
+    result_file_ending = ".gba"
+
+    procedure = [
+        ("apply_bsdiff4", ["base_patch_leafgreen_rev1.bsdiff4"]),
+        ("apply_tokens", ["token_data.bin"])
+    ]
+
+    @classmethod
+    def get_source_data(cls) -> bytes:
+        with open(get_settings().pokemon_frlg_settings.leafgreen_rev1_rom_file, "rb") as infile:
+            base_rom_bytes = bytes(infile.read())
+
+        return base_rom_bytes
+
+
 def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePatch, output_directory: str) -> None:
     game_version = world.options.game_version.current_key
+
+    if world.options.game_revision == GameRevision.option_rev1:
+        game_version = f'{game_version}_rev1'
 
     # Set free fly location
     if world.options.free_fly_location:

@@ -25,7 +25,9 @@ predetermined priority
 * Removed the final ledge on Route 4 to prevent being trapped in Cerulean City... for now...
 * Miguel's position in Mt. Moon will change based on which side you enter from
 * You are able to pick up both fossils in Mt. Moon after beating Miguel
+* The Team Rocket Grunt on Route 24 won't give you your reward until after the battle
 * The S.S. Anne will never depart
+* The Vermilion Gym puzzle doesn't reset if you get the second trash can switch wrong
 * The Saffron City guards will block your way from both directions (this only matters if your free fly is Saffron City)
 * Only the last guard on Route 23 will check for badges or gyms
 * Professor Oak will give you the Mystic and Aurora Ticket in Pallet Town after beating the game

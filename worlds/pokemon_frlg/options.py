@@ -15,6 +15,16 @@ class GameVersion(Choice):
     default = "random"
 
 
+class GameRevision(Choice):
+    """
+    Select FireRed or LeafGreen revision.
+    """
+    display_name = "Game Revision"
+    option_rev0 = 0
+    option_rev1 = 1
+    default = "random"
+
+
 class ShuffleBadges(Toggle):
     """
     Shuffle Gym Badges into the general item pool. If turned off, Badges will be shuffled among themselves.
@@ -40,7 +50,8 @@ class ShuffleHiddenItems(Choice):
 
 class ItemfinderRequired(Choice):
     """
-    Sets whether the Itemfinder if required for Hidden Items.
+    Sets whether the Itemfinder if required for Hidden Items. Some items cannot be picked up without using the
+    Itemfinder regardless of this setting (e.g. the Leftovers under Snorlax on Route 12 & 16).
 
     - Off: The Itemfinder is not required to pickup Hidden Items.
     - Logic: The Itemfinder is logically required to pickup Hidden Items.
@@ -370,6 +381,7 @@ class ReceiveItemMessages(Choice):
 @dataclass
 class PokemonFRLGOptions(PerGameCommonOptions):
     game_version: GameVersion
+    game_revision: GameRevision
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems

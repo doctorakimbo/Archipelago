@@ -12,8 +12,10 @@ from .client import PokemonFRLGClient
 from .data import data as frlg_data, SpeciesData
 from .items import create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
 from .locations import create_location_name_to_id_map, create_locations_from_tags, set_free_fly, PokemonFRLGLocation
-from .options import PokemonFRLGOptions, GameVersion, ShuffleHiddenItems, ShuffleBadges, ViridianCityRoadblock
-from .rom import generate_output, PokemonFireRedProcedurePatch, PokemonLeafGreenProcedurePatch
+from .options import (PokemonFRLGOptions, GameVersion, GameRevision, ShuffleHiddenItems, ShuffleBadges,
+                      ViridianCityRoadblock)
+from .rom import (generate_output, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
+                  PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
 
 
@@ -40,14 +42,28 @@ class PokemonFRLGSettings(settings.Group):
         copy_to = "Pokemon - FireRed Version (USA, Europe).gba"
         md5s = [PokemonFireRedProcedurePatch.hash]
 
+    class PokemonFireRedRev1RomFile(settings.UserFilePath):
+        """File name of your English Pokemon FireRed (Rev 1) ROM"""
+        description = "Pokemon FireRed (Rev 1) ROM File"
+        copy_to = "Pokemon - FireRed Version (USA, Europe) (Rev 1).gba"
+        md5s = [PokemonFireRedRev1ProcedurePatch.hash]
+
     class PokemonLeafGreenRomFile(settings.UserFilePath):
         """File name of your English Pokemon LeafGreen ROM"""
         description = "Pokemon LeafGreen ROM File"
         copy_to = "Pokemon - LeafGreen Version (USA, Europe).gba"
         md5s = [PokemonLeafGreenProcedurePatch.hash]
 
+    class PokemonLeafGreenRev1RomFile(settings.UserFilePath):
+        """File name of your English Pokemon LeafGreen (Rev 1) ROM"""
+        description = "Pokemon LeafGreen (Rev 1) ROM File"
+        copy_to = "Pokemon - LeafGreen Version (USA, Europe) (Rev 1).gba"
+        md5s = [PokemonLeafGreenRev1ProcedurePatch.hash]
+
     firered_rom_file: PokemonFireRedRomFile = PokemonFireRedRomFile(PokemonFireRedRomFile.copy_to)
+    firered_rev1_rom_file: PokemonFireRedRev1RomFile = PokemonFireRedRev1RomFile(PokemonFireRedRev1RomFile.copy_to)
     leafgreen_rom_file: PokemonLeafGreenRomFile = PokemonLeafGreenRomFile(PokemonLeafGreenRomFile.copy_to)
+    leafgreen_rev1_rom_file: PokemonLeafGreenRev1RomFile = PokemonLeafGreenRev1RomFile(PokemonLeafGreenRev1RomFile.copy_to)
 
 
 class PokemonFRLGWorld(World):
@@ -130,7 +146,7 @@ class PokemonFRLGWorld(World):
         # If badges aren't shuffled among all locations, shuffle them among themselves
         if not self.options.shuffle_badges:
             badge_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations() if "Badge" in location.tags
+                location for location in self.multiworld.get_locations(self.player) if "Badge" in location.tags
             ]
             badge_items: List[PokemonFRLGItem] = [
                 self.create_item_by_id(location.default_item_id) for location in badge_locations
@@ -184,13 +200,23 @@ class PokemonFRLGWorld(World):
             species.catch_rate = max(species.catch_rate, min_catch_rate)
 
         if self.options.game_version == GameVersion.option_firered:
-            patch = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
-            patch.write_file("base_patch_firered.bsdiff4",
-                             pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
+            if self.options.game_revision == GameRevision.option_rev0:
+                patch = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
+                patch.write_file("base_patch_firered.bsdiff4",
+                                 pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
+            else:
+                patch = PokemonFireRedRev1ProcedurePatch(player=self.player, player_name=self.player_name)
+                patch.write_file("base_patch_firered_rev1.bsdiff4",
+                                 pkgutil.get_data(__name__, "data/base_patch_firered_rev1.bsdiff4"))
         else:
-            patch = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
-            patch.write_file("base_patch_leafgreen.bsdiff4",
-                             pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
+            if self.options.game_revision == GameRevision.option_rev0:
+                patch = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
+                patch.write_file("base_patch_leafgreen.bsdiff4",
+                                 pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
+            else:
+                patch = PokemonLeafGreenRev1ProcedurePatch(player=self.player, player_name=self.player_name)
+                patch.write_file("base_patch_leafgreen_rev1.bsdiff4",
+                                 pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
 
         generate_output(self, patch, output_directory)
 

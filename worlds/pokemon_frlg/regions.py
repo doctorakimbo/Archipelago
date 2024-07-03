@@ -6,7 +6,7 @@ from BaseClasses import Region, CollectionState, ItemClassification
 from .data import data
 from .items import PokemonFRLGItem
 from .locations import PokemonFRLGLocation
-from .options import GameVersion
+from .options import GameVersion, GameRevision
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -49,6 +49,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         These regions are created lazily and dynamically so as not to bother with unused maps.
         """
         game_version = world.options.game_version.current_key
+
+        if world.options.game_revision == GameRevision.option_rev1:
+            game_version = f'{game_version}_rev1'
 
         if encounter_region_name is None:
             AssertionError(f"Region {region} has encounters but doesn't have an encounter region name")

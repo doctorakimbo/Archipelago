@@ -680,6 +680,96 @@ def _init() -> None:
             species.learnset_address["leafgreen"] = species_data["learnset"]["address"]
             species.address["leafgreen"] = species_data["address"]
 
+    def add_firered_rev1_data() -> None:
+        extracted_data: Dict[str, Any] = load_json_data("extracted_data_firered_rev1.json")
+        data.ram_addresses["firered_rev1"] = extracted_data["misc_ram_addresses"]
+        data.rom_addresses["firered_rev1"] = extracted_data["misc_rom_addresses"]
+
+        # Add encounter addresses for FireRed Revision 1
+        for map_name, map_json in extracted_data["maps"].items():
+            land_encounters = None
+            water_encounters = None
+            fishing_encounters = None
+
+            if "land_encounters" in map_json:
+                land_encounters = EncounterTableData(
+                    map_json["land_encounters"]["slots"],
+                    map_json["land_encounters"]["address"]
+                )
+            if "water_encounters" in map_json:
+                water_encounters = EncounterTableData(
+                    map_json["water_encounters"]["slots"],
+                    map_json["water_encounters"]["address"]
+                )
+            if "fishing_encounters" in map_json:
+                fishing_encounters = EncounterTableData(
+                    map_json["fishing_encounters"]["slots"],
+                    map_json["fishing_encounters"]["address"]
+                )
+
+            data.maps[map_name].header_address["firered_rev1"] = map_json["header_address"]
+            data.maps[map_name].encounters["firered_rev1"] = EncounterTable(
+                land_encounters,
+                water_encounters,
+                fishing_encounters
+            )
+
+        # Add location addresses for FireRed Revision 1
+        for location in data.locations.values():
+            location_json = extracted_data["locations"][location.id]
+            location.address["firered_rev1"] = location_json["address"]
+
+        # Add species addresses for FireRed Revision 1
+        for species_id, species in data.species.items():
+            species_data = extracted_data["species"][species_id]
+            species.learnset_address["firered_rev1"] = species_data["learnset"]["address"]
+            species.address["firered_rev1"] = species_data["address"]
+
+    def add_leafgreen_rev1_data() -> None:
+        extracted_data: Dict[str, Any] = load_json_data("extracted_data_leafgreen_rev1.json")
+        data.ram_addresses["leafgreen_rev1"] = extracted_data["misc_ram_addresses"]
+        data.rom_addresses["leafgreen_rev1"] = extracted_data["misc_rom_addresses"]
+
+        # Add encounter addresses for FireRed Revision 1
+        for map_name, map_json in extracted_data["maps"].items():
+            land_encounters = None
+            water_encounters = None
+            fishing_encounters = None
+
+            if "land_encounters" in map_json:
+                land_encounters = EncounterTableData(
+                    map_json["land_encounters"]["slots"],
+                    map_json["land_encounters"]["address"]
+                )
+            if "water_encounters" in map_json:
+                water_encounters = EncounterTableData(
+                    map_json["water_encounters"]["slots"],
+                    map_json["water_encounters"]["address"]
+                )
+            if "fishing_encounters" in map_json:
+                fishing_encounters = EncounterTableData(
+                    map_json["fishing_encounters"]["slots"],
+                    map_json["fishing_encounters"]["address"]
+                )
+
+            data.maps[map_name].header_address["leafgreen_rev1"] = map_json["header_address"]
+            data.maps[map_name].encounters["leafgreen_rev1"] = EncounterTable(
+                land_encounters,
+                water_encounters,
+                fishing_encounters
+            )
+
+        # Add location addresses for FireRed Revision 1
+        for location in data.locations.values():
+            location_json = extracted_data["locations"][location.id]
+            location.address["leafgreen_rev1"] = location_json["address"]
+
+        # Add species addresses for FireRed Revision 1
+        for species_id, species in data.species.items():
+            species_data = extracted_data["species"][species_id]
+            species.learnset_address["leafgreen_rev1"] = species_data["learnset"]["address"]
+            species.address["leafgreen_rev1"] = species_data["address"]
+
     extracted_data: Dict[str, Any] = load_json_data("extracted_data_firered.json")
     data.constants = extracted_data["constants"]
     data.ram_addresses["firered"] = extracted_data["misc_ram_addresses"]
@@ -879,6 +969,8 @@ def _init() -> None:
             data.species[evolution.species_id].pre_evolution = species.species_id
 
     add_leafgreen_data()
+    add_firered_rev1_data()
+    add_leafgreen_rev1_data()
 
 
 data = PokemonFRLGData()

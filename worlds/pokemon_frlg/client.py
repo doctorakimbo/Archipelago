@@ -18,7 +18,9 @@ BASE_ROM_NAME: Dict[str, str] = {
 
 EXPECTED_ROM_NAME: Dict[str, str] = {
     "firered": "pokemon red version / AP",
-    "leafgreen": "pokemon green version / AP"
+    "leafgreen": "pokemon green version / AP",
+    "firered_rev1": "pokemon red version / AP Rev 1",
+    "leafgreen_rev1": "pokemon green version / AP Rev 1",
 }
 
 
@@ -32,7 +34,7 @@ DEFEATED_CHAMPION_FLAGS: List[int] = {
 class PokemonFRLGClient(BizHawkClient):
     game = "Pokemon FireRed and LeafGreen"
     system = "GBA"
-    patch_suffix = (".apfirered", ".apleafgreen")
+    patch_suffix = (".apfirered", ".apleafgreen", ".apfireredrev1", ".apleafgreenrev1")
     game_version: str
     local_checked_locations: Set[int]
 
@@ -54,7 +56,8 @@ class PokemonFRLGClient(BizHawkClient):
                 logger.info("ERROR: You appear to be running an unpatched version of Pokemon FireRed or LeafGreen."
                             "You need to generate a patch file and use it to create a patched ROM.")
                 return False
-            if rom_name != EXPECTED_ROM_NAME["firered"] and rom_name != EXPECTED_ROM_NAME["leafgreen"]:
+            if not (rom_name.startswith(EXPECTED_ROM_NAME["firered"]) or
+                    rom_name.startswith(EXPECTED_ROM_NAME["leafgreen"])):
                 logger.info("ERROR: The patch file used to create this ROM is not compatible with "
                             "this client. Double check your client version against the version being "
                             "used by the generator.")
@@ -69,10 +72,14 @@ class PokemonFRLGClient(BizHawkClient):
         ctx.want_slot_data = True
         ctx.watcher_timeout = 0.
 
-        if rom_name.startswith(BASE_ROM_NAME["firered"]):
+        if rom_name == EXPECTED_ROM_NAME["firered"]:
             self.game_version = "firered"
-        elif rom_name.startswith(BASE_ROM_NAME["leafgreen"]):
+        elif rom_name == EXPECTED_ROM_NAME["leafgreen"]:
             self.game_version = "leafgreen"
+        elif rom_name == EXPECTED_ROM_NAME["firered_rev1"]:
+            self.game_version = "firered_rev1"
+        elif rom_name == EXPECTED_ROM_NAME["leafgreen_rev1"]:
+            self.game_version = "leafgreen_rev1"
 
         return True
 
