@@ -13,6 +13,7 @@ from typing import Dict, List, NamedTuple, Optional, Set, FrozenSet, Any, Union,
 from BaseClasses import ItemClassification
 
 BASE_OFFSET = 6420000
+NUM_REAL_SPECIES = 386
 
 
 class Warp:

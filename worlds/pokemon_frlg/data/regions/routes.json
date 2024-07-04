@@ -1441,10 +1441,10 @@
     ],
     "warps": []
   },
-  "REGION_ROUTE21/MAIN": {
+  "REGION_ROUTE21_NORTH/MAIN": {
     "parent_map": "MAP_ROUTE21_NORTH",
-    "name": "Route 21",
-    "encounter_region": "Route 21",
+    "name": "Route 21 North",
+    "encounter_region": "Route 21 North",
     "has_land": true,
     "has_water": true,
     "has_fishing": true,
@@ -1453,7 +1453,22 @@
     ],
     "events": [],
     "exits": [
-      "REGION_PALLET_TOWN/WATER",
+      "REGION_ROUTE21_SOUTH/MAIN",
+      "REGION_PALLET_TOWN/WATER"
+    ],
+    "warps": []
+  },
+  "REGION_ROUTE21_SOUTH/MAIN": {
+    "parent_map": "MAP_ROUTE21_SOUTH",
+    "name": "Route 21 South",
+    "encounter_region": "Route 21 South",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_ROUTE21_NORTH/MAIN",
       "REGION_CINNABAR_ISLAND/WATER"
     ],
     "warps": []

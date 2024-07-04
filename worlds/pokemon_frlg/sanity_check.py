@@ -232,6 +232,8 @@ def validate_regions() -> bool:
     for message in error_messages:
         logging.error(message)
 
-    logging.debug("Pokemon FRLG sanity check done. Found %s errors and %s warnings.", len(error_messages), len(warn_messages))
+    logging.debug("Pokemon FRLG sanity check done. Found %s errors and %s warnings.",
+                  len(error_messages),
+                  len(warn_messages))
 
     return not failed

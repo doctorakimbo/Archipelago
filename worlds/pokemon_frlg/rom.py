@@ -2,14 +2,13 @@
 Classes and functions related to creating a ROM patch
 """
 import struct
-
 import logging
 from typing import TYPE_CHECKING, List, Tuple, Union
 from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
 from .items import reverse_offset_item_value
-from .options import GameRevision, ItemfinderRequired, ShuffleHiddenItems, ViridianCityRoadblock
+from .options import GameRevision, ItemfinderRequired, RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -172,6 +171,10 @@ def write_tokens(world: "PokemonFRLGWorld",
             address = species.address[game_version_revision]
             patch.write_token(APTokenTypes.WRITE, address + 8, struct.pack("<B", species.catch_rate))
 
+    # Set wild encounters
+    if world.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
+        _set_wild_encounters(world, patch)
+
     # Options
     # struct
     # ArchipelagoOptions
@@ -320,3 +323,29 @@ def write_tokens(world: "PokemonFRLGWorld",
     patch.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
 
     patch.write_file("token_data.bin", patch.get_token_binary())
+
+
+def _set_wild_encounters(world: "PokemonFRLGWorld",
+                         patch: Union[PokemonFireRedProcedurePatch,
+                                      PokemonFireRedRev1ProcedurePatch,
+                                      PokemonLeafGreenProcedurePatch,
+                                      PokemonLeafGreenRev1ProcedurePatch]) -> None:
+    game_version = world.options.game_version.current_key
+
+    """
+        Encounter tables are lists of
+        struct {
+            min_level:  uint8,
+            max_level:  uint8,
+            species_id: uint16
+        }
+    """
+    for map_data in world.modified_maps.values():
+        tables = [map_data.land_encounters[game_version],
+                  map_data.water_encounters[game_version],
+                  map_data.fishing_encounters[game_version]]
+        for table in tables:
+            if table is not None:
+                for i, species_id in enumerate(table.slots):
+                    address = table.address + 2 * (i * 4)
+                    patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", species_id))

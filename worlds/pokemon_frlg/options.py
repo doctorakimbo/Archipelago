@@ -291,6 +291,40 @@ class CeruleanCaveCount(Range):
     range_end = 8
 
 
+class RandomizeWildPokemon(Choice):
+    """
+    Randomizes wild pokemon encounters (grass, caves, water, fishing)
+
+    - Vanilla: Wild pokemon are unchanged
+    - Match Base Stats: Wild pokemon are replaced with species with approximately the same bst
+    - Match Type: Wild pokemon are replaced with species that share a type with the original
+    - Match Base Stats and Type: Apply both Match Base Stats and Match Type
+    - Completely Random: There are no restrictions
+    """
+    display_name = "Random Wild Pokemon"
+    default = 0
+    option_vanilla = 0
+    option_match_base_stats = 1
+    option_match_type = 2
+    option_match_base_stats_and_type = 3
+    option_completely_random = 4
+
+
+class WildPokemonGroups(Choice):
+    """
+    If wild pokemon are not vanilla, they will be randomized according to the grouping specified. Within a grouping,
+    all pokemon of the same species will be randomized together.
+
+    - None: Pokemon are not randomized based on any grouping
+    - Dungeons: Pokemon are randomized based on dungeon groupings
+    - Species: Pokemon are randomized based on species grouping
+    """
+    default = 0
+    option_none = 0
+    option_dungeons = 1
+    option_species = 2
+
+
 class ReusableTmsTutors(Toggle):
     """
     Sets TMs to not break after use (they remain sellable). Allows Move Tutors to be used infinitely.
@@ -409,6 +443,9 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     elite_four_count: EliteFourCount
     cerulean_cave_requirement: CeruleanCaveRequirement
     cerulean_cave_count: CeruleanCaveCount
+
+    wild_pokemon: RandomizeWildPokemon
+    wild_pokemon_groups: WildPokemonGroups
 
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate
