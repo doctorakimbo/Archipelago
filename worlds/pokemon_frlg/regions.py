@@ -6,7 +6,7 @@ from BaseClasses import Region, CollectionState, ItemClassification
 from .data import data
 from .items import PokemonFRLGItem
 from .locations import PokemonFRLGLocation
-from .options import GameVersion, GameRevision
+from .options import GameVersion
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -50,9 +50,6 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         """
         game_version = world.options.game_version.current_key
 
-        if world.options.game_revision == GameRevision.option_rev1:
-            game_version = f'{game_version}_rev1'
-
         if encounter_region_name is None:
             AssertionError(f"Region {region} has encounters but doesn't have an encounter region name")
 
@@ -65,8 +62,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     encounter_region = world.multiworld.get_region(region_name, world.player)
                 except KeyError:
                     encounter_region = Region(region_name, world.player, world.multiworld)
-                    encounter_slots = getattr(data.maps[map_name].encounters[game_version],
-                                              f"{encounter_category[0].lower()}_encounters").slots
+                    encounter_slots = getattr(data.maps[map_name],
+                                              f"{encounter_category[0].lower()}_encounters").slots[game_version]
 
                     # Subcategory is for splitting fishing rods; land and water only have one subcategory
                     for subcategory in encounter_category[1]:

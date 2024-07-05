@@ -1,11 +1,10 @@
 """
 Classes and functions related to creating a ROM patch
 """
-import os.path
 import struct
 
 import logging
-from typing import TYPE_CHECKING, List, Tuple
+from typing import TYPE_CHECKING, List, Tuple, Union
 from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
@@ -91,17 +90,22 @@ class PokemonLeafGreenRev1ProcedurePatch(APProcedurePatch, APTokenMixin):
         return base_rom_bytes
 
 
-def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePatch, output_directory: str) -> None:
+def write_tokens(world: "PokemonFRLGWorld",
+                 patch: Union[PokemonFireRedProcedurePatch,
+                              PokemonFireRedRev1ProcedurePatch,
+                              PokemonLeafGreenProcedurePatch,
+                              PokemonLeafGreenRev1ProcedurePatch]) -> None:
     game_version = world.options.game_version.current_key
-
-    if world.options.game_revision == GameRevision.option_rev1:
-        game_version = f'{game_version}_rev1'
+    if world.options.game_revision == GameRevision.option_rev0:
+        game_version_revision = game_version
+    else:
+        game_version_revision = f'{game_version}_rev1'
 
     # Set free fly location
     if world.options.free_fly_location:
         patch.write_token(
             APTokenTypes.WRITE,
-            data.rom_addresses[game_version]["gArchipelagoOptions"] + 0x18,
+            data.rom_addresses[game_version_revision]["gArchipelagoOptions"] + 0x18,
             struct.pack("<B", world.free_fly_location_id)
         )
 
@@ -113,13 +117,13 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
         if location.item.player == world.player:
             patch.write_token(
                 APTokenTypes.WRITE,
-                location.item_address,
+                location.item_address[game_version_revision],
                 struct.pack("<H", reverse_offset_item_value(location.item.code))
             )
         else:
             patch.write_token(
                 APTokenTypes.WRITE,
-                location.item_address,
+                location.item_address[game_version_revision],
                 struct.pack("<H", data.constants["ITEM_ARCHIPELAGO_PROGRESSION"])
             )
 
@@ -157,7 +161,7 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
         pc_slots.append([item, quantity])
 
     for i, slot in enumerate(pc_slots, 1):
-        address = data.rom_addresses[game_version]["gNewGamePCItems"] + (i * 4)
+        address = data.rom_addresses[game_version_revision]["gNewGamePCItems"] + (i * 4)
         item = reverse_offset_item_value(world.item_name_to_id[slot[0]])
         patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", item))
         patch.write_token(APTokenTypes.WRITE, address + 2, struct.pack("<H", slot[1]))
@@ -165,7 +169,7 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
     # Set species data
     for species in world.modified_species.values():
         if species is not None:
-            address = species.address[game_version]
+            address = species.address[game_version_revision]
             patch.write_token(APTokenTypes.WRITE, address + 8, struct.pack("<B", species.catch_rate))
 
     # Options
@@ -206,7 +210,7 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
     #
     # / *0x1B* / u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
     # }
-    options_address = data.rom_addresses[game_version]["gArchipelagoOptions"]
+    options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
     # Set hold A to advance text
     turbo_a = 1 if world.options.turbo_a else 0
@@ -313,9 +317,6 @@ def generate_output(world: "PokemonFRLGWorld", patch: PokemonFireRedProcedurePat
     patch.write_token(APTokenTypes.WRITE, options_address + 0x1F, struct.pack("<B", oaks_aide_route_15))
 
     # Set slot auth
-    patch.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version]["gArchipelagoInfo"], world.auth)
+    patch.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
 
     patch.write_file("token_data.bin", patch.get_token_binary())
-
-    out_file_name = world.multiworld.get_out_file_name_base(world.player)
-    patch.write(os.path.join(output_directory, f"{out_file_name}{patch.patch_file_ending}"))

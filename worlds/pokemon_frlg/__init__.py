@@ -2,6 +2,8 @@
 Archipelago World definition for Pokemon FireRed/LeafGreen
 """
 import copy
+import os.path
+
 import settings
 import pkgutil
 from typing import ClassVar, List, Dict, Any
@@ -14,7 +16,7 @@ from .items import create_item_name_to_id_map, get_item_classification, PokemonF
 from .locations import create_location_name_to_id_map, create_locations_from_tags, set_free_fly, PokemonFRLGLocation
 from .options import (PokemonFRLGOptions, GameVersion, GameRevision, ShuffleHiddenItems, ShuffleBadges,
                       ViridianCityRoadblock)
-from .rom import (generate_output, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
+from .rom import (write_tokens, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
 
@@ -223,7 +225,11 @@ class PokemonFRLGWorld(World):
                 patch.write_file("base_patch_leafgreen_rev1.bsdiff4",
                                  pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
 
-        generate_output(self, patch, output_directory)
+        write_tokens(self, patch)
+
+        # Write output
+        out_file_name = self.multiworld.get_out_file_name_base(self.player)
+        patch.write(os.path.join(output_directory, f'{out_file_name}{patch.patch_file_ending}'))
 
     @classmethod
     def stage_post_fill(cls, multiworld):

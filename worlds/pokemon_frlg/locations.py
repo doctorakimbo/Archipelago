@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING, Dict, Optional, FrozenSet, Iterable, List
 from BaseClasses import Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import offset_item_value, PokemonFRLGItem
-from .options import GameRevision, ViridianCityRoadblock, PewterCityRoadblock
+from .options import ViridianCityRoadblock, PewterCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -30,7 +30,7 @@ FLY_EVENT_NAME_TO_ID = {
 
 class PokemonFRLGLocation(Location):
     game: str = "Pokemon FireRed and LeafGreen"
-    item_address = Optional[int]
+    item_address = Optional[Dict[str, int]]
     default_item_id: Optional[int]
     tags: FrozenSet[str]
 
@@ -40,11 +40,11 @@ class PokemonFRLGLocation(Location):
             name: str,
             address: Optional[int],
             parent: Optional[Region] = None,
-            item_address: Optional[int] = None,
+            item_address: Optional[Dict[str, int]] = None,
             default_item_id: Optional[int] = None,
             tags: FrozenSet[str] = frozenset()) -> None:
         super().__init__(player, name, address, parent)
-        self.default_item_id =  None if default_item_id is None else offset_item_value(default_item_id)
+        self.default_item_id = None if default_item_id is None else offset_item_value(default_item_id)
         self.item_address = item_address
         self.tags = tags
 
@@ -81,9 +81,6 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
     """
     game_version = world.options.game_version.current_key
 
-    if world.options.game_revision == GameRevision.option_rev1:
-        game_version = f'{game_version}_rev1'
-
     tags = set(tags)
 
     for region_data in data.regions.values():
@@ -94,12 +91,14 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             location_data = data.locations[location_flag]
 
             location_id = offset_flag(location_data.flag)
+            item_addresses: Dict[str, int] = {f'{game_version}': location_data.address[game_version],
+                                              f'{game_version}_rev1': location_data.address[f'{game_version}_rev1']}
             location = PokemonFRLGLocation(
                 world.player,
                 location_data.name,
                 location_id,
                 region,
-                location_data.address[game_version],
+                item_addresses,
                 location_data.default_item,
                 location_data.tags
             )

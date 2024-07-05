@@ -87,21 +87,17 @@ class LocationData(NamedTuple):
 
 
 class EncounterTableData(NamedTuple):
-    slots: List[int]
-    address: int
-
-
-class EncounterTable(NamedTuple):
-    land_encounters: Optional[Dict[str, EncounterTableData]]
-    water_encounters: Optional[Dict[str, EncounterTableData]]
-    fishing_encounters: Optional[Dict[str, EncounterTableData]]
+    slots: Dict[str, List[int]]
+    address: Dict[str, int]
 
 
 @dataclass
 class MapData:
     name: str
     header_address: Dict[str, int]
-    encounters: Optional[Dict[str, EncounterTable]]
+    land_encounters: Optional[EncounterTableData]
+    water_encounters: Optional[EncounterTableData]
+    fishing_encounters: Optional[EncounterTableData]
 
 
 class EventData(NamedTuple):
@@ -642,32 +638,17 @@ def _init() -> None:
 
         # Add encounter addresses for LeafGreen
         for map_name, map_json in extracted_data["maps"].items():
-            land_encounters = None
-            water_encounters = None
-            fishing_encounters = None
-
             if "land_encounters" in map_json:
-                land_encounters = EncounterTableData(
-                    map_json["land_encounters"]["slots"],
-                    map_json["land_encounters"]["address"]
-                )
+                data.maps[map_name].land_encounters.address["leafgreen"] = map_json["land_encounters"]["address"]
+                data.maps[map_name].land_encounters.slots["leafgreen"] = map_json["land_encounters"]["slots"]
             if "water_encounters" in map_json:
-                water_encounters = EncounterTableData(
-                    map_json["water_encounters"]["slots"],
-                    map_json["water_encounters"]["address"]
-                )
+                data.maps[map_name].water_encounters.address["leafgreen"] = map_json["water_encounters"]["address"]
+                data.maps[map_name].water_encounters.slots["leafgreen"] = map_json["water_encounters"]["slots"]
             if "fishing_encounters" in map_json:
-                fishing_encounters = EncounterTableData(
-                    map_json["fishing_encounters"]["slots"],
-                    map_json["fishing_encounters"]["address"]
-                )
+                data.maps[map_name].fishing_encounters.address["leafgreen"] = map_json["fishing_encounters"]["address"]
+                data.maps[map_name].fishing_encounters.slots["leafgreen"] = map_json["fishing_encounters"]["slots"]
 
             data.maps[map_name].header_address["leafgreen"] = map_json["header_address"]
-            data.maps[map_name].encounters["leafgreen"] = EncounterTable(
-                land_encounters,
-                water_encounters,
-                fishing_encounters
-            )
 
         # Add location addresses for LeafGreen
         for location in data.locations.values():
@@ -687,32 +668,14 @@ def _init() -> None:
 
         # Add encounter addresses for FireRed Revision 1
         for map_name, map_json in extracted_data["maps"].items():
-            land_encounters = None
-            water_encounters = None
-            fishing_encounters = None
-
             if "land_encounters" in map_json:
-                land_encounters = EncounterTableData(
-                    map_json["land_encounters"]["slots"],
-                    map_json["land_encounters"]["address"]
-                )
+                data.maps[map_name].land_encounters.address["firered_rev1"] = map_json["land_encounters"]["address"]
             if "water_encounters" in map_json:
-                water_encounters = EncounterTableData(
-                    map_json["water_encounters"]["slots"],
-                    map_json["water_encounters"]["address"]
-                )
+                data.maps[map_name].water_encounters.address["firered_rev1"] = map_json["water_encounters"]["address"]
             if "fishing_encounters" in map_json:
-                fishing_encounters = EncounterTableData(
-                    map_json["fishing_encounters"]["slots"],
-                    map_json["fishing_encounters"]["address"]
-                )
+                data.maps[map_name].fishing_encounters.address["firered_rev1"] = map_json["fishing_encounters"]["address"]
 
             data.maps[map_name].header_address["firered_rev1"] = map_json["header_address"]
-            data.maps[map_name].encounters["firered_rev1"] = EncounterTable(
-                land_encounters,
-                water_encounters,
-                fishing_encounters
-            )
 
         # Add location addresses for FireRed Revision 1
         for location in data.locations.values():
@@ -732,32 +695,14 @@ def _init() -> None:
 
         # Add encounter addresses for FireRed Revision 1
         for map_name, map_json in extracted_data["maps"].items():
-            land_encounters = None
-            water_encounters = None
-            fishing_encounters = None
-
             if "land_encounters" in map_json:
-                land_encounters = EncounterTableData(
-                    map_json["land_encounters"]["slots"],
-                    map_json["land_encounters"]["address"]
-                )
+                data.maps[map_name].land_encounters.address["leafgreen_rev1"] = map_json["land_encounters"]["address"]
             if "water_encounters" in map_json:
-                water_encounters = EncounterTableData(
-                    map_json["water_encounters"]["slots"],
-                    map_json["water_encounters"]["address"]
-                )
+                data.maps[map_name].water_encounters.address["leafgreen_rev1"] = map_json["water_encounters"]["address"]
             if "fishing_encounters" in map_json:
-                fishing_encounters = EncounterTableData(
-                    map_json["fishing_encounters"]["slots"],
-                    map_json["fishing_encounters"]["address"]
-                )
+                data.maps[map_name].fishing_encounters.address["leafgreen_rev1"] = map_json["fishing_encounters"]["address"]
 
             data.maps[map_name].header_address["leafgreen_rev1"] = map_json["header_address"]
-            data.maps[map_name].encounters["leafgreen_rev1"] = EncounterTable(
-                land_encounters,
-                water_encounters,
-                fishing_encounters
-            )
 
         # Add location addresses for FireRed Revision 1
         for location in data.locations.values():
@@ -782,38 +727,34 @@ def _init() -> None:
 
     # Create map data
     for map_name, map_json in extracted_data["maps"].items():
-        encounters: Dict[str, EncounterTable] = {}
         land_encounters = None
         water_encounters = None
         fishing_encounters = None
 
         if "land_encounters" in map_json:
             land_encounters = EncounterTableData(
-                map_json["land_encounters"]["slots"],
-                map_json["land_encounters"]["address"]
+                {"firered": map_json["land_encounters"]["slots"]},
+                {"firered": map_json["land_encounters"]["address"]}
             )
         if "water_encounters" in map_json:
             water_encounters = EncounterTableData(
-                map_json["water_encounters"]["slots"],
-                map_json["water_encounters"]["address"]
+                {"firered": map_json["water_encounters"]["slots"]},
+                {"firered": map_json["water_encounters"]["address"]}
             )
         if "fishing_encounters" in map_json:
             fishing_encounters = EncounterTableData(
-                map_json["fishing_encounters"]["slots"],
-                map_json["fishing_encounters"]["address"]
+                {"firered": map_json["fishing_encounters"]["slots"]},
+                {"firered": map_json["fishing_encounters"]["address"]}
             )
 
         header_addresses: Dict[str, int] = {"firered": map_json["header_address"]}
-        encounters["firered"] = EncounterTable(
-            land_encounters,
-            water_encounters,
-            fishing_encounters
-        )
 
         data.maps[map_name] = MapData(
             map_name,
             header_addresses,
-            encounters
+            land_encounters,
+            water_encounters,
+            fishing_encounters
         )
 
     # Load/merge region json files
