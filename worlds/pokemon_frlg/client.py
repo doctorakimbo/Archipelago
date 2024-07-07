@@ -175,7 +175,7 @@ class PokemonFRLGClient(BizHawkClient):
 
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
-                [(sb2_address + 0x018 + 0x10, 0x34, "System Bus")],  # Caught Pokemon
+                [(sb2_address + 0x028, 0x34, "System Bus")],  # Caught Pokemon
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 2"]]
             )
 

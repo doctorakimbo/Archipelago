@@ -227,7 +227,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Viridian City
     set_rule(get_location("Viridian City - Old Man"), lambda state: can_pass_viridian_city_roadblock(state))
     set_rule(get_entrance("Viridian City - South", "Viridian City - North"),
-             lambda state: can_pass_viridian_city_roadblock(state))
+             lambda state: can_pass_viridian_city_roadblock(state) or can_cut(state))
     set_rule(get_entrance("Viridian City - South", "Viridian City - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Viridian City - North", "Viridian Gym"), lambda state: can_enter_viridian_gym(state))
 
@@ -243,7 +243,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_2.value * 1.2)))
     set_rule(get_entrance("Route 2 - Southwest", "Route 2 - Southeast"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 - Northwest", "Route 2 - Northeast"), lambda state: can_cut(state))
-    # set_rule(get_entrance("Route 2 - Northeast", "Route 2 - Northwest"), lambda state: can_cut(state))
+    set_rule(get_entrance("Route 2 - Northeast", "Route 2 - Northwest"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 - Northeast", "Route 2 - East"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 - East", "Route 2 - Northeast"), lambda state: can_cut(state))
 
@@ -257,8 +257,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: can_pass_cerulean_city_roadblocks(state) and can_cut(state))
     set_rule(get_entrance("Cerulean City", "Cerulean Robbed House"),
              lambda state: can_pass_cerulean_city_roadblocks(state))
-    set_rule(get_entrance("Cerulean City - Outskirts", "Cerulean City"),
-             lambda state: can_pass_cerulean_city_roadblocks(state) and can_cut(state))
     set_rule(get_entrance("Cerulean City - Outskirts", "Route 9"), lambda state: can_cut(state))
     set_rule(get_entrance("Cerulean City - Cave", "Cerulean City - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Cerulean City - Cave", "Cerulean Cave 1F - Southeast"),
@@ -470,6 +468,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: can_surf(state) and
                            state.has("Drop Seafoam Islands B2F Left Boulder", player) and
                            state.has("Drop Seafoam Islands B2F Right Boulder", player))
+    set_rule(get_entrance("Seafoam Islands B3F - Water", "Seafoam Islands B3F - West"),
+             lambda state: state.has("Drop Seafoam Islands B2F Left Boulder", player) and
+                           state.has("Drop Seafoam Islands B2F Right Boulder", player))
+    set_rule(get_entrance("Seafoam Islands B3F - Water", "Seafoam Islands B3F - Southeast"),
+             lambda state: state.has("Drop Seafoam Islands B2F Left Boulder", player) and
+                           state.has("Drop Seafoam Islands B2F Right Boulder", player))
     set_rule(get_entrance("Seafoam Islands B4F", "Seafoam Islands B4F - Water E"), lambda state: can_surf(state))
     set_rule(get_entrance("Seafoam Islands B4F", "Seafoam Islands B4F - Water W"),
              lambda state: can_surf(state) and state.has("Drop Seafoam Islands B3F Boulders", player))
@@ -542,7 +546,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("One Island Harbor", "Seven Island Harbor"), lambda state: state.has("Rainbow Pass", player))
 
     # One Island
-    set_rule(get_location("One Island Pokemon Center 1F - Celio"), lambda state: state.has("Deliver Meteorite", player))
+    set_rule(get_location("One Island Pokemon Center 1F - Celio"),
+             lambda state: state.has("Deliver Meteorite", player) and state.has("Ruby", player))
     set_rule(get_location("One Island - Help Celio"),
              lambda state: state.has("Deliver Meteorite", player) and
                            state.has("Ruby", player) and
@@ -617,6 +622,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Bond Bridge", "Bond Bridge - Tree"), lambda state: can_cut(state))
 
     # Berry Forest
+    set_rule(get_location("Berry Forest - Item Past Southwest Pond"), lambda state: can_cut(state))
     set_rule(get_entrance("Berry Forest", "Berry Forest - Water"), lambda state: can_surf(state))
 
     # Four Island Harbor

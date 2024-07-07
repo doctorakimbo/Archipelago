@@ -3,6 +3,29 @@ from BaseClasses import Item, ItemClassification
 from .data import data, BASE_OFFSET
 
 
+ITEM_GROUPS = {
+    "Badges": {
+        "Boulder Badge",
+        "Cascade Badge",
+        "Thunder Badge",
+        "Rainbow Badge",
+        "Soul Badge",
+        "Marsh Badge",
+        "Volcano Badge",
+        "Earth Badge"
+    },
+    "HMs": {
+        "HM01 Cut",
+        "HM02 Fly",
+        "HM03 Surf",
+        "HM04 Strength",
+        "HM05 Flash",
+        "HM06 Rock Smash",
+        "HM07 Waterfall"
+    }
+}
+
+
 class PokemonFRLGItem(Item):
     game: str = "Pokemon FireRed and LeafGreen"
     tags: FrozenSet[str]

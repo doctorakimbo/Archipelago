@@ -68,6 +68,7 @@ class FlashRequired(Toggle):
     """
     Sets whether HM05 Flash is logically required to navigate Rock Tunnel.
     """
+    display_name = "Flash Required"
     default = 1
 
 
@@ -164,6 +165,7 @@ class CeruleanCityRoadblocks(Toggle):
     """
     Sets whether the Policeman and Slowpoke are blocking the exits of the city until you save Bill.
     """
+    display_name = "Cerulean City Roadblocks"
     default = 1
 
 

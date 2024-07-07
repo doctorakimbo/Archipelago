@@ -647,7 +647,7 @@
     ],
     "exits": [
       "REGION_CERULEAN_CITY/OUTSKIRTS",
-      "REGION_ROUTE4/EAST",
+      "REGION_ROUTE4/SOUTHEAST",
       "REGION_ROUTE24/MAIN"
     ],
     "warps": [

@@ -19,16 +19,18 @@ predetermined priority
 * Increased Safari Zone steps from 600 to 60000
 * You can fly between Kanto and the Sevii Islands
 * Trainers will not approach the player if Blind Trainers is on
+* The text displayed when a Trainer is about to send out a new pokémon has been shortened so that you can still see the name of the pokémon when deciding if you want to swap
 * Any cutscene that would warp the player somewhere no longer does so
+* Added a GO HOME option to the menu that teleports you to Pallet Town
 * The Old Man catching tutorial is skipped
 * The Route 22 Rival fight will only occur once. It can be triggered after either delivering Oak's Parcel or beating the Viridian Gym
-* Removed the final ledge on Route 4 to prevent being trapped in Cerulean City... for now...
 * Miguel's position in Mt. Moon will change based on which side you enter from
 * You are able to pick up both fossils in Mt. Moon after beating Miguel
 * The Team Rocket Grunt on Route 24 won't give you your reward until after the battle
 * The S.S. Anne will never depart
 * The Vermilion Gym puzzle doesn't reset if you get the second trash can switch wrong
 * The Saffron City guards will block your way from both directions (this only matters if your free fly is Saffron City)
+* The Seafoam Islands entrances on Route 20 have been swapped so that you can travel from Cinnabar to Fuchsia
 * Only the last guard on Route 23 will check for badges or gyms
 * Professor Oak will give you the Mystic and Aurora Ticket in Pallet Town after beating the game
 * Much of the Sevii Islands has been reworked:

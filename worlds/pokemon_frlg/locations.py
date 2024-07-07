@@ -7,6 +7,27 @@ if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
 
+LOCATION_GROUPS = {
+    "Badges": {
+        "Pewter Gym - Leader Brock Prize",
+        "Cerulean Gym - Leader Misty Prize",
+        "Vermilion Gym - Leader Lt. Surge Prize",
+        "Celadon Gym - Leader Erika Prize",
+        "Fuchsia Gym - Leader Koga Prize",
+        "Saffron Gym - Leader Sabrina Prize",
+        "Cinnabar Gym - Leader Blaine Prize",
+        "Viridian Gym - Leader Giovanni Prize"
+    },
+    "Oak's Aides": {
+        "Route 2 East Building - Professor Oak's Aide",
+        "Route 10 Pokemon Center 1F - Professor Oak's Aide",
+        "Route 11 East Entrance 2F - Professor Oak's Aide",
+        "Route 16 North Entrance 2F - Professor Oak's Aide",
+        "Route 15 West Entrance 2F - Professor Oak's Aide"
+    }
+}
+
+
 FLY_EVENT_NAME_TO_ID = {
     "EVENT_FLY_PALLET_TOWN": 0,
     "EVENT_FLY_VIRIDIAN_CITY": 1,

@@ -205,8 +205,8 @@
   "REGION_ROUTE4/EAST": {
     "parent_map": "MAP_ROUTE4",
     "name": "Route 4 - East",
-    "encounter_region": "Route 4",
-    "has_land": true,
+    "encounter_region": null,
+    "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [
@@ -216,11 +216,25 @@
     ],
     "events": [],
     "exits": [
-      "REGION_CERULEAN_CITY/MAIN"
+      "REGION_ROUTE4/SOUTHEAST"
     ],
     "warps": [
       "MAP_ROUTE4:1/MAP_MT_MOON_B1F:7"
     ]
+  },
+  "REGION_ROUTE4/SOUTHEAST": {
+    "parent_map": "MAP_ROUTE4",
+    "name": "Route 4 - Southeast",
+    "encounter_region": "Route 4",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/MAIN"
+    ],
+    "warps": []
   },
   "REGION_ROUTE4/WATER": {
     "parent_map": "MAP_ROUTE4",
@@ -1391,7 +1405,7 @@
       "REGION_ROUTE20/EAST"
     ],
     "warps": [
-      "MAP_ROUTE20:0/MAP_SEAFOAM_ISLANDS_1F:3"
+      "MAP_ROUTE20:0/MAP_SEAFOAM_ISLANDS_1F:4"
     ]
   },
   "REGION_ROUTE20/SOUTH_CAVE": {
@@ -1407,7 +1421,7 @@
       "REGION_ROUTE20/WEST"
     ],
     "warps": [
-      "MAP_ROUTE20:1/MAP_SEAFOAM_ISLANDS_1F:4"
+      "MAP_ROUTE20:1/MAP_SEAFOAM_ISLANDS_1F:3"
     ]
   },
   "REGION_ROUTE20/WEST": {
