@@ -18,6 +18,16 @@ LOCATION_GROUPS = {
         "Cinnabar Gym - Leader Blaine Prize",
         "Viridian Gym - Leader Giovanni Prize"
     },
+    "Gym TMs": {
+        "Pewter Gym - Leader Brock Reward",
+        "Cerulean Gym - Leader Misty Reward",
+        "Vermilion Gym - Leader Lt. Surge Reward",
+        "Celadon Gym - Leader Erika Reward",
+        "Fuchsia Gym - Leader Koga Reward",
+        "Saffron Gym - Leader Sabrina Reward",
+        "Cinnabar Gym - Leader Blaine Reward",
+        "Viridian Gym - Leader Giovanni Reward"
+    },
     "Oak's Aides": {
         "Route 2 East Building - Professor Oak's Aide",
         "Route 10 Pokemon Center 1F - Professor Oak's Aide",
