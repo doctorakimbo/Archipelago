@@ -13,7 +13,8 @@ from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
 from .data import data as frlg_data, SpeciesData
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
-from .locations import create_location_name_to_id_map, create_locations_from_tags, set_free_fly, PokemonFRLGLocation
+from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
+                        PokemonFRLGLocation)
 from .options import (PokemonFRLGOptions, GameVersion, GameRevision, ShuffleHiddenItems, ShuffleBadges,
                       ViridianCityRoadblock)
 from .rom import (write_tokens, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
@@ -88,6 +89,7 @@ class PokemonFRLGWorld(World):
     item_name_to_id = create_item_name_to_id_map()
     location_name_to_id = create_location_name_to_id_map()
     item_name_groups = ITEM_GROUPS
+    location_name_groups = LOCATION_GROUPS
 
     required_client_version = (0, 5, 0)
 
