@@ -296,12 +296,12 @@ class RandomizeWildPokemon(Choice):
     Randomizes wild pokemon encounters (grass, caves, water, fishing)
 
     - Vanilla: Wild pokemon are unchanged
-    - Match Base Stats: Wild pokemon are replaced with species with approximately the same bst
+    - Match Base Stats: Wild pokemon are replaced with species with approximately the same BST
     - Match Type: Wild pokemon are replaced with species that share a type with the original
     - Match Base Stats and Type: Apply both Match Base Stats and Match Type
     - Completely Random: There are no restrictions
     """
-    display_name = "Random Wild Pokemon"
+    display_name = "Randomize Wild Pokemon"
     default = 0
     option_vanilla = 0
     option_match_base_stats = 1
@@ -312,17 +312,73 @@ class RandomizeWildPokemon(Choice):
 
 class WildPokemonGroups(Choice):
     """
-    If wild pokemon are not vanilla, they will be randomized according to the grouping specified. Within a grouping,
-    all pokemon of the same species will be randomized together.
+    If wild pokemon are not vanilla, they will be randomized according to the grouping specified.
 
-    - None: Pokemon are not randomized based on any grouping
-    - Dungeons: Pokemon are randomized based on dungeon groupings
-    - Species: Pokemon are randomized based on species grouping
+    - None: Pokemon are not randomized together based on any groupings
+    - Dungeons: All pokemon of the same species in a dungeon are randomized together
+    - Species: All pokemon of the same species are randomized together
     """
     default = 0
     option_none = 0
     option_dungeons = 1
     option_species = 2
+
+
+class RandomizeStarters(Choice):
+    """
+    Randomizes the starter pokemon in Professor Oak's Lab.
+
+    - Vanilla: Starters are unchanged
+    - Match Base Stats: Starters are replaced with species with approximately the same BST
+    - Match Type: Starters are replaced with species that share a type with the original
+    - Match Base Stats and Type: Apply both Match Base Stats and Match Type
+    - Completely Random: There are no restrictions
+    """
+    display_name = "Randomize Starters"
+    default = 0
+    option_vanilla = 0
+    option_match_base_stats = 1
+    option_match_type = 2
+    option_match_base_stats_and_type = 3
+    option_completely_random = 4
+
+
+class RandomizeLegendaryPokemon(Choice):
+    """
+    Randomizes legendary pokemon (Mewtwo, Zapdos, Deoxys, etc.). Does not randomize the roamer.
+
+    - Vanilla: Legendary encounters are unchanged
+    - Match Base Stats: Legendary encounters are replaced with species with approximately the same BST
+    - Match Type: Legendary encounters are replaced with species that share a type with the original
+    - Match Base Stats and Type: Apply both Match Base Stats and Match Type
+    - Completely Random: There are no restrictions
+    """
+    display_name = "Randomize Legendary Pokemon"
+    default = 0
+    option_vanilla = 0
+    option_match_base_stats = 1
+    option_match_type = 2
+    option_match_base_stats_and_type = 3
+    option_completely_random = 4
+
+
+class RandomizeMiscPokemon(Choice):
+    """
+    Randomizes misc pokemon. This includes non-legendary static encounters, gift pokemon, and trade pokemon
+
+    - Vanilla: Species are unchanged
+    - Match Base Stats: Species are replaced with species with approximately the same bst
+    - Match Type: Species are replaced with species that share a type with the original
+    - Match Base Stats and Type: Apply both Match Base Stats and Match Type
+    - Completely Random: There are no restrictions
+    """
+    display_name = "Randomize Misc Pokemon"
+    default = 0
+    option_vanilla = 0
+    option_match_base_stats = 1
+    option_match_type = 2
+    option_match_base_stats_and_type = 3
+    option_completely_random = 4
 
 
 class ReusableTmsTutors(Toggle):
@@ -446,6 +502,9 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups
+    starters: RandomizeStarters
+    legendary_pokemon: RandomizeLegendaryPokemon
+    misc_pokemon: RandomizeMiscPokemon
 
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate

@@ -11,13 +11,13 @@ from BaseClasses import Tutorial, MultiWorld, ItemClassification
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
-from .data import data as frlg_data, MapData, SpeciesData
+from .data import data as frlg_data, EventData, MapData, MiscPokemonData, SpeciesData, StarterData
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
 from .options import (PokemonFRLGOptions, GameVersion, GameRevision, RandomizeWildPokemon, ShuffleHiddenItems,
                       ShuffleBadges, ViridianCityRoadblock)
-from .pokemon import randomize_wild_encounters
+from .pokemon import randomize_legendaries, randomize_misc_pokemon, randomize_starters, randomize_wild_encounters
 from .rom import (write_tokens, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
@@ -97,6 +97,10 @@ class PokemonFRLGWorld(World):
     free_fly_location_id: int
     modified_species: Dict[int, SpeciesData]
     modified_maps: Dict[str, MapData]
+    modified_starters: Dict[str, StarterData]
+    modified_events: Dict[str, EventData]
+    modified_legendary_pokemon: Dict[str, MiscPokemonData]
+    modified_misc_pokemon: Dict[str, MiscPokemonData]
     hm_compatability: Dict[str, List[str]]
     trade_pokemon: List[Tuple[str, str]]
     auth: bytes
@@ -106,6 +110,10 @@ class PokemonFRLGWorld(World):
         self.free_fly_location_id = 0
         self.modified_species = copy.deepcopy(frlg_data.species)
         self.modified_maps = copy.deepcopy(frlg_data.maps)
+        self.modified_starters = copy.deepcopy(frlg_data.starters)
+        self.modified_events = copy.deepcopy(frlg_data.events)
+        self.modified_legendary_pokemon = copy.deepcopy(frlg_data.legendary_pokemon)
+        self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
         self.hm_compatability = {}
         self.trade_pokemon = list()
 
@@ -146,6 +154,9 @@ class PokemonFRLGWorld(World):
 
     def generate_early(self) -> None:
         randomize_wild_encounters(self)
+        randomize_starters(self)
+        randomize_legendaries(self)
+        randomize_misc_pokemon(self)
         self.create_hm_compatability_dict()
 
     def set_rules(self) -> None:
@@ -229,6 +240,14 @@ class PokemonFRLGWorld(World):
         # Write output
         out_file_name = self.multiworld.get_out_file_name_base(self.player)
         patch.write(os.path.join(output_directory, f'{out_file_name}{patch.patch_file_ending}'))
+
+        del self.modified_species
+        del self.modified_maps
+        del self.modified_starters
+        del self.modified_events
+        del self.modified_legendary_pokemon
+        del self.modified_misc_pokemon
+        del self.trade_pokemon
 
     @classmethod
     def stage_post_fill(cls, multiworld):

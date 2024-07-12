@@ -773,11 +773,15 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_location("Cerulean Trade House - Trade Poliwhirl"), lambda state: state.has("Poliwhirl", player))
     set_rule(get_location("Vermilion Trade House - Trade Spearow"), lambda state: state.has("Spearow", player))
-    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Abra"),
+    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 1"),
              lambda state: state.has("Coin Case", player))
-    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Clefairy"),
+    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 2"),
              lambda state: state.has("Coin Case", player))
-    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Porygon"),
+    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 3"),
+             lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 4"),
+             lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 5"),
              lambda state: state.has("Coin Case", player))
     set_rule(get_location("Cinnabar Pokemon Lab Lounge - Trade Raichu"), lambda state: state.has("Raichu", player))
     set_rule(get_location("Cinnabar Pokemon Lab Lounge - Trade Venonat"), lambda state: state.has("Venonat", player))
@@ -795,20 +799,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has("Nidoran M", player))
         set_rule(get_location("Route 11 East Entrance 2F - Trade Nidorino"),
                  lambda state: state.has("Nidorino", player))
-        set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Dratini"),
-                 lambda state: state.has("Coin Case", player))
-        set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Scyther"),
-                 lambda state: state.has("Coin Case", player))
         set_rule(get_location("Route 18 East Entrance 2F - Trade Golduck"), lambda state: state.has("Golduck", player))
     elif options.game_version == GameVersion.option_leafgreen:
         set_rule(get_location("Underground Path North Entrance - Trade Nidoran F"),
                  lambda state: state.has("Nidoran F", player))
         set_rule(get_location("Route 11 East Entrance 2F - Trade Nidorina"),
                  lambda state: state.has("Nidorina", player))
-        set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Pinsir"),
-                 lambda state: state.has("Coin Case", player))
-        set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon Dratini"),
-                 lambda state: state.has("Coin Case", player))
         set_rule(get_location("Route 18 East Entrance 2F - Trade Slowbro"), lambda state: state.has("Slowbro", player))
 
     # Add rules for Pokemon Tower encounters
@@ -857,18 +853,24 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Spearow", player) and evolve_level(state, 20))
     set_rule(get_location("Evolution - Ekans"),
              lambda state: state.has("Ekans", player) and evolve_level(state, 22))
+    set_rule(get_location("Evolution - Pikachu"),
+             lambda state: state.has("Pikachu", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Sandshrew"),
              lambda state: state.has("Sandshrew", player) and evolve_level(state, 22))
     set_rule(get_location("Evolution - Nidoran F"),
              lambda state: state.has("Nidoran F", player) and evolve_level(state, 16))
     set_rule(get_location("Evolution - Nidoran M"),
              lambda state: state.has("Nidoran M", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Vulpix"),
+             lambda state: state.has("Vulpix", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Zubat"),
              lambda state: state.has("Zubat", player) and evolve_level(state, 22))
     set_rule(get_location("Evolution - Golbat"),
              lambda state: state.has("Golbat", player))
     set_rule(get_location("Evolution - Oddish"),
              lambda state: state.has("Oddish", player) and evolve_level(state, 21))
+    set_rule(get_location("Evolution - Gloom"),
+             lambda state: state.has("Gloom", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Paras"),
              lambda state: state.has("Paras", player) and evolve_level(state, 24))
     set_rule(get_location("Evolution - Venonat"),
@@ -881,8 +883,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Psyduck", player) and evolve_level(state, 33))
     set_rule(get_location("Evolution - Mankey"),
              lambda state: state.has("Mankey", player) and evolve_level(state, 28))
+    set_rule(get_location("Evolution - Growlithe"),
+             lambda state: state.has("Growlithe", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Poliwag"),
              lambda state: state.has("Poliwag", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Poliwhirl"),
+             lambda state: state.has("Poliwhirl", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Abra"),
              lambda state: state.has("Abra", player) and evolve_level(state, 16))
     set_rule(get_location("Evolution - Kadabra"),
@@ -893,6 +899,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Machoke", player) and evolve_level(state, 37))
     set_rule(get_location("Evolution - Bellsprout"),
              lambda state: state.has("Bellsprout", player) and evolve_level(state, 21))
+    set_rule(get_location("Evolution - Weepinbell"),
+             lambda state: state.has("Weepinbell", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Tentacool"),
              lambda state: state.has("Tentacool", player) and evolve_level(state, 30))
     set_rule(get_location("Evolution - Geodude"),
@@ -911,6 +919,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Seel", player) and evolve_level(state, 34))
     set_rule(get_location("Evolution - Grimer"),
              lambda state: state.has("Grimer", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Shellder"),
+             lambda state: state.has("Shellder", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Gastly"),
              lambda state: state.has("Gastly", player) and evolve_level(state, 25))
     set_rule(get_location("Evolution - Haunter"),
@@ -921,6 +931,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Krabby", player) and evolve_level(state, 28))
     set_rule(get_location("Evolution - Voltorb"),
              lambda state: state.has("Voltorb", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Exeggcute"),
+             lambda state: state.has("Exeggcute", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Cubone"),
              lambda state: state.has("Cubone", player) and evolve_level(state, 28))
     set_rule(get_location("Evolution - Koffing"),
@@ -933,8 +945,16 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Horsea", player) and evolve_level(state, 32))
     set_rule(get_location("Evolution - Goldeen"),
              lambda state: state.has("Goldeen", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Staryu"),
+             lambda state: state.has("Staryu", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Magikarp"),
              lambda state: state.has("Magikarp", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Eevee (Thunder Stone)"),
+             lambda state: state.has("Eevee", player) and state.has("Buy Evo Stones", player))
+    set_rule(get_location("Evolution - Eevee (Water Stone)"),
+             lambda state: state.has("Eevee", player) and state.has("Buy Evo Stones", player))
+    set_rule(get_location("Evolution - Eevee (Fire Stone)"),
+             lambda state: state.has("Eevee", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Omanyte"),
              lambda state: state.has("Omanyte", player) and evolve_level(state, 40))
     set_rule(get_location("Evolution - Kabuto"),
@@ -1045,8 +1065,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Cascoon", player) and evolve_level(state, 10))
     set_rule(get_location("Evolution - Lotad"),
              lambda state: state.has("Lotad", player) and evolve_level(state, 14))
+    set_rule(get_location("Evolution - Lombre"),
+             lambda state: state.has("Lombre", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Seedot"),
              lambda state: state.has("Seedot", player) and evolve_level(state, 14))
+    set_rule(get_location("Evolution - Nuzleaf"),
+             lambda state: state.has("Nuzleaf", player) and state.has("Buy Evo Stones", player))
     set_rule(get_location("Evolution - Nincada"),
              lambda state: state.has("Nincada", player) and evolve_level(state, 20))
     set_rule(get_location("Evolution - Nincada (Extra)"),

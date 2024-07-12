@@ -1624,12 +1624,12 @@
     "name": "Memorial Pillar - Memorial Man",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Pallet Town - Oak's Post Champion Reward 2",
-    "tags": ["NPCGift"]
-  },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
     "name": "Pallet Town - Oak's Post Champion Reward 1",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_RECEIVED_AURORA_TICKET": {
+    "name": "Pallet Town - Oak's Post Champion Reward 2",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {

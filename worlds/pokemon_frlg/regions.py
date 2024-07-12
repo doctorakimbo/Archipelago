@@ -62,7 +62,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     encounter_region = world.multiworld.get_region(region_name, world.player)
                 except KeyError:
                     encounter_region = Region(region_name, world.player, world.multiworld)
-                    encounter_slots = getattr(data.maps[map_name],
+                    encounter_slots = getattr(world.modified_maps[map_name],
                                               f"{encounter_category[0].lower()}_encounters").slots[game_version]
 
                     # Subcategory is for splitting fishing rods; land and water only have one subcategory
@@ -114,7 +114,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         new_region = Region(region_name, world.player, world.multiworld)
 
         for event_id in region_data.events:
-            event_data = data.events[event_id]
+            event_data = world.modified_events[event_id]
 
             if type(event_data.name) is list:
                 if world.options.game_version == GameVersion.option_firered:
@@ -139,6 +139,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                                     world.player))
             event.show_in_spoiler = False
             new_region.locations.append(event)
+
+            if "Trade" in name:
+                world.trade_pokemon.append([region_name, name])
 
         for region_exit in region_data.exits:
             exit_name = data.regions[region_exit].name

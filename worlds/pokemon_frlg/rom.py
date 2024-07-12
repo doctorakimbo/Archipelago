@@ -8,7 +8,9 @@ from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
 from .items import reverse_offset_item_value
-from .options import GameRevision, ItemfinderRequired, RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock
+from .options import (GameRevision, ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+                      RandomizeStarters, RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock)
+from .pokemon import STARTER_INDEX
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -173,7 +175,19 @@ def write_tokens(world: "PokemonFRLGWorld",
 
     # Set wild encounters
     if world.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
-        _set_wild_encounters(world, patch)
+        _set_wild_encounters(world, patch, game_version, game_version_revision)
+
+    # Set starters
+    if world.options.starters != RandomizeStarters.option_vanilla:
+        _set_starters(world, patch, game_version_revision)
+
+    # Set legendaries
+    if world.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+        _set_legendaries(world, patch, game_version, game_version_revision)
+
+    # Set misc pokemon
+    if world.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+        _set_misc_pokemon(world, patch, game_version, game_version_revision)
 
     # Options
     # struct
@@ -329,9 +343,9 @@ def _set_wild_encounters(world: "PokemonFRLGWorld",
                          patch: Union[PokemonFireRedProcedurePatch,
                                       PokemonFireRedRev1ProcedurePatch,
                                       PokemonLeafGreenProcedurePatch,
-                                      PokemonLeafGreenRev1ProcedurePatch]) -> None:
-    game_version = world.options.game_version.current_key
-
+                                      PokemonLeafGreenRev1ProcedurePatch],
+                         game_version: str,
+                         game_version_revision: str) -> None:
     """
         Encounter tables are lists of
         struct {
@@ -341,11 +355,56 @@ def _set_wild_encounters(world: "PokemonFRLGWorld",
         }
     """
     for map_data in world.modified_maps.values():
-        tables = [map_data.land_encounters[game_version],
-                  map_data.water_encounters[game_version],
-                  map_data.fishing_encounters[game_version]]
+        tables = [map_data.land_encounters,
+                  map_data.water_encounters,
+                  map_data.fishing_encounters]
         for table in tables:
             if table is not None:
-                for i, species_id in enumerate(table.slots):
-                    address = table.address + 2 * (i * 4)
+                for i, species_id in enumerate(table.slots[game_version]):
+                    address = table.address[game_version_revision] + 2 + (i * 4)
                     patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", species_id))
+
+
+def _set_starters(world: "PokemonFRLGWorld",
+                  patch: Union[PokemonFireRedProcedurePatch,
+                               PokemonFireRedRev1ProcedurePatch,
+                               PokemonLeafGreenProcedurePatch,
+                               PokemonLeafGreenRev1ProcedurePatch],
+                  game_version_revision: str) -> None:
+
+    for name, starter in world.modified_starters.items():
+        starter_address = data.rom_addresses[game_version_revision]["sStarterSpecies"] + (STARTER_INDEX[name] * 2)
+        patch.write_token(APTokenTypes.WRITE, starter_address, struct.pack("<H", starter.species_id))
+        patch.write_token(APTokenTypes.WRITE,
+                          starter.player_address[game_version_revision],
+                          struct.pack("<H", starter.species_id))
+        patch.write_token(APTokenTypes.WRITE,
+                          starter.rival_address[game_version_revision],
+                          struct.pack("<H", starter.species_id))
+
+
+def _set_legendaries(world: "PokemonFRLGWorld",
+                     patch: Union[PokemonFireRedProcedurePatch,
+                                  PokemonFireRedRev1ProcedurePatch,
+                                  PokemonLeafGreenProcedurePatch,
+                                  PokemonLeafGreenRev1ProcedurePatch],
+                     game_version: str,
+                     game_version_revision: str) -> None:
+    for name, legendary in world.modified_legendary_pokemon.items():
+        patch.write_token(APTokenTypes.WRITE,
+                          legendary.address[game_version_revision],
+                          struct.pack("<H", legendary.species_id[game_version]))
+
+
+def _set_misc_pokemon(world: "PokemonFRLGWorld",
+                      patch: Union[PokemonFireRedProcedurePatch,
+                                   PokemonFireRedRev1ProcedurePatch,
+                                   PokemonLeafGreenProcedurePatch,
+                                   PokemonLeafGreenRev1ProcedurePatch],
+                      game_version: str,
+                      game_version_revision: str) -> None:
+
+    for name, misc_pokemon in world.modified_misc_pokemon.items():
+        patch.write_token(APTokenTypes.WRITE,
+                          misc_pokemon.address[game_version_revision],
+                          struct.pack("<H", misc_pokemon.species_id[game_version]))

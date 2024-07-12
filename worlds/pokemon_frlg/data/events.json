@@ -122,6 +122,10 @@
     "name": "Route 25 Sea Cottage - Cell Separation System",
     "item": "Save Bill"
   },
+  "EVENT_BUY_EVO_STONES": {
+    "name": "Celadon Department Store 4F - Wise Man Gifts",
+    "item": "Buy Evo Stones"
+  },
   "EVENT_BUY_VENDING_MACHINE_LEMONADE": {
     "name": "Celadon Department Store Roof - Vending Machine",
     "item": "Buy Lemonade"
@@ -257,35 +261,29 @@
       ]
   },
   "CELADON_PRIZE_POKEMON_1": {
-    "name": "Celadon Game Corner Prize Room - Prize Pokemon Abra",
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon 1",
     "item": "Abra"
   },
   "CELADON_PRIZE_POKEMON_2": {
-    "name": "Celadon Game Corner Prize Room - Prize Pokemon Clefairy",
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon 2",
     "item": "Clefairy"
   },
   "CELADON_PRIZE_POKEMON_3": {
-    "name": [
-      "Celadon Game Corner Prize Room - Prize Pokemon Dratini",
-      "Celadon Game Corner Prize Room - Prize Pokemon Pinsir"
-    ],
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon 3",
     "item": [
       "Dratini",
       "Pinsir"
       ]
   },
   "CELADON_PRIZE_POKEMON_4": {
-    "name": [
-      "Celadon Game Corner Prize Room - Prize Pokemon Scyther",
-      "Celadon Game Corner Prize Room - Prize Pokemon Dratini"
-    ],
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon 4",
     "item": [
       "Scyther",
       "Dratini"
       ]
   },
   "CELADON_PRIZE_POKEMON_5": {
-    "name": "Celadon Game Corner Prize Room - Prize Pokemon Porygon",
+    "name": "Celadon Game Corner Prize Room - Prize Pokemon 5",
     "item": "Porygon"
   },
   "GIFT_POKEMON_EEVEE": {
@@ -392,6 +390,10 @@
     "name": "Evolution - Ekans",
     "item": "Arbok"
   },
+  "EVOLVE_PIKACHU": {
+    "name": "Evolution - Pikachu",
+    "item": "Raichu"
+  },
   "EVOLVE_SANDSHREW": {
     "name": "Evolution - Sandshrew",
     "item": "Sandslash"
@@ -404,6 +406,10 @@
     "name": "Evolution - Nidoran M",
     "item": "Nidorino"
   },
+  "EVOLVE_VULPIX": {
+    "name": "Evolution - Vulpix",
+    "item": "Ninetales"
+  },
   "EVOLVE_ZUBAT": {
     "name": "Evolution - Zubat",
     "item": "Golbat"
@@ -415,6 +421,10 @@
   "EVOLVE_ODDISH": {
     "name": "Evolution - Oddish",
     "item": "Gloom"
+  },
+  "EVOLVE_GLOOM": {
+    "name": "Evolution - Gloom",
+    "item": "Vileplume"
   },
   "EVOLVE_PARAS": {
     "name": "Evolution - Paras",
@@ -440,9 +450,17 @@
     "name": "Evolution - Mankey",
     "item": "Primeape"
   },
+  "EVOLVE_GROWLITHE": {
+    "name": "Evolution - Growlithe",
+    "item": "Arcanine"
+  },
   "EVOLVE_POLIWAG": {
     "name": "Evolution - Poliwag",
     "item": "Poliwhirl"
+  },
+  "EVOLVE_POLIWHIRL": {
+    "name": "Evolution - Poliwhirl",
+    "item": "Poliwrath"
   },
   "EVOLVE_ABRA": {
     "name": "Evolution - Abra",
@@ -463,6 +481,10 @@
   "EVOLVE_BELLSPROUT": {
     "name": "Evolution - Bellsprout",
     "item": "Weepinbell"
+  },
+  "EVOLVE_WEEPINBELL": {
+    "name": "Evolution - Weepinbell",
+    "item": "Victreebel"
   },
   "EVOLVE_TENTACOOL": {
     "name": "Evolution - Tentacool",
@@ -500,6 +522,10 @@
     "name": "Evolution - Grimer",
     "item": "Muk"
   },
+  "EVOLVE_SHELLDER": {
+    "name": "Evolution - Shellder",
+    "item": "Cloyster"
+  },
   "EVOLVE_GASTLY": {
     "name": "Evolution - Gastly",
     "item": "Haunter"
@@ -519,6 +545,10 @@
   "EVOLVE_VOLTORB": {
     "name": "Evolution - Voltorb",
     "item": "Electrode"
+  },
+  "EVOLVE_EXEGGCUTE": {
+    "name": "Evolution - Exeggcute",
+    "item": "Exeggutor"
   },
   "EVOLVE_CUBONE": {
     "name": "Evolution - Cubone",
@@ -544,9 +574,25 @@
     "name": "Evolution - Goldeen",
     "item": "Seaking"
   },
+  "EVOLVE_STARYU": {
+    "name": "Evolution - Staryu",
+    "item": "Starmie"
+  },
   "EVOLVE_MAGIKARP": {
     "name": "Evolution - Magikarp",
     "item": "Gyarados"
+  },
+  "EVOLVE_EEVEE_THUNDER_STONE": {
+    "name": "Evolution - Eevee (Thunder Stone)",
+    "item": "Jolteon"
+  },
+  "EVOLVE_EEVEE_WATER_STONE": {
+    "name": "Evolution - Eevee (Water Stone)",
+    "item": "Vaporeon"
+  },
+  "EVOLVE_EEVEE_FIRE_STONE": {
+    "name": "Evolution - Eevee (Fire Stone)",
+    "item": "Flareon"
   },
   "EVOLVE_OMANYTE": {
     "name": "Evolution - Omanyte",
@@ -768,9 +814,17 @@
     "name": "Evolution - Lotad",
     "item": "Lombre"
   },
+  "EVOLVE_LOMBRE": {
+    "name": "Evolution - Lombre",
+    "item": "Ludicolo"
+  },
   "EVOLVE_SEEDOT": {
     "name": "Evolution - Seedot",
     "item": "Nuzleaf"
+  },
+  "EVOLVE_NUZLEAF": {
+    "name": "Evolution - Nuzleaf",
+    "item": "Shiftry"
   },
   "EVOLVE_NINCADA": {
     "name": "Evolution - Nincada",

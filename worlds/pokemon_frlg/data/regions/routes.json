@@ -1462,7 +1462,7 @@
     "parent_map": "MAP_ROUTE21_SOUTH",
     "name": "Route 21 South",
     "encounter_region": "Route 21 South",
-    "has_land": false,
+    "has_land": true,
     "has_water": true,
     "has_fishing": true,
     "locations": [],

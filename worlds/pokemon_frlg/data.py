@@ -209,6 +209,19 @@ class SpeciesData:
     address: Dict[str, int]
 
 
+@dataclass
+class StarterData:
+    species_id: int
+    player_address: Dict[str, int]
+    rival_address: Dict[str, int]
+
+@dataclass
+class MiscPokemonData:
+    species_id: Dict[str, int]
+    level: int
+    address: Dict[str, int]
+
+
 class PokemonFRLGData:
     constants: Dict[str, int]
     ram_addresses: Dict[str, Dict[str, int]]
@@ -221,6 +234,9 @@ class PokemonFRLGData:
     warps: Dict[str, Warp]
     warp_map: Dict[str, Optional[str]]
     species: Dict[int, SpeciesData]
+    starters: Dict[str, StarterData]
+    legendary_pokemon: Dict[str, MiscPokemonData]
+    misc_pokemon: Dict[str, MiscPokemonData]
 
     def __init__(self) -> None:
         self.constants = {}
@@ -234,10 +250,13 @@ class PokemonFRLGData:
         self.warps = {}
         self.warp_map = {}
         self.species = {}
+        self.starters = {}
+        self.legendary_pokemon = {}
+        self.misc_pokemon = {}
 
 
 # Excludes extras like copies of Unown and special species values like SPECIES_EGG
-all_species: List[Tuple[str, str, int]] = [
+ALL_SPECIES: List[Tuple[str, str, int]] = [
     ("SPECIES_BULBASAUR", "Bulbasaur", 1),
     ("SPECIES_IVYSAUR", "Ivysaur", 2),
     ("SPECIES_VENUSAUR", "Venusaur", 3),
@@ -662,6 +681,24 @@ def _init() -> None:
             species.learnset_address["leafgreen"] = species_data["learnset"]["address"]
             species.address["leafgreen"] = species_data["address"]
 
+        # Add starter addresses for LeafGreen
+        for name, starter in data.starters.items():
+            starter_data = extracted_data["starter_pokemon"][name]
+            starter.player_address["leafgreen"] = starter_data["player_address"]
+            starter.rival_address["leafgreen"] = starter_data["rival_address"]
+
+        # Add legendary pokemon species and addresses for LeafGreen
+        for name, legendary in data.legendary_pokemon.items():
+            legendary_data = extracted_data["legendary_pokemon"][name]
+            legendary.species_id["leafgreen"] = legendary_data["species"]
+            legendary.address["leafgreen"] = legendary_data["address"]
+
+        # Add misc pokemon species and addresses for LeafGreen
+        for name, misc in data.misc_pokemon.items():
+            misc_data = extracted_data["misc_pokemon"][name]
+            misc.species_id["leafgreen"] = misc_data["species"]
+            misc.address["leafgreen"] = misc_data["address"]
+
     def add_firered_rev1_data() -> None:
         extracted_data: Dict[str, Any] = load_json_data("extracted_data_firered_rev1.json")
         data.ram_addresses["firered_rev1"] = extracted_data["misc_ram_addresses"]
@@ -689,12 +726,28 @@ def _init() -> None:
             species.learnset_address["firered_rev1"] = species_data["learnset"]["address"]
             species.address["firered_rev1"] = species_data["address"]
 
+        # Add starter addresses for FireRed Revision 1
+        for name, starter in data.starters.items():
+            starter_data = extracted_data["starter_pokemon"][name]
+            starter.player_address["firered_rev1"] = starter_data["player_address"]
+            starter.rival_address["firered_rev1"] = starter_data["rival_address"]
+
+        # Add legendary pokemon addresses for FireRed Revision 1
+        for name, legendary in data.legendary_pokemon.items():
+            legendary_data = extracted_data["legendary_pokemon"][name]
+            legendary.address["firered_rev1"] = legendary_data["address"]
+
+        # Add misc pokemon addresses for FireRed Revision 1
+        for name, misc in data.misc_pokemon.items():
+            misc_data = extracted_data["misc_pokemon"][name]
+            misc.address["firered_rev1"] = misc_data["address"]
+
     def add_leafgreen_rev1_data() -> None:
         extracted_data: Dict[str, Any] = load_json_data("extracted_data_leafgreen_rev1.json")
         data.ram_addresses["leafgreen_rev1"] = extracted_data["misc_ram_addresses"]
         data.rom_addresses["leafgreen_rev1"] = extracted_data["misc_rom_addresses"]
 
-        # Add encounter addresses for FireRed Revision 1
+        # Add encounter addresses for LeafGreen Revision 1
         for map_name, map_json in extracted_data["maps"].items():
             if "land_encounters" in map_json:
                 data.maps[map_name].land_encounters.address["leafgreen_rev1"] = map_json["land_encounters"]["address"]
@@ -705,16 +758,32 @@ def _init() -> None:
 
             data.maps[map_name].header_address["leafgreen_rev1"] = map_json["header_address"]
 
-        # Add location addresses for FireRed Revision 1
+        # Add location addresses for LeafGreen Revision 1
         for location in data.locations.values():
             location_json = extracted_data["locations"][location.id]
             location.address["leafgreen_rev1"] = location_json["address"]
 
-        # Add species addresses for FireRed Revision 1
+        # Add species addresses for LeafGreen Revision 1
         for species_id, species in data.species.items():
             species_data = extracted_data["species"][species_id]
             species.learnset_address["leafgreen_rev1"] = species_data["learnset"]["address"]
             species.address["leafgreen_rev1"] = species_data["address"]
+
+        # Add starter addresses for LeafGreen Revision 1
+        for name, starter in data.starters.items():
+            starter_data = extracted_data["starter_pokemon"][name]
+            starter.player_address["leafgreen_rev1"] = starter_data["player_address"]
+            starter.rival_address["leafgreen_rev1"] = starter_data["rival_address"]
+
+        # Add legendary pokemon addresses for LeafGreen Revision 1
+        for name, legendary in data.legendary_pokemon.items():
+            legendary_data = extracted_data["legendary_pokemon"][name]
+            legendary.address["leafgreen_rev1"] = legendary_data["address"]
+
+        # Add misc pokemon addresses for LeafGreen Revision 1
+        for name, misc in data.misc_pokemon.items():
+            misc_data = extracted_data["misc_pokemon"][name]
+            misc.address["leafgreen_rev1"] = misc_data["address"]
 
     extracted_data: Dict[str, Any] = load_json_data("extracted_data_firered.json")
     data.constants = extracted_data["constants"]
@@ -868,7 +937,7 @@ def _init() -> None:
 
     # Create species data
     max_species_id = 0
-    for species_id_name, species_name, species_dex_number in all_species:
+    for species_id_name, species_name, species_dex_number in ALL_SPECIES:
         species_id = data.constants[species_id_name]
         max_species_id = max(species_id, max_species_id)
         species_data = extracted_data["species"][species_id]
@@ -909,6 +978,43 @@ def _init() -> None:
     for species in data.species.values():
         for evolution in species.evolutions:
             data.species[evolution.species_id].pre_evolution = species.species_id
+
+    # Create starter data
+    for name, starter_data in extracted_data["starter_pokemon"].items():
+        player_address = {"firered": starter_data["player_address"]}
+        rival_address = {"firered": starter_data["rival_address"]}
+
+        data.starters[name] = StarterData(
+            starter_data["species"],
+            player_address,
+            rival_address
+        )
+
+    # Create legendary pokemon data
+    for name, legendary_data in extracted_data["legendary_pokemon"].items():
+        species = {"firered": legendary_data["species"]}
+        address = {"firered": legendary_data["address"]}
+
+        data.legendary_pokemon[name] = MiscPokemonData(
+            species,
+            legendary_data["level"],
+            address
+        )
+
+    # Create misc pokemon data
+    for name, misc_data in extracted_data["misc_pokemon"].items():
+        species = {"firered": misc_data["species"]}
+        address = {"firered": misc_data["address"]}
+        if misc_data["level"] != 0:
+            level = misc_data["level"]
+        else:
+            level = None
+
+        data.misc_pokemon[name] = MiscPokemonData(
+            species,
+            level,
+            address
+        )
 
     add_leafgreen_data()
     add_firered_rev1_data()

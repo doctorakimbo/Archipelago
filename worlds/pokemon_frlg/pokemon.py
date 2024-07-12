@@ -1,7 +1,8 @@
 import math
-from typing import TYPE_CHECKING, Dict, List, Optional, Set
-from .data import data, NUM_REAL_SPECIES, EncounterTableData, SpeciesData
-from .options import RandomizeWildPokemon, WildPokemonGroups
+from typing import TYPE_CHECKING, Dict, List, Set
+from .data import data, NUM_REAL_SPECIES, EventData, SpeciesData
+from .options import (RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters, RandomizeWildPokemon,
+                      WildPokemonGroups)
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -65,6 +66,20 @@ DUNGEON_GROUPS: Dict[str, str] = {
     "MAP_CERULEAN_CAVE_B1F": "MAP_CERULEAN_CAVE"
 }
 
+STARTER_INDEX: Dict[str, int] = {
+    "STARTER_POKEMON_BULBASAUR": 0,
+    "STARTER_POKEMON_CHARMANDER": 1,
+    "STARTER_POKEMON_SQUIRTLE": 2
+}
+
+NON_STATIC_MISC_POKEMON: List[str] = {
+    "CELADON_PRIZE_POKEMON_1",
+    "CELADON_PRIZE_POKEMON_2",
+    "CELADON_PRIZE_POKEMON_3",
+    "CELADON_PRIZE_POKEMON_4",
+    "CELADON_PRIZE_POKEMON_5"
+}
+
 
 def filter_species_by_nearby_bst(species: List[SpeciesData], target_bst: int) -> List[SpeciesData]:
     # Sort by difference in bst, then chop off the tail of the list that's more than
@@ -119,28 +134,28 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
     for map_name in map_names:
         map_data = world.modified_maps[map_name]
 
-        new_encounters: List[Optional[EncounterTableData]] = [None, None, None]
-        old_encounters = [map_data.land_encounters[game_version],
-                          map_data.water_encounters[game_version],
-                          map_data.fishing_encounters[game_version]]
+        new_encounter_slots: List[List[int]] = [None, None, None]
+        old_encounters = [map_data.land_encounters,
+                          map_data.water_encounters,
+                          map_data.fishing_encounters]
 
         # Check if the current map is a Route 21 map and the other one has already been randomized.
         # If so, set the encounters of the current map based on teh other Route 21 map.
         if map_name == "MAP_ROUTE21_NORTH" and route_21_randomized:
-            map_data.land_encounters[game_version] =\
-                world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters[game_version]
-            map_data.water_encounters[game_version] =\
-                world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters[game_version]
-            map_data.fishing_encounters[game_version] =\
-                world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters[game_version]
+            map_data.land_encounters.slots[game_version] =\
+                world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots[game_version]
+            map_data.water_encounters.slots[game_version] =\
+                world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots[game_version]
+            map_data.fishing_encounters.slots[game_version] =\
+                world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots[game_version]
             continue
         elif map_name == "MAP_ROUTE21_SOUTH" and route_21_randomized:
-            map_data.land_encounters[game_version] = \
-                world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters[game_version]
-            map_data.water_encounters[game_version] = \
-                world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters[game_version]
-            map_data.fishing_encounters[game_version] = \
-                world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters[game_version]
+            map_data.land_encounters.slots[game_version] =\
+                world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots[game_version]
+            map_data.water_encounters.slots[game_version] =\
+                world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots[game_version]
+            map_data.fishing_encounters.slots[game_version] =\
+                world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots[game_version]
             continue
 
         if map_name == "MAP_ROUTE21_NORTH" or map_name == "MAP_ROUTE21_SOUTH":
@@ -152,7 +167,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                 # instead of just randomizing every slot.
                 # Force area 1-to-1 mapping, in other words.
                 species_old_to_new_map: Dict[int, int] = {}
-                for species_id in table.slots:
+                for species_id in table.slots[game_version]:
                     if species_id not in species_old_to_new_map:
                         if (world.options.wild_pokemon_groups == WildPokemonGroups.option_species and
                                 species_id in species_map):
@@ -226,11 +241,128 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
 
                 # Actually create the new list of slots and encounter table
                 new_slots: List[int] = []
-                for species_id in table.slots:
+                for species_id in table.slots[game_version]:
                     new_slots.append(species_old_to_new_map[species_id])
 
-                new_encounters[i] = EncounterTableData(new_slots, table.address)
+                new_encounter_slots[i] = new_slots
 
-        map_data.land_encounters[game_version] = new_encounters[0]
-        map_data.water_encounters[game_version] = new_encounters[1]
-        map_data.fishing_encounters[game_version] = new_encounters[2]
+        if map_data.land_encounters is not None:
+            map_data.land_encounters.slots[game_version] = new_encounter_slots[0]
+        if map_data.water_encounters is not None:
+            map_data.water_encounters.slots[game_version] = new_encounter_slots[1]
+        if map_data.fishing_encounters is not None:
+            map_data.fishing_encounters.slots[game_version] = new_encounter_slots[2]
+
+
+def randomize_starters(world: "PokemonFRLGWorld") -> None:
+    if world.options.starters == RandomizeStarters.option_vanilla:
+        return
+
+    should_match_bst = world.options.starters in {
+        RandomizeStarters.option_match_base_stats,
+        RandomizeStarters.option_match_base_stats_and_type,
+    }
+    should_match_type = world.options.starters in {
+        RandomizeStarters.option_match_type,
+        RandomizeStarters.option_match_base_stats_and_type,
+    }
+
+    for name, starter in world.modified_starters.items():
+        original_starter = data.species[starter.species_id]
+
+        type_blacklist = {
+            species.species_id
+            for species in world.modified_species.values()
+            if not bool(set(species.types) & set(original_starter.types))
+        } if should_match_type else set()
+
+        candidates = [
+            species
+            for species in world.modified_species.values()
+            if species.species_id not in type_blacklist
+        ]
+
+        if should_match_bst:
+            candidates = filter_species_by_nearby_bst(candidates, sum(original_starter.base_stats))
+
+        new_starter = world.random.choice(candidates)
+        starter.species_id = new_starter.species_id
+
+
+def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
+    if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla:
+        return
+
+    game_version = world.options.game_version.current_key
+
+    should_match_bst = world.options.legendary_pokemon in {
+        RandomizeLegendaryPokemon.option_match_base_stats,
+        RandomizeLegendaryPokemon.option_match_base_stats_and_type
+    }
+    should_match_type = world.options.legendary_pokemon in {
+        RandomizeLegendaryPokemon.option_match_type,
+        RandomizeLegendaryPokemon.option_match_base_stats_and_type
+    }
+
+    for name, legendary in data.legendary_pokemon.items():
+        original_species = world.modified_species[legendary.species_id[game_version]]
+
+        candidates = list(world.modified_species.values())
+        if should_match_type:
+            candidates = [
+                species
+                for species in candidates
+                if bool(set(species.types) & set(original_species.types))
+            ]
+        if should_match_bst:
+            candidates = filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
+
+        world.modified_legendary_pokemon[name].species_id[game_version] = world.random.choice(candidates).species_id
+
+
+def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
+    if world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla:
+        return
+
+    game_version = world.options.game_version.current_key
+
+    should_match_bst = world.options.legendary_pokemon in {
+        RandomizeLegendaryPokemon.option_match_base_stats,
+        RandomizeLegendaryPokemon.option_match_base_stats_and_type
+    }
+    should_match_type = world.options.legendary_pokemon in {
+        RandomizeLegendaryPokemon.option_match_type,
+        RandomizeLegendaryPokemon.option_match_base_stats_and_type
+    }
+
+    for name, misc_pokemon in data.misc_pokemon.items():
+        original_species = world.modified_species[misc_pokemon.species_id[game_version]]
+
+        candidates = list(world.modified_species.values())
+        if should_match_type:
+            candidates = [
+                species
+                for species in candidates
+                if bool(set(species.types) & set(original_species.types))
+            ]
+        if should_match_bst:
+            candidates = filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
+
+        world.modified_misc_pokemon[name].species_id[game_version] = world.random.choice(candidates).species_id
+
+    # Update the events that correspond to the misc pokemon
+    for name, misc_pokemon in world.modified_misc_pokemon.items():
+        if name not in world.modified_events:
+            continue
+
+        species = world.modified_species[misc_pokemon.species_id[game_version]]
+        item = f'{species.name}' if name in NON_STATIC_MISC_POKEMON else f'Static {species.name}'
+
+        new_event = EventData(
+            world.modified_events[name].id,
+            world.modified_events[name].name,
+            item,
+            world.modified_events[name].parent_region_id
+        )
+
+        world.modified_events[name] = new_event
