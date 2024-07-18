@@ -8,8 +8,8 @@ from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
 from .items import reverse_offset_item_value
-from .options import (GameRevision, ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
-                      RandomizeStarters, RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock)
+from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters,
+                      RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock)
 from .pokemon import STARTER_INDEX
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -97,7 +97,7 @@ def write_tokens(world: "PokemonFRLGWorld",
                               PokemonLeafGreenProcedurePatch,
                               PokemonLeafGreenRev1ProcedurePatch]) -> None:
     game_version = world.options.game_version.current_key
-    if world.options.game_revision == GameRevision.option_rev0:
+    if type(patch) is PokemonFireRedProcedurePatch or type(patch) is PokemonLeafGreenProcedurePatch:
         game_version_revision = game_version
     else:
         game_version_revision = f'{game_version}_rev1'

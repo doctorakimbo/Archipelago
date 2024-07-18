@@ -3,6 +3,8 @@ Archipelago World definition for Pokemon FireRed/LeafGreen
 """
 import copy
 import os.path
+import tempfile
+import zipfile
 
 import settings
 import pkgutil
@@ -15,7 +17,7 @@ from .data import data as frlg_data, EventData, MapData, MiscPokemonData, Specie
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, GameVersion, GameRevision, RandomizeWildPokemon, ShuffleHiddenItems,
+from .options import (PokemonFRLGOptions, GameVersion, RandomizeWildPokemon, ShuffleHiddenItems,
                       ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import randomize_legendaries, randomize_misc_pokemon, randomize_starters, randomize_wild_encounters
 from .rom import (write_tokens, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
@@ -217,29 +219,34 @@ class PokemonFRLGWorld(World):
             species.catch_rate = max(species.catch_rate, min_catch_rate)
 
         if self.options.game_version == GameVersion.option_firered:
-            if self.options.game_revision == GameRevision.option_rev0:
-                patch = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
-                patch.write_file("base_patch_firered.bsdiff4",
-                                 pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
-            else:
-                patch = PokemonFireRedRev1ProcedurePatch(player=self.player, player_name=self.player_name)
-                patch.write_file("base_patch_firered_rev1.bsdiff4",
-                                 pkgutil.get_data(__name__, "data/base_patch_firered_rev1.bsdiff4"))
+            patch_rev0 = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
+            patch_rev0.write_file("base_patch_firered.bsdiff4",
+                                  pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
+            patch_rev1 = PokemonFireRedRev1ProcedurePatch(player=self.player, player_name=self.player_name)
+            patch_rev1.write_file("base_patch_firered_rev1.bsdiff4",
+                                  pkgutil.get_data(__name__, "data/base_patch_firered_rev1.bsdiff4"))
         else:
-            if self.options.game_revision == GameRevision.option_rev0:
-                patch = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
-                patch.write_file("base_patch_leafgreen.bsdiff4",
-                                 pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
-            else:
-                patch = PokemonLeafGreenRev1ProcedurePatch(player=self.player, player_name=self.player_name)
-                patch.write_file("base_patch_leafgreen_rev1.bsdiff4",
-                                 pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
+            patch_rev0 = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
+            patch_rev0.write_file("base_patch_leafgreen.bsdiff4",
+                                  pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
+            patch_rev1 = PokemonLeafGreenRev1ProcedurePatch(player=self.player, player_name=self.player_name)
+            patch_rev1.write_file("base_patch_leafgreen_rev1.bsdiff4",
+                                  pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
 
-        write_tokens(self, patch)
+        write_tokens(self, patch_rev0)
+        write_tokens(self, patch_rev1)
 
         # Write output
         out_file_name = self.multiworld.get_out_file_name_base(self.player)
-        patch.write(os.path.join(output_directory, f'{out_file_name}{patch.patch_file_ending}'))
+        output = tempfile.TemporaryDirectory()
+        with output as temp_dir:
+            patch_rev0.write(os.path.join(temp_dir, f'{out_file_name}{patch_rev0.patch_file_ending}'))
+            patch_rev1.write(os.path.join(temp_dir, f'{out_file_name}{patch_rev1.patch_file_ending}'))
+            zip_file_name = os.path.join(output_directory, out_file_name + ".zip")
+            with zipfile.ZipFile(zip_file_name, mode='w', compression=zipfile.ZIP_DEFLATED,
+                                 compresslevel=9) as zf:
+                for file in os.scandir(temp_dir):
+                    zf.write(file.path, arcname=file.name)
 
         del self.modified_species
         del self.modified_maps

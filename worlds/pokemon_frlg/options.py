@@ -15,16 +15,6 @@ class GameVersion(Choice):
     default = "random"
 
 
-class GameRevision(Choice):
-    """
-    Select FireRed or LeafGreen revision.
-    """
-    display_name = "Game Revision"
-    default = 0
-    option_rev0 = 0
-    option_rev1 = 1
-
-
 class ShuffleBadges(Toggle):
     """
     Shuffle Gym Badges into the general item pool. If turned off, Badges will be shuffled among themselves.
@@ -473,7 +463,6 @@ class ReceiveItemMessages(Choice):
 @dataclass
 class PokemonFRLGOptions(PerGameCommonOptions):
     game_version: GameVersion
-    game_revision: GameRevision
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
