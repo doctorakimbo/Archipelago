@@ -1,10 +1,12 @@
 """
 Classes and functions related to creating a ROM patch
 """
+import os
 import struct
 import logging
+import zipfile
 from typing import TYPE_CHECKING, List, Tuple, Union
-from worlds.Files import APProcedurePatch, APTokenMixin, APTokenTypes
+from worlds.Files import APContainer, APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data
 from .items import reverse_offset_item_value
@@ -13,6 +15,20 @@ from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMi
 from .pokemon import STARTER_INDEX
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
+
+
+class FRLGContainer(APContainer):
+    game = "Pokemon FireRed and LeafGreen"
+
+    def __init__(self, patch_path: str, output_path: str, player=None, player_name: str = "", server: str = ""):
+        self.patch_path = patch_path
+        container_path = output_path + ".zip"
+        super().__init__(container_path, player, player_name, server)
+
+    def write_contents(self, opened_zipfile: zipfile.ZipFile) -> None:
+        for file in os.scandir(self.patch_path):
+            opened_zipfile.write(file.path, arcname=file.name)
+        super().write_contents(opened_zipfile)
 
 
 class PokemonFireRedProcedurePatch(APProcedurePatch, APTokenMixin):

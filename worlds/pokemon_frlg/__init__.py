@@ -4,7 +4,7 @@ Archipelago World definition for Pokemon FireRed/LeafGreen
 import copy
 import os.path
 import tempfile
-import zipfile
+import Utils
 
 import settings
 import pkgutil
@@ -20,7 +20,7 @@ from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_
 from .options import (PokemonFRLGOptions, GameVersion, RandomizeWildPokemon, ShuffleHiddenItems,
                       ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import randomize_legendaries, randomize_misc_pokemon, randomize_starters, randomize_wild_encounters
-from .rom import (write_tokens, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
+from .rom import (write_tokens, FRLGContainer, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
 
@@ -242,11 +242,12 @@ class PokemonFRLGWorld(World):
         with output as temp_dir:
             patch_rev0.write(os.path.join(temp_dir, f'{out_file_name}{patch_rev0.patch_file_ending}'))
             patch_rev1.write(os.path.join(temp_dir, f'{out_file_name}{patch_rev1.patch_file_ending}'))
-            zip_file_name = os.path.join(output_directory, out_file_name + ".zip")
-            with zipfile.ZipFile(zip_file_name, mode='w', compression=zipfile.ZIP_DEFLATED,
-                                 compresslevel=9) as zf:
-                for file in os.scandir(temp_dir):
-                    zf.write(file.path, arcname=file.name)
+            zip_file_name = f"AP-{self.multiworld.seed_name}-P{self.player}-{self.multiworld.get_file_safe_player_name(self.player)}"
+            frlg_container = FRLGContainer(temp_dir,
+                                           os.path.join(output_directory, zip_file_name + "_" + Utils.__version__),
+                                           self.player,
+                                           self.multiworld.get_file_safe_player_name(self.player))
+            frlg_container.write()
 
         del self.modified_species
         del self.modified_maps
