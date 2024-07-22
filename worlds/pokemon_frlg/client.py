@@ -56,6 +56,42 @@ TRACKER_EVENT_FLAGS = [
 EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_EVENT_FLAGS}
 
 
+MAP_SECTION_EDGES: Dict[str, List[Tuple[int, int]]] = {
+    "MAP_ROUTE2": [(23, 39)],
+    "MAP_ROUTE3": [(41, 19)],
+    "MAP_ROUTE4": [(55, 19)],
+    "MAP_ROUTE8": [(31, 19)],
+    "MAP_ROUTE9": [(35, 19)],
+    "MAP_ROUTE10": [(23, 31)],
+    "MAP_ROUTE11": [(36, 19)],
+    "MAP_ROUTE12": [(23, 41), (23, 83)],
+    "MAP_ROUTE13": [(36, 19)],
+    "MAP_ROUTE14": [(23, 29)],
+    "MAP_ROUTE15": [(35, 19)],
+    "MAP_ROUTE17": [(23, 39), (23, 79), (23, 119)],
+    "MAP_ROUTE18": [(29, 19)],
+    "MAP_ROUTE19": [(23, 29)],
+    "MAP_ROUTE20": [(39, 19), (79, 19)],
+    "MAP_ROUTE23": [(23, 39), (23, 79), (23, 119)],
+    "MAP_ROUTE25": [(35, 29)],
+    "MAP_VIRIDIAN_FOREST": [(53, 35)],
+    "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL": [(7, 31)],
+    "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL": [(39, 6)],
+    "MAP_ONE_ISLAND_KINDLE_ROAD": [(23, 29), (23, 65), (23, 101)],
+    "MAP_THREE_ISLAND_BOND_BRIDGE": [(45, 19)],
+    "MAP_FIVE_ISLAND_MEMORIAL_PILLAR": [(23, 34)],
+    "MAP_FIVE_ISLAND_WATER_LABYRINTH": [(35, 19)],
+    "MAP_FIVE_ISLAND_RESORT_GORGEOUS": [(36, 19)],
+    "MAP_SIX_ISLAND_WATER_PATH": [(23, 33), (23, 65)],
+    "MAP_SIX_ISLAND_GREEN_PATH": [(35, 19)],
+    "MAP_SIX_ISLAND_OUTCAST_ISLAND": [(23, 39)],
+    "MAP_SEVEN_ISLAND_SEVAULT_CANYON": [(23, 39)],
+    "MAP_SEVEN_ISLAND_TANOBY_RUINS": [(37, 19), (68, 19), (96, 19)],
+    "MAP_NAVEL_ROCK_FORK": [(29, 33), (29, 65)]
+}
+SECTION_EDGES_MAP = {data.constants[map_name]: map_name for map_name in MAP_SECTION_EDGES}
+
+
 class PokemonFRLGClient(BizHawkClient):
     game = "Pokemon FireRed and LeafGreen"
     system = "GBA"
@@ -64,6 +100,7 @@ class PokemonFRLGClient(BizHawkClient):
     local_checked_locations: Set[int]
     local_set_events: Dict[str, bool]
     caught_pokemon: int
+    current_map: Tuple[int, int]
 
     def __init__(self) -> None:
         super().__init__()
@@ -71,6 +108,7 @@ class PokemonFRLGClient(BizHawkClient):
         self.local_checked_locations = set()
         self.local_set_events = {}
         self.caught_pokemon = 0
+        self.current_map = (0, 0)
 
     async def validate_rom(self, ctx: "BizHawkClientContext") -> bool:
         from CommonClient import logger
@@ -151,6 +189,7 @@ class PokemonFRLGClient(BizHawkClient):
             sb2_address = int.from_bytes(guards["SAVE BLOCK 2"][1], "little")
 
             await self.handle_received_items(ctx, guards)
+            await self.handle_map_update(ctx, guards)
 
             # Read flags in 2 chunks
             read_result = await bizhawk.guarded_read(
@@ -263,7 +302,8 @@ class PokemonFRLGClient(BizHawkClient):
             # Exit handler and return to main loop to reconnect
             pass
 
-    async def handle_received_items(self, ctx: "BizHawkClientContext",
+    async def handle_received_items(self,
+                                    ctx: "BizHawkClientContext",
                                     guards: Dict[str, Tuple[int, bytes, str]]) -> None:
         """
         Checks the index of the most recently received item and whether the item queue is full. Writes the next item
@@ -296,3 +336,50 @@ class PokemonFRLGClient(BizHawkClient):
                 (received_item_address + 4, [1], "System Bus"),
                 (received_item_address + 5, [should_display], "System Bus")
             ])
+
+    async def handle_map_update(self, ctx: "BizHawkClientContext", guards: Dict[str, Tuple[int, bytes, str]]) -> None:
+        """
+        Sends updates to the tracker about which map the player is currently in.
+        """
+        sb1_address = int.from_bytes(guards["SAVE BLOCK 1"][1], "little")
+
+        read_result = await bizhawk.guarded_read(
+            ctx.bizhawk_ctx,
+            [
+                (sb1_address, 2, "System Bus"),
+                (sb1_address + 0x2, 2, "System Bus"),
+                (sb1_address + 0x4, 2, "System Bus")
+            ],
+            [guards["SAVE BLOCK 1"]]
+        )
+
+        if read_result is None:  # Save block moved
+            return
+
+        x_pos = int.from_bytes(read_result[0], "little")
+        y_pos = int.from_bytes(read_result[1], "little")
+        map_id = int.from_bytes(read_result[2], "big")
+        if map_id in SECTION_EDGES_MAP:
+            section_id = get_map_section(x_pos, y_pos, MAP_SECTION_EDGES[SECTION_EDGES_MAP[map_id]])
+        else:
+            section_id = 0
+        if self.current_map[0] != map_id or self.current_map[1] != section_id:
+            self.current_map = [map_id, section_id]
+            await ctx.send_msgs([{
+                "cmd": "Bounce",
+                "slots": [ctx.slot],
+                "tags": ["Tracker"],
+                "data": {
+                    "type": "MapUpdate",
+                    "mapId": map_id,
+                    "sectionId": section_id
+                }
+            }])
+
+
+def get_map_section(x_pos: int, y_pos: int, map_section_edges: List[Tuple[int, int]]) -> int:
+    section_id = 0
+    for edge_coords in map_section_edges:
+        if x_pos > edge_coords[0] or y_pos > edge_coords[1]:
+            section_id += 1
+    return section_id
