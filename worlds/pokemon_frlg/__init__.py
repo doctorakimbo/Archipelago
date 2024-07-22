@@ -1,5 +1,5 @@
 """
-Archipelago World definition for Pokemon FireRed/LeafGreen
+Archipelago World definition for Pokémon FireRed/LeafGreen
 """
 import copy
 import os.path
@@ -27,7 +27,7 @@ from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
 
 class PokemonFRLGWebWorld(WebWorld):
     """
-    Webhost info for Pokemon FireRed and LeafGreen
+    Webhost info for Pokémon FireRed and LeafGreen
     """
     setup_en = Tutorial(
         "Multiworld Setup Guide",
@@ -43,33 +43,41 @@ class PokemonFRLGWebWorld(WebWorld):
 
 class PokemonFRLGSettings(settings.Group):
     class PokemonFireRedRomFile(settings.UserFilePath):
-        """File name of your English Pokemon FireRed ROM"""
+        """File name of your English Pokémon FireRed ROM"""
         description = "Pokemon FireRed ROM File"
         copy_to = "Pokemon - FireRed Version (USA, Europe).gba"
         md5s = [PokemonFireRedProcedurePatch.hash]
 
     class PokemonFireRedRev1RomFile(settings.UserFilePath):
-        """File name of your English Pokemon FireRed (Rev 1) ROM"""
+        """File name of your English Pokémon FireRed (Rev 1) ROM"""
         description = "Pokemon FireRed (Rev 1) ROM File"
         copy_to = "Pokemon - FireRed Version (USA, Europe) (Rev 1).gba"
         md5s = [PokemonFireRedRev1ProcedurePatch.hash]
 
     class PokemonLeafGreenRomFile(settings.UserFilePath):
-        """File name of your English Pokemon LeafGreen ROM"""
+        """File name of your English Pokémon LeafGreen ROM"""
         description = "Pokemon LeafGreen ROM File"
         copy_to = "Pokemon - LeafGreen Version (USA, Europe).gba"
         md5s = [PokemonLeafGreenProcedurePatch.hash]
 
     class PokemonLeafGreenRev1RomFile(settings.UserFilePath):
-        """File name of your English Pokemon LeafGreen (Rev 1) ROM"""
+        """File name of your English Pokémon LeafGreen (Rev 1) ROM"""
         description = "Pokemon LeafGreen (Rev 1) ROM File"
         copy_to = "Pokemon - LeafGreen Version (USA, Europe) (Rev 1).gba"
         md5s = [PokemonLeafGreenRev1ProcedurePatch.hash]
 
-    firered_rom_file: PokemonFireRedRomFile = PokemonFireRedRomFile(PokemonFireRedRomFile.copy_to)
-    firered_rev1_rom_file: PokemonFireRedRev1RomFile = PokemonFireRedRev1RomFile(PokemonFireRedRev1RomFile.copy_to)
-    leafgreen_rom_file: PokemonLeafGreenRomFile = PokemonLeafGreenRomFile(PokemonLeafGreenRomFile.copy_to)
-    leafgreen_rev1_rom_file: PokemonLeafGreenRev1RomFile = PokemonLeafGreenRev1RomFile(PokemonLeafGreenRev1RomFile.copy_to)
+    firered_rom_file: PokemonFireRedRomFile = PokemonFireRedRomFile(
+        PokemonFireRedRomFile.copy_to
+    )
+    firered_rev1_rom_file: PokemonFireRedRev1RomFile = PokemonFireRedRev1RomFile(
+        PokemonFireRedRev1RomFile.copy_to
+    )
+    leafgreen_rom_file: PokemonLeafGreenRomFile = PokemonLeafGreenRomFile(
+        PokemonLeafGreenRomFile.copy_to
+    )
+    leafgreen_rev1_rom_file: PokemonLeafGreenRev1RomFile = PokemonLeafGreenRev1RomFile(
+        PokemonLeafGreenRev1RomFile.copy_to
+    )
 
 
 class PokemonFRLGWorld(World):
@@ -240,9 +248,11 @@ class PokemonFRLGWorld(World):
         out_file_name = self.multiworld.get_out_file_name_base(self.player)
         output = tempfile.TemporaryDirectory()
         with output as temp_dir:
-            patch_rev0.write(os.path.join(temp_dir, f'{out_file_name}{patch_rev0.patch_file_ending}'))
-            patch_rev1.write(os.path.join(temp_dir, f'{out_file_name}{patch_rev1.patch_file_ending}'))
-            zip_file_name = f"AP-{self.multiworld.seed_name}-P{self.player}-{self.multiworld.get_file_safe_player_name(self.player)}"
+            patch_rev0.write(os.path.join(temp_dir, f"{out_file_name}{patch_rev0.patch_file_ending}"))
+            patch_rev1.write(os.path.join(temp_dir, f"{out_file_name}{patch_rev1.patch_file_ending}"))
+            seed_name = self.multiworld.seed_name
+            player_name = self.multiworld.get_file_safe_player_name(self.player)
+            zip_file_name = f"AP-{seed_name}-P{self.player}-{player_name}"
             frlg_container = FRLGContainer(temp_dir,
                                            os.path.join(output_directory, zip_file_name + "_" + Utils.__version__),
                                            self.player,
@@ -259,7 +269,7 @@ class PokemonFRLGWorld(World):
 
     @classmethod
     def stage_post_fill(cls, multiworld):
-        # Change all but one instance of a pokemon in each sphere to useful classification
+        # Change all but one instance of a Pokémon in each sphere to useful classification
         # This cuts down on time calculating the playthrough
         found_mons = set()
         pokemon = set()
@@ -277,7 +287,7 @@ class PokemonFRLGWorld(World):
                         found_mons.add(key)
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
-        # Add pokemon locations to the spoiler log if they are not vanilla
+        # Add Pokémon locations to the spoiler log if they are not vanilla
         if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
             spoiler_handle.write(f"\n\nPokémon Locations ({self.multiworld.player_name[self.player]}):\n\n")
             pokemon_locations: List[PokemonFRLGLocation] = [

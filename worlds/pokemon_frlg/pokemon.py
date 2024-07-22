@@ -180,12 +180,12 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                             original_species = data.species[species_id]
 
                             # Construct progressive tiers of blacklists that can be peeled back if they
-                            # collectively cover too much of the pokedex. A lower index in `blacklists`
+                            # collectively cover too much of the Pokédex. A lower index in `blacklists`
                             # indicates a more important set of species to avoid. Entries at `0` will
                             # always be blacklisted.
                             blacklists: Dict[int, List[Set[int]]] = defaultdict(list)
 
-                            # Blacklist pokemon already on this table
+                            # Blacklist Pokémon already on this table
                             blacklists[0].append(set(species_old_to_new_map.values()))
 
                             # If we are randomizing by groups, blacklist any species that is
@@ -234,7 +234,8 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                                 species_map[original_species.species_id] = new_species_id
                             elif (world.options.wild_pokemon_groups == WildPokemonGroups.option_dungeons and
                                   map_name in DUNGEON_GROUPS):
-                                dungeon_species_map[DUNGEON_GROUPS[map_name]][original_species.species_id] = new_species_id
+                                dungeon_species_map[DUNGEON_GROUPS[map_name]][original_species.species_id] = \
+                                    new_species_id
 
                         species_old_to_new_map[species_id] = new_species_id
                         placed_species.add(new_species_id)
@@ -350,7 +351,7 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
 
         world.modified_misc_pokemon[name].species_id[game_version] = world.random.choice(candidates).species_id
 
-    # Update the events that correspond to the misc pokemon
+    # Update the events that correspond to the misc Pokémon
     for name, misc_pokemon in world.modified_misc_pokemon.items():
         if name not in world.modified_events:
             continue

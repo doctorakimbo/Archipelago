@@ -1,5 +1,5 @@
 """
-Functions related to AP regions for Pokemon FireRed and LeafGreen (see ./data/regions for region definitions)
+Functions related to AP regions for Pokémon FireRed and LeafGreen (see ./data/regions for region definitions)
 """
 from typing import TYPE_CHECKING, Dict, List, Tuple, Optional, Callable
 from BaseClasses import Region, CollectionState, ItemClassification
@@ -42,7 +42,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         """
         Connects the provided region to the corresponding wild encounters for the given parent map.
 
-        Each in-game map may have a non-physical Region for encountering wild pokemon in each of the three categories
+        Each in-game map may have a non-physical Region for encountering wild Pokémon in each of the three categories
         land, water, and fishing. Region data defines whether a given region includes places where those encounters can
         be accessed (i.e. whether the region has tall grass, a river bank, is on water, etc.).
 

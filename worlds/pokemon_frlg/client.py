@@ -45,7 +45,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
     "FLAG_RESCUED_MR_FUJI",
     "FLAG_HIDE_SAFFRON_ROCKETS",  # Liberated Silph Co.
-    "FLAG_SYS_CAN_LINK_WITH_RS",  # Restored Pokemon Network Machine
+    "FLAG_SYS_CAN_LINK_WITH_RS",  # Restored Pokémon Network Machine
     "FLAG_RESCUED_LOSTELLE",
     "FLAG_SEVII_DETOUR_FINISHED",  # Gave Meteorite to Lostelle's Dad
     "FLAG_HIDE_RUIN_VALLEY_SCIENTIST",  # Helped Lorelei in Icefall Cave
@@ -214,7 +214,7 @@ class PokemonFRLGClient(BizHawkClient):
 
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
-                [(sb2_address + 0x028, 0x34, "System Bus")],  # Caught Pokemon
+                [(sb2_address + 0x028, 0x34, "System Bus")],  # Caught Pokémon
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 2"]]
             )
 
@@ -248,7 +248,7 @@ class PokemonFRLGClient(BizHawkClient):
                         if flag_id in EVENT_FLAG_MAP:
                             local_set_events[EVENT_FLAG_MAP[flag_id]] = True
 
-            # Get caught pokemon count
+            # Get caught Pokémon count
             for byte_i, byte in enumerate(pokemon_caught_bytes):
                 for i in range(8):
                     if byte & (1 << i) != 0:
@@ -287,7 +287,7 @@ class PokemonFRLGClient(BizHawkClient):
                 }])
                 self.local_set_events = local_set_events
 
-            # Send caught pokemon amount
+            # Send caught Pokémon amount
             if caught_pokemon != self.caught_pokemon and ctx.slot is not None:
                 await ctx.send_msgs([{
                     "cmd": "Set",

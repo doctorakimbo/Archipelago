@@ -1,7 +1,7 @@
 """
 Pulls data from JSON files in worlds/pokemon_frlg/data/ into classes.
 This also includes marrying automatically extracted data with manually
-defined data (like location labels or usable pokemon species), some cleanup
+defined data (like location labels or usable Pokémon species), some cleanup
 and sorting, and Warp methods.
 """
 import orjson
@@ -214,6 +214,7 @@ class StarterData:
     species_id: int
     player_address: Dict[str, int]
     rival_address: Dict[str, int]
+
 
 @dataclass
 class MiscPokemonData:
@@ -687,13 +688,13 @@ def _init() -> None:
             starter.player_address["leafgreen"] = starter_data["player_address"]
             starter.rival_address["leafgreen"] = starter_data["rival_address"]
 
-        # Add legendary pokemon species and addresses for LeafGreen
+        # Add legendary Pokémon species and addresses for LeafGreen
         for name, legendary in data.legendary_pokemon.items():
             legendary_data = extracted_data["legendary_pokemon"][name]
             legendary.species_id["leafgreen"] = legendary_data["species"]
             legendary.address["leafgreen"] = legendary_data["address"]
 
-        # Add misc pokemon species and addresses for LeafGreen
+        # Add misc Pokémon species and addresses for LeafGreen
         for name, misc in data.misc_pokemon.items():
             misc_data = extracted_data["misc_pokemon"][name]
             misc.species_id["leafgreen"] = misc_data["species"]
@@ -707,11 +708,14 @@ def _init() -> None:
         # Add encounter addresses for FireRed Revision 1
         for map_name, map_json in extracted_data["maps"].items():
             if "land_encounters" in map_json:
-                data.maps[map_name].land_encounters.address["firered_rev1"] = map_json["land_encounters"]["address"]
+                data.maps[map_name].land_encounters.address["firered_rev1"] = \
+                    map_json["land_encounters"]["address"]
             if "water_encounters" in map_json:
-                data.maps[map_name].water_encounters.address["firered_rev1"] = map_json["water_encounters"]["address"]
+                data.maps[map_name].water_encounters.address["firered_rev1"] = \
+                    map_json["water_encounters"]["address"]
             if "fishing_encounters" in map_json:
-                data.maps[map_name].fishing_encounters.address["firered_rev1"] = map_json["fishing_encounters"]["address"]
+                data.maps[map_name].fishing_encounters.address["firered_rev1"] = \
+                    map_json["fishing_encounters"]["address"]
 
             data.maps[map_name].header_address["firered_rev1"] = map_json["header_address"]
 
@@ -732,12 +736,12 @@ def _init() -> None:
             starter.player_address["firered_rev1"] = starter_data["player_address"]
             starter.rival_address["firered_rev1"] = starter_data["rival_address"]
 
-        # Add legendary pokemon addresses for FireRed Revision 1
+        # Add legendary Pokémon addresses for FireRed Revision 1
         for name, legendary in data.legendary_pokemon.items():
             legendary_data = extracted_data["legendary_pokemon"][name]
             legendary.address["firered_rev1"] = legendary_data["address"]
 
-        # Add misc pokemon addresses for FireRed Revision 1
+        # Add misc Pokémon addresses for FireRed Revision 1
         for name, misc in data.misc_pokemon.items():
             misc_data = extracted_data["misc_pokemon"][name]
             misc.address["firered_rev1"] = misc_data["address"]
@@ -750,11 +754,14 @@ def _init() -> None:
         # Add encounter addresses for LeafGreen Revision 1
         for map_name, map_json in extracted_data["maps"].items():
             if "land_encounters" in map_json:
-                data.maps[map_name].land_encounters.address["leafgreen_rev1"] = map_json["land_encounters"]["address"]
+                data.maps[map_name].land_encounters.address["leafgreen_rev1"] = \
+                    map_json["land_encounters"]["address"]
             if "water_encounters" in map_json:
-                data.maps[map_name].water_encounters.address["leafgreen_rev1"] = map_json["water_encounters"]["address"]
+                data.maps[map_name].water_encounters.address["leafgreen_rev1"] = \
+                    map_json["water_encounters"]["address"]
             if "fishing_encounters" in map_json:
-                data.maps[map_name].fishing_encounters.address["leafgreen_rev1"] = map_json["fishing_encounters"]["address"]
+                data.maps[map_name].fishing_encounters.address["leafgreen_rev1"] = \
+                    map_json["fishing_encounters"]["address"]
 
             data.maps[map_name].header_address["leafgreen_rev1"] = map_json["header_address"]
 
@@ -775,12 +782,12 @@ def _init() -> None:
             starter.player_address["leafgreen_rev1"] = starter_data["player_address"]
             starter.rival_address["leafgreen_rev1"] = starter_data["rival_address"]
 
-        # Add legendary pokemon addresses for LeafGreen Revision 1
+        # Add legendary Pokémon addresses for LeafGreen Revision 1
         for name, legendary in data.legendary_pokemon.items():
             legendary_data = extracted_data["legendary_pokemon"][name]
             legendary.address["leafgreen_rev1"] = legendary_data["address"]
 
-        # Add misc pokemon addresses for LeafGreen Revision 1
+        # Add misc Pokémon addresses for LeafGreen Revision 1
         for name, misc in data.misc_pokemon.items():
             misc_data = extracted_data["misc_pokemon"][name]
             misc.address["leafgreen_rev1"] = misc_data["address"]

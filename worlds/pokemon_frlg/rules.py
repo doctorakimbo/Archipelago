@@ -1,5 +1,5 @@
 """
-Logic rule definitions for Pokemon FireRed and LeafGreen
+Logic rule definitions for Pokémon FireRed and LeafGreen
 """
 import math
 from typing import TYPE_CHECKING, List
@@ -769,7 +769,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                 if location.tags is not None and ("Hidden" in location.tags or "HiddenRecurring" in location.tags):
                     add_rule(location, lambda state: state.has("Itemfinder", player))
 
-    # Static Pokemon
+    # Static Pokémon
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_location("Cerulean Trade House - Trade Poliwhirl"), lambda state: state.has("Poliwhirl", player))
     set_rule(get_location("Vermilion Trade House - Trade Spearow"), lambda state: state.has("Spearow", player))
@@ -807,7 +807,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has("Nidorina", player))
         set_rule(get_location("Route 18 East Entrance 2F - Trade Slowbro"), lambda state: state.has("Slowbro", player))
 
-    # Add rules for Pokemon Tower encounters
+    # Add rules for Pokémon Tower encounters
     for i in range(3, 8):
         for j in range(1, 4):
             set_rule(get_location(f'Pokemon Tower {i}F - Land Encounter {j}'),
