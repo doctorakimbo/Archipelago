@@ -13,13 +13,14 @@ from BaseClasses import Tutorial, MultiWorld, ItemClassification
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
-from .data import data as frlg_data, EventData, MapData, MiscPokemonData, SpeciesData, StarterData
+from .data import data as frlg_data, EventData, MapData, MiscPokemonData, SpeciesData, StarterData, TrainerData
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
 from .options import (PokemonFRLGOptions, GameVersion, RandomizeWildPokemon, ShuffleHiddenItems,
                       ShuffleBadges, ViridianCityRoadblock)
-from .pokemon import randomize_legendaries, randomize_misc_pokemon, randomize_starters, randomize_wild_encounters
+from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
+                      randomize_starters, randomize_trainer_parties, randomize_types, randomize_wild_encounters)
 from .rom import (write_tokens, FRLGContainer, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
@@ -111,7 +112,9 @@ class PokemonFRLGWorld(World):
     modified_events: Dict[str, EventData]
     modified_legendary_pokemon: Dict[str, MiscPokemonData]
     modified_misc_pokemon: Dict[str, MiscPokemonData]
+    modified_trainers: Dict[int, TrainerData]
     hm_compatability: Dict[str, List[str]]
+    per_species_tmhm_moves: Dict[int, List[int]]
     trade_pokemon: List[Tuple[str, str]]
     auth: bytes
 
@@ -124,7 +127,9 @@ class PokemonFRLGWorld(World):
         self.modified_events = copy.deepcopy(frlg_data.events)
         self.modified_legendary_pokemon = copy.deepcopy(frlg_data.legendary_pokemon)
         self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
+        self.modified_trainers = copy.deepcopy(frlg_data.trainers)
         self.hm_compatability = {}
+        self.per_species_tmhm_moves = {}
         self.trade_pokemon = list()
 
     @classmethod
@@ -135,6 +140,14 @@ class PokemonFRLGWorld(World):
 
     def get_filler_item_name(self) -> str:
         return "Poke Ball"
+
+    def generate_early(self) -> None:
+        randomize_types(self)
+        randomize_wild_encounters(self)
+        randomize_starters(self)
+        randomize_legendaries(self)
+        randomize_misc_pokemon(self)
+        self._create_hm_compatability_dict()
 
     def create_regions(self) -> None:
         from .regions import create_regions
@@ -161,13 +174,6 @@ class PokemonFRLGWorld(World):
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
         self.multiworld.itempool += itempool
-
-    def generate_early(self) -> None:
-        randomize_wild_encounters(self)
-        randomize_starters(self)
-        randomize_legendaries(self)
-        randomize_misc_pokemon(self)
-        self.create_hm_compatability_dict()
 
     def set_rules(self) -> None:
         from .rules import set_rules
@@ -225,6 +231,10 @@ class PokemonFRLGWorld(World):
         min_catch_rate = min(self.options.min_catch_rate.value, 255)
         for species in self.modified_species.values():
             species.catch_rate = max(species.catch_rate, min_catch_rate)
+
+        randomize_abilities(self)
+        randomize_moves(self)
+        randomize_trainer_parties(self)
 
         if self.options.game_version == GameVersion.option_firered:
             patch_rev0 = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
@@ -341,8 +351,8 @@ class PokemonFRLGWorld(World):
             self.player
         )
 
-    def create_hm_compatability_dict(self):
-        hms = frozenset(["Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"])
+    def _create_hm_compatability_dict(self):
+        hms = frozenset({"Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"})
         for hm in hms:
             self.hm_compatability[hm] = list()
             for species in frlg_data.species.values():

@@ -167,63 +167,6 @@
     "item": "Spawn Unown"
   },
 
-  "EVENT_OPEN_ROCKET_HIDEOUT_B1F_BARRIER": {
-    "name": "Rocket Hideout B1F - Defeat Team Rocket Grunt",
-    "item": "Open Rocket Hideout B1F Barrier"
-  },
-  "EVENT_DROP_SEAFOAM_ISLANDS_1F_BOULDERS": {
-    "name": "Seafoam Islands 1F - Drop Boulders",
-    "item": "Drop Seafoam Islands 1F Boulders"
-  },
-  "EVENT_DROP_SEAFOAM_ISLANDS_B1F_LEFT_BOULDER": {
-    "name": "Seafoam Islands B1F - Drop Left Boulder",
-    "item": "Drop Seafoam Islands B1F Left Boulder"
-  },
-  "EVENT_DROP_SEAFOAM_ISLANDS_B1F_RIGHT_BOULDER": {
-    "name": "Seafoam Islands B1F - Drop Right Boulder",
-    "item": "Drop Seafoam Islands B1F Right Boulder"
-  },
-  "EVENT_DROP_SEAFOAM_ISLANDS_B2F_LEFT_BOULDER": {
-    "name": "Seafoam Islands B2F - Drop Left Boulder",
-    "item": "Drop Seafoam Islands B2F Left Boulder"
-  },
-  "EVENT_DROP_SEAFOAM_ISLANDS_B2F_RIGHT_BOULDER": {
-    "name": "Seafoam Islands B2F - Drop Right Boulder",
-    "item": "Drop Seafoam Islands B2F Right Boulder"
-  },
-  "EVENT_DROP_SEAFOAM_ISLANDS_B3F_BOULDERS": {
-    "name": "Seafoam Islands B3F - Drop Boulders",
-    "item": "Drop Seafoam Islands B3F Boulders"
-  },
-  "EVENT_PRESS_MANSION_1F_STATUE": {
-    "name": "Pokemon Mansion 1F - Press Statue",
-    "item": "Press Pokemon Mansion Statue"
-  },
-  "EVENT_PRESS_MANSION_2F_STATUE": {
-    "name": "Pokemon Mansion 2F - Press Statue",
-    "item": "Press Pokemon Mansion Statue"
-  },
-  "EVENT_PRESS_MANSION_3F_STATUE": {
-    "name": "Pokemon Mansion 3F - Press Statue",
-    "item": "Press Pokemon Mansion Statue"
-  },
-  "EVENT_PRESS_MANSION_B1F_STATUE": {
-    "name": "Pokemon Mansion B1F - Press Statue",
-    "item": "Press Pokemon Mansion Statue"
-  },
-  "EVENT_REMOVE_VICTORY_ROAD_2F_LEFT_ROCKS": {
-    "name": "Victory Road 2F - Remove Left Rocks",
-    "item": "Remove Victory Road Left Rocks"
-  },
-  "EVENT_REMOVE_VICTORY_ROAD_2F_RIGHT_ROCKS": {
-    "name": "Victory Road 2F - Remove Right Rocks",
-    "item": "Remove Victory Road Right Rocks"
-  },
-  "EVENT_DROP_VICTORY_ROAD_3F_BOULDER": {
-    "name": "Victory Road 3F - Drop Boulder",
-    "item": "Drop Victory Road 3F Boulder"
-  },
-
   "TRADE_POKEMON_MR_MIME": {
     "name": "Route 2 Trade House - Trade Abra",
     "item": "Static Mr. Mime"

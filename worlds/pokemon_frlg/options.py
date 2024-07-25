@@ -333,6 +333,25 @@ class RandomizeStarters(Choice):
     option_completely_random = 4
 
 
+class RandomizeTrainerParties(Choice):
+    """
+    Randomizes the Pokémon in all trainers parties.
+
+    - Vanilla: Parties are unchanged
+    - Match Base Stats: Trainer Pokémon are replaced with species with approximately the same BST
+    - Match Type: Trainer Pokémon are replaced with species that share a type with the original
+    - Match Base Stats and Type: Apply both Match Base Stats and Match Type
+    - Completely Random: There are no restrictions
+    """
+    display_name = "Randomize Trainer Parties"
+    default = 0
+    option_vanilla = 0
+    option_match_base_stats = 1
+    option_match_type = 2
+    option_match_base_stats_and_type = 3
+    option_completely_random = 4
+
+
 class RandomizeLegendaryPokemon(Choice):
     """
     Randomizes legendary Pokémon (Mewtwo, Zapdos, Deoxys, etc.). Does not randomize the roamer.
@@ -369,6 +388,54 @@ class RandomizeMiscPokemon(Choice):
     option_match_type = 2
     option_match_base_stats_and_type = 3
     option_completely_random = 4
+
+
+class RandomizeTypes(Choice):
+    """
+    Randomizes the type(s) of every Pokémon. Each species will have the same number of types.
+
+    - Vanilla: Types are unchanged
+    - Shuffle: Types are shuffled globally for all species (e.g. every Water-type Pokémon becomes Fire-type)
+    - Completely Random: Each species has its type(s) randomized
+    - Follow Evolutions: Types are randomized per evolution line instead of per species
+    """
+    display_name = "Randomize Types"
+    default = 0
+    option_vanilla = 0
+    option_shuffle = 1
+    option_completely_random = 2
+    option_follow_evolutions = 3
+
+
+class RandomizeAbilities(Choice):
+    """
+    Randomizes abilities of every species. Each species will have the same number of abilities.
+
+    - Vanilla: Abilities are unchanged
+    - Completely Random: Each species has its abilities randomized
+    - Follow Evolutions: Abilities are randomized, but evolutions that normally retain abilities will still do so
+    """
+    display_name = "Randomize Abilities"
+    default = 0
+    option_vanilla = 0
+    option_completely_random = 1
+    option_follow_evolutions = 2
+
+
+class RandomizeMoves(Choice):
+    """
+    Randomizes the moves a Pokémon learns through leveling.
+    Your starter is guaranteed to have a usable damaging move.
+
+    - Vanilla: Learnset is unchanged
+    - Randomized: Moves are randomized
+    - Start with Four Moves: Moves are randomized and all Pokémon know 4 moves at level 1
+    """
+    display_name = "Randomize Moves"
+    default = 0
+    option_vanilla = 0
+    option_randomized = 1
+    option_start_with_four_moves = 2
 
 
 class ReusableTmsTutors(Toggle):
@@ -492,8 +559,12 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups
     starters: RandomizeStarters
+    trainers: RandomizeTrainerParties
     legendary_pokemon: RandomizeLegendaryPokemon
     misc_pokemon: RandomizeMiscPokemon
+    types: RandomizeTypes
+    abilities: RandomizeAbilities
+    moves: RandomizeMoves
 
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate

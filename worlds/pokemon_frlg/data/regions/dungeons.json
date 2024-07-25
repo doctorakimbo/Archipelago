@@ -989,9 +989,7 @@
       "HIDDEN_ITEM_ROCKET_HIDEOUT_B1F_PP_UP"
     ],
     "events": [],
-    "exits": [
-      "REGION_ROCKET_HIDEOUT_B1F/SOUTHEAST"
-    ],
+    "exits": [],
     "warps": [
       "MAP_ROCKET_HIDEOUT_B1F:0/MAP_CELADON_CITY_GAME_CORNER:1",
       "MAP_ROCKET_HIDEOUT_B1F:1/MAP_ROCKET_HIDEOUT_B2F:1"
@@ -1005,9 +1003,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_OPEN_ROCKET_HIDEOUT_B1F_BARRIER"
-    ],
+    "events": [],
     "exits": [
       "REGION_ROCKET_HIDEOUT_B1F/MAIN",
       "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
@@ -1996,9 +1992,7 @@
     "locations": [
       "ITEM_SEAFOAM_ISLANDS_1F_ICE_HEAL"
     ],
-    "events": [
-      "EVENT_DROP_SEAFOAM_ISLANDS_1F_BOULDERS"
-    ],
+    "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B1F/WEST_DROP",
       "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST_DROP"
@@ -2048,9 +2042,7 @@
     "locations": [
       "ITEM_SEAFOAM_ISLANDS_B1F_REVIVE"
     ],
-    "events": [
-      "EVENT_DROP_SEAFOAM_ISLANDS_B1F_LEFT_BOULDER"
-    ],
+    "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST_DROP"
     ],
@@ -2082,9 +2074,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_DROP_SEAFOAM_ISLANDS_B1F_RIGHT_BOULDER"
-    ],
+    "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST_DROP"
     ],
@@ -2145,9 +2135,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_DROP_SEAFOAM_ISLANDS_B2F_LEFT_BOULDER"
-    ],
+    "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP"
     ],
@@ -2195,9 +2183,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_DROP_SEAFOAM_ISLANDS_B2F_RIGHT_BOULDER"
-    ],
+    "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP"
     ],
@@ -2230,9 +2216,7 @@
     "locations": [
       "HIDDEN_ITEM_SEAFOAM_ISLANDS_B3F_NUGGET"
     ],
-    "events": [
-      "EVENT_DROP_SEAFOAM_ISLANDS_B3F_BOULDERS"
-    ],
+    "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WATER",
       "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER_DROP"
@@ -2405,9 +2389,7 @@
       "ITEM_POKEMON_MANSION_1F_PROTEIN",
       "HIDDEN_ITEM_POKEMON_MANSION_1F_MOON_STONE"
     ],
-    "events": [
-      "EVENT_PRESS_MANSION_1F_STATUE"
-    ],
+    "events": [],
     "exits": [],
     "warps": [
       "MAP_POKEMON_MANSION_1F:0/MAP_CINNABAR_ISLAND:0",
@@ -2473,9 +2455,7 @@
       "ITEM_POKEMON_MANSION_2F_CALCIUM",
       "ITEM_POKEMON_MANSION_2F_ZINC"
     ],
-    "events": [
-      "EVENT_PRESS_MANSION_2F_STATUE"
-    ],
+    "events": [],
     "exits": [
       "REGION_POKEMON_MANSION_2F/CENTER"
     ],
@@ -2555,9 +2535,7 @@
     "locations": [
       "ITEM_POKEMON_MANSION_3F_IRON"
     ],
-    "events": [
-      "EVENT_PRESS_MANSION_3F_STATUE"
-    ],
+    "events": [],
     "exits": [
       "REGION_POKEMON_MANSION_3F/SOUTHEAST"
     ],
@@ -2599,9 +2577,7 @@
       "ITEM_POKEMON_MANSION_B1F_TM22",
       "HIDDEN_ITEM_POKEMON_MANSION_B1F_ELIXIR"
     ],
-    "events": [
-      "EVENT_PRESS_MANSION_B1F_STATUE"
-    ],
+    "events": [],
     "exits": [],
     "warps": [
       "MAP_POKEMON_MANSION_B1F:0/MAP_POKEMON_MANSION_1F:2"
@@ -2652,9 +2628,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_REMOVE_VICTORY_ROAD_2F_LEFT_ROCKS"
-    ],
+    "events": [],
     "exits": [
       "REGION_VICTORY_ROAD_2F/CENTER"
     ],
@@ -2688,11 +2662,8 @@
       "ITEM_VICTORY_ROAD_2F_TM07",
       "ITEM_VICTORY_ROAD_2F_TM37"
     ],
-    "events": [
-      "EVENT_REMOVE_VICTORY_ROAD_2F_RIGHT_ROCKS"
-    ],
+    "events": [],
     "exits": [
-      "REGION_VICTORY_ROAD_2F/SOUTHWEST",
       "REGION_VICTORY_ROAD_2F/SOUTHEAST"
     ],
     "warps": [
@@ -2708,9 +2679,7 @@
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_VICTORY_ROAD_2F/CENTER"
-    ],
+    "exits": [],
     "warps": [
       "MAP_VICTORY_ROAD_2F:4/MAP_VICTORY_ROAD_3F:3"
     ]
@@ -2776,9 +2745,7 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_DROP_VICTORY_ROAD_3F_BOULDER"
-    ],
+    "events": [],
     "exits": [
       "REGION_VICTORY_ROAD_3F/NORTH",
       "REGION_VICTORY_ROAD_2F/CENTER_DROP"
