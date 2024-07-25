@@ -1,5 +1,5 @@
 """
-Logic rule definitions for Pokemon FireRed and LeafGreen
+Logic rule definitions for Pokémon FireRed and LeafGreen
 """
 import math
 from typing import TYPE_CHECKING, List
@@ -333,8 +333,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Celadon Gym", "Celadon Gym - Tree"), lambda state: can_cut(state))
 
     # Rocket Hideout
-    set_rule(get_entrance("Rocket Hideout B1F", "Rocket Hideout B1F - Southeast"),
-             lambda state: state.has("Open Rocket Hideout B1F Barrier", player))
     set_rule(get_entrance("Rocket Hideout Elevator", "Rocket Hideout B1F - Southeast"),
              lambda state: state.has("Lift Key", player))
     set_rule(get_entrance("Rocket Hideout Elevator", "Rocket Hideout B2F"), lambda state: state.has("Lift Key", player))
@@ -450,60 +448,32 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 20 - Cave S", "Route 20 - West"), lambda state: can_surf(state))
 
     # Seafoam Islands
-    set_rule(get_location("Seafoam Islands 1F - Drop Boulders"), lambda state: can_strength(state))
-    set_rule(get_location("Seafoam Islands B1F - Drop Left Boulder"),
-             lambda state: can_strength(state) and state.has("Drop Seafoam Islands 1F Boulders", player))
-    set_rule(get_location("Seafoam Islands B1F - Drop Right Boulder"),
-             lambda state: can_strength(state) and state.has("Drop Seafoam Islands 1F Boulders", player))
-    set_rule(get_location("Seafoam Islands B2F - Drop Left Boulder"),
-             lambda state: can_strength(state) and state.has("Drop Seafoam Islands B1F Left Boulder", player))
-    set_rule(get_location("Seafoam Islands B2F - Drop Right Boulder"),
-             lambda state: can_strength(state) and state.has("Drop Seafoam Islands B1F Right Boulder", player))
-    set_rule(get_location("Seafoam Islands B3F - Drop Boulders"), lambda state: can_strength(state))
     set_rule(get_entrance("Seafoam Islands B3F - West", "Seafoam Islands B3F - Water"),
              lambda state: can_surf(state) and
-                           state.has("Drop Seafoam Islands B2F Left Boulder", player) and
-                           state.has("Drop Seafoam Islands B2F Right Boulder", player))
+                           can_strength(state) and
+                           state.can_reach("Seafoam Islands 1F", player=player))
     set_rule(get_entrance("Seafoam Islands B3F - Southeast", "Seafoam Islands B3F - Water"),
              lambda state: can_surf(state) and
-                           state.has("Drop Seafoam Islands B2F Left Boulder", player) and
-                           state.has("Drop Seafoam Islands B2F Right Boulder", player))
+                           can_strength(state) and
+                           state.can_reach("Seafoam Islands 1F", player=player))
     set_rule(get_entrance("Seafoam Islands B3F - Water", "Seafoam Islands B3F - West"),
-             lambda state: state.has("Drop Seafoam Islands B2F Left Boulder", player) and
-                           state.has("Drop Seafoam Islands B2F Right Boulder", player))
+             lambda state: can_strength(state) and
+                           state.can_reach("Seafoam Islands 1F", player=player))
     set_rule(get_entrance("Seafoam Islands B3F - Water", "Seafoam Islands B3F - Southeast"),
-             lambda state: state.has("Drop Seafoam Islands B2F Left Boulder", player) and
-                           state.has("Drop Seafoam Islands B2F Right Boulder", player))
-    set_rule(get_entrance("Seafoam Islands B4F", "Seafoam Islands B4F - Water E"), lambda state: can_surf(state))
+             lambda state: can_strength(state) and
+                           state.can_reach("Seafoam Islands 1F", player=player))
     set_rule(get_entrance("Seafoam Islands B4F", "Seafoam Islands B4F - Water W"),
-             lambda state: can_surf(state) and state.has("Drop Seafoam Islands B3F Boulders", player))
+             lambda state: can_surf(state) and
+                           can_strength(state) and
+                           state.can_reach("Seafoam Islands B3F - West", player=player))
     set_rule(get_entrance("Seafoam Islands B4F - Water W", "Seafoam Islands B4F - Articuno"),
-             lambda state: state.has("Drop Seafoam Islands B3F Boulders", player))
+             lambda state: can_strength(state) and
+                           state.can_reach("Seafoam Islands B3F - West", player=player))
 
     # Cinnabar Island
     set_rule(get_location("Cinnabar Pokemon Center 1F - Bill"), lambda state: state.has("Defeat Blaine", player))
     set_rule(get_entrance("Cinnabar Island", "Cinnabar Island - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Cinnabar Island", "Cinnabar Gym"), lambda state: state.has("Secret Key", player))
-
-    # Pokemon Mansion
-    set_rule(get_location("Pokemon Mansion 1F - Item Behind Gate"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_location("Pokemon Mansion B1F - Northwest Room Item"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_location("Pokemon Mansion B1F - West Room Item"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_entrance("Pokemon Mansion 1F - South", "Pokemon Mansion 1F - Southeast"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_entrance("Pokemon Mansion 1F - Southeast", "Pokemon Mansion 1F - South"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_entrance("Pokemon Mansion 2F", "Pokemon Mansion 2F - Center"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_entrance("Pokemon Mansion 2F - Center", "Pokemon Mansion 2F"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_entrance("Pokemon Mansion 3F - North", "Pokemon Mansion 3F - Southeast"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
-    set_rule(get_entrance("Pokemon Mansion 3F - Southeast", "Pokemon Mansion 3F - North"),
-             lambda state: state.has("Press Pokemon Mansion Statue", player))
 
     # Route 23
     set_rule(get_entrance("Route 23 - South", "Route 23 - Water"), lambda state: can_surf(state))
@@ -513,19 +483,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Victory Road
     set_rule(get_location("Victory Road 1F - North Item (Left)"), lambda state: can_strength(state))
     set_rule(get_location("Victory Road 1F - North Item (Right)"), lambda state: can_strength(state))
-    set_rule(get_location("Victory Road 2F - Remove Left Rocks"), lambda state: can_strength(state))
-    set_rule(get_location("Victory Road 2F - Remove Right Rocks"),
-             lambda state: can_strength(state) and state.has("Drop Victory Road 3F Boulder", player))
-    set_rule(get_location("Victory Road 3F - Drop Boulder"), lambda state: can_strength(state))
     set_rule(get_entrance("Victory Road 1F - South", "Victory Road 1F - North"), lambda state: can_strength(state))
     set_rule(get_entrance("Victory Road 1F - North", "Victory Road 1F - South"), lambda state: can_strength(state))
     set_rule(get_entrance("Victory Road 2F - Southwest", "Victory Road 2F - Center"), lambda state: can_strength(state))
-    set_rule(get_entrance("Victory Road 2F - Center", "Victory Road 2F - Southwest"),
-             lambda state: state.has("Remove Victory Road 2F Left Rocks", player))
     set_rule(get_entrance("Victory Road 2F - Center", "Victory Road 2F - Southeast"),
-             lambda state: can_strength(state) and state.has("Drop Victory Road 3F Boulder", player))
-    set_rule(get_entrance("Victory Road 2F - Southeast", "Victory Road 2F - Center"),
-             lambda state: state.has("Remove Victory Road 2F Right Rocks", player))
+             lambda state: can_strength(state) and
+                           state.can_reach("Victory Road 3F - Southwest", player=player))
     set_rule(get_entrance("Victory Road 2F - Northwest", "Victory Road 2F - Southwest"),
              lambda state: can_strength(state))
     set_rule(get_entrance("Victory Road 3F - North", "Victory Road 3F - Southwest"), lambda state: can_strength(state))
@@ -769,7 +732,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                 if location.tags is not None and ("Hidden" in location.tags or "HiddenRecurring" in location.tags):
                     add_rule(location, lambda state: state.has("Itemfinder", player))
 
-    # Static Pokemon
+    # Static Pokémon
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_location("Cerulean Trade House - Trade Poliwhirl"), lambda state: state.has("Poliwhirl", player))
     set_rule(get_location("Vermilion Trade House - Trade Spearow"), lambda state: state.has("Spearow", player))
@@ -807,7 +770,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has("Nidorina", player))
         set_rule(get_location("Route 18 East Entrance 2F - Trade Slowbro"), lambda state: state.has("Slowbro", player))
 
-    # Add rules for Pokemon Tower encounters
+    # Add rules for Pokémon Tower encounters
     for i in range(3, 8):
         for j in range(1, 4):
             set_rule(get_location(f'Pokemon Tower {i}F - Land Encounter {j}'),

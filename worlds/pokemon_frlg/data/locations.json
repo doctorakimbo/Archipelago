@@ -908,7 +908,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM": {
-    "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
+    "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2": {
@@ -916,7 +916,7 @@
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3": {
-    "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
+    "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
     "tags": ["HiddenRecurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM": {

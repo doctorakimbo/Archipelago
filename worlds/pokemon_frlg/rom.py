@@ -5,14 +5,16 @@ import os
 import struct
 import logging
 import zipfile
-from typing import TYPE_CHECKING, List, Tuple, Union
+from typing import TYPE_CHECKING, Dict, List, Tuple, Union
 from worlds.Files import APContainer, APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
-from .data import data
+from .data import data, TrainerPokemonDataTypeEnum
 from .items import reverse_offset_item_value
+from .locations import reverse_offset_flag
 from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters,
-                      RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock)
+                      RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock)
 from .pokemon import STARTER_INDEX
+from .util import encode_string
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -127,6 +129,7 @@ def write_tokens(world: "PokemonFRLGWorld",
         )
 
     # Set item values
+    location_info: List[Tuple[int, int, str]] = []
     for location in world.multiworld.get_locations(world.player):
         if location.address is None:
             continue
@@ -143,6 +146,66 @@ def write_tokens(world: "PokemonFRLGWorld",
                 location.item_address[game_version_revision],
                 struct.pack("<H", data.constants["ITEM_ARCHIPELAGO_PROGRESSION"])
             )
+
+        # Creates a list of item information to store in tables later. Those tables are used to display the item and
+        # player name in a text box. In the case of not enough space, the game will default to "found an ARCHIPELAGO
+        # ITEM"
+        location_info.append((reverse_offset_flag(location.address), location.item.player, location.item.name))
+
+    player_name_ids: Dict[str, int] = {world.player_name: 0}
+    item_name_offsets: Dict[str, int] = {}
+    next_item_name_offset = 0
+    for i, (flag, item_player, item_name) in enumerate(sorted(location_info, key=lambda t: t[0])):
+        player_name = world.multiworld.get_player_name(item_player)
+
+        if player_name not in player_name_ids:
+            # Only space for 50 player names
+            if len(player_name_ids) >= 50:
+                continue
+
+            player_name_ids[player_name] = len(player_name_ids)
+            player_name_address = data.rom_addresses[game_version_revision]["gArchipelagoPlayerNames"]
+            for j, b in enumerate(encode_string(player_name, 17)):
+                patch.write_token(
+                    APTokenTypes.WRITE,
+                    player_name_address + (player_name_ids[player_name] * 17) + j,
+                    struct.pack("<B", b)
+                )
+
+        if item_name not in item_name_offsets:
+            if len(item_name) > 35:
+                item_name = item_name[:34] + "…"
+
+            # Only 36 * 500 bytes for item names
+            if next_item_name_offset + len(item_name) + 1 > 36 * 500:
+                continue
+
+            item_name_offsets[item_name] = next_item_name_offset
+            next_item_name_offset += len(item_name) + 1
+            item_name_address = data.rom_addresses[game_version_revision]["gArchipelagoItemNames"]
+            patch.write_token(
+                APTokenTypes.WRITE,
+                item_name_address + (item_name_offsets[item_name]),
+                encode_string(item_name) + b"\xFF"
+            )
+
+        # There should always be enough space for one entry per location
+        name_table_address = data.rom_addresses[game_version_revision]["gArchipelagoNameTable"]
+        patch.write_token(
+            APTokenTypes.WRITE,
+            name_table_address + (i * 5) + 0,
+            struct.pack("<H", flag)
+        )
+        patch.write_token(
+            APTokenTypes.WRITE,
+            name_table_address + (i * 5) + 2,
+            struct.pack("<H", item_name_offsets[item_name])
+        )
+        patch.write_token(
+            APTokenTypes.WRITE,
+            name_table_address + (i * 5) + 4,
+            struct.pack("<B", player_name_ids[player_name])
+        )
 
     # Set starting items
     start_inventory = world.options.start_inventory.value.copy()
@@ -184,10 +247,7 @@ def write_tokens(world: "PokemonFRLGWorld",
         patch.write_token(APTokenTypes.WRITE, address + 2, struct.pack("<H", slot[1]))
 
     # Set species data
-    for species in world.modified_species.values():
-        if species is not None:
-            address = species.address[game_version_revision]
-            patch.write_token(APTokenTypes.WRITE, address + 8, struct.pack("<B", species.catch_rate))
+    _set_species_info(world, patch, game_version_revision)
 
     # Set wild encounters
     if world.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
@@ -204,6 +264,11 @@ def write_tokens(world: "PokemonFRLGWorld",
     # Set misc pokemon
     if world.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
         _set_misc_pokemon(world, patch, game_version, game_version_revision)
+
+    # Set trainer parties
+    if (world.options.starters != RandomizeStarters.option_vanilla or
+            world.options.trainers != RandomizeTrainerParties.option_vanilla):
+        _set_trainer_parties(world, patch, game_version_revision)
 
     # Options
     # struct
@@ -355,6 +420,27 @@ def write_tokens(world: "PokemonFRLGWorld",
     patch.write_file("token_data.bin", patch.get_token_binary())
 
 
+def _set_species_info(world: "PokemonFRLGWorld",
+                      patch: Union[PokemonFireRedProcedurePatch,
+                                   PokemonFireRedRev1ProcedurePatch,
+                                   PokemonLeafGreenProcedurePatch,
+                                   PokemonLeafGreenRev1ProcedurePatch],
+                      game_version_revision: str) -> None:
+    for species in world.modified_species.values():
+        address = species.address[game_version_revision]
+
+        patch.write_token(APTokenTypes.WRITE, address + 0x06, struct.pack("<B", species.types[0]))
+        patch.write_token(APTokenTypes.WRITE, address + 0x07, struct.pack("<B", species.types[1]))
+        patch.write_token(APTokenTypes.WRITE, address + 0x08, struct.pack("<B", species.catch_rate))
+        patch.write_token(APTokenTypes.WRITE, address + 0x16, struct.pack("<B", species.abilities[0]))
+        patch.write_token(APTokenTypes.WRITE, address + 0x17, struct.pack("<B", species.abilities[1]))
+
+        for i, learnset_move in enumerate(species.learnset):
+            learnset_address = species.learnset_address[game_version_revision]
+            level_move = learnset_move.level << 9 | learnset_move.move_id
+            patch.write_token(APTokenTypes.WRITE, learnset_address + (i * 2), struct.pack("<H", level_move))
+
+
 def _set_wild_encounters(world: "PokemonFRLGWorld",
                          patch: Union[PokemonFireRedProcedurePatch,
                                       PokemonFireRedRev1ProcedurePatch,
@@ -424,3 +510,41 @@ def _set_misc_pokemon(world: "PokemonFRLGWorld",
         patch.write_token(APTokenTypes.WRITE,
                           misc_pokemon.address[game_version_revision],
                           struct.pack("<H", misc_pokemon.species_id[game_version]))
+
+
+def _set_trainer_parties(world: "PokemonFRLGWorld",
+                         patch: Union[PokemonFireRedProcedurePatch,
+                                      PokemonFireRedRev1ProcedurePatch,
+                                      PokemonLeafGreenProcedurePatch,
+                                      PokemonLeafGreenRev1ProcedurePatch],
+                         game_version_revision: str) -> None:
+    for trainer in world.modified_trainers.values():
+        party_address = trainer.party.address[game_version_revision]
+
+        if trainer.party.pokemon_data_type in {TrainerPokemonDataTypeEnum.NO_ITEM_DEFAULT_MOVES,
+                                               TrainerPokemonDataTypeEnum.ITEM_DEFAULT_MOVES}:
+            pokemon_data_size = 8
+        else:
+            pokemon_data_size = 16
+
+        for i, pokemon in enumerate(trainer.party.pokemon):
+            pokemon_address = party_address + (i * pokemon_data_size)
+
+            # Species Id
+            patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x04, struct.pack("<H", pokemon.species_id))
+
+            if trainer.party.pokemon_data_type in {TrainerPokemonDataTypeEnum.NO_ITEM_CUSTOM_MOVES,
+                                                   TrainerPokemonDataTypeEnum.ITEM_CUSTOM_MOVES}:
+                offset = 2 if trainer.party.pokemon_data_type == TrainerPokemonDataTypeEnum.ITEM_CUSTOM_MOVES else 0
+                patch.write_token(APTokenTypes.WRITE,
+                                  pokemon_address + 0x06 + offset,
+                                  struct.pack("<H", pokemon.moves[0]))
+                patch.write_token(APTokenTypes.WRITE,
+                                  pokemon_address + 0x08 + offset,
+                                  struct.pack("<H", pokemon.moves[1]))
+                patch.write_token(APTokenTypes.WRITE,
+                                  pokemon_address + 0x0A + offset,
+                                  struct.pack("<H", pokemon.moves[2]))
+                patch.write_token(APTokenTypes.WRITE,
+                                  pokemon_address + 0x0C + offset,
+                                  struct.pack("<H", pokemon.moves[3]))
