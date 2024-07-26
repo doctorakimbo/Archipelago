@@ -20,7 +20,8 @@ from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_
 from .options import (PokemonFRLGOptions, GameVersion, RandomizeWildPokemon, ShuffleHiddenItems,
                       ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
-                      randomize_starters, randomize_trainer_parties, randomize_types, randomize_wild_encounters)
+                      randomize_starters, randomize_tm_hm_compatability, randomize_trainer_parties, randomize_types,
+                      randomize_wild_encounters)
 from .rom import (write_tokens, FRLGContainer, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
@@ -147,7 +148,8 @@ class PokemonFRLGWorld(World):
         randomize_starters(self)
         randomize_legendaries(self)
         randomize_misc_pokemon(self)
-        self._create_hm_compatability_dict()
+        randomize_tm_hm_compatability(self)
+        self.create_hm_compatability_dict()
 
     def create_regions(self) -> None:
         from .regions import create_regions
@@ -351,11 +353,11 @@ class PokemonFRLGWorld(World):
             self.player
         )
 
-    def _create_hm_compatability_dict(self):
+    def create_hm_compatability_dict(self):
         hms = frozenset({"Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"})
         for hm in hms:
             self.hm_compatability[hm] = list()
-            for species in frlg_data.species.values():
+            for species in self.modified_species.values():
                 combatibility_array = int_to_bool_array(species.tm_hm_compatibility)
                 if combatibility_array[HM_TO_COMPATABILITY_ID[hm]] == 1:
                     self.hm_compatability[hm].append(species.name)

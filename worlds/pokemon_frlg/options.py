@@ -2,7 +2,7 @@
 Option definitions for Pokémon FireRed/LeafGreen
 """
 from dataclasses import dataclass
-from Options import Choice, Range, Toggle, PerGameCommonOptions
+from Options import Choice, NamedRange, Range, Toggle, PerGameCommonOptions
 
 
 class GameVersion(Choice):
@@ -438,6 +438,34 @@ class RandomizeMoves(Choice):
     option_start_with_four_moves = 2
 
 
+class HmCompatibility(NamedRange):
+    """
+    Sets the percent chance that a given HM is compatible with a species.
+    """
+    display_name = "HM Compatibility"
+    default = -1
+    range_start = 50
+    range_end = 100
+    special_range_names = {
+        "vanilla": -1,
+        "full": 100,
+    }
+
+
+class TmTutorCompatibility(NamedRange):
+    """
+    Sets the percent chance that a given TM or move tutor is compatible with a species.
+    """
+    display_name = "TM/Tutor Compatibility"
+    default = -1
+    range_start = 0
+    range_end = 100
+    special_range_names = {
+        "vanilla": -1,
+        "full": 100,
+    }
+
+
 class ReusableTmsTutors(Toggle):
     """
     Sets TMs to not break after use (they remain sellable). Allows Move Tutors to be used infinitely.
@@ -565,6 +593,8 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     types: RandomizeTypes
     abilities: RandomizeAbilities
     moves: RandomizeMoves
+    hm_compatability: HmCompatibility
+    tm_tutor_compatability: TmTutorCompatibility
 
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate

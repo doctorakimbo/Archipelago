@@ -12,9 +12,10 @@ from .data import data, TrainerPokemonDataTypeEnum
 from .items import reverse_offset_item_value
 from .locations import reverse_offset_flag
 from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters,
-                      RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems, ViridianCityRoadblock)
+                      RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems, TmTutorCompatibility,
+                      ViridianCityRoadblock)
 from .pokemon import STARTER_INDEX
-from .util import encode_string
+from .util import bool_array_to_int, encode_string
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -269,6 +270,12 @@ def write_tokens(world: "PokemonFRLGWorld",
     if (world.options.starters != RandomizeStarters.option_vanilla or
             world.options.trainers != RandomizeTrainerParties.option_vanilla):
         _set_trainer_parties(world, patch, game_version_revision)
+
+    # Set TM/HM compatability
+    _set_tmhm_compatibility(world, patch, game_version_revision)
+
+    # Randomize move tutors
+    _randomize_move_tutors(world, patch, game_version_revision)
 
     # Options
     # struct
@@ -548,3 +555,39 @@ def _set_trainer_parties(world: "PokemonFRLGWorld",
                 patch.write_token(APTokenTypes.WRITE,
                                   pokemon_address + 0x0C + offset,
                                   struct.pack("<H", pokemon.moves[3]))
+
+
+def _set_tmhm_compatibility(world: "PokemonFRLGWorld",
+                            patch: Union[PokemonFireRedProcedurePatch,
+                                         PokemonFireRedRev1ProcedurePatch,
+                                         PokemonLeafGreenProcedurePatch,
+                                         PokemonLeafGreenRev1ProcedurePatch],
+                            game_version_revision: str) -> None:
+    learnsets_address = data.rom_addresses[game_version_revision]["sTMHMLearnsets"]
+
+    for species in world.modified_species.values():
+        patch.write_token(
+            APTokenTypes.WRITE,
+            learnsets_address + (species.species_id * 8),
+            struct.pack("<Q", species.tm_hm_compatibility)
+        )
+
+
+def _randomize_move_tutors(world: "PokemonFRLGWorld",
+                           patch: Union[PokemonFireRedProcedurePatch,
+                                        PokemonFireRedRev1ProcedurePatch,
+                                        PokemonLeafGreenProcedurePatch,
+                                        PokemonLeafGreenRev1ProcedurePatch],
+                           game_version_revision: str) -> None:
+    if world.options.tm_tutor_compatability != TmTutorCompatibility.special_range_names["vanilla"]:
+        learnsets_address = data.rom_addresses[game_version_revision]["sTutorLearnsets"]
+
+        for species in world.modified_species.values():
+            patch.write_token(
+                APTokenTypes.WRITE,
+                learnsets_address + (species.species_id * 2),
+                struct.pack("<H", bool_array_to_int([
+                    world.random.randrange(0, 100) < world.options.tm_tutor_compatability.value
+                    for _ in range(16)
+                ]))
+            )

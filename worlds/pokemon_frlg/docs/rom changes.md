@@ -4,7 +4,7 @@
 * With an option set, text will advance while A is held
 * Running is enabled from the beginning of the game
 * Cycling and running is allowed in most maps
-* The game when prompt you to use another repel when one runs out
+* The game will prompt you to use another repel when one runs out
 * Bag and PC space was expanded
 * It is possible to teach over HM moves
 * The Pokédex starts in national mode
