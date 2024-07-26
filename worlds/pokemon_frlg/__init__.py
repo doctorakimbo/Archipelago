@@ -8,12 +8,14 @@ import Utils
 
 import settings
 import pkgutil
-from typing import ClassVar, List, Dict, Any, TextIO, Tuple
+from typing import Any, ClassVar, Dict, List, Set, TextIO, Tuple
+
 from BaseClasses import Tutorial, MultiWorld, ItemClassification
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
-from .data import data as frlg_data, EventData, MapData, MiscPokemonData, SpeciesData, StarterData, TrainerData
+from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
+                   TrainerData)
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
@@ -117,6 +119,11 @@ class PokemonFRLGWorld(World):
     hm_compatability: Dict[str, List[str]]
     per_species_tmhm_moves: Dict[int, List[int]]
     trade_pokemon: List[Tuple[str, str]]
+    blacklisted_wild_pokemon: Set[int]
+    blacklisted_starters: Set[int]
+    blacklisted_trainer_pokemon: Set[int]
+    blacklisted_abilities: Set[int]
+    blacklist_moves: Set[int]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -143,6 +150,30 @@ class PokemonFRLGWorld(World):
         return "Poke Ball"
 
     def generate_early(self) -> None:
+        self.blacklisted_wild_pokemon = {
+            species.species_id for species in self.modified_species.values()
+            if species.name in self.options.wild_pokemon_blacklist.value
+        }
+        if "Legendaries" in self.options.wild_pokemon_blacklist.value:
+            self.blacklisted_wild_pokemon |= LEGENDARY_POKEMON
+
+        self.blacklisted_starters = {
+            species.species_id for species in self.modified_species.values()
+            if species.name in self.options.starter_blacklist.value
+        }
+        if "Legendaries" in self.options.starter_blacklist.value:
+            self.blacklisted_starters |= LEGENDARY_POKEMON
+
+        self.blacklisted_trainer_pokemon = {
+            species.species_id for species in self.modified_species.values()
+            if species.name in self.options.trainer_blacklist.value
+        }
+        if "Legendaries" in self.options.trainer_blacklist.value:
+            self.blacklisted_trainer_pokemon |= LEGENDARY_POKEMON
+
+        self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
+        self.blacklist_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
+
         randomize_types(self)
         randomize_wild_encounters(self)
         randomize_starters(self)
