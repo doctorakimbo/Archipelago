@@ -2,10 +2,10 @@ import math
 from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
 from .data import data, NUM_REAL_SPECIES, EventData, LearnsetMove, SpeciesData, TrainerPokemonData
-from .options import (RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeMoves,
-                      RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
-                      WildPokemonGroups)
-from .util import int_to_bool_array
+from .options import (HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+                      RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
+                      TmTutorCompatibility, WildPokemonGroups)
+from .util import bool_array_to_int, int_to_bool_array
 
 if TYPE_CHECKING:
     from random import Random
@@ -679,3 +679,19 @@ def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
                                                               pokemon.level,
                                                               new_moves,
                                                               False)
+
+
+def randomize_tm_hm_compatability(world: "PokemonFRLGWorld") -> None:
+    for species in world.modified_species.values():
+        compatability_array = int_to_bool_array(species.tm_hm_compatibility)
+
+        if world.options.tm_tutor_compatability != TmTutorCompatibility.special_range_names["vanilla"]:
+            for i in range(0, 50):
+                compatability_array[i] = world.random.random() < world.options.tm_tutor_compatability / 100
+
+        if world.options.hm_compatability != HmCompatibility.special_range_names["vanilla"]:
+            for i in range(50, 58):
+                compatability_array[i] = world.random.random() < world.options.hm_compatability / 100
+
+        species.tm_hm_compatibility = bool_array_to_int(compatability_array)
+
