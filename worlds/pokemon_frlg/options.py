@@ -2,7 +2,8 @@
 Option definitions for Pokémon FireRed/LeafGreen
 """
 from dataclasses import dataclass
-from Options import Choice, NamedRange, Range, Toggle, PerGameCommonOptions
+from Options import Choice, NamedRange, OptionSet, PerGameCommonOptions, Range, Toggle
+from .data import data
 
 
 class GameVersion(Choice):
@@ -314,6 +315,18 @@ class WildPokemonGroups(Choice):
     option_species = 2
 
 
+class WildPokemonBlacklist(OptionSet):
+    """
+    Prevents listed species from appearing in the wild when wild Pokémon are randomized.
+
+    May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
+
+    Use "Legendaries" as a shortcut for all legendary Pokémon.
+    """
+    display_name = "Wild Pokemon Blacklist"
+    valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
+
+
 class RandomizeStarters(Choice):
     """
     Randomizes the starter Pokémon in Professor Oak's Lab.
@@ -333,9 +346,21 @@ class RandomizeStarters(Choice):
     option_completely_random = 4
 
 
+class StarterBlacklist(OptionSet):
+    """
+    Prevents listed species from appearing in the wild when starters are randomized.
+
+    May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
+
+    Use "Legendaries" as a shortcut for all legendary Pokémon.
+    """
+    display_name = "Starter Blacklist"
+    valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
+
+
 class RandomizeTrainerParties(Choice):
     """
-    Randomizes the Pokémon in all trainers parties.
+    Randomizes the Pokémon in all trainer's parties.
 
     - Vanilla: Parties are unchanged
     - Match Base Stats: Trainer Pokémon are replaced with species with approximately the same BST
@@ -350,6 +375,18 @@ class RandomizeTrainerParties(Choice):
     option_match_type = 2
     option_match_base_stats_and_type = 3
     option_completely_random = 4
+
+
+class TrainerPartyBlacklist(OptionSet):
+    """
+    Prevents listed species from appearing in the wild when trainer's parties are randomized.
+
+    May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
+
+    Use "Legendaries" as a shortcut for all legendary Pokémon.
+    """
+    display_name = "Trainer Party Blacklist"
+    valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
 
 
 class RandomizeLegendaryPokemon(Choice):
@@ -422,6 +459,16 @@ class RandomizeAbilities(Choice):
     option_follow_evolutions = 2
 
 
+class AbilityBlacklist(OptionSet):
+    """
+    Prevent species from being given these abilities.
+
+    Has no effect if abilities are not randomized.
+    """
+    display_name = "Ability Blacklist"
+    valid_keys = sorted(data.abilities.keys())
+
+
 class RandomizeMoves(Choice):
     """
     Randomizes the moves a Pokémon learns through leveling.
@@ -436,6 +483,14 @@ class RandomizeMoves(Choice):
     option_vanilla = 0
     option_randomized = 1
     option_start_with_four_moves = 2
+
+
+class MoveBlacklist(OptionSet):
+    """
+    Prevents species from learning these moves via learnsets, TMs, and move tutors.
+    """
+    display_name = "Move Blacklist"
+    valid_keys = sorted(data.moves.keys())
 
 
 class HmCompatibility(NamedRange):
@@ -586,13 +641,18 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups
+    wild_pokemon_blacklist: WildPokemonBlacklist
     starters: RandomizeStarters
+    starter_blacklist: StarterBlacklist
     trainers: RandomizeTrainerParties
+    trainer_blacklist: TrainerPartyBlacklist
     legendary_pokemon: RandomizeLegendaryPokemon
     misc_pokemon: RandomizeMiscPokemon
     types: RandomizeTypes
     abilities: RandomizeAbilities
+    ability_blacklist: AbilityBlacklist
     moves: RandomizeMoves
+    move_blacklist: MoveBlacklist
     hm_compatability: HmCompatibility
     tm_tutor_compatability: TmTutorCompatibility
 
