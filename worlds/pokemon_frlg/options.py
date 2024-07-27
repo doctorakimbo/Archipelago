@@ -348,7 +348,7 @@ class RandomizeStarters(Choice):
 
 class StarterBlacklist(OptionSet):
     """
-    Prevents listed species from appearing in the wild when starters are randomized.
+    Prevents listed species from appearing as a starter when starters are randomized.
 
     May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
 
@@ -379,7 +379,7 @@ class RandomizeTrainerParties(Choice):
 
 class TrainerPartyBlacklist(OptionSet):
     """
-    Prevents listed species from appearing in the wild when trainer's parties are randomized.
+    Prevents listed species from appearing in trainer's parties when trainer's parties are randomized.
 
     May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
 
