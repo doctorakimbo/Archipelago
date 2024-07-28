@@ -16,6 +16,10 @@
     "name": "Pewter City - Visit Pewter City",
     "item": "Fly Pewter City"
   },
+  "EVENT_FLY_ROUTE4": {
+    "name": "Route 4 Pokemon Center 1F - Visit Route 4",
+    "item": "Fly Route 4"
+  },
   "EVENT_FLY_CERULEAN_CITY": {
     "name": "Cerulean City - Visit Cerulean City",
     "item": "Fly Cerulean City"
@@ -23,6 +27,10 @@
   "EVENT_FLY_VERMILION_CITY": {
     "name": "Vermilion City - Visit Vermilion City",
     "item": "Fly Vermilion City"
+  },
+  "EVENT_FLY_ROUTE10": {
+    "name": "Route 10 Pokemon Center 1F - Visit Route 10",
+    "item": "Fly Route 10"
   },
   "EVENT_FLY_LAVENDER_TOWN": {
     "name": "Lavender Town - Visit Lavender Town",
@@ -43,6 +51,10 @@
   "EVENT_FLY_CINNABAR_ISLAND": {
     "name": "Cinnabar Island - Visit Cinnabar Island",
     "item": "Fly Cinnabar Island"
+  },
+  "EVENT_FLY_INDIGO_PLATEAU": {
+    "name": "Indigo Plateau Exterior - Visit Indigo Plateau",
+    "item": "Fly Indigo Plateau"
   },
   "EVENT_FLY_ONE_ISLAND": {
     "name": "One Island - Visit One Island",

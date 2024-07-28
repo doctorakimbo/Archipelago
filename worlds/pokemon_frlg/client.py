@@ -17,10 +17,10 @@ BASE_ROM_NAME: Dict[str, str] = {
 
 
 EXPECTED_ROM_NAME: Dict[str, str] = {
-    "firered": "pokemon red version / AP",
-    "leafgreen": "pokemon green version / AP",
-    "firered_rev1": "pokemon red version / AP Rev 1",
-    "leafgreen_rev1": "pokemon green version / AP Rev 1",
+    "firered": "pokemon red version AP",
+    "leafgreen": "pokemon green version AP",
+    "firered_rev1": "pokemon red version AP Rev 1",
+    "leafgreen_rev1": "pokemon green version AP Rev 1",
 }
 
 

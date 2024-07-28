@@ -283,7 +283,7 @@ class PokemonFRLGData:
     starters: Dict[str, StarterData]
     legendary_pokemon: Dict[str, MiscPokemonData]
     misc_pokemon: Dict[str, MiscPokemonData]
-    trainers: Dict[int, TrainerData]
+    trainers: Dict[str, TrainerData]
     tmhm_moves: List[int]
     abilities: Dict[str, int]
     moves: Dict[str, int]
@@ -954,9 +954,9 @@ def _init() -> None:
         )
 
     # Create trainer data
-    for i, trainer_data in enumerate(extracted_data["trainers"]):
+    for name, trainer_data in extracted_data["trainers"].items():
         party_data = trainer_data["party"]
-        data.trainers[i] = TrainerData(
+        data.trainers[name] = TrainerData(
             TrainerPartyData([
                     TrainerPokemonData(
                         pokemon["species"],

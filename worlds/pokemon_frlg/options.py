@@ -580,11 +580,15 @@ class BetterShops(Toggle):
     display_name = "Better Shops"
 
 
-class FreeFlyLocation(Toggle):
+class FreeFlyLocation(Choice):
     """
     Enables flying to one random location (excluding cities reachable with no items).
     """
     display_name = "Free Fly Location"
+    default = 0
+    option_off = 0
+    option_exclude_indigo = 1
+    option_any = 2
 
 
 class TurboA(Toggle):

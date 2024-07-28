@@ -29,11 +29,10 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [],
-    "events": [
-      "EVENT_FLY_ONE_ISLAND"
-    ],
+    "events": [],
     "exits": [
       "REGION_ONE_ISLAND/WATER",
+      "REGION_ONE_ISLAND/VISIT",
       "REGION_ONE_ISLAND_KINDLE_ROAD/SOUTH"
     ],
     "warps": [
@@ -55,6 +54,20 @@
     "exits": [
       "REGION_ONE_ISLAND_TREASURE_BEACH/WATER"
     ],
+    "warps": []
+  },
+  "REGION_ONE_ISLAND/VISIT": {
+    "parent_map": "MAP_ONE_ISLAND",
+    "name": "One Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_ONE_ISLAND"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_ONE_ISLAND_POKEMON_CENTER_1F/MAIN": {
@@ -286,10 +299,10 @@
       "ITEM_TWO_ISLAND_REVIVE"
     ],
     "events": [
-      "EVENT_FLY_TWO_ISLAND",
       "EVENT_BUY_MARKET_LEMONADE"
     ],
     "exits": [
+      "REGION_TWO_ISLAND/VISIT",
       "REGION_TWO_ISLAND_CAPE_BRINK/MAIN"
     ],
     "warps": [
@@ -298,6 +311,20 @@
       "MAP_TWO_ISLAND:2/MAP_TWO_ISLAND_POKEMON_CENTER_1F:0",
       "MAP_TWO_ISLAND:3/MAP_TWO_ISLAND_HARBOR:0"
     ]
+  },
+  "REGION_TWO_ISLAND/VISIT": {
+    "parent_map": "MAP_TWO_ISLAND",
+    "name": "Two Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_TWO_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_TWO_ISLAND_JOYFUL_GAME_CORNER/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_JOYFUL_GAME_CORNER",
@@ -488,11 +515,10 @@
     "locations": [
       "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER"
     ],
-    "events": [
-      "EVENT_FLY_THREE_ISLAND"
-    ],
+    "events": [],
     "exits": [
       "REGION_THREE_ISLAND/EAST",
+      "REGION_THREE_ISLAND/VISIT",
       "REGION_THREE_ISLAND_PORT/WEST",
       "REGION_THREE_ISLAND_BOND_BRIDGE/MAIN"
     ],
@@ -531,6 +557,20 @@
       "HIDDEN_ITEM_THREE_ISLAND_PP_UP"
     ],
     "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_THREE_ISLAND/VISIT": {
+    "parent_map": "MAP_THREE_ISLAND",
+    "name": "Three Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_THREE_ISLAND"
+    ],
     "exits": [],
     "warps": []
   },
@@ -728,11 +768,10 @@
       "HIDDEN_ITEM_FOUR_ISLAND_PEARL",
       "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL"
     ],
-    "events": [
-      "EVENT_FLY_FOUR_ISLAND"
-    ],
+    "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND/WATER"
+      "REGION_FOUR_ISLAND/WATER",
+      "REGION_FOUR_ISLAND/VISIT"
     ],
     "warps": [
       "MAP_FOUR_ISLAND:0/MAP_FOUR_ISLAND_POKEMON_CENTER_1F:0",
@@ -771,11 +810,26 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND/WATER"
+      "REGION_FOUR_ISLAND/WATER",
+      "REGION_FOUR_ISLAND/VISIT"
     ],
     "warps": [
       "MAP_FOUR_ISLAND:3/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:0"
     ]
+  },
+  "REGION_FOUR_ISLAND/VISIT": {
+    "parent_map": "MAP_FOUR_ISLAND",
+    "name": "Four Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_FOUR_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_FOUR_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_POKEMON_CENTER_1F",
@@ -906,11 +960,10 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [],
-    "events": [
-      "EVENT_FLY_FIVE_ISLAND"
-    ],
+    "events": [],
     "exits": [
       "REGION_FIVE_ISLAND/WATER",
+      "REGION_FIVE_ISLAND/VISIT",
       "REGION_FIVE_ISLAND_MEADOW/MAIN"
     ],
     "warps": [
@@ -933,6 +986,20 @@
       "REGION_FIVE_ISLAND/MAIN",
       "REGION_FIVE_ISLAND_WATER_LABYRINTH/MAIN"
     ],
+    "warps": []
+  },
+  "REGION_FIVE_ISLAND/VISIT": {
+    "parent_map": "MAP_FIVE_ISLAND",
+    "name": "Five Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_FIVE_ISLAND"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_FIVE_ISLAND_POKEMON_CENTER_1F/MAIN": {
@@ -1162,10 +1229,9 @@
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY"
     ],
-    "events": [
-      "EVENT_FLY_SIX_ISLAND"
-    ],
+    "events": [],
     "exits": [
+      "REGION_SIX_ISLAND/VISIT",
       "REGION_SIX_ISLAND_WATER_PATH/SOUTH"
     ],
     "warps": [
@@ -1174,6 +1240,20 @@
       "MAP_SIX_ISLAND:2/MAP_SIX_ISLAND_HOUSE:0",
       "MAP_SIX_ISLAND:3/MAP_SIX_ISLAND_MART:0"
     ]
+  },
+  "REGION_SIX_ISLAND/VISIT": {
+    "parent_map": "MAP_SIX_ISLAND",
+    "name": "Six Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_SIX_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_SIX_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
@@ -1465,10 +1545,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_FLY_SEVEN_ISLAND"
-    ],
+    "events": [],
     "exits": [
+      "REGION_SEVEN_ISLAND/VISIT",
       "REGION_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE/MAIN",
       "REGION_SEVEN_ISLAND_TRAINER_TOWER/SOUTH"
     ],
@@ -1478,6 +1557,20 @@
       "MAP_SEVEN_ISLAND:2/MAP_SEVEN_ISLAND_POKEMON_CENTER_1F:0",
       "MAP_SEVEN_ISLAND:3/MAP_SEVEN_ISLAND_HARBOR:0"
     ]
+  },
+  "REGION_SEVEN_ISLAND/VISIT": {
+    "parent_map": "MAP_SEVEN_ISLAND",
+    "name": "Seven Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_SEVEN_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_SEVEN_ISLAND_HOUSE_ROOM1/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_HOUSE_ROOM1",

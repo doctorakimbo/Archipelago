@@ -193,8 +193,10 @@
       "REGION_PALLET_TOWN/MAIN",
       "REGION_VIRIDIAN_CITY/SOUTH",
       "REGION_PEWTER_CITY/MAIN",
+      "REGION_ROUTE4/WEST",
       "REGION_CERULEAN_CITY/MAIN",
       "REGION_VERMILION_CITY/MAIN",
+      "REGION_ROUTE10/NORTH",
       "REGION_LAVENDER_TOWN/MAIN",
       "REGION_CELADON_CITY/MAIN",
       "REGION_SAFFRON_CITY/MAIN",
@@ -223,12 +225,10 @@
       "NPC_GIFT_RECEIVED_MYSTIC_TICKET",
       "NPC_GIFT_RECEIVED_AURORA_TICKET"
     ],
-    "events": [
-      "EVENT_FLY_PALLET_TOWN",
-      "EVENT_FREE_FLY_LOCATION"
-    ],
+    "events": [],
     "exits": [
       "REGION_PALLET_TOWN/WATER",
+      "REGION_PALLET_TOWN/VISIT",
       "REGION_ROUTE1/MAIN"
     ],
     "warps": [
@@ -248,8 +248,23 @@
     "events": [],
     "exits": [
       "REGION_PALLET_TOWN/MAIN",
+      "REGION_PALLET_TOWN/VISIT",
       "REGION_ROUTE21_NORTH/MAIN"
     ],
+    "warps": []
+  },
+  "REGION_PALLET_TOWN/VISIT": {
+    "parent_map": "MAP_PALLET_TOWN",
+    "name": "Pallet Town - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_PALLET_TOWN"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_PALLET_TOWN_PLAYERS_HOUSE_1F/MAIN": {
@@ -275,7 +290,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "EVENT_FREE_FLY_LOCATION"
+    ],
     "exits": [
       "REGION_SKY",
       "REGION_EVOLUTION"
@@ -330,12 +347,11 @@
       "NPC_GIFT_GOT_TEACHY_TV",
       "ITEM_VIRIDIAN_CITY_POTION"
     ],
-    "events": [
-      "EVENT_FLY_VIRIDIAN_CITY"
-    ],
+    "events": [],
     "exits": [
       "REGION_VIRIDIAN_CITY/NORTH",
       "REGION_VIRIDIAN_CITY/WATER",
+      "REGION_VIRIDIAN_CITY/VISIT",
       "REGION_ROUTE1/MAIN",
       "REGION_ROUTE22/MAIN"
     ],
@@ -357,6 +373,7 @@
     "events": [],
     "exits": [
       "REGION_VIRIDIAN_CITY/SOUTH",
+      "REGION_VIRIDIAN_CITY/VISIT",
       "REGION_ROUTE2/SOUTHWEST"
     ],
     "warps": [
@@ -372,6 +389,20 @@
     "has_fishing": true,
     "locations": [],
     "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_VIRIDIAN_CITY/VISIT": {
+    "parent_map": "MAP_VIRIDIAN_CITY",
+    "name": "Viridian City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_VIRIDIAN_CITY"
+    ],
     "exits": [],
     "warps": []
   },
@@ -478,11 +509,10 @@
     "locations": [
       "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL"
     ],
-    "events": [
-      "EVENT_FLY_PEWTER_CITY"
-    ],
+    "events": [],
     "exits": [
       "REGION_PEWTER_CITY/MUSEUM",
+      "REGION_PEWTER_CITY/VISIT",
       "REGION_ROUTE2/NORTHWEST",
       "REGION_ROUTE3/MAIN"
     ],
@@ -505,11 +535,26 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_PEWTER_CITY/MAIN"
+      "REGION_PEWTER_CITY/MAIN",
+      "REGION_PEWTER_CITY/VISIT"
     ],
     "warps": [
       "MAP_PEWTER_CITY:1/MAP_PEWTER_CITY_MUSEUM_1F:1"
     ]
+  },
+  "REGION_PEWTER_CITY/VISIT": {
+    "parent_map": "MAP_PEWTER_CITY",
+    "name": "Pewter City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_PEWTER_CITY"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_MAP_PEWTER_CITY_MUSEUM_1F/WEST": {
     "parent_map": "MAP_PEWTER_CITY_MUSEUM_1F",
@@ -656,11 +701,10 @@
     "locations": [
       "NPC_GIFT_GOT_FAME_CHECKER"
     ],
-    "events": [
-      "EVENT_FLY_CERULEAN_CITY"
-    ],
+    "events": [],
     "exits": [
       "REGION_CERULEAN_CITY/OUTSKIRTS",
+      "REGION_CERULEAN_CITY/VISIT",
       "REGION_ROUTE4/SOUTHEAST",
       "REGION_ROUTE24/MAIN"
     ],
@@ -687,7 +731,9 @@
       "HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY"
     ],
     "events": [],
-    "exits": [],
+    "exits": [
+      "REGION_CERULEAN_CITY/VISIT"
+    ],
     "warps": [
       "MAP_CERULEAN_CITY:9/MAP_CERULEAN_CITY_HOUSE1:1"
     ]
@@ -705,6 +751,7 @@
     "events": [],
     "exits": [
       "REGION_CERULEAN_CITY/MAIN",
+      "REGION_CERULEAN_CITY/VISIT",
       "REGION_ROUTE5/MAIN",
       "REGION_ROUTE9/MAIN"
     ],
@@ -739,11 +786,26 @@
     "events": [],
     "exits": [
       "REGION_CERULEAN_CITY/WATER",
+      "REGION_CERULEAN_CITY/VISIT",
       "REGION_ROUTE4/LEDGE"
     ],
     "warps": [
       "MAP_CERULEAN_CITY:8/MAP_CERULEAN_CAVE_1F:0"
     ]
+  },
+  "REGION_CERULEAN_CITY/VISIT": {
+    "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_CERULEAN_CITY"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_CERULEAN_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE1",
@@ -909,12 +971,11 @@
     "locations": [
       "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER"
     ],
-    "events": [
-      "EVENT_FLY_VERMILION_CITY"
-    ],
+    "events": [],
     "exits": [
       "REGION_VERMILION_CITY/GYM",
       "REGION_VERMILION_CITY/WATER",
+      "REGION_VERMILION_CITY/VISIT",
       "REGION_ROUTE6/MAIN",
       "REGION_ROUTE11/WEST",
       "REGION_ONE_ISLAND_HARBOR/MAIN",
@@ -948,7 +1009,8 @@
     "events": [],
     "exits": [
       "REGION_VERMILION_CITY/MAIN",
-      "REGION_VERMILION_CITY/WATER"
+      "REGION_VERMILION_CITY/WATER",
+      "REGION_VERMILION_CITY/VISIT"
     ],
     "warps": [
       "MAP_VERMILION_CITY:7/MAP_VERMILION_CITY_GYM:0"
@@ -967,6 +1029,20 @@
       "REGION_VERMILION_CITY/MAIN",
       "REGION_VERMILION_CITY/GYM"
     ],
+    "warps": []
+  },
+  "REGION_VERMILION_CITY/VISIT": {
+    "parent_map": "MAP_VERMILION_CITY",
+    "name": "Vermilion City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_VERMILION_CITY"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_VERMILION_CITY_HOUSE1/MAIN": {
@@ -1103,10 +1179,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_FLY_LAVENDER_TOWN"
-    ],
+    "events": [],
     "exits": [
+      "REGION_LAVENDER_TOWN/VISIT",
       "REGION_ROUTE8/MAIN",
       "REGION_ROUTE10/SOUTH",
       "REGION_ROUTE12/NORTH"
@@ -1119,6 +1194,20 @@
       "MAP_LAVENDER_TOWN:4/MAP_LAVENDER_TOWN_HOUSE2:0",
       "MAP_LAVENDER_TOWN:5/MAP_LAVENDER_TOWN_MART:0"
     ]
+  },
+  "REGION_LAVENDER_TOWN/VISIT": {
+    "parent_map": "MAP_LAVENDER_TOWN",
+    "name": "Lavender Town - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_LAVENDER_TOWN"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_LAVENDER_TOWN_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_POKEMON_CENTER_1F",
@@ -1218,12 +1307,11 @@
       "ITEM_CELADON_CITY_ETHER",
       "HIDDEN_ITEM_CELADON_CITY_PP_UP"
     ],
-    "events": [
-      "EVENT_FLY_CELADON_CITY"
-    ],
+    "events": [],
     "exits": [
       "REGION_CELADON_CITY/GYM",
       "REGION_CELADON_CITY/WATER",
+      "REGION_CELADON_CITY/VISIT",
       "REGION_ROUTE7/MAIN",
       "REGION_ROUTE16/SOUTHEAST"
     ],
@@ -1250,7 +1338,8 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_CELADON_CITY/MAIN"
+      "REGION_CELADON_CITY/MAIN",
+      "REGION_CELADON_CITY/VISIT"
     ],
     "warps": [
       "MAP_CELADON_CITY:6/MAP_CELADON_CITY_GYM:0"
@@ -1265,6 +1354,20 @@
     "has_fishing": true,
     "locations": [],
     "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_CELADON_CITY/VISIT": {
+    "parent_map": "MAP_CELADON_CITY",
+    "name": "Celadon City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_CELADON_CITY"
+    ],
     "exits": [],
     "warps": []
   },
@@ -1680,10 +1783,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_FLY_FUCHSIA_CITY"
-    ],
+    "events": [],
     "exits": [
+      "REGION_FUCHSIA_CITY/VISIT",
       "REGION_ROUTE15/SOUTHWEST",
       "REGION_ROUTE18/EAST",
       "REGION_ROUTE19/MAIN"
@@ -1712,7 +1814,8 @@
     ],
     "events": [],
     "exits": [
-      "REGION_FUCHSIA_CITY/WATER"
+      "REGION_FUCHSIA_CITY/WATER",
+      "REGION_FUCHSIA_CITY/VISIT"
     ],
     "warps": [
       "MAP_FUCHSIA_CITY:8/MAP_FUCHSIA_CITY_HOUSE2:1"
@@ -1727,6 +1830,20 @@
     "has_fishing": true,
     "locations": [],
     "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_FUCHSIA_CITY/VISIT": {
+    "parent_map": "MAP_FUCHSIA_CITY",
+    "name": "Fuchsia City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_FUCHSIA_CITY"
+    ],
     "exits": [],
     "warps": []
   },
@@ -1891,10 +2008,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_FLY_SAFFRON_CITY"
+    "events": [],
+    "exits": [
+      "REGION_SAFFRON_CITY/VISIT"
     ],
-    "exits": [],
     "warps": [
       "MAP_SAFFRON_CITY:0/MAP_SILPH_CO_1F:0",
       "MAP_SAFFRON_CITY:1/MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F:0",
@@ -1910,6 +2027,20 @@
       "MAP_SAFFRON_CITY:12,13/MAP_ROUTE6_NORTH_ENTRANCE:0",
       "MAP_SAFFRON_CITY:14/MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0"
     ]
+  },
+  "REGION_SAFFRON_CITY/VISIT": {
+    "parent_map": "MAP_SAFFRON_CITY",
+    "name": "Saffron City - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_SAFFRON_CITY"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_SAFFRON_CITY_COPYCATS_HOUSE_1F/MAIN": {
     "parent_map": "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F",
@@ -2204,11 +2335,10 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [],
-    "events": [
-      "EVENT_FLY_CINNABAR_ISLAND"
-    ],
+    "events": [],
     "exits": [
-      "REGION_CINNABAR_ISLAND/WATER"
+      "REGION_CINNABAR_ISLAND/WATER",
+      "REGION_CINNABAR_ISLAND/VISIT"
     ],
     "warps": [
       "MAP_CINNABAR_ISLAND:0/MAP_POKEMON_MANSION_1F:0",
@@ -2232,6 +2362,20 @@
       "REGION_ROUTE20/WEST",
       "REGION_ROUTE21_SOUTH/MAIN"
     ],
+    "warps": []
+  },
+  "REGION_CINNABAR_ISLAND/VISIT": {
+    "parent_map": "MAP_CINNABAR_ISLAND",
+    "name": "Cinnabar Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_CINNABAR_ISLAND"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_CINNABAR_ISLAND_GYM/MAIN": {
@@ -2375,11 +2519,26 @@
     "locations": [],
     "events": [],
     "exits": [
+      "REGION_INDIGO_PLATEAU_EXTERIOR/VISIT",
       "REGION_ROUTE23/NORTH"
     ],
     "warps": [
       "MAP_INDIGO_PLATEAU_EXTERIOR:0/MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F:0"
     ]
+  },
+  "REGION_INDIGO_PLATEAU_EXTERIOR/VISIT": {
+    "parent_map": "MAP_INDIGO_PLATEAU_EXTERIOR",
+    "name": "Indigo Plateau Exterior - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_INDIGO_PLATEAU"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_INDIGO_PLATEAU_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F",

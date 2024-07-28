@@ -275,11 +275,27 @@
     "events": [
       "GIFT_POKEMON_MAGIKARP"
     ],
-    "exits": [],
+    "exits": [
+      "REGION_ROUTE4_POKEMON_CENTER_1F/VISIT"
+    ],
     "warps": [
       "MAP_ROUTE4_POKEMON_CENTER_1F:0/MAP_ROUTE4:2",
       "MAP_ROUTE4_POKEMON_CENTER_1F:1/MAP_ROUTE4_POKEMON_CENTER_2F:0"
     ]
+  },
+  "REGION_ROUTE4_POKEMON_CENTER_1F/VISIT": {
+    "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
+    "name": "Route 4 Pokemon Center 1F - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_ROUTE4"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_ROUTE4_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_2F",
@@ -594,11 +610,27 @@
       "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE"
     ],
     "events": [],
-    "exits": [],
+    "exits": [
+      "REGION_ROUTE10_POKEMON_CENTER_1F/VISIT"
+    ],
     "warps": [
       "MAP_ROUTE10_POKEMON_CENTER_1F:0/MAP_ROUTE10:3",
       "MAP_ROUTE10_POKEMON_CENTER_1F:1/MAP_ROUTE10_POKEMON_CENTER_2F:0"
     ]
+  },
+  "REGION_ROUTE10_POKEMON_CENTER_1F/VISIT": {
+    "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
+    "name": "Route 10 Pokemon Center 1F - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_ROUTE10"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_ROUTE10_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_2F",
