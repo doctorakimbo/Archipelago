@@ -180,9 +180,7 @@ def validate_regions() -> bool:
     forgetting to add a new location or incorrectly splitting a region.
     """
 
-    # Just use FireRed's extracted data since we are just looking at
-    # the locations IDs which are the same across the games
-    extracted_data = load_json_data("extracted_data_firered.json")
+    extracted_data = load_json_data("extracted_data.json")
     error_messages: List[str] = []
     warn_messages: List[str] = []
     failed = False

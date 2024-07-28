@@ -116,7 +116,8 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
     for region_data in data.regions.values():
         region = regions[region_data.name]
-        included_locations = [loc for loc in region_data.locations if len(tags & data.locations[loc].tags) > 0]
+        included_locations = [loc for loc in region_data.locations
+                              if len(tags & data.locations[loc].tags) >= len(data.locations[loc].tags)]
 
         for location_flag in included_locations:
             location_data = data.locations[location_flag]

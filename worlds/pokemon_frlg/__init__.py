@@ -190,7 +190,7 @@ class PokemonFRLGWorld(World):
         tags = {"Badge", "HM", "KeyItem", "Overworld", "NPCGift"}
         if self.options.shuffle_hidden == ShuffleHiddenItems.option_all:
             tags.add("Hidden")
-            tags.add("HiddenRecurring")
+            tags.add("Recurring")
         elif self.options.shuffle_hidden == ShuffleHiddenItems.option_nonrecurring:
             tags.add("Hidden")
         create_locations_from_tags(self, regions, tags)

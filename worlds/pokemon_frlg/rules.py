@@ -729,7 +729,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         # Add rules for hidden items
         if world.options.itemfinder_required != ItemfinderRequired.option_off:
             for location in multiworld.get_locations(player):
-                if location.tags is not None and ("Hidden" in location.tags or "HiddenRecurring" in location.tags):
+                if location.tags is not None and ("Hidden" in location.tags):
                     add_rule(location, lambda state: state.has("Itemfinder", player))
 
     # Static Pokémon

@@ -1,7 +1,7 @@
 import math
 from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
-from .data import data, NUM_REAL_SPECIES, EventData, LearnsetMove, SpeciesData, TrainerPokemonData
+from .data import data, NUM_REAL_SPECIES, EncounterSpeciesData, EventData, LearnsetMove, SpeciesData, TrainerPokemonData
 from .options import (HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
                       TmTutorCompatibility, WildPokemonGroups)
@@ -36,6 +36,11 @@ _DAMAGING_MOVES = frozenset({
 
 _HM_MOVES = frozenset({
     15, 19, 57, 70, 127, 148, 249, 291
+})
+
+_MOVE_BLACKLIST = frozenset({
+    0,
+    165
 })
 
 _DUNGEON_GROUPS: Dict[str, str] = {
@@ -159,7 +164,7 @@ def _get_random_type(random: "Random") -> int:
 
 
 def _get_random_move(random: "Random", blacklist: Set[int]) -> int:
-    extended_blacklist = set(_HM_MOVES) | blacklist
+    extended_blacklist = _HM_MOVES | _MOVE_BLACKLIST | blacklist
     allowed_moves = [i for i in range(data.constants["MOVES_COUNT"]) if i not in extended_blacklist]
     return random.choice(allowed_moves)
 
@@ -277,6 +282,7 @@ def randomize_abilities(world: "PokemonFRLGWorld") -> None:
         return
 
     allowed_abilities = list(range(data.constants["ABILITIES_COUNT"]))
+    allowed_abilities.remove(data.constants["ABILITY_NONE"])
     allowed_abilities.remove(data.constants["ABILITY_CACOPHONY"])
     for ability_id in world.blacklisted_abilities:
         allowed_abilities.remove(ability_id)
@@ -418,7 +424,8 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                 # instead of just randomizing every slot.
                 # Force area 1-to-1 mapping, in other words.
                 species_old_to_new_map: Dict[int, int] = {}
-                for species_id in table.slots[game_version]:
+                for species_data in table.slots[game_version]:
+                    species_id = species_data.species_id
                     if species_id not in species_old_to_new_map:
                         if (world.options.wild_pokemon_groups == WildPokemonGroups.option_species and
                                 species_id in species_map):
@@ -495,9 +502,13 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                         placed_species.add(new_species_id)
 
                 # Actually create the new list of slots and encounter table
-                new_slots: List[int] = []
-                for species_id in table.slots[game_version]:
-                    new_slots.append(species_old_to_new_map[species_id])
+                new_slots: List[EncounterSpeciesData] = []
+                for species_data in table.slots[game_version]:
+                    new_slots.append(EncounterSpeciesData(
+                        species_old_to_new_map[species_data.species_id],
+                        species_data.min_level,
+                        species_data.max_level
+                    ))
 
                 new_encounter_slots[i] = new_slots
 

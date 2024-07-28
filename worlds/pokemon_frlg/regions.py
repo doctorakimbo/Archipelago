@@ -70,7 +70,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                         # Want to create locations per species, not per slot
                         # encounter_categories includes info on which slots belong to which subcategory
                         unique_species = []
-                        for j, species_id in enumerate(encounter_slots):
+                        for j, species_data in enumerate(encounter_slots):
+                            species_id = species_data.species_id
                             if j in subcategory[1] and species_id not in unique_species:
                                 unique_species.append(species_id)
 

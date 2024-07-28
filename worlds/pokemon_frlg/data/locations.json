@@ -849,7 +849,7 @@
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL": {
     "name": "Memorial Pillar - South Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY": {
     "name": "Memorial Pillar - Tall Grass South Hidden Item (Left)",
@@ -865,19 +865,19 @@
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL": {
     "name": "Resort Gorgeous - West Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST": {
     "name": "Resort Gorgeous - Main Island Southwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2": {
     "name": "Resort Gorgeous - Main Island Northwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE": {
     "name": "Resort Gorgeous - Main Island Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL": {
     "name": "Rocket Warehouse - Northeast Room Box Hidden Item",
@@ -889,11 +889,11 @@
   },
   "HIDDEN_ITEM_FOUR_ISLAND_PEARL": {
     "name": "Four Island - Beach Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL": {
     "name": "Four Island - Beach Northwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE": {
     "name": "Fuchsia City - Hidden Item Behind Fishing Guru's House",
@@ -909,27 +909,27 @@
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM": {
     "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2": {
     "name": "Mt. Moon B1F - Third Tunnel Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3": {
     "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM": {
     "name": "Mt. Moon B1F - Fourth Tunnel Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2": {
     "name": "Mt. Moon B1F - Second Tunnel Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3": {
     "name": "Mt. Moon B1F - First Tunnel East Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B2F_ETHER": {
     "name": "Mt. Moon B2F - Northeast Rock Hidden Item",
@@ -945,35 +945,35 @@
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL": {
     "name": "Treasure Beach - Tall Grass Northwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL": {
     "name": "Treasure Beach - Tall Grass Center Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2": {
     "name": "Treasure Beach - Tall Grass Southwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST": {
     "name": "Treasure Beach - Beach West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2": {
     "name": "Treasure Beach - Tall Grass Northeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE": {
     "name": "Treasure Beach - Tall Grass East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL": {
     "name": "Treasure Beach - Beach East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2": {
     "name": "Treasure Beach - Tall Grass Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL": {
     "name": "Pewter City - Northwest Hidden Item",
@@ -1149,11 +1149,11 @@
   },
   "HIDDEN_ITEM_ROUTE20_STARDUST": {
     "name": "Route 20 - Northwest Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ROUTE21_NORTH_PEARL": {
     "name": "Route 21 - East Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY": {
     "name": "Route 23 - Hidden Item Before Sixth Checkpoint",
@@ -1237,23 +1237,23 @@
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE": {
     "name": "Tanoby Ruins - Scufib Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2": {
     "name": "Tanoby Ruins - Weepth Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3": {
     "name": "Tanoby Ruins - Monean Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_4": {
     "name": "Tanoby Ruins - Viapois Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL": {
     "name": "Trainer Tower Exterior - Beach North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY": {
     "name": "Trainer Tower Exterior - Hidden Item Near Fence",
@@ -1261,7 +1261,7 @@
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL": {
     "name": "Trainer Tower Exterior - Beach West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL": {
     "name": "Silph Co. 2F - Southwest Room Plant Hidden Item",
@@ -1313,7 +1313,7 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL": {
     "name": "Green Path - West Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY": {
     "name": "Six Island - Hidden Item Behind Pokemon Center",
@@ -1321,11 +1321,11 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL": {
     "name": "Outcast Island - West Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE": {
     "name": "Outcast Island - East Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY": {
     "name": "Water Path - Tall Grass South Hidden Item",
@@ -1361,55 +1361,55 @@
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY": {
     "name": "Berry Forest - North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY": {
     "name": "Berry Forest - Northwest Hidden Item (Bottom)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY": {
     "name": "Berry Forest - Hidden Item Near West Pond (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHESTO_BERRY": {
     "name": "Berry Forest - Northeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY": {
     "name": "Berry Forest - Hidden Item Near Lostelle",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY": {
     "name": "Berry Forest - Center Hidden Item (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY": {
     "name": "Berry Forest - East Hidden Item (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PECHA_BERRY": {
     "name": "Berry Forest - Hidden Item Near Southwest Pond",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY": {
     "name": "Berry Forest - Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PINAP_BERRY": {
     "name": "Berry Forest - East Hidden Item (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAWST_BERRY": {
     "name": "Berry Forest - Northwest Hidden Item (Top)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAZZ_BERRY": {
     "name": "Berry Forest - Center Hidden Item (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_WEPEAR_BERRY": {
     "name": "Berry Forest - Hidden Item Near West Pond (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_MAX_REPEL": {
     "name": "Bond Bridge - Rock Hidden Item",
@@ -1417,11 +1417,11 @@
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL": {
     "name": "Bond Bridge - East Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST": {
     "name": "Bond Bridge - West Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET": {
     "name": "Three Isle Path - Rock Hidden Item",
@@ -1441,59 +1441,59 @@
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE": {
     "name": "Underground Path (East-West) - Far East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING": {
     "name": "Underground Path (East-West) - West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL": {
     "name": "Underground Path (East-West) - Center Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER": {
     "name": "Underground Path (East-West) - East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL": {
     "name": "Underground Path (East-West) - Farthest East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL": {
     "name": "Underground Path (East-West) - Far West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION": {
     "name": "Underground Path (East-West) - Farthest West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE": {
     "name": "Underground Path (North-South) - Farthest North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING": {
     "name": "Underground Path (North-South) - North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL": {
     "name": "Underground Path (North-South) - Farthest South Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER": {
     "name": "Underground Path (North-South) - South Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL": {
     "name": "Underground Path (North-South) - Far South Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL": {
     "name": "Underground Path (North-South) - Far North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION": {
     "name": "Underground Path (North-South) - Center Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER": {
     "name": "Vermilion City - Hidden Item Near Pokemon Center",

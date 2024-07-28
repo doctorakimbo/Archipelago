@@ -469,9 +469,9 @@ def _set_wild_encounters(world: "PokemonFRLGWorld",
                   map_data.fishing_encounters]
         for table in tables:
             if table is not None:
-                for i, species_id in enumerate(table.slots[game_version]):
+                for i, species_data in enumerate(table.slots[game_version]):
                     address = table.address[game_version_revision] + 2 + (i * 4)
-                    patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", species_id))
+                    patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", species_data.species_id))
 
 
 def _set_starters(world: "PokemonFRLGWorld",
