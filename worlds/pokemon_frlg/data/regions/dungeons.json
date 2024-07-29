@@ -12,7 +12,12 @@
       "ITEM_VIRIDIAN_FOREST_POTION",
       "ITEM_VIRIDIAN_FOREST_POTION_2",
       "HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE",
-      "HIDDEN_ITEM_VIRIDIAN_FOREST_POTION"
+      "HIDDEN_ITEM_VIRIDIAN_FOREST_POTION",
+      "TRAINER_BUG_CATCHER_ANTHONY_REWARD",
+      "TRAINER_BUG_CATCHER_CHARLIE_REWARD",
+      "TRAINER_BUG_CATCHER_DOUG_REWARD",
+      "TRAINER_BUG_CATCHER_RICK_REWARD",
+      "TRAINER_BUG_CATCHER_SAMMY_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -34,7 +39,14 @@
       "ITEM_MT_MOON_1F_PARALYZE_HEAL",
       "ITEM_MT_MOON_1F_POTION",
       "ITEM_MT_MOON_1F_RARE_CANDY",
-      "ITEM_MT_MOON_1F_TM09"
+      "ITEM_MT_MOON_1F_TM09",
+      "TRAINER_BUG_CATCHER_KENT_REWARD",
+      "TRAINER_BUG_CATCHER_ROBBY_REWARD",
+      "TRAINER_HIKER_MARCOS_REWARD",
+      "TRAINER_LASS_IRIS_REWARD",
+      "TRAINER_LASS_MIRIAM_REWARD",
+      "TRAINER_SUPER_NERD_JOVAN_REWARD",
+      "TRAINER_YOUNGSTER_JOSH_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -127,7 +139,10 @@
       "NPC_GIFT_GOT_HELIX_FOSSIL",
       "ITEM_MT_MOON_B2F_ANTIDOTE",
       "ITEM_MT_MOON_B2F_REVIVE",
-      "HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE"
+      "HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE",
+      "TRAINER_SUPER_NERD_MIGUEL_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_4_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -144,7 +159,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_MT_MOON_B2F_STAR_PIECE"
+      "ITEM_MT_MOON_B2F_STAR_PIECE",
+      "TRAINER_TEAM_ROCKET_GRUNT_2_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -161,7 +177,8 @@
     "has_fishing": false,
     "locations": [
       "ITEM_MT_MOON_B2F_TM46",
-      "HIDDEN_ITEM_MT_MOON_B2F_ETHER"
+      "HIDDEN_ITEM_MT_MOON_B2F_ETHER",
+      "TRAINER_TEAM_ROCKET_GRUNT_3_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -320,7 +337,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SSANNE_1F_ROOM2_TM31"
+      "ITEM_SSANNE_1F_ROOM2_TM31",
+      "TRAINER_LASS_ANN_REWARD",
+      "TRAINER_YOUNGSTER_TYLER_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -363,7 +382,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_GENTLEMAN_ARTHUR_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -391,7 +412,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_GENTLEMAN_THOMAS_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -426,7 +449,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_FISHERMAN_BARNY_REWARD",
+      "TRAINER_SAILOR_PHILLIP_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -441,7 +467,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SSANNE_B1F_ROOM2_TM44"
+      "ITEM_SSANNE_B1F_ROOM2_TM44",
+      "TRAINER_SAILOR_HUEY_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -457,7 +484,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SSANNE_B1F_ROOM3_ETHER"
+      "ITEM_SSANNE_B1F_ROOM3_ETHER",
+      "TRAINER_SAILOR_DYLAN_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -472,7 +500,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_SAILOR_DUNCAN_REWARD",
+      "TRAINER_SAILOR_LEONARD_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -502,7 +533,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_RIVAL_SS_ANNE_BULBASAUR_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -539,7 +572,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SSANNE_2F_ROOM2_STARDUST"
+      "ITEM_SSANNE_2F_ROOM2_STARDUST",
+      "TRAINER_FISHERMAN_DALE_REWARD",
+      "TRAINER_GENTLEMAN_BROOKS_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -569,7 +604,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SSANNE_2F_ROOM4_X_ATTACK"
+      "ITEM_SSANNE_2F_ROOM4_X_ATTACK",
+      "TRAINER_GENTLEMAN_LAMAR_REWARD",
+      "TRAINER_LASS_DAWN_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -627,7 +664,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_SAILOR_EDMOND_REWARD",
+      "TRAINER_SAILOR_TREVOR_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -703,12 +743,15 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_1F_PEARL"
+      "ITEM_ROCK_TUNNEL_1F_PEARL",
+      "TRAINER_PICNICKER_ARIANA_REWARD",
+      "TRAINER_PICNICKER_DANA_REWARD",
+      "TRAINER_PICNICKER_LEAH_REWARD"
     ],
     "events": [],
     "exits": [],
     "warps": [
-      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0",
+      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1",
       "MAP_ROCK_TUNNEL_1F:4/MAP_ROCK_TUNNEL_B1F:3"
     ]
   },
@@ -720,7 +763,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_1F_ESCAPE_ROPE"
+      "ITEM_ROCK_TUNNEL_1F_ESCAPE_ROPE",
+      "TRAINER_HIKER_LENNY_REWARD",
+      "TRAINER_HIKER_LUCAS_REWARD",
+      "TRAINER_HIKER_OLIVER_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -737,13 +783,14 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_1F_REPEL"
+      "ITEM_ROCK_TUNNEL_1F_REPEL",
+      "TRAINER_POKEMANIAC_ASHTON_REWARD"
     ],
     "events": [],
     "exits": [],
     "warps": [
       "MAP_ROCK_TUNNEL_1F:1/MAP_ROCK_TUNNEL_B1F:0",
-      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1"
+      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0"
     ]
   },
   "REGION_ROCK_TUNNEL_B1F/NORTHWEST": {
@@ -754,7 +801,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_B1F_MAX_ETHER"
+      "ITEM_ROCK_TUNNEL_B1F_MAX_ETHER",
+      "TRAINER_HIKER_DUDLEY_REWARD",
+      "TRAINER_PICNICKER_SOFIA_REWARD",
+      "TRAINER_POKEMANIAC_COOPER_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -771,7 +821,12 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_B1F_REVIVE"
+      "ITEM_ROCK_TUNNEL_B1F_REVIVE",
+      "TRAINER_HIKER_ALLEN_REWARD",
+      "TRAINER_HIKER_ERIC_REWARD",
+      "TRAINER_PICNICKER_MARTHA_REWARD",
+      "TRAINER_POKEMANIAC_STEVE_REWARD",
+      "TRAINER_POKEMANIAC_WINSTON_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -796,7 +851,11 @@
       "HIDDEN_ITEM_POWER_PLANT_MAX_ELIXIR",
       "HIDDEN_ITEM_POWER_PLANT_THUNDER_STONE"
     ],
-    "events": [],
+    "events": [
+      "STATIC_POKEMON_ELECTRODE_1",
+      "STATIC_POKEMON_ELECTRODE_2",
+      "LEGENDARY_POKEMON_ZAPDOS"
+    ],
     "exits": [],
     "warps": [
       "MAP_POWER_PLANT:0/MAP_ROUTE10:2",
@@ -825,7 +884,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -841,7 +902,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_POKEMON_TOWER_3F_ESCAPE_ROPE"
+      "ITEM_POKEMON_TOWER_3F_ESCAPE_ROPE",
+      "TRAINER_CHANNELER_CARLY_REWARD",
+      "TRAINER_CHANNELER_HOPE_REWARD",
+      "TRAINER_CHANNELER_PATRICIA_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -860,7 +924,10 @@
     "locations": [
       "ITEM_POKEMON_TOWER_4F_AWAKENING",
       "ITEM_POKEMON_TOWER_4F_ELIXIR",
-      "ITEM_POKEMON_TOWER_4F_GREAT_BALL"
+      "ITEM_POKEMON_TOWER_4F_GREAT_BALL",
+      "TRAINER_CHANNELER_JODY_REWARD",
+      "TRAINER_CHANNELER_LAUREL_REWARD",
+      "TRAINER_CHANNELER_PAULA_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -879,7 +946,12 @@
     "locations": [
       "ITEM_POKEMON_TOWER_5F_CLEANSE_TAG",
       "ITEM_POKEMON_TOWER_5F_NUGGET",
-      "HIDDEN_ITEM_POKEMON_TOWER_5F_BIG_MUSHROOM"
+      "HIDDEN_ITEM_POKEMON_TOWER_5F_BIG_MUSHROOM",
+      "TRAINER_CHANNELER_JANAE_REWARD",
+      "TRAINER_CHANNELER_JENNIFER_REWARD",
+      "TRAINER_CHANNELER_KARINA_REWARD",
+      "TRAINER_CHANNELER_RUTH_REWARD",
+      "TRAINER_CHANNELER_TAMMY_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -897,9 +969,13 @@
     "has_fishing": false,
     "locations": [
       "ITEM_POKEMON_TOWER_6F_RARE_CANDY",
-      "ITEM_POKEMON_TOWER_6F_X_ACCURACY"
+      "ITEM_POKEMON_TOWER_6F_X_ACCURACY",
+      "TRAINER_CHANNELER_ANGELICA_REWARD",
+      "TRAINER_CHANNELER_EMILIA_REWARD"
     ],
-    "events": [],
+    "events": [
+      "STATIC_POKEMON_MAROWAK"
+    ],
     "exits": [],
     "warps": [
       "MAP_POKEMON_TOWER_6F:0/MAP_POKEMON_TOWER_7F:0",
@@ -914,7 +990,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL"
+      "HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL",
+      "TRAINER_TEAM_ROCKET_GRUNT_19_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_20_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_21_REWARD"
     ],
     "events": [
       "EVENT_RESCUE_MR_FUJI"
@@ -986,7 +1065,9 @@
     "has_fishing": false,
     "locations": [
       "ITEM_ROCKET_HIDEOUT_B1F_ESCAPE_ROPE",
-      "HIDDEN_ITEM_ROCKET_HIDEOUT_B1F_PP_UP"
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B1F_PP_UP",
+      "TRAINER_TEAM_ROCKET_GRUNT_8_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_9_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -1002,7 +1083,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_TEAM_ROCKET_GRUNT_12_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_ROCKET_HIDEOUT_B1F/MAIN",
@@ -1018,7 +1101,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCKET_HIDEOUT_B1F_HYPER_POTION"
+      "ITEM_ROCKET_HIDEOUT_B1F_HYPER_POTION",
+      "TRAINER_TEAM_ROCKET_GRUNT_10_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_11_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -1037,7 +1122,8 @@
       "ITEM_ROCKET_HIDEOUT_B2F_MOON_STONE",
       "ITEM_ROCKET_HIDEOUT_B2F_SUPER_POTION",
       "ITEM_ROCKET_HIDEOUT_B2F_TM12",
-      "ITEM_ROCKET_HIDEOUT_B2F_X_SPEED"
+      "ITEM_ROCKET_HIDEOUT_B2F_X_SPEED",
+      "TRAINER_TEAM_ROCKET_GRUNT_13_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1060,7 +1146,9 @@
       "ITEM_ROCKET_HIDEOUT_B3F_BLACK_GLASSES",
       "ITEM_ROCKET_HIDEOUT_B3F_RARE_CANDY",
       "ITEM_ROCKET_HIDEOUT_B3F_TM21",
-      "HIDDEN_ITEM_ROCKET_HIDEOUT_B3F_NUGGET"
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B3F_NUGGET",
+      "TRAINER_TEAM_ROCKET_GRUNT_14_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_15_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -1079,7 +1167,8 @@
     "locations": [
       "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT",
       "ITEM_ROCKET_HIDEOUT_B4F_MAX_ETHER",
-      "ITEM_ROCKET_HIDEOUT_B4F_TM49"
+      "ITEM_ROCKET_HIDEOUT_B4F_TM49",
+      "TRAINER_TEAM_ROCKET_GRUNT_18_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -1098,7 +1187,10 @@
       "NPC_GIFT_GOT_SILPH_SCOPE",
       "ITEM_ROCKET_HIDEOUT_B4F_CALCIUM",
       "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NEST_BALL",
-      "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL"
+      "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL",
+      "TRAINER_BOSS_GIOVANNI_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_16_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_17_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1415,7 +1507,11 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_SCIENTIST_JERRY_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_23_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_24_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_SILPH_CO_2F/NORTHWEST",
@@ -1453,7 +1549,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL"
+      "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL",
+      "TRAINER_SCIENTIST_CONNOR_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1471,7 +1568,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_SILPH_CO_3F_PROTEIN"
+      "HIDDEN_ITEM_SILPH_CO_3F_PROTEIN",
+      "TRAINER_TEAM_ROCKET_GRUNT_25_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1513,7 +1611,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SILPH_CO_3F_HYPER_POTION"
+      "ITEM_SILPH_CO_3F_HYPER_POTION",
+      "TRAINER_SCIENTIST_JOSE_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1532,7 +1631,9 @@
     "has_fishing": false,
     "locations": [
       "ITEM_SILPH_CO_4F_TM41",
-      "HIDDEN_ITEM_SILPH_CO_4F_IRON"
+      "HIDDEN_ITEM_SILPH_CO_4F_IRON",
+      "TRAINER_TEAM_ROCKET_GRUNT_26_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_27_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1570,7 +1671,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_SCIENTIST_RODNEY_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_SILPH_CO_4F/MAIN"
@@ -1589,7 +1692,11 @@
     "has_fishing": false,
     "locations": [
       "ITEM_SILPH_CO_5F_CARD_KEY",
-      "HIDDEN_ITEM_SILPH_CO_5F_PP_UP"
+      "HIDDEN_ITEM_SILPH_CO_5F_PP_UP",
+      "TRAINER_JUGGLER_DALTON_REWARD",
+      "TRAINER_SCIENTIST_BEAU_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_28_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_29_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1660,7 +1767,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_SILPH_CO_6F_CARBOS"
+      "HIDDEN_ITEM_SILPH_CO_6F_CARBOS",
+      "TRAINER_SCIENTIST_TAYLOR_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_30_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_31_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1697,7 +1807,10 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SILPH_CO_7F_CALCIUM"
+      "ITEM_SILPH_CO_7F_CALCIUM",
+      "TRAINER_SCIENTIST_JOSHUA_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_33_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_35_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1717,7 +1830,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD"
+
+    ],
     "events": [
       "GIFT_POKEMON_LAPRAS"
     ],
@@ -1764,7 +1880,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_TEAM_ROCKET_GRUNT_34_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_SILPH_CO_7F/EAST"
@@ -1782,7 +1900,10 @@
     "has_fishing": false,
     "locations": [
       "ITEM_SILPH_CO_8F_IRON",
-      "HIDDEN_ITEM_SILPH_CO_8F_NUGGET"
+      "HIDDEN_ITEM_SILPH_CO_8F_NUGGET",
+      "TRAINER_SCIENTIST_PARKER_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_32_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_36_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1820,7 +1941,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_SCIENTIST_ED_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_38_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_SILPH_CO_9F/SOUTHWEST",
@@ -1839,7 +1963,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_TEAM_ROCKET_GRUNT_37_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_SILPH_CO_9F/SOUTHWEST"
@@ -1877,7 +2003,9 @@
       "ITEM_SILPH_CO_10F_CARBOS",
       "ITEM_SILPH_CO_10F_RARE_CANDY",
       "ITEM_SILPH_CO_10F_ULTRA_BALL",
-      "HIDDEN_ITEM_SILPH_CO_10F_HP_UP"
+      "HIDDEN_ITEM_SILPH_CO_10F_HP_UP",
+      "TRAINER_SCIENTIST_TRAVIS_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_39_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1915,7 +2043,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_SILPH_CO_11F_ZINC"
+      "ITEM_SILPH_CO_11F_ZINC",
+      "TRAINER_TEAM_ROCKET_GRUNT_40_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1933,7 +2062,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_SILPH_CO_11F_REVIVE"
+      "HIDDEN_ITEM_SILPH_CO_11F_REVIVE",
+      "TRAINER_TEAM_ROCKET_GRUNT_41_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1951,7 +2081,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH"
+      "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH",
+      "TRAINER_BOSS_GIOVANNI_2_REWARD"
     ],
     "events": [
       "EVENT_LIBERATE_SILPH_CO"
@@ -2373,7 +2504,9 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [],
-    "events": [],
+    "events": [
+      "LEGENDARY_POKEMON_ARTICUNO"
+    ],
     "exits": [],
     "warps": []
   },
@@ -2387,7 +2520,8 @@
     "locations": [
       "ITEM_POKEMON_MANSION_1F_ESCAPE_ROPE",
       "ITEM_POKEMON_MANSION_1F_PROTEIN",
-      "HIDDEN_ITEM_POKEMON_MANSION_1F_MOON_STONE"
+      "HIDDEN_ITEM_POKEMON_MANSION_1F_MOON_STONE",
+      "TRAINER_YOUNGSTER_JOHNSON_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -2418,7 +2552,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_POKEMON_MANSION_1F_CARBOS"
+      "ITEM_POKEMON_MANSION_1F_CARBOS",
+      "TRAINER_SCIENTIST_TED_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2453,7 +2588,8 @@
     "has_fishing": false,
     "locations": [
       "ITEM_POKEMON_MANSION_2F_CALCIUM",
-      "ITEM_POKEMON_MANSION_2F_ZINC"
+      "ITEM_POKEMON_MANSION_2F_ZINC",
+      "TRAINER_BURGLAR_ARNIE_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2517,7 +2653,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_POKEMON_MANSION_3F_MAX_POTION"
+      "ITEM_POKEMON_MANSION_3F_MAX_POTION",
+      "TRAINER_BURGLAR_SIMON_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -2551,7 +2688,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_POKEMON_MANSION_3F_RARE_CANDY"
+      "HIDDEN_ITEM_POKEMON_MANSION_3F_RARE_CANDY",
+      "TRAINER_SCIENTIST_BRAYDON_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2575,7 +2713,9 @@
       "ITEM_POKEMON_MANSION_B1F_FULL_RESTORE",
       "ITEM_POKEMON_MANSION_B1F_TM14",
       "ITEM_POKEMON_MANSION_B1F_TM22",
-      "HIDDEN_ITEM_POKEMON_MANSION_B1F_ELIXIR"
+      "HIDDEN_ITEM_POKEMON_MANSION_B1F_ELIXIR",
+      "TRAINER_BURGLAR_LEWIS_REWARD",
+      "TRAINER_SCIENTIST_IVAN_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -2610,7 +2750,9 @@
       "ITEM_VICTORY_ROAD_1F_RARE_CANDY",
       "ITEM_VICTORY_ROAD_1F_TM02",
       "HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE",
-      "HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL"
+      "HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL",
+      "TRAINER_COOLTRAINER_NAOMI_REWARD",
+      "TRAINER_COOLTRAINER_ROLANDO_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2660,7 +2802,11 @@
     "locations": [
       "ITEM_VICTORY_ROAD_2F_FULL_HEAL",
       "ITEM_VICTORY_ROAD_2F_TM07",
-      "ITEM_VICTORY_ROAD_2F_TM37"
+      "ITEM_VICTORY_ROAD_2F_TM37",
+      "TRAINER_BLACK_BELT_DAISUKE_REWARD",
+      "TRAINER_JUGGLER_GREGORY_REWARD",
+      "TRAINER_JUGGLER_NELSON_REWARD",
+      "TRAINER_TAMER_VINCENT_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2692,7 +2838,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_VICTORY_ROAD_2F_GUARD_SPEC"
+      "ITEM_VICTORY_ROAD_2F_GUARD_SPEC",
+      "TRAINER_POKEMANIAC_DAWSON_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2726,7 +2873,9 @@
     "has_fishing": false,
     "locations": [
       "ITEM_VICTORY_ROAD_3F_MAX_REVIVE",
-      "ITEM_VICTORY_ROAD_3F_TM50"
+      "ITEM_VICTORY_ROAD_3F_TM50",
+      "TRAINER_COOLTRAINER_ALEXA_REWARD",
+      "TRAINER_COOLTRAINER_GEORGE_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2744,7 +2893,10 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_COOLTRAINER_CAROLINE_REWARD",
+      "TRAINER_COOLTRAINER_COLBY_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_VICTORY_ROAD_3F/NORTH",
@@ -2759,7 +2911,9 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_COOL_COUPLE_RAY_TYRA_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_VICTORY_ROAD_3F/SOUTHWEST"
@@ -2776,7 +2930,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_TEAM_ROCKET_GRUNT_43_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_44_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_MT_EMBER_EXTERIOR/CENTER"
@@ -2795,7 +2952,10 @@
     "has_fishing": false,
     "locations": [
       "ITEM_MT_EMBER_EXTERIOR_DIRE_HIT",
-      "HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL"
+      "HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL",
+      "TRAINER_CRUSH_GIRL_JOCELYN_REWARD",
+      "TRAINER_PKMN_RANGER_BETH_REWARD",
+      "TRAINER_PKMN_RANGER_LOGAN_REWARD"
     ],
     "events": [],
     "exits": [
@@ -2879,7 +3039,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "LEGENDARY_POKEMON_MOLTRES"
+    ],
     "exits": [],
     "warps": [
       "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4"
@@ -3101,7 +3263,8 @@
       "NPC_GIFT_RESCUED_LOSTELLE"
     ],
     "events": [
-      "EVENT_RESCUE_LOSTELLE"
+      "EVENT_RESCUE_LOSTELLE",
+      "STATIC_POKEMON_HYPNO"
     ],
     "exits": [
       "REGION_THREE_ISLAND_BERRY_FOREST/WATER"
@@ -3385,7 +3548,9 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
-    "locations": [],
+    "locations": [
+      "TRAINER_TEAM_ROCKET_GRUNT_45_REWARD"
+    ],
     "events": [
       "EVENT_HELP_LORELEI"
     ],
@@ -3422,7 +3587,13 @@
       "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_TM36",
       "ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_UP_GRADE",
       "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL",
-      "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NET_BALL"
+      "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NET_BALL",
+      "TRAINER_SCIENTIST_GIDEON_REWARD",
+      "TRAINER_TEAM_ROCKET_ADMIN_REWARD",
+      "TRAINER_TEAM_ROCKET_ADMIN_2_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_42_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_47_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_48_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -3452,7 +3623,9 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_RUIN_MANIAC_LAWSON_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -3504,7 +3677,9 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_PSYCHIC_LAURA_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -3607,7 +3782,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF"
+      "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF",
+      "TRAINER_LADY_SELPHY_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -3794,7 +3970,20 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_BUG_CATCHER_GARRET_REWARD",
+      "TRAINER_BUG_CATCHER_JONAH_REWARD",
+      "TRAINER_BUG_CATCHER_VANCE_REWARD",
+      "TRAINER_CAMPER_RILEY_REWARD",
+      "TRAINER_LASS_DALIA_REWARD",
+      "TRAINER_LASS_JOANA_REWARD",
+      "TRAINER_PICNICKER_MARCY_REWARD",
+      "TRAINER_PKMN_BREEDER_ALLISON_REWARD",
+      "TRAINER_PKMN_BREEDER_BETHANY_REWARD",
+      "TRAINER_RUIN_MANIAC_LAYTON_REWARD",
+      "TRAINER_YOUNGSTER_CORDELL_REWARD",
+      "TRAINER_YOUNGSTER_NASH_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -4135,7 +4324,9 @@
     "has_water": true,
     "has_fishing": true,
     "locations": [],
-    "events": [],
+    "events": [
+      "LEGENDARY_POKEMON_MEWTWO"
+    ],
     "exits": [],
     "warps": []
   }

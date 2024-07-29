@@ -326,7 +326,8 @@
     "has_fishing": false,
     "locations": [
       "NPC_GIFT_GOT_FIRST_POKEBALLS",
-      "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL"
+      "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL",
+      "TRAINER_RIVAL_OAKS_LAB_BULBASAUR_REWARD"
     ],
     "events": [
       "EVENT_DELIVER_OAKS_PARCEL"
@@ -459,7 +460,16 @@
     "locations": [
       "BADGE_8",
       "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE",
-      "NPC_GIFT_GOT_TM26_FROM_GIOVANNI"
+      "NPC_GIFT_GOT_TM26_FROM_GIOVANNI",
+      "TRAINER_BLACK_BELT_ATSUSHI_REWARD",
+      "TRAINER_BLACK_BELT_KIYO_REWARD",
+      "TRAINER_BLACK_BELT_TAKASHI_REWARD",
+      "TRAINER_COOLTRAINER_SAMUEL_REWARD",
+      "TRAINER_COOLTRAINER_WARREN_REWARD",
+      "TRAINER_COOLTRAINER_YUJI_REWARD",
+      "TRAINER_LEADER_GIOVANNI_REWARD",
+      "TRAINER_TAMER_COLE_REWARD",
+      "TRAINER_TAMER_JASON_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_GIOVANNI"
@@ -610,7 +620,9 @@
     "has_fishing": false,
     "locations": [
       "BADGE_1",
-      "NPC_GIFT_GOT_TM39_FROM_BROCK"
+      "NPC_GIFT_GOT_TM39_FROM_BROCK",
+      "TRAINER_CAMPER_LIAM_REWARD",
+      "TRAINER_LEADER_BROCK_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_BROCK"
@@ -699,7 +711,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "NPC_GIFT_GOT_FAME_CHECKER"
+      "NPC_GIFT_GOT_FAME_CHECKER",
+      "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD"
     ],
     "events": [],
     "exits": [
@@ -746,7 +759,8 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "NPC_GIFT_GOT_TM28_FROM_ROCKET"
+      "NPC_GIFT_GOT_TM28_FROM_ROCKET",
+      "TRAINER_TEAM_ROCKET_GRUNT_5_REWARD"
     ],
     "events": [],
     "exits": [
@@ -891,7 +905,10 @@
     "has_fishing": false,
     "locations": [
       "BADGE_2",
-      "NPC_GIFT_GOT_TM03_FROM_MISTY"
+      "NPC_GIFT_GOT_TM03_FROM_MISTY",
+      "TRAINER_LEADER_MISTY_REWARD",
+      "TRAINER_PICNICKER_DIANA_REWARD",
+      "TRAINER_SWIMMER_MALE_LUIS_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_MISTY"
@@ -1161,7 +1178,11 @@
     "has_fishing": false,
     "locations": [
       "BADGE_3",
-      "NPC_GIFT_GOT_TM34_FROM_SURGE"
+      "NPC_GIFT_GOT_TM34_FROM_SURGE",
+      "TRAINER_ENGINEER_BAILY_REWARD",
+      "TRAINER_GENTLEMAN_TUCKER_REWARD",
+      "TRAINER_LEADER_LT_SURGE_REWARD",
+      "TRAINER_SAILOR_DWAYNE_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_LT_SURGE"
@@ -1378,7 +1399,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_TEAM_ROCKET_GRUNT_7_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -1705,7 +1728,12 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_BEAUTY_BRIDGET_REWARD",
+      "TRAINER_BEAUTY_TAMIA_REWARD",
+      "TRAINER_LASS_KAY_REWARD",
+      "TRAINER_PICNICKER_TINA_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_CELADON_CITY_GYM/TREE"
@@ -1723,7 +1751,11 @@
     "has_fishing": false,
     "locations": [
       "BADGE_4",
-      "NPC_GIFT_GOT_TM19_FROM_ERIKA"
+      "NPC_GIFT_GOT_TM19_FROM_ERIKA",
+      "TRAINER_BEAUTY_LORI_REWARD",
+      "TRAINER_COOLTRAINER_MARY_REWARD",
+      "TRAINER_LASS_LISA_REWARD",
+      "TRAINER_LEADER_ERIKA_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_ERIKA"
@@ -1916,7 +1948,14 @@
     "has_fishing": false,
     "locations": [
       "BADGE_5",
-      "NPC_GIFT_GOT_TM06_FROM_KOGA"
+      "NPC_GIFT_GOT_TM06_FROM_KOGA",
+      "TRAINER_JUGGLER_KAYDEN_REWARD",
+      "TRAINER_JUGGLER_KIRK_REWARD",
+      "TRAINER_JUGGLER_NATE_REWARD",
+      "TRAINER_JUGGLER_SHAWN_REWARD",
+      "TRAINER_LEADER_KOGA_REWARD",
+      "TRAINER_TAMER_EDGAR_REWARD",
+      "TRAINER_TAMER_PHIL_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_KOGA"
@@ -2080,8 +2119,17 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
-    "events": [],
+    "locations": [
+      "TRAINER_BLACK_BELT_AARON_REWARD",
+      "TRAINER_BLACK_BELT_HIDEKI_REWARD",
+      "TRAINER_BLACK_BELT_HITOSHI_REWARD",
+      "TRAINER_BLACK_BELT_KOICHI_REWARD",
+      "TRAINER_BLACK_BELT_MIKE_REWARD"
+    ],
+    "events": [
+      "GIFT_POKEMON_HITMONCHAN",
+      "GIFT_POKEMON_HITMONLEE"
+    ],
     "exits": [],
     "warps": [
       "MAP_SAFFRON_CITY_DOJO:0/MAP_SAFFRON_CITY:2"
@@ -2094,7 +2142,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_PSYCHIC_PRESTON_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2111,7 +2161,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_CHANNELER_AMANDA_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2128,7 +2180,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_PSYCHIC_JOHAN_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2145,7 +2199,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_CHANNELER_STACY_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2164,7 +2220,8 @@
     "has_fishing": false,
     "locations": [
       "BADGE_6",
-      "NPC_GIFT_GOT_TM04_FROM_SABRINA"
+      "NPC_GIFT_GOT_TM04_FROM_SABRINA",
+      "TRAINER_LEADER_SABRINA_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_SABRINA"
@@ -2181,7 +2238,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_PSYCHIC_TYRON_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2198,7 +2257,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_CHANNELER_TASHA_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2230,7 +2291,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_PSYCHIC_CAMERON_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2387,7 +2450,15 @@
     "has_fishing": false,
     "locations": [
       "BADGE_7",
-      "NPC_GIFT_GOT_TM38_FROM_BLAINE"
+      "NPC_GIFT_GOT_TM38_FROM_BLAINE",
+      "TRAINER_BURGLAR_DUSTY_REWARD",
+      "TRAINER_BURGLAR_QUINN_REWARD",
+      "TRAINER_BURGLAR_RAMON_REWARD",
+      "TRAINER_LEADER_BLAINE_REWARD",
+      "TRAINER_SUPER_NERD_AVERY_REWARD",
+      "TRAINER_SUPER_NERD_DEREK_REWARD",
+      "TRAINER_SUPER_NERD_ERIK_REWARD",
+      "TRAINER_SUPER_NERD_ZAC_REWARD"
     ],
     "events": [
       "EVENT_DEFEAT_BLAINE"
@@ -2577,7 +2648,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_ELITE_FOUR_LORELEI_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2592,7 +2665,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_ELITE_FOUR_BRUNO_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2607,7 +2682,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_ELITE_FOUR_AGATHA_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2622,7 +2699,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_ELITE_FOUR_LANCE_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2637,7 +2716,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": [

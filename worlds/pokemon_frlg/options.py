@@ -282,6 +282,14 @@ class CeruleanCaveCount(Range):
     range_end = 8
 
 
+class LevelScaling(Toggle):
+    """
+    Sets whether encounter levels are scaled by sphere access.
+    """
+    display_name = "Level Scaling"
+    default = 0
+
+
 class RandomizeWildPokemon(Choice):
     """
     Randomizes wild Pokémon encounters (grass, caves, water, fishing)
@@ -394,6 +402,7 @@ class RandomizeLegendaryPokemon(Choice):
     Randomizes legendary Pokémon (Mewtwo, Zapdos, Deoxys, etc.). Does not randomize the roamer.
 
     - Vanilla: Legendary encounters are unchanged
+    - Legendaries: Legendary encounters are replaced with another legendary Pokémon
     - Match Base Stats: Legendary encounters are replaced with species with approximately the same BST
     - Match Type: Legendary encounters are replaced with species that share a type with the original
     - Match Base Stats and Type: Apply both Match Base Stats and Match Type
@@ -402,10 +411,11 @@ class RandomizeLegendaryPokemon(Choice):
     display_name = "Randomize Legendary Pokemon"
     default = 0
     option_vanilla = 0
-    option_match_base_stats = 1
-    option_match_type = 2
-    option_match_base_stats_and_type = 3
-    option_completely_random = 4
+    option_legendaries = 1
+    option_match_base_stats = 2
+    option_match_type = 3
+    option_match_base_stats_and_type = 4
+    option_completely_random = 5
 
 
 class RandomizeMiscPokemon(Choice):
@@ -642,6 +652,8 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     elite_four_count: EliteFourCount
     cerulean_cave_requirement: CeruleanCaveRequirement
     cerulean_cave_count: CeruleanCaveCount
+
+    level_scaling: LevelScaling
 
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups

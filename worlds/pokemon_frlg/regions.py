@@ -37,7 +37,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         ],
     }
 
-    def connect_to_map_encounters(region: Region, map_name: str, encounter_region_name: str,
+    def connect_to_map_encounters(regions: Dict[str, Region], region: Region, map_name: str, encounter_region_name: str,
                                   include_slots: Tuple[bool, bool, bool]):
         """
         Connects the provided region to the corresponding wild encounters for the given parent map.
@@ -59,7 +59,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
 
                 # If the region hasn't been created yet, create it now
                 try:
-                    encounter_region = world.multiworld.get_region(region_name, world.player)
+                    encounter_region = regions[region_name]
                 except KeyError:
                     encounter_region = Region(region_name, world.player, world.multiworld)
                     encounter_slots = getattr(world.modified_maps[map_name],
@@ -70,14 +70,23 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                         # Want to create locations per species, not per slot
                         # encounter_categories includes info on which slots belong to which subcategory
                         unique_species = []
+                        slot_ids: List[List[int]] = []
                         for j, species_data in enumerate(encounter_slots):
                             species_id = species_data.species_id
                             if j in subcategory[1] and species_id not in unique_species:
                                 unique_species.append(species_id)
+                                slot_ids.append([j])
+                            elif j in subcategory[1] and species_id in unique_species:
+                                slot_ids[unique_species.index(species_id)].append(j)
 
                         # Create a location for the species
                         for j, species_id in enumerate(unique_species):
                             subcategory_name = subcategory[0] if subcategory[0] is not None else encounter_category[0]
+                            slots_str = ""
+
+                            for slot_id in slot_ids[j]:
+                                slots_str += f" {slot_id}"
+
                             encounter_location = PokemonFRLGLocation(
                                 world.player,
                                 f"{encounter_region_name} - {subcategory_name} Encounter {j + 1}",
@@ -85,7 +94,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                 encounter_region,
                                 None,
                                 None,
-                                frozenset(["Wild"])
+                                frozenset(["Pokemon", "Wild"]),
+                                f"{map_name} {encounter_category[0].upper()}{slots_str}"
                             )
                             encounter_location.show_in_spoiler = False
 
@@ -103,7 +113,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                             encounter_region.locations.append(encounter_location)
 
                     # Add the new encounter region to the multiworld
-                    world.multiworld.regions.append(encounter_region)
+                    regions[region_name] = encounter_region
 
                 # Encounter region exists, just connect to it
                 region.connect(encounter_region, f"{region.name} to {region_name}")
@@ -133,7 +143,14 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
             else:
                 item = event_data.item
 
-            event = PokemonFRLGLocation(world.player, name, None, new_region)
+            event = PokemonFRLGLocation(world.player,
+                                        name,
+                                        None,
+                                        new_region,
+                                        None,
+                                        None,
+                                        event_data.tags,
+                                        event_id)
             event.place_locked_item(PokemonFRLGItem(item,
                                                     ItemClassification.progression,
                                                     None,
@@ -160,7 +177,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
 
         regions[region_name] = new_region
 
-        connect_to_map_encounters(new_region, region_data.parent_map.name, region_data.encounter_region,
+        connect_to_map_encounters(regions, new_region, region_data.parent_map.name, region_data.encounter_region,
                                   (region_data.has_land, region_data.has_water, region_data.has_fishing))
 
     for name, source, dest in connections:

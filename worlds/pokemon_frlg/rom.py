@@ -251,7 +251,8 @@ def write_tokens(world: "PokemonFRLGWorld",
     _set_species_info(world, patch, game_version_revision)
 
     # Set wild encounters
-    if world.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
+    if (world.options.wild_pokemon != RandomizeWildPokemon.option_vanilla or
+            world.options.level_scaling):
         _set_wild_encounters(world, patch, game_version, game_version_revision)
 
     # Set starters
@@ -259,16 +260,19 @@ def write_tokens(world: "PokemonFRLGWorld",
         _set_starters(world, patch, game_version_revision)
 
     # Set legendaries
-    if world.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+    if (world.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla or
+            world.options.level_scaling):
         _set_legendaries(world, patch, game_version, game_version_revision)
 
     # Set misc pokemon
-    if world.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+    if (world.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla or
+            world.options.level_scaling):
         _set_misc_pokemon(world, patch, game_version, game_version_revision)
 
     # Set trainer parties
     if (world.options.starters != RandomizeStarters.option_vanilla or
-            world.options.trainers != RandomizeTrainerParties.option_vanilla):
+            world.options.trainers != RandomizeTrainerParties.option_vanilla or
+            world.options.level_scaling):
         _set_trainer_parties(world, patch, game_version_revision)
 
     # Set TM/HM compatability
@@ -314,6 +318,8 @@ def write_tokens(world: "PokemonFRLGWorld",
     # / *0x1A* / bool8 reccuringHiddenItems;
     #
     # / *0x1B* / u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
+    #
+    # / *0x20 / bool8 isTrainersanity;
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -470,8 +476,10 @@ def _set_wild_encounters(world: "PokemonFRLGWorld",
         for table in tables:
             if table is not None:
                 for i, species_data in enumerate(table.slots[game_version]):
-                    address = table.address[game_version_revision] + 2 + (i * 4)
-                    patch.write_token(APTokenTypes.WRITE, address, struct.pack("<H", species_data.species_id))
+                    address = table.address[game_version_revision] + (i * 4)
+                    patch.write_token(APTokenTypes.WRITE, address, struct.pack("<B", species_data.min_level))
+                    patch.write_token(APTokenTypes.WRITE, address + 0x01, struct.pack("<B", species_data.max_level))
+                    patch.write_token(APTokenTypes.WRITE, address + 0x02, struct.pack("<H", species_data.species_id))
 
 
 def _set_starters(world: "PokemonFRLGWorld",
@@ -503,6 +511,9 @@ def _set_legendaries(world: "PokemonFRLGWorld",
         patch.write_token(APTokenTypes.WRITE,
                           legendary.address[game_version_revision],
                           struct.pack("<H", legendary.species_id[game_version]))
+        patch.write_token(APTokenTypes.WRITE,
+                          legendary.level_address[game_version_revision],
+                          struct.pack("<B", legendary.level[game_version]))
 
 
 def _set_misc_pokemon(world: "PokemonFRLGWorld",
@@ -517,6 +528,10 @@ def _set_misc_pokemon(world: "PokemonFRLGWorld",
         patch.write_token(APTokenTypes.WRITE,
                           misc_pokemon.address[game_version_revision],
                           struct.pack("<H", misc_pokemon.species_id[game_version]))
+        if misc_pokemon.level[game_version] != 0:
+            patch.write_token(APTokenTypes.WRITE,
+                              misc_pokemon.level_address[game_version_revision],
+                              struct.pack("<B", misc_pokemon.level[game_version]))
 
 
 def _set_trainer_parties(world: "PokemonFRLGWorld",
@@ -537,7 +552,7 @@ def _set_trainer_parties(world: "PokemonFRLGWorld",
         for i, pokemon in enumerate(trainer.party.pokemon):
             pokemon_address = party_address + (i * pokemon_data_size)
 
-            # Species Id
+            patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x02, struct.pack("<B", pokemon.level))
             patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x04, struct.pack("<H", pokemon.species_id))
 
             if trainer.party.pokemon_data_type in {TrainerPokemonDataTypeEnum.NO_ITEM_CUSTOM_MOVES,

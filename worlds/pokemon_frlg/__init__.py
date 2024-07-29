@@ -4,6 +4,7 @@ Archipelago World definition for Pokémon FireRed/LeafGreen
 import copy
 import os.path
 import tempfile
+import threading
 import Utils
 
 import settings
@@ -17,10 +18,11 @@ from .client import PokemonFRLGClient
 from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
                    TrainerData)
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
+from .level_scaling import level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, GameVersion, RandomizeWildPokemon, ShuffleHiddenItems,
-                      ShuffleBadges, ViridianCityRoadblock)
+from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+                      RandomizeWildPokemon, ShuffleHiddenItems, ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatability, randomize_trainer_parties, randomize_types,
                       randomize_wild_encounters)
@@ -115,7 +117,7 @@ class PokemonFRLGWorld(World):
     modified_events: Dict[str, EventData]
     modified_legendary_pokemon: Dict[str, MiscPokemonData]
     modified_misc_pokemon: Dict[str, MiscPokemonData]
-    modified_trainers: Dict[int, TrainerData]
+    modified_trainers: Dict[str, TrainerData]
     hm_compatability: Dict[str, List[str]]
     per_species_tmhm_moves: Dict[int, List[int]]
     trade_pokemon: List[Tuple[str, str]]
@@ -124,6 +126,10 @@ class PokemonFRLGWorld(World):
     blacklisted_trainer_pokemon: Set[int]
     blacklisted_abilities: Set[int]
     blacklist_moves: Set[int]
+    trainer_level_list: List[int]
+    trainer_id_list: List[str]
+    encounter_level_list: List[Tuple[int, int]]
+    encounter_id_list: List[str]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -138,7 +144,12 @@ class PokemonFRLGWorld(World):
         self.modified_trainers = copy.deepcopy(frlg_data.trainers)
         self.hm_compatability = {}
         self.per_species_tmhm_moves = {}
-        self.trade_pokemon = list()
+        self.trade_pokemon = []
+        self.trainer_level_list = []
+        self.trainer_id_list = []
+        self.encounter_level_list = []
+        self.encounter_id_list = []
+        self.finished_level_scaling = threading.Event()
 
     @classmethod
     def stage_assert_generate(cls, multiworld: MultiWorld) -> None:
@@ -259,11 +270,36 @@ class PokemonFRLGWorld(World):
                 region = self.multiworld.get_region(trade[0], self.player)
                 region.locations.remove(location)
 
+    @classmethod
+    def stage_post_fill(cls, multiworld):
+        # Change all but one instance of a Pokémon in each sphere to useful classification
+        # This cuts down on time calculating the playthrough
+        found_mons = set()
+        pokemon = set()
+        for species in frlg_data.species.values():
+            pokemon.add(species.name)
+        for sphere in multiworld.get_spheres():
+            for location in sphere:
+                if (location.game == "Pokemon FireRed and LeafGreen" and
+                        (location.item.name in pokemon or "Static " in location.item.name)
+                        and location.item.advancement):
+                    key = (location.player, location.item.name)
+                    if key in found_mons:
+                        location.item.classification = ItemClassification.useful
+                    else:
+                        found_mons.add(key)
+
+    @classmethod
+    def stage_generate_output(cls, multiworld, output_directory):
+        level_scaling(multiworld)
+
     def generate_output(self, output_directory: str) -> None:
         # Modify catch rate
         min_catch_rate = min(self.options.min_catch_rate.value, 255)
         for species in self.modified_species.values():
             species.catch_rate = max(species.catch_rate, min_catch_rate)
+
+        self.finished_level_scaling.wait()
 
         randomize_abilities(self)
         randomize_moves(self)
@@ -309,35 +345,49 @@ class PokemonFRLGWorld(World):
         del self.modified_legendary_pokemon
         del self.modified_misc_pokemon
         del self.trade_pokemon
-
-    @classmethod
-    def stage_post_fill(cls, multiworld):
-        # Change all but one instance of a Pokémon in each sphere to useful classification
-        # This cuts down on time calculating the playthrough
-        found_mons = set()
-        pokemon = set()
-        for species in frlg_data.species.values():
-            pokemon.add(species.name)
-        for sphere in multiworld.get_spheres():
-            for location in sphere:
-                if (location.game == "Pokemon FireRed and LeafGreen" and
-                        (location.item.name in pokemon or "Static " in location.item.name)
-                        and location.item.advancement):
-                    key = (location.player, location.item.name)
-                    if key in found_mons:
-                        location.item.classification = ItemClassification.useful
-                    else:
-                        found_mons.add(key)
+        del self.trainer_id_list
+        del self.trainer_level_list
+        del self.encounter_id_list
+        del self.encounter_level_list
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         # Add Pokémon locations to the spoiler log if they are not vanilla
+        if (self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla or
+                self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla or
+                self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla):
+            spoiler_handle.write(f"\n\nPokemon Locations ({self.multiworld.player_name[self.player]}):\n\n")
+
         if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
-            spoiler_handle.write(f"\n\nPokémon Locations ({self.multiworld.player_name[self.player]}):\n\n")
             pokemon_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations(self.player) if "Wild" in location.tags
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Wild" in location.tags
             ]
             for location in pokemon_locations:
                 spoiler_handle.write(location.name + ": " + location.item.name + "\n")
+
+        if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Misc" in location.tags
+            ]
+            for location in pokemon_locations:
+                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
+                    name = location.item.name.split()[1]
+                else:
+                    name = location.item.name
+                spoiler_handle.write(location.name + ": " + name + "\n")
+
+        if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Legendary" in location.tags
+            ]
+            for location in pokemon_locations:
+                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
+                    name = location.item.name.split()[1]
+                else:
+                    name = location.item.name
+                spoiler_handle.write(location.name + ": " + name + "\n")
 
     def modify_multidata(self, multidata: Dict[str, Any]):
         import base64

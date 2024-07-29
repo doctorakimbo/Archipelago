@@ -1,6 +1,6 @@
-from typing import TYPE_CHECKING, Dict, Optional, FrozenSet, Iterable, List
+from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Tuple
 from BaseClasses import Location, Region, ItemClassification
-from .data import data, BASE_OFFSET
+from .data import data, BASE_OFFSET, EncounterTableData
 from .items import offset_item_value, PokemonFRLGItem
 from .options import FreeFlyLocation, PewterCityRoadblock, ViridianCityRoadblock
 if TYPE_CHECKING:
@@ -67,6 +67,7 @@ class PokemonFRLGLocation(Location):
     item_address = Optional[Dict[str, int]]
     default_item_id: Optional[int]
     tags: FrozenSet[str]
+    data_id: Optional[str]
 
     def __init__(
             self,
@@ -76,11 +77,13 @@ class PokemonFRLGLocation(Location):
             parent: Optional[Region] = None,
             item_address: Optional[Dict[str, int]] = None,
             default_item_id: Optional[int] = None,
-            tags: FrozenSet[str] = frozenset()) -> None:
+            tags: FrozenSet[str] = frozenset(),
+            data_id: Optional[str] = None) -> None:
         super().__init__(player, name, address, parent)
         self.default_item_id = None if default_item_id is None else offset_item_value(default_item_id)
         self.item_address = item_address
         self.tags = tags
+        self.data_id = data_id
 
 
 def offset_flag(flag: int) -> int:
@@ -138,6 +141,70 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
                 location_data.tags
             )
             region.locations.append(location)
+
+        excluded_trainer_locations = [loc for loc in region_data.locations
+                                      if "Trainer" in data.locations[loc].tags]
+
+        for location_flag in excluded_trainer_locations:
+            location_data = data.locations[location_flag]
+
+            location = PokemonFRLGLocation(
+                world.player,
+                location_data.name,
+                None,
+                region,
+                None,
+                None,
+                location_data.tags,
+                location_flag[:-7]
+            )
+            location.place_locked_item(PokemonFRLGItem("None",
+                                                       ItemClassification.filler,
+                                                       None,
+                                                       world.player))
+            location.show_in_spoiler = False
+            region.locations.append(location)
+
+    trainer_level_object_list: List[Tuple[str, int]] = []
+    encounter_level_object_list: List[Tuple[str, Tuple[int, int]]] = []
+
+    if world.options.level_scaling:
+        for region in regions.values():
+            for location in region.locations:
+                if "Trainer" in location.tags:
+                    trainer_party_data = data.trainers[location.data_id].party
+                    for i, pokemon in enumerate(trainer_party_data.pokemon):
+                        trainer_level_object_list.append((f"{location.data_id} {i}", pokemon.level))
+                elif "Pokemon" in location.tags:
+                    if "Misc" in location.tags:
+                        misc_pokemon_data = data.misc_pokemon[location.data_id]
+                        # We don't want to include Pokémon whose level cannot be scaled
+                        if misc_pokemon_data.level[game_version] != 0:
+                            trainer_level_object_list.append((location.data_id, misc_pokemon_data.level[game_version]))
+                    elif "Legendary" in location.tags:
+                        legendary_pokemon_data = data.legendary_pokemon[location.data_id]
+                        trainer_level_object_list.append((location.data_id, legendary_pokemon_data.level[game_version]))
+                    elif "Wild" in location.tags:
+                        data_ids: List[str] = location.data_id.split()
+                        map_data = data.maps[data_ids[0]]
+                        slot_ids: List[int] = [int(slot_id) for slot_id in data_ids[2:]]
+                        encounters = (map_data.land_encounters if data_ids[1] == "LAND" else
+                                      map_data.water_encounters if data_ids[1] == "WATER" else
+                                      map_data.fishing_encounters if data_ids[1] == "FISHING" else
+                                      None)
+                        if encounters is not None:
+                            for i, encounter in enumerate(encounters.slots[game_version]):
+                                if i in slot_ids:
+                                    name = f"{data_ids[0]} {data_ids[1]} {i}"
+                                    encounter_level_object_list.append((name,
+                                                                        (encounter.min_level, encounter.max_level)))
+
+        trainer_level_object_list.sort(key=lambda i: i[1])
+        encounter_level_object_list.sort(key=lambda i: i[1][1])
+        world.trainer_id_list = [i[0] for i in trainer_level_object_list]
+        world.trainer_level_list = [i[1] for i in trainer_level_object_list]
+        world.encounter_id_list = [i[0] for i in encounter_level_object_list]
+        world.encounter_level_list = [i[1] for i in encounter_level_object_list]
 
 
 def set_free_fly(world: "PokemonFRLGWorld") -> None:

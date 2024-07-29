@@ -24,13 +24,6 @@ EXPECTED_ROM_NAME: Dict[str, str] = {
 }
 
 
-DEFEATED_CHAMPION_FLAGS: List[int] = {
-    data.constants["TRAINER_FLAGS_START"] + data.constants["TRAINER_CHAMPION_FIRST_BULBASAUR"],
-    data.constants["TRAINER_FLAGS_START"] + data.constants["TRAINER_CHAMPION_FIRST_CHARMANDER"],
-    data.constants["TRAINER_FLAGS_START"] + data.constants["TRAINER_CHAMPION_FIRST_SQUIRTLE"]
-}
-
-
 TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_BROCK",
     "FLAG_DEFEATED_MISTY",
@@ -237,10 +230,6 @@ class PokemonFRLGClient(BizHawkClient):
                         location_id = offset_flag(flag_id)
                         if location_id in ctx.server_locations:
                             local_checked_locations.add(location_id)
-
-                        for j in DEFEATED_CHAMPION_FLAGS:
-                            if flag_id == j:
-                                game_clear = True
 
                         if flag_id == data.constants["FLAG_DEFEATED_CHAMP"]:
                             game_clear = True

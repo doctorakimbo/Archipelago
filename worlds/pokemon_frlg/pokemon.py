@@ -1,8 +1,9 @@
 import math
 from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
-from .data import data, NUM_REAL_SPECIES, EncounterSpeciesData, EventData, LearnsetMove, SpeciesData, TrainerPokemonData
-from .options import (HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+from .data import (data, LEGENDARY_POKEMON, NUM_REAL_SPECIES, EncounterSpeciesData, EventData, LearnsetMove,
+                   SpeciesData, TrainerPokemonData)
+from .options import (GameVersion, HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
                       TmTutorCompatibility, WildPokemonGroups)
 from .util import bool_array_to_int, int_to_bool_array
@@ -604,10 +605,16 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
         RandomizeLegendaryPokemon.option_match_base_stats_and_type
     }
 
+    placed_species = set()
+
     for name, legendary in data.legendary_pokemon.items():
         original_species = world.modified_species[legendary.species_id[game_version]]
 
-        candidates = list(world.modified_species.values())
+        if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_legendaries:
+            candidates = [species for species in world.modified_species.values() if
+                          species.species_id in LEGENDARY_POKEMON and species.species_id not in placed_species]
+        else:
+            candidates = list(world.modified_species.values())
         if should_match_type:
             candidates = [
                 species
@@ -617,7 +624,34 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
         if should_match_bst:
             candidates = _filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
 
-        world.modified_legendary_pokemon[name].species_id[game_version] = world.random.choice(candidates).species_id
+        new_species_id = world.random.choice(candidates).species_id
+        world.modified_legendary_pokemon[name].species_id[game_version] = new_species_id
+        placed_species.add(new_species_id)
+
+    # Update the events that correspond to the legendary Pokémon
+    for name, legendary_pokemon in world.modified_legendary_pokemon.items():
+        if name not in world.modified_events:
+            continue
+
+        species = world.modified_species[legendary_pokemon.species_id[game_version]]
+        item_name = data.events[name].item.split()
+
+        if item_name[0] == "Static":
+            item = f"Static {species.name}"
+        elif item_name[0] == "Missable":
+            item = f"Missable {species.name}"
+        else:
+            item = item_name[0]
+
+        new_event = EventData(
+            world.modified_events[name].id,
+            world.modified_events[name].name,
+            item,
+            world.modified_events[name].parent_region_id,
+            world.modified_events[name].tags
+        )
+
+        world.modified_events[name] = new_event
 
 
 def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
@@ -656,13 +690,28 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
             continue
 
         species = world.modified_species[misc_pokemon.species_id[game_version]]
-        item = f'{species.name}' if name in _NON_STATIC_MISC_POKEMON else f'Static {species.name}'
+
+        if type(data.events[name].item) is list:
+            if game_version == GameVersion.option_firered:
+                item_name = data.events[name].item[0].split()
+            else:
+                item_name = data.events[name].item[1].split()
+        else:
+            item_name = data.events[name].item.split()
+
+        if item_name[0] == "Static":
+            item = f"Static {species.name}"
+        elif item_name[0] == "Missable":
+            item = f"Missable {species.name}"
+        else:
+            item = item_name[0]
 
         new_event = EventData(
             world.modified_events[name].id,
             world.modified_events[name].name,
             item,
-            world.modified_events[name].parent_region_id
+            world.modified_events[name].parent_region_id,
+            world.modified_events[name].tags
         )
 
         world.modified_events[name] = new_event

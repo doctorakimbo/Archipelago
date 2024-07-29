@@ -214,14 +214,14 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Sky", "Seven Island"), lambda state: state.has("Fly Seven Island", player))
 
     # Pallet Town
-    set_rule(get_location("Pallet Town - Oak's Post Champion Reward 1"),
+    set_rule(get_location("Pallet Town - Oak's Post Champion Gift 1"),
              lambda state: state.has("Defeat Champion", player))
-    set_rule(get_location("Pallet Town - Oak's Post Champion Reward 2"),
+    set_rule(get_location("Pallet Town - Oak's Post Champion Gift 2"),
              lambda state: state.has("Defeat Champion", player))
     set_rule(get_location("Rival's House - Daisy"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Parcel Delivery Reward"),
+    set_rule(get_location("Professor Oak's Lab - Oak's Parcel Delivery Gift"),
              lambda state: state.has("Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Post Route 22 Rival Reward"),
+    set_rule(get_location("Professor Oak's Lab - Oak's Post Route 22 Rival Gift"),
              lambda state: state.has("Defeat Route 22 Rival", player))
     set_rule(get_location("Professor Oak's Lab - Oak's Delivery"), lambda state: state.has("Oak's Parcel", player))
     set_rule(get_entrance("Pallet Town", "Pallet Town - Water"), lambda state: can_surf(state))
@@ -235,8 +235,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Route 22
     set_rule(get_location("Route 22 - Rival Battle"),
-             lambda state: state.has("Deliver Oak's Parcel", player) or
-                           state.has("Defeat Giovanni", player))
+             lambda state: state.has("Deliver Oak's Parcel", player) or state.has("Defeat Giovanni", player))
+    set_rule(get_location("Route 22 - Early Rival Reward"), lambda state: state.has("Deliver Oak's Parcel", player))
+    set_rule(get_location("Route 22 - Late Rival Reward"), lambda state: state.has("Defeat Giovanni", player))
     set_rule(get_entrance("Route 22", "Route 22 - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 22 North Entrance", "Route 23 - South"), lambda state: can_pass_route_22_gate(state))
 
@@ -312,8 +313,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_10.value * 1.2)))
     set_rule(get_entrance("Route 10 - North", "Route 10 - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 10 - Power Plant", "Route 10 - Water"), lambda state: can_surf(state))
-    set_rule(get_entrance("Route 10 - North", "Rock Tunnel 1F - South"), lambda state: rock_tunnel(state))
-    set_rule(get_entrance("Route 10 - South", "Rock Tunnel 1F - Northeast"), lambda state: rock_tunnel(state))
+    set_rule(get_entrance("Route 10 - North", "Rock Tunnel 1F - Northeast"), lambda state: rock_tunnel(state))
+    set_rule(get_entrance("Route 10 - South", "Rock Tunnel 1F - South"), lambda state: rock_tunnel(state))
 
     # Lavender Town
     set_rule(get_location("Lavender Volunteer Pokemon House - Mr. Fuji"),
@@ -342,6 +343,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Lift Key", player))
 
     # Pokemon Tower
+    set_rule(get_location("Pokemon Tower 6F - Ghost Pokemon"), lambda state: state.has("Silph Scope", player))
     set_rule(get_entrance("Pokemon Tower 6F", "Pokemon Tower 7F"), lambda state: state.has("Silph Scope", player))
 
     # Route 12
@@ -530,6 +532,11 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Mt. Ember
     set_rule(get_location("Mt. Ember Exterior - Item Near Summit"),
              lambda state: can_strength(state) and can_rock_smash(state))
+    set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Left)"),
+             lambda state: state.has("Deliver Meteorite", player))
+    set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Right)"),
+             lambda state: state.has("Deliver Meteorite", player))
+    set_rule(get_location("Mt. Ember Summit - Legendary Pokemon"), lambda state: can_strength(state))
     set_rule(get_entrance("Mt. Ember Exterior - South", "Mt. Ember Exterior - Center"),
              lambda state: can_strength(state))
     set_rule(get_entrance("Mt. Ember Exterior - South", "Mt. Ember Ruby Path 1F"),
@@ -712,7 +719,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has("Itemfinder", player))
 
         # Pokemon Tower
-        set_rule(get_location("Pokemon Tower 7F - Hidden Item Between Statues"),
+        set_rule(get_location("Pokemon Tower 7F - Hidden Item Under Mr. Fuji"),
                  lambda state: state.has("Itemfinder", player))
 
         # Route 12

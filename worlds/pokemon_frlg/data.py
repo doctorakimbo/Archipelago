@@ -87,7 +87,8 @@ class LocationData(NamedTuple):
     tags: FrozenSet[str]
 
 
-class EncounterSpeciesData(NamedTuple):
+@dataclass
+class EncounterSpeciesData:
     species_id: int
     min_level: int
     max_level: int
@@ -112,6 +113,7 @@ class EventData(NamedTuple):
     name: Union[str, List[str]]
     item: Union[str, List[str]]
     parent_region_id: str
+    tags: FrozenSet[str]
 
 
 class RegionData:
@@ -228,8 +230,9 @@ class StarterData:
 @dataclass
 class MiscPokemonData:
     species_id: Dict[str, int]
-    level: int
+    level: [str, int]
     address: Dict[str, int]
+    level_address: Dict[str, int]
 
 
 class TrainerPokemonDataTypeEnum(IntEnum):
@@ -832,6 +835,7 @@ def _init() -> None:
                 event_data[event_id]["name"],
                 event_data[event_id]["item"],
                 region_id,
+                frozenset(event_data[event_id]["tags"])
             )
             new_region.events.append(event_id)
             data.events[event_id] = new_event
@@ -937,20 +941,17 @@ def _init() -> None:
         data.legendary_pokemon[name] = MiscPokemonData(
             legendary_data["species"],
             legendary_data["level"],
-            legendary_data["address"]
+            legendary_data["address"],
+            legendary_data["level_address"]
         )
 
     # Create misc pokemon data
     for name, misc_data in extracted_data["misc_pokemon"].items():
-        if misc_data["level"] != 0:
-            level = misc_data["level"]
-        else:
-            level = None
-
         data.misc_pokemon[name] = MiscPokemonData(
             misc_data["species"],
-            level,
-            misc_data["address"]
+            misc_data["level"],
+            misc_data["address"],
+            misc_data["level_address"]
         )
 
     # Create trainer data
