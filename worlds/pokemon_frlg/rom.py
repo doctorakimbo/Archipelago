@@ -427,6 +427,10 @@ def write_tokens(world: "PokemonFRLGWorld",
     oaks_aide_route_15 = world.options.oaks_aide_route_15.value
     patch.write_token(APTokenTypes.WRITE, options_address + 0x1F, struct.pack("<B", oaks_aide_route_15))
 
+    # Set trainersanity
+    trainersanity = 1 if world.options.trainersanity else 0
+    patch.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", trainersanity))
+
     # Set slot auth
     patch.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
 

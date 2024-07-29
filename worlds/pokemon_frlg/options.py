@@ -39,6 +39,16 @@ class ShuffleHiddenItems(Choice):
     option_all = 2
 
 
+class Trainersanity(Toggle):
+    """
+    Defeating a trainer gives you an item.
+
+    Trainers are no longer missable. Each trainer will add a random filler item into the pool.
+    """
+    display_name = "Trainersanity"
+    default = 0
+
+
 class ItemfinderRequired(Choice):
     """
     Sets whether the Itemfinder if required for Hidden Items. Some items cannot be picked up without using the
@@ -630,6 +640,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
+    trainersanity: Trainersanity
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired

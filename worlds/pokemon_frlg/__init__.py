@@ -17,7 +17,7 @@ from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
 from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
                    TrainerData)
-from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
+from .items import ITEM_GROUPS, create_item_name_to_id_map, get_filler_item, get_item_classification, PokemonFRLGItem
 from .level_scaling import level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
@@ -158,7 +158,7 @@ class PokemonFRLGWorld(World):
         assert validate_regions()
 
     def get_filler_item_name(self) -> str:
-        return "Poke Ball"
+        return get_filler_item(self)
 
     def generate_early(self) -> None:
         self.blacklisted_wild_pokemon = {
@@ -204,6 +204,8 @@ class PokemonFRLGWorld(World):
             tags.add("Recurring")
         elif self.options.shuffle_hidden == ShuffleHiddenItems.option_nonrecurring:
             tags.add("Hidden")
+        if self.options.trainersanity:
+            tags.add("Trainer")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())

@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Tuple
 from BaseClasses import Location, Region, ItemClassification
-from .data import data, BASE_OFFSET, EncounterTableData
-from .items import offset_item_value, PokemonFRLGItem
+from .data import data, BASE_OFFSET
+from .items import get_filler_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
 from .options import FreeFlyLocation, PewterCityRoadblock, ViridianCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -131,19 +131,32 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             location_id = offset_flag(location_data.flag)
             item_addresses: Dict[str, int] = {f'{game_version}': location_data.address[game_version],
                                               f'{game_version}_rev1': location_data.address[f'{game_version}_rev1']}
+
+            if location_data.default_item == data.constants["ITEM_NONE"]:
+                default_item = reverse_offset_item_value(world.item_name_to_id[get_filler_item(world)])
+            else:
+                default_item = location_data.default_item
+
+            if "Trainer" in location_data.tags:
+                data_id = location_flag[:-7]
+            else:
+                data_id = location_flag
+
             location = PokemonFRLGLocation(
                 world.player,
                 location_data.name,
                 location_id,
                 region,
                 item_addresses,
-                location_data.default_item,
-                location_data.tags
+                default_item,
+                location_data.tags,
+                data_id
             )
             region.locations.append(location)
 
         excluded_trainer_locations = [loc for loc in region_data.locations
-                                      if "Trainer" in data.locations[loc].tags]
+                                      if "Trainer" in data.locations[loc].tags and
+                                      "Trainer" not in tags]
 
         for location_flag in excluded_trainer_locations:
             location_data = data.locations[location_flag]
