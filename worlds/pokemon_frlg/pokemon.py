@@ -40,8 +40,7 @@ _HM_MOVES = frozenset({
 })
 
 _MOVE_BLACKLIST = frozenset({
-    0,
-    165
+    0, 165
 })
 
 _DUNGEON_GROUPS: Dict[str, str] = {
@@ -108,14 +107,6 @@ STARTER_INDEX: Dict[str, int] = {
     "STARTER_POKEMON_BULBASAUR": 0,
     "STARTER_POKEMON_SQUIRTLE": 1,
     "STARTER_POKEMON_CHARMANDER": 2,
-}
-
-_NON_STATIC_MISC_POKEMON: List[str] = {
-    "CELADON_PRIZE_POKEMON_1",
-    "CELADON_PRIZE_POKEMON_2",
-    "CELADON_PRIZE_POKEMON_3",
-    "CELADON_PRIZE_POKEMON_4",
-    "CELADON_PRIZE_POKEMON_5"
 }
 
 # The tuple represnts (trainer name, starter index in party, starter evolution stage)
@@ -336,7 +327,7 @@ def randomize_moves(world: "PokemonFRLGWorld") -> None:
         while old_learnset[move_index].move_id == 0:
             if world.options.moves == RandomizeMoves.option_start_with_four_moves:
                 new_move = _get_random_move(world.random,
-                                            {move.move_id for move in new_learnset} | world.blacklist_moves)
+                                            {move.move_id for move in new_learnset} | world.blacklisted_moves)
             else:
                 new_move = 0
             new_learnset.append(LearnsetMove(old_learnset[move_index].level, new_move))
@@ -347,7 +338,7 @@ def randomize_moves(world: "PokemonFRLGWorld") -> None:
                 new_move = _get_random_damaging_move(world.random, {move.move_id for move in new_learnset})
             else:
                 new_move = _get_random_move(world.random,
-                                            {move.move_id for move in new_learnset} | world.blacklist_moves)
+                                            {move.move_id for move in new_learnset} | world.blacklisted_moves)
             new_learnset.append(LearnsetMove(old_learnset[move_index].level, new_move))
             move_index += 1
 
@@ -778,3 +769,25 @@ def randomize_tm_hm_compatability(world: "PokemonFRLGWorld") -> None:
                 compatability_array[i] = world.random.random() < world.options.hm_compatability / 100
 
         species.tm_hm_compatibility = bool_array_to_int(compatability_array)
+
+
+def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
+    if not world.options.tm_tutor_moves:
+        return
+
+    new_moves: Set[int] = set()
+
+    for i in range(50):
+        new_move = _get_random_move(world.random, new_moves | world.blacklisted_moves)
+        new_moves.add(new_move)
+        world.modified_tmhm_moves[i] = new_move
+
+
+def randomize_tutor_moves(world: "PokemonFRLGWorld") -> List[int]:
+    new_moves = []
+
+    for i in range(15):
+        new_move = _get_random_move(world.random, set(new_moves) | world.blacklisted_moves)
+        new_moves.append(new_move)
+
+    return new_moves

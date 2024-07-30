@@ -73,6 +73,16 @@ class FlashRequired(Toggle):
     default = 1
 
 
+class RemoveBadgeRequirement(OptionSet):
+    """
+    Removes the badge requirement to use any of the HMs listed.
+
+    HMs need to be listed by the move name. (e.g. Cut, Fly, Surf, etc.)
+    """
+    display_name = "Remove Badge Requirement"
+    valid_keys = ["Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"]
+
+
 class OaksAideRoute2(Range):
     """
     Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
@@ -541,6 +551,15 @@ class TmTutorCompatibility(NamedRange):
     }
 
 
+class TmTutorMoves(Toggle):
+    """
+    Randomizes the moves taught by TMs and move tutors.
+
+    Some opponents like gym leaders are allowed to use TMs. This option can affect the moves they know.
+    """
+    display_name = "Randomize TM/Tutor Moves"
+
+
 class ReusableTmsTutors(Toggle):
     """
     Sets TMs to not break after use (they remain sellable). Allows Move Tutors to be used infinitely.
@@ -644,6 +663,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
+    remove_badge_requirement: RemoveBadgeRequirement
     oaks_aide_route_2: OaksAideRoute2
     oaks_aide_route_10: OaksAideRoute10
     oaks_aide_route_11: OaksAideRoute11
@@ -682,6 +702,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     move_blacklist: MoveBlacklist
     hm_compatability: HmCompatibility
     tm_tutor_compatability: TmTutorCompatibility
+    tm_tutor_moves: TmTutorMoves
 
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate

@@ -2,7 +2,7 @@
 Logic rule definitions for Pokémon FireRed and LeafGreen
 """
 import math
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING, Dict, List
 from BaseClasses import CollectionState
 from worlds.generic.Rules import add_rule, set_rule
 from .data import data
@@ -18,39 +18,52 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     options = world.options
     multiworld = world.multiworld
 
+    BADGE_REQUIREMENT: Dict[str, str] = {
+        "Cut": "Cascade Badge",
+        "Fly": "Thunder Badge",
+        "Surf": "Soul Badge",
+        "Strength": "Rainbow Badge",
+        "Flash": "Boulder Badge",
+        "Rock Smash": "Marsh Badge",
+        "Waterfall": "Volcano Badge"
+    }
+
+    def badge_requirement(hm: str, state: CollectionState):
+        return hm in options.remove_badge_requirement.value or state.has(BADGE_REQUIREMENT[hm], player)
+
     def can_cut(state: CollectionState):
         return (state.has("HM01 Cut", player)
-                and state.has("Cascade Badge", player)
+                and badge_requirement("Cut", state)
                 and can_use_hm(state, "Cut"))
 
     def can_fly(state: CollectionState):
         return (state.has("HM02 Fly", player)
-                and state.has("Thunder Badge", player)
+                and badge_requirement("Fly", state)
                 and can_use_hm(state, "Fly"))
 
     def can_surf(state: CollectionState):
         return (state.has("HM03 Surf", player)
-                and state.has("Soul Badge", player)
+                and badge_requirement("Surf", state)
                 and can_use_hm(state, "Surf"))
 
     def can_strength(state: CollectionState):
         return (state.has("HM04 Strength", player)
-                and state.has("Rainbow Badge", player)
+                and badge_requirement("Strength", state)
                 and can_use_hm(state, "Strength"))
 
     def can_flash(state: CollectionState):
         return (state.has("HM05 Flash", player)
-                and state.has("Boulder Badge", player)
+                and badge_requirement("Flash", state)
                 and can_use_hm(state, "Flash"))
 
     def can_rock_smash(state: CollectionState):
         return (state.has("HM06 Rock Smash", player)
-                and state.has("Marsh Badge", player)
+                and badge_requirement("Rock Smash", state)
                 and can_use_hm(state, "Rock Smash"))
 
     def can_waterfall(state: CollectionState):
         return (state.has("HM07 Waterfall", player)
-                and state.has("Volcano Badge", player)
+                and badge_requirement("Waterfall", state)
                 and can_use_hm(state, "Waterfall"))
 
     def can_use_hm(state: CollectionState, hm: str):
@@ -234,10 +247,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Viridian City - North", "Viridian Gym"), lambda state: can_enter_viridian_gym(state))
 
     # Route 22
-    set_rule(get_location("Route 22 - Rival Battle"),
-             lambda state: state.has("Deliver Oak's Parcel", player) or state.has("Defeat Giovanni", player))
+    set_rule(get_location("Route 22 - Early Rival Battle"), lambda state: state.has("Deliver Oak's Parcel", player))
     set_rule(get_location("Route 22 - Early Rival Reward"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Route 22 - Late Rival Reward"), lambda state: state.has("Defeat Giovanni", player))
+    set_rule(get_location("Route 22 - Late Rival Reward"),
+             lambda state: state.has("Defeat Route 22 Rival", player) and state.has("Defeat Giovanni", player))
     set_rule(get_entrance("Route 22", "Route 22 - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 22 North Entrance", "Route 23 - South"), lambda state: can_pass_route_22_gate(state))
 

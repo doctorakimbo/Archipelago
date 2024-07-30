@@ -107,7 +107,7 @@
   },
 
   "EVENT_DEFEAT_ROUTE22_RIVAL": {
-    "name": "Route 22 - Rival Battle",
+    "name": "Route 22 - Early Rival Battle",
     "item": "Defeat Route 22 Rival",
     "tags": ["Event"]
   },

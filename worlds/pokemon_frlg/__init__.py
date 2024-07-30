@@ -24,8 +24,8 @@ from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_
 from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeWildPokemon, ShuffleHiddenItems, ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
-                      randomize_starters, randomize_tm_hm_compatability, randomize_trainer_parties, randomize_types,
-                      randomize_wild_encounters)
+                      randomize_starters, randomize_tm_hm_compatability, randomize_tm_moves,
+                      randomize_trainer_parties, randomize_types, randomize_wild_encounters)
 from .rom import (write_tokens, FRLGContainer, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
@@ -118,6 +118,7 @@ class PokemonFRLGWorld(World):
     modified_legendary_pokemon: Dict[str, MiscPokemonData]
     modified_misc_pokemon: Dict[str, MiscPokemonData]
     modified_trainers: Dict[str, TrainerData]
+    modified_tmhm_moves: List[int]
     hm_compatability: Dict[str, List[str]]
     per_species_tmhm_moves: Dict[int, List[int]]
     trade_pokemon: List[Tuple[str, str]]
@@ -125,7 +126,7 @@ class PokemonFRLGWorld(World):
     blacklisted_starters: Set[int]
     blacklisted_trainer_pokemon: Set[int]
     blacklisted_abilities: Set[int]
-    blacklist_moves: Set[int]
+    blacklisted_moves: Set[int]
     trainer_level_list: List[int]
     trainer_id_list: List[str]
     encounter_level_list: List[Tuple[int, int]]
@@ -142,6 +143,7 @@ class PokemonFRLGWorld(World):
         self.modified_legendary_pokemon = copy.deepcopy(frlg_data.legendary_pokemon)
         self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
         self.modified_trainers = copy.deepcopy(frlg_data.trainers)
+        self.modified_tmhm_moves = copy.deepcopy(frlg_data.tmhm_moves)
         self.hm_compatability = {}
         self.per_species_tmhm_moves = {}
         self.trade_pokemon = []
@@ -183,7 +185,7 @@ class PokemonFRLGWorld(World):
             self.blacklisted_trainer_pokemon |= LEGENDARY_POKEMON
 
         self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
-        self.blacklist_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
+        self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
         randomize_types(self)
         randomize_wild_encounters(self)
@@ -303,6 +305,7 @@ class PokemonFRLGWorld(World):
 
         self.finished_level_scaling.wait()
 
+        randomize_tm_moves(self)
         randomize_abilities(self)
         randomize_moves(self)
         randomize_trainer_parties(self)
@@ -398,9 +401,9 @@ class PokemonFRLGWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data = self.options.as_dict(
-            "game_version",
             "shuffle_badges",
             "shuffle_hidden",
+            "trainersanity",
             "itemfinder_required",
             "flash_required",
             "oaks_aide_route_2",

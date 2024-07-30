@@ -11,10 +11,8 @@ from settings import get_settings
 from .data import data, TrainerPokemonDataTypeEnum
 from .items import reverse_offset_item_value
 from .locations import reverse_offset_flag
-from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters,
-                      RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems, TmTutorCompatibility,
-                      ViridianCityRoadblock)
-from .pokemon import STARTER_INDEX
+from .options import ItemfinderRequired, ShuffleHiddenItems, TmTutorCompatibility, ViridianCityRoadblock
+from .pokemon import STARTER_INDEX, randomize_tutor_moves
 from .util import bool_array_to_int, encode_string
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -251,32 +249,25 @@ def write_tokens(world: "PokemonFRLGWorld",
     _set_species_info(world, patch, game_version_revision)
 
     # Set wild encounters
-    if (world.options.wild_pokemon != RandomizeWildPokemon.option_vanilla or
-            world.options.level_scaling):
-        _set_wild_encounters(world, patch, game_version, game_version_revision)
+    _set_wild_encounters(world, patch, game_version, game_version_revision)
 
     # Set starters
-    if world.options.starters != RandomizeStarters.option_vanilla:
-        _set_starters(world, patch, game_version_revision)
+    _set_starters(world, patch, game_version_revision)
 
     # Set legendaries
-    if (world.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla or
-            world.options.level_scaling):
-        _set_legendaries(world, patch, game_version, game_version_revision)
+    _set_legendaries(world, patch, game_version, game_version_revision)
 
     # Set misc pokemon
-    if (world.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla or
-            world.options.level_scaling):
-        _set_misc_pokemon(world, patch, game_version, game_version_revision)
+    _set_misc_pokemon(world, patch, game_version, game_version_revision)
 
     # Set trainer parties
-    if (world.options.starters != RandomizeStarters.option_vanilla or
-            world.options.trainers != RandomizeTrainerParties.option_vanilla or
-            world.options.level_scaling):
-        _set_trainer_parties(world, patch, game_version_revision)
+    _set_trainer_parties(world, patch, game_version_revision)
 
     # Set TM/HM compatability
     _set_tmhm_compatibility(world, patch, game_version_revision)
+
+    # Set TM Moves
+    _set_tm_moves(world, patch, game_version_revision)
 
     # Randomize move tutors
     _randomize_move_tutors(world, patch, game_version_revision)
@@ -285,41 +276,43 @@ def write_tokens(world: "PokemonFRLGWorld",
     # struct
     # ArchipelagoOptions
     # {
-    # / *0x00* / bool8 advanceTextWithHoldA;
-    # / *0x01* / u8 receivedItemMessageFilter; // 0 = Show All, 1 = Show Progression Only, 2 = Show None
-    # / *0x02* / bool8 betterShopsEnabled;
-    # / *0x03* / bool8 reusableTms;
-    # / *0x04* / bool8 guaranteedCatch;
+    # /* 0x00 */ bool8 advanceTextWithHoldA;
+    # /* 0x01 */ u8 receivedItemMessageFilter; // 0 = Show All, 1 = Show Progression Only, 2 = Show None
+    # /* 0x02 */ bool8 betterShopsEnabled;
+    # /* 0x03 */ bool8 reusableTms;
+    # /* 0x04 */ bool8 guaranteedCatch;
     #
-    # / *0x05* / bool8 areTrainersBlind;
-    # / *0x06* / u16 expMultiplierNumerator;
-    # / *0x08* / u16 expMultiplierDenominator;
+    # /* 0x05 */ bool8 areTrainersBlind;
+    # /* 0x06 */ u16 expMultiplierNumerator;
+    # /* 0x08 */ u16 expMultiplierDenominator;
     #
-    # / *0x0A* / bool8 openViridianCity;
-    # / *0x0B* / u8 route3Requirement; // 0 = Open, 1 = Defeat Brock, 2 = Defeat Any Gym Leader,
+    # /* 0x0A */ bool8 openViridianCity;
+    # /* 0x0B */ u8 route3Requirement; // 0 = Open, 1 = Defeat Brock, 2 = Defeat Any Gym Leader,
     #                                     3 = Boulder Badge, 4 = Any Badge
-    # / *0x0C* / bool8 saveBillRequired;
-    # / *0x0D* / bool8 giovanniRequiresGyms;
-    # / *0x0E* / u8 giovanniRequiredCount;
-    # / *0x0F* / bool8 route22GateRequiresGyms;
-    # / *0x10* / u8 route22GateRequiredCount;
-    # / *0x11* / bool8 route23GuardRequiresGyms;
-    # / *0x12* / u8 route23GuardRequiredCount;
-    # / *0x13* / bool8 eliteFourRequiresGyms;
-    # / *0x14* / u8 eliteFourRequiredCount;
-    # / *0x15* / u8 ceruleanCaveRequirement; // 0 = Vanilla, 1 = Become Champion, 2 = Restore Network Center,
+    # /* 0x0C */ bool8 saveBillRequired;
+    # /* 0x0D */ bool8 giovanniRequiresGyms;
+    # /* 0x0E */ u8 giovanniRequiredCount;
+    # /* 0x0F */ bool8 route22GateRequiresGyms;
+    # /* 0x10 */ u8 route22GateRequiredCount;
+    # /* 0x11 */ bool8 route23GuardRequiresGyms;
+    # /* 0x12 */ u8 route23GuardRequiredCount;
+    # /* 0x13 */ bool8 eliteFourRequiresGyms;
+    # /* 0x14 */ u8 eliteFourRequiredCount;
+    # /* 0x15 */ u8 ceruleanCaveRequirement; // 0 = Vanilla, 1 = Become Champion, 2 = Restore Network Center,
     #                                           3 = Badges, 4 = Gyms
-    # / *0x16* / u8 ceruleanCaveRequiredCount;
+    # /* 0x16 */ u8 ceruleanCaveRequiredCount;
     #
-    # / *0x17* / u8 startingBadges;
-    # / *0x18* / u8 freeFlyLocation;
+    # /* 0x17 */ u8 startingBadges;
+    # /* 0x18 */ u8 freeFlyLocation;
     #
-    # / *0x19* / bool8 itemfinderRequired;
-    # / *0x1A* / bool8 reccuringHiddenItems;
+    # /* 0x19 */ bool8 itemfinderRequired;
+    # /* 0x1A */ bool8 reccuringHiddenItems;
     #
-    # / *0x1B* / u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
+    # /* 0x1B */ u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
     #
-    # / *0x20 / bool8 isTrainersanity;
+    # /* 0x20 */ bool8 isTrainersanity;
+    #
+    # /* 0x21 */ bool8 removeBadgeRequirement[7]; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -430,6 +423,12 @@ def write_tokens(world: "PokemonFRLGWorld",
     # Set trainersanity
     trainersanity = 1 if world.options.trainersanity else 0
     patch.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", trainersanity))
+
+    # Set remove badge requirements
+    hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
+    for i, hm in enumerate(hms):
+        remove_badge_requirement = 1 if hm in world.options.remove_badge_requirement.value else 0
+        patch.write_token(APTokenTypes.WRITE, options_address + 0x21 + i, struct.pack("<B", remove_badge_requirement))
 
     # Set slot auth
     patch.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
@@ -592,12 +591,35 @@ def _set_tmhm_compatibility(world: "PokemonFRLGWorld",
         )
 
 
+def _set_tm_moves(world: "PokemonFRLGWorld",
+                  patch: Union[PokemonFireRedProcedurePatch,
+                               PokemonFireRedRev1ProcedurePatch,
+                               PokemonLeafGreenProcedurePatch,
+                               PokemonLeafGreenRev1ProcedurePatch],
+                  game_version_revision: str) -> None:
+    address = data.rom_addresses[game_version_revision]["sTMHMMoves"]
+
+    for i, move in enumerate(world.modified_tmhm_moves):
+        # Don't modify HMs
+        if i >= 50:
+            break
+
+        patch.write_token(APTokenTypes.WRITE, address + (i * 2), struct.pack("<H", move))
+
+
 def _randomize_move_tutors(world: "PokemonFRLGWorld",
                            patch: Union[PokemonFireRedProcedurePatch,
                                         PokemonFireRedRev1ProcedurePatch,
                                         PokemonLeafGreenProcedurePatch,
                                         PokemonLeafGreenRev1ProcedurePatch],
                            game_version_revision: str) -> None:
+    if world.options.tm_tutor_moves:
+        new_tutor_moves = randomize_tutor_moves(world)
+        address = data.rom_addresses[game_version_revision]["gTutorMoves"]
+
+        for i, move in enumerate(new_tutor_moves):
+            patch.write_token(APTokenTypes.WRITE, address + (i * 2), struct.pack("<H", move))
+
     if world.options.tm_tutor_compatability != TmTutorCompatibility.special_range_names["vanilla"]:
         learnsets_address = data.rom_addresses[game_version_revision]["sTutorLearnsets"]
 
