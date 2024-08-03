@@ -18,7 +18,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     options = world.options
     multiworld = world.multiworld
 
-    BADGE_REQUIREMENT: Dict[str, str] = {
+    badge_requirements: Dict[str, str] = {
         "Cut": "Cascade Badge",
         "Fly": "Thunder Badge",
         "Surf": "Soul Badge",
@@ -28,42 +28,42 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         "Waterfall": "Volcano Badge"
     }
 
-    def badge_requirement(hm: str, state: CollectionState):
-        return hm in options.remove_badge_requirement.value or state.has(BADGE_REQUIREMENT[hm], player)
+    def has_badge_requirement(hm: str, state: CollectionState):
+        return hm in options.remove_badge_requirement.value or state.has(badge_requirements[hm], player)
 
     def can_cut(state: CollectionState):
         return (state.has("HM01 Cut", player)
-                and badge_requirement("Cut", state)
+                and has_badge_requirement("Cut", state)
                 and can_use_hm(state, "Cut"))
 
     def can_fly(state: CollectionState):
         return (state.has("HM02 Fly", player)
-                and badge_requirement("Fly", state)
+                and has_badge_requirement("Fly", state)
                 and can_use_hm(state, "Fly"))
 
     def can_surf(state: CollectionState):
         return (state.has("HM03 Surf", player)
-                and badge_requirement("Surf", state)
+                and has_badge_requirement("Surf", state)
                 and can_use_hm(state, "Surf"))
 
     def can_strength(state: CollectionState):
         return (state.has("HM04 Strength", player)
-                and badge_requirement("Strength", state)
+                and has_badge_requirement("Strength", state)
                 and can_use_hm(state, "Strength"))
 
     def can_flash(state: CollectionState):
         return (state.has("HM05 Flash", player)
-                and badge_requirement("Flash", state)
+                and has_badge_requirement("Flash", state)
                 and can_use_hm(state, "Flash"))
 
     def can_rock_smash(state: CollectionState):
         return (state.has("HM06 Rock Smash", player)
-                and badge_requirement("Rock Smash", state)
+                and has_badge_requirement("Rock Smash", state)
                 and can_use_hm(state, "Rock Smash"))
 
     def can_waterfall(state: CollectionState):
         return (state.has("HM07 Waterfall", player)
-                and badge_requirement("Waterfall", state)
+                and has_badge_requirement("Waterfall", state)
                 and can_use_hm(state, "Waterfall"))
 
     def can_use_hm(state: CollectionState, hm: str):
@@ -328,6 +328,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 10 - Power Plant", "Route 10 - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 10 - North", "Rock Tunnel 1F - Northeast"), lambda state: rock_tunnel(state))
     set_rule(get_entrance("Route 10 - South", "Rock Tunnel 1F - South"), lambda state: rock_tunnel(state))
+    set_rule(get_entrance("Route 10 - Power Plant", "Power Plant"),
+             lambda state: state.has("Machine Part", player) or not options.extra_key_items)
 
     # Lavender Town
     set_rule(get_location("Lavender Volunteer Pokemon House - Mr. Fuji"),
@@ -346,6 +348,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Celadon City", "Celadon City - Gym"), lambda state: can_cut(state))
     set_rule(get_entrance("Celadon City", "Celadon City - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Celadon City - Gym", "Celadon City"), lambda state: can_cut(state))
+    set_rule(get_entrance("Celadon Game Corner", "Rocket Hideout B1F"),
+             lambda state: state.has("Hideout Key", player) or not options.extra_key_items)
     set_rule(get_entrance("Celadon Gym", "Celadon Gym - Tree"), lambda state: can_cut(state))
 
     # Rocket Hideout
@@ -399,6 +403,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_location("Fuchsia Warden's House - Safari Zone Warden"), lambda state: state.has("Gold Teeth", player))
     set_rule(get_location("Fuchsia Warden's House - Item"), lambda state: can_strength(state))
     set_rule(get_entrance("Fuchsia City - Backyard", "Fuchsia City - Water"), lambda state: can_surf(state))
+    set_rule(get_entrance("Safari Zone Entrance", "Safari Zone Center - South"),
+             lambda state: state.has("Safari Pass", player) or not options.extra_key_items)
 
     # Safari Zone
     set_rule(get_entrance("Safari Zone Center - South", "Safari Zone Center - Water"), lambda state: can_surf(state))
@@ -468,29 +474,31 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Seafoam Islands B3F - West", "Seafoam Islands B3F - Water"),
              lambda state: can_surf(state) and
                            can_strength(state) and
-                           state.can_reach("Seafoam Islands 1F", player=player))
+                           state.can_reach_region("Seafoam Islands 1F", player))
     set_rule(get_entrance("Seafoam Islands B3F - Southeast", "Seafoam Islands B3F - Water"),
              lambda state: can_surf(state) and
                            can_strength(state) and
-                           state.can_reach("Seafoam Islands 1F", player=player))
+                           state.can_reach_region("Seafoam Islands 1F", player))
     set_rule(get_entrance("Seafoam Islands B3F - Water", "Seafoam Islands B3F - West"),
              lambda state: can_strength(state) and
-                           state.can_reach("Seafoam Islands 1F", player=player))
+                           state.can_reach_region("Seafoam Islands 1F", player))
     set_rule(get_entrance("Seafoam Islands B3F - Water", "Seafoam Islands B3F - Southeast"),
              lambda state: can_strength(state) and
-                           state.can_reach("Seafoam Islands 1F", player=player))
+                           state.can_reach_region("Seafoam Islands 1F", player))
     set_rule(get_entrance("Seafoam Islands B4F", "Seafoam Islands B4F - Water W"),
              lambda state: can_surf(state) and
                            can_strength(state) and
-                           state.can_reach("Seafoam Islands B3F - West", player=player))
+                           state.can_reach_region("Seafoam Islands B3F - West", player))
     set_rule(get_entrance("Seafoam Islands B4F - Water W", "Seafoam Islands B4F - Articuno"),
              lambda state: can_strength(state) and
-                           state.can_reach("Seafoam Islands B3F - West", player=player))
+                           state.can_reach_region("Seafoam Islands B3F - West", player))
 
     # Cinnabar Island
     set_rule(get_location("Cinnabar Pokemon Center 1F - Bill"), lambda state: state.has("Defeat Blaine", player))
     set_rule(get_entrance("Cinnabar Island", "Cinnabar Island - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Cinnabar Island", "Cinnabar Gym"), lambda state: state.has("Secret Key", player))
+    set_rule(get_entrance("Cinnabar Island", "Pokemon Mansion 1F"),
+             lambda state: state.has("Letter", player) or not options.extra_key_items)
 
     # Route 23
     set_rule(get_entrance("Route 23 - South", "Route 23 - Water"), lambda state: can_surf(state))
@@ -505,7 +513,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Victory Road 2F - Southwest", "Victory Road 2F - Center"), lambda state: can_strength(state))
     set_rule(get_entrance("Victory Road 2F - Center", "Victory Road 2F - Southeast"),
              lambda state: can_strength(state) and
-                           state.can_reach("Victory Road 3F - Southwest", player=player))
+                           state.can_reach_region("Victory Road 3F - Southwest", player))
     set_rule(get_entrance("Victory Road 2F - Northwest", "Victory Road 2F - Southwest"),
              lambda state: can_strength(state))
     set_rule(get_entrance("Victory Road 3F - North", "Victory Road 3F - Southwest"), lambda state: can_strength(state))
@@ -753,6 +761,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             for location in multiworld.get_locations(player):
                 if location.tags is not None and ("Hidden" in location.tags):
                     add_rule(location, lambda state: state.has("Itemfinder", player))
+
+    # Extra Key Items
+    if options.extra_key_items:
+        # Cerulean City
+        set_rule(get_location("Cerulean Gym - Hidden Item In Water"),
+                 lambda state: can_surf(state) and state.has("Itemfinder", player))
 
     # Static Pokémon
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))

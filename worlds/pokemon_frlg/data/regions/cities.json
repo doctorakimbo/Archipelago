@@ -906,6 +906,7 @@
     "locations": [
       "BADGE_2",
       "NPC_GIFT_GOT_TM03_FROM_MISTY",
+      "HIDDEN_ITEM_CERULEAN_CITY_GYM_MACHINE_PART",
       "TRAINER_LEADER_MISTY_REWARD",
       "TRAINER_PICNICKER_DIANA_REWARD",
       "TRAINER_SWIMMER_MALE_LUIS_REWARD"
@@ -1786,7 +1787,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "ITEM_CELADON_CITY_HOUSE_HIDEOUT_KEY"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -1932,7 +1935,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_SAFARI_PASS"
+    ],
     "events": [],
     "exits": [],
     "warps": [
@@ -2509,7 +2514,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_LETTER"
+    ],
     "events": [],
     "exits": [],
     "warps": [

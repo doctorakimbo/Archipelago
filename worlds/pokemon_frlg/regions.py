@@ -19,6 +19,17 @@ exclusive_gift_pokemon: List[str] = {
 }
 
 
+indirect_conditions: Dict[str, List[Tuple[str, str]]] = {
+    "Seafoam Islands 1F": [("Seafoam Islands B3F - West", "Seafoam Islands B3F - Water"),
+                           ("Seafoam Islands B3F - Southeast", "Seafoam Islands B3F - Water"),
+                           ("Seafoam Islands B3F - Water", "Seafoam Islands B3F - West"),
+                           ("Seafoam Islands B3F - Water", "Seafoam Islands B3F - Southeast")],
+    "Seafoam Islands B3F - West": [("Seafoam Islands B4F", "Seafoam Islands B4F - Water W"),
+                                   ("Seafoam Islands B4F - Water W", "Seafoam Islands B4F - Articuno")],
+    "Victory Road 3F - Southwest": [("Victory Road 2F - Center", "Victory Road 2F - Southeast")]
+}
+
+
 def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
     """
     Iterates through regions created from JSON to create regions and adds them to the multiworld.
@@ -187,3 +198,10 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
     regions["Menu"].connect(regions["Player's House 2F"], "Start Game")
 
     return regions
+
+
+def create_indirect_conditions(world: "PokemonFRLGWorld"):
+    for region, entrances in indirect_conditions.items():
+        for entrance in entrances:
+            world.multiworld.register_indirect_condition(world.get_region(region),
+                                                         world.get_entrance(f"{entrance[0]} to {entrance[1]}"))

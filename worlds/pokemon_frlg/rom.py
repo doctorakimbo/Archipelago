@@ -133,23 +133,57 @@ def write_tokens(world: "PokemonFRLGWorld",
         if location.address is None:
             continue
 
+        item_address = location.item_address[game_version_revision]
+
         if location.item.player == world.player:
-            patch.write_token(
-                APTokenTypes.WRITE,
-                location.item_address[game_version_revision],
-                struct.pack("<H", reverse_offset_item_value(location.item.code))
-            )
+            if type(item_address) is int:
+                patch.write_token(
+                    APTokenTypes.WRITE,
+                    item_address,
+                    struct.pack("<H", reverse_offset_item_value(location.item.code))
+                )
+            elif type(item_address) is list:
+                for address in item_address:
+                    patch.write_token(
+                        APTokenTypes.WRITE,
+                        address,
+                        struct.pack("<H", reverse_offset_item_value(location.item.code))
+                    )
         else:
-            patch.write_token(
-                APTokenTypes.WRITE,
-                location.item_address[game_version_revision],
-                struct.pack("<H", data.constants["ITEM_ARCHIPELAGO_PROGRESSION"])
-            )
+            if type(item_address) is int:
+                patch.write_token(
+                    APTokenTypes.WRITE,
+                    item_address,
+                    struct.pack("<H", data.constants["ITEM_ARCHIPELAGO_PROGRESSION"])
+                )
+            elif type(item_address) is list:
+                for address in item_address:
+                    patch.write_token(
+                        APTokenTypes.WRITE,
+                        address,
+                        struct.pack("<H", data.constants["ITEM_ARCHIPELAGO_PROGRESSION"])
+                    )
 
         # Creates a list of item information to store in tables later. Those tables are used to display the item and
         # player name in a text box. In the case of not enough space, the game will default to "found an ARCHIPELAGO
         # ITEM"
         location_info.append((reverse_offset_flag(location.address), location.item.player, location.item.name))
+
+    if world.options.trainersanity:
+        for trainer in ["RIVAL_OAKS_LAB", "RIVAL_ROUTE22_EARLY", "RIVAL_CERULEAN", "RIVAL_SS_ANNE",
+                        "RIVAL_POKEMON_TOWER", "RIVAL_SILPH", "RIVAL_ROUTE22_LATE", "CHAMPION_FIRST"]:
+            location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_BULBASAUR_REWARD"].name,
+                                                     world.player)
+            alternates = [
+                f"TRAINER_{trainer}_CHARMANDER",
+                f"TRAINER_{trainer}_SQUIRTLE"
+            ]
+
+            location_info.extend((
+                data.constants["TRAINER_FLAGS_START"] + data.constants[alternate],
+                location.item.player,
+                location.item.name
+            ) for alternate in alternates)
 
     player_name_ids: Dict[str, int] = {world.player_name: 0}
     item_name_offsets: Dict[str, int] = {}
@@ -311,8 +345,9 @@ def write_tokens(world: "PokemonFRLGWorld",
     # /* 0x1B */ u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
     #
     # /* 0x20 */ bool8 isTrainersanity;
+    # /* 0x21 */ bool8 extraKeyItems;
     #
-    # /* 0x21 */ bool8 removeBadgeRequirement[7]; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
+    # /* 0x22 */ bool8 removeBadgeRequirement[7]; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -424,11 +459,15 @@ def write_tokens(world: "PokemonFRLGWorld",
     trainersanity = 1 if world.options.trainersanity else 0
     patch.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", trainersanity))
 
+    # Set extra key items
+    extra_key_items = 1 if world.options.extra_key_items else 0
+    patch.write_token(APTokenTypes.WRITE, options_address + 0x21, struct.pack("<B", extra_key_items))
+
     # Set remove badge requirements
     hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
     for i, hm in enumerate(hms):
         remove_badge_requirement = 1 if hm in world.options.remove_badge_requirement.value else 0
-        patch.write_token(APTokenTypes.WRITE, options_address + 0x21 + i, struct.pack("<B", remove_badge_requirement))
+        patch.write_token(APTokenTypes.WRITE, options_address + 0x22 + i, struct.pack("<B", remove_badge_requirement))
 
     # Set slot auth
     patch.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
@@ -555,7 +594,13 @@ def _set_trainer_parties(world: "PokemonFRLGWorld",
         for i, pokemon in enumerate(trainer.party.pokemon):
             pokemon_address = party_address + (i * pokemon_data_size)
 
-            patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x02, struct.pack("<B", pokemon.level))
+            level = round(pokemon.level + (pokemon.level * (world.options.modify_trainer_levels.value / 100)))
+            if level < 1:
+                level = 1
+            elif level > 100:
+                level = 100
+
+            patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x02, struct.pack("<B", level))
             patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x04, struct.pack("<H", pokemon.species_id))
 
             if trainer.party.pokemon_data_type in {TrainerPokemonDataTypeEnum.NO_ITEM_CUSTOM_MOVES,

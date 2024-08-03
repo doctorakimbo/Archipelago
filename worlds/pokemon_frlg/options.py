@@ -39,6 +39,20 @@ class ShuffleHiddenItems(Choice):
     option_all = 2
 
 
+class ExtraKeyItems(Toggle):
+    """
+    Adds key items that are required to access the Rocket Hideout, Safari Zone, Pokémon Mansion, and Power Plant.
+
+    Adds four new locations:
+    - Item in the Celadon Rocket House
+    - Item given by a Worker in the Fuchsia Safari Office
+    - Item given by the Scientist in the Cinnabar Pokémon Lab Research Room
+    - Hidden Item in the Cerulean Gym (requires Surf & Itemfinder)
+    """
+    display_name = "Extra Key Items"
+    default = 0
+
+
 class Trainersanity(Toggle):
     """
     Defeating a trainer gives you an item.
@@ -308,6 +322,16 @@ class LevelScaling(Toggle):
     """
     display_name = "Level Scaling"
     default = 0
+
+
+class ModifyTrainerLevels(Range):
+    """
+    Modifies the level of all Trainer's Pokémon by the specified percentage.
+    """
+    display_name = "Modify Trainer Levels"
+    default = 0
+    range_start = -100
+    range_end = 100
 
 
 class RandomizeWildPokemon(Choice):
@@ -659,6 +683,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
+    extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
 
     itemfinder_required: ItemfinderRequired
@@ -685,6 +710,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     cerulean_cave_count: CeruleanCaveCount
 
     level_scaling: LevelScaling
+    modify_trainer_levels: ModifyTrainerLevels
 
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups

@@ -1,7 +1,7 @@
 """
 Pulls data from JSON files in worlds/pokemon_frlg/data/ into classes.
 This also includes marrying automatically extracted data with manually
-defined data (like location labels or usable Pokémon species), some cleanup
+defined data (like location names or usable Pokémon species), some cleanup
 and sorting, and Warp methods.
 """
 import orjson
@@ -82,7 +82,7 @@ class LocationData(NamedTuple):
     name: str
     parent_region_id: str
     default_item: int
-    address: Dict[str, int]
+    address: Dict[str, Union[int, List[int]]]
     flag: int
     tags: FrozenSet[str]
 
@@ -813,20 +813,50 @@ def _init() -> None:
                 raise AssertionError(f"Location [{location_id}] was claimed by multiple regions")
 
             location_json = extracted_data["locations"][location_id]
-            new_location = LocationData(
-                location_id,
-                location_data[location_id]["name"],
-                region_id,
-                location_json["default_item"],
-                location_json["address"],
-                location_json["flag"],
-                frozenset(location_data[location_id]["tags"])
-            )
+
+            if "BULBASAUR_REWARD" in location_id:
+                import re
+                trainer = re.match("TRAINER_([A-Z0-9_]+)_BULBASAUR_REWARD", location_id).group(1)
+                alternate_rival_jsons = [extracted_data["locations"][alternate] for alternate in [
+                    f"TRAINER_{trainer}_CHARMANDER_REWARD",
+                    f"TRAINER_{trainer}_SQUIRTLE_REWARD"
+                ]]
+
+                location_address: Dict[str, List[int]] = {}
+
+                for game_version_revision in location_json["address"].keys():
+                    location_address[game_version_revision] = [location_json["address"][game_version_revision]]
+
+                for game_version_revision in location_address.keys():
+                    for alternate_rival_json in alternate_rival_jsons:
+                        location_address[game_version_revision].append(
+                            alternate_rival_json["address"][game_version_revision])
+
+                new_location = LocationData(
+                    location_id,
+                    location_data[location_id]["name"],
+                    region_id,
+                    location_json["default_item"],
+                    location_address,
+                    location_json["flag"],
+                    frozenset(location_data[location_id]["tags"])
+                )
+            else:
+                new_location = LocationData(
+                    location_id,
+                    location_data[location_id]["name"],
+                    region_id,
+                    location_json["default_item"],
+                    location_json["address"],
+                    location_json["flag"],
+                    frozenset(location_data[location_id]["tags"])
+                )
+
             new_region.locations.append(location_id)
             data.locations[location_id] = new_location
             claimed_locations.add(location_id)
 
-        new_region.locations.sort()
+        new_region.locations.sort(key=lambda loc: data.locations[loc].name)
 
         # Events
         for event_id in region_json["events"]:
@@ -840,7 +870,7 @@ def _init() -> None:
             new_region.events.append(event_id)
             data.events[event_id] = new_event
 
-        new_region.events.sort()
+        new_region.events.sort(key=lambda event: data.events[event].name)
 
         # Exits
         for region_exit in region_json["exits"]:

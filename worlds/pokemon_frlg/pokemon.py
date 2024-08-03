@@ -186,7 +186,7 @@ def _get_trainer_pokemon_moves(world: "PokemonFRLGWorld",
                                pokemon: TrainerPokemonData) -> Tuple[int, int, int, int]:
     if species.species_id not in world.per_species_tmhm_moves:
         world.per_species_tmhm_moves[species.species_id] = sorted({
-            data.tmhm_moves[i]
+            world.modified_tmhm_moves[i]
             for i, is_compatible in enumerate(int_to_bool_array(species.tm_hm_compatibility))
             if is_compatible
         })
@@ -571,7 +571,7 @@ def randomize_starters(world: "PokemonFRLGWorld") -> None:
             starter_stages[2] = starter_stages[0]
 
         for trainer_name, starter_index, evolution_stage in _RIVAL_STARTER_POKEMON[i]:
-            trainer_data = world.modified_trainers[data.constants[trainer_name]]
+            trainer_data = world.modified_trainers[trainer_name]
             starter_species = starter_stages[evolution_stage]
             rival_starter = trainer_data.party.pokemon[starter_index]
             new_moves = _get_trainer_pokemon_moves(world, starter_species, rival_starter)

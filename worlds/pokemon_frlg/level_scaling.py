@@ -65,6 +65,7 @@ def level_scaling(multiworld):
             locations = [loc for loc in sphere if loc.player == world.player]
             trainer_sphere_objects: List[Tuple[str, Union[MiscPokemonData, TrainerPokemonData]]] = []
             encounter_sphere_objects: List[Tuple[str, EncounterSpeciesData]] = []
+            fishing_sphere_objects: List[Tuple[str, EncounterSpeciesData]] = []
 
             trainer_objects = [loc for loc in locations if "Trainer" in loc.tags]
             misc_pokemon_objects = [loc for loc in locations if "Pokemon" in loc.tags and "Misc" in loc.tags]
@@ -93,9 +94,13 @@ def level_scaling(multiworld):
                 if encounters is not None:
                     for i, encounter in enumerate(encounters.slots[game_version]):
                         if i in slot_ids:
-                            encounter_sphere_objects.append((f"{data_ids[0]} {data_ids[1]} {i}", encounter))
+                            if data_ids[1] == "FISHING":
+                                fishing_sphere_objects.append((f"{data_ids[0]} {data_ids[1]} {i}", encounter))
+                            else:
+                                encounter_sphere_objects.append((f"{data_ids[0]} {data_ids[1]} {i}", encounter))
             trainer_sphere_objects.sort(key=lambda obj: world.trainer_id_list.index(obj[0]))
             encounter_sphere_objects.sort(key=lambda obj: world.encounter_id_list.index(obj[0]))
+            fishing_sphere_objects.sort(key=lambda obj: world.fishing_id_list.index(obj[0]))
 
             for trainer_object in trainer_sphere_objects:
                 if type(trainer_object[1]) is TrainerPokemonData:
@@ -116,6 +121,11 @@ def level_scaling(multiworld):
                 levels = world.encounter_level_list.pop(0)
                 encounter_object[1].min_level = levels[0]
                 encounter_object[1].max_level = levels[1]
+
+            for fishing_object in fishing_sphere_objects:
+                levels = world.fishing_level_list.pop(0)
+                fishing_object[1].min_level = levels[0]
+                fishing_object[1].max_level = levels[1]
 
     for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
         world.finished_level_scaling.set()

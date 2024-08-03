@@ -7,6 +7,8 @@ import tempfile
 import threading
 import Utils
 
+import logging
+
 import settings
 import pkgutil
 from typing import Any, ClassVar, Dict, List, Set, TextIO, Tuple
@@ -106,7 +108,7 @@ class PokemonFRLGWorld(World):
     item_name_to_id = create_item_name_to_id_map()
     location_name_to_id = create_location_name_to_id_map()
     item_name_groups = ITEM_GROUPS
-    location_name_groups = LOCATION_GROUPS
+    location_name_groups = LOCATION_GROUPS  
 
     required_client_version = (0, 5, 0)
 
@@ -131,6 +133,8 @@ class PokemonFRLGWorld(World):
     trainer_id_list: List[str]
     encounter_level_list: List[Tuple[int, int]]
     encounter_id_list: List[str]
+    fishing_level_list: List[Tuple[int, int]]
+    fishing_id_list: List[str]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -188,6 +192,8 @@ class PokemonFRLGWorld(World):
         self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
         randomize_types(self)
+        randomize_abilities(self)
+        randomize_moves(self)
         randomize_wild_encounters(self)
         randomize_starters(self)
         randomize_legendaries(self)
@@ -196,7 +202,7 @@ class PokemonFRLGWorld(World):
         self.create_hm_compatability_dict()
 
     def create_regions(self) -> None:
-        from .regions import create_regions
+        from .regions import create_indirect_conditions, create_regions
 
         regions = create_regions(self)
 
@@ -206,11 +212,15 @@ class PokemonFRLGWorld(World):
             tags.add("Recurring")
         elif self.options.shuffle_hidden == ShuffleHiddenItems.option_nonrecurring:
             tags.add("Hidden")
+        if self.options.extra_key_items:
+            tags.add("ExtraKeyItem")
         if self.options.trainersanity:
             tags.add("Trainer")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
+
+        create_indirect_conditions(self)
 
     def create_items(self) -> None:
         item_locations: List[PokemonFRLGLocation] = [
@@ -306,8 +316,6 @@ class PokemonFRLGWorld(World):
         self.finished_level_scaling.wait()
 
         randomize_tm_moves(self)
-        randomize_abilities(self)
-        randomize_moves(self)
         randomize_trainer_parties(self)
 
         if self.options.game_version == GameVersion.option_firered:
@@ -354,6 +362,8 @@ class PokemonFRLGWorld(World):
         del self.trainer_level_list
         del self.encounter_id_list
         del self.encounter_level_list
+        del self.fishing_id_list
+        del self.fishing_level_list
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         # Add Pokémon locations to the spoiler log if they are not vanilla
@@ -403,9 +413,11 @@ class PokemonFRLGWorld(World):
         slot_data = self.options.as_dict(
             "shuffle_badges",
             "shuffle_hidden",
+            "extra_key_items",
             "trainersanity",
             "itemfinder_required",
             "flash_required",
+            "remove_badge_requirement",
             "oaks_aide_route_2",
             "oaks_aide_route_10",
             "oaks_aide_route_11",

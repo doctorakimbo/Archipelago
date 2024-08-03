@@ -178,6 +178,23 @@
     "tags": ["KeyItem"]
   },
 
+  "ITEM_CELADON_CITY_HOUSE_HIDEOUT_KEY": {
+    "name": "Celadon Rocket House - Item",
+    "tags": ["ExtraKeyItem"]
+  },
+  "NPC_GIFT_GOT_LETTER": {
+    "name": "Cinnabar Pokemon Lab Research Room - Scientist",
+    "tags": ["ExtraKeyItem"]
+  },
+  "HIDDEN_ITEM_CERULEAN_CITY_GYM_MACHINE_PART": {
+    "name": "Cerulean Gym - Hidden Item In Water",
+    "tags": ["ExtraKeyItem"]
+  },
+  "NPC_GIFT_GOT_SAFARI_PASS": {
+    "name": "Fuchsia Safari Zone Office - Worker",
+    "tags": ["ExtraKeyItem"]
+  },
+
   "ITEM_CELADON_CITY_ETHER": {
     "name": "Celadon City - Northwest Item",
     "tags": ["Overworld"]
@@ -1160,7 +1177,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_FULL_RESTORE": {
-    "name": "Route 23 -  Northeast Rock Hidden Item",
+    "name": "Route 23 - Northeast Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_LEPPA_BERRY": {
@@ -1698,15 +1715,15 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_REWARD": {
-    "name": "Three Island - Biker Goon Reward",
+    "name": "Three Island - Biker Goon Reward (Left)",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_2_REWARD": {
-    "name": "Three Island - Biker Goon 2 Reward",
+    "name": "Three Island - Biker Goon Reward (Right)",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_3_REWARD": {
-    "name": "Three Island - Biker Goon 3 Reward",
+    "name": "Three Island - Biker Goon Reward (Top)",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_HIDEO_REWARD": {
@@ -2054,7 +2071,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CHANNELER_JENNIFER_REWARD": {
-    "name": "Pokemon Tower 5F - Channeler Jennifer Reward",
+    "name": "Pokemon Tower 6F - Channeler Jennifer Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CHANNELER_JODY_REWARD": {
@@ -3278,7 +3295,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_TEAM_ROCKET_GRUNT_36_REWARD": {
-    "name": "Silph Co. 8F - Southeast Team Rocket Grunt Reward",
+    "name": "Silph Co. 8F - Southwest Team Rocket Grunt Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_TEAM_ROCKET_GRUNT_37_REWARD": {
@@ -3314,7 +3331,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_TEAM_ROCKET_GRUNT_45_REWARD": {
-    "name": "Icefall Cave Back - Team Rocket Grunt Reward)",
+    "name": "Icefall Cave Back - Team Rocket Grunt Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_TEAM_ROCKET_GRUNT_46_REWARD": {

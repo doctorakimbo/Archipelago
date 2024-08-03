@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Tuple
+from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Tuple, Union
 from BaseClasses import Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import get_filler_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
@@ -75,7 +75,7 @@ class PokemonFRLGLocation(Location):
             name: str,
             address: Optional[int],
             parent: Optional[Region] = None,
-            item_address: Optional[Dict[str, int]] = None,
+            item_address: Optional[Dict[str, Union[int, List[int]]]] = None,
             default_item_id: Optional[int] = None,
             tags: FrozenSet[str] = frozenset(),
             data_id: Optional[str] = None) -> None:
@@ -129,8 +129,6 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             location_data = data.locations[location_flag]
 
             location_id = offset_flag(location_data.flag)
-            item_addresses: Dict[str, int] = {f'{game_version}': location_data.address[game_version],
-                                              f'{game_version}_rev1': location_data.address[f'{game_version}_rev1']}
 
             if location_data.default_item == data.constants["ITEM_NONE"]:
                 default_item = reverse_offset_item_value(world.item_name_to_id[get_filler_item(world)])
@@ -147,7 +145,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
                 location_data.name,
                 location_id,
                 region,
-                item_addresses,
+                location_data.address,
                 default_item,
                 location_data.tags,
                 data_id
@@ -180,6 +178,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
     trainer_level_object_list: List[Tuple[str, int]] = []
     encounter_level_object_list: List[Tuple[str, Tuple[int, int]]] = []
+    fishing_level_object_list: List[Tuple[str, Tuple[int, int]]] = []
 
     if world.options.level_scaling:
         for region in regions.values():
@@ -208,16 +207,24 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
                         if encounters is not None:
                             for i, encounter in enumerate(encounters.slots[game_version]):
                                 if i in slot_ids:
-                                    name = f"{data_ids[0]} {data_ids[1]} {i}"
-                                    encounter_level_object_list.append((name,
-                                                                        (encounter.min_level, encounter.max_level)))
+                                    if data_ids[1] == "FISHING":
+                                        name = f"{data_ids[0]} {data_ids[1]} {i}"
+                                        fishing_level_object_list.append((name,
+                                                                          (encounter.min_level, encounter.max_level)))
+                                    else:
+                                        name = f"{data_ids[0]} {data_ids[1]} {i}"
+                                        encounter_level_object_list.append((name,
+                                                                            (encounter.min_level, encounter.max_level)))
 
         trainer_level_object_list.sort(key=lambda i: i[1])
         encounter_level_object_list.sort(key=lambda i: i[1][1])
+        fishing_level_object_list.sort(key=lambda i: i[1][1])
         world.trainer_id_list = [i[0] for i in trainer_level_object_list]
         world.trainer_level_list = [i[1] for i in trainer_level_object_list]
         world.encounter_id_list = [i[0] for i in encounter_level_object_list]
         world.encounter_level_list = [i[1] for i in encounter_level_object_list]
+        world.fishing_id_list = [i[0] for i in fishing_level_object_list]
+        world.fishing_level_list = [i[1] for i in fishing_level_object_list]
 
 
 def set_free_fly(world: "PokemonFRLGWorld") -> None:

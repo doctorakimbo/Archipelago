@@ -126,13 +126,28 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_HIDEOUT_KEY": {
+    "name": "Hideout Key",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_ITEMFINDER": {
     "name": "Itemfinder",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_LETTER": {
+    "name": "Letter",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_LIFT_KEY": {
     "name": "Lift Key",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_MACHINE_PART": {
+    "name": "Machine Part",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -178,6 +193,11 @@
   },
   "ITEM_RUBY": {
     "name": "Ruby",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_SAFARI_PASS": {
+    "name": "Safari Pass",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
