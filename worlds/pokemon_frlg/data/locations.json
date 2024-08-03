@@ -82,7 +82,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_FAME_CHECKER": {
-    "name": "Cerulean City - Rival Reward",
+    "name": "Cerulean City - Rival",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_GOOD_ROD": {
@@ -138,7 +138,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_RECOVERED_SAPPHIRE": {
-    "name": "Rocket Warehouse - Scientist Gideon Reward",
+    "name": "Rocket Warehouse - Scientist Gideon",
     "tags": ["KeyItem"]
   },
   "ITEM_POKEMON_MANSION_B1F_SECRET_KEY": {
@@ -176,6 +176,23 @@
   "NPC_GIFT_GOT_VS_SEEKER": {
     "name": "Vermilion Pokemon Center 1F - Vs. Seeker Woman",
     "tags": ["KeyItem"]
+  },
+
+  "ITEM_CELADON_CITY_HOUSE_HIDEOUT_KEY": {
+    "name": "Celadon Rocket House - Item",
+    "tags": ["ExtraKeyItem"]
+  },
+  "NPC_GIFT_GOT_LETTER": {
+    "name": "Cinnabar Pokemon Lab Research Room - Scientist",
+    "tags": ["ExtraKeyItem"]
+  },
+  "HIDDEN_ITEM_CERULEAN_CITY_GYM_MACHINE_PART": {
+    "name": "Cerulean Gym - Hidden Item In Water",
+    "tags": ["ExtraKeyItem"]
+  },
+  "NPC_GIFT_GOT_SAFARI_PASS": {
+    "name": "Fuchsia Safari Zone Office - Worker",
+    "tags": ["ExtraKeyItem"]
   },
 
   "ITEM_CELADON_CITY_ETHER": {
@@ -295,7 +312,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL": {
-    "name": "Mt. Ember Exterior - West Item",
+    "name": "Mt. Ember Exterior - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_MOON_1F_ESCAPE_ROPE": {
@@ -435,7 +452,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_THUNDER_STONE": {
-    "name": "Power Plant - Northeast Room Item",
+    "name": "Power Plant - Northeast Room Item (Right)",
     "tags": ["Overworld"]
   },
   "ITEM_POWER_PLANT_TM17": {
@@ -849,7 +866,7 @@
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL": {
     "name": "Memorial Pillar - South Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY": {
     "name": "Memorial Pillar - Tall Grass South Hidden Item (Left)",
@@ -865,19 +882,19 @@
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL": {
     "name": "Resort Gorgeous - West Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST": {
     "name": "Resort Gorgeous - Main Island Southwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2": {
     "name": "Resort Gorgeous - Main Island Northwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE": {
     "name": "Resort Gorgeous - Main Island Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL": {
     "name": "Rocket Warehouse - Northeast Room Box Hidden Item",
@@ -889,11 +906,11 @@
   },
   "HIDDEN_ITEM_FOUR_ISLAND_PEARL": {
     "name": "Four Island - Beach Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL": {
     "name": "Four Island - Beach Northwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE": {
     "name": "Fuchsia City - Hidden Item Behind Fishing Guru's House",
@@ -909,27 +926,27 @@
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM": {
     "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2": {
     "name": "Mt. Moon B1F - Third Tunnel Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3": {
     "name": "Mt. Moon B1F - First Tunnel West Rock Hidden Item (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM": {
     "name": "Mt. Moon B1F - Fourth Tunnel Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2": {
     "name": "Mt. Moon B1F - Second Tunnel Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3": {
     "name": "Mt. Moon B1F - First Tunnel East Rock Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_MT_MOON_B2F_ETHER": {
     "name": "Mt. Moon B2F - Northeast Rock Hidden Item",
@@ -945,35 +962,35 @@
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL": {
     "name": "Treasure Beach - Tall Grass Northwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL": {
     "name": "Treasure Beach - Tall Grass Center Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2": {
     "name": "Treasure Beach - Tall Grass Southwest Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST": {
     "name": "Treasure Beach - Beach West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2": {
     "name": "Treasure Beach - Tall Grass Northeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE": {
     "name": "Treasure Beach - Tall Grass East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL": {
     "name": "Treasure Beach - Beach East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2": {
     "name": "Treasure Beach - Tall Grass Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL": {
     "name": "Pewter City - Northwest Hidden Item",
@@ -996,7 +1013,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL": {
-    "name": "Pokemon Tower 7F - Hidden Item Between Statues",
+    "name": "Pokemon Tower 7F - Hidden Item Under Mr. Fuji",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_POWER_PLANT_MAX_ELIXIR": {
@@ -1149,18 +1166,18 @@
   },
   "HIDDEN_ITEM_ROUTE20_STARDUST": {
     "name": "Route 20 - Northwest Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ROUTE21_NORTH_PEARL": {
     "name": "Route 21 - East Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY": {
     "name": "Route 23 - Hidden Item Before Sixth Checkpoint",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_FULL_RESTORE": {
-    "name": "Route 23 -  Northeast Rock Hidden Item",
+    "name": "Route 23 - Northeast Rock Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE23_LEPPA_BERRY": {
@@ -1237,23 +1254,23 @@
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE": {
     "name": "Tanoby Ruins - Scufib Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2": {
     "name": "Tanoby Ruins - Weepth Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3": {
     "name": "Tanoby Ruins - Monean Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_4": {
     "name": "Tanoby Ruins - Viapois Chamber Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL": {
     "name": "Trainer Tower Exterior - Beach North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY": {
     "name": "Trainer Tower Exterior - Hidden Item Near Fence",
@@ -1261,7 +1278,7 @@
   },
   "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL": {
     "name": "Trainer Tower Exterior - Beach West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL": {
     "name": "Silph Co. 2F - Southwest Room Plant Hidden Item",
@@ -1313,7 +1330,7 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL": {
     "name": "Green Path - West Island Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY": {
     "name": "Six Island - Hidden Item Behind Pokemon Center",
@@ -1321,11 +1338,11 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL": {
     "name": "Outcast Island - West Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE": {
     "name": "Outcast Island - East Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY": {
     "name": "Water Path - Tall Grass South Hidden Item",
@@ -1361,55 +1378,55 @@
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY": {
     "name": "Berry Forest - North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY": {
     "name": "Berry Forest - Northwest Hidden Item (Bottom)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY": {
     "name": "Berry Forest - Hidden Item Near West Pond (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHESTO_BERRY": {
     "name": "Berry Forest - Northeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY": {
     "name": "Berry Forest - Hidden Item Near Lostelle",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY": {
     "name": "Berry Forest - Center Hidden Item (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY": {
     "name": "Berry Forest - East Hidden Item (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PECHA_BERRY": {
     "name": "Berry Forest - Hidden Item Near Southwest Pond",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY": {
     "name": "Berry Forest - Southeast Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PINAP_BERRY": {
     "name": "Berry Forest - East Hidden Item (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAWST_BERRY": {
     "name": "Berry Forest - Northwest Hidden Item (Top)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAZZ_BERRY": {
     "name": "Berry Forest - Center Hidden Item (Right)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_WEPEAR_BERRY": {
     "name": "Berry Forest - Hidden Item Near West Pond (Left)",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_MAX_REPEL": {
     "name": "Bond Bridge - Rock Hidden Item",
@@ -1417,11 +1434,11 @@
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL": {
     "name": "Bond Bridge - East Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST": {
     "name": "Bond Bridge - West Beach Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_DUNSPARCE_TUNNEL_NUGGET": {
     "name": "Three Isle Path - Rock Hidden Item",
@@ -1441,59 +1458,59 @@
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE": {
     "name": "Underground Path (East-West) - Far East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING": {
     "name": "Underground Path (East-West) - West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL": {
     "name": "Underground Path (East-West) - Center Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER": {
     "name": "Underground Path (East-West) - East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL": {
     "name": "Underground Path (East-West) - Farthest East Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL": {
     "name": "Underground Path (East-West) - Far West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION": {
     "name": "Underground Path (East-West) - Farthest West Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE": {
     "name": "Underground Path (North-South) - Farthest North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING": {
     "name": "Underground Path (North-South) - North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL": {
     "name": "Underground Path (North-South) - Farthest South Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER": {
     "name": "Underground Path (North-South) - South Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL": {
     "name": "Underground Path (North-South) - Far South Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL": {
     "name": "Underground Path (North-South) - Far North Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION": {
     "name": "Underground Path (North-South) - Center Hidden Item",
-    "tags": ["HiddenRecurring"]
+    "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER": {
     "name": "Vermilion City - Hidden Item Near Pokemon Center",
@@ -1533,7 +1550,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FIRST_POKEBALLS": {
-    "name": "Professor Oak's Lab - Oak's Parcel Delivery Reward",
+    "name": "Professor Oak's Lab - Oak's Parcel Delivery Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
@@ -1553,11 +1570,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT": {
-    "name": "Route 24 - Team Rocket Grunt Reward",
+    "name": "Route 24 - Team Rocket Grunt",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL": {
-    "name":"Professor Oak's Lab - Oak's Post Route 22 Rival Reward",
+    "name":"Professor Oak's Lab - Oak's Post Route 22 Rival Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POTION_ON_ROUTE_1": {
@@ -1565,31 +1582,31 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM03_FROM_MISTY": {
-    "name": "Cerulean Gym - Leader Misty Reward",
+    "name": "Cerulean Gym - Leader Misty TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM04_FROM_SABRINA": {
-    "name": "Saffron Gym - Leader Sabrina Reward",
+    "name": "Saffron Gym - Leader Sabrina TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM06_FROM_KOGA": {
-    "name": "Fuchsia Gym - Leader Koga Reward",
+    "name": "Fuchsia Gym - Leader Koga TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Girl's Fresh Water Reward",
+    "name": "Celadon Department Store Roof - Girl's Fresh Water Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
-    "name": "Celadon Gym - Leader Erika Reward",
+    "name": "Celadon Gym - Leader Erika TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Girl's Soda Pop Reward",
+    "name": "Celadon Department Store Roof - Girl's Soda Pop Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
-    "name": "Viridian Gym - Leader Giovanni Reward",
+    "name": "Viridian Gym - Leader Giovanni TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM27": {
@@ -1597,7 +1614,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM28_FROM_ROCKET": {
-    "name": "Cerulean City - Team Rocket Grunt Reward",
+    "name": "Cerulean City - Team Rocket Grunt",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC": {
@@ -1605,19 +1622,19 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Girl's Lemonade Reward",
+    "name": "Celadon Department Store Roof - Girl's Lemonade Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
-    "name": "Vermilion Gym - Leader Lt. Surge Reward",
+    "name": "Vermilion Gym - Leader Lt. Surge TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
-    "name": "Cinnabar Gym - Leader Blaine Reward",
+    "name": "Cinnabar Gym - Leader Blaine TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM39_FROM_BROCK": {
-    "name": "Pewter Gym - Leader Brock Reward",
+    "name": "Pewter Gym - Leader Brock TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR": {
@@ -1625,15 +1642,1820 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
-    "name": "Pallet Town - Oak's Post Champion Reward 1",
+    "name": "Pallet Town - Oak's Post Champion Gift 1",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Pallet Town - Oak's Post Champion Reward 2",
+    "name": "Pallet Town - Oak's Post Champion Gift 2",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {
     "name": "Berry Forest - Lostelle",
     "tags": ["NPCGift"]
+  },
+
+  "TRAINER_AROMA_LADY_MIAH_REWARD": {
+    "name": "Canyon Entrance - Aroma Lady Miah Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_AROMA_LADY_NIKKI_REWARD": {
+    "name": "Bond Bridge - Aroma Lady Nikki Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_AROMA_LADY_ROSE_REWARD": {
+    "name": "Water Path - Aroma Lady Rose Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_AROMA_LADY_VIOLET_REWARD": {
+    "name": "Bond Bridge - Aroma Lady Violet Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_BRIDGET_REWARD": {
+    "name": "Celadon Gym - Beauty Bridget Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_GRACE_REWARD": {
+    "name": "Route 15 - Beauty Grace Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_LOLA_REWARD": {
+    "name": "Route 13 - Beauty Lola Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_LORI_REWARD": {
+    "name": "Celadon Gym - Beauty Lori Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_OLIVIA_REWARD": {
+    "name": "Route 15 - Beauty Olivia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_SHEILA_REWARD": {
+    "name": "Route 13 - Beauty Sheila Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BEAUTY_TAMIA_REWARD": {
+    "name": "Celadon Gym - Beauty Tamia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_ALEX_REWARD": {
+    "name": "Route 15 - Biker Alex Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_BILLY_REWARD": {
+    "name": "Route 17 - Biker Billy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_ERNEST_REWARD": {
+    "name": "Route 15 - Biker Ernest Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_GERALD_REWARD": {
+    "name": "Route 14 - Biker Gerald Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_GOON_REWARD": {
+    "name": "Three Island - Biker Goon Reward (Left)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_GOON_2_REWARD": {
+    "name": "Three Island - Biker Goon Reward (Right)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_GOON_3_REWARD": {
+    "name": "Three Island - Biker Goon Reward (Top)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_HIDEO_REWARD": {
+    "name": "Route 16 - Biker Hideo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_ISAAC_REWARD": {
+    "name": "Route 14 - Biker Isaac Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_JARED_REWARD": {
+    "name": "Route 13 - Biker Jared Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_JAREN_REWARD": {
+    "name": "Route 8 - Biker Jaren Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_JAXON_REWARD": {
+    "name": "Route 17 - Biker Jaxon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_LAO_REWARD": {
+    "name": "Route 16 - Biker Lao Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_LUKAS_REWARD": {
+    "name": "Route 14 - Biker Lukas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_MALIK_REWARD": {
+    "name": "Route 14 - Biker Malik Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_NIKOLAS_REWARD": {
+    "name": "Route 17 - Biker Nikolas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_RICARDO_REWARD": {
+    "name": "Route 8 - Biker Ricardo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_RUBEN_REWARD": {
+    "name": "Route 16 - Biker Ruben Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_VIRGIL_REWARD": {
+    "name": "Route 17 - Biker Virgil Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIKER_WILLIAM_REWARD": {
+    "name": "Route 17 - Biker William Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_BECK_REWARD": {
+    "name": "Route 14 - Bird Keeper Beck Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_BENNY_REWARD": {
+    "name": "Route 14 - Bird Keeper Benny Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_CARTER_REWARD": {
+    "name": "Route 14 - Bird Keeper Carter Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_CHAZ_REWARD": {
+    "name": "Memorial Pillar - Bird Keeper Chaz Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_CHESTER_REWARD": {
+    "name": "Route 15 - Bird Keeper Chester Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_DONALD_REWARD": {
+    "name": "Route 14 - Bird Keeper Donald Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_EDWIN_REWARD": {
+    "name": "Route 15 - Bird Keeper Edwin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_HAROLD_REWARD": {
+    "name": "Memorial Pillar - Bird Keeper Harold Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_JACOB_REWARD": {
+    "name": "Route 18 - Bird Keeper Jacob Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_MARLON_REWARD": {
+    "name": "Route 14 - Bird Keeper Marlon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_MILO_REWARD": {
+    "name": "Memorial Pillar - Bird Keeper Milo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_MITCH_REWARD": {
+    "name": "Route 14 - Bird Keeper Mitch Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_PERRY_REWARD": {
+    "name": "Route 13 - Bird Keeper Perry Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_RAMIRO_REWARD": {
+    "name": "Route 18 - Bird Keeper Ramiro Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_ROBERT_REWARD": {
+    "name": "Route 13 - Bird Keeper Robert Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_ROGER_REWARD": {
+    "name": "Route 20 - Bird Keeper Roger Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_SEBASTIAN_REWARD": {
+    "name": "Route 13 - Bird Keeper Sebastian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BIRD_KEEPER_WILTON_REWARD": {
+    "name": "Route 18 - Bird Keeper Wilton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_AARON_REWARD": {
+    "name": "Saffron Dojo - Black Belt Aaron Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_ATSUSHI_REWARD": {
+    "name": "Viridian Gym - Black Belt Atsushi Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_DAISUKE_REWARD": {
+    "name": "Victory Road 2F - Black Belt Daisuke Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_HIDEKI_REWARD": {
+    "name": "Saffron Dojo - Black Belt Hideki Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_HITOSHI_REWARD": {
+    "name": "Saffron Dojo - Black Belt Hitoshi Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_HUGH_REWARD": {
+    "name": "Kindle Road - Black Belt Hugh Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_KIYO_REWARD": {
+    "name": "Viridian Gym - Black Belt Kiyo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_KOICHI_REWARD": {
+    "name": "Saffron Dojo - Black Belt Koichi Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_MIKE_REWARD": {
+    "name": "Saffron Dojo - Black Belt Mike Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_SHEA_REWARD": {
+    "name": "Kindle Road - Black Belt Shea Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BLACK_BELT_TAKASHI_REWARD": {
+    "name": "Viridian Gym - Black Belt Takashi Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BOSS_GIOVANNI_REWARD": {
+    "name": "Rocket Hideout B4F - Boss Giovanni Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BOSS_GIOVANNI_2_REWARD": {
+    "name": "Silph Co. 11F - Boss Giovanni Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_ANTHONY_REWARD": {
+    "name": "Viridian Forest - Bug Catcher Anthony Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_BRENT_REWARD": {
+    "name": "Route 9 - Bug Catcher Brent Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_CALE_REWARD": {
+    "name": "Route 24 - Bug Catcher Cale Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_CHARLIE_REWARD": {
+    "name": "Viridian Forest - Bug Catcher Charlie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_COLTON_REWARD": {
+    "name": "Route 3 - Bug Catcher Colton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_CONNER_REWARD": {
+    "name": "Route 9 - Bug Catcher Conner Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_DOUG_REWARD": {
+    "name": "Viridian Forest - Bug Catcher Doug Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_ELIJAH_REWARD": {
+    "name": "Route 6 - Bug Catcher Elijah Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_GARRET_REWARD": {
+    "name": "Pattern Bush - Bug Catcher Garret Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_GREG_REWARD": {
+    "name": "Route 3 - Bug Catcher Greg Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_JAMES_REWARD": {
+    "name": "Route 3 - Bug Catcher James Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_JONAH_REWARD": {
+    "name": "Pattern Bush - Bug Catcher Jonah Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_KEIGO_REWARD": {
+    "name": "Route 6 - Bug Catcher Keigo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_KENT_REWARD": {
+    "name": "Mt. Moon 1F - Bug Catcher Kent Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_RICK_REWARD": {
+    "name": "Viridian Forest - Bug Catcher Rick Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_ROBBY_REWARD": {
+    "name": "Mt. Moon 1F - Bug Catcher Robby Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_SAMMY_REWARD": {
+    "name": "Viridian Forest - Bug Catcher Sammy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BUG_CATCHER_VANCE_REWARD": {
+    "name": "Pattern Bush - Bug Catcher Vance Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BURGLAR_ARNIE_REWARD": {
+    "name": "Pokemon Mansion 2F - Burglar Arnie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BURGLAR_DUSTY_REWARD": {
+    "name": "Cinnabar Gym - Burglar Dusty Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BURGLAR_LEWIS_REWARD": {
+    "name": "Pokemon Mansion B1F - Burglar Lewis Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BURGLAR_QUINN_REWARD": {
+    "name": "Cinnabar Gym - Burglar Quinn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BURGLAR_RAMON_REWARD": {
+    "name": "Cinnabar Gym - Burglar Ramon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BURGLAR_SIMON_REWARD": {
+    "name": "Pokemon Mansion 3F - Burglar Simon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_BRYCE_REWARD": {
+    "name": "Kindle Road - Camper Bryce Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_CHRIS_REWARD": {
+    "name": "Route 9 - Camper Chris Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_DREW_REWARD": {
+    "name": "Route 9 - Camper Drew Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_ETHAN_REWARD": {
+    "name": "Route 24 - Camper Ethan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_FLINT_REWARD": {
+    "name": "Route 25 - Camper Flint Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_JEFF_REWARD": {
+    "name": "Route 6 - Camper Jeff Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_JUSTIN_REWARD": {
+    "name": "Route 12 - Camper Justin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_LIAM_REWARD": {
+    "name": "Pewter Gym - Camper Liam Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_RICKY_REWARD": {
+    "name": "Route 6 - Camper Ricky Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_RILEY_REWARD": {
+    "name": "Pattern Bush - Camper Riley Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CAMPER_SHANE_REWARD": {
+    "name": "Route 24 - Camper Shane Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD": {
+    "name": "Champion's Room - Champion Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_AMANDA_REWARD": {
+    "name": "Saffron Gym - Channeler Amanda Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_ANGELICA_REWARD": {
+    "name": "Pokemon Tower 6F - Channeler Angelica Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_CARLY_REWARD": {
+    "name": "Pokemon Tower 3F - Channeler Carly Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_EMILIA_REWARD": {
+    "name": "Pokemon Tower 6F - Channeler Emilia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_HOPE_REWARD": {
+    "name": "Pokemon Tower 3F - Channeler Hope Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_JANAE_REWARD": {
+    "name": "Pokemon Tower 5F - Channeler Janae Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_JENNIFER_REWARD": {
+    "name": "Pokemon Tower 6F - Channeler Jennifer Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_JODY_REWARD": {
+    "name": "Pokemon Tower 4F - Channeler Jody Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_KARINA_REWARD": {
+    "name": "Pokemon Tower 5F - Channeler Karina Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_LAUREL_REWARD": {
+    "name": "Pokemon Tower 4F - Channeler Laurel Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_PATRICIA_REWARD": {
+    "name": "Pokemon Tower 3F - Channeler Patricia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_PAULA_REWARD": {
+    "name": "Pokemon Tower 4F - Channeler Paula Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_RUTH_REWARD": {
+    "name": "Pokemon Tower 5F - Channeler Ruth Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_STACY_REWARD": {
+    "name": "Saffron Gym - Channeler Stacy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_TAMMY_REWARD": {
+    "name": "Pokemon Tower 5F - Channeler Tammy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CHANNELER_TASHA_REWARD": {
+    "name": "Saffron Gym - Channeler Tasha Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_ALEXA_REWARD": {
+    "name": "Victory Road 3F - Cooltrainer Alexa Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_CAROLINE_REWARD": {
+    "name": "Victory Road 3F - Cooltrainer Caroline Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_COLBY_REWARD": {
+    "name": "Victory Road 3F - Cooltrainer Colby Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_GEORGE_REWARD": {
+    "name": "Victory Road 3F - Cooltrainer George Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_LEROY_REWARD": {
+    "name": "Sevault Canyon - Cooltrainer Leroy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_MARY_REWARD": {
+    "name": "Celadon Gym - Cooltrainer Mary Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_MICHELLE_REWARD": {
+    "name": "Sevault Canyon - Cooltrainer Michelle Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_NAOMI_REWARD": {
+    "name": "Victory Road 1F - Cooltrainer Naomi Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_ROLANDO_REWARD": {
+    "name": "Victory Road 1F - Cooltrainer Rolando Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_SAMUEL_REWARD": {
+    "name": "Viridian Gym - Cooltrainer Samuel Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_WARREN_REWARD": {
+    "name": "Viridian Gym - Cooltrainer Warren Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOLTRAINER_YUJI_REWARD": {
+    "name": "Viridian Gym - Cooltrainer Yuji Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOL_COUPLE_LEX_NYA_REWARD": {
+    "name": "Sevault Canyon - Cool Couple Lex & Nya Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COOL_COUPLE_RAY_TYRA_REWARD": {
+    "name": "Victory Road 3F - Cool Couple Ray & Tyra Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CRUSH_GIRL_CYNDY_REWARD": {
+    "name": "Sevault Canyon - Crush Girl Cyndy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CRUSH_GIRL_JOCELYN_REWARD": {
+    "name": "Mt. Ember Exterior - Crush Girl Jocelyn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CRUSH_GIRL_SHARON_REWARD": {
+    "name": "Kindle Road - Crush Girl Sharon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CRUSH_GIRL_TANYA_REWARD": {
+    "name": "Kindle Road - Crush Girl Tanya Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CRUSH_KIN_MIK_KIA_REWARD": {
+    "name": "Kindle Road - Crush Kin Mik & Kia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CRUSH_KIN_RON_MYA_REWARD": {
+    "name": "Route 15 - Crush Kin Ron & Mya Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_CAMRON_REWARD": {
+    "name": "Route 16 - Cue Ball Camron Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_COREY_REWARD": {
+    "name": "Route 17 - Cue Ball Corey Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_ISAIAH_REWARD": {
+    "name": "Route 17 - Cue Ball Isaiah Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_JAMAL_REWARD": {
+    "name": "Route 17 - Cue Ball Jamal Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_KOJI_REWARD": {
+    "name": "Route 16 - Cue Ball Koji Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_LUKE_REWARD": {
+    "name": "Route 16 - Cue Ball Luke Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_PAXTON_REWARD": {
+    "name": "Three Island - Cue Ball Paxton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_RAUL_REWARD": {
+    "name": "Route 17 - Cue Ball Raul Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_CUE_BALL_ZEEK_REWARD": {
+    "name": "Route 17 - Cue Ball Zeek Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ELITE_FOUR_AGATHA_REWARD": {
+    "name": "Agatha's Room - Elite Four Agatha Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ELITE_FOUR_BRUNO_REWARD": {
+    "name": "Bruno's Room - Elite Four Bruno Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ELITE_FOUR_LANCE_REWARD": {
+    "name": "Lance's Room - Elite Four Lance Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ELITE_FOUR_LORELEI_REWARD": {
+    "name": "Lorelei's Room - Elite Four Lorelei Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ENGINEER_BAILY_REWARD": {
+    "name": "Vermilion Gym - Engineer Baily Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ENGINEER_BERNIE_REWARD": {
+    "name": "Route 11 - Engineer Bernie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ENGINEER_BRAXTON_REWARD": {
+    "name": "Route 11 - Engineer Braxton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_ANDREW_REWARD": {
+    "name": "Route 12 - Fisherman Andrew Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_BARNY_REWARD": {
+    "name": "S.S. Anne B1F Room 1 - Fisherman Barny Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_CHIP_REWARD": {
+    "name": "Route 12 - Fisherman Chip Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_CLAUDE_REWARD": {
+    "name": "Route 21 - Fisherman Claude Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_DALE_REWARD": {
+    "name": "S.S. Anne 2F Room 2 - Fisherman Dale Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_ELLIOT_REWARD": {
+    "name": "Route 12 - Fisherman Elliot Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_HANK_REWARD": {
+    "name": "Route 12 - Fisherman Hank Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_NED_REWARD": {
+    "name": "Route 12 - Fisherman Ned Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_NOLAN_REWARD": {
+    "name": "Route 21 - Fisherman Nolan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_RONALD_REWARD": {
+    "name": "Route 21 - Fisherman Ronald Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_TOMMY_REWARD": {
+    "name": "Kindle Road - Fisherman Tommy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_TYLOR_REWARD": {
+    "name": "Outcast Island - Fisherman Tylor Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_FISHERMAN_WADE_REWARD": {
+    "name": "Route 21 - Fisherman Wade Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GAMER_DARIAN_REWARD": {
+    "name": "Route 11 - Gamer Darian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GAMER_DIRK_REWARD": {
+    "name": "Route 11 - Gamer Dirk Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GAMER_HUGO_REWARD": {
+    "name": "Route 11 - Gamer Hugo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GAMER_JASPER_REWARD": {
+    "name": "Route 11 - Gamer Jasper Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GAMER_RICH_REWARD": {
+    "name": "Route 8 - Gamer Rich Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GAMER_STAN_REWARD": {
+    "name": "Route 8 - Gamer Stan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GENTLEMAN_ARTHUR_REWARD": {
+    "name": "S.S. Anne 1F Room 5 - Gentleman Arthur Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GENTLEMAN_BROOKS_REWARD": {
+    "name": "S.S. Anne 2F Room 2 - Gentleman Brooks Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GENTLEMAN_CLIFFORD_REWARD": {
+    "name": "Tanoby Ruins - Gentleman Clifford Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GENTLEMAN_LAMAR_REWARD": {
+    "name": "S.S. Anne 2F Room 4 - Gentleman Lamar Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GENTLEMAN_THOMAS_REWARD": {
+    "name": "S.S. Anne 1F Room 7 - Gentleman Thomas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GENTLEMAN_TUCKER_REWARD": {
+    "name": "Vermilion Gym - Gentleman Tucker Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_ALAN_REWARD": {
+    "name": "Route 9 - Hiker Alan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_ALLEN_REWARD": {
+    "name": "Rock Tunnel B1F - Hiker Allen Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_BRICE_REWARD": {
+    "name": "Route 9 - Hiker Brice Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_CLARK_REWARD": {
+    "name": "Route 10 - Hiker Clark Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_DARYL_REWARD": {
+    "name": "Ruin Valley - Hiker Daryl Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_DUDLEY_REWARD": {
+    "name": "Rock Tunnel B1F - Hiker Dudley Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_EARL_REWARD": {
+    "name": "Water Path - Hiker Earl Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_ERIC_REWARD": {
+    "name": "Rock Tunnel B1F - Hiker Eric Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_FRANKLIN_REWARD": {
+    "name": "Route 25 - Hiker Franklin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_JEREMY_REWARD": {
+    "name": "Route 9 - Hiker Jeremy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_LENNY_REWARD": {
+    "name": "Rock Tunnel 1F - Hiker Lenny Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_LUCAS_REWARD": {
+    "name": "Rock Tunnel 1F - Hiker Lucas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_MARCOS_REWARD": {
+    "name": "Mt. Moon 1F - Hiker Marcos Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_NOB_REWARD": {
+    "name": "Route 25 - Hiker Nob Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_OLIVER_REWARD": {
+    "name": "Rock Tunnel 1F - Hiker Oliver Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_TRENT_REWARD": {
+    "name": "Route 10 - Hiker Trent Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_HIKER_WAYNE_REWARD": {
+    "name": "Route 25 - Hiker Wayne Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_DALTON_REWARD": {
+    "name": "Silph Co. 5F - Juggler Dalton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_EDWARD_REWARD": {
+    "name": "Water Path - Juggler Edward Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_GREGORY_REWARD": {
+    "name": "Victory Road 2F - Juggler Gregory Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_KAYDEN_REWARD": {
+    "name": "Fuchsia Gym - Juggler Kayden Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_KIRK_REWARD": {
+    "name": "Fuchsia Gym - Juggler Kirk Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_MASON_REWARD": {
+    "name": "Canyon Entrance - Juggler Mason Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_NATE_REWARD": {
+    "name": "Fuchsia Gym - Juggler Nate Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_NELSON_REWARD": {
+    "name": "Victory Road 2F - Juggler Nelson Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_JUGGLER_SHAWN_REWARD": {
+    "name": "Fuchsia Gym - Juggler Shawn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LADY_GILLIAN_REWARD": {
+    "name": "Resort Gorgeous - Lady Gillian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LADY_JACKI_REWARD": {
+    "name": "Resort Gorgeous - Lady Jacki Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LADY_SELPHY_REWARD": {
+    "name": "Lost Cave Room 10 - Lady Selphy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_ALI_REWARD": {
+    "name": "Route 24 - Lass Ali Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_ANDREA_REWARD": {
+    "name": "Route 8 - Lass Andrea Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_ANN_REWARD": {
+    "name": "S.S. Anne 1F Room 2 - Lass Ann Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_CRISSY_REWARD": {
+    "name": "Route 4 - Lass Crissy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_DALIA_REWARD": {
+    "name": "Pattern Bush - Lass Dalia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_DAWN_REWARD": {
+    "name": "S.S. Anne 2F Room 4 - Lass Dawn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_HALEY_REWARD": {
+    "name": "Route 25 - Lass Haley Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_IRIS_REWARD": {
+    "name": "Mt. Moon 1F - Lass Iris Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_JANICE_REWARD": {
+    "name": "Route 3 - Lass Janice Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_JOANA_REWARD": {
+    "name": "Pattern Bush - Lass Joana Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_JULIA_REWARD": {
+    "name": "Route 8 - Lass Julia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_KAY_REWARD": {
+    "name": "Celadon Gym - Lass Kay Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_LISA_REWARD": {
+    "name": "Celadon Gym - Lass Lisa Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_MEGAN_REWARD": {
+    "name": "Route 8 - Lass Megan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_MIRIAM_REWARD": {
+    "name": "Mt. Moon 1F - Lass Miriam Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_PAIGE_REWARD": {
+    "name": "Route 8 - Lass Paige Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_RELI_REWARD": {
+    "name": "Route 24 - Lass Reli Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_ROBIN_REWARD": {
+    "name": "Route 3 - Lass Robin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LASS_SALLY_REWARD": {
+    "name": "Route 3 - Lass Sally Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_BLAINE_REWARD": {
+    "name": "Cinnabar Gym - Leader Blaine Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_BROCK_REWARD": {
+    "name": "Pewter Gym - Leader Brock Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_ERIKA_REWARD": {
+    "name": "Celadon Gym - Leader Erika Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_GIOVANNI_REWARD": {
+    "name": "Viridian Gym - Leader Giovanni Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_KOGA_REWARD": {
+    "name": "Fuchsia Gym - Leader Koga Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_LT_SURGE_REWARD": {
+    "name": "Vermilion Gym - Leader Lt. Surge Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_MISTY_REWARD": {
+    "name": "Cerulean Gym - Leader Misty Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_LEADER_SABRINA_REWARD": {
+    "name": "Saffron Gym - Leader Sabrina Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PAINTER_CELINA_REWARD": {
+    "name": "Resort Gorgeous - Painter Celina Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PAINTER_DAISY_REWARD": {
+    "name": "Resort Gorgeous - Painter Daisy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PAINTER_EDNA_REWARD": {
+    "name": "Tanoby Ruins - Painter Edna Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PAINTER_RAYNA_REWARD": {
+    "name": "Resort Gorgeous - Painter Rayna Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_ALICIA_REWARD": {
+    "name": "Route 9 - Picnicker Alicia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_ALMA_REWARD": {
+    "name": "Route 13 - Picnicker Alma Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_ARIANA_REWARD": {
+    "name": "Rock Tunnel 1F - Picnicker Ariana Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_BECKY_REWARD": {
+    "name": "Route 15 - Picnicker Becky Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_CAITLIN_REWARD": {
+    "name": "Route 9 - Picnicker Caitlin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_CAROL_REWARD": {
+    "name": "Route 10 - Picnicker Carol Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_CELIA_REWARD": {
+    "name": "Route 15 - Picnicker Celia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_CLAIRE_REWARD": {
+    "name": "Kindle Road - Picnicker Claire Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_DANA_REWARD": {
+    "name": "Rock Tunnel 1F - Picnicker Dana Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_DIANA_REWARD": {
+    "name": "Cerulean Gym - Picnicker Diana Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_GWEN_REWARD": {
+    "name": "Route 13 - Picnicker Gwen Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_HEIDI_REWARD": {
+    "name": "Route 10 - Picnicker Heidi Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_IRENE_REWARD": {
+    "name": "Route 20 - Picnicker Irene Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_ISABELLE_REWARD": {
+    "name": "Route 6 - Picnicker Isabelle Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_KELSEY_REWARD": {
+    "name": "Route 25 - Picnicker Kelsey Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_KINDRA_REWARD": {
+    "name": "Route 15 - Picnicker Kindra Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_LEAH_REWARD": {
+    "name": "Rock Tunnel 1F - Picnicker Leah Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_MARCY_REWARD": {
+    "name": "Pattern Bush - Picnicker Marcy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_MARTHA_REWARD": {
+    "name": "Rock Tunnel B1F - Picnicker Martha Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_MISSY_REWARD": {
+    "name": "Route 20 - Picnicker Missy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_NANCY_REWARD": {
+    "name": "Route 6 - Picnicker Nancy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_SOFIA_REWARD": {
+    "name": "Rock Tunnel B1F - Picnicker Sofia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_SUSIE_REWARD": {
+    "name": "Route 13 - Picnicker Susie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_TINA_REWARD": {
+    "name": "Celadon Gym - Picnicker Tina Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_VALERIE_REWARD": {
+    "name": "Route 13 - Picnicker Valerie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PICNICKER_YAZMIN_REWARD": {
+    "name": "Route 15 - Picnicker Yazmin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_BREEDER_ALIZE_REWARD": {
+    "name": "Water Labyrinth - Pokemon Breeder Alize Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_BREEDER_ALLISON_REWARD": {
+    "name": "Pattern Bush - Pokemon Breeder Allison Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_BREEDER_BETHANY_REWARD": {
+    "name": "Pattern Bush - Pokemon Breeder Bethany Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_RANGER_BETH_REWARD": {
+    "name": "Mt. Ember Exterior - Pokemon Ranger Beth Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_RANGER_JACKSON_REWARD": {
+    "name": "Sevault Canyon - Pokemon Ranger Jackson Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_RANGER_KATELYN_REWARD": {
+    "name": "Sevault Canyon - Pokemon Ranger Katelyn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_RANGER_LOGAN_REWARD": {
+    "name": "Mt. Ember Exterior - Pokemon Ranger Logan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_RANGER_MADELINE_REWARD": {
+    "name": "Canyon Entrance - Pokemon Ranger Madeline Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_RANGER_NICOLAS_REWARD": {
+    "name": "Canyon Entrance - Pokemon Ranger Nicolas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_ASHTON_REWARD": {
+    "name": "Rock Tunnel 1F - PokeManiac Ashton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_COOPER_REWARD": {
+    "name": "Rock Tunnel B1F - PokeManiac Cooper Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_DAWSON_REWARD": {
+    "name": "Victory Road 2F - PokeManiac Dawson Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_HECTOR_REWARD": {
+    "name": "Ruin Valley - PokeManiac Hector Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_HERMAN_REWARD": {
+    "name": "Route 10 - PokeManiac Herman Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_MARK_REWARD": {
+    "name": "Route 10 - PokeManiac Mark Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_STEVE_REWARD": {
+    "name": "Rock Tunnel B1F - PokeManiac Steve Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKEMANIAC_WINSTON_REWARD": {
+    "name": "Rock Tunnel B1F - PokeManiac Winston Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_CAMERON_REWARD": {
+    "name": "Saffron Gym - Psychic Cameron Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_DARIO_REWARD": {
+    "name": "Trainer Tower Exterior - Psychic Dario Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_JACLYN_REWARD": {
+    "name": "Green Path - Psychic Jaclyn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_JOHAN_REWARD": {
+    "name": "Saffron Gym - Psychic Johan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_LAURA_REWARD": {
+    "name": "Lost Cave Room 4 - Psychic Laura Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_PRESTON_REWARD": {
+    "name": "Saffron Gym - Psychic Preston Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_RODETTE_REWARD": {
+    "name": "Trainer Tower Exterior - Psychic Rodette Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PSYCHIC_TYRON_REWARD": {
+    "name": "Saffron Gym - Psychic Tyron Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD": {
+    "name": "Cerulean City - Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_OAKS_LAB_BULBASAUR_REWARD": {
+    "name": "Oak's Lab - Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR_REWARD": {
+    "name": "Pokemon Tower 2F - Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR_REWARD": {
+    "name": "Route 22 - Early Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR_REWARD": {
+    "name": "Route 22 - Late Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD": {
+    "name": "Silph Co. 7F - Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_SS_ANNE_BULBASAUR_REWARD": {
+    "name": "S.S. Anne 2F Corridor - Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ROCKER_LUCA_REWARD": {
+    "name": "Route 12 - Rocker Luca Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_BENJAMIN_REWARD": {
+    "name": "Tanoby Ruins - Ruin Maniac Benjamin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_BRANDON_REWARD": {
+    "name": "Tanoby Ruins - Ruin Maniac Brandon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_FOSTER_REWARD": {
+    "name": "Ruin Valley - Ruin Maniac Foster Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_LARRY_REWARD": {
+    "name": "Ruin Valley - Ruin Maniac Larry Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_LAWSON_REWARD": {
+    "name": "Lost Cave Room 1 - Ruin Maniac Lawson Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_LAYTON_REWARD": {
+    "name": "Pattern Bush - Ruin Maniac Layton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RUIN_MANIAC_STANLY_REWARD": {
+    "name": "Ruin Valley - Ruin Maniac Stanly Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_DUNCAN_REWARD": {
+    "name": "S.S. Anne B1F Room 4 - Sailor Duncan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_DWAYNE_REWARD": {
+    "name": "Vermilion Gym - Sailor Dwayne Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_DYLAN_REWARD": {
+    "name": "S.S. Anne B1F Room 3 - Sailor Dylan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_EDMOND_REWARD": {
+    "name": "S.S. Anne Deck - Sailor Edmond Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_HUEY_REWARD": {
+    "name": "S.S. Anne B1F Room 2 - Sailor Huey Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_LEONARD_REWARD": {
+    "name": "S.S. Anne B1F Room 4 - Sailor Leonard Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_PHILLIP_REWARD": {
+    "name": "S.S. Anne B1F Room 1 - Sailor Phillip Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SAILOR_TREVOR_REWARD": {
+    "name": "S.S. Anne Deck - Sailor Trevor Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_BEAU_REWARD": {
+    "name": "Silph Co. 5F - Scientist Beau Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_BRAYDON_REWARD": {
+    "name": "Pokemon Mansion 3F - Scientist Braydon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_CONNOR_REWARD": {
+    "name": "Silph Co. 2F - Scientist Connor Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_ED_REWARD": {
+    "name": "Silph Co. 9F - Scientist Ed Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_GIDEON_REWARD": {
+    "name": "Rocket Warehouse - Scientist Gideon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_IVAN_REWARD": {
+    "name": "Pokemon Mansion B1F - Scientist Ivan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_JERRY_REWARD": {
+    "name": "Silph Co. 2F - Scientist Jerry Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_JOSE_REWARD": {
+    "name": "Silph Co. 3F - Scientist Jose Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_JOSHUA_REWARD": {
+    "name": "Silph Co. 7F - Scientist Joshua Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_PARKER_REWARD": {
+    "name": "Silph Co. 8F - Scientist Parker Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_RODNEY_REWARD": {
+    "name": "Silph Co. 4F - Scientist Rodney Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_TAYLOR_REWARD": {
+    "name": "Silph Co. 6F - Scientist Taylor Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_TED_REWARD": {
+    "name": "Pokemon Mansion 1F - Scientist Ted Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCIENTIST_TRAVIS_REWARD": {
+    "name": "Silph Co. 10F - Scientist Travis Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SIS_AND_BRO_AVA_GEB_REWARD": {
+    "name": "Outcast Island - Sis and Bro Ava & Geb Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SIS_AND_BRO_LIA_LUC_REWARD": {
+    "name": "Route 19 - Sis and Bro Lia & Luc Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SIS_AND_BRO_LIL_IAN_REWARD": {
+    "name": "Route 21 - Sis and Bro Lil & Ian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_AIDAN_REWARD": {
+    "name": "Route 8 - Super Nerd Aiden Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_AVERY_REWARD": {
+    "name": "Cinnabar Gym - Super Nerd Avery Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_DEREK_REWARD": {
+    "name": "Cinnabar Gym - Super Nerd Derek Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_ERIK_REWARD": {
+    "name": "Cinnabar Gym - Super Nerd Erik Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_GLENN_REWARD": {
+    "name": "Route 8 - Super Nerd Glenn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_JOVAN_REWARD": {
+    "name": "Mt. Moon 1F - Super Nerd Jovan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_LESLIE_REWARD": {
+    "name": "Route 8 - Super Nerd Leslie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_MIGUEL_REWARD": {
+    "name": "Mt. Moon B2F - Super Nerd Miguel Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SUPER_NERD_ZAC_REWARD": {
+    "name": "Cinnabar Gym - Super Nerd Zac Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_ABIGAIL_REWARD": {
+    "name": "Kindle Road - Swimmer Abigail Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_ALICE_REWARD": {
+    "name": "Route 19 - Swimmer Alice Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_AMARA_REWARD": {
+    "name": "Treasure Beach - Swimmer Amara Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_ANYA_REWARD": {
+    "name": "Route 19 - Swimmer Anya Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_CONNIE_REWARD": {
+    "name": "Route 19 - Swimmer Connie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_DENISE_REWARD": {
+    "name": "Water Path - Swimmer Denise Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_MARIA_REWARD": {
+    "name": "Kindle Road - Swimmer Maria Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_MELISSA_REWARD": {
+    "name": "Route 20 - Swimmer Melissa Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_NICOLE_REWARD": {
+    "name": "Outcast Island - Swimmer Nicole Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_NORA_REWARD": {
+    "name": "Route 20 - Swimmer Nora Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_SHIRLEY_REWARD": {
+    "name": "Route 20 - Swimmer Shirley Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_TIFFANY_REWARD": {
+    "name": "Route 20 - Swimmer Tiffany Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_FEMALE_TISHA_REWARD": {
+    "name": "Bond Bridge - Swimmer Tisha Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_AXLE_REWARD": {
+    "name": "Route 19 - Swimmer Axle Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_BARRY_REWARD": {
+    "name": "Route 20 - Swimmer Barry Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_DARRIN_REWARD": {
+    "name": "Route 20 - Swimmer Darrin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_DAVID_REWARD": {
+    "name": "Route 19 - Swimmer David Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_DEAN_REWARD": {
+    "name": "Route 20 - Swimmer Dean Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_DOUGLAS_REWARD": {
+    "name": "Route 19 - Swimmer Douglas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_FINN_REWARD": {
+    "name": "Kindle Road - Swimmer Finn Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_GARRETT_REWARD": {
+    "name": "Kindle Road - Swimmer Garrett Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_JACK_REWARD": {
+    "name": "Route 21 - Swimmer Jack Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_JEROME_REWARD": {
+    "name": "Route 21 - Swimmer Jerome Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_LUIS_REWARD": {
+    "name": "Cerulean Gym - Swimmer Luis Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_MATTHEW_REWARD": {
+    "name": "Route 19 - Swimmer Matthew Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_MYMO_REWARD": {
+    "name": "Outcast Island - Swimmer Mymo Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_REECE_REWARD": {
+    "name": "Route 19 - Swimmer Reece Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_RICHARD_REWARD": {
+    "name": "Route 19 - Swimmer Richard Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_ROLAND_REWARD": {
+    "name": "Route 21 - Swimmer Roland Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_SAMIR_REWARD": {
+    "name": "Water Path - Swimmer Samir Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_SPENCER_REWARD": {
+    "name": "Route 21 - Swimmer Spencer Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_TOBY_REWARD": {
+    "name": "Resort Gorgeous - Swimmer Toby Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SWIMMER_MALE_TONY_REWARD": {
+    "name": "Route 19 - Swimmer Tony Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TAMER_COLE_REWARD": {
+    "name": "Viridian Gym - Tamer Cole Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TAMER_EDGAR_REWARD": {
+    "name": "Fuchsia Gym - Tamer Edgar Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TAMER_EVAN_REWARD": {
+    "name": "Sevault Canyon - Tamer Evan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TAMER_JASON_REWARD": {
+    "name": "Viridian Gym - Tamer Jason Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TAMER_PHIL_REWARD": {
+    "name": "Fuchsia Gym - Tamer Phil Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TAMER_VINCENT_REWARD": {
+    "name": "Victory Road 2F - Tamer Vincent Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_ADMIN_REWARD": {
+    "name": "Rocket Warehouse - Southeast Room Team Rocket Admin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_ADMIN_2_REWARD": {
+    "name": "Rocket Warehouse - East Room Team Rocket Admin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_REWARD": {
+    "name": "Mt. Moon B2F - West Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_2_REWARD": {
+    "name": "Mt. Moon B2F - Isolated Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_3_REWARD": {
+    "name": "Mt. Moon B2F - Northeast Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_4_REWARD": {
+    "name": "Mt. Moon B2F - East Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_5_REWARD": {
+    "name": "Cerulean City - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_6_REWARD": {
+    "name": "Route 24 - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_7_REWARD": {
+    "name": "Celadon Game Corner - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_8_REWARD": {
+    "name": "Rocket Hideout B1F - Northeast Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_9_REWARD": {
+    "name": "Rocket Hideout B1F - Northwest Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_10_REWARD": {
+    "name": "Rocket Hideout B1F - Southwest Room Team Rocket Grunt Reward (Top)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_11_REWARD": {
+    "name": "Rocket Hideout B1F - Southwest Room Team Rocket Grunt Reward (Bottom)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_12_REWARD": {
+    "name": "Rocket Hideout B1F - Southeast Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_13_REWARD": {
+    "name": "Rocket Hideout B2F - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_14_REWARD": {
+    "name": "Rocket Hideout B3F - Maze Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_15_REWARD": {
+    "name": "Rocket Hideout B3F - Northeast Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_16_REWARD": {
+    "name": "Rocket Hideout B4F - Door Guard Team Rocket Grunt Reward (Left)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_17_REWARD": {
+    "name": "Rocket Hideout B4F - Door Guard Team Rocket Grunt Reward (Right)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_18_REWARD": {
+    "name": "Rocket Hideout B4F - Northwest Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_19_REWARD": {
+    "name": "Pokemon Tower 7F - South Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_20_REWARD": {
+    "name": "Pokemon Tower 7F - Center Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_21_REWARD": {
+    "name": "Pokemon Tower 7F - North Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_23_REWARD": {
+    "name": "Silph Co. 2F - Center Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_24_REWARD": {
+    "name": "Silph Co. 2F - East Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_25_REWARD": {
+    "name": "Silph Co. 3F - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_26_REWARD": {
+    "name": "Silph Co. 4F - Southwest Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_27_REWARD": {
+    "name": "Silph Co. 4F - Southeast Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_28_REWARD": {
+    "name": "Silph Co. 5F - Southwest Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_29_REWARD": {
+    "name": "Silph Co. 5F - Northeast Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_30_REWARD": {
+    "name": "Silph Co. 6F - North Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_31_REWARD": {
+    "name": "Silph Co. 6F - South Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_32_REWARD": {
+    "name": "Silph Co. 8F - Northeast Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_33_REWARD": {
+    "name": "Silph Co. 7F - Northeast Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_34_REWARD": {
+    "name": "Silph Co. 7F - Southeast Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_35_REWARD": {
+    "name": "Silph Co. 7F - North Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_36_REWARD": {
+    "name": "Silph Co. 8F - Southwest Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_37_REWARD": {
+    "name": "Silph Co. 9F - Northwest Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_38_REWARD": {
+    "name": "Silph Co. 9F - South Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_39_REWARD": {
+    "name": "Silph Co. 10F - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_40_REWARD": {
+    "name": "Silph Co. 11F - East Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_41_REWARD": {
+    "name": "Silph Co. 11F - Southwest Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_42_REWARD": {
+    "name": "Rocket Warehouse - Northwest Room Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_43_REWARD": {
+    "name": "Mt. Ember Exterior - Team Rocket Grunt Reward (Left)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_44_REWARD": {
+    "name": "Mt. Ember Exterior - Team Rocket Grunt Reward (Right)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_45_REWARD": {
+    "name": "Icefall Cave Back - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_46_REWARD": {
+    "name": "Outcast Island - Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_47_REWARD": {
+    "name": "Rocket Warehouse - Maze Team Rocket Grunt Reward (Left)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_48_REWARD": {
+    "name": "Rocket Warehouse - Maze Team Rocket Grunt Reward (Right)",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_49_REWARD": {
+    "name": "Five Isle Meadow - North Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_50_REWARD": {
+    "name": "Five Isle Meadow - South Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAM_ROCKET_GRUNT_51_REWARD": {
+    "name": "Five Isle Meadow - Center Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TUBER_ALEXIS_REWARD": {
+    "name": "Bond Bridge - Tuber Alexis Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TUBER_AMIRA_REWARD": {
+    "name": "Bond Bridge - Tuber Amira Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TWINS_ELI_ANNE_REWARD": {
+    "name": "Route 8 - Twins Eli & Anne Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TWINS_JOY_MEG_REWARD": {
+    "name": "Bond Bridge - Twins Joy & Meg Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TWINS_KIRI_JAN_REWARD": {
+    "name": "Route 14 - Twins Kiri & Jan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TWINS_MIU_MIA_REWARD": {
+    "name": "Water Path - Twins Miu & Mia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_BEN_REWARD": {
+    "name": "Route 3 - Youngster Ben Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_CALVIN_REWARD": {
+    "name": "Route 3 - Youngster Calvin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_CHAD_REWARD": {
+    "name": "Route 25 - Youngster Chad Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_CORDELL_REWARD": {
+    "name": "Pattern Bush - Youngster Cordell Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_DAN_REWARD": {
+    "name": "Route 25 - Youngster Dan Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_DAVE_REWARD": {
+    "name": "Route 11 - Youngster Dave Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_DESTIN_REWARD": {
+    "name": "Resort Gorgeous - Youngster Destin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_DILLON_REWARD": {
+    "name": "Route 11 - Youngster Dillon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_EDDIE_REWARD": {
+    "name": "Route 11 - Youngster Eddie Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_JOEY_REWARD": {
+    "name": "Route 25 - Youngster Joey Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_JOHNSON_REWARD": {
+    "name": "Pokemon Mansion 1F - Youngster Johnson Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_JOSH_REWARD": {
+    "name": "Mt. Moon 1F - Youngster Josh Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_NASH_REWARD": {
+    "name": "Pattern Bush - Youngster Nash Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_TIMMY_REWARD": {
+    "name": "Route 24 - Youngster Timmy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_TYLER_REWARD": {
+    "name": "S.S. Anne 1F Room 2 - Youngster Tyler Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNGSTER_YASU_REWARD": {
+    "name": "Route 11 - Youngster Yasu Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNG_COUPLE_EVE_JON_REWARD": {
+    "name": "Canyon Entrance - Young Couple Eve & Jon Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNG_COUPLE_GIA_JES_REWARD": {
+    "name": "Route 12 - Young Couple Gia & Jes Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_YOUNG_COUPLE_LEA_JED_REWARD": {
+    "name": "Route 16 - Young Couple Lea & Jed Reward",
+    "tags": ["Trainer"]
   }
 }

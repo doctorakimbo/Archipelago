@@ -1,7 +1,7 @@
 """
 Pulls data from JSON files in worlds/pokemon_frlg/data/ into classes.
 This also includes marrying automatically extracted data with manually
-defined data (like location labels or usable Pokémon species), some cleanup
+defined data (like location names or usable Pokémon species), some cleanup
 and sorting, and Warp methods.
 """
 import orjson
@@ -82,13 +82,20 @@ class LocationData(NamedTuple):
     name: str
     parent_region_id: str
     default_item: int
-    address: Dict[str, int]
+    address: Dict[str, Union[int, List[int]]]
     flag: int
     tags: FrozenSet[str]
 
 
+@dataclass
+class EncounterSpeciesData:
+    species_id: int
+    min_level: int
+    max_level: int
+
+
 class EncounterTableData(NamedTuple):
-    slots: Dict[str, List[int]]
+    slots: Dict[str, List[EncounterSpeciesData]]
     address: Dict[str, int]
 
 
@@ -106,6 +113,7 @@ class EventData(NamedTuple):
     name: Union[str, List[str]]
     item: Union[str, List[str]]
     parent_region_id: str
+    tags: FrozenSet[str]
 
 
 class RegionData:
@@ -150,9 +158,47 @@ class LearnsetMove(NamedTuple):
     move_id: int
 
 
+class EvolutionMethodEnum(IntEnum):
+    LEVEL = 0
+    LEVEL_ATK_LT_DEF = 1
+    LEVEL_ATK_EQ_DEF = 2
+    LEVEL_ATK_GT_DEF = 3
+    LEVEL_SILCOON = 4
+    LEVEL_CASCOON = 5
+    LEVEL_NINJASK = 6
+    LEVEL_SHEDINJA = 7
+    ITEM = 8
+    FRIENDSHIP = 9
+    FRIENDSHIP_DAY = 10
+    FRIENDSHIP_NIGHT = 11
+    TRADE = 12
+    TRADE_ITEM = 13
+    BEAUTY = 14
+
+
+EVOLUTION_METHOD_TYPE: Dict[str, EvolutionMethodEnum] = {
+    "LEVEL": EvolutionMethodEnum.LEVEL,
+    "LEVEL_ATK_LT_DEF": EvolutionMethodEnum.LEVEL_ATK_LT_DEF,
+    "LEVEL_ATK_EQ_DEF": EvolutionMethodEnum.LEVEL_ATK_EQ_DEF,
+    "LEVEL_ATK_GT_DEF": EvolutionMethodEnum.LEVEL_ATK_GT_DEF,
+    "LEVEL_SILCOON": EvolutionMethodEnum.LEVEL_SILCOON,
+    "LEVEL_CASCOON": EvolutionMethodEnum.LEVEL_CASCOON,
+    "LEVEL_NINJASK": EvolutionMethodEnum.LEVEL_NINJASK,
+    "LEVEL_SHEDINJA": EvolutionMethodEnum.LEVEL_SHEDINJA,
+    "ITEM": EvolutionMethodEnum.ITEM,
+    "FRIENDSHIP": EvolutionMethodEnum.FRIENDSHIP,
+    "FRIENDSHIP_DAY": EvolutionMethodEnum.FRIENDSHIP_DAY,
+    "FRIENDSHIP_NIGHT": EvolutionMethodEnum.FRIENDSHIP_NIGHT,
+    "TRADE": EvolutionMethodEnum.TRADE,
+    "TRADE_ITEM": EvolutionMethodEnum.TRADE_ITEM,
+    "BEAUTY": EvolutionMethodEnum.BEAUTY
+}
+
+
 class EvolutionData(NamedTuple):
     param: int
     species_id: int
+    method: EvolutionMethodEnum
 
 
 @dataclass
@@ -184,8 +230,9 @@ class StarterData:
 @dataclass
 class MiscPokemonData:
     species_id: Dict[str, int]
-    level: int
+    level: [str, int]
     address: Dict[str, int]
+    level_address: Dict[str, int]
 
 
 class TrainerPokemonDataTypeEnum(IntEnum):
@@ -239,7 +286,7 @@ class PokemonFRLGData:
     starters: Dict[str, StarterData]
     legendary_pokemon: Dict[str, MiscPokemonData]
     misc_pokemon: Dict[str, MiscPokemonData]
-    trainers: Dict[int, TrainerData]
+    trainers: Dict[str, TrainerData]
     tmhm_moves: List[int]
     abilities: Dict[str, int]
     moves: Dict[str, int]
@@ -661,168 +708,10 @@ def load_json_data(data_name: str) -> Union[List[Any], Dict[str, Any]]:
 
 
 def _init() -> None:
-    def add_leafgreen_data() -> None:
-        extracted_data: Dict[str, Any] = load_json_data("extracted_data_leafgreen.json")
-        data.ram_addresses["leafgreen"] = extracted_data["misc_ram_addresses"]
-        data.rom_addresses["leafgreen"] = extracted_data["misc_rom_addresses"]
-
-        # Add encounter addresses for LeafGreen
-        for map_name, map_json in extracted_data["maps"].items():
-            if "land_encounters" in map_json:
-                data.maps[map_name].land_encounters.address["leafgreen"] = map_json["land_encounters"]["address"]
-                data.maps[map_name].land_encounters.slots["leafgreen"] = map_json["land_encounters"]["slots"]
-            if "water_encounters" in map_json:
-                data.maps[map_name].water_encounters.address["leafgreen"] = map_json["water_encounters"]["address"]
-                data.maps[map_name].water_encounters.slots["leafgreen"] = map_json["water_encounters"]["slots"]
-            if "fishing_encounters" in map_json:
-                data.maps[map_name].fishing_encounters.address["leafgreen"] = map_json["fishing_encounters"]["address"]
-                data.maps[map_name].fishing_encounters.slots["leafgreen"] = map_json["fishing_encounters"]["slots"]
-
-            data.maps[map_name].header_address["leafgreen"] = map_json["header_address"]
-
-        # Add location addresses for LeafGreen
-        for location in data.locations.values():
-            location_json = extracted_data["locations"][location.id]
-            location.address["leafgreen"] = location_json["address"]
-
-        # Add species addresses for LeafGreen
-        for species_id, species in data.species.items():
-            species_data = extracted_data["species"][species_id]
-            species.learnset_address["leafgreen"] = species_data["learnset"]["address"]
-            species.address["leafgreen"] = species_data["address"]
-
-        # Add starter addresses for LeafGreen
-        for name, starter in data.starters.items():
-            starter_data = extracted_data["starter_pokemon"][name]
-            starter.player_address["leafgreen"] = starter_data["player_address"]
-            starter.rival_address["leafgreen"] = starter_data["rival_address"]
-
-        # Add legendary Pokémon species and addresses for LeafGreen
-        for name, legendary in data.legendary_pokemon.items():
-            legendary_data = extracted_data["legendary_pokemon"][name]
-            legendary.species_id["leafgreen"] = legendary_data["species"]
-            legendary.address["leafgreen"] = legendary_data["address"]
-
-        # Add misc Pokémon species and addresses for LeafGreen
-        for name, misc in data.misc_pokemon.items():
-            misc_data = extracted_data["misc_pokemon"][name]
-            misc.species_id["leafgreen"] = misc_data["species"]
-            misc.address["leafgreen"] = misc_data["address"]
-
-        # Add trainer data for LeafGreen
-        for i, trainer in data.trainers.items():
-            trainer_data = extracted_data["trainers"][i]
-            trainer.address["leafgreen"] = trainer_data["address"]
-            trainer.party.address["leafgreen"] = trainer_data["party_address"]
-
-    def add_firered_rev1_data() -> None:
-        extracted_data: Dict[str, Any] = load_json_data("extracted_data_firered_rev1.json")
-        data.ram_addresses["firered_rev1"] = extracted_data["misc_ram_addresses"]
-        data.rom_addresses["firered_rev1"] = extracted_data["misc_rom_addresses"]
-
-        # Add encounter addresses for FireRed Revision 1
-        for map_name, map_json in extracted_data["maps"].items():
-            if "land_encounters" in map_json:
-                data.maps[map_name].land_encounters.address["firered_rev1"] = \
-                    map_json["land_encounters"]["address"]
-            if "water_encounters" in map_json:
-                data.maps[map_name].water_encounters.address["firered_rev1"] = \
-                    map_json["water_encounters"]["address"]
-            if "fishing_encounters" in map_json:
-                data.maps[map_name].fishing_encounters.address["firered_rev1"] = \
-                    map_json["fishing_encounters"]["address"]
-
-            data.maps[map_name].header_address["firered_rev1"] = map_json["header_address"]
-
-        # Add location addresses for FireRed Revision 1
-        for location in data.locations.values():
-            location_json = extracted_data["locations"][location.id]
-            location.address["firered_rev1"] = location_json["address"]
-
-        # Add species addresses for FireRed Revision 1
-        for species_id, species in data.species.items():
-            species_data = extracted_data["species"][species_id]
-            species.learnset_address["firered_rev1"] = species_data["learnset"]["address"]
-            species.address["firered_rev1"] = species_data["address"]
-
-        # Add starter addresses for FireRed Revision 1
-        for name, starter in data.starters.items():
-            starter_data = extracted_data["starter_pokemon"][name]
-            starter.player_address["firered_rev1"] = starter_data["player_address"]
-            starter.rival_address["firered_rev1"] = starter_data["rival_address"]
-
-        # Add legendary Pokémon addresses for FireRed Revision 1
-        for name, legendary in data.legendary_pokemon.items():
-            legendary_data = extracted_data["legendary_pokemon"][name]
-            legendary.address["firered_rev1"] = legendary_data["address"]
-
-        # Add misc Pokémon addresses for FireRed Revision 1
-        for name, misc in data.misc_pokemon.items():
-            misc_data = extracted_data["misc_pokemon"][name]
-            misc.address["firered_rev1"] = misc_data["address"]
-
-        # Add trainer data for FireRed Revision 1
-        for i, trainer in data.trainers.items():
-            trainer_data = extracted_data["trainers"][i]
-            trainer.address["firered_rev1"] = trainer_data["address"]
-            trainer.party.address["firered_rev1"] = trainer_data["party_address"]
-
-    def add_leafgreen_rev1_data() -> None:
-        extracted_data: Dict[str, Any] = load_json_data("extracted_data_leafgreen_rev1.json")
-        data.ram_addresses["leafgreen_rev1"] = extracted_data["misc_ram_addresses"]
-        data.rom_addresses["leafgreen_rev1"] = extracted_data["misc_rom_addresses"]
-
-        # Add encounter addresses for LeafGreen Revision 1
-        for map_name, map_json in extracted_data["maps"].items():
-            if "land_encounters" in map_json:
-                data.maps[map_name].land_encounters.address["leafgreen_rev1"] = \
-                    map_json["land_encounters"]["address"]
-            if "water_encounters" in map_json:
-                data.maps[map_name].water_encounters.address["leafgreen_rev1"] = \
-                    map_json["water_encounters"]["address"]
-            if "fishing_encounters" in map_json:
-                data.maps[map_name].fishing_encounters.address["leafgreen_rev1"] = \
-                    map_json["fishing_encounters"]["address"]
-
-            data.maps[map_name].header_address["leafgreen_rev1"] = map_json["header_address"]
-
-        # Add location addresses for LeafGreen Revision 1
-        for location in data.locations.values():
-            location_json = extracted_data["locations"][location.id]
-            location.address["leafgreen_rev1"] = location_json["address"]
-
-        # Add species addresses for LeafGreen Revision 1
-        for species_id, species in data.species.items():
-            species_data = extracted_data["species"][species_id]
-            species.learnset_address["leafgreen_rev1"] = species_data["learnset"]["address"]
-            species.address["leafgreen_rev1"] = species_data["address"]
-
-        # Add starter addresses for LeafGreen Revision 1
-        for name, starter in data.starters.items():
-            starter_data = extracted_data["starter_pokemon"][name]
-            starter.player_address["leafgreen_rev1"] = starter_data["player_address"]
-            starter.rival_address["leafgreen_rev1"] = starter_data["rival_address"]
-
-        # Add legendary Pokémon addresses for LeafGreen Revision 1
-        for name, legendary in data.legendary_pokemon.items():
-            legendary_data = extracted_data["legendary_pokemon"][name]
-            legendary.address["leafgreen_rev1"] = legendary_data["address"]
-
-        # Add misc Pokémon addresses for LeafGreen Revision 1
-        for name, misc in data.misc_pokemon.items():
-            misc_data = extracted_data["misc_pokemon"][name]
-            misc.address["leafgreen_rev1"] = misc_data["address"]
-
-        # Add trainer data for LeafGreen Revision 1
-        for i, trainer in data.trainers.items():
-            trainer_data = extracted_data["trainers"][i]
-            trainer.address["leafgreen_rev1"] = trainer_data["address"]
-            trainer.party.address["leafgreen_rev1"] = trainer_data["party_address"]
-
-    extracted_data: Dict[str, Any] = load_json_data("extracted_data_firered.json")
+    extracted_data: Dict[str, Any] = load_json_data("extracted_data.json")
     data.constants = extracted_data["constants"]
-    data.ram_addresses["firered"] = extracted_data["misc_ram_addresses"]
-    data.rom_addresses["firered"] = extracted_data["misc_rom_addresses"]
+    data.ram_addresses = extracted_data["misc_ram_addresses"]
+    data.rom_addresses = extracted_data["misc_rom_addresses"]
 
     location_data = load_json_data("locations.json")
     event_data = load_json_data("events.json")
@@ -836,26 +725,54 @@ def _init() -> None:
         fishing_encounters = None
 
         if "land_encounters" in map_json:
+            land_slots: Dict[str, List[EncounterSpeciesData]] = {}
+            for version, slots in map_json["land_encounters"]["slots"].items():
+                version_slots: List[EncounterSpeciesData] = []
+                for slot_data in slots:
+                    version_slots.append(EncounterSpeciesData(
+                        slot_data["default_species"],
+                        slot_data["min_level"],
+                        slot_data["max_level"]
+                    ))
+                land_slots[version] = version_slots
             land_encounters = EncounterTableData(
-                {"firered": map_json["land_encounters"]["slots"]},
-                {"firered": map_json["land_encounters"]["address"]}
+                land_slots,
+                map_json["land_encounters"]["address"]
             )
         if "water_encounters" in map_json:
+            water_slots: Dict[str, List[EncounterSpeciesData]] = {}
+            for version, slots in map_json["water_encounters"]["slots"].items():
+                version_slots: List[EncounterSpeciesData] = []
+                for slot_data in slots:
+                    version_slots.append(EncounterSpeciesData(
+                        slot_data["default_species"],
+                        slot_data["min_level"],
+                        slot_data["max_level"]
+                    ))
+                water_slots[version] = version_slots
             water_encounters = EncounterTableData(
-                {"firered": map_json["water_encounters"]["slots"]},
-                {"firered": map_json["water_encounters"]["address"]}
+                water_slots,
+                map_json["water_encounters"]["address"]
             )
         if "fishing_encounters" in map_json:
+            fishing_slots: Dict[str, List[EncounterSpeciesData]] = {}
+            for version, slots in map_json["fishing_encounters"]["slots"].items():
+                version_slots: List[EncounterSpeciesData] = []
+                for slot_data in slots:
+                    version_slots.append(EncounterSpeciesData(
+                        slot_data["default_species"],
+                        slot_data["min_level"],
+                        slot_data["max_level"]
+                    ))
+                fishing_slots[version] = version_slots
             fishing_encounters = EncounterTableData(
-                {"firered": map_json["fishing_encounters"]["slots"]},
-                {"firered": map_json["fishing_encounters"]["address"]}
+                fishing_slots,
+                map_json["fishing_encounters"]["address"]
             )
-
-        header_addresses: Dict[str, int] = {"firered": map_json["header_address"]}
 
         data.maps[map_name] = MapData(
             map_name,
-            header_addresses,
+            map_json["header_address"],
             land_encounters,
             water_encounters,
             fishing_encounters
@@ -896,21 +813,50 @@ def _init() -> None:
                 raise AssertionError(f"Location [{location_id}] was claimed by multiple regions")
 
             location_json = extracted_data["locations"][location_id]
-            addresses = {"firered": location_json["address"]}
-            new_location = LocationData(
-                location_id,
-                location_data[location_id]["name"],
-                region_id,
-                location_json["default_item"],
-                addresses,
-                location_json["flag"],
-                frozenset(location_data[location_id]["tags"])
-            )
+
+            if "BULBASAUR_REWARD" in location_id:
+                import re
+                trainer = re.match("TRAINER_([A-Z0-9_]+)_BULBASAUR_REWARD", location_id).group(1)
+                alternate_rival_jsons = [extracted_data["locations"][alternate] for alternate in [
+                    f"TRAINER_{trainer}_CHARMANDER_REWARD",
+                    f"TRAINER_{trainer}_SQUIRTLE_REWARD"
+                ]]
+
+                location_address: Dict[str, List[int]] = {}
+
+                for game_version_revision in location_json["address"].keys():
+                    location_address[game_version_revision] = [location_json["address"][game_version_revision]]
+
+                for game_version_revision in location_address.keys():
+                    for alternate_rival_json in alternate_rival_jsons:
+                        location_address[game_version_revision].append(
+                            alternate_rival_json["address"][game_version_revision])
+
+                new_location = LocationData(
+                    location_id,
+                    location_data[location_id]["name"],
+                    region_id,
+                    location_json["default_item"],
+                    location_address,
+                    location_json["flag"],
+                    frozenset(location_data[location_id]["tags"])
+                )
+            else:
+                new_location = LocationData(
+                    location_id,
+                    location_data[location_id]["name"],
+                    region_id,
+                    location_json["default_item"],
+                    location_json["address"],
+                    location_json["flag"],
+                    frozenset(location_data[location_id]["tags"])
+                )
+
             new_region.locations.append(location_id)
             data.locations[location_id] = new_location
             claimed_locations.add(location_id)
 
-        new_region.locations.sort()
+        new_region.locations.sort(key=lambda loc: data.locations[loc].name)
 
         # Events
         for event_id in region_json["events"]:
@@ -919,11 +865,12 @@ def _init() -> None:
                 event_data[event_id]["name"],
                 event_data[event_id]["item"],
                 region_id,
+                frozenset(event_data[event_id]["tags"])
             )
             new_region.events.append(event_id)
             data.events[event_id] = new_event
 
-        new_region.events.sort()
+        new_region.events.sort(key=lambda event: data.events[event].name)
 
         # Exits
         for region_exit in region_json["exits"]:
@@ -977,8 +924,6 @@ def _init() -> None:
         species_data = extracted_data["species"][species_id]
 
         learnset = [LearnsetMove(item["level"], item["move_id"]) for item in species_data["learnset"]["moves"]]
-        learnset_addresses = {"firered": species_data["learnset"]["address"]}
-        addresses = {"firered": species_data["address"]}
 
         data.species[species_id] = SpeciesData(
             species_id_name,
@@ -998,14 +943,15 @@ def _init() -> None:
             [EvolutionData(
                 evolution_data["param"],
                 evolution_data["species"],
+                EVOLUTION_METHOD_TYPE[evolution_data["method"]]
             ) for evolution_data in species_data["evolutions"]],
             None,
             species_data["catch_rate"],
             species_data["friendship"],
             learnset,
             int(species_data["tmhm_learnset"], 16),
-            learnset_addresses,
-            addresses
+            species_data["learnset"]["address"],
+            species_data["address"]
         )
 
     for species in data.species.values():
@@ -1014,47 +960,34 @@ def _init() -> None:
 
     # Create starter data
     for name, starter_data in extracted_data["starter_pokemon"].items():
-        player_address = {"firered": starter_data["player_address"]}
-        rival_address = {"firered": starter_data["rival_address"]}
-
         data.starters[name] = StarterData(
             starter_data["species"],
-            player_address,
-            rival_address
+            starter_data["player_address"],
+            starter_data["rival_address"]
         )
 
     # Create legendary pokemon data
     for name, legendary_data in extracted_data["legendary_pokemon"].items():
-        species = {"firered": legendary_data["species"]}
-        address = {"firered": legendary_data["address"]}
-
         data.legendary_pokemon[name] = MiscPokemonData(
-            species,
+            legendary_data["species"],
             legendary_data["level"],
-            address
+            legendary_data["address"],
+            legendary_data["level_address"]
         )
 
     # Create misc pokemon data
     for name, misc_data in extracted_data["misc_pokemon"].items():
-        species = {"firered": misc_data["species"]}
-        address = {"firered": misc_data["address"]}
-        if misc_data["level"] != 0:
-            level = misc_data["level"]
-        else:
-            level = None
-
         data.misc_pokemon[name] = MiscPokemonData(
-            species,
-            level,
-            address
+            misc_data["species"],
+            misc_data["level"],
+            misc_data["address"],
+            misc_data["level_address"]
         )
 
     # Create trainer data
-    for i, trainer_data in enumerate(extracted_data["trainers"]):
+    for name, trainer_data in extracted_data["trainers"].items():
         party_data = trainer_data["party"]
-        address = {"firered": trainer_data["address"]}
-        party_address = {"firered": trainer_data["party_address"]}
-        data.trainers[i] = TrainerData(
+        data.trainers[name] = TrainerData(
             TrainerPartyData([
                     TrainerPokemonData(
                         pokemon["species"],
@@ -1066,9 +999,9 @@ def _init() -> None:
                         False
                     ) for pokemon in party_data],
                 POKEMON_DATA_TYPE[trainer_data["data_type"]],
-                party_address
+                trainer_data["party_address"]
             ),
-            address
+            trainer_data["address"]
         )
 
     # TM/HM Moves
@@ -1511,10 +1444,6 @@ def _init() -> None:
         ("MOVE_DOOM_DESIRE", "Doom Desire"),
         ("MOVE_PSYCHO_BOOST", "Psycho Boost")
     ]}
-
-    add_leafgreen_data()
-    add_firered_rev1_data()
-    add_leafgreen_rev1_data()
 
 
 data = PokemonFRLGData()

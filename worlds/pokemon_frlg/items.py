@@ -1,6 +1,9 @@
-from typing import Dict, FrozenSet, Optional
+from typing import TYPE_CHECKING, Dict, FrozenSet, Optional
 from BaseClasses import Item, ItemClassification
 from .data import data, BASE_OFFSET
+
+if TYPE_CHECKING:
+    from . import PokemonFRLGWorld
 
 
 ITEM_GROUPS = {
@@ -63,3 +66,9 @@ def get_item_classification(item_id: int) -> ItemClassification:
     Returns the item classification for a given AP item id (code)
     """
     return data.items[reverse_offset_item_value(item_id)].classification
+
+
+def get_filler_item(world: "PokemonFRLGWorld") -> int:
+    filler_items = [item for item in data.items.values()
+                    if item.classification == ItemClassification.filler and "Unique" not in item.tags]
+    return world.random.choice(filler_items).name

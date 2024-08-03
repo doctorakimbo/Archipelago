@@ -29,11 +29,10 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [],
-    "events": [
-      "EVENT_FLY_ONE_ISLAND"
-    ],
+    "events": [],
     "exits": [
       "REGION_ONE_ISLAND/WATER",
+      "REGION_ONE_ISLAND/VISIT",
       "REGION_ONE_ISLAND_KINDLE_ROAD/SOUTH"
     ],
     "warps": [
@@ -55,6 +54,20 @@
     "exits": [
       "REGION_ONE_ISLAND_TREASURE_BEACH/WATER"
     ],
+    "warps": []
+  },
+  "REGION_ONE_ISLAND/VISIT": {
+    "parent_map": "MAP_ONE_ISLAND",
+    "name": "One Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_ONE_ISLAND"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_ONE_ISLAND_POKEMON_CENTER_1F/MAIN": {
@@ -126,7 +139,9 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
-    "locations": [],
+    "locations": [
+      "TRAINER_SWIMMER_FEMALE_AMARA_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_ONE_ISLAND_TREASURE_BEACH/BEACH"
@@ -177,7 +192,8 @@
     "has_water": true,
     "has_fishing": true,
     "locations": [
-      "ITEM_ONE_ISLAND_KINDLE_ROAD_MAX_REPEL"
+      "ITEM_ONE_ISLAND_KINDLE_ROAD_MAX_REPEL",
+      "TRAINER_SWIMMER_FEMALE_ABIGAIL_REWARD"
     ],
     "events": [],
     "exits": [
@@ -195,7 +211,15 @@
     "has_fishing": true,
     "locations": [
       "ITEM_ONE_ISLAND_KINDLE_ROAD_CARBOS",
-      "ITEM_ONE_ISLAND_KINDLE_ROAD_ETHER"
+      "ITEM_ONE_ISLAND_KINDLE_ROAD_ETHER",
+      "TRAINER_BLACK_BELT_HUGH_REWARD",
+      "TRAINER_BLACK_BELT_SHEA_REWARD",
+      "TRAINER_CAMPER_BRYCE_REWARD",
+      "TRAINER_CRUSH_GIRL_SHARON_REWARD",
+      "TRAINER_CRUSH_GIRL_TANYA_REWARD",
+      "TRAINER_CRUSH_KIN_MIK_KIA_REWARD",
+      "TRAINER_PICNICKER_CLAIRE_REWARD",
+      "TRAINER_SWIMMER_MALE_GARRETT_REWARD"
     ],
     "events": [],
     "exits": [
@@ -213,7 +237,11 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
-    "locations": [],
+    "locations": [
+      "TRAINER_FISHERMAN_TOMMY_REWARD",
+      "TRAINER_SWIMMER_FEMALE_MARIA_REWARD",
+      "TRAINER_SWIMMER_MALE_FINN_REWARD"
+    ],
     "events": [],
     "exits": [
       "REGION_ONE_ISLAND_KINDLE_ROAD/CENTER",
@@ -286,10 +314,10 @@
       "ITEM_TWO_ISLAND_REVIVE"
     ],
     "events": [
-      "EVENT_FLY_TWO_ISLAND",
       "EVENT_BUY_MARKET_LEMONADE"
     ],
     "exits": [
+      "REGION_TWO_ISLAND/VISIT",
       "REGION_TWO_ISLAND_CAPE_BRINK/MAIN"
     ],
     "warps": [
@@ -298,6 +326,20 @@
       "MAP_TWO_ISLAND:2/MAP_TWO_ISLAND_POKEMON_CENTER_1F:0",
       "MAP_TWO_ISLAND:3/MAP_TWO_ISLAND_HARBOR:0"
     ]
+  },
+  "REGION_TWO_ISLAND/VISIT": {
+    "parent_map": "MAP_TWO_ISLAND",
+    "name": "Two Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_TWO_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_TWO_ISLAND_JOYFUL_GAME_CORNER/MAIN": {
     "parent_map": "MAP_TWO_ISLAND_JOYFUL_GAME_CORNER",
@@ -486,13 +528,16 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER"
+      "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER",
+      "TRAINER_BIKER_GOON_REWARD",
+      "TRAINER_BIKER_GOON_2_REWARD",
+      "TRAINER_BIKER_GOON_3_REWARD",
+      "TRAINER_CUE_BALL_PAXTON_REWARD"
     ],
-    "events": [
-      "EVENT_FLY_THREE_ISLAND"
-    ],
+    "events": [],
     "exits": [
       "REGION_THREE_ISLAND/EAST",
+      "REGION_THREE_ISLAND/VISIT",
       "REGION_THREE_ISLAND_PORT/WEST",
       "REGION_THREE_ISLAND_BOND_BRIDGE/MAIN"
     ],
@@ -531,6 +576,20 @@
       "HIDDEN_ITEM_THREE_ISLAND_PP_UP"
     ],
     "events": [],
+    "exits": [],
+    "warps": []
+  },
+  "REGION_THREE_ISLAND/VISIT": {
+    "parent_map": "MAP_THREE_ISLAND",
+    "name": "Three Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_THREE_ISLAND"
+    ],
     "exits": [],
     "warps": []
   },
@@ -657,7 +716,12 @@
     "locations": [
       "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_MAX_REPEL",
       "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_PEARL",
-      "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST"
+      "HIDDEN_ITEM_THREE_ISLAND_BOND_BRIDGE_STARDUST",
+      "TRAINER_AROMA_LADY_NIKKI_REWARD",
+      "TRAINER_AROMA_LADY_VIOLET_REWARD",
+      "TRAINER_TUBER_ALEXIS_REWARD",
+      "TRAINER_TUBER_AMIRA_REWARD",
+      "TRAINER_TWINS_JOY_MEG_REWARD"
     ],
     "events": [],
     "exits": [
@@ -675,7 +739,9 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
-    "locations": [],
+    "locations": [
+      "TRAINER_SWIMMER_FEMALE_TISHA_REWARD"
+    ],
     "events": [],
     "exits": [],
     "warps": []
@@ -728,11 +794,10 @@
       "HIDDEN_ITEM_FOUR_ISLAND_PEARL",
       "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL"
     ],
-    "events": [
-      "EVENT_FLY_FOUR_ISLAND"
-    ],
+    "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND/WATER"
+      "REGION_FOUR_ISLAND/WATER",
+      "REGION_FOUR_ISLAND/VISIT"
     ],
     "warps": [
       "MAP_FOUR_ISLAND:0/MAP_FOUR_ISLAND_POKEMON_CENTER_1F:0",
@@ -771,11 +836,26 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND/WATER"
+      "REGION_FOUR_ISLAND/WATER",
+      "REGION_FOUR_ISLAND/VISIT"
     ],
     "warps": [
       "MAP_FOUR_ISLAND:3/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:0"
     ]
+  },
+  "REGION_FOUR_ISLAND/VISIT": {
+    "parent_map": "MAP_FOUR_ISLAND",
+    "name": "Four Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_FOUR_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_FOUR_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_POKEMON_CENTER_1F",
@@ -906,11 +986,10 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [],
-    "events": [
-      "EVENT_FLY_FIVE_ISLAND"
-    ],
+    "events": [],
     "exits": [
       "REGION_FIVE_ISLAND/WATER",
+      "REGION_FIVE_ISLAND/VISIT",
       "REGION_FIVE_ISLAND_MEADOW/MAIN"
     ],
     "warps": [
@@ -933,6 +1012,20 @@
       "REGION_FIVE_ISLAND/MAIN",
       "REGION_FIVE_ISLAND_WATER_LABYRINTH/MAIN"
     ],
+    "warps": []
+  },
+  "REGION_FIVE_ISLAND/VISIT": {
+    "parent_map": "MAP_FIVE_ISLAND",
+    "name": "Five Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_FIVE_ISLAND"
+    ],
+    "exits": [],
     "warps": []
   },
   "REGION_FIVE_ISLAND_POKEMON_CENTER_1F/MAIN": {
@@ -1000,7 +1093,10 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [
-      "ITEM_FIVE_ISLAND_MEADOW_MAX_POTION"
+      "ITEM_FIVE_ISLAND_MEADOW_MAX_POTION",
+      "TRAINER_TEAM_ROCKET_GRUNT_49_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_50_REWARD",
+      "TRAINER_TEAM_ROCKET_GRUNT_51_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1039,7 +1135,10 @@
       "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY",
       "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_RAZZ_BERRY",
       "HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_SITRUS_BERRY",
-      "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR"
+      "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR",
+      "TRAINER_BIRD_KEEPER_CHAZ_REWARD",
+      "TRAINER_BIRD_KEEPER_HAROLD_REWARD",
+      "TRAINER_BIRD_KEEPER_MILO_REWARD"
     ],
     "events": [],
     "exits": [],
@@ -1052,7 +1151,9 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
-    "locations": [],
+    "locations": [
+      "TRAINER_PKMN_BREEDER_ALIZE_REWARD"
+    ],
     "events": [
       "EGG_POKEMON_TOGEPI"
     ],
@@ -1070,7 +1171,9 @@
     "has_water": true,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL"
+      "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL",
+      "TRAINER_PAINTER_RAYNA_REWARD",
+      "TRAINER_SWIMMER_MALE_TOBY_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1090,7 +1193,12 @@
     "locations": [
       "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST",
       "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2",
-      "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE"
+      "HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE",
+      "TRAINER_LADY_GILLIAN_REWARD",
+      "TRAINER_LADY_JACKI_REWARD",
+      "TRAINER_PAINTER_CELINA_REWARD",
+      "TRAINER_PAINTER_DAISY_REWARD",
+      "TRAINER_YOUNGSTER_DESTIN_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1162,10 +1270,9 @@
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY"
     ],
-    "events": [
-      "EVENT_FLY_SIX_ISLAND"
-    ],
+    "events": [],
     "exits": [
+      "REGION_SIX_ISLAND/VISIT",
       "REGION_SIX_ISLAND_WATER_PATH/SOUTH"
     ],
     "warps": [
@@ -1174,6 +1281,20 @@
       "MAP_SIX_ISLAND:2/MAP_SIX_ISLAND_HOUSE:0",
       "MAP_SIX_ISLAND:3/MAP_SIX_ISLAND_MART:0"
     ]
+  },
+  "REGION_SIX_ISLAND/VISIT": {
+    "parent_map": "MAP_SIX_ISLAND",
+    "name": "Six Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_SIX_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_SIX_ISLAND_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
@@ -1241,7 +1362,9 @@
     "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY",
-      "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_PINAP_BERRY"
+      "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_PINAP_BERRY",
+      "TRAINER_HIKER_EARL_REWARD",
+      "TRAINER_JUGGLER_EDWARD_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1260,7 +1383,9 @@
     "has_fishing": true,
     "locations": [
       "ITEM_SIX_ISLAND_WATER_PATH_DRAGON_SCALE",
-      "ITEM_SIX_ISLAND_WATER_PATH_ELIXIR"
+      "ITEM_SIX_ISLAND_WATER_PATH_ELIXIR",
+      "TRAINER_SWIMMER_FEMALE_DENISE_REWARD",
+      "TRAINER_SWIMMER_MALE_SAMIR_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1277,7 +1402,9 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ORAN_BERRY"
+      "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ORAN_BERRY",
+      "TRAINER_AROMA_LADY_ROSE_REWARD",
+      "TRAINER_TWINS_MIU_MIA_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1327,7 +1454,12 @@
     "locations": [
       "ITEM_SIX_ISLAND_RUIN_VALLEY_FULL_RESTORE",
       "ITEM_SIX_ISLAND_RUIN_VALLEY_HP_UP",
-      "ITEM_SIX_ISLAND_RUIN_VALLEY_SUN_STONE"
+      "ITEM_SIX_ISLAND_RUIN_VALLEY_SUN_STONE",
+      "TRAINER_HIKER_DARYL_REWARD",
+      "TRAINER_POKEMANIAC_HECTOR_REWARD",
+      "TRAINER_RUIN_MANIAC_FOSTER_REWARD",
+      "TRAINER_RUIN_MANIAC_LARRY_REWARD",
+      "TRAINER_RUIN_MANIAC_STANLY_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1390,7 +1522,8 @@
     "has_water": true,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL"
+      "HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL",
+      "TRAINER_PSYCHIC_JACLYN_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1408,7 +1541,11 @@
     "has_fishing": true,
     "locations": [
       "ITEM_SIX_ISLAND_OUTCAST_ISLAND_PP_UP",
-      "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE"
+      "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE",
+      "TRAINER_FISHERMAN_TYLOR_REWARD",
+      "TRAINER_SIS_AND_BRO_AVA_GEB_REWARD",
+      "TRAINER_SWIMMER_FEMALE_NICOLE_REWARD",
+      "TRAINER_SWIMMER_MALE_MYMO_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1425,7 +1562,8 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL"
+      "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL",
+      "TRAINER_TEAM_ROCKET_GRUNT_46_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1465,10 +1603,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [
-      "EVENT_FLY_SEVEN_ISLAND"
-    ],
+    "events": [],
     "exits": [
+      "REGION_SEVEN_ISLAND/VISIT",
       "REGION_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE/MAIN",
       "REGION_SEVEN_ISLAND_TRAINER_TOWER/SOUTH"
     ],
@@ -1478,6 +1615,20 @@
       "MAP_SEVEN_ISLAND:2/MAP_SEVEN_ISLAND_POKEMON_CENTER_1F:0",
       "MAP_SEVEN_ISLAND:3/MAP_SEVEN_ISLAND_HARBOR:0"
     ]
+  },
+  "REGION_SEVEN_ISLAND/VISIT": {
+    "parent_map": "MAP_SEVEN_ISLAND",
+    "name": "Seven Island - Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [
+      "EVENT_FLY_SEVEN_ISLAND"
+    ],
+    "exits": [],
+    "warps": []
   },
   "REGION_SEVEN_ISLAND_HOUSE_ROOM1/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_HOUSE_ROOM1",
@@ -1544,7 +1695,12 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY"
+      "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY",
+      "TRAINER_AROMA_LADY_MIAH_REWARD",
+      "TRAINER_JUGGLER_MASON_REWARD",
+      "TRAINER_PKMN_RANGER_MADELINE_REWARD",
+      "TRAINER_PKMN_RANGER_NICOLAS_REWARD",
+      "TRAINER_YOUNG_COUPLE_EVE_JON_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1564,7 +1720,14 @@
       "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_KINGS_ROCK",
       "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_MAX_ELIXIR",
       "ITEM_SEVEN_ISLAND_SEVAULT_CANYON_NUGGET",
-      "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_CHERI_BERRY"
+      "HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_CHERI_BERRY",
+      "TRAINER_COOLTRAINER_LEROY_REWARD",
+      "TRAINER_COOLTRAINER_MICHELLE_REWARD",
+      "TRAINER_COOL_COUPLE_LEX_NYA_REWARD",
+      "TRAINER_CRUSH_GIRL_CYNDY_REWARD",
+      "TRAINER_PKMN_RANGER_JACKSON_REWARD",
+      "TRAINER_PKMN_RANGER_KATELYN_REWARD",
+      "TRAINER_TAMER_EVAN_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1670,7 +1833,8 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE"
+      "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE",
+      "TRAINER_RUIN_MANIAC_BRANDON_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1704,7 +1868,9 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2"
+      "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_2",
+      "TRAINER_GENTLEMAN_CLIFFORD_REWARD",
+      "TRAINER_PAINTER_EDNA_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1738,7 +1904,8 @@
     "has_water": false,
     "has_fishing": true,
     "locations": [
-      "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3"
+      "HIDDEN_ITEM_SEVEN_ISLAND_TANOBY_RUINS_HEART_SCALE_3",
+      "TRAINER_RUIN_MANIAC_BENJAMIN_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1758,7 +1925,9 @@
     "locations": [
       "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL",
       "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY",
-      "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL"
+      "HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL",
+      "TRAINER_PSYCHIC_DARIO_REWARD",
+      "TRAINER_PSYCHIC_RODETTE_REWARD"
     ],
     "events": [],
     "exits": [
@@ -1945,7 +2114,9 @@
     "locations": [
       "HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH"
     ],
-    "events": [],
+    "events": [
+      "LEGENDARY_POKEMON_HO_OH"
+    ],
     "exits": [],
     "warps": [
       "MAP_NAVEL_ROCK_SUMMIT:0/MAP_NAVEL_ROCK_SUMMIT_PATH_5F:1"
@@ -2124,7 +2295,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "LEGENDARY_POKEMON_LUGIA"
+    ],
     "exits": [],
     "warps": [
       "MAP_NAVEL_ROCK_BASE:0/MAP_NAVEL_ROCK_BASE_PATH_B11F:1"
@@ -2154,7 +2327,9 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
-    "events": [],
+    "events": [
+      "LEGENDARY_POKEMON_DEOXYS"
+    ],
     "exits": [
       "REGION_VERMILION_CITY/MAIN"
     ],

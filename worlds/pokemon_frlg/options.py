@@ -39,6 +39,30 @@ class ShuffleHiddenItems(Choice):
     option_all = 2
 
 
+class ExtraKeyItems(Toggle):
+    """
+    Adds key items that are required to access the Rocket Hideout, Safari Zone, Pokémon Mansion, and Power Plant.
+
+    Adds four new locations:
+    - Item in the Celadon Rocket House
+    - Item given by a Worker in the Fuchsia Safari Office
+    - Item given by the Scientist in the Cinnabar Pokémon Lab Research Room
+    - Hidden Item in the Cerulean Gym (requires Surf & Itemfinder)
+    """
+    display_name = "Extra Key Items"
+    default = 0
+
+
+class Trainersanity(Toggle):
+    """
+    Defeating a trainer gives you an item.
+
+    Trainers are no longer missable. Each trainer will add a random filler item into the pool.
+    """
+    display_name = "Trainersanity"
+    default = 0
+
+
 class ItemfinderRequired(Choice):
     """
     Sets whether the Itemfinder if required for Hidden Items. Some items cannot be picked up without using the
@@ -61,6 +85,16 @@ class FlashRequired(Toggle):
     """
     display_name = "Flash Required"
     default = 1
+
+
+class RemoveBadgeRequirement(OptionSet):
+    """
+    Removes the badge requirement to use any of the HMs listed.
+
+    HMs need to be listed by the move name. (e.g. Cut, Fly, Surf, etc.)
+    """
+    display_name = "Remove Badge Requirement"
+    valid_keys = ["Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"]
 
 
 class OaksAideRoute2(Range):
@@ -282,6 +316,24 @@ class CeruleanCaveCount(Range):
     range_end = 8
 
 
+class LevelScaling(Toggle):
+    """
+    Sets whether encounter levels are scaled by sphere access.
+    """
+    display_name = "Level Scaling"
+    default = 0
+
+
+class ModifyTrainerLevels(Range):
+    """
+    Modifies the level of all Trainer's Pokémon by the specified percentage.
+    """
+    display_name = "Modify Trainer Levels"
+    default = 0
+    range_start = -100
+    range_end = 100
+
+
 class RandomizeWildPokemon(Choice):
     """
     Randomizes wild Pokémon encounters (grass, caves, water, fishing)
@@ -394,6 +446,7 @@ class RandomizeLegendaryPokemon(Choice):
     Randomizes legendary Pokémon (Mewtwo, Zapdos, Deoxys, etc.). Does not randomize the roamer.
 
     - Vanilla: Legendary encounters are unchanged
+    - Legendaries: Legendary encounters are replaced with another legendary Pokémon
     - Match Base Stats: Legendary encounters are replaced with species with approximately the same BST
     - Match Type: Legendary encounters are replaced with species that share a type with the original
     - Match Base Stats and Type: Apply both Match Base Stats and Match Type
@@ -402,10 +455,11 @@ class RandomizeLegendaryPokemon(Choice):
     display_name = "Randomize Legendary Pokemon"
     default = 0
     option_vanilla = 0
-    option_match_base_stats = 1
-    option_match_type = 2
-    option_match_base_stats_and_type = 3
-    option_completely_random = 4
+    option_legendaries = 1
+    option_match_base_stats = 2
+    option_match_type = 3
+    option_match_base_stats_and_type = 4
+    option_completely_random = 5
 
 
 class RandomizeMiscPokemon(Choice):
@@ -521,6 +575,15 @@ class TmTutorCompatibility(NamedRange):
     }
 
 
+class TmTutorMoves(Toggle):
+    """
+    Randomizes the moves taught by TMs and move tutors.
+
+    Some opponents like gym leaders are allowed to use TMs. This option can affect the moves they know.
+    """
+    display_name = "Randomize TM/Tutor Moves"
+
+
 class ReusableTmsTutors(Toggle):
     """
     Sets TMs to not break after use (they remain sellable). Allows Move Tutors to be used infinitely.
@@ -580,11 +643,15 @@ class BetterShops(Toggle):
     display_name = "Better Shops"
 
 
-class FreeFlyLocation(Toggle):
+class FreeFlyLocation(Choice):
     """
     Enables flying to one random location (excluding cities reachable with no items).
     """
     display_name = "Free Fly Location"
+    default = 0
+    option_off = 0
+    option_exclude_indigo = 1
+    option_any = 2
 
 
 class TurboA(Toggle):
@@ -616,9 +683,12 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
+    extra_key_items: ExtraKeyItems
+    trainersanity: Trainersanity
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
+    remove_badge_requirement: RemoveBadgeRequirement
     oaks_aide_route_2: OaksAideRoute2
     oaks_aide_route_10: OaksAideRoute10
     oaks_aide_route_11: OaksAideRoute11
@@ -639,6 +709,9 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     cerulean_cave_requirement: CeruleanCaveRequirement
     cerulean_cave_count: CeruleanCaveCount
 
+    level_scaling: LevelScaling
+    modify_trainer_levels: ModifyTrainerLevels
+
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups
     wild_pokemon_blacklist: WildPokemonBlacklist
@@ -655,6 +728,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     move_blacklist: MoveBlacklist
     hm_compatability: HmCompatibility
     tm_tutor_compatability: TmTutorCompatibility
+    tm_tutor_moves: TmTutorMoves
 
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate

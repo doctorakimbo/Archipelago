@@ -17,17 +17,10 @@ BASE_ROM_NAME: Dict[str, str] = {
 
 
 EXPECTED_ROM_NAME: Dict[str, str] = {
-    "firered": "pokemon red version / AP",
-    "leafgreen": "pokemon green version / AP",
-    "firered_rev1": "pokemon red version / AP Rev 1",
-    "leafgreen_rev1": "pokemon green version / AP Rev 1",
-}
-
-
-DEFEATED_CHAMPION_FLAGS: List[int] = {
-    data.constants["TRAINER_FLAGS_START"] + data.constants["TRAINER_CHAMPION_FIRST_BULBASAUR"],
-    data.constants["TRAINER_FLAGS_START"] + data.constants["TRAINER_CHAMPION_FIRST_CHARMANDER"],
-    data.constants["TRAINER_FLAGS_START"] + data.constants["TRAINER_CHAMPION_FIRST_SQUIRTLE"]
+    "firered": "pokemon red version AP",
+    "leafgreen": "pokemon green version AP",
+    "firered_rev1": "pokemon red version AP Rev 1",
+    "leafgreen_rev1": "pokemon green version AP Rev 1",
 }
 
 
@@ -41,7 +34,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_BLAINE",
     "FLAG_DEFEATED_LEADER_GIOVANNI",
     "FLAG_DELIVERED_OAKS_PARCEL",
-    "FLAG_DEFEATED_ROUTE22_RIVAL",
+    "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL",
     "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
     "FLAG_RESCUED_MR_FUJI",
     "FLAG_HIDE_SAFFRON_ROCKETS",  # Liberated Silph Co.
@@ -137,7 +130,7 @@ class PokemonFRLGClient(BizHawkClient):
         ctx.game = self.game
         ctx.items_handling = 0b001
         ctx.want_slot_data = True
-        ctx.watcher_timeout = 0.
+        ctx.watcher_timeout = 0.125
 
         if rom_name == EXPECTED_ROM_NAME["firered"]:
             self.game_version = "firered"
@@ -237,10 +230,6 @@ class PokemonFRLGClient(BizHawkClient):
                         location_id = offset_flag(flag_id)
                         if location_id in ctx.server_locations:
                             local_checked_locations.add(location_id)
-
-                        for j in DEFEATED_CHAMPION_FLAGS:
-                            if flag_id == j:
-                                game_clear = True
 
                         if flag_id == data.constants["FLAG_DEFEATED_CHAMP"]:
                             game_clear = True

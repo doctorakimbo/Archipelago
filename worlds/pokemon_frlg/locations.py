@@ -1,8 +1,8 @@
-from typing import TYPE_CHECKING, Dict, Optional, FrozenSet, Iterable, List
+from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Tuple, Union
 from BaseClasses import Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
-from .items import offset_item_value, PokemonFRLGItem
-from .options import ViridianCityRoadblock, PewterCityRoadblock
+from .items import get_filler_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
+from .options import FreeFlyLocation, PewterCityRoadblock, ViridianCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -42,20 +42,23 @@ FLY_EVENT_NAME_TO_ID = {
     "EVENT_FLY_PALLET_TOWN": 0,
     "EVENT_FLY_VIRIDIAN_CITY": 1,
     "EVENT_FLY_PEWTER_CITY": 2,
-    "EVENT_FLY_CERULEAN_CITY": 3,
-    "EVENT_FLY_VERMILION_CITY": 4,
-    "EVENT_FLY_LAVENDER_TOWN": 5,
-    "EVENT_FLY_CELADON_CITY": 6,
-    "EVENT_FLY_FUCHSIA_CITY": 7,
-    "EVENT_FLY_SAFFRON_CITY": 8,
-    "EVENT_FLY_CINNABAR_ISLAND": 9,
-    "EVENT_FLY_ONE_ISLAND": 10,
-    "EVENT_FLY_TWO_ISLAND": 11,
-    "EVENT_FLY_THREE_ISLAND": 12,
-    "EVENT_FLY_FOUR_ISLAND": 13,
-    "EVENT_FLY_FIVE_ISLAND": 14,
-    "EVENT_FLY_SIX_ISLAND": 15,
-    "EVENT_FLY_SEVEN_ISLAND": 16
+    "EVENT_FLY_ROUTE4": 3,
+    "EVENT_FLY_CERULEAN_CITY": 4,
+    "EVENT_FLY_VERMILION_CITY": 5,
+    "EVENT_FLY_ROUTE10": 6,
+    "EVENT_FLY_LAVENDER_TOWN": 7,
+    "EVENT_FLY_CELADON_CITY": 8,
+    "EVENT_FLY_FUCHSIA_CITY": 9,
+    "EVENT_FLY_SAFFRON_CITY": 10,
+    "EVENT_FLY_CINNABAR_ISLAND": 11,
+    "EVENT_FLY_INDIGO_PLATEAU": 12,
+    "EVENT_FLY_ONE_ISLAND": 13,
+    "EVENT_FLY_TWO_ISLAND": 14,
+    "EVENT_FLY_THREE_ISLAND": 15,
+    "EVENT_FLY_FOUR_ISLAND": 16,
+    "EVENT_FLY_FIVE_ISLAND": 17,
+    "EVENT_FLY_SIX_ISLAND": 18,
+    "EVENT_FLY_SEVEN_ISLAND": 19
 }
 
 
@@ -64,6 +67,7 @@ class PokemonFRLGLocation(Location):
     item_address = Optional[Dict[str, int]]
     default_item_id: Optional[int]
     tags: FrozenSet[str]
+    data_id: Optional[str]
 
     def __init__(
             self,
@@ -71,13 +75,15 @@ class PokemonFRLGLocation(Location):
             name: str,
             address: Optional[int],
             parent: Optional[Region] = None,
-            item_address: Optional[Dict[str, int]] = None,
+            item_address: Optional[Dict[str, Union[int, List[int]]]] = None,
             default_item_id: Optional[int] = None,
-            tags: FrozenSet[str] = frozenset()) -> None:
+            tags: FrozenSet[str] = frozenset(),
+            data_id: Optional[str] = None) -> None:
         super().__init__(player, name, address, parent)
         self.default_item_id = None if default_item_id is None else offset_item_value(default_item_id)
         self.item_address = item_address
         self.tags = tags
+        self.data_id = data_id
 
 
 def offset_flag(flag: int) -> int:
@@ -116,31 +122,116 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
     for region_data in data.regions.values():
         region = regions[region_data.name]
-        included_locations = [loc for loc in region_data.locations if len(tags & data.locations[loc].tags) > 0]
+        included_locations = [loc for loc in region_data.locations
+                              if len(tags & data.locations[loc].tags) >= len(data.locations[loc].tags)]
 
         for location_flag in included_locations:
             location_data = data.locations[location_flag]
 
             location_id = offset_flag(location_data.flag)
-            item_addresses: Dict[str, int] = {f'{game_version}': location_data.address[game_version],
-                                              f'{game_version}_rev1': location_data.address[f'{game_version}_rev1']}
+
+            if location_data.default_item == data.constants["ITEM_NONE"]:
+                default_item = reverse_offset_item_value(world.item_name_to_id[get_filler_item(world)])
+            else:
+                default_item = location_data.default_item
+
+            if "Trainer" in location_data.tags:
+                data_id = location_flag[:-7]
+            else:
+                data_id = location_flag
+
             location = PokemonFRLGLocation(
                 world.player,
                 location_data.name,
                 location_id,
                 region,
-                item_addresses,
-                location_data.default_item,
-                location_data.tags
+                location_data.address,
+                default_item,
+                location_data.tags,
+                data_id
             )
             region.locations.append(location)
+
+        excluded_trainer_locations = [loc for loc in region_data.locations
+                                      if "Trainer" in data.locations[loc].tags and
+                                      "Trainer" not in tags]
+
+        for location_flag in excluded_trainer_locations:
+            location_data = data.locations[location_flag]
+
+            location = PokemonFRLGLocation(
+                world.player,
+                location_data.name,
+                None,
+                region,
+                None,
+                None,
+                location_data.tags,
+                location_flag[:-7]
+            )
+            location.place_locked_item(PokemonFRLGItem("None",
+                                                       ItemClassification.filler,
+                                                       None,
+                                                       world.player))
+            location.show_in_spoiler = False
+            region.locations.append(location)
+
+    trainer_level_object_list: List[Tuple[str, int]] = []
+    land_water_level_object_list: List[Tuple[str, int]] = []
+    fishing_level_object_list: List[Tuple[str, int]] = []
+
+    if world.options.level_scaling:
+        for region in regions.values():
+            for location in region.locations:
+                if "Trainer" in location.tags:
+                    trainer_party_data = data.trainers[location.data_id].party
+                    for i, pokemon in enumerate(trainer_party_data.pokemon):
+                        trainer_level_object_list.append((f"{location.data_id} {i}", pokemon.level))
+                elif "Pokemon" in location.tags:
+                    if "Misc" in location.tags:
+                        misc_pokemon_data = data.misc_pokemon[location.data_id]
+                        # We don't want to include Pokémon whose level cannot be scaled
+                        if misc_pokemon_data.level[game_version] != 0:
+                            trainer_level_object_list.append((location.data_id, misc_pokemon_data.level[game_version]))
+                    elif "Legendary" in location.tags:
+                        legendary_pokemon_data = data.legendary_pokemon[location.data_id]
+                        trainer_level_object_list.append((location.data_id, legendary_pokemon_data.level[game_version]))
+                    elif "Wild" in location.tags:
+                        data_ids: List[str] = location.data_id.split()
+                        map_data = data.maps[data_ids[0]]
+                        slot_ids: List[int] = [int(slot_id) for slot_id in data_ids[2:]]
+                        encounters = (map_data.land_encounters if data_ids[1] == "LAND" else
+                                      map_data.water_encounters if data_ids[1] == "WATER" else
+                                      map_data.fishing_encounters if data_ids[1] == "FISHING" else
+                                      None)
+                        if encounters is not None:
+                            for i, encounter in enumerate(encounters.slots[game_version]):
+                                if i in slot_ids:
+                                    name = f"{data_ids[0]} {data_ids[1]} {i}"
+                                    if data_ids[1] in ["LAND", "WATER"]:
+                                        avg_level = round((encounter.min_level + encounter.max_level) / 2)
+                                        land_water_level_object_list.append((name, avg_level))
+                                    elif data_ids[1] == "FISHING":
+                                        avg_level = round((encounter.min_level + encounter.max_level) / 2)
+                                        fishing_level_object_list.append((name, avg_level))
+
+        trainer_level_object_list.sort(key=lambda i: i[1])
+        land_water_level_object_list.sort(key=lambda i: i[1])
+        fishing_level_object_list.sort(key=lambda i: i[1])
+        world.trainer_id_list = [i[0] for i in trainer_level_object_list]
+        world.trainer_level_list = [i[1] for i in trainer_level_object_list]
+        world.land_water_id_list = [i[0] for i in land_water_level_object_list]
+        world.land_water_level_list = [i[1] for i in land_water_level_object_list]
+        world.fishing_id_list = [i[0] for i in fishing_level_object_list]
+        world.fishing_level_list = [i[1] for i in fishing_level_object_list]
 
 
 def set_free_fly(world: "PokemonFRLGWorld") -> None:
     # Set our free fly location
     free_fly_location_id = "EVENT_FLY_PALLET_TOWN"
-    if world.options.free_fly_location:
+    if world.options.free_fly_location != FreeFlyLocation.option_off:
         free_fly_list: List[str] = [
+            "EVENT_FLY_ROUTE10",
             "EVENT_FLY_LAVENDER_TOWN",
             "EVENT_FLY_CELADON_CITY",
             "EVENT_FLY_FUCHSIA_CITY",
@@ -158,8 +249,11 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
         if world.options.viridian_city_roadblock == ViridianCityRoadblock.option_vanilla:
             free_fly_list.append("EVENT_FLY_PEWTER_CITY")
         if world.options.pewter_city_roadblock != PewterCityRoadblock.option_open:
+            free_fly_list.append("EVENT_FLY_ROUTE4")
             free_fly_list.append("EVENT_FLY_CERULEAN_CITY")
             free_fly_list.append("EVENT_FLY_VERMILION_CITY")
+        if world.options.free_fly_location == FreeFlyLocation.option_any:
+            free_fly_list.append("EVENT_FLY_INDIGO_PLATEAU")
 
         free_fly_location_id = world.random.choice(free_fly_list)
 

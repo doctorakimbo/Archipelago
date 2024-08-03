@@ -4,7 +4,10 @@ Archipelago World definition for Pokémon FireRed/LeafGreen
 import copy
 import os.path
 import tempfile
+import threading
 import Utils
+
+import logging
 
 import settings
 import pkgutil
@@ -16,14 +19,15 @@ from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
 from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
                    TrainerData)
-from .items import ITEM_GROUPS, create_item_name_to_id_map, get_item_classification, PokemonFRLGItem
+from .items import ITEM_GROUPS, create_item_name_to_id_map, get_filler_item, get_item_classification, PokemonFRLGItem
+from .level_scaling import level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, GameVersion, RandomizeWildPokemon, ShuffleHiddenItems,
-                      ShuffleBadges, ViridianCityRoadblock)
+from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+                      RandomizeWildPokemon, ShuffleHiddenItems, ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
-                      randomize_starters, randomize_tm_hm_compatability, randomize_trainer_parties, randomize_types,
-                      randomize_wild_encounters)
+                      randomize_starters, randomize_tm_hm_compatability, randomize_tm_moves,
+                      randomize_trainer_parties, randomize_types, randomize_wild_encounters)
 from .rom import (write_tokens, FRLGContainer, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
                   PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
@@ -104,7 +108,7 @@ class PokemonFRLGWorld(World):
     item_name_to_id = create_item_name_to_id_map()
     location_name_to_id = create_location_name_to_id_map()
     item_name_groups = ITEM_GROUPS
-    location_name_groups = LOCATION_GROUPS
+    location_name_groups = LOCATION_GROUPS  
 
     required_client_version = (0, 5, 0)
 
@@ -115,7 +119,8 @@ class PokemonFRLGWorld(World):
     modified_events: Dict[str, EventData]
     modified_legendary_pokemon: Dict[str, MiscPokemonData]
     modified_misc_pokemon: Dict[str, MiscPokemonData]
-    modified_trainers: Dict[int, TrainerData]
+    modified_trainers: Dict[str, TrainerData]
+    modified_tmhm_moves: List[int]
     hm_compatability: Dict[str, List[str]]
     per_species_tmhm_moves: Dict[int, List[int]]
     trade_pokemon: List[Tuple[str, str]]
@@ -123,7 +128,13 @@ class PokemonFRLGWorld(World):
     blacklisted_starters: Set[int]
     blacklisted_trainer_pokemon: Set[int]
     blacklisted_abilities: Set[int]
-    blacklist_moves: Set[int]
+    blacklisted_moves: Set[int]
+    trainer_level_list: List[int]
+    trainer_id_list: List[str]
+    land_water_level_list: List[int]
+    land_water_id_list: List[str]
+    fishing_level_list: List[int]
+    fishing_id_list: List[str]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -136,9 +147,17 @@ class PokemonFRLGWorld(World):
         self.modified_legendary_pokemon = copy.deepcopy(frlg_data.legendary_pokemon)
         self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
         self.modified_trainers = copy.deepcopy(frlg_data.trainers)
+        self.modified_tmhm_moves = copy.deepcopy(frlg_data.tmhm_moves)
         self.hm_compatability = {}
         self.per_species_tmhm_moves = {}
-        self.trade_pokemon = list()
+        self.trade_pokemon = []
+        self.trainer_level_list = []
+        self.trainer_id_list = []
+        self.land_water_level_list = []
+        self.land_water_id_list = []
+        self.fishing_level_list = []
+        self.fishing_id_list = []
+        self.finished_level_scaling = threading.Event()
 
     @classmethod
     def stage_assert_generate(cls, multiworld: MultiWorld) -> None:
@@ -147,7 +166,7 @@ class PokemonFRLGWorld(World):
         assert validate_regions()
 
     def get_filler_item_name(self) -> str:
-        return "Poke Ball"
+        return get_filler_item(self)
 
     def generate_early(self) -> None:
         self.blacklisted_wild_pokemon = {
@@ -172,9 +191,11 @@ class PokemonFRLGWorld(World):
             self.blacklisted_trainer_pokemon |= LEGENDARY_POKEMON
 
         self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
-        self.blacklist_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
+        self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
         randomize_types(self)
+        randomize_abilities(self)
+        randomize_moves(self)
         randomize_wild_encounters(self)
         randomize_starters(self)
         randomize_legendaries(self)
@@ -183,19 +204,25 @@ class PokemonFRLGWorld(World):
         self.create_hm_compatability_dict()
 
     def create_regions(self) -> None:
-        from .regions import create_regions
+        from .regions import create_indirect_conditions, create_regions
 
         regions = create_regions(self)
 
         tags = {"Badge", "HM", "KeyItem", "Overworld", "NPCGift"}
         if self.options.shuffle_hidden == ShuffleHiddenItems.option_all:
             tags.add("Hidden")
-            tags.add("HiddenRecurring")
+            tags.add("Recurring")
         elif self.options.shuffle_hidden == ShuffleHiddenItems.option_nonrecurring:
             tags.add("Hidden")
+        if self.options.extra_key_items:
+            tags.add("ExtraKeyItem")
+        if self.options.trainersanity:
+            tags.add("Trainer")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
+
+        create_indirect_conditions(self)
 
     def create_items(self) -> None:
         item_locations: List[PokemonFRLGLocation] = [
@@ -259,14 +286,38 @@ class PokemonFRLGWorld(World):
                 region = self.multiworld.get_region(trade[0], self.player)
                 region.locations.remove(location)
 
+    @classmethod
+    def stage_post_fill(cls, multiworld):
+        # Change all but one instance of a Pokémon in each sphere to useful classification
+        # This cuts down on time calculating the playthrough
+        found_mons = set()
+        pokemon = set()
+        for species in frlg_data.species.values():
+            pokemon.add(species.name)
+        for sphere in multiworld.get_spheres():
+            for location in sphere:
+                if (location.game == "Pokemon FireRed and LeafGreen" and
+                        (location.item.name in pokemon or "Static " in location.item.name)
+                        and location.item.advancement):
+                    key = (location.player, location.item.name)
+                    if key in found_mons:
+                        location.item.classification = ItemClassification.useful
+                    else:
+                        found_mons.add(key)
+
+    @classmethod
+    def stage_generate_output(cls, multiworld, output_directory):
+        level_scaling(multiworld)
+
     def generate_output(self, output_directory: str) -> None:
         # Modify catch rate
         min_catch_rate = min(self.options.min_catch_rate.value, 255)
         for species in self.modified_species.values():
             species.catch_rate = max(species.catch_rate, min_catch_rate)
 
-        randomize_abilities(self)
-        randomize_moves(self)
+        self.finished_level_scaling.wait()
+
+        randomize_tm_moves(self)
         randomize_trainer_parties(self)
 
         if self.options.game_version == GameVersion.option_firered:
@@ -309,35 +360,51 @@ class PokemonFRLGWorld(World):
         del self.modified_legendary_pokemon
         del self.modified_misc_pokemon
         del self.trade_pokemon
-
-    @classmethod
-    def stage_post_fill(cls, multiworld):
-        # Change all but one instance of a Pokémon in each sphere to useful classification
-        # This cuts down on time calculating the playthrough
-        found_mons = set()
-        pokemon = set()
-        for species in frlg_data.species.values():
-            pokemon.add(species.name)
-        for sphere in multiworld.get_spheres():
-            for location in sphere:
-                if (location.game == "Pokemon FireRed and LeafGreen" and
-                        (location.item.name in pokemon or "Static " in location.item.name)
-                        and location.item.advancement):
-                    key = (location.player, location.item.name)
-                    if key in found_mons:
-                        location.item.classification = ItemClassification.useful
-                    else:
-                        found_mons.add(key)
+        del self.trainer_id_list
+        del self.trainer_level_list
+        del self.land_water_id_list
+        del self.land_water_level_list
+        del self.fishing_id_list
+        del self.fishing_level_list
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         # Add Pokémon locations to the spoiler log if they are not vanilla
+        if (self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla or
+                self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla or
+                self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla):
+            spoiler_handle.write(f"\n\nPokemon Locations ({self.multiworld.player_name[self.player]}):\n\n")
+
         if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
-            spoiler_handle.write(f"\n\nPokémon Locations ({self.multiworld.player_name[self.player]}):\n\n")
             pokemon_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations(self.player) if "Wild" in location.tags
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Wild" in location.tags
             ]
             for location in pokemon_locations:
                 spoiler_handle.write(location.name + ": " + location.item.name + "\n")
+
+        if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Misc" in location.tags
+            ]
+            for location in pokemon_locations:
+                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
+                    name = location.item.name.split()[1]
+                else:
+                    name = location.item.name
+                spoiler_handle.write(location.name + ": " + name + "\n")
+
+        if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Legendary" in location.tags
+            ]
+            for location in pokemon_locations:
+                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
+                    name = location.item.name.split()[1]
+                else:
+                    name = location.item.name
+                spoiler_handle.write(location.name + ": " + name + "\n")
 
     def modify_multidata(self, multidata: Dict[str, Any]):
         import base64
@@ -346,11 +413,13 @@ class PokemonFRLGWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data = self.options.as_dict(
-            "game_version",
             "shuffle_badges",
             "shuffle_hidden",
+            "extra_key_items",
+            "trainersanity",
             "itemfinder_required",
             "flash_required",
+            "remove_badge_requirement",
             "oaks_aide_route_2",
             "oaks_aide_route_10",
             "oaks_aide_route_11",

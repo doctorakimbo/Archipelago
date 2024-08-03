@@ -23,7 +23,6 @@ predetermined priority
 * Any cutscene that would warp the player somewhere no longer does so
 * Added a GO HOME option to the menu that teleports you to Pallet Town
 * The Old Man catching tutorial is skipped
-* The Route 22 Rival fight will only occur once. It can be triggered after either delivering Oak's Parcel or beating the Viridian Gym
 * Miguel's position in Mt. Moon will change based on which side you enter from
 * You are able to pick up both fossils in Mt. Moon after beating Miguel
 * The Team Rocket Grunt on Route 24 won't give you your reward until after the battle
