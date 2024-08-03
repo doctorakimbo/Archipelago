@@ -177,8 +177,8 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             region.locations.append(location)
 
     trainer_level_object_list: List[Tuple[str, int]] = []
-    encounter_level_object_list: List[Tuple[str, Tuple[int, int]]] = []
-    fishing_level_object_list: List[Tuple[str, Tuple[int, int]]] = []
+    land_water_level_object_list: List[Tuple[str, int]] = []
+    fishing_level_object_list: List[Tuple[str, int]] = []
 
     if world.options.level_scaling:
         for region in regions.values():
@@ -207,22 +207,21 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
                         if encounters is not None:
                             for i, encounter in enumerate(encounters.slots[game_version]):
                                 if i in slot_ids:
-                                    if data_ids[1] == "FISHING":
-                                        name = f"{data_ids[0]} {data_ids[1]} {i}"
-                                        fishing_level_object_list.append((name,
-                                                                          (encounter.min_level, encounter.max_level)))
-                                    else:
-                                        name = f"{data_ids[0]} {data_ids[1]} {i}"
-                                        encounter_level_object_list.append((name,
-                                                                            (encounter.min_level, encounter.max_level)))
+                                    name = f"{data_ids[0]} {data_ids[1]} {i}"
+                                    if data_ids[1] in ["LAND", "WATER"]:
+                                        avg_level = round((encounter.min_level + encounter.max_level) / 2)
+                                        land_water_level_object_list.append((name, avg_level))
+                                    elif data_ids[1] == "FISHING":
+                                        avg_level = round((encounter.min_level + encounter.max_level) / 2)
+                                        fishing_level_object_list.append((name, avg_level))
 
         trainer_level_object_list.sort(key=lambda i: i[1])
-        encounter_level_object_list.sort(key=lambda i: i[1][1])
-        fishing_level_object_list.sort(key=lambda i: i[1][1])
+        land_water_level_object_list.sort(key=lambda i: i[1])
+        fishing_level_object_list.sort(key=lambda i: i[1])
         world.trainer_id_list = [i[0] for i in trainer_level_object_list]
         world.trainer_level_list = [i[1] for i in trainer_level_object_list]
-        world.encounter_id_list = [i[0] for i in encounter_level_object_list]
-        world.encounter_level_list = [i[1] for i in encounter_level_object_list]
+        world.land_water_id_list = [i[0] for i in land_water_level_object_list]
+        world.land_water_level_list = [i[1] for i in land_water_level_object_list]
         world.fishing_id_list = [i[0] for i in fishing_level_object_list]
         world.fishing_level_list = [i[1] for i in fishing_level_object_list]
 

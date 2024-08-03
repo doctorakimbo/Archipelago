@@ -131,9 +131,9 @@ class PokemonFRLGWorld(World):
     blacklisted_moves: Set[int]
     trainer_level_list: List[int]
     trainer_id_list: List[str]
-    encounter_level_list: List[Tuple[int, int]]
-    encounter_id_list: List[str]
-    fishing_level_list: List[Tuple[int, int]]
+    land_water_level_list: List[int]
+    land_water_id_list: List[str]
+    fishing_level_list: List[int]
     fishing_id_list: List[str]
     auth: bytes
 
@@ -153,8 +153,10 @@ class PokemonFRLGWorld(World):
         self.trade_pokemon = []
         self.trainer_level_list = []
         self.trainer_id_list = []
-        self.encounter_level_list = []
-        self.encounter_id_list = []
+        self.land_water_level_list = []
+        self.land_water_id_list = []
+        self.fishing_level_list = []
+        self.fishing_id_list = []
         self.finished_level_scaling = threading.Event()
 
     @classmethod
@@ -360,8 +362,8 @@ class PokemonFRLGWorld(World):
         del self.trade_pokemon
         del self.trainer_id_list
         del self.trainer_level_list
-        del self.encounter_id_list
-        del self.encounter_level_list
+        del self.land_water_id_list
+        del self.land_water_level_list
         del self.fishing_id_list
         del self.fishing_level_list
 
