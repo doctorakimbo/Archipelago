@@ -130,7 +130,7 @@ class PokemonFRLGClient(BizHawkClient):
         ctx.game = self.game
         ctx.items_handling = 0b001
         ctx.want_slot_data = True
-        ctx.watcher_timeout = 0.
+        ctx.watcher_timeout = 0.125
 
         if rom_name == EXPECTED_ROM_NAME["firered"]:
             self.game_version = "firered"
