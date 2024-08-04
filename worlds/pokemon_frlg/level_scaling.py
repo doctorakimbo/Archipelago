@@ -47,8 +47,12 @@ def level_scaling(multiworld):
             if can_reach():
                 sphere.add(location)
 
-        spheres.append(sphere)
-        locations -= sphere
+        if sphere:
+            spheres.append(sphere)
+            locations -= sphere
+        else:
+            spheres.append(locations)
+            break
 
         for location in sphere:
             if not location.item:
