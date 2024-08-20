@@ -81,22 +81,14 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                         # Want to create locations per species, not per slot
                         # encounter_categories includes info on which slots belong to which subcategory
                         unique_species = []
-                        slot_ids: List[List[int]] = []
                         for j, species_data in enumerate(encounter_slots):
                             species_id = species_data.species_id
                             if j in subcategory[1] and species_id not in unique_species:
                                 unique_species.append(species_id)
-                                slot_ids.append([j])
-                            elif j in subcategory[1] and species_id in unique_species:
-                                slot_ids[unique_species.index(species_id)].append(j)
 
                         # Create a location for the species
                         for j, species_id in enumerate(unique_species):
                             subcategory_name = subcategory[0] if subcategory[0] is not None else encounter_category[0]
-                            slots_str = ""
-
-                            for slot_id in slot_ids[j]:
-                                slots_str += f" {slot_id}"
 
                             encounter_location = PokemonFRLGLocation(
                                 world.player,
@@ -105,8 +97,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                 encounter_region,
                                 None,
                                 None,
-                                frozenset(["Pokemon", "Wild"]),
-                                f"{map_name} {encounter_category[0].upper()}{slots_str}"
+                                frozenset(["Pokemon", "Wild"])
                             )
                             encounter_location.show_in_spoiler = False
 
@@ -160,8 +151,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                         new_region,
                                         None,
                                         None,
-                                        event_data.tags,
-                                        event_id)
+                                        event_data.tags)
             event.place_locked_item(PokemonFRLGItem(item,
                                                     ItemClassification.progression,
                                                     None,

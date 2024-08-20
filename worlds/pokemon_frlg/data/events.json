@@ -71,37 +71,37 @@
     "tags": ["Event"]
   },
   "EVENT_FLY_ONE_ISLAND": {
-    "name": "One Island - Visit One Island",
+    "name": "One Island Town - Visit One Island",
     "item": "Fly One Island",
     "tags": ["Event"]
   },
   "EVENT_FLY_TWO_ISLAND": {
-    "name": "Two Island - Visit Two Island",
+    "name": "Two Island Town - Visit Two Island",
     "item": "Fly Two Island",
     "tags": ["Event"]
   },
   "EVENT_FLY_THREE_ISLAND": {
-    "name": "Three Island - Visit Three Island",
+    "name": "Three Island Town - Visit Three Island",
     "item": "Fly Three Island",
     "tags": ["Event"]
   },
   "EVENT_FLY_FOUR_ISLAND": {
-    "name": "Four Island - Visit Four Island",
+    "name": "Four Island Town - Visit Four Island",
     "item": "Fly Four Island",
     "tags": ["Event"]
   },
   "EVENT_FLY_FIVE_ISLAND": {
-    "name": "Five Island - Visit Five Island",
+    "name": "Five Island Town - Visit Five Island",
     "item": "Fly Five Island",
     "tags": ["Event"]
   },
   "EVENT_FLY_SIX_ISLAND": {
-    "name": "Six Island - Visit Six Island",
+    "name": "Six Island Town - Visit Six Island",
     "item": "Fly Six Island",
     "tags": ["Event"]
   },
   "EVENT_FLY_SEVEN_ISLAND": {
-    "name": "Seven Island - Visit Seven Island",
+    "name": "Seven Island Town - Visit Seven Island",
     "item": "Fly Seven Island",
     "tags": ["Event"]
   },
@@ -188,12 +188,12 @@
     "tags": ["Event"]
   },
   "EVENT_RESTORE_POKEMON_NETWORK_MACHINE": {
-    "name": "One Island - Help Celio",
+    "name": "One Island Pokemon Center 1F - Help Celio",
     "item": "Restore Pokemon Network Machine",
     "tags": ["Event"]
   },
   "EVENT_BUY_MARKET_LEMONADE": {
-    "name": "Two Island - Market Stall",
+    "name": "Two Island Town - Market Stall",
     "item": "Buy Lemonade",
     "tags": ["Event"]
   },
@@ -208,7 +208,7 @@
     "tags": ["Event"]
   },
   "EVENT_HELP_LORELEI": {
-    "name": "Icefall Cave Back - Battle Team Rocket Grunt",
+    "name": "Icefall Cave Back - Team Rocket Grunt Battle",
     "item": "Help Lorelei",
     "tags": ["Event"]
   },

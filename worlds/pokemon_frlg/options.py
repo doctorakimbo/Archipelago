@@ -361,6 +361,7 @@ class WildPokemonGroups(Choice):
     - Dungeons: All Pokémon of the same species in a dungeon are randomized together
     - Species: All Pokémon of the same species are randomized together
     """
+    display_name = "Wild Pokemon Groups"
     default = 0
     option_none = 0
     option_dungeons = 1

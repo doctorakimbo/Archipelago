@@ -735,24 +735,22 @@
       "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1/MAP_ROUTE2:4"
     ]
   },
-  "REGION_ROCK_TUNNEL_1F/SOUTH": {
+  "REGION_ROCK_TUNNEL_1F/NORTHEAST": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F - South",
+    "name": "Rock Tunnel 1F - Northeast",
     "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_1F_PEARL",
-      "TRAINER_PICNICKER_ARIANA_REWARD",
-      "TRAINER_PICNICKER_DANA_REWARD",
-      "TRAINER_PICNICKER_LEAH_REWARD"
+      "ITEM_ROCK_TUNNEL_1F_REPEL",
+      "TRAINER_POKEMANIAC_ASHTON_REWARD"
     ],
     "events": [],
     "exits": [],
     "warps": [
-      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1",
-      "MAP_ROCK_TUNNEL_1F:4/MAP_ROCK_TUNNEL_B1F:3"
+      "MAP_ROCK_TUNNEL_1F:1/MAP_ROCK_TUNNEL_B1F:0",
+      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0"
     ]
   },
   "REGION_ROCK_TUNNEL_1F/NORTHWEST": {
@@ -775,42 +773,24 @@
       "MAP_ROCK_TUNNEL_1F:3/MAP_ROCK_TUNNEL_B1F:2"
     ]
   },
-  "REGION_ROCK_TUNNEL_1F/NORTHEAST": {
+  "REGION_ROCK_TUNNEL_1F/SOUTH": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F - Northeast",
+    "name": "Rock Tunnel 1F - South",
     "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [
-      "ITEM_ROCK_TUNNEL_1F_REPEL",
-      "TRAINER_POKEMANIAC_ASHTON_REWARD"
+      "ITEM_ROCK_TUNNEL_1F_PEARL",
+      "TRAINER_PICNICKER_ARIANA_REWARD",
+      "TRAINER_PICNICKER_DANA_REWARD",
+      "TRAINER_PICNICKER_LEAH_REWARD"
     ],
     "events": [],
     "exits": [],
     "warps": [
-      "MAP_ROCK_TUNNEL_1F:1/MAP_ROCK_TUNNEL_B1F:0",
-      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0"
-    ]
-  },
-  "REGION_ROCK_TUNNEL_B1F/NORTHWEST": {
-    "parent_map": "MAP_ROCK_TUNNEL_B1F",
-    "name": "Rock Tunnel B1F - Northwest",
-    "encounter_region": "Rock Tunnel B1F",
-    "has_land": true,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [
-      "ITEM_ROCK_TUNNEL_B1F_MAX_ETHER",
-      "TRAINER_HIKER_DUDLEY_REWARD",
-      "TRAINER_PICNICKER_SOFIA_REWARD",
-      "TRAINER_POKEMANIAC_COOPER_REWARD"
-    ],
-    "events": [],
-    "exits": [],
-    "warps": [
-      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3",
-      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4"
+      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1",
+      "MAP_ROCK_TUNNEL_1F:4/MAP_ROCK_TUNNEL_B1F:3"
     ]
   },
   "REGION_ROCK_TUNNEL_B1F/SOUTHEAST": {
@@ -833,6 +813,26 @@
     "warps": [
       "MAP_ROCK_TUNNEL_B1F:0/MAP_ROCK_TUNNEL_1F:1",
       "MAP_ROCK_TUNNEL_B1F:1/MAP_ROCK_TUNNEL_1F:2"
+    ]
+  },
+  "REGION_ROCK_TUNNEL_B1F/NORTHWEST": {
+    "parent_map": "MAP_ROCK_TUNNEL_B1F",
+    "name": "Rock Tunnel B1F - Northwest",
+    "encounter_region": "Rock Tunnel B1F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [
+      "ITEM_ROCK_TUNNEL_B1F_MAX_ETHER",
+      "TRAINER_HIKER_DUDLEY_REWARD",
+      "TRAINER_PICNICKER_SOFIA_REWARD",
+      "TRAINER_POKEMANIAC_COOPER_REWARD"
+    ],
+    "events": [],
+    "exits": [],
+    "warps": [
+      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3",
+      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4"
     ]
   },
   "REGION_POWER_PLANT/MAIN": {
@@ -3039,13 +3039,27 @@
     "has_water": false,
     "has_fishing": false,
     "locations": [],
+    "events": [],
+    "exits": [
+      "REGION_MT_EMBER_SUMMIT/MOLTRES"
+    ],
+    "warps": [
+      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4"
+    ]
+  },
+  "REGION_MT_EMBER_SUMMIT/MOLTRES": {
+    "parent_map": "MAP_MT_EMBER_SUMMIT",
+    "name": "Mt. Ember Summit - Moltres",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
     "events": [
       "LEGENDARY_POKEMON_MOLTRES"
     ],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4"
-    ]
+    "warps": []
   },
   "REGION_MT_EMBER_RUBY_PATH_1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",

@@ -218,13 +218,13 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Sky", "Fuchsia City"), lambda state: state.has("Fly Fuchsia City", player))
     set_rule(get_entrance("Sky", "Cinnabar Island"), lambda state: state.has("Fly Cinnabar Island", player))
     set_rule(get_entrance("Sky", "Indigo Plateau Exterior"), lambda state: state.has("Fly Indigo Plateau", player))
-    set_rule(get_entrance("Sky", "One Island"), lambda state: state.has("Fly One Island", player))
-    set_rule(get_entrance("Sky", "Two Island"), lambda state: state.has("Fly Two Island", player))
-    set_rule(get_entrance("Sky", "Three Island"), lambda state: state.has("Fly Three Island", player))
-    set_rule(get_entrance("Sky", "Four Island"), lambda state: state.has("Fly Four Island", player))
-    set_rule(get_entrance("Sky", "Five Island"), lambda state: state.has("Fly Five Island", player))
-    set_rule(get_entrance("Sky", "Six Island"), lambda state: state.has("Fly Six Island", player))
-    set_rule(get_entrance("Sky", "Seven Island"), lambda state: state.has("Fly Seven Island", player))
+    set_rule(get_entrance("Sky", "One Island Town"), lambda state: state.has("Fly One Island", player))
+    set_rule(get_entrance("Sky", "Two Island Town"), lambda state: state.has("Fly Two Island", player))
+    set_rule(get_entrance("Sky", "Three Island Town"), lambda state: state.has("Fly Three Island", player))
+    set_rule(get_entrance("Sky", "Four Island Town"), lambda state: state.has("Fly Four Island", player))
+    set_rule(get_entrance("Sky", "Five Island Town"), lambda state: state.has("Fly Five Island", player))
+    set_rule(get_entrance("Sky", "Six Island Town"), lambda state: state.has("Fly Six Island", player))
+    set_rule(get_entrance("Sky", "Seven Island Town"), lambda state: state.has("Fly Seven Island", player))
 
     # Pallet Town
     set_rule(get_location("Pallet Town - Oak's Post Champion Gift 1"),
@@ -248,9 +248,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Route 22
     set_rule(get_location("Route 22 - Early Rival Battle"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Route 22 - Early Rival Reward"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Route 22 - Late Rival Reward"),
-             lambda state: state.has("Defeat Route 22 Rival", player) and state.has("Defeat Giovanni", player))
     set_rule(get_entrance("Route 22", "Route 22 - Water"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 22 North Entrance", "Route 23 - South"), lambda state: can_pass_route_22_gate(state))
 
@@ -536,11 +533,11 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # One Island
     set_rule(get_location("One Island Pokemon Center 1F - Celio"),
              lambda state: state.has("Deliver Meteorite", player) and state.has("Ruby", player))
-    set_rule(get_location("One Island - Help Celio"),
+    set_rule(get_location("One Island Pokemon Center 1F - Help Celio"),
              lambda state: state.has("Deliver Meteorite", player) and
                            state.has("Ruby", player) and
                            state.has("Sapphire", player))
-    set_rule(get_entrance("One Island", "One Island - Water"), lambda state: can_surf(state))
+    set_rule(get_entrance("One Island Town", "One Island Town - Water"), lambda state: can_surf(state))
 
     # Kindle Road
     set_rule(get_location("Kindle Road - Plateau Item"), lambda state: can_rock_smash(state))
@@ -553,15 +550,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Mt. Ember
     set_rule(get_location("Mt. Ember Exterior - Item Near Summit"),
              lambda state: can_strength(state) and can_rock_smash(state))
-    set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Left)"),
-             lambda state: state.has("Deliver Meteorite", player))
-    set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Right)"),
-             lambda state: state.has("Deliver Meteorite", player))
-    set_rule(get_location("Mt. Ember Summit - Legendary Pokemon"), lambda state: can_strength(state))
     set_rule(get_entrance("Mt. Ember Exterior - South", "Mt. Ember Exterior - Center"),
              lambda state: can_strength(state))
     set_rule(get_entrance("Mt. Ember Exterior - South", "Mt. Ember Ruby Path 1F"),
              lambda state: state.has("Deliver Meteorite", player))
+    set_rule(get_entrance("Mt. Ember Summit", "Mt. Ember Summit - Moltres"),
+             lambda state: can_strength(state))
     set_rule(get_entrance("Mt. Ember Ruby Path B2F - West", "Mt. Ember Ruby Path B2F - East"),
              lambda state: can_strength(state))
     set_rule(get_entrance("Mt. Ember Ruby Path B2F - East", "Mt. Ember Ruby Path B2F - West"),
@@ -588,10 +582,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Two Island Harbor", "Seven Island Harbor"), lambda state: state.has("Rainbow Pass", player))
 
     # Two Island
-    set_rule(get_location("Two Island - Item Behind Cuttable Tree"), lambda state: can_cut(state))
+    set_rule(get_location("Two Island Town - Item Behind Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_location("Two Island Game Corner - Lostelle's Father"),
              lambda state: state.has("Rescue Lostelle", player) and state.has("Meteorite", player))
-    set_rule(get_location("Two Island - Market Stall"), lambda state: state.has("Defeat Champion", player))
+    set_rule(get_location("Two Island Town - Market Stall"), lambda state: state.has("Defeat Champion", player))
     set_rule(get_location("Two Island Game Corner - Gift for Lostelle's Father"),
              lambda state: state.has("Rescue Lostelle", player) and state.has("Meteorite", player))
 
@@ -608,7 +602,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Rainbow Pass", player))
 
     # Three Island
-    set_rule(get_entrance("Three Island", "Three Island - East"), lambda state: can_cut(state))
+    set_rule(get_entrance("Three Island Town", "Three Island Town - East"), lambda state: can_cut(state))
 
     # Bond Bridge
     set_rule(get_entrance("Bond Bridge", "Bond Bridge - Water"), lambda state: can_surf(state))
@@ -627,9 +621,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Four Island Harbor", "Seven Island Harbor"), lambda state: state.has("Rainbow Pass", player))
 
     # Four Island
-    set_rule(get_location("Four Island - Beach Item"), lambda state: can_rock_smash(state))
-    set_rule(get_entrance("Four Island", "Four Island - Water"), lambda state: can_surf(state))
-    set_rule(get_entrance("Four Island - Cave", "Four Island - Water"), lambda state: can_surf(state))
+    set_rule(get_location("Four Island Town - Beach Item"), lambda state: can_rock_smash(state))
+    set_rule(get_entrance("Four Island Town", "Four Island Town - Water"), lambda state: can_surf(state))
+    set_rule(get_entrance("Four Island Town - Cave", "Four Island Town - Water"), lambda state: can_surf(state))
 
     # Icefall Cave
     set_rule(get_entrance("Icefall Cave Entrance - South", "Icefall Cave Entrance - Water S"),
@@ -651,7 +645,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Five Island Harbor", "Seven Island Harbor"), lambda state: state.has("Rainbow Pass", player))
 
     # Five Island
-    set_rule(get_entrance("Five Island", "Five Island - Water"), lambda state: can_surf(state))
+    set_rule(get_entrance("Five Island Town", "Five Island Town - Water"), lambda state: can_surf(state))
 
     # Five Isle Meadow
     set_rule(get_location("Five Isle Meadow - Item Behind Cuttable Tree"), lambda state: can_cut(state))
@@ -768,6 +762,19 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_location("Cerulean Gym - Hidden Item In Water"),
                  lambda state: can_surf(state) and state.has("Itemfinder", player))
 
+    # Trainersanity
+    if options.trainersanity:
+        # Route 22
+        set_rule(get_location("Route 22 - Early Rival Reward"), lambda state: state.has("Deliver Oak's Parcel", player))
+        set_rule(get_location("Route 22 - Late Rival Reward"),
+                 lambda state: state.has("Defeat Route 22 Rival", player) and state.has("Defeat Giovanni", player))
+
+        # Mt. Ember
+        set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Left)"),
+                 lambda state: state.has("Deliver Meteorite", player))
+        set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Right)"),
+                 lambda state: state.has("Deliver Meteorite", player))
+
     # Static Pokémon
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_location("Cerulean Trade House - Trade Poliwhirl"), lambda state: state.has("Poliwhirl", player))
@@ -806,13 +813,19 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has("Nidorina", player))
         set_rule(get_location("Route 18 East Entrance 2F - Trade Slowbro"), lambda state: state.has("Slowbro", player))
 
-    # Add rules for Pokémon Tower encounters
+    # Pokémon Tower encounters
     for i in range(3, 8):
         for j in range(1, 4):
-            set_rule(get_location(f'Pokemon Tower {i}F - Land Encounter {j}'),
+            set_rule(get_location(f"Pokemon Tower {i}F - Land Encounter {j}"),
                      lambda state: state.has("Silph Scope", player))
 
-    # Add rules for Tanoby Ruins Unown
+    # Seafoam Islands B3F water encounters
+    for i in range(1, 6):
+        set_rule(get_location(f"Seafoam Islands B3F - Water Encounter {i}"),
+                 lambda state: can_strength(state) and
+                               state.can_reach_region("Seafoam Islands 1F", player))
+
+    # Tanoby Ruins encounters
     set_rule(get_location("Monean Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
     set_rule(get_location("Liptoo Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
     set_rule(get_location("Weepth Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))

@@ -11,9 +11,11 @@ from settings import get_settings
 from .data import data, TrainerPokemonDataTypeEnum
 from .items import reverse_offset_item_value
 from .locations import reverse_offset_flag
-from .options import ItemfinderRequired, ShuffleHiddenItems, TmTutorCompatibility, ViridianCityRoadblock
+from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters,
+                      RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems, TmTutorCompatibility,
+                      ViridianCityRoadblock)
 from .pokemon import STARTER_INDEX, randomize_tutor_moves
-from .util import bool_array_to_int, encode_string
+from .util import bool_array_to_int, bound, encode_string
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -503,6 +505,9 @@ def _set_wild_encounters(world: "PokemonFRLGWorld",
                                       PokemonLeafGreenRev1ProcedurePatch],
                          game_version: str,
                          game_version_revision: str) -> None:
+    if not world.options.level_scaling and world.options.wild_pokemon == RandomizeWildPokemon.option_vanilla:
+        return
+
     """
         Encounter tables are lists of
         struct {
@@ -530,6 +535,8 @@ def _set_starters(world: "PokemonFRLGWorld",
                                PokemonLeafGreenProcedurePatch,
                                PokemonLeafGreenRev1ProcedurePatch],
                   game_version_revision: str) -> None:
+    if world.options.starters == RandomizeStarters.option_vanilla:
+        return
 
     for name, starter in world.modified_starters.items():
         starter_address = data.rom_addresses[game_version_revision]["sStarterSpecies"] + (STARTER_INDEX[name] * 2)
@@ -549,6 +556,9 @@ def _set_legendaries(world: "PokemonFRLGWorld",
                                   PokemonLeafGreenRev1ProcedurePatch],
                      game_version: str,
                      game_version_revision: str) -> None:
+    if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla:
+        return
+
     for name, legendary in world.modified_legendary_pokemon.items():
         patch.write_token(APTokenTypes.WRITE,
                           legendary.address[game_version_revision],
@@ -565,6 +575,8 @@ def _set_misc_pokemon(world: "PokemonFRLGWorld",
                                    PokemonLeafGreenRev1ProcedurePatch],
                       game_version: str,
                       game_version_revision: str) -> None:
+    if world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla:
+        return
 
     for name, misc_pokemon in world.modified_misc_pokemon.items():
         patch.write_token(APTokenTypes.WRITE,
@@ -582,6 +594,11 @@ def _set_trainer_parties(world: "PokemonFRLGWorld",
                                       PokemonLeafGreenProcedurePatch,
                                       PokemonLeafGreenRev1ProcedurePatch],
                          game_version_revision: str) -> None:
+    if (world.options.trainers == RandomizeTrainerParties.option_vanilla and
+            world.options.starters == RandomizeStarters.option_vanilla and
+            world.options.modify_trainer_levels.value == 0):
+        return
+
     for trainer in world.modified_trainers.values():
         party_address = trainer.party.address[game_version_revision]
 
@@ -595,10 +612,7 @@ def _set_trainer_parties(world: "PokemonFRLGWorld",
             pokemon_address = party_address + (i * pokemon_data_size)
 
             level = round(pokemon.level + (pokemon.level * (world.options.modify_trainer_levels.value / 100)))
-            if level < 1:
-                level = 1
-            elif level > 100:
-                level = 100
+            level = bound(level, 1, 100)
 
             patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x02, struct.pack("<B", level))
             patch.write_token(APTokenTypes.WRITE, pokemon_address + 0x04, struct.pack("<H", pokemon.species_id))
@@ -626,6 +640,9 @@ def _set_tmhm_compatibility(world: "PokemonFRLGWorld",
                                          PokemonLeafGreenProcedurePatch,
                                          PokemonLeafGreenRev1ProcedurePatch],
                             game_version_revision: str) -> None:
+    if world.options.tm_tutor_compatability == TmTutorCompatibility.special_range_names["vanilla"]:
+        return
+
     learnsets_address = data.rom_addresses[game_version_revision]["sTMHMLearnsets"]
 
     for species in world.modified_species.values():
@@ -642,6 +659,9 @@ def _set_tm_moves(world: "PokemonFRLGWorld",
                                PokemonLeafGreenProcedurePatch,
                                PokemonLeafGreenRev1ProcedurePatch],
                   game_version_revision: str) -> None:
+    if not world.options.tm_tutor_moves:
+        return
+
     address = data.rom_addresses[game_version_revision]["sTMHMMoves"]
 
     for i, move in enumerate(world.modified_tmhm_moves):

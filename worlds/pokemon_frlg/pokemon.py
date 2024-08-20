@@ -1,3 +1,4 @@
+import copy
 import math
 from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
@@ -392,19 +393,19 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         # If so, set the encounters of the current map based on the other Route 21 map.
         if map_name == "MAP_ROUTE21_NORTH" and route_21_randomized:
             map_data.land_encounters.slots[game_version] = \
-                world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots[game_version]
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots[game_version])
             map_data.water_encounters.slots[game_version] = \
-                world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots[game_version]
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots[game_version])
             map_data.fishing_encounters.slots[game_version] = \
-                world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots[game_version]
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots[game_version])
             continue
         elif map_name == "MAP_ROUTE21_SOUTH" and route_21_randomized:
             map_data.land_encounters.slots[game_version] = \
-                world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots[game_version]
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots[game_version])
             map_data.water_encounters.slots[game_version] = \
-                world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots[game_version]
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots[game_version])
             map_data.fishing_encounters.slots[game_version] = \
-                world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots[game_version]
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots[game_version])
             continue
 
         if map_name == "MAP_ROUTE21_NORTH" or map_name == "MAP_ROUTE21_SOUTH":

@@ -292,11 +292,11 @@
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_STARDUST": {
-    "name": "Four Island - Northeast Island Item",
+    "name": "Four Island Town - Northeast Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_FOUR_ISLAND_STAR_PIECE": {
-    "name": "Four Island - Beach Item",
+    "name": "Four Island Town - Beach Item",
     "tags": ["Overworld"]
   },
   "ITEM_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY": {
@@ -792,11 +792,11 @@
     "tags": ["Overworld"]
   },
   "ITEM_THREE_ISLAND_ZINC": {
-    "name": "Three Island - Item Behind East Fence",
+    "name": "Three Island Town - Item Behind East Fence",
     "tags": ["Overworld"]
   },
   "ITEM_TWO_ISLAND_REVIVE": {
-    "name": "Two Island - Item Behind Cuttable Tree",
+    "name": "Two Island Town - Item Behind Cuttable Tree",
     "tags": ["Overworld"]
   },
   "ITEM_VICTORY_ROAD_1F_RARE_CANDY": {
@@ -905,11 +905,11 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_PEARL": {
-    "name": "Four Island - Beach Southeast Hidden Item",
+    "name": "Four Island Town - Beach Southeast Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FOUR_ISLAND_ULTRA_BALL": {
-    "name": "Four Island - Beach Northwest Hidden Item",
+    "name": "Four Island Town - Beach Northwest Hidden Item",
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE": {
@@ -1333,7 +1333,7 @@
     "tags": ["Hidden", "Recurring"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY": {
-    "name": "Six Island - Hidden Item Behind Pokemon Center",
+    "name": "Six Island Town - Hidden Item Behind Pokemon Center",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL": {
@@ -1445,7 +1445,7 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_THREE_ISLAND_PP_UP": {
-    "name": "Three Island - Hidden Item Behind West Fence",
+    "name": "Three Island Town - Hidden Item Behind West Fence",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_PP_MAX": {
@@ -1554,7 +1554,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
-    "name": "Three Island - Anti-Biker",
+    "name": "Three Island Town - Anti-Biker",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH": {
@@ -1715,15 +1715,15 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_REWARD": {
-    "name": "Three Island - Biker Goon Reward (Left)",
+    "name": "Three Island Town - Biker Goon Reward (Left)",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_2_REWARD": {
-    "name": "Three Island - Biker Goon Reward (Right)",
+    "name": "Three Island Town - Biker Goon Reward (Right)",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_3_REWARD": {
-    "name": "Three Island - Biker Goon Reward (Top)",
+    "name": "Three Island Town - Biker Goon Reward (Top)",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_HIDEO_REWARD": {
@@ -2215,7 +2215,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CUE_BALL_PAXTON_REWARD": {
-    "name": "Three Island - Cue Ball Paxton Reward",
+    "name": "Three Island Town - Cue Ball Paxton Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CUE_BALL_RAUL_REWARD": {

@@ -249,7 +249,7 @@
     "exits": [
       "REGION_PALLET_TOWN/MAIN",
       "REGION_PALLET_TOWN/VISIT",
-      "REGION_ROUTE21_NORTH/MAIN"
+      "REGION_ROUTE21/MAIN"
     ],
     "warps": []
   },
@@ -2428,7 +2428,7 @@
     "exits": [
       "REGION_CINNABAR_ISLAND/MAIN",
       "REGION_ROUTE20/WEST",
-      "REGION_ROUTE21_SOUTH/MAIN"
+      "REGION_ROUTE21/MAIN"
     ],
     "warps": []
   },

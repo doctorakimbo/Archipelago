@@ -7,8 +7,6 @@ import tempfile
 import threading
 import Utils
 
-import logging
-
 import settings
 import pkgutil
 from typing import Any, ClassVar, Dict, List, Set, TextIO, Tuple
@@ -20,7 +18,7 @@ from .client import PokemonFRLGClient
 from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
                    TrainerData)
 from .items import ITEM_GROUPS, create_item_name_to_id_map, get_filler_item, get_item_classification, PokemonFRLGItem
-from .level_scaling import level_scaling
+from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
 from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
@@ -129,12 +127,13 @@ class PokemonFRLGWorld(World):
     blacklisted_trainer_pokemon: Set[int]
     blacklisted_abilities: Set[int]
     blacklisted_moves: Set[int]
+    trainer_name_level_dict: Dict[str, int]
+    trainer_name_list: List[str]
     trainer_level_list: List[int]
-    trainer_id_list: List[str]
-    land_water_level_list: List[int]
-    land_water_id_list: List[str]
-    fishing_level_list: List[int]
-    fishing_id_list: List[str]
+    encounter_name_level_dict: Dict[str, int]
+    encounter_name_list: List[str]
+    encounter_level_list: List[int]
+    scaling_data: List[ScalingData]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -151,12 +150,13 @@ class PokemonFRLGWorld(World):
         self.hm_compatability = {}
         self.per_species_tmhm_moves = {}
         self.trade_pokemon = []
+        self.trainer_name_level_dict = {}
+        self.trainer_name_list = []
         self.trainer_level_list = []
-        self.trainer_id_list = []
-        self.land_water_level_list = []
-        self.land_water_id_list = []
-        self.fishing_level_list = []
-        self.fishing_id_list = []
+        self.encounter_name_level_dict = {}
+        self.encounter_name_list = []
+        self.encounter_level_list = []
+        self.scaling_data = []
         self.finished_level_scaling = threading.Event()
 
     @classmethod
@@ -192,6 +192,8 @@ class PokemonFRLGWorld(World):
 
         self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
         self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
+
+        create_scaling_data(self)
 
         randomize_types(self)
         randomize_abilities(self)
@@ -360,12 +362,13 @@ class PokemonFRLGWorld(World):
         del self.modified_legendary_pokemon
         del self.modified_misc_pokemon
         del self.trade_pokemon
-        del self.trainer_id_list
+        del self.trainer_name_level_dict
+        del self.trainer_name_list
         del self.trainer_level_list
-        del self.land_water_id_list
-        del self.land_water_level_list
-        del self.fishing_id_list
-        del self.fishing_level_list
+        del self.encounter_name_level_dict
+        del self.encounter_name_list
+        del self.encounter_level_list
+        del self.scaling_data
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         # Add Pokémon locations to the spoiler log if they are not vanilla

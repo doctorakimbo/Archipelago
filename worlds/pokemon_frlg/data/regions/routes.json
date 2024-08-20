@@ -1094,7 +1094,7 @@
   "REGION_ROUTE14/LEDGE": {
     "parent_map": "MAP_ROUTE14",
     "name": "Route 14 - Ledge",
-    "encounter_region": "Route 13",
+    "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
@@ -1621,44 +1621,28 @@
     ],
     "warps": []
   },
-  "REGION_ROUTE21_NORTH/MAIN": {
+  "REGION_ROUTE21/MAIN": {
     "parent_map": "MAP_ROUTE21_NORTH",
-    "name": "Route 21 North",
-    "encounter_region": "Route 21 North",
+    "name": "Route 21",
+    "encounter_region": "Route 21",
     "has_land": true,
     "has_water": true,
     "has_fishing": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE21_NORTH_PEARL",
+      "TRAINER_FISHERMAN_CLAUDE_REWARD",
+      "TRAINER_FISHERMAN_NOLAN_REWARD",
       "TRAINER_FISHERMAN_RONALD_REWARD",
       "TRAINER_FISHERMAN_WADE_REWARD",
       "TRAINER_SIS_AND_BRO_LIL_IAN_REWARD",
+      "TRAINER_SWIMMER_MALE_JACK_REWARD",
+      "TRAINER_SWIMMER_MALE_JEROME_REWARD",
+      "TRAINER_SWIMMER_MALE_ROLAND_REWARD",
       "TRAINER_SWIMMER_MALE_SPENCER_REWARD"
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE21_SOUTH/MAIN",
-      "REGION_PALLET_TOWN/WATER"
-    ],
-    "warps": []
-  },
-  "REGION_ROUTE21_SOUTH/MAIN": {
-    "parent_map": "MAP_ROUTE21_SOUTH",
-    "name": "Route 21 South",
-    "encounter_region": "Route 21 South",
-    "has_land": true,
-    "has_water": true,
-    "has_fishing": true,
-    "locations": [
-      "TRAINER_FISHERMAN_CLAUDE_REWARD",
-      "TRAINER_FISHERMAN_NOLAN_REWARD",
-      "TRAINER_SWIMMER_MALE_JACK_REWARD",
-      "TRAINER_SWIMMER_MALE_JEROME_REWARD",
-      "TRAINER_SWIMMER_MALE_ROLAND_REWARD"
-    ],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE21_NORTH/MAIN",
+      "REGION_PALLET_TOWN/WATER",
       "REGION_CINNABAR_ISLAND/WATER"
     ],
     "warps": []
