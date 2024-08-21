@@ -3,12 +3,10 @@ Archipelago World definition for Pokémon FireRed/LeafGreen
 """
 import copy
 import os.path
-import tempfile
 import threading
-import Utils
-
 import settings
 import pkgutil
+
 from typing import Any, ClassVar, Dict, List, Set, TextIO, Tuple
 
 from BaseClasses import Tutorial, MultiWorld, ItemClassification
@@ -26,8 +24,7 @@ from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatability, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
-from .rom import (write_tokens, FRLGContainer, PokemonFireRedProcedurePatch, PokemonFireRedRev1ProcedurePatch,
-                  PokemonLeafGreenProcedurePatch, PokemonLeafGreenRev1ProcedurePatch)
+from .rom import get_tokens, PokemonFireRedProcedurePatch, PokemonLeafGreenProcedurePatch
 from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
 
 
@@ -52,38 +49,16 @@ class PokemonFRLGSettings(settings.Group):
         """File name of your English Pokémon FireRed ROM"""
         description = "Pokemon FireRed ROM File"
         copy_to = "Pokemon - FireRed Version (USA, Europe).gba"
-        md5s = [PokemonFireRedProcedurePatch.hash]
-
-    class PokemonFireRedRev1RomFile(settings.UserFilePath):
-        """File name of your English Pokémon FireRed (Rev 1) ROM"""
-        description = "Pokemon FireRed (Rev 1) ROM File"
-        copy_to = "Pokemon - FireRed Version (USA, Europe) (Rev 1).gba"
-        md5s = [PokemonFireRedRev1ProcedurePatch.hash]
+        md5s = PokemonFireRedProcedurePatch.hash
 
     class PokemonLeafGreenRomFile(settings.UserFilePath):
         """File name of your English Pokémon LeafGreen ROM"""
         description = "Pokemon LeafGreen ROM File"
         copy_to = "Pokemon - LeafGreen Version (USA, Europe).gba"
-        md5s = [PokemonLeafGreenProcedurePatch.hash]
+        md5s = PokemonLeafGreenProcedurePatch.hash
 
-    class PokemonLeafGreenRev1RomFile(settings.UserFilePath):
-        """File name of your English Pokémon LeafGreen (Rev 1) ROM"""
-        description = "Pokemon LeafGreen (Rev 1) ROM File"
-        copy_to = "Pokemon - LeafGreen Version (USA, Europe) (Rev 1).gba"
-        md5s = [PokemonLeafGreenRev1ProcedurePatch.hash]
-
-    firered_rom_file: PokemonFireRedRomFile = PokemonFireRedRomFile(
-        PokemonFireRedRomFile.copy_to
-    )
-    firered_rev1_rom_file: PokemonFireRedRev1RomFile = PokemonFireRedRev1RomFile(
-        PokemonFireRedRev1RomFile.copy_to
-    )
-    leafgreen_rom_file: PokemonLeafGreenRomFile = PokemonLeafGreenRomFile(
-        PokemonLeafGreenRomFile.copy_to
-    )
-    leafgreen_rev1_rom_file: PokemonLeafGreenRev1RomFile = PokemonLeafGreenRev1RomFile(
-        PokemonLeafGreenRev1RomFile.copy_to
-    )
+    firered_rom_file: PokemonFireRedRomFile = PokemonFireRedRomFile(PokemonFireRedRomFile.copy_to)
+    leafgreen_rom_file: PokemonLeafGreenRomFile = PokemonLeafGreenRomFile(PokemonLeafGreenRomFile.copy_to)
 
 
 class PokemonFRLGWorld(World):
@@ -323,37 +298,27 @@ class PokemonFRLGWorld(World):
         randomize_trainer_parties(self)
 
         if self.options.game_version == GameVersion.option_firered:
-            patch_rev0 = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
-            patch_rev0.write_file("base_patch_firered.bsdiff4",
-                                  pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
-            patch_rev1 = PokemonFireRedRev1ProcedurePatch(player=self.player, player_name=self.player_name)
-            patch_rev1.write_file("base_patch_firered_rev1.bsdiff4",
-                                  pkgutil.get_data(__name__, "data/base_patch_firered_rev1.bsdiff4"))
+            patch = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
+            patch.write_file("base_patch_rev0.bsdiff4",
+                             pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
+            patch.write_file("base_patch_rev1.bsdiff4",
+                             pkgutil.get_data(__name__, "data/base_patch_firered_rev1.bsdiff4"))
         else:
-            patch_rev0 = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
-            patch_rev0.write_file("base_patch_leafgreen.bsdiff4",
-                                  pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
-            patch_rev1 = PokemonLeafGreenRev1ProcedurePatch(player=self.player, player_name=self.player_name)
-            patch_rev1.write_file("base_patch_leafgreen_rev1.bsdiff4",
-                                  pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
+            patch = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
+            patch.write_file("base_patch_rev0.bsdiff4",
+                             pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
+            patch.write_file("base_patch_rev1.bsdiff4",
+                             pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
 
-        write_tokens(self, patch_rev0)
-        write_tokens(self, patch_rev1)
+        tokens_rev0 = get_tokens(self, 0)
+        tokens_rev1 = get_tokens(self, 1)
+
+        patch.write_file("token_data_rev0.bin", tokens_rev0.get_token_binary())
+        patch.write_file("token_data_rev1.bin", tokens_rev1.get_token_binary())
 
         # Write output
         out_file_name = self.multiworld.get_out_file_name_base(self.player)
-        output = tempfile.TemporaryDirectory()
-        with output as temp_dir:
-            patch_rev0.write(os.path.join(temp_dir, f"{out_file_name}{patch_rev0.patch_file_ending}"))
-            patch_rev1.write(os.path.join(temp_dir, f"{out_file_name}{patch_rev1.patch_file_ending}"))
-            seed_name = self.multiworld.seed_name
-            player_name = self.multiworld.get_file_safe_player_name(self.player)
-            zip_file_name = f"AP-{seed_name}-P{self.player}-{player_name}"
-            frlg_container = FRLGContainer(temp_dir,
-                                           os.path.join(output_directory, zip_file_name + "_" + Utils.__version__),
-                                           self.player,
-                                           self.multiworld.get_file_safe_player_name(self.player))
-            frlg_container.write()
+        patch.write(os.path.join(output_directory, f"{out_file_name}{patch.patch_file_ending}"))
 
         del self.modified_species
         del self.modified_maps
