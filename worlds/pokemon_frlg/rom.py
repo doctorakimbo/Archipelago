@@ -263,11 +263,9 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     for item, quantity in start_inventory.items():
         if len(pc_slots) >= 19:
             break
+        if "Unique" in data.items[reverse_offset_item_value(world.item_name_to_id[item])].tags:
+            quantity = 1
         if quantity > 999:
-            logging.info(
-                f"{world.multiworld.get_file_safe_player_name(world.player)} cannot have more than 999 of an item"
-                f"Changing amount to 999"
-            )
             quantity = 999
         pc_slots.append([item, quantity])
 

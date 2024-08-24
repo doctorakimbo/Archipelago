@@ -716,7 +716,6 @@ def _init() -> None:
     location_data = load_json_data("locations.json")
     event_data = load_json_data("events.json")
     item_data = load_json_data("items.json")
-    warp_data = load_json_data("warps.json")
 
     # Create map data
     for map_name, map_json in extracted_data["maps"].items():
@@ -877,13 +876,10 @@ def _init() -> None:
             new_region.exits.append(region_exit)
 
         # Warps
-        for encoded_warp in region_json["warps"]:
+        for encoded_warp, name in region_json["warps"].items():
             if encoded_warp in claimed_warps:
                 raise AssertionError(f"Warp [{encoded_warp}] was claimed by multiple regions")
             new_region.warps.append(encoded_warp)
-            name: str = None
-            if encoded_warp in warp_data:
-                name = warp_data[encoded_warp]
             data.warps[encoded_warp] = Warp(encoded_warp, name, region_id)
             claimed_warps.add(encoded_warp)
 

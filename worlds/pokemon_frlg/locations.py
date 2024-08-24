@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, Callable, Dict, FrozenSet, Iterable, List, Optional, Tuple, Union
 from BaseClasses import CollectionState, Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
-from .items import get_filler_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
+from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
 from .options import FreeFlyLocation, PewterCityRoadblock, ViridianCityRoadblock
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -29,11 +29,11 @@ LOCATION_GROUPS = {
         "Viridian Gym - Leader Giovanni Reward"
     },
     "Oak's Aides": {
-        "Route 2 East Building - Professor Oak's Aide",
+        "Route 2 Gate - Professor Oak's Aide",
         "Route 10 Pokemon Center 1F - Professor Oak's Aide",
-        "Route 11 East Entrance 2F - Professor Oak's Aide",
-        "Route 16 North Entrance 2F - Professor Oak's Aide",
-        "Route 15 West Entrance 2F - Professor Oak's Aide"
+        "Route 11 Gate 2F - Professor Oak's Aide",
+        "Route 16 Gate 2F - Professor Oak's Aide",
+        "Route 15 Gate 2F - Professor Oak's Aide"
     }
 }
 
@@ -129,7 +129,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             location_id = offset_flag(location_data.flag)
 
             if location_data.default_item == data.constants["ITEM_NONE"]:
-                default_item = reverse_offset_item_value(world.item_name_to_id[get_filler_item(world)])
+                default_item = reverse_offset_item_value(world.item_name_to_id[get_random_item(world)])
             else:
                 default_item = location_data.default_item
 
@@ -170,7 +170,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
                 if scaling_data.connections is not None:
                     for connection in scaling_data.connections:
-                        name = f"{regions[connection].name} to {region.name}"
+                        name = f"{regions[connection].name} -> {region.name}"
                         regions[connection].connect(region, name)
             else:
                 region = regions[scaling_data.region]

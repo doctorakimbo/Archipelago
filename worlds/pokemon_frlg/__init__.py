@@ -15,7 +15,8 @@ from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
 from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
                    TrainerData)
-from .items import ITEM_GROUPS, create_item_name_to_id_map, get_filler_item, get_item_classification, PokemonFRLGItem
+from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, get_item_classification,
+                    reverse_offset_item_value, PokemonFRLGItem)
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
@@ -141,7 +142,7 @@ class PokemonFRLGWorld(World):
         assert validate_regions()
 
     def get_filler_item_name(self) -> str:
-        return get_filler_item(self)
+        return get_random_item(self)
 
     def generate_early(self) -> None:
         self.blacklisted_wild_pokemon = {
@@ -169,7 +170,6 @@ class PokemonFRLGWorld(World):
         self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
         create_scaling_data(self)
-
         randomize_types(self)
         randomize_abilities(self)
         randomize_moves(self)
@@ -210,6 +210,16 @@ class PokemonFRLGWorld(World):
             item_locations = [location for location in item_locations if "Badge" not in location.tags]
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
+
+        for item in self.options.start_inventory.keys():
+            if "Unique" in frlg_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
+                itempool_len = len(itempool)
+                itempool = [i for i in itempool if i.name != item]
+                removed_items_count = itempool_len - len(itempool)
+                while removed_items_count > 0:
+                    itempool.append(self.create_item(get_random_item(self)))
+                    removed_items_count -= 1
+
         self.multiworld.itempool += itempool
 
     def set_rules(self) -> None:
@@ -251,7 +261,7 @@ class PokemonFRLGWorld(World):
 
         # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
         collection_state = self.multiworld.get_all_state(False)
-        evolution_region = self.multiworld.get_region("Evolution", self.player)
+        evolution_region = self.multiworld.get_region("Evolutions", self.player)
         for location in evolution_region.locations.copy():
             if not collection_state.can_reach(location, player=self.player):
                 evolution_region.locations.remove(location)
@@ -268,9 +278,7 @@ class PokemonFRLGWorld(World):
         # Change all but one instance of a Pokémon in each sphere to useful classification
         # This cuts down on time calculating the playthrough
         found_mons = set()
-        pokemon = set()
-        for species in frlg_data.species.values():
-            pokemon.add(species.name)
+        pokemon = {species.name for species in frlg_data.species.values()}
         for sphere in multiworld.get_spheres():
             for location in sphere:
                 if (location.game == "Pokemon FireRed and LeafGreen" and

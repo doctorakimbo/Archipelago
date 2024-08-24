@@ -14,11 +14,11 @@
       "REGION_PALLET_TOWN/MAIN",
       "REGION_VIRIDIAN_CITY/SOUTH"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 - Southwest",
+    "name": "Route 2 Southwest",
     "encounter_region": "Route 2",
     "has_land": true,
     "has_water": false,
@@ -29,13 +29,13 @@
       "REGION_ROUTE2/SOUTHEAST",
       "REGION_VIRIDIAN_CITY/NORTH"
     ],
-    "warps": [
-      "MAP_ROUTE2:2,3/MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE2:2,3/MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:0": "Viridian Forest South Gate Entrance"
+    }
   },
   "REGION_ROUTE2/NORTHWEST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 - Northwest",
+    "name": "Route 2 Northwest",
     "encounter_region": "Route 2",
     "has_land": true,
     "has_water": false,
@@ -46,13 +46,13 @@
       "REGION_ROUTE2/NORTHEAST",
       "REGION_PEWTER_CITY/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE2:0,1/MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_ROUTE2:0,1/MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:1": "Viridian Forest North Gate Entrance"
+    }
   },
   "REGION_ROUTE2/NORTHEAST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 - Northeast",
+    "name": "Route 2 Northeast",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -63,14 +63,14 @@
       "REGION_ROUTE2/NORTHWEST",
       "REGION_ROUTE2/EAST"
     ],
-    "warps": [
-      "MAP_ROUTE2:4/MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1",
-      "MAP_ROUTE2:5/MAP_ROUTE2_HOUSE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE2:4/MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1": "Diglett's Cave North Entrance",
+      "MAP_ROUTE2:5/MAP_ROUTE2_HOUSE:0": "Route 2 Trade House Entrance"
+    }
   },
   "REGION_ROUTE2/EAST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 - East",
+    "name": "Route 2 East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -80,13 +80,13 @@
     "exits": [
       "REGION_ROUTE2/NORTHEAST"
     ],
-    "warps": [
-      "MAP_ROUTE2:6,7/MAP_ROUTE2_EAST_BUILDING:0"
-    ]
+    "warps": {
+      "MAP_ROUTE2:6,7/MAP_ROUTE2_EAST_BUILDING:0": "Route 2 Gate Entrance (Top)"
+    }
   },
   "REGION_ROUTE2/SOUTHEAST": {
     "parent_map": "MAP_ROUTE2",
-    "name": "Route 2 - Southeast",
+    "name": "Route 2 Southeast",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -99,13 +99,13 @@
     "exits": [
       "REGION_ROUTE2/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_ROUTE2:8,9/MAP_ROUTE2_EAST_BUILDING:1"
-    ]
+    "warps": {
+      "MAP_ROUTE2:8,9/MAP_ROUTE2_EAST_BUILDING:1": "Route 2 Gate Entrance (Bottom)"
+    }
   },
   "REGION_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE",
-    "name": "Viridian Forest South Entrance",
+    "name": "Viridian Forest South Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -113,14 +113,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:0/MAP_ROUTE2:2",
-      "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:1/MAP_VIRIDIAN_FOREST:1"
-    ]
+    "warps": {
+      "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:0/MAP_ROUTE2:2": "Viridian Forest South Gate Exit (Bottom)",
+      "MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:1/MAP_VIRIDIAN_FOREST:1": "Viridian Forest South Gate Exit (Top)"
+    }
   },
   "REGION_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE",
-    "name": "Viridian Forest North Entrance",
+    "name": "Viridian Forest North Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -128,14 +128,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:0/MAP_VIRIDIAN_FOREST:4",
-      "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:1/MAP_ROUTE2:0"
-    ]
+    "warps": {
+      "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:0/MAP_VIRIDIAN_FOREST:4": "Viridian Forest North Gate Exit (Bottom)",
+      "MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:1/MAP_ROUTE2:0": "Viridian Forest North Gate Exit (Top)"
+    }
   },
   "REGION_ROUTE2_EAST_BUILDING/MAIN": {
     "parent_map": "MAP_ROUTE2_EAST_BUILDING",
-    "name": "Route 2 East Building",
+    "name": "Route 2 Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -145,10 +145,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE2_EAST_BUILDING:0/MAP_ROUTE2:6",
-      "MAP_ROUTE2_EAST_BUILDING:1/MAP_ROUTE2:8"
-    ]
+    "warps": {
+      "MAP_ROUTE2_EAST_BUILDING:0/MAP_ROUTE2:6": "Route 2 Gate Exit (Bottom)",
+      "MAP_ROUTE2_EAST_BUILDING:1/MAP_ROUTE2:8": "Route 2 Gate Exit (Top)"
+    }
   },
   "REGION_ROUTE2_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE2_HOUSE",
@@ -162,9 +162,9 @@
       "TRADE_POKEMON_MR_MIME"
     ],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE2_HOUSE:0/MAP_ROUTE2:5"
-    ]
+    "warps": {
+      "MAP_ROUTE2_HOUSE:0/MAP_ROUTE2:5": "Route 2 Trade House Exit"
+    }
   },
   "REGION_ROUTE3/MAIN": {
     "parent_map": "MAP_ROUTE3",
@@ -189,11 +189,11 @@
       "REGION_PEWTER_CITY/MAIN",
       "REGION_ROUTE4/WEST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE4/WEST": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 - West",
+    "name": "Route 4 West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -205,14 +205,14 @@
     "exits": [
       "REGION_ROUTE3/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE4:0/MAP_MT_MOON_1F:3",
-      "MAP_ROUTE4:2/MAP_ROUTE4_POKEMON_CENTER_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE4:0/MAP_MT_MOON_1F:3": "Mt. Moon Entrance (Left)",
+      "MAP_ROUTE4:2/MAP_ROUTE4_POKEMON_CENTER_1F:0": "Route 4 Pokemon Center Entrance"
+    }
   },
   "REGION_ROUTE4/EAST": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 - East",
+    "name": "Route 4 East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -226,13 +226,13 @@
     "exits": [
       "REGION_ROUTE4/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_ROUTE4:1/MAP_MT_MOON_B1F:7"
-    ]
+    "warps": {
+      "MAP_ROUTE4:1/MAP_MT_MOON_B1F:7": "Mt. Moon Entrance (Right)"
+    }
   },
   "REGION_ROUTE4/SOUTHEAST": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 - Southeast",
+    "name": "Route 4 Southeast",
     "encounter_region": "Route 4",
     "has_land": true,
     "has_water": false,
@@ -242,11 +242,11 @@
     "exits": [
       "REGION_CERULEAN_CITY/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE4/WATER": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 - Water",
+    "name": "Route 4 Water",
     "encounter_region": "Route 4",
     "has_land": false,
     "has_water": true,
@@ -256,11 +256,11 @@
     "exits": [
       "REGION_CERULEAN_CITY/WATER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE4/LEDGE": {
     "parent_map": "MAP_ROUTE4",
-    "name": "Route 4 - Ledge",
+    "name": "Route 4 Ledge",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -272,7 +272,7 @@
     "exits": [
       "REGION_ROUTE4/EAST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE4_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
@@ -288,14 +288,14 @@
     "exits": [
       "REGION_ROUTE4_POKEMON_CENTER_1F/VISIT"
     ],
-    "warps": [
-      "MAP_ROUTE4_POKEMON_CENTER_1F:0/MAP_ROUTE4:2",
-      "MAP_ROUTE4_POKEMON_CENTER_1F:1/MAP_ROUTE4_POKEMON_CENTER_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE4_POKEMON_CENTER_1F:0/MAP_ROUTE4:2": "Route 4 Pokemon Center 1F Exit",
+      "MAP_ROUTE4_POKEMON_CENTER_1F:1/MAP_ROUTE4_POKEMON_CENTER_2F:0": "Route 4 Pokemon Center 1F Stairs"
+    }
   },
   "REGION_ROUTE4_POKEMON_CENTER_1F/VISIT": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
-    "name": "Route 4 Pokemon Center 1F - Visit",
+    "name": "Route 4 Pokemon Center 1F Visit",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -305,7 +305,7 @@
       "EVENT_FLY_ROUTE4"
     ],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE4_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_2F",
@@ -317,9 +317,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE4_POKEMON_CENTER_2F:0/MAP_ROUTE4_POKEMON_CENTER_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE4_POKEMON_CENTER_2F:0/MAP_ROUTE4_POKEMON_CENTER_1F:1": "Route 4 Pokemon Center 2F Stairs"
+    }
   },
   "REGION_ROUTE5/MAIN": {
     "parent_map": "MAP_ROUTE5",
@@ -333,11 +333,11 @@
     "exits": [
       "REGION_CERULEAN_CITY/OUTSKIRTS"
     ],
-    "warps": [
-      "MAP_ROUTE5:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0",
-      "MAP_ROUTE5:1/MAP_ROUTE5_POKEMON_DAY_CARE:0",
-      "MAP_ROUTE5:2,3/MAP_ROUTE5_SOUTH_ENTRANCE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE5:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0": "Underground Path North Entrance",
+      "MAP_ROUTE5:1/MAP_ROUTE5_POKEMON_DAY_CARE:0": "Route 5 Pokemon Day Care Entrance",
+      "MAP_ROUTE5:2,3/MAP_ROUTE5_SOUTH_ENTRANCE:0": "Route 5 Gate Entrance (Top)"
+    }
   },
   "REGION_ROUTE5_POKEMON_DAY_CARE/MAIN": {
     "parent_map": "MAP_ROUTE5_POKEMON_DAY_CARE",
@@ -349,13 +349,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE5_POKEMON_DAY_CARE:0/MAP_ROUTE5:1"
-    ]
+    "warps": {
+      "MAP_ROUTE5_POKEMON_DAY_CARE:0/MAP_ROUTE5:1": "Route 5 Pokemon Day Care Exit"
+    }
   },
   "REGION_ROUTE5_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE5_SOUTH_ENTRANCE",
-    "name": "Route 5 South Entrance",
+    "name": "Route 5 Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -363,10 +363,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE5_SOUTH_ENTRANCE:0/MAP_ROUTE5:2",
-      "MAP_ROUTE5_SOUTH_ENTRANCE:1/MAP_SAFFRON_CITY:9"
-    ]
+    "warps": {
+      "MAP_ROUTE5_SOUTH_ENTRANCE:0/MAP_ROUTE5:2": "Route 5 Gate Exit (Top)",
+      "MAP_ROUTE5_SOUTH_ENTRANCE:1/MAP_SAFFRON_CITY:9": "Route 5 Gate Exit (Bottom)"
+    }
   },
   "REGION_ROUTE6/MAIN": {
     "parent_map": "MAP_ROUTE6",
@@ -390,14 +390,14 @@
       "REGION_ROUTE6/WATER",
       "REGION_VERMILION_CITY/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE6:0/MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:0",
-      "MAP_ROUTE6:1,2/MAP_ROUTE6_NORTH_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_ROUTE6:0/MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:0": "Underground Path South Entrance",
+      "MAP_ROUTE6:1,2/MAP_ROUTE6_NORTH_ENTRANCE:1": "Route 6 Gate Entrance (Bottom)"
+    }
   },
   "REGION_ROUTE6/WATER": {
     "parent_map": "MAP_ROUTE6",
-    "name": "Route 6 - Water",
+    "name": "Route 6 Water",
     "encounter_region": "Route 6",
     "has_land": false,
     "has_water": true,
@@ -405,11 +405,11 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE6_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE6_NORTH_ENTRANCE",
-    "name": "Route 6 North Entrance",
+    "name": "Route 6 Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -417,10 +417,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE6_NORTH_ENTRANCE:0/MAP_SAFFRON_CITY:12",
-      "MAP_ROUTE6_NORTH_ENTRANCE:1/MAP_ROUTE6:1"
-    ]
+    "warps": {
+      "MAP_ROUTE6_NORTH_ENTRANCE:0/MAP_SAFFRON_CITY:12": "Route 6 Gate Exit (Top)",
+      "MAP_ROUTE6_NORTH_ENTRANCE:1/MAP_ROUTE6:1": "Route 6 Gate Exit (Bottom)"
+    }
   },
   "REGION_ROUTE7/MAIN": {
     "parent_map": "MAP_ROUTE7",
@@ -436,14 +436,14 @@
     "exits": [
       "REGION_CELADON_CITY/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE7:0/MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0",
-      "MAP_ROUTE7:1/MAP_ROUTE7_EAST_ENTRANCE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE7:0/MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0": "Underground Path West Entrance",
+      "MAP_ROUTE7:1/MAP_ROUTE7_EAST_ENTRANCE:0": "Route 7 Gate Entrance (Left)"
+    }
   },
   "REGION_ROUTE7_EAST_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE7_EAST_ENTRANCE",
-    "name": "Route 7 East Entrance",
+    "name": "Route 7 Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -451,10 +451,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE7_EAST_ENTRANCE:0/MAP_ROUTE7:1",
-      "MAP_ROUTE7_EAST_ENTRANCE:1/MAP_SAFFRON_CITY:8"
-    ]
+    "warps": {
+      "MAP_ROUTE7_EAST_ENTRANCE:0/MAP_ROUTE7:1": "Route 7 Gate Exit (Left)",
+      "MAP_ROUTE7_EAST_ENTRANCE:1/MAP_SAFFRON_CITY:8": "Route 7 Gate Exit (Right)"
+    }
   },
   "REGION_ROUTE8/MAIN": {
     "parent_map": "MAP_ROUTE8",
@@ -479,17 +479,17 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE8/TREE",
+      "REGION_ROUTE8/BEHIND_TREES",
       "REGION_LAVENDER_TOWN/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE8:0/MAP_UNDERGROUND_PATH_EAST_ENTRANCE:0",
-      "MAP_ROUTE8:1/MAP_ROUTE8_WEST_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_ROUTE8:0/MAP_UNDERGROUND_PATH_EAST_ENTRANCE:0": "Underground Path East Entrance",
+      "MAP_ROUTE8:1/MAP_ROUTE8_WEST_ENTRANCE:1": "Route 8 Gate Entrance (Right)"
+    }
   },
-  "REGION_ROUTE8/TREE": {
+  "REGION_ROUTE8/BEHIND_TREES": {
     "parent_map": "MAP_ROUTE8",
-    "name": "Route 8 - Tree",
+    "name": "Route 8 Behind Trees",
     "encounter_region": "Route 8",
     "has_land": true,
     "has_water": false,
@@ -501,11 +501,11 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE8_WEST_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE8_WEST_ENTRANCE",
-    "name": "Route 8 West Entrance",
+    "name": "Route 8 Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -513,10 +513,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE8_WEST_ENTRANCE:0/MAP_SAFFRON_CITY:11",
-      "MAP_ROUTE8_WEST_ENTRANCE:1/MAP_ROUTE8:1"
-    ]
+    "warps": {
+      "MAP_ROUTE8_WEST_ENTRANCE:0/MAP_SAFFRON_CITY:11": "Route 8 Gate Exit (Left)",
+      "MAP_ROUTE8_WEST_ENTRANCE:1/MAP_ROUTE8:1": "Route 8 Gate Exit (Right)"
+    }
   },
   "REGION_ROUTE9/MAIN": {
     "parent_map": "MAP_ROUTE9",
@@ -546,11 +546,11 @@
       "REGION_CERULEAN_CITY/OUTSKIRTS",
       "REGION_ROUTE10/NORTH"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE10/NORTH": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 - North",
+    "name": "Route 10 North",
     "encounter_region": "Route 10",
     "has_land": true,
     "has_water": false,
@@ -566,14 +566,14 @@
       "REGION_ROUTE10/WATER",
       "REGION_ROUTE9/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE10:0/MAP_ROCK_TUNNEL_1F:0",
-      "MAP_ROUTE10:3/MAP_ROUTE10_POKEMON_CENTER_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE10:0/MAP_ROCK_TUNNEL_1F:0": "Rock Tunnel Entrance (Top)",
+      "MAP_ROUTE10:3/MAP_ROUTE10_POKEMON_CENTER_1F:0": "Route 10 Pokemon Center Entrance"
+    }
   },
   "REGION_ROUTE10/SOUTH": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 - South",
+    "name": "Route 10 South",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -589,13 +589,13 @@
     "exits": [
       "REGION_LAVENDER_TOWN/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE10:1/MAP_ROCK_TUNNEL_1F:5"
-    ]
+    "warps": {
+      "MAP_ROUTE10:1/MAP_ROCK_TUNNEL_1F:5": "Rock Tunnel Entrance (Bottom)"
+    }
   },
   "REGION_ROUTE10/WATER": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 - Water",
+    "name": "Route 10 Water",
     "encounter_region": "Route 10",
     "has_land": false,
     "has_water": true,
@@ -604,13 +604,13 @@
     "events": [],
     "exits": [
       "REGION_ROUTE10/NORTH",
-      "REGION_ROUTE10/POWER_PLANT"
+      "REGION_ROUTE10/NEAR_POWER_PLANT"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE10/POWER_PLANT": {
+  "REGION_ROUTE10/NEAR_POWER_PLANT": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 - Power Plant",
+    "name": "Route 10 Near Power Plant",
     "encounter_region": "Route 10",
     "has_land": false,
     "has_water": false,
@@ -623,13 +623,13 @@
     "exits": [
       "REGION_ROUTE10/WATER"
     ],
-    "warps": [
-      "MAP_ROUTE10:2/MAP_POWER_PLANT:0"
-    ]
+    "warps": {
+      "MAP_ROUTE10:2/MAP_POWER_PLANT:0": "Power Plant Entrance (Front)"
+    }
   },
   "REGION_ROUTE10/POWER_PLANT_LEDGE": {
     "parent_map": "MAP_ROUTE10",
-    "name": "Route 10 - Power Plant Ledge",
+    "name": "Route 10 Power Plant Ledge",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -637,11 +637,11 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE10/POWER_PLANT"
+      "REGION_ROUTE10/NEAR_POWER_PLANT"
     ],
-    "warps": [
-      "MAP_ROUTE10:4/MAP_POWER_PLANT:1"
-    ]
+    "warps": {
+      "MAP_ROUTE10:4/MAP_POWER_PLANT:1": "Power Plant Entrance (Back)"
+    }
   },
   "REGION_ROUTE10_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
@@ -657,14 +657,14 @@
     "exits": [
       "REGION_ROUTE10_POKEMON_CENTER_1F/VISIT"
     ],
-    "warps": [
-      "MAP_ROUTE10_POKEMON_CENTER_1F:0/MAP_ROUTE10:3",
-      "MAP_ROUTE10_POKEMON_CENTER_1F:1/MAP_ROUTE10_POKEMON_CENTER_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE10_POKEMON_CENTER_1F:0/MAP_ROUTE10:3": "Route 10 Pokemon Center 1F Exit",
+      "MAP_ROUTE10_POKEMON_CENTER_1F:1/MAP_ROUTE10_POKEMON_CENTER_2F:0": "Route 10 Pokemon Center 1F Stairs"
+    }
   },
   "REGION_ROUTE10_POKEMON_CENTER_1F/VISIT": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
-    "name": "Route 10 Pokemon Center 1F - Visit",
+    "name": "Route 10 Pokemon Center 1F Visit",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -674,7 +674,7 @@
       "EVENT_FLY_ROUTE10"
     ],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE10_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_2F",
@@ -686,13 +686,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE10_POKEMON_CENTER_2F:0/MAP_ROUTE10_POKEMON_CENTER_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE10_POKEMON_CENTER_2F:0/MAP_ROUTE10_POKEMON_CENTER_1F:1": "Route 10 Pokemon Center 2F Stairs"
+    }
   },
   "REGION_ROUTE11/WEST": {
     "parent_map": "MAP_ROUTE11",
-    "name": "Route 11 - West",
+    "name": "Route 11 West",
     "encounter_region": "Route 11",
     "has_land": true,
     "has_water": false,
@@ -718,14 +718,14 @@
       "REGION_ROUTE11/WATER",
       "REGION_VERMILION_CITY/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE11:0/MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:0",
-      "MAP_ROUTE11:1/MAP_ROUTE11_EAST_ENTRANCE_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE11:0/MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:0": "Diglett's Cave South Entrance",
+      "MAP_ROUTE11:1/MAP_ROUTE11_EAST_ENTRANCE_1F:0": "Route 11 Gate Entrance (Left)"
+    }
   },
   "REGION_ROUTE11/EAST": {
     "parent_map": "MAP_ROUTE11",
-    "name": "Route 11 - East",
+    "name": "Route 11 East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -735,13 +735,13 @@
     "exits": [
       "REGION_ROUTE12/WEST"
     ],
-    "warps": [
-      "MAP_ROUTE11:2/MAP_ROUTE11_EAST_ENTRANCE_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE11:2/MAP_ROUTE11_EAST_ENTRANCE_1F:1": "Route 11 Gate Entrance (Right)"
+    }
   },
   "REGION_ROUTE11/WATER": {
     "parent_map": "MAP_ROUTE11",
-    "name": "Route 11 - Water",
+    "name": "Route 11 Water",
     "encounter_region": "Route 11",
     "has_land": false,
     "has_water": true,
@@ -749,11 +749,11 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE11_EAST_ENTRANCE_1F/MAIN": {
     "parent_map": "MAP_ROUTE11_EAST_ENTRANCE_1F",
-    "name": "Route 11 East Entrance 1F",
+    "name": "Route 11 Gate 1F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -761,15 +761,15 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE11_EAST_ENTRANCE_1F:0/MAP_ROUTE11:1",
-      "MAP_ROUTE11_EAST_ENTRANCE_1F:1/MAP_ROUTE11:2",
-      "MAP_ROUTE11_EAST_ENTRANCE_1F:2/MAP_ROUTE11_EAST_ENTRANCE_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE11_EAST_ENTRANCE_1F:0/MAP_ROUTE11:1": "Route 11 Gate 1F Exit (Left)",
+      "MAP_ROUTE11_EAST_ENTRANCE_1F:1/MAP_ROUTE11:2": "Route 11 Gate 1F Exit (Right)",
+      "MAP_ROUTE11_EAST_ENTRANCE_1F:2/MAP_ROUTE11_EAST_ENTRANCE_2F:0": "Route 11 Gate 1F Stairs"
+    }
   },
   "REGION_ROUTE11_EAST_ENTRANCE_2F": {
     "parent_map": "MAP_ROUTE11_EAST_ENTRANCE_2F",
-    "name": "Route 11 East Entrance 2F",
+    "name": "Route 11 Gate 2F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -781,13 +781,13 @@
       "TRADE_POKEMON_NIDORINOA"
     ],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE11_EAST_ENTRANCE_2F:0/MAP_ROUTE11_EAST_ENTRANCE_1F:2"
-    ]
+    "warps": {
+      "MAP_ROUTE11_EAST_ENTRANCE_2F:0/MAP_ROUTE11_EAST_ENTRANCE_1F:2": "Route 11 Gate 2F Stairs"
+    }
   },
   "REGION_ROUTE12/WEST": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - West",
+    "name": "Route 12 West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -795,14 +795,14 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE12/SNORLAX",
+      "REGION_ROUTE12/UNDER_SNORLAX",
       "REGION_ROUTE11/EAST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE12/NORTH": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - North",
+    "name": "Route 12 North",
     "encounter_region": "Route 12",
     "has_land": false,
     "has_water": false,
@@ -813,13 +813,13 @@
       "REGION_ROUTE12/NORTH_WATER",
       "REGION_LAVENDER_TOWN/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE12:1/MAP_ROUTE12_NORTH_ENTRANCE_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE12:1/MAP_ROUTE12_NORTH_ENTRANCE_1F:0": "Route 12 Gate Entrance (Top)"
+    }
   },
   "REGION_ROUTE12/NORTH_WATER": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - Water N",
+    "name": "Route 12 North Water",
     "encounter_region": "Route 12",
     "has_land": false,
     "has_water": true,
@@ -827,11 +827,11 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE12/CENTER": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - Center",
+    "name": "Route 12 Center",
     "encounter_region": "Route 12",
     "has_land": false,
     "has_water": false,
@@ -847,15 +847,15 @@
     "events": [],
     "exits": [
       "REGION_ROUTE12/SOUTH_WATER",
-      "REGION_ROUTE12/SNORLAX"
+      "REGION_ROUTE12/UNDER_SNORLAX"
     ],
-    "warps": [
-      "MAP_ROUTE12:2/MAP_ROUTE12_NORTH_ENTRANCE_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE12:2/MAP_ROUTE12_NORTH_ENTRANCE_1F:1": "Route 12 Gate Entrance (Bottom)"
+    }
   },
   "REGION_ROUTE12/SOUTH": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - South",
+    "name": "Route 12 South",
     "encounter_region": "Route 12",
     "has_land": false,
     "has_water": false,
@@ -867,18 +867,18 @@
     "events": [],
     "exits": [
       "REGION_ROUTE12/SOUTH_WATER",
-      "REGION_ROUTE12/NORTH_TREE",
-      "REGION_ROUTE12/SOUTH_TREE",
-      "REGION_ROUTE12/SNORLAX",
+      "REGION_ROUTE12/BEHIND_NORTH_TREE",
+      "REGION_ROUTE12/BEHIND_SOUTH_TREE",
+      "REGION_ROUTE12/UNDER_SNORLAX",
       "REGION_ROUTE13/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE12:0/MAP_ROUTE12_FISHING_HOUSE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE12:0/MAP_ROUTE12_FISHING_HOUSE:0": "Route 12 Fishing House Entrance"
+    }
   },
   "REGION_ROUTE12/SOUTH_WATER": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - Water S",
+    "name": "Route 12 South Water",
     "encounter_region": "Route 12",
     "has_land": false,
     "has_water": true,
@@ -892,11 +892,11 @@
       "REGION_ROUTE12/SOUTH",
       "REGION_ROUTE13/WATER"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE12/SNORLAX": {
+  "REGION_ROUTE12/UNDER_SNORLAX": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - Snorlax",
+    "name": "Route 12 Under Snorlax",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -912,11 +912,11 @@
       "REGION_ROUTE12/CENTER",
       "REGION_ROUTE12/SOUTH"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE12/NORTH_TREE": {
+  "REGION_ROUTE12/BEHIND_NORTH_TREE": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - Tree N",
+    "name": "Route 12 Behind North Tree",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -927,11 +927,11 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE12/SOUTH_TREE": {
+  "REGION_ROUTE12/BEHIND_SOUTH_TREE": {
     "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 - Tree S",
+    "name": "Route 12 Behind South Tree",
     "encounter_region": "Route 12",
     "has_land": true,
     "has_water": false,
@@ -941,7 +941,7 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE12_FISHING_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE12_FISHING_HOUSE",
@@ -955,13 +955,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE12_FISHING_HOUSE:0/MAP_ROUTE12:0"
-    ]
+    "warps": {
+      "MAP_ROUTE12_FISHING_HOUSE:0/MAP_ROUTE12:0": "Route 12 Fishing House Exit"
+    }
   },
   "REGION_ROUTE12_NORTH_ENTRANCE_1F/MAIN": {
     "parent_map": "MAP_ROUTE12_NORTH_ENTRANCE_1F",
-    "name": "Route 12 North Entrance 1F",
+    "name": "Route 12 Gate 1F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -969,15 +969,15 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE12_NORTH_ENTRANCE_1F:0/MAP_ROUTE12:1",
-      "MAP_ROUTE12_NORTH_ENTRANCE_1F:1/MAP_ROUTE12:2",
-      "MAP_ROUTE12_NORTH_ENTRANCE_1F:2/MAP_ROUTE12_NORTH_ENTRANCE_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE12_NORTH_ENTRANCE_1F:0/MAP_ROUTE12:1": "Route 12 Gate 1F Exit (Top)",
+      "MAP_ROUTE12_NORTH_ENTRANCE_1F:1/MAP_ROUTE12:2": "Route 12 Gate 1F Exit (Bottom)",
+      "MAP_ROUTE12_NORTH_ENTRANCE_1F:2/MAP_ROUTE12_NORTH_ENTRANCE_2F:0": "Route 12 Gate 1F Stairs"
+    }
   },
   "REGION_ROUTE12_NORTH_ENTRANCE_2F/MAIN": {
     "parent_map": "MAP_ROUTE12_NORTH_ENTRANCE_2F",
-    "name": "Route 12 North Entrance 2F",
+    "name": "Route 12 Gate 2F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -987,9 +987,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE12_NORTH_ENTRANCE_2F:0/MAP_ROUTE12_NORTH_ENTRANCE_1F:2"
-    ]
+    "warps": {
+      "MAP_ROUTE12_NORTH_ENTRANCE_2F:0/MAP_ROUTE12_NORTH_ENTRANCE_1F:2": "Route 12 Gate 2F Stairs"
+    }
   },
   "REGION_ROUTE13/MAIN": {
     "parent_map": "MAP_ROUTE13",
@@ -1014,15 +1014,15 @@
     "events": [],
     "exits": [
       "REGION_ROUTE13/WATER",
-      "REGION_ROUTE13/TREE",
+      "REGION_ROUTE13/BEHIND_TREE",
       "REGION_ROUTE12/SOUTH",
       "REGION_ROUTE14/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE13/TREE": {
+  "REGION_ROUTE13/BEHIND_TREE": {
     "parent_map": "MAP_ROUTE13",
-    "name": "Route 13 - Tree",
+    "name": "Route 13 Behind Tree",
     "encounter_region": "Route 13",
     "has_land": true,
     "has_water": false,
@@ -1030,11 +1030,11 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE13/WATER": {
     "parent_map": "MAP_ROUTE13",
-    "name": "Route 13 - Water",
+    "name": "Route 13 Water",
     "encounter_region": "Route 13",
     "has_land": false,
     "has_water": true,
@@ -1045,7 +1045,7 @@
       "REGION_ROUTE13/MAIN",
       "REGION_ROUTE12/SOUTH_WATER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE14/MAIN": {
     "parent_map": "MAP_ROUTE14",
@@ -1070,16 +1070,16 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE14/TREE",
-      "REGION_ROUTE14/LEDGE",
+      "REGION_ROUTE14/BEHIND_TREE",
       "REGION_ROUTE13/MAIN",
+      "REGION_ROUTE15/NORTH",
       "REGION_ROUTE15/SOUTH"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE14/TREE": {
+  "REGION_ROUTE14/BEHIND_TREE": {
     "parent_map": "MAP_ROUTE14",
-    "name": "Route 14 - Tree",
+    "name": "Route 14 Behind Tree",
     "encounter_region": "Route 14",
     "has_land": true,
     "has_water": false,
@@ -1089,26 +1089,11 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
-  },
-  "REGION_ROUTE14/LEDGE": {
-    "parent_map": "MAP_ROUTE14",
-    "name": "Route 14 - Ledge",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE14/MAIN",
-      "REGION_ROUTE15/NORTH"
-    ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE15/SOUTH": {
     "parent_map": "MAP_ROUTE15",
-    "name": "Route 15 - South",
+    "name": "Route 15 South",
     "encounter_region": "Route 15",
     "has_land": true,
     "has_water": false,
@@ -1127,13 +1112,13 @@
     "exits": [
       "REGION_ROUTE14/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE15:1/MAP_ROUTE15_WEST_ENTRANCE_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE15:1/MAP_ROUTE15_WEST_ENTRANCE_1F:1": "Route 15 Gate Entrance (Right)"
+    }
   },
   "REGION_ROUTE15/NORTH": {
     "parent_map": "MAP_ROUTE15",
-    "name": "Route 15 - North",
+    "name": "Route 15 North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1145,15 +1130,12 @@
       "TRAINER_PICNICKER_CELIA_REWARD"
     ],
     "events": [],
-    "exits": [
-      "REGION_ROUTE15/SOUTH",
-      "REGION_ROUTE14/LEDGE"
-    ],
-    "warps": []
+    "exits": [],
+    "warps": {}
   },
   "REGION_ROUTE15/SOUTHWEST": {
     "parent_map": "MAP_ROUTE15",
-    "name": "Route 15 - Southwest",
+    "name": "Route 15 Southwest",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1163,13 +1145,13 @@
     "exits": [
       "REGION_FUCHSIA_CITY/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE15:0/MAP_ROUTE15_WEST_ENTRANCE_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE15:0/MAP_ROUTE15_WEST_ENTRANCE_1F:0": "Route 15 Gate Entrance (Left)"
+    }
   },
   "REGION_ROUTE15_WEST_ENTRANCE_1F/MAIN": {
     "parent_map": "MAP_ROUTE15_WEST_ENTRANCE_1F",
-    "name": "Route 15 West Entrance 1F",
+    "name": "Route 15 Gate 1F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1177,15 +1159,15 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE15_WEST_ENTRANCE_1F:0/MAP_ROUTE15:0",
-      "MAP_ROUTE15_WEST_ENTRANCE_1F:1/MAP_ROUTE15:1",
-      "MAP_ROUTE15_WEST_ENTRANCE_1F:2/MAP_ROUTE15_WEST_ENTRANCE_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE15_WEST_ENTRANCE_1F:0/MAP_ROUTE15:0": "Route 15 Gate 1F Exit (Left)",
+      "MAP_ROUTE15_WEST_ENTRANCE_1F:1/MAP_ROUTE15:1": "Route 15 Gate 1F Exit (Right)",
+      "MAP_ROUTE15_WEST_ENTRANCE_1F:2/MAP_ROUTE15_WEST_ENTRANCE_2F:0": "Route 15 Gate 1F Stairs"
+    }
   },
   "REGION_ROUTE15_WEST_ENTRANCE_2F/MAIN": {
     "parent_map": "MAP_ROUTE15_WEST_ENTRANCE_2F",
-    "name": "Route 15 West Entrance 2F",
+    "name": "Route 15 Gate 2F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1195,13 +1177,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE15_WEST_ENTRANCE_2F:0/MAP_ROUTE15_WEST_ENTRANCE_1F:2"
-    ]
+    "warps": {
+      "MAP_ROUTE15_WEST_ENTRANCE_2F:0/MAP_ROUTE15_WEST_ENTRANCE_1F:2": "Route 15 Gate 2F Stairs"
+    }
   },
   "REGION_ROUTE16/SOUTHEAST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 - Southeast",
+    "name": "Route 16 Southeast",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1210,14 +1192,14 @@
     "events": [],
     "exits": [
       "REGION_ROUTE16/NORTHEAST",
-      "REGION_ROUTE16/SNORLAX",
+      "REGION_ROUTE16/UNDER_SNORLAX",
       "REGION_CELADON_CITY/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE16/NORTHEAST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 - Northeast",
+    "name": "Route 16 Northeast",
     "encounter_region": "Route 16",
     "has_land": true,
     "has_water": false,
@@ -1229,13 +1211,13 @@
     "exits": [
       "REGION_ROUTE16/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_ROUTE16:2/MAP_ROUTE16_NORTH_ENTRANCE_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE16:2/MAP_ROUTE16_NORTH_ENTRANCE_1F:1": "Route 16 Gate North Entrance (Right)"
+    }
   },
   "REGION_ROUTE16/NORTHWEST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 - Northwest",
+    "name": "Route 16 Northwest",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1243,14 +1225,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE16:0/MAP_ROUTE16_HOUSE:0",
-      "MAP_ROUTE16:1/MAP_ROUTE16_NORTH_ENTRANCE_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE16:0/MAP_ROUTE16_HOUSE:0": "Route 16 Fly House Entrance",
+      "MAP_ROUTE16:1/MAP_ROUTE16_NORTH_ENTRANCE_1F:0": "Route 16 Gate North Entrance (Left)"
+    }
   },
-  "REGION_ROUTE16/SNORLAX": {
+  "REGION_ROUTE16/UNDER_SNORLAX": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 - Snorlax",
+    "name": "Route 16 Under Snorlax",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1265,11 +1247,11 @@
       "REGION_ROUTE16/SOUTHEAST",
       "REGION_ROUTE16/CENTER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE16/CENTER": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 - Center",
+    "name": "Route 16 Center",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1277,15 +1259,15 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_ROUTE16/SNORLAX"
+      "REGION_ROUTE16/UNDER_SNORLAX"
     ],
-    "warps": [
-      "MAP_ROUTE16:4/MAP_ROUTE16_NORTH_ENTRANCE_1F:3"
-    ]
+    "warps": {
+      "MAP_ROUTE16:4/MAP_ROUTE16_NORTH_ENTRANCE_1F:3": "Route 16 Gate South Entrance (Right)"
+    }
   },
   "REGION_ROUTE16/SOUTHWEST": {
     "parent_map": "MAP_ROUTE16",
-    "name": "Route 16 - Southwest",
+    "name": "Route 16 Southwest",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1302,9 +1284,9 @@
     "exits": [
       "REGION_ROUTE17/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE16:3/MAP_ROUTE16_NORTH_ENTRANCE_1F:2"
-    ]
+    "warps": {
+      "MAP_ROUTE16:3/MAP_ROUTE16_NORTH_ENTRANCE_1F:2": "Route 16 Gate South Entrance (Left)"
+    }
   },
   "REGION_ROUTE16_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE16_HOUSE",
@@ -1318,13 +1300,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE16_HOUSE:0/MAP_ROUTE16:0"
-    ]
+    "warps": {
+      "MAP_ROUTE16_HOUSE:0/MAP_ROUTE16:0": "Route 16 Fly House Exit"
+    }
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_1F/NORTH": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
-    "name": "Route 16 North Entrance 1F - North",
+    "name": "Route 16 Gate 1F North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1332,14 +1314,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE16_NORTH_ENTRANCE_1F:0/MAP_ROUTE16:1",
-      "MAP_ROUTE16_NORTH_ENTRANCE_1F:1/MAP_ROUTE16:2"
-    ]
+    "warps": {
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:0/MAP_ROUTE16:1": "Route 16 Gate 1F North Exit (Left)",
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:1/MAP_ROUTE16:2": "Route 16 Gate 1F North Exit (Right)"
+    }
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHEAST": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
-    "name": "Route 16 North Entrance 1F - Southeast",
+    "name": "Route 16 Gate 1F Southeast",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1349,14 +1331,14 @@
     "exits": [
       "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_ROUTE16_NORTH_ENTRANCE_1F:3/MAP_ROUTE16:4",
-      "MAP_ROUTE16_NORTH_ENTRANCE_1F:4/MAP_ROUTE16_NORTH_ENTRANCE_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:3/MAP_ROUTE16:4": "Route 16 Gate 1F South Exit (Right)",
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:4/MAP_ROUTE16_NORTH_ENTRANCE_2F:0": "Route 16 Gate 1F South Stairs"
+    }
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHWEST": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_1F",
-    "name": "Route 16 North Entrance 1F - Southwest",
+    "name": "Route 16 Gate 1F Southwest",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1366,13 +1348,13 @@
     "exits": [
       "REGION_ROUTE16_NORTH_ENTRANCE_1F/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_ROUTE16_NORTH_ENTRANCE_1F:2/MAP_ROUTE16:3"
-    ]
+    "warps": {
+      "MAP_ROUTE16_NORTH_ENTRANCE_1F:2/MAP_ROUTE16:3": "Route 16 Gate 1F South Exit (Left)"
+    }
   },
   "REGION_ROUTE16_NORTH_ENTRANCE_2F": {
     "parent_map": "MAP_ROUTE16_NORTH_ENTRANCE_2F",
-    "name": "Route 16 North Entrance 2F",
+    "name": "Route 16 Gate 2F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1382,9 +1364,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE16_NORTH_ENTRANCE_2F:0/MAP_ROUTE16_NORTH_ENTRANCE_1F:4"
-    ]
+    "warps": {
+      "MAP_ROUTE16_NORTH_ENTRANCE_2F:0/MAP_ROUTE16_NORTH_ENTRANCE_1F:4": "Route 16 Gate 2F Stairs"
+    }
   },
   "REGION_ROUTE17/MAIN": {
     "parent_map": "MAP_ROUTE17",
@@ -1415,11 +1397,11 @@
       "REGION_ROUTE16/SOUTHWEST",
       "REGION_ROUTE18/WEST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE18/WEST": {
     "parent_map": "MAP_ROUTE18",
-    "name": "Route 18 - West",
+    "name": "Route 18 West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1429,13 +1411,13 @@
     "exits": [
       "REGION_ROUTE17/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE18:0/MAP_ROUTE18_EAST_ENTRANCE_1F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE18:0/MAP_ROUTE18_EAST_ENTRANCE_1F:0": "Route 18 Gate Entrance (Left)"
+    }
   },
   "REGION_ROUTE18/EAST": {
     "parent_map": "MAP_ROUTE18",
-    "name": "Route 18 - East",
+    "name": "Route 18 East",
     "encounter_region": "Route 18",
     "has_land": true,
     "has_water": false,
@@ -1449,13 +1431,13 @@
     "exits": [
       "REGION_FUCHSIA_CITY/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE18:1/MAP_ROUTE18_EAST_ENTRANCE_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE18:1/MAP_ROUTE18_EAST_ENTRANCE_1F:1": "Route 18 Gate Entrance (Right)"
+    }
   },
   "REGION_ROUTE18_EAST_ENTRANCE_1F/WEST": {
     "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_1F",
-    "name": "Route 18 East Entrance 1F - West",
+    "name": "Route 18 Gate 1F West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1465,13 +1447,13 @@
     "exits": [
       "REGION_ROUTE18_EAST_ENTRANCE_1F/EAST"
     ],
-    "warps": [
-      "MAP_ROUTE18_EAST_ENTRANCE_1F:0/MAP_ROUTE18:0"
-    ]
+    "warps": {
+      "MAP_ROUTE18_EAST_ENTRANCE_1F:0/MAP_ROUTE18:0": "Route 18 Gate 1F Exit (Left)"
+    }
   },
   "REGION_ROUTE18_EAST_ENTRANCE_1F/EAST": {
     "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_1F",
-    "name": "Route 18 East Entrance 1F - East",
+    "name": "Route 18 Gate 1F East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1481,14 +1463,14 @@
     "exits": [
       "REGION_ROUTE18_EAST_ENTRANCE_1F/WEST"
     ],
-    "warps": [
-      "MAP_ROUTE18_EAST_ENTRANCE_1F:1/MAP_ROUTE18:1",
-      "MAP_ROUTE18_EAST_ENTRANCE_1F:2/MAP_ROUTE18_EAST_ENTRANCE_2F:0"
-    ]
+    "warps": {
+      "MAP_ROUTE18_EAST_ENTRANCE_1F:1/MAP_ROUTE18:1": "Route 18 Gate 1F Exit (Right)",
+      "MAP_ROUTE18_EAST_ENTRANCE_1F:2/MAP_ROUTE18_EAST_ENTRANCE_2F:0": "Route 18 Gate 1F Stairs"
+    }
   },
   "REGION_ROUTE18_EAST_ENTRANCE_2F/MAIN": {
     "parent_map": "MAP_ROUTE18_EAST_ENTRANCE_2F",
-    "name": "Route 18 East Entrance 2F",
+    "name": "Route 18 Gate 2F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1498,9 +1480,9 @@
       "TRADE_POKEMON_LICKITUNG"
     ],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE18_EAST_ENTRANCE_2F:0/MAP_ROUTE18_EAST_ENTRANCE_1F:2"
-    ]
+    "warps": {
+      "MAP_ROUTE18_EAST_ENTRANCE_2F:0/MAP_ROUTE18_EAST_ENTRANCE_1F:2": "Route 18 Gate 2F Stairs"
+    }
   },
   "REGION_ROUTE19/MAIN": {
     "parent_map": "MAP_ROUTE19",
@@ -1518,11 +1500,11 @@
       "REGION_ROUTE19/WATER",
       "REGION_FUCHSIA_CITY/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE19/WATER": {
     "parent_map": "MAP_ROUTE19",
-    "name": "Route 19 - Water",
+    "name": "Route 19 Water",
     "encounter_region": "Route 19",
     "has_land": false,
     "has_water": true,
@@ -1543,11 +1525,11 @@
       "REGION_ROUTE19/MAIN",
       "REGION_ROUTE20/EAST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE20/EAST": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 - East",
+    "name": "Route 20 East",
     "encounter_region": "Route 20",
     "has_land": false,
     "has_water": true,
@@ -1560,14 +1542,14 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE20/NORTH_CAVE",
+      "REGION_ROUTE20/NEAR_NORTH_CAVE",
       "REGION_ROUTE19/WATER"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE20/NORTH_CAVE": {
+  "REGION_ROUTE20/NEAR_NORTH_CAVE": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 - Cave N",
+    "name": "Route 20 Near North Cave",
     "encounter_region": "Route 20",
     "has_land": false,
     "has_water": false,
@@ -1577,13 +1559,13 @@
     "exits": [
       "REGION_ROUTE20/EAST"
     ],
-    "warps": [
-      "MAP_ROUTE20:0/MAP_SEAFOAM_ISLANDS_1F:4"
-    ]
+    "warps": {
+      "MAP_ROUTE20:0/MAP_SEAFOAM_ISLANDS_1F:4": "Seafoam Islands Entrance (Top Left)"
+    }
   },
-  "REGION_ROUTE20/SOUTH_CAVE": {
+  "REGION_ROUTE20/NEAR_SOUTH_CAVE": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 - Cave S",
+    "name": "Route 20 Near South Cave",
     "encounter_region": "Route 20",
     "has_land": false,
     "has_water": false,
@@ -1595,13 +1577,13 @@
     "exits": [
       "REGION_ROUTE20/WEST"
     ],
-    "warps": [
-      "MAP_ROUTE20:1/MAP_SEAFOAM_ISLANDS_1F:3"
-    ]
+    "warps": {
+      "MAP_ROUTE20:1/MAP_SEAFOAM_ISLANDS_1F:3": "Seafoam Islands Entrance (Bottom Right)"
+    }
   },
   "REGION_ROUTE20/WEST": {
     "parent_map": "MAP_ROUTE20",
-    "name": "Route 20 - West",
+    "name": "Route 20 West",
     "encounter_region": "Route 20",
     "has_land": false,
     "has_water": true,
@@ -1616,10 +1598,10 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROUTE20/SOUTH_CAVE",
+      "REGION_ROUTE20/NEAR_SOUTH_CAVE",
       "REGION_CINNABAR_ISLAND/WATER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE21/MAIN": {
     "parent_map": "MAP_ROUTE21_NORTH",
@@ -1645,7 +1627,7 @@
       "REGION_PALLET_TOWN/WATER",
       "REGION_CINNABAR_ISLAND/WATER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE22/MAIN": {
     "parent_map": "MAP_ROUTE22",
@@ -1665,13 +1647,13 @@
       "REGION_ROUTE22/WATER",
       "REGION_VIRIDIAN_CITY/SOUTH"
     ],
-    "warps": [
-      "MAP_ROUTE22:0/MAP_ROUTE22_NORTH_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_ROUTE22:0/MAP_ROUTE22_NORTH_ENTRANCE:1": "Route 22 Gate Entrance (Bottom)"
+    }
   },
   "REGION_ROUTE22/WATER": {
     "parent_map": "MAP_ROUTE22",
-    "name": "Route 22 - Water",
+    "name": "Route 22 Water",
     "encounter_region": "Route 22",
     "has_land": false,
     "has_water": true,
@@ -1679,11 +1661,11 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE22_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_ROUTE22_NORTH_ENTRANCE",
-    "name": "Route 22 North Entrance",
+    "name": "Route 22 Gate",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1691,14 +1673,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE22_NORTH_ENTRANCE:0/MAP_ROUTE23:2",
-      "MAP_ROUTE22_NORTH_ENTRANCE:1/MAP_ROUTE22:0"
-    ]
+    "warps": {
+      "MAP_ROUTE22_NORTH_ENTRANCE:0/MAP_ROUTE23:2": "Route 22 Gate Exit (Top)",
+      "MAP_ROUTE22_NORTH_ENTRANCE:1/MAP_ROUTE22:0": "Route 22 Gate Exit (Bottom)"
+    }
   },
   "REGION_ROUTE23/SOUTH": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 - South",
+    "name": "Route 23 South",
     "encounter_region": "Route 23",
     "has_land": false,
     "has_water": false,
@@ -1710,13 +1692,13 @@
     "exits": [
       "REGION_ROUTE23/WATER"
     ],
-    "warps": [
-      "MAP_ROUTE23:2/MAP_ROUTE22_NORTH_ENTRANCE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE23:2/MAP_ROUTE22_NORTH_ENTRANCE:0": "Route 22 Gate Entrance (Top)"
+    }
   },
   "REGION_ROUTE23/WATER": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 - Water",
+    "name": "Route 23 Water",
     "encounter_region": "Route 23",
     "has_land": false,
     "has_water": true,
@@ -1729,11 +1711,11 @@
       "REGION_ROUTE23/SOUTH",
       "REGION_ROUTE23/CENTER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE23/CENTER": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 - Center",
+    "name": "Route 23 Center",
     "encounter_region": "Route 23",
     "has_land": true,
     "has_water": false,
@@ -1746,13 +1728,13 @@
     "events": [],
     "exits": [
       "REGION_ROUTE23/WATER",
-      "REGION_ROUTE23/CAVE"
+      "REGION_ROUTE23/NEAR_CAVE"
     ],
-    "warps": []
+    "warps": {}
   },
-  "REGION_ROUTE23/CAVE": {
+  "REGION_ROUTE23/NEAR_CAVE": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 - Cave",
+    "name": "Route 23 Near Cave",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1764,13 +1746,13 @@
     "exits": [
       "REGION_ROUTE23/CENTER"
     ],
-    "warps": [
-      "MAP_ROUTE23:0/MAP_VICTORY_ROAD_1F:1"
-    ]
+    "warps": {
+      "MAP_ROUTE23:0/MAP_VICTORY_ROAD_1F:1": "Victory Road Entrance (Left)"
+    }
   },
   "REGION_ROUTE23/NORTH": {
     "parent_map": "MAP_ROUTE23",
-    "name": "Route 23 - North",
+    "name": "Route 23 North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1783,9 +1765,9 @@
     "exits": [
       "REGION_INDIGO_PLATEAU_EXTERIOR/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE23:1/MAP_VICTORY_ROAD_2F:5"
-    ]
+    "warps": {
+      "MAP_ROUTE23:1/MAP_VICTORY_ROAD_2F:5": "Victory Road Entrance (Right)"
+    }
   },
   "REGION_ROUTE24/MAIN": {
     "parent_map": "MAP_ROUTE24",
@@ -1796,6 +1778,7 @@
     "has_fishing": true,
     "locations": [
       "ITEM_ROUTE24_TM45",
+      "HIDDEN_ITEM_ROUTE24_PECHA_BERRY",
       "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT",
       "TRAINER_BUG_CATCHER_CALE_REWARD",
       "TRAINER_CAMPER_ETHAN_REWARD",
@@ -1811,11 +1794,11 @@
       "REGION_CERULEAN_CITY/MAIN",
       "REGION_ROUTE25/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE24/WATER": {
     "parent_map": "MAP_ROUTE24",
-    "name": "Route 24 - Water",
+    "name": "Route 24 Water",
     "encounter_region": "Route 24",
     "has_land": false,
     "has_water": true,
@@ -1826,24 +1809,7 @@
       "REGION_ROUTE24/MAIN",
       "REGION_CERULEAN_CITY/WATER"
     ],
-    "warps": []
-  },
-  "REGION_ROUTE24/LEDGE": {
-    "parent_map": "MAP_ROUTE24",
-    "name": "Route 24 - Ledge",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [
-      "HIDDEN_ITEM_ROUTE24_PECHA_BERRY"
-    ],
-    "events": [],
-    "exits": [
-      "REGION_ROUTE24/MAIN",
-      "REGION_ROUTE25/MAIN"
-    ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROUTE25/MAIN": {
     "parent_map": "MAP_ROUTE25",
@@ -1871,28 +1837,27 @@
     "events": [],
     "exits": [
       "REGION_ROUTE25/WATER",
-      "REGION_ROUTE24/MAIN",
-      "REGION_ROUTE24/LEDGE"
+      "REGION_ROUTE24/MAIN"
     ],
-    "warps": [
-      "MAP_ROUTE25:0/MAP_ROUTE25_SEA_COTTAGE:0"
-    ]
+    "warps": {
+      "MAP_ROUTE25:0/MAP_ROUTE25_SEA_COTTAGE:0": "Sea Cottage Entrance"
+    }
   },
   "REGION_ROUTE25/WATER": {
     "parent_map": "MAP_ROUTE25",
-    "name": "Route 25 - Water",
+    "name": "Route 25 Water",
     "encounter_region": "Route 25",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
-    "exits": [ ],
-    "warps": []
+    "exits": [],
+    "warps": {}
   },
   "REGION_ROUTE25_SEA_COTTAGE/MAIN": {
     "parent_map": "MAP_ROUTE25_SEA_COTTAGE",
-    "name": "Route 25 Sea Cottage",
+    "name": "Sea Cottage",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1904,8 +1869,8 @@
       "EVENT_SAVE_BILL"
     ],
     "exits": [],
-    "warps": [
-      "MAP_ROUTE25_SEA_COTTAGE:0/MAP_ROUTE25:0"
-    ]
+    "warps": {
+      "MAP_ROUTE25_SEA_COTTAGE:0/MAP_ROUTE25:0": "Sea Cottage Exit"
+    }
   }
 }

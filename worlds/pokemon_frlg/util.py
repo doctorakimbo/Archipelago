@@ -40,7 +40,7 @@ CHARACTER_DECODING_MAP = {
     0xE6: "r", 0xE7: "s", 0xE8: "t", 0xE9: "u", 0xEA: "v",
     0xEB: "w", 0xEC: "x", 0xED: "y", 0xEE: "z", 0xEF: "▶",
     0xF0: ":", 0xF1: "Ä", 0xF2: "Ö", 0xF3: "Ü", 0xF4: "ä",
-    0xF5: "ö", 0xF6: "ü", 0xFF: "$"
+    0xF5: "ö", 0xF6: "ü"
 }
 
 CHARACTER_ENCODING_MAP = {value: key for key, value in CHARACTER_DECODING_MAP.items()}
@@ -48,6 +48,7 @@ CHARACTER_ENCODING_MAP.update({
     "'": CHARACTER_ENCODING_MAP["’"],
     "\"": CHARACTER_ENCODING_MAP["”"],
     "_": CHARACTER_ENCODING_MAP[" "],
+    "$": CHARACTER_ENCODING_MAP["¥"]
 })
 
 

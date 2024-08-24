@@ -21,10 +21,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_VIRIDIAN_FOREST:0,1,2/MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:1",
-      "MAP_VIRIDIAN_FOREST:3,4,5/MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:0"
-    ]
+    "warps": {
+      "MAP_VIRIDIAN_FOREST:0,1,2/MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE:1": "Viridian Forest Exit (Bottom)",
+      "MAP_VIRIDIAN_FOREST:3,4,5/MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE:0": "Viridian Forest Exit (Top)"
+    }
   },
   "REGION_MT_MOON_1F/MAIN": {
     "parent_map": "MAP_MT_MOON_1F",
@@ -50,16 +50,16 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_1F:0/MAP_MT_MOON_B1F:0",
-      "MAP_MT_MOON_1F:1/MAP_MT_MOON_B1F:1",
-      "MAP_MT_MOON_1F:2/MAP_MT_MOON_B1F:2",
-      "MAP_MT_MOON_1F:3/MAP_ROUTE4:0"
-    ]
+    "warps": {
+      "MAP_MT_MOON_1F:0/MAP_MT_MOON_B1F:0": "Mt. Moon 1F Ladder (Left)",
+      "MAP_MT_MOON_1F:1/MAP_MT_MOON_B1F:1": "Mt. Moon 1F Ladder (Middle)",
+      "MAP_MT_MOON_1F:2/MAP_MT_MOON_B1F:2": "Mt. Moon 1F Ladder (Right)",
+      "MAP_MT_MOON_1F:3/MAP_ROUTE4:0": "Mt. Moon 1F Exit"
+    }
   },
-  "REGION_MT_MOON_B1F/TUNNEL1": {
+  "REGION_MT_MOON_B1F/FIRST_TUNNEL": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F - Tunnel 1",
+    "name": "Mt. Moon B1F First Tunnel",
     "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
@@ -71,14 +71,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B1F:2/MAP_MT_MOON_1F:2",
-      "MAP_MT_MOON_B1F:5/MAP_MT_MOON_B2F:2"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B1F:2/MAP_MT_MOON_1F:2": "Mt. Moon B1F First Tunnel Ladder (Top)",
+      "MAP_MT_MOON_B1F:5/MAP_MT_MOON_B2F:2": "Mt. Moon B1F First Tunnel Ladder (Bottom)"
+    }
   },
-  "REGION_MT_MOON_B1F/TUNNEL2": {
+  "REGION_MT_MOON_B1F/SECOND_TUNNEL": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F - Tunnel 2",
+    "name": "Mt. Moon B1F Second Tunnel",
     "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
@@ -88,14 +88,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B1F:1/MAP_MT_MOON_1F:1",
-      "MAP_MT_MOON_B1F:4/MAP_MT_MOON_B2F:1"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B1F:1/MAP_MT_MOON_1F:1": "Mt. Moon B1F Second Tunnel Ladder (Right)",
+      "MAP_MT_MOON_B1F:4/MAP_MT_MOON_B2F:1": "Mt. Moon B1F Second Tunnel Ladder (Left)"
+    }
   },
-  "REGION_MT_MOON_B1F/TUNNEL3": {
+  "REGION_MT_MOON_B1F/THIRD_TUNNEL": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F - Tunnel 3",
+    "name": "Mt. Moon B1F Third Tunnel",
     "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
@@ -105,14 +105,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B1F:0/MAP_MT_MOON_1F:0",
-      "MAP_MT_MOON_B1F:3/MAP_MT_MOON_B2F:0"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B1F:0/MAP_MT_MOON_1F:0": "Mt. Moon B1F Third Tunnel Ladder (Top)",
+      "MAP_MT_MOON_B1F:3/MAP_MT_MOON_B2F:0": "Mt. Moon B1F Third Tunnel Ladder (Bottom)"
+    }
   },
-  "REGION_MT_MOON_B1F/TUNNEL4": {
+  "REGION_MT_MOON_B1F/FOURTH_TUNNEL": {
     "parent_map": "MAP_MT_MOON_B1F",
-    "name": "Mt. Moon B1F - Tunnel 4",
+    "name": "Mt. Moon B1F Fourth Tunnel",
     "encounter_region": "Mt. Moon B1F",
     "has_land": true,
     "has_water": false,
@@ -122,10 +122,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B1F:6/MAP_MT_MOON_B2F:3",
-      "MAP_MT_MOON_B1F:7/MAP_ROUTE4:1"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B1F:6/MAP_MT_MOON_B2F:3": "Mt. Moon B1F Fourth Tunnel Ladder (Left)",
+      "MAP_MT_MOON_B1F:7/MAP_ROUTE4:1": "Mt. Moon B1F Fourth Tunnel Ladder (Right)"
+    }
   },
   "REGION_MT_MOON_B2F/MAIN": {
     "parent_map": "MAP_MT_MOON_B2F",
@@ -146,14 +146,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B2F:0/MAP_MT_MOON_B1F:3",
-      "MAP_MT_MOON_B2F:3/MAP_MT_MOON_B1F:6"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B2F:0/MAP_MT_MOON_B1F:3": "Mt. Moon B2F Ladder (Right)",
+      "MAP_MT_MOON_B2F:3/MAP_MT_MOON_B1F:6": "Mt. Moon B2F Ladder (Left)"
+    }
   },
   "REGION_MT_MOON_B2F/CENTER": {
     "parent_map": "MAP_MT_MOON_B2F",
-    "name": "Mt. Moon B2F - Center",
+    "name": "Mt. Moon B2F Center",
     "encounter_region": "Mt. Moon B2F",
     "has_land": true,
     "has_water": false,
@@ -164,13 +164,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B2F:2/MAP_MT_MOON_B1F:5"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B2F:2/MAP_MT_MOON_B1F:5": "Mt. Moon B2F Center Ladder"
+    }
   },
   "REGION_MT_MOON_B2F/NORTHEAST": {
     "parent_map": "MAP_MT_MOON_B2F",
-    "name": "Mt. Moon B2F - Northeast",
+    "name": "Mt. Moon B2F Northeast",
     "encounter_region": "Mt. Moon B2F",
     "has_land": true,
     "has_water": false,
@@ -182,13 +182,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_MOON_B2F:1/MAP_MT_MOON_B1F:4"
-    ]
+    "warps": {
+      "MAP_MT_MOON_B2F:1/MAP_MT_MOON_B1F:4": "Mt. Moon B2F Northeast Ladder"
+    }
   },
   "REGION_UNDERGROUND_PATH_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE",
-    "name": "Underground Path North Entrance",
+    "name": "Underground Path North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -198,10 +198,10 @@
       "TRADE_POKEMON_NIDORAN"
     ],
     "exits": [],
-    "warps": [
-      "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0/MAP_ROUTE5:0",
-      "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:1/MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:0"
-    ]
+    "warps": {
+      "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:0/MAP_ROUTE5:0": "Underground Path North Exit",
+      "MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:1/MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:0": "Underground Path North Stairs"
+    }
   },
   "REGION_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL",
@@ -221,14 +221,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:1",
-      "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:1/MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:0/MAP_UNDERGROUND_PATH_NORTH_ENTRANCE:1": "Underground Path North-South Tunnel Stairs (Top)",
+      "MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:1/MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:1": "Underground Path North-South Tunnel Stairs (Bottom)"
+    }
   },
   "REGION_UNDERGROUND_PATH_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE",
-    "name": "Underground Path South Entrance",
+    "name": "Underground Path South",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -236,10 +236,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:0/MAP_ROUTE6:0",
-      "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:1/MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:1"
-    ]
+    "warps": {
+      "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:0/MAP_ROUTE6:0": "Underground Path South Exit",
+      "MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE:1/MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL:1": "Underground Path South Stairs"
+    }
   },
   "REGION_SSANNE_EXTERIOR/MAIN": {
     "parent_map": "MAP_SSANNE_EXTERIOR",
@@ -253,14 +253,14 @@
     "exits": [
       "REGION_SSANNE_EXTERIOR/WATER"
     ],
-    "warps": [
-      "MAP_SSANNE_EXTERIOR:0/MAP_VERMILION_CITY:0",
-      "MAP_SSANNE_EXTERIOR:1/MAP_SSANNE_1F_CORRIDOR:2"
-    ]
+    "warps": {
+      "MAP_SSANNE_EXTERIOR:0/MAP_VERMILION_CITY:0": "S.S. Anne Exterior Exit",
+      "MAP_SSANNE_EXTERIOR:1/MAP_SSANNE_1F_CORRIDOR:2": "S.S. Anne Entrance"
+    }
   },
   "REGION_SSANNE_EXTERIOR/WATER": {
     "parent_map": "MAP_SSANNE_EXTERIOR",
-    "name": "S.S. Anne Exterior - Water",
+    "name": "S.S. Anne Exterior Water",
     "encounter_region": "S.S. Anne Exterior",
     "has_land": false,
     "has_water": true,
@@ -270,7 +270,7 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SSANNE_1F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_1F_CORRIDOR",
@@ -282,19 +282,19 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_CORRIDOR:0/MAP_SSANNE_2F_CORRIDOR:0",
-      "MAP_SSANNE_1F_CORRIDOR:1/MAP_SSANNE_KITCHEN:0",
-      "MAP_SSANNE_1F_CORRIDOR:2/MAP_SSANNE_EXTERIOR:1",
-      "MAP_SSANNE_1F_CORRIDOR:3/MAP_SSANNE_B1F_CORRIDOR:0",
-      "MAP_SSANNE_1F_CORRIDOR:4/MAP_SSANNE_1F_ROOM1:0",
-      "MAP_SSANNE_1F_CORRIDOR:5/MAP_SSANNE_1F_ROOM2:0",
-      "MAP_SSANNE_1F_CORRIDOR:6/MAP_SSANNE_1F_ROOM3:0",
-      "MAP_SSANNE_1F_CORRIDOR:7/MAP_SSANNE_1F_ROOM4:0",
-      "MAP_SSANNE_1F_CORRIDOR:8/MAP_SSANNE_1F_ROOM5:0",
-      "MAP_SSANNE_1F_CORRIDOR:9/MAP_SSANNE_1F_ROOM7:0",
-      "MAP_SSANNE_1F_CORRIDOR:10/MAP_SSANNE_1F_ROOM6:0"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_CORRIDOR:0/MAP_SSANNE_2F_CORRIDOR:0": "S.S. Anne 1F Corridor Stairs (Left)",
+      "MAP_SSANNE_1F_CORRIDOR:1/MAP_SSANNE_KITCHEN:0": "S.S. Anne Kitchen Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:2/MAP_SSANNE_EXTERIOR:1": "S.S. Anne Exit",
+      "MAP_SSANNE_1F_CORRIDOR:3/MAP_SSANNE_B1F_CORRIDOR:0": "S.S. Anne 1F Corridor Stairs (Right)",
+      "MAP_SSANNE_1F_CORRIDOR:4/MAP_SSANNE_1F_ROOM1:0": "S.S. Anne 1F Room 1 Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:5/MAP_SSANNE_1F_ROOM2:0": "S.S. Anne 1F Room 2 Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:6/MAP_SSANNE_1F_ROOM3:0": "S.S. Anne 1F Room 3 Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:7/MAP_SSANNE_1F_ROOM4:0": "S.S. Anne 1F Room 4 Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:8/MAP_SSANNE_1F_ROOM5:0": "S.S. Anne 1F Room 5 Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:9/MAP_SSANNE_1F_ROOM7:0": "S.S. Anne 1F Room 7 Entrance",
+      "MAP_SSANNE_1F_CORRIDOR:10/MAP_SSANNE_1F_ROOM6:0": "S.S. Anne 1F Room 6 Entrance"
+    }
   },
   "REGION_SSANNE_KITCHEN/MAIN": {
     "parent_map": "MAP_SSANNE_KITCHEN",
@@ -311,9 +311,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_KITCHEN:0/MAP_SSANNE_1F_CORRIDOR:1"
-    ]
+    "warps": {
+      "MAP_SSANNE_KITCHEN:0/MAP_SSANNE_1F_CORRIDOR:1": "S.S. Anne Kitchen Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM1/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM1",
@@ -325,9 +325,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM1:0/MAP_SSANNE_1F_CORRIDOR:4"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM1:0/MAP_SSANNE_1F_CORRIDOR:4": "S.S. Anne 1F Room 1 Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM2/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM2",
@@ -343,9 +343,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM2:0/MAP_SSANNE_1F_CORRIDOR:5"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM2:0/MAP_SSANNE_1F_CORRIDOR:5": "S.S. Anne 1F Room 2 Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM3/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM3",
@@ -357,9 +357,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM3:0/MAP_SSANNE_1F_CORRIDOR:6"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM3:0/MAP_SSANNE_1F_CORRIDOR:6": "S.S. Anne 1F Room 3 Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM4/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM4",
@@ -371,9 +371,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM4:0/MAP_SSANNE_1F_CORRIDOR:7"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM4:0/MAP_SSANNE_1F_CORRIDOR:7": "S.S. Anne 1F Room 4 Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM5/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM5",
@@ -387,9 +387,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM5:0/MAP_SSANNE_1F_CORRIDOR:8"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM5:0/MAP_SSANNE_1F_CORRIDOR:8": "S.S. Anne 1F Room 5 Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM6/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM6",
@@ -401,9 +401,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM6:0/MAP_SSANNE_1F_CORRIDOR:10"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM6:0/MAP_SSANNE_1F_CORRIDOR:10": "S.S. Anne 1F Room 6 Exit"
+    }
   },
   "REGION_SSANNE_1F_ROOM7/MAIN": {
     "parent_map": "MAP_SSANNE_1F_ROOM7",
@@ -417,9 +417,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_1F_ROOM7:0/MAP_SSANNE_1F_CORRIDOR:9"
-    ]
+    "warps": {
+      "MAP_SSANNE_1F_ROOM7:0/MAP_SSANNE_1F_CORRIDOR:9": "S.S. Anne 1F Room 7 Exit"
+    }
   },
   "REGION_SSANNE_B1F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_CORRIDOR",
@@ -433,14 +433,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_B1F_CORRIDOR:0/MAP_SSANNE_1F_CORRIDOR:3",
-      "MAP_SSANNE_B1F_CORRIDOR:1/MAP_SSANNE_B1F_ROOM1:0",
-      "MAP_SSANNE_B1F_CORRIDOR:2/MAP_SSANNE_B1F_ROOM2:0",
-      "MAP_SSANNE_B1F_CORRIDOR:3/MAP_SSANNE_B1F_ROOM3:0",
-      "MAP_SSANNE_B1F_CORRIDOR:4/MAP_SSANNE_B1F_ROOM4:0",
-      "MAP_SSANNE_B1F_CORRIDOR:5/MAP_SSANNE_B1F_ROOM5:0"
-    ]
+    "warps": {
+      "MAP_SSANNE_B1F_CORRIDOR:0/MAP_SSANNE_1F_CORRIDOR:3": "S.S. Anne B1F Corridor Stairs",
+      "MAP_SSANNE_B1F_CORRIDOR:1/MAP_SSANNE_B1F_ROOM1:0": "S.S. Anne B1F Room 1 Entrance",
+      "MAP_SSANNE_B1F_CORRIDOR:2/MAP_SSANNE_B1F_ROOM2:0": "S.S. Anne B1F Room 2 Entrance",
+      "MAP_SSANNE_B1F_CORRIDOR:3/MAP_SSANNE_B1F_ROOM3:0": "S.S. Anne B1F Room 3 Entrance",
+      "MAP_SSANNE_B1F_CORRIDOR:4/MAP_SSANNE_B1F_ROOM4:0": "S.S. Anne B1F Room 4 Entrance",
+      "MAP_SSANNE_B1F_CORRIDOR:5/MAP_SSANNE_B1F_ROOM5:0": "S.S. Anne B1F Room 5 Entrance"
+    }
   },
   "REGION_SSANNE_B1F_ROOM1/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM1",
@@ -455,9 +455,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_B1F_ROOM1:0/MAP_SSANNE_B1F_CORRIDOR:1"
-    ]
+    "warps": {
+      "MAP_SSANNE_B1F_ROOM1:0/MAP_SSANNE_B1F_CORRIDOR:1": "S.S. Anne B1F Room 1 Exit"
+    }
   },
   "REGION_SSANNE_B1F_ROOM2/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM2",
@@ -472,9 +472,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_B1F_ROOM2:0/MAP_SSANNE_B1F_CORRIDOR:2"
-    ]
+    "warps": {
+      "MAP_SSANNE_B1F_ROOM2:0/MAP_SSANNE_B1F_CORRIDOR:2": "S.S. Anne B1F Room 2 Exit"
+    }
   },
   "REGION_SSANNE_B1F_ROOM3/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM3",
@@ -489,9 +489,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_B1F_ROOM3:0/MAP_SSANNE_B1F_CORRIDOR:3"
-    ]
+    "warps": {
+      "MAP_SSANNE_B1F_ROOM3:0/MAP_SSANNE_B1F_CORRIDOR:3": "S.S. Anne B1F Room 3 Exit"
+    }
   },
   "REGION_SSANNE_B1F_ROOM4/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM4",
@@ -506,9 +506,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_B1F_ROOM4:0/MAP_SSANNE_B1F_CORRIDOR:4"
-    ]
+    "warps": {
+      "MAP_SSANNE_B1F_ROOM4:0/MAP_SSANNE_B1F_CORRIDOR:4": "S.S. Anne B1F Room 4 Exit"
+    }
   },
   "REGION_SSANNE_B1F_ROOM5/MAIN": {
     "parent_map": "MAP_SSANNE_B1F_ROOM5",
@@ -522,9 +522,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_B1F_ROOM5:0/MAP_SSANNE_B1F_CORRIDOR:5"
-    ]
+    "warps": {
+      "MAP_SSANNE_B1F_ROOM5:0/MAP_SSANNE_B1F_CORRIDOR:5": "S.S. Anne B1F Room 5 Exit"
+    }
   },
   "REGION_SSANNE_2F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_2F_CORRIDOR",
@@ -538,17 +538,17 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_CORRIDOR:0/MAP_SSANNE_1F_CORRIDOR:0",
-      "MAP_SSANNE_2F_CORRIDOR:1/MAP_SSANNE_3F_CORRIDOR:1",
-      "MAP_SSANNE_2F_CORRIDOR:2/MAP_SSANNE_CAPTAINS_OFFICE:0",
-      "MAP_SSANNE_2F_CORRIDOR:3/MAP_SSANNE_2F_ROOM1:0",
-      "MAP_SSANNE_2F_CORRIDOR:4/MAP_SSANNE_2F_ROOM2:0",
-      "MAP_SSANNE_2F_CORRIDOR:5/MAP_SSANNE_2F_ROOM3:0",
-      "MAP_SSANNE_2F_CORRIDOR:6/MAP_SSANNE_2F_ROOM4:0",
-      "MAP_SSANNE_2F_CORRIDOR:7/MAP_SSANNE_2F_ROOM5:0",
-      "MAP_SSANNE_2F_CORRIDOR:8/MAP_SSANNE_2F_ROOM6:0"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_CORRIDOR:0/MAP_SSANNE_1F_CORRIDOR:0": "S.S. Anne 2F Corridor Stairs (Top Left)",
+      "MAP_SSANNE_2F_CORRIDOR:1/MAP_SSANNE_3F_CORRIDOR:1": "S.S. Anne 2F Corridor Stairs (Bottom Left)",
+      "MAP_SSANNE_2F_CORRIDOR:2/MAP_SSANNE_CAPTAINS_OFFICE:0": "S.S. Anne 2F Corridor Stairs (Top Right)",
+      "MAP_SSANNE_2F_CORRIDOR:3/MAP_SSANNE_2F_ROOM1:0": "S.S. Anne 2F Room 1 Entrance",
+      "MAP_SSANNE_2F_CORRIDOR:4/MAP_SSANNE_2F_ROOM2:0": "S.S. Anne 2F Room 2 Entrance",
+      "MAP_SSANNE_2F_CORRIDOR:5/MAP_SSANNE_2F_ROOM3:0": "S.S. Anne 2F Room 3 Entrance",
+      "MAP_SSANNE_2F_CORRIDOR:6/MAP_SSANNE_2F_ROOM4:0": "S.S. Anne 2F Room 4 Entrance",
+      "MAP_SSANNE_2F_CORRIDOR:7/MAP_SSANNE_2F_ROOM5:0": "S.S. Anne 2F Room 5 Entrance",
+      "MAP_SSANNE_2F_CORRIDOR:8/MAP_SSANNE_2F_ROOM6:0": "S.S. Anne 2F Room 6 Entrance"
+    }
   },
   "REGION_SSANNE_2F_ROOM1/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM1",
@@ -560,9 +560,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_ROOM1:0/MAP_SSANNE_2F_CORRIDOR:3"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_ROOM1:0/MAP_SSANNE_2F_CORRIDOR:3": "S.S. Anne 2F Room 1 Exit"
+    }
   },
   "REGION_SSANNE_2F_ROOM2/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM2",
@@ -578,9 +578,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_ROOM2:0/MAP_SSANNE_2F_CORRIDOR:4"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_ROOM2:0/MAP_SSANNE_2F_CORRIDOR:4": "S.S. Anne 2F Room 2 Exit"
+    }
   },
   "REGION_SSANNE_2F_ROOM3/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM3",
@@ -592,9 +592,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_ROOM3:0/MAP_SSANNE_2F_CORRIDOR:5"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_ROOM3:0/MAP_SSANNE_2F_CORRIDOR:5": "S.S. Anne 2F Room 3 Exit"
+    }
   },
   "REGION_SSANNE_2F_ROOM4/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM4",
@@ -610,9 +610,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_ROOM4:0/MAP_SSANNE_2F_CORRIDOR:6"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_ROOM4:0/MAP_SSANNE_2F_CORRIDOR:6": "S.S. Anne 2F Room 4 Exit"
+    }
   },
   "REGION_SSANNE_2F_ROOM5/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM5",
@@ -624,9 +624,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_ROOM5:0/MAP_SSANNE_2F_CORRIDOR:7"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_ROOM5:0/MAP_SSANNE_2F_CORRIDOR:7": "S.S. Anne 2F Room 5 Exit"
+    }
   },
   "REGION_SSANNE_2F_ROOM6/MAIN": {
     "parent_map": "MAP_SSANNE_2F_ROOM6",
@@ -638,9 +638,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_2F_ROOM6:0/MAP_SSANNE_2F_CORRIDOR:8"
-    ]
+    "warps": {
+      "MAP_SSANNE_2F_ROOM6:0/MAP_SSANNE_2F_CORRIDOR:8": "S.S. Anne 2F Room 6 Exit"
+    }
   },
   "REGION_SSANNE_3F_CORRIDOR/MAIN": {
     "parent_map": "MAP_SSANNE_3F_CORRIDOR",
@@ -652,10 +652,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_3F_CORRIDOR:0/MAP_SSANNE_DECK:0",
-      "MAP_SSANNE_3F_CORRIDOR:1/MAP_SSANNE_2F_CORRIDOR:1"
-    ]
+    "warps": {
+      "MAP_SSANNE_3F_CORRIDOR:0/MAP_SSANNE_DECK:0": "S.S. Anne Deck Entrance",
+      "MAP_SSANNE_3F_CORRIDOR:1/MAP_SSANNE_2F_CORRIDOR:1": "S.S. Anne 3F Corridor Stairs"
+    }
   },
   "REGION_SSANNE_DECK/MAIN": {
     "parent_map": "MAP_SSANNE_DECK",
@@ -670,9 +670,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_DECK:0,1/MAP_SSANNE_3F_CORRIDOR:0"
-    ]
+    "warps": {
+      "MAP_SSANNE_DECK:0,1/MAP_SSANNE_3F_CORRIDOR:0": "S.S. Anne Deck Exit"
+    }
   },
   "REGION_SSANNE_CAPTAINS_OFFICE/MAIN": {
     "parent_map": "MAP_SSANNE_CAPTAINS_OFFICE",
@@ -686,13 +686,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SSANNE_CAPTAINS_OFFICE:0/MAP_SSANNE_2F_CORRIDOR:2"
-    ]
+    "warps": {
+      "MAP_SSANNE_CAPTAINS_OFFICE:0/MAP_SSANNE_2F_CORRIDOR:2": "S.S. Anne Captain's Office Stairs"
+    }
   },
   "REGION_DIGLETTS_CAVE_SOUTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
-    "name": "Diglett's Cave South Entrance",
+    "name": "Diglett's Cave 1F South",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -700,10 +700,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:0/MAP_ROUTE11:0",
-      "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:1/MAP_DIGLETTS_CAVE_B1F:1"
-    ]
+    "warps": {
+      "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:0/MAP_ROUTE11:0": "Diglett's Cave 1F South Exit",
+      "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:1/MAP_DIGLETTS_CAVE_B1F:1": "Diglett's Cave 1F South Ladder"
+    }
   },
   "REGION_DIGLETTS_CAVE_B1F/MAIN": {
     "parent_map": "MAP_DIGLETTS_CAVE_B1F",
@@ -715,14 +715,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_DIGLETTS_CAVE_B1F:0/MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:0",
-      "MAP_DIGLETTS_CAVE_B1F:1/MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_DIGLETTS_CAVE_B1F:0/MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:0": "Diglett's Cave B1F Ladder (Top)",
+      "MAP_DIGLETTS_CAVE_B1F:1/MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE:1": "Diglett's Cave B1F Ladder (Bottom)"
+    }
   },
   "REGION_DIGLETTS_CAVE_NORTH_ENTRANCE/MAIN": {
     "parent_map": "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE",
-    "name": "Diglett's Cave North Entrance",
+    "name": "Diglett's Cave 1F North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -730,14 +730,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:0/MAP_DIGLETTS_CAVE_B1F:0",
-      "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1/MAP_ROUTE2:4"
-    ]
+    "warps": {
+      "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:0/MAP_DIGLETTS_CAVE_B1F:0": "Diglett's Cave 1F North Ladder",
+      "MAP_DIGLETTS_CAVE_NORTH_ENTRANCE:1/MAP_ROUTE2:4": "Diglett's Cave 1F North Exit"
+    }
   },
   "REGION_ROCK_TUNNEL_1F/NORTHEAST": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F - Northeast",
+    "name": "Rock Tunnel 1F Northeast",
     "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
@@ -748,14 +748,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCK_TUNNEL_1F:1/MAP_ROCK_TUNNEL_B1F:0",
-      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0"
-    ]
+    "warps": {
+      "MAP_ROCK_TUNNEL_1F:1/MAP_ROCK_TUNNEL_B1F:0": "Rock Tunnel 1F Northeast Ladder (Right)",
+      "MAP_ROCK_TUNNEL_1F:0/MAP_ROUTE10:0": "Rock Tunnel 1F Northeast Ladder (Left)"
+    }
   },
   "REGION_ROCK_TUNNEL_1F/NORTHWEST": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F - Northwest",
+    "name": "Rock Tunnel 1F Northwest",
     "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
@@ -768,14 +768,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCK_TUNNEL_1F:2/MAP_ROCK_TUNNEL_B1F:1",
-      "MAP_ROCK_TUNNEL_1F:3/MAP_ROCK_TUNNEL_B1F:2"
-    ]
+    "warps": {
+      "MAP_ROCK_TUNNEL_1F:2/MAP_ROCK_TUNNEL_B1F:1": "Rock Tunnel 1F Northwest Ladder (Top Left)",
+      "MAP_ROCK_TUNNEL_1F:3/MAP_ROCK_TUNNEL_B1F:2": "Rock Tunnel 1F Northwest Ladder (Bottom Right)"
+    }
   },
   "REGION_ROCK_TUNNEL_1F/SOUTH": {
     "parent_map": "MAP_ROCK_TUNNEL_1F",
-    "name": "Rock Tunnel 1F - South",
+    "name": "Rock Tunnel 1F South",
     "encounter_region": "Rock Tunnel 1F",
     "has_land": true,
     "has_water": false,
@@ -788,14 +788,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1",
-      "MAP_ROCK_TUNNEL_1F:4/MAP_ROCK_TUNNEL_B1F:3"
-    ]
+    "warps": {
+      "MAP_ROCK_TUNNEL_1F:5/MAP_ROUTE10:1": "Rock Tunnel 1F Exit",
+      "MAP_ROCK_TUNNEL_1F:4/MAP_ROCK_TUNNEL_B1F:3": "Rock Tunnel 1F South Ladder"
+    }
   },
   "REGION_ROCK_TUNNEL_B1F/SOUTHEAST": {
     "parent_map": "MAP_ROCK_TUNNEL_B1F",
-    "name": "Rock Tunnel B1F - Southeast",
+    "name": "Rock Tunnel B1F Southeast",
     "encounter_region": "Rock Tunnel B1F",
     "has_land": true,
     "has_water": false,
@@ -810,14 +810,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCK_TUNNEL_B1F:0/MAP_ROCK_TUNNEL_1F:1",
-      "MAP_ROCK_TUNNEL_B1F:1/MAP_ROCK_TUNNEL_1F:2"
-    ]
+    "warps": {
+      "MAP_ROCK_TUNNEL_B1F:0/MAP_ROCK_TUNNEL_1F:1": "Rock Tunnel B1F Southeast Ladder (Bottom)",
+      "MAP_ROCK_TUNNEL_B1F:1/MAP_ROCK_TUNNEL_1F:2": "Rock Tunnel B1F Southeast Ladder (Top)"
+    }
   },
   "REGION_ROCK_TUNNEL_B1F/NORTHWEST": {
     "parent_map": "MAP_ROCK_TUNNEL_B1F",
-    "name": "Rock Tunnel B1F - Northwest",
+    "name": "Rock Tunnel B1F Northwest",
     "encounter_region": "Rock Tunnel B1F",
     "has_land": true,
     "has_water": false,
@@ -830,10 +830,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3",
-      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4"
-    ]
+    "warps": {
+      "MAP_ROCK_TUNNEL_B1F:2/MAP_ROCK_TUNNEL_1F:3": "Rock Tunnel B1F Northwest Ladder (Right)",
+      "MAP_ROCK_TUNNEL_B1F:3/MAP_ROCK_TUNNEL_1F:4": "Rock Tunnel B1F Northwest Ladder (Left)"
+    }
   },
   "REGION_POWER_PLANT/MAIN": {
     "parent_map": "MAP_POWER_PLANT",
@@ -857,10 +857,10 @@
       "LEGENDARY_POKEMON_ZAPDOS"
     ],
     "exits": [],
-    "warps": [
-      "MAP_POWER_PLANT:0/MAP_ROUTE10:2",
-      "MAP_POWER_PLANT:1/MAP_ROUTE10:4"
-    ]
+    "warps": {
+      "MAP_POWER_PLANT:0/MAP_ROUTE10:2": "Power Plant Exit (Top)",
+      "MAP_POWER_PLANT:1/MAP_ROUTE10:4": "Power Plant Exit (Bottom)"
+    }
   },
   "REGION_POKEMON_TOWER_1F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_1F",
@@ -872,10 +872,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_1F:0/MAP_LAVENDER_TOWN:0",
-      "MAP_POKEMON_TOWER_1F:1/MAP_POKEMON_TOWER_2F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_1F:0/MAP_LAVENDER_TOWN:0": "Pokemon Tower 1F Exit",
+      "MAP_POKEMON_TOWER_1F:1/MAP_POKEMON_TOWER_2F:1": "Pokemon Tower 1F Stairs"
+    }
   },
   "REGION_POKEMON_TOWER_2F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_2F",
@@ -889,10 +889,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_2F:0/MAP_POKEMON_TOWER_3F:0",
-      "MAP_POKEMON_TOWER_2F:1/MAP_POKEMON_TOWER_1F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_2F:0/MAP_POKEMON_TOWER_3F:0": "Pokemon Tower 2F Stairs (Left)",
+      "MAP_POKEMON_TOWER_2F:1/MAP_POKEMON_TOWER_1F:1": "Pokemon Tower 2F Stairs (Right)"
+    }
   },
   "REGION_POKEMON_TOWER_3F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_3F",
@@ -909,10 +909,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_3F:0/MAP_POKEMON_TOWER_2F:0",
-      "MAP_POKEMON_TOWER_3F:1/MAP_POKEMON_TOWER_4F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_3F:0/MAP_POKEMON_TOWER_2F:0": "Pokemon Tower 3F Stairs (Left)",
+      "MAP_POKEMON_TOWER_3F:1/MAP_POKEMON_TOWER_4F:1": "Pokemon Tower 3F Stairs (Right)"
+    }
   },
   "REGION_POKEMON_TOWER_4F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_4F",
@@ -931,10 +931,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_4F:0/MAP_POKEMON_TOWER_5F:0",
-      "MAP_POKEMON_TOWER_4F:1/MAP_POKEMON_TOWER_3F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_4F:0/MAP_POKEMON_TOWER_5F:0": "Pokemon Tower 4F Stairs (Left)",
+      "MAP_POKEMON_TOWER_4F:1/MAP_POKEMON_TOWER_3F:1": "Pokemon Tower 4F Stairs (Right)"
+    }
   },
   "REGION_POKEMON_TOWER_5F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_5F",
@@ -954,10 +954,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_5F:0/MAP_POKEMON_TOWER_4F:0",
-      "MAP_POKEMON_TOWER_5F:1/MAP_POKEMON_TOWER_6F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_5F:0/MAP_POKEMON_TOWER_4F:0": "Pokemon Tower 5F Stairs (Left)",
+      "MAP_POKEMON_TOWER_5F:1/MAP_POKEMON_TOWER_6F:1": "Pokemon Tower 5F Stairs (Right)"
+    }
   },
   "REGION_POKEMON_TOWER_6F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_6F",
@@ -977,10 +977,10 @@
       "STATIC_POKEMON_MAROWAK"
     ],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_6F:0/MAP_POKEMON_TOWER_7F:0",
-      "MAP_POKEMON_TOWER_6F:1/MAP_POKEMON_TOWER_5F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_6F:0/MAP_POKEMON_TOWER_7F:0": "Pokemon Tower 6F Stairs (Bottom)",
+      "MAP_POKEMON_TOWER_6F:1/MAP_POKEMON_TOWER_5F:1": "Pokemon Tower 6F Stairs (Right)"
+    }
   },
   "REGION_POKEMON_TOWER_7F/MAIN": {
     "parent_map": "MAP_POKEMON_TOWER_7F",
@@ -999,13 +999,13 @@
       "EVENT_RESCUE_MR_FUJI"
     ],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_TOWER_7F:0/MAP_POKEMON_TOWER_6F:0"
-    ]
+    "warps": {
+      "MAP_POKEMON_TOWER_7F:0/MAP_POKEMON_TOWER_6F:0": "Pokemon Tower 7F Stairs"
+    }
   },
   "REGION_UNDERGROUND_PATH_EAST_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_EAST_ENTRANCE",
-    "name": "Underground Path East Entrance",
+    "name": "Underground Path East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1013,10 +1013,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_UNDERGROUND_PATH_EAST_ENTRANCE:0/MAP_ROUTE8:0",
-      "MAP_UNDERGROUND_PATH_EAST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:0"
-    ]
+    "warps": {
+      "MAP_UNDERGROUND_PATH_EAST_ENTRANCE:0/MAP_ROUTE8:0": "Underground Path East Exit",
+      "MAP_UNDERGROUND_PATH_EAST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:0": "Underground Path East Stairs"
+    }
   },
   "REGION_UNDERGROUND_PATH_EAST_WEST_TUNNEL/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL",
@@ -1036,14 +1036,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:0/MAP_UNDERGROUND_PATH_EAST_ENTRANCE:1",
-      "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1/MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:0/MAP_UNDERGROUND_PATH_EAST_ENTRANCE:1": "Underground Path East-West Tunnel Stairs (Right)",
+      "MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1/MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1": "Underground Path East-West Tunnel Stairs (Left)"
+    }
   },
   "REGION_UNDERGROUND_PATH_WEST_ENTRANCE/MAIN": {
     "parent_map": "MAP_UNDERGROUND_PATH_WEST_ENTRANCE",
-    "name": "Underground Path West Entrance",
+    "name": "Underground Path West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1051,14 +1051,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0/MAP_ROUTE7:0",
-      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1"
-    ]
+    "warps": {
+      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:0/MAP_ROUTE7:0": "Underground Path West Exit",
+      "MAP_UNDERGROUND_PATH_WEST_ENTRANCE:1/MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL:1": "Underground Path West Stairs"
+    }
   },
-  "REGION_ROCKET_HIDEOUT_B1F/MAIN": {
+  "REGION_ROCKET_HIDEOUT_B1F/NORTH": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
-    "name": "Rocket Hideout B1F",
+    "name": "Rocket Hideout B1F North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1071,14 +1071,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCKET_HIDEOUT_B1F:0/MAP_CELADON_CITY_GAME_CORNER:1",
-      "MAP_ROCKET_HIDEOUT_B1F:1/MAP_ROCKET_HIDEOUT_B2F:1"
-    ]
+    "warps": {
+      "MAP_ROCKET_HIDEOUT_B1F:0/MAP_CELADON_CITY_GAME_CORNER:1": "Rocket Hideout B1F North Stairs (Left)",
+      "MAP_ROCKET_HIDEOUT_B1F:1/MAP_ROCKET_HIDEOUT_B2F:1": "Rocket Hideout B1F North Stairs (Right)"
+    }
   },
   "REGION_ROCKET_HIDEOUT_B1F/SOUTHEAST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
-    "name": "Rocket Hideout B1F - Southeast",
+    "name": "Rocket Hideout B1F Southeast",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1088,14 +1088,14 @@
     ],
     "events": [],
     "exits": [
-      "REGION_ROCKET_HIDEOUT_B1F/MAIN",
+      "REGION_ROCKET_HIDEOUT_B1F/NORTH",
       "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROCKET_HIDEOUT_B1F/SOUTHWEST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B1F",
-    "name": "Rocket Hideout B1F - Southwest",
+    "name": "Rocket Hideout B1F Southwest",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1107,9 +1107,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCKET_HIDEOUT_B1F:2/MAP_ROCKET_HIDEOUT_B2F:2"
-    ]
+    "warps": {
+      "MAP_ROCKET_HIDEOUT_B1F:2/MAP_ROCKET_HIDEOUT_B2F:2": "Rocket Hideout B1F Southwest Stairs"
+    }
   },
   "REGION_ROCKET_HIDEOUT_B2F/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B2F",
@@ -1129,11 +1129,11 @@
     "exits": [
       "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_ROCKET_HIDEOUT_B2F:0/MAP_ROCKET_HIDEOUT_B3F:0",
-      "MAP_ROCKET_HIDEOUT_B2F:1/MAP_ROCKET_HIDEOUT_B1F:1",
-      "MAP_ROCKET_HIDEOUT_B2F:2/MAP_ROCKET_HIDEOUT_B1F:2"
-    ]
+    "warps": {
+      "MAP_ROCKET_HIDEOUT_B2F:0/MAP_ROCKET_HIDEOUT_B3F:0": "Rocket Hideout B2F Stairs (Top Left)",
+      "MAP_ROCKET_HIDEOUT_B2F:1/MAP_ROCKET_HIDEOUT_B1F:1": "Rocket Hideout B2F Stairs (Top Right)",
+      "MAP_ROCKET_HIDEOUT_B2F:2/MAP_ROCKET_HIDEOUT_B1F:2": "Rocket Hideout B2F Stairs (Bottom)"
+    }
   },
   "REGION_ROCKET_HIDEOUT_B3F/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B3F",
@@ -1152,14 +1152,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCKET_HIDEOUT_B3F:0/MAP_ROCKET_HIDEOUT_B2F:0",
-      "MAP_ROCKET_HIDEOUT_B3F:1/MAP_ROCKET_HIDEOUT_B4F:0"
-    ]
+    "warps": {
+      "MAP_ROCKET_HIDEOUT_B3F:0/MAP_ROCKET_HIDEOUT_B2F:0": "Rocket Hideout B3F Stairs (Top)",
+      "MAP_ROCKET_HIDEOUT_B3F:1/MAP_ROCKET_HIDEOUT_B4F:0": "Rocket Hideout B3F Stairs (Bottom)"
+    }
   },
   "REGION_ROCKET_HIDEOUT_B4F/WEST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B4F",
-    "name": "Rocket Hideout B4F - West",
+    "name": "Rocket Hideout B4F West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1172,13 +1172,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_ROCKET_HIDEOUT_B4F:0/MAP_ROCKET_HIDEOUT_B3F:1"
-    ]
+    "warps": {
+      "MAP_ROCKET_HIDEOUT_B4F:0/MAP_ROCKET_HIDEOUT_B3F:1": "Rocket Hideout B4F West Stairs"
+    }
   },
   "REGION_ROCKET_HIDEOUT_B4F/EAST": {
     "parent_map": "MAP_ROCKET_HIDEOUT_B4F",
-    "name": "Rocket Hideout B4F - East",
+    "name": "Rocket Hideout B4F East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1196,7 +1196,7 @@
     "exits": [
       "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_ROCKET_HIDEOUT_ELEVATOR/MAIN": {
     "parent_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
@@ -1212,12 +1212,12 @@
       "REGION_ROCKET_HIDEOUT_B2F/MAIN",
       "REGION_ROCKET_HIDEOUT_B4F/EAST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SAFARI_ZONE_CENTER/SOUTH": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center - South",
-    "encounter_region": "Safari Zone Center",
+    "name": "Safari Zone Center Area South",
+    "encounter_region": "Safari Zone Center Area",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1226,16 +1226,16 @@
     "exits": [
       "REGION_SAFARI_ZONE_CENTER/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_CENTER:0,1/MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:0",
-      "MAP_SAFARI_ZONE_CENTER:8/MAP_SAFARI_ZONE_CENTER_REST_HOUSE:0",
-      "MAP_SAFARI_ZONE_CENTER:6,7/MAP_SAFARI_ZONE_EAST:2,3"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_CENTER:0,1/MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:0": "Safari Zone Center Area Exit (Bottom)",
+      "MAP_SAFARI_ZONE_CENTER:8/MAP_SAFARI_ZONE_CENTER_REST_HOUSE:0": "Safari Zone Center Area Rest House Entrance",
+      "MAP_SAFARI_ZONE_CENTER:6,7/MAP_SAFARI_ZONE_EAST:2,3": "Safari Zone Center Area Exit (Right)"
+    }
   },
   "REGION_SAFARI_ZONE_CENTER/NORTHEAST": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center - Northeast",
-    "encounter_region": "Safari Zone Center",
+    "name": "Safari Zone Center Area Northeast",
+    "encounter_region": "Safari Zone Center Area",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1244,14 +1244,14 @@
     "exits": [
       "REGION_SAFARI_ZONE_CENTER/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_CENTER:2,3/MAP_SAFARI_ZONE_NORTH:6,7"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_CENTER:2,3/MAP_SAFARI_ZONE_NORTH:6,7": "Safari Zone Center Area Exit (Top)"
+    }
   },
   "REGION_SAFARI_ZONE_CENTER/NORTHWEST": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center - Northwest",
-    "encounter_region": "Safari Zone Center",
+    "name": "Safari Zone Center Area Northwest",
+    "encounter_region": "Safari Zone Center Area",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1260,14 +1260,14 @@
     "exits": [
       "REGION_SAFARI_ZONE_CENTER/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_CENTER:4,5/MAP_SAFARI_ZONE_WEST:4,5"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_CENTER:4,5/MAP_SAFARI_ZONE_WEST:4,5": "Safari Zone Center Area Exit (Left)"
+    }
   },
   "REGION_SAFARI_ZONE_CENTER/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER",
-    "name": "Safari Zone Center - Water",
-    "encounter_region": "Safari Zone Center",
+    "name": "Safari Zone Center Area Water",
+    "encounter_region": "Safari Zone Center Area",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1281,12 +1281,12 @@
       "REGION_SAFARI_ZONE_CENTER/NORTHEAST",
       "REGION_SAFARI_ZONE_CENTER/SOUTH"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SAFARI_ZONE_EAST/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_EAST",
-    "name": "Safari Zone East",
-    "encounter_region": "Safari Zone East",
+    "name": "Safari Zone East Area",
+    "encounter_region": "Safari Zone East Area",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1300,28 +1300,28 @@
     "exits": [
       "REGION_SAFARI_ZONE_EAST/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_EAST:0,1/MAP_SAFARI_ZONE_NORTH:4,5",
-      "MAP_SAFARI_ZONE_EAST:2,3/MAP_SAFARI_ZONE_CENTER:6,7",
-      "MAP_SAFARI_ZONE_EAST:4/MAP_SAFARI_ZONE_EAST_REST_HOUSE:0"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_EAST:0,1/MAP_SAFARI_ZONE_NORTH:4,5": "Safari Zone East Area Exit (Top)",
+      "MAP_SAFARI_ZONE_EAST:2,3/MAP_SAFARI_ZONE_CENTER:6,7": "Safari Zone East Area Exit (Bottom)",
+      "MAP_SAFARI_ZONE_EAST:4/MAP_SAFARI_ZONE_EAST_REST_HOUSE:0": "Safari Zone East Area Rest House Entrance"
+    }
   },
   "REGION_SAFARI_ZONE_EAST/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_EAST",
-    "name": "Safari Zone East - Water",
-    "encounter_region": "Safari Zone East",
+    "name": "Safari Zone East Area Water",
+    "encounter_region": "Safari Zone East Area",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SAFARI_ZONE_NORTH/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_NORTH",
-    "name": "Safari Zone North",
-    "encounter_region": "Safari Zone North",
+    "name": "Safari Zone North Area",
+    "encounter_region": "Safari Zone North Area",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1334,30 +1334,30 @@
     "exits": [
       "REGION_SAFARI_ZONE_NORTH/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_NORTH:0,1/MAP_SAFARI_ZONE_WEST:0,1",
-      "MAP_SAFARI_ZONE_NORTH:2,3/MAP_SAFARI_ZONE_WEST:2,3",
-      "MAP_SAFARI_ZONE_NORTH:4,5/MAP_SAFARI_ZONE_EAST:0,1",
-      "MAP_SAFARI_ZONE_NORTH:6,7/MAP_SAFARI_ZONE_CENTER:2,3",
-      "MAP_SAFARI_ZONE_NORTH:8/MAP_SAFARI_ZONE_NORTH_REST_HOUSE:0"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_NORTH:0,1/MAP_SAFARI_ZONE_WEST:0,1": "Safari Zone North Area Exit (Bottom Left)",
+      "MAP_SAFARI_ZONE_NORTH:2,3/MAP_SAFARI_ZONE_WEST:2,3": "Safari Zone North Area Exit (Bottom Middle)",
+      "MAP_SAFARI_ZONE_NORTH:4,5/MAP_SAFARI_ZONE_EAST:0,1": "Safari Zone North Area Exit (Right)",
+      "MAP_SAFARI_ZONE_NORTH:6,7/MAP_SAFARI_ZONE_CENTER:2,3": "Safari Zone North Area Exit (Bottom Right)",
+      "MAP_SAFARI_ZONE_NORTH:8/MAP_SAFARI_ZONE_NORTH_REST_HOUSE:0": "Safari Zone North Area Rest House Entrance"
+    }
   },
   "REGION_SAFARI_ZONE_NORTH/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_NORTH",
-    "name": "Safari Zone North - Water",
-    "encounter_region": "Safari Zone North",
+    "name": "Safari Zone North Area Water",
+    "encounter_region": "Safari Zone North Area",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SAFARI_ZONE_WEST/NORTH": {
     "parent_map": "MAP_SAFARI_ZONE_WEST",
-    "name": "Safari Zone West - North",
-    "encounter_region": "Safari Zone West",
+    "name": "Safari Zone West Area North",
+    "encounter_region": "Safari Zone West Area",
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
@@ -1370,15 +1370,15 @@
     "exits": [
       "REGION_SAFARI_ZONE_WEST/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_WEST:0,1/MAP_SAFARI_ZONE_NORTH:0,1",
-      "MAP_SAFARI_ZONE_WEST:6/MAP_SAFARI_ZONE_SECRET_HOUSE:0"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_WEST:0,1/MAP_SAFARI_ZONE_NORTH:0,1": "Safari Zone West Area Exit (Top Left)",
+      "MAP_SAFARI_ZONE_WEST:6/MAP_SAFARI_ZONE_SECRET_HOUSE:0": "Safari Zone Secret House Entrance"
+    }
   },
   "REGION_SAFARI_ZONE_WEST/SOUTH": {
     "parent_map": "MAP_SAFARI_ZONE_WEST",
-    "name": "Safari Zone West - South",
-    "encounter_region": "Safari Zone West",
+    "name": "Safari Zone West Area South",
+    "encounter_region": "Safari Zone West Area",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -1390,16 +1390,16 @@
     "exits": [
       "REGION_SAFARI_ZONE_WEST/WATER"
     ],
-    "warps": [
-      "MAP_SAFARI_ZONE_WEST:2,3/MAP_SAFARI_ZONE_NORTH:2,3",
-      "MAP_SAFARI_ZONE_WEST:4,5/MAP_SAFARI_ZONE_CENTER:4,5",
-      "MAP_SAFARI_ZONE_WEST:7/MAP_SAFARI_ZONE_WEST_REST_HOUSE:0"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_WEST:2,3/MAP_SAFARI_ZONE_NORTH:2,3": "Safari Zone West Area Exit (Top Right)",
+      "MAP_SAFARI_ZONE_WEST:4,5/MAP_SAFARI_ZONE_CENTER:4,5": "Safari Zone West Area Exit (Right)",
+      "MAP_SAFARI_ZONE_WEST:7/MAP_SAFARI_ZONE_WEST_REST_HOUSE:0": "Safari Zone West Area Rest House Entrance"
+    }
   },
   "REGION_SAFARI_ZONE_WEST/WATER": {
     "parent_map": "MAP_SAFARI_ZONE_WEST",
-    "name": "Safari Zone West - Water",
-    "encounter_region": "Safari Zone West",
+    "name": "Safari Zone West Area Water",
+    "encounter_region": "Safari Zone West Area",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -1409,11 +1409,11 @@
       "REGION_SAFARI_ZONE_WEST/NORTH",
       "REGION_SAFARI_ZONE_WEST/SOUTH"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SAFARI_ZONE_CENTER_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_CENTER_REST_HOUSE",
-    "name": "Safari Zone Center Rest House",
+    "name": "Safari Zone Center Area Rest House",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1421,13 +1421,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SAFARI_ZONE_CENTER_REST_HOUSE:0/MAP_SAFARI_ZONE_CENTER:8"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_CENTER_REST_HOUSE:0/MAP_SAFARI_ZONE_CENTER:8": "Safari Zone Center Area Rest House Exit"
+    }
   },
   "REGION_SAFARI_ZONE_EAST_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_EAST_REST_HOUSE",
-    "name": "Safari Zone East Rest House",
+    "name": "Safari Zone East Area Rest House",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1435,13 +1435,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SAFARI_ZONE_EAST_REST_HOUSE:0/MAP_SAFARI_ZONE_EAST:4"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_EAST_REST_HOUSE:0/MAP_SAFARI_ZONE_EAST:4": "Safari Zone East Area Rest House Exit"
+    }
   },
   "REGION_SAFARI_ZONE_NORTH_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_NORTH_REST_HOUSE",
-    "name": "Safari Zone North Rest House",
+    "name": "Safari Zone North Area Rest House",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1449,13 +1449,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SAFARI_ZONE_NORTH_REST_HOUSE:0/MAP_SAFARI_ZONE_NORTH:8"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_NORTH_REST_HOUSE:0/MAP_SAFARI_ZONE_NORTH:8": "Safari Zone North Area Rest House Exit"
+    }
   },
   "REGION_SAFARI_ZONE_WEST_REST_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_WEST_REST_HOUSE",
-    "name": "Safari Zone West Rest House",
+    "name": "Safari Zone West Area Rest House",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1463,9 +1463,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SAFARI_ZONE_WEST_REST_HOUSE:0/MAP_SAFARI_ZONE_WEST:7"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_WEST_REST_HOUSE:0/MAP_SAFARI_ZONE_WEST:7": "Safari Zone West Area Rest House Exit"
+    }
   },
   "REGION_SAFARI_ZONE_SECRET_HOUSE/MAIN": {
     "parent_map": "MAP_SAFARI_ZONE_SECRET_HOUSE",
@@ -1479,9 +1479,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SAFARI_ZONE_SECRET_HOUSE:0/MAP_SAFARI_ZONE_WEST:6"
-    ]
+    "warps": {
+      "MAP_SAFARI_ZONE_SECRET_HOUSE:0/MAP_SAFARI_ZONE_WEST:6": "Safari Zone Secret House Exit"
+    }
   },
   "REGION_SILPH_CO_1F/MAIN": {
     "parent_map": "MAP_SILPH_CO_1F",
@@ -1495,10 +1495,10 @@
     "exits": [
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_1F:0/MAP_SAFFRON_CITY:0",
-      "MAP_SILPH_CO_1F:1/MAP_SILPH_CO_2F:3"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_1F:0/MAP_SAFFRON_CITY:0": "Silph Co. 1F Exit",
+      "MAP_SILPH_CO_1F:1/MAP_SILPH_CO_2F:3": "Silph Co. 1F Stairs"
+    }
   },
   "REGION_SILPH_CO_2F/MAIN": {
     "parent_map": "MAP_SILPH_CO_2F",
@@ -1518,16 +1518,16 @@
       "REGION_SILPH_CO_2F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_2F:0/MAP_SILPH_CO_3F:0",
-      "MAP_SILPH_CO_2F:2/MAP_SILPH_CO_8F:5",
-      "MAP_SILPH_CO_2F:3/MAP_SILPH_CO_1F:1",
-      "MAP_SILPH_CO_2F:5/MAP_SILPH_CO_8F:2"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_2F:0/MAP_SILPH_CO_3F:0": "Silph Co. 2F Stairs (Left)",
+      "MAP_SILPH_CO_2F:2/MAP_SILPH_CO_8F:5": "Silph Co. 2F Warp Tile (Top Left)",
+      "MAP_SILPH_CO_2F:3/MAP_SILPH_CO_1F:1": "Silph Co. 2F Stairs (Right)",
+      "MAP_SILPH_CO_2F:5/MAP_SILPH_CO_8F:2": "Silph Co. 2F Warp Tile (Bottom Right)"
+    }
   },
   "REGION_SILPH_CO_2F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_2F",
-    "name": "Silph Co. 2F - Northwest",
+    "name": "Silph Co. 2F Northwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1537,13 +1537,13 @@
     "exits": [
       "REGION_SILPH_CO_2F/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_2F:1/MAP_SILPH_CO_3F:8"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_2F:1/MAP_SILPH_CO_3F:8": "Silph Co. 2F Northwest Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_2F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_2F",
-    "name": "Silph Co. 2F - Southwest",
+    "name": "Silph Co. 2F Southwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1556,9 +1556,9 @@
     "exits": [
       "REGION_SILPH_CO_2F/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_2F:4/MAP_SILPH_CO_6F:1"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_2F:4/MAP_SILPH_CO_6F:1": "Silph Co. 2F Southwest Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_3F/MAIN": {
     "parent_map": "MAP_SILPH_CO_3F",
@@ -1576,19 +1576,19 @@
       "REGION_SILPH_CO_3F/CENTER",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_3F:0/MAP_SILPH_CO_2F:0",
-      "MAP_SILPH_CO_3F:1/MAP_SILPH_CO_5F:1",
-      "MAP_SILPH_CO_3F:3/MAP_SILPH_CO_4F:2",
-      "MAP_SILPH_CO_3F:5/MAP_SILPH_CO_5F:4",
-      "MAP_SILPH_CO_3F:6/MAP_SILPH_CO_3F:7",
-      "MAP_SILPH_CO_3F:7/MAP_SILPH_CO_3F:6",
-      "MAP_SILPH_CO_3F:8/MAP_SILPH_CO_2F:1"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_3F:0/MAP_SILPH_CO_2F:0": "Silph Co. 3F Stairs (Left)",
+      "MAP_SILPH_CO_3F:1/MAP_SILPH_CO_5F:1": "Silph Co. 3F Warp Tile (Top Left)",
+      "MAP_SILPH_CO_3F:3/MAP_SILPH_CO_4F:2": "Silph Co. 3F Stairs (Right)",
+      "MAP_SILPH_CO_3F:5/MAP_SILPH_CO_5F:4": "Silph Co. 3F Warp Tile (Bottom Left)",
+      "MAP_SILPH_CO_3F:6/MAP_SILPH_CO_3F:7": "Silph Co. 3F Warp Tile (Right)",
+      "MAP_SILPH_CO_3F:7/MAP_SILPH_CO_3F:6": "Silph Co. 3F Warp Tile (Bottom Right)",
+      "MAP_SILPH_CO_3F:8/MAP_SILPH_CO_2F:1": "Silph Co. 3F Warp Tile (Top Right)"
+    }
   },
   "REGION_SILPH_CO_3F/CENTER": {
     "parent_map": "MAP_SILPH_CO_3F",
-    "name": "Silph Co. 3F - Center",
+    "name": "Silph Co. 3F Center Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1599,13 +1599,13 @@
       "REGION_SILPH_CO_3F/MAIN",
       "REGION_SILPH_CO_3F/WEST"
     ],
-    "warps": [
-      "MAP_SILPH_CO_3F:2/MAP_SILPH_CO_7F:4"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_3F:2/MAP_SILPH_CO_7F:4": "Silph Co. 3F Center Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_3F/WEST": {
     "parent_map": "MAP_SILPH_CO_3F",
-    "name": "Silph Co. 3F - West",
+    "name": "Silph Co. 3F West Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1618,9 +1618,9 @@
     "exits": [
       "REGION_SILPH_CO_3F/CENTER"
     ],
-    "warps": [
-      "MAP_SILPH_CO_3F:4/MAP_SILPH_CO_9F:2"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_3F:4/MAP_SILPH_CO_9F:2": "Silph Co. 3F West Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_4F/MAIN": {
     "parent_map": "MAP_SILPH_CO_4F",
@@ -1641,16 +1641,16 @@
       "REGION_SILPH_CO_4F/NORTH",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_4F:0/MAP_SILPH_CO_5F:0",
-      "MAP_SILPH_CO_4F:2/MAP_SILPH_CO_3F:3",
-      "MAP_SILPH_CO_4F:4/MAP_SILPH_CO_10F:4",
-      "MAP_SILPH_CO_4F:5/MAP_SILPH_CO_10F:2"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_4F:0/MAP_SILPH_CO_5F:0": "Silph Co. 4F Stairs (Left)",
+      "MAP_SILPH_CO_4F:2/MAP_SILPH_CO_3F:3": "Silph Co. 4F Stairs (Right)",
+      "MAP_SILPH_CO_4F:4/MAP_SILPH_CO_10F:4": "Silph Co. 4F Warp Tile (Left)",
+      "MAP_SILPH_CO_4F:5/MAP_SILPH_CO_10F:2": "Silph Co. 4F Warp Tile (Right)"
+    }
   },
   "REGION_SILPH_CO_4F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_4F",
-    "name": "Silph Co. 4F - Northwest",
+    "name": "Silph Co. 4F Northwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1662,11 +1662,11 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_4F/NORTH": {
     "parent_map": "MAP_SILPH_CO_4F",
-    "name": "Silph Co. 4F - North",
+    "name": "Silph Co. 4F North Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1678,10 +1678,10 @@
     "exits": [
       "REGION_SILPH_CO_4F/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_4F:1/MAP_SILPH_CO_6F:3",
-      "MAP_SILPH_CO_4F:3/MAP_SILPH_CO_10F:1"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_4F:1/MAP_SILPH_CO_6F:3": "Silph Co. 4F North Room Warp Tile (Right)",
+      "MAP_SILPH_CO_4F:3/MAP_SILPH_CO_10F:1": "Silph Co. 4F North Room Warp Tile (Left)"
+    }
   },
   "REGION_SILPH_CO_5F/MAIN": {
     "parent_map": "MAP_SILPH_CO_5F",
@@ -1705,17 +1705,17 @@
       "REGION_SILPH_CO_5F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_5F:0/MAP_SILPH_CO_4F:0",
-      "MAP_SILPH_CO_5F:1/MAP_SILPH_CO_3F:1",
-      "MAP_SILPH_CO_5F:2/MAP_SILPH_CO_6F:2",
-      "MAP_SILPH_CO_5F:3/MAP_SILPH_CO_9F:1",
-      "MAP_SILPH_CO_5F:5/MAP_SILPH_CO_7F:2"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_5F:0/MAP_SILPH_CO_4F:0": "Silph Co. 5F Stairs (Left)",
+      "MAP_SILPH_CO_5F:1/MAP_SILPH_CO_3F:1": "Silph Co. 5F Warp Tile (Top Left)",
+      "MAP_SILPH_CO_5F:2/MAP_SILPH_CO_6F:2": "Silph Co. 5F Stairs (Right)",
+      "MAP_SILPH_CO_5F:3/MAP_SILPH_CO_9F:1": "Silph Co. 5F Warp Tile (Bottom Left)",
+      "MAP_SILPH_CO_5F:5/MAP_SILPH_CO_7F:2": "Silph Co. 5F Warp Tile (Top Right)"
+    }
   },
   "REGION_SILPH_CO_5F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_5F",
-    "name": "Silph Co. 5F - Northwest",
+    "name": "Silph Co. 5F Northwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1725,11 +1725,11 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_5F/CENTER": {
     "parent_map": "MAP_SILPH_CO_5F",
-    "name": "Silph Co. 5F - Center",
+    "name": "Silph Co. 5F Center Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1739,11 +1739,11 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_5F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_5F",
-    "name": "Silph Co. 5F - Southwest",
+    "name": "Silph Co. 5F Southwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1755,9 +1755,9 @@
     "exits": [
       "REGION_SILPH_CO_5F/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_5F:4/MAP_SILPH_CO_3F:5"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_5F:4/MAP_SILPH_CO_3F:5": "Silph Co. 5F Southwest Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_6F/MAIN": {
     "parent_map": "MAP_SILPH_CO_6F",
@@ -1777,16 +1777,16 @@
       "REGION_SILPH_CO_6F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_6F:0/MAP_SILPH_CO_7F:0",
-      "MAP_SILPH_CO_6F:1/MAP_SILPH_CO_2F:4",
-      "MAP_SILPH_CO_6F:2/MAP_SILPH_CO_5F:2",
-      "MAP_SILPH_CO_6F:3/MAP_SILPH_CO_4F:1"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_6F:0/MAP_SILPH_CO_7F:0": "Silph Co. 6F Stairs (Left)",
+      "MAP_SILPH_CO_6F:1/MAP_SILPH_CO_2F:4": "Silph Co. 6F Warp Tile (Right)",
+      "MAP_SILPH_CO_6F:2/MAP_SILPH_CO_5F:2": "Silph Co. 6F Stairs (Right)",
+      "MAP_SILPH_CO_6F:3/MAP_SILPH_CO_4F:1": "Silph Co. 6F Warp Tile (Left)"
+    }
   },
   "REGION_SILPH_CO_6F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_6F",
-    "name": "Silph Co. 6F - Southwest",
+    "name": "Silph Co. 6F Southwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1797,7 +1797,7 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_7F/MAIN": {
     "parent_map": "MAP_SILPH_CO_7F",
@@ -1818,34 +1818,33 @@
       "REGION_SILPH_CO_7F/EAST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_7F:0/MAP_SILPH_CO_6F:0",
-      "MAP_SILPH_CO_7F:3/MAP_SILPH_CO_8F:3"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_7F:0/MAP_SILPH_CO_6F:0": "Silph Co. 7F Stairs (Left)",
+      "MAP_SILPH_CO_7F:3/MAP_SILPH_CO_8F:3": "Silph Co. 7F Stairs (Right)"
+    }
   },
   "REGION_SILPH_CO_7F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F - Northwest",
+    "name": "Silph Co. 7F Northwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "locations": [
       "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD"
-
     ],
     "events": [
       "GIFT_POKEMON_LAPRAS"
     ],
     "exits": [],
-    "warps": [
-      "MAP_SILPH_CO_7F:1/MAP_SILPH_CO_11F:1",
-      "MAP_SILPH_CO_7F:4/MAP_SILPH_CO_3F:2"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_7F:1/MAP_SILPH_CO_11F:1": "Silph Co. 7F Northwest Room Warp Tile (Bottom)",
+      "MAP_SILPH_CO_7F:4/MAP_SILPH_CO_3F:2": "Silph Co. 7F Northwest Room Warp Tile (Top)"
+    }
   },
   "REGION_SILPH_CO_7F/CENTER": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F - Center",
+    "name": "Silph Co. 7F Center Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1853,11 +1852,11 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_7F/EAST": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F - East",
+    "name": "Silph Co. 7F East Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1871,11 +1870,11 @@
       "REGION_SILPH_CO_7F/MAIN",
       "REGION_SILPH_CO_7F/SOUTHEAST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_7F/SOUTHEAST": {
     "parent_map": "MAP_SILPH_CO_7F",
-    "name": "Silph Co. 7F - Southeast",
+    "name": "Silph Co. 7F Southeast Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1887,9 +1886,9 @@
     "exits": [
       "REGION_SILPH_CO_7F/EAST"
     ],
-    "warps": [
-      "MAP_SILPH_CO_7F:2/MAP_SILPH_CO_5F:5"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_7F:2/MAP_SILPH_CO_5F:5": "Silph Co. 7F Southeast Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_8F/MAIN": {
     "parent_map": "MAP_SILPH_CO_8F",
@@ -1910,17 +1909,17 @@
       "REGION_SILPH_CO_8F/WEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_8F:0/MAP_SILPH_CO_9F:0",
-      "MAP_SILPH_CO_8F:1/MAP_SILPH_CO_8F:4",
-      "MAP_SILPH_CO_8F:2/MAP_SILPH_CO_2F:5",
-      "MAP_SILPH_CO_8F:3/MAP_SILPH_CO_7F:3",
-      "MAP_SILPH_CO_8F:5/MAP_SILPH_CO_2F:2"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_8F:0/MAP_SILPH_CO_9F:0": "Silph Co. 8F Stairs (Left)",
+      "MAP_SILPH_CO_8F:1/MAP_SILPH_CO_8F:4": "Silph Co. 8F Warp Tile (Middle)",
+      "MAP_SILPH_CO_8F:2/MAP_SILPH_CO_2F:5": "Silph Co. 8F Warp Tile (Top)",
+      "MAP_SILPH_CO_8F:3/MAP_SILPH_CO_7F:3": "Silph Co. 8F Stairs (Right)",
+      "MAP_SILPH_CO_8F:5/MAP_SILPH_CO_2F:2": "Silph Co. 8F Warp Tile (Bottom)"
+    }
   },
   "REGION_SILPH_CO_8F/WEST": {
     "parent_map": "MAP_SILPH_CO_8F",
-    "name": "Silph Co. 8F - West",
+    "name": "Silph Co. 8F West Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1930,9 +1929,9 @@
     "exits": [
       "REGION_SILPH_CO_8F/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_8F:4/MAP_SILPH_CO_8F:1"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_8F:4/MAP_SILPH_CO_8F:1": "Silph Co. 8F West Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_9F/MAIN": {
     "parent_map": "MAP_SILPH_CO_9F",
@@ -1950,15 +1949,15 @@
       "REGION_SILPH_CO_9F/SOUTHWEST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_9F:0/MAP_SILPH_CO_8F:0",
-      "MAP_SILPH_CO_9F:1/MAP_SILPH_CO_5F:3",
-      "MAP_SILPH_CO_9F:3/MAP_SILPH_CO_10F:3"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_9F:0/MAP_SILPH_CO_8F:0": "Silph Co. 9F Stairs (Left)",
+      "MAP_SILPH_CO_9F:1/MAP_SILPH_CO_5F:3": "Silph Co. 9F Warp Tile",
+      "MAP_SILPH_CO_9F:3/MAP_SILPH_CO_10F:3": "Silph Co. 9F Stairs (Right)"
+    }
   },
-  "REGION_SILPH_CO_9F/NORTHWEST" : {
+  "REGION_SILPH_CO_9F/NORTHWEST": {
     "parent_map": "MAP_SILPH_CO_9F",
-    "name": "Silph Co. 9F - Northwest",
+    "name": "Silph Co. 9F Northwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1970,13 +1969,13 @@
     "exits": [
       "REGION_SILPH_CO_9F/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_SILPH_CO_9F:2/MAP_SILPH_CO_3F:4"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_9F:2/MAP_SILPH_CO_3F:4": "Silph Co. 9F Northwest Room Warp Tile"
+    }
   },
   "REGION_SILPH_CO_9F/SOUTHWEST": {
     "parent_map": "MAP_SILPH_CO_9F",
-    "name": "Silph Co. 9F - Southwest",
+    "name": "Silph Co. 9F Southwest Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1990,7 +1989,7 @@
       "REGION_SILPH_CO_9F/MAIN",
       "REGION_SILPH_CO_9F/NORTHWEST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_10F/MAIN": {
     "parent_map": "MAP_SILPH_CO_10F",
@@ -2012,15 +2011,15 @@
       "REGION_SILPH_CO_10F/SOUTHEAST",
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_10F:0/MAP_SILPH_CO_11F:0",
-      "MAP_SILPH_CO_10F:2/MAP_SILPH_CO_4F:5",
-      "MAP_SILPH_CO_10F:3/MAP_SILPH_CO_9F:3"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_10F:0/MAP_SILPH_CO_11F:0": "Silph Co. 10F Stairs (Left)",
+      "MAP_SILPH_CO_10F:2/MAP_SILPH_CO_4F:5": "Silph Co. 10F Warp Tile",
+      "MAP_SILPH_CO_10F:3/MAP_SILPH_CO_9F:3": "Silph Co. 10F Stairs (Right)"
+    }
   },
   "REGION_SILPH_CO_10F/SOUTHEAST": {
     "parent_map": "MAP_SILPH_CO_10F",
-    "name": "Silph Co. 10F - Southeast",
+    "name": "Silph Co. 10F Southeast Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -2030,14 +2029,14 @@
     "exits": [
       "REGION_SILPH_CO_10F/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_10F:1/MAP_SILPH_CO_4F:3",
-      "MAP_SILPH_CO_10F:4/MAP_SILPH_CO_4F:4"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_10F:1/MAP_SILPH_CO_4F:3": "Silph Co. 10F Southeast Room Warp Tile (Top Left)",
+      "MAP_SILPH_CO_10F:4/MAP_SILPH_CO_4F:4": "Silph Co. 10F Southeast Room Warp Tile (Bottom Right)"
+    }
   },
   "REGION_SILPH_CO_11F/EAST": {
     "parent_map": "MAP_SILPH_CO_11F",
-    "name": "Silph Co. 11F - East",
+    "name": "Silph Co. 11F East",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -2050,13 +2049,13 @@
     "exits": [
       "REGION_SILPH_CO_ELEVATOR/MAIN"
     ],
-    "warps": [
-      "MAP_SILPH_CO_11F:0/MAP_SILPH_CO_10F:0"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_11F:0/MAP_SILPH_CO_10F:0": "Silph Co. 11F East Stairs"
+    }
   },
   "REGION_SILPH_CO_11F/WEST": {
     "parent_map": "MAP_SILPH_CO_11F",
-    "name": "Silph Co. 11F - West",
+    "name": "Silph Co. 11F West",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -2067,15 +2066,15 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SILPH_CO_11F/PRESIDENT"
+      "REGION_SILPH_CO_11F/PRESIDENTS_ROOM"
     ],
-    "warps": [
-      "MAP_SILPH_CO_11F:1/MAP_SILPH_CO_7F:1"
-    ]
+    "warps": {
+      "MAP_SILPH_CO_11F:1/MAP_SILPH_CO_7F:1": "Silph Co. 11F West Warp Tile"
+    }
   },
-  "REGION_SILPH_CO_11F/PRESIDENT": {
+  "REGION_SILPH_CO_11F/PRESIDENTS_ROOM": {
     "parent_map": "MAP_SILPH_CO_11F",
-    "name": "Silph Co. 11F - President",
+    "name": "Silph Co. 11F President's Room",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -2088,7 +2087,7 @@
       "EVENT_LIBERATE_SILPH_CO"
     ],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_SILPH_CO_ELEVATOR/MAIN": {
     "parent_map": "MAP_SILPH_CO_ELEVATOR",
@@ -2111,7 +2110,7 @@
       "REGION_SILPH_CO_10F/MAIN",
       "REGION_SILPH_CO_11F/EAST"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SEAFOAM_ISLANDS_1F/MAIN": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_1F",
@@ -2124,19 +2123,18 @@
       "ITEM_SEAFOAM_ISLANDS_1F_ICE_HEAL"
     ],
     "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B1F/WEST_DROP",
-      "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST_DROP"
-    ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_1F:0/MAP_SEAFOAM_ISLANDS_B1F:0",
-      "MAP_SEAFOAM_ISLANDS_1F:1/MAP_SEAFOAM_ISLANDS_B1F:1",
-      "MAP_SEAFOAM_ISLANDS_1F:3/MAP_ROUTE20:1"
-    ]
+    "exits": [],
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_1F:0/MAP_SEAFOAM_ISLANDS_B1F:0": "Seafoam Islands 1F Ladder (Left)",
+      "MAP_SEAFOAM_ISLANDS_1F:1/MAP_SEAFOAM_ISLANDS_B1F:1": "Seafoam Islands 1F Ladder (Right)",
+      "MAP_SEAFOAM_ISLANDS_1F:3/MAP_ROUTE20:1": "Seafoam Islands 1F Exit (Left)",
+      "MAP_SEAFOAM_ISLANDS_1F:5/MAP_SEAFOAM_ISLANDS_B1F:9": "Seafoam Islands 1F Drop (Left)",
+      "MAP_SEAFOAM_ISLANDS_1F:6/MAP_SEAFOAM_ISLANDS_B1F:10": "Seafoam Islands 1F Drop (Right)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_1F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_1F",
-    "name": "Seafoam Islands 1F - Southeast",
+    "name": "Seafoam Islands 1F Southeast",
     "encounter_region": "Seafoam Islands 1F",
     "has_land": true,
     "has_water": false,
@@ -2144,28 +2142,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_1F:2/MAP_SEAFOAM_ISLANDS_B1F:2",
-      "MAP_SEAFOAM_ISLANDS_1F:4/MAP_ROUTE20:0"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B1F/WEST_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F - West (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B1F/WEST"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_1F:2/MAP_SEAFOAM_ISLANDS_B1F:2": "Seafoam Islands 1F Southeast Ladder",
+      "MAP_SEAFOAM_ISLANDS_1F:4/MAP_ROUTE20:0": "Seafoam Islands 1F Exit (Right)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B1F/WEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F - West",
+    "name": "Seafoam Islands B1F West",
     "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
@@ -2174,48 +2158,34 @@
       "ITEM_SEAFOAM_ISLANDS_B1F_REVIVE"
     ],
     "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST_DROP"
-    ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B1F:0/MAP_SEAFOAM_ISLANDS_1F:0",
-      "MAP_SEAFOAM_ISLANDS_B1F:3/MAP_SEAFOAM_ISLANDS_B2F:3",
-      "MAP_SEAFOAM_ISLANDS_B1F:4/MAP_SEAFOAM_ISLANDS_B2F:4"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F - Northeast (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST"
-    ],
-    "warps": []
+    "exits": [],
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B1F:0/MAP_SEAFOAM_ISLANDS_1F:0": "Seafoam Islands B1F West Ladder (Middle)",
+      "MAP_SEAFOAM_ISLANDS_B1F:3/MAP_SEAFOAM_ISLANDS_B2F:3": "Seafoam Islands B1F West Ladder (Top Left)",
+      "MAP_SEAFOAM_ISLANDS_B1F:4/MAP_SEAFOAM_ISLANDS_B2F:4": "Seafoam Islands B1F West Ladder (Bottom Right)",
+      "MAP_SEAFOAM_ISLANDS_B1F:7/MAP_SEAFOAM_ISLANDS_B2F:7": "Seafoam Islands B1F West Drop",
+      "MAP_SEAFOAM_ISLANDS_B1F:9/MAP_SEAFOAM_ISLANDS_1F:5": ""
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B1F/NORTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F - Northeast",
+    "name": "Seafoam Islands B1F Northeast",
     "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST_DROP"
-    ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B1F:1/MAP_SEAFOAM_ISLANDS_1F:1"
-    ]
+    "exits": [],
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B1F:1/MAP_SEAFOAM_ISLANDS_1F:1": "Seafoam Islands B1F Northeast Ladder",
+      "MAP_SEAFOAM_ISLANDS_B1F:8/MAP_SEAFOAM_ISLANDS_B2F:8": "Seafoam Islands B1F Northeast Drop",
+      "MAP_SEAFOAM_ISLANDS_B1F:10/MAP_SEAFOAM_ISLANDS_1F:6": ""
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B1F/SOUTH": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F - South",
+    "name": "Seafoam Islands B1F South",
     "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
@@ -2225,13 +2195,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B1F:5/MAP_SEAFOAM_ISLANDS_B2F:5"
-    ]
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B1F:5/MAP_SEAFOAM_ISLANDS_B2F:5": "Seafoam Islands B1F South Ladder"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B1F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B1F",
-    "name": "Seafoam Islands B1F - Southeast",
+    "name": "Seafoam Islands B1F Southeast",
     "encounter_region": "Seafoam Islands B1F",
     "has_land": true,
     "has_water": false,
@@ -2239,44 +2209,30 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B1F:2/MAP_SEAFOAM_ISLANDS_1F:2",
-      "MAP_SEAFOAM_ISLANDS_B1F:6/MAP_SEAFOAM_ISLANDS_B2F:6"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F - Northwest (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B1F:2/MAP_SEAFOAM_ISLANDS_1F:2": "Seafoam Islands B1F Southeast Ladder (Bottom Left)",
+      "MAP_SEAFOAM_ISLANDS_B1F:6/MAP_SEAFOAM_ISLANDS_B2F:6": "Seafoam Islands B1F Southeast Ladder (Top Right)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B2F/NORTHWEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F - Northwest",
+    "name": "Seafoam Islands B2F Northwest",
     "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP"
-    ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B2F:3/MAP_SEAFOAM_ISLANDS_B1F:3"
-    ]
+    "exits": [],
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B2F:3/MAP_SEAFOAM_ISLANDS_B1F:3": "Seafoam Islands B2F Northwest Ladder",
+      "MAP_SEAFOAM_ISLANDS_B2F:7/MAP_SEAFOAM_ISLANDS_B1F:7": "",
+      "MAP_SEAFOAM_ISLANDS_B2F:9/MAP_SEAFOAM_ISLANDS_B3F:5": "Seafoam Islands B2F Northwest Drop"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B2F/SOUTHWEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F - Southwest",
+    "name": "Seafoam Islands B2F Southwest",
     "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
@@ -2286,45 +2242,15 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B2F:0/MAP_SEAFOAM_ISLANDS_B3F:0",
-      "MAP_SEAFOAM_ISLANDS_B2F:4/MAP_SEAFOAM_ISLANDS_B1F:4",
-      "MAP_SEAFOAM_ISLANDS_B2F:5/MAP_SEAFOAM_ISLANDS_B1F:5"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F - Northeast (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B2F:0/MAP_SEAFOAM_ISLANDS_B3F:0": "Seafoam Islands B2F Southwest Ladder (Bottom Left)",
+      "MAP_SEAFOAM_ISLANDS_B2F:4/MAP_SEAFOAM_ISLANDS_B1F:4": "Seafoam Islands B2F Southwest Ladder (Top)",
+      "MAP_SEAFOAM_ISLANDS_B2F:5/MAP_SEAFOAM_ISLANDS_B1F:5": "Seafoam Islands B2F Southwest Ladder (Bottom Right)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B2F/NORTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F - Northeast",
-    "encounter_region": "Seafoam Islands B2F",
-    "has_land": true,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP"
-    ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B2F:1/MAP_SEAFOAM_ISLANDS_B3F:1"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B2F/SOUTHEAST": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
-    "name": "Seafoam Islands B2F - Southeast",
+    "name": "Seafoam Islands B2F Northeast",
     "encounter_region": "Seafoam Islands B2F",
     "has_land": true,
     "has_water": false,
@@ -2332,14 +2258,30 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B2F:2/MAP_SEAFOAM_ISLANDS_B3F:2",
-      "MAP_SEAFOAM_ISLANDS_B2F:6/MAP_SEAFOAM_ISLANDS_B1F:6"
-    ]
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B2F:1/MAP_SEAFOAM_ISLANDS_B3F:1": "Seafoam Islands B2F Northeast Ladder",
+      "MAP_SEAFOAM_ISLANDS_B2F:8/MAP_SEAFOAM_ISLANDS_B1F:8": "",
+      "MAP_SEAFOAM_ISLANDS_B2F:10/MAP_SEAFOAM_ISLANDS_B3F:6": "Seafoam Islands B2F Northeast Drop"
+    }
+  },
+  "REGION_SEAFOAM_ISLANDS_B2F/SOUTHEAST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B2F",
+    "name": "Seafoam Islands B2F Southeast",
+    "encounter_region": "Seafoam Islands B2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "locations": [],
+    "events": [],
+    "exits": [],
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B2F:2/MAP_SEAFOAM_ISLANDS_B3F:2": "Seafoam Islands B2F Southeast Ladder (Bottom)",
+      "MAP_SEAFOAM_ISLANDS_B2F:6/MAP_SEAFOAM_ISLANDS_B1F:6": "Seafoam Islands B2F Southeast Ladder (Top)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B3F/WEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F - West",
+    "name": "Seafoam Islands B3F West",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
@@ -2349,17 +2291,18 @@
     ],
     "events": [],
     "exits": [
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER",
-      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER_DROP"
+      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
     ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0",
-      "MAP_SEAFOAM_ISLANDS_B3F:3/MAP_SEAFOAM_ISLANDS_B4F:0"
-    ]
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0": "Seafoam Islands B3F West Ladder (Bottom Left)",
+      "MAP_SEAFOAM_ISLANDS_B3F:3/MAP_SEAFOAM_ISLANDS_B4F:0": "Seafoam Islands B3F West Ladder (Top Right)",
+      "MAP_SEAFOAM_ISLANDS_B3F:7/MAP_SEAFOAM_ISLANDS_B4F:2": "Seafoam Islands B3F West Drop (Left)",
+      "MAP_SEAFOAM_ISLANDS_B3F:8/MAP_SEAFOAM_ISLANDS_B4F:3": "Seafoam Islands B3F West Drop (Right)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F - Northeast",
+    "name": "Seafoam Islands B3F Northeast",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
@@ -2367,28 +2310,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B3F:1/MAP_SEAFOAM_ISLANDS_B2F:1",
-      "MAP_SEAFOAM_ISLANDS_B3F:4/MAP_SEAFOAM_ISLANDS_B4F:1"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B3F/WATER_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F - Water (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B3F:1/MAP_SEAFOAM_ISLANDS_B2F:1": "Seafoam Islands B3F Northeast Ladder (Right)",
+      "MAP_SEAFOAM_ISLANDS_B3F:4/MAP_SEAFOAM_ISLANDS_B4F:1": "Seafoam Islands B3F Northeast Ladder (Left)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B3F/WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F - Water",
+    "name": "Seafoam Islands B3F Water",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": false,
     "has_water": true,
@@ -2398,13 +2327,16 @@
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WEST",
       "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST",
-      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER_DROP"
+      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER"
     ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B3F:5/MAP_SEAFOAM_ISLANDS_B2F:9": "",
+      "MAP_SEAFOAM_ISLANDS_B3F:6/MAP_SEAFOAM_ISLANDS_B2F:10": ""
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F - Southeast",
+    "name": "Seafoam Islands B3F Southeast",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
@@ -2414,9 +2346,9 @@
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B3F/WATER"
     ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B3F:2/MAP_SEAFOAM_ISLANDS_B2F:2"
-    ]
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B3F:2/MAP_SEAFOAM_ISLANDS_B2F:2": "Seafoam Islands B3F Southeast Ladder"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B4F/MAIN": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
@@ -2434,28 +2366,14 @@
       "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER",
       "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER"
     ],
-    "warps": [
-      "MAP_SEAFOAM_ISLANDS_B4F:0/MAP_SEAFOAM_ISLANDS_B3F:3",
-      "MAP_SEAFOAM_ISLANDS_B4F:1/MAP_SEAFOAM_ISLANDS_B3F:4"
-    ]
-  },
-  "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F - Water E (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B4F:0/MAP_SEAFOAM_ISLANDS_B3F:3": "Seafoam Islands B4F Ladder (Left)",
+      "MAP_SEAFOAM_ISLANDS_B4F:1/MAP_SEAFOAM_ISLANDS_B3F:4": "Seafoam Islands B4F Ladder (Right)"
+    }
   },
   "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F - Water E",
+    "name": "Seafoam Islands B4F East Water",
     "encounter_region": "Seafoam Islands B4F",
     "has_land": false,
     "has_water": true,
@@ -2465,25 +2383,11 @@
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B4F/MAIN"
     ],
-    "warps": []
-  },
-  "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER_DROP": {
-    "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F - Water W (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER"
-    ],
-    "warps": []
+    "warps": {}
   },
   "REGION_SEAFOAM_ISLANDS_B4F/WEST_WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F - Water W",
+    "name": "Seafoam Islands B4F West Water",
     "encounter_region": "Seafoam Islands B4F",
     "has_land": false,
     "has_water": true,
@@ -2492,13 +2396,16 @@
     "events": [],
     "exits": [
       "REGION_SEAFOAM_ISLANDS_B4F/MAIN",
-      "REGION_SEAFOAM_ISLANDS_B4F/ARTICUNO"
+      "REGION_SEAFOAM_ISLANDS_B4F/NEAR_ARTICUNO"
     ],
-    "warps": []
+    "warps": {
+      "MAP_SEAFOAM_ISLANDS_B4F:2/MAP_SEAFOAM_ISLANDS_B3F:7": "",
+      "MAP_SEAFOAM_ISLANDS_B4F:3/MAP_SEAFOAM_ISLANDS_B3F:8": ""
+    }
   },
-  "REGION_SEAFOAM_ISLANDS_B4F/ARTICUNO": {
+  "REGION_SEAFOAM_ISLANDS_B4F/NEAR_ARTICUNO": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",
-    "name": "Seafoam Islands B4F - Articuno",
+    "name": "Seafoam Islands B4F Near Articuno",
     "encounter_region": "Seafoam Islands B4F",
     "has_land": true,
     "has_water": false,
@@ -2508,7 +2415,7 @@
       "LEGENDARY_POKEMON_ARTICUNO"
     ],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_POKEMON_MANSION_1F/MAIN": {
     "parent_map": "MAP_POKEMON_MANSION_1F",
@@ -2525,28 +2432,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_MANSION_1F:0/MAP_CINNABAR_ISLAND:0",
-      "MAP_POKEMON_MANSION_1F:1/MAP_POKEMON_MANSION_2F:2"
-    ]
-  },
-  "REGION_POKEMON_MANSION_1F/SOUTH_DROP": {
-    "parent_map": "MAP_POKEMON_MANSION_1F",
-    "name": "Pokemon Mansion 1F - South (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_POKEMON_MANSION_1F/SOUTH"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_POKEMON_MANSION_1F:0/MAP_CINNABAR_ISLAND:0": "Pokemon Mansion 1F Exit (Left)",
+      "MAP_POKEMON_MANSION_1F:1/MAP_POKEMON_MANSION_2F:2": "Pokemon Mansion 1F Stairs"
+    }
   },
   "REGION_POKEMON_MANSION_1F/SOUTH": {
     "parent_map": "MAP_POKEMON_MANSION_1F",
-    "name": "Pokemon Mansion 1F - South",
+    "name": "Pokemon Mansion 1F South",
     "encounter_region": "Pokemon Mansion 1F",
     "has_land": true,
     "has_water": false,
@@ -2559,13 +2452,14 @@
     "exits": [
       "REGION_POKEMON_MANSION_1F/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_POKEMON_MANSION_1F:2/MAP_POKEMON_MANSION_B1F:0"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_1F:2/MAP_POKEMON_MANSION_B1F:0": "Pokemon Mansion 1F South Stairs",
+      "MAP_POKEMON_MANSION_1F:4,5,6/MAP_POKEMON_MANSION_3F:3,4,5": ""
+    }
   },
   "REGION_POKEMON_MANSION_1F/SOUTHEAST": {
     "parent_map": "MAP_POKEMON_MANSION_1F",
-    "name": "Pokemon Mansion 1F - Southeast",
+    "name": "Pokemon Mansion 1F Southeast",
     "encounter_region": "Pokemon Mansion 1F",
     "has_land": true,
     "has_water": false,
@@ -2575,9 +2469,9 @@
     "exits": [
       "REGION_POKEMON_MANSION_1F/SOUTH"
     ],
-    "warps": [
-      "MAP_POKEMON_MANSION_1F:3/MAP_CINNABAR_ISLAND:0!"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_1F:3/MAP_CINNABAR_ISLAND:0!": "Pokemon Mansion 1F Exit (Right)"
+    }
   },
   "REGION_POKEMON_MANSION_2F/MAIN": {
     "parent_map": "MAP_POKEMON_MANSION_2F",
@@ -2595,29 +2489,15 @@
     "exits": [
       "REGION_POKEMON_MANSION_2F/CENTER"
     ],
-    "warps": [
-      "MAP_POKEMON_MANSION_2F:0/MAP_POKEMON_MANSION_3F:0",
-      "MAP_POKEMON_MANSION_2F:2/MAP_POKEMON_MANSION_1F:1",
-      "MAP_POKEMON_MANSION_2F:3/MAP_POKEMON_MANSION_3F:2"
-    ]
-  },
-  "REGION_POKEMON_MANSION_2F/CENTER_DROP": {
-    "parent_map": "MAP_POKEMON_MANSION_2F",
-    "name": "Pokemon Mansion 2F - Center (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_POKEMON_MANSION_2F/CENTER"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_POKEMON_MANSION_2F:0/MAP_POKEMON_MANSION_3F:0": "Pokemon Mansion 2F Stairs (Top)",
+      "MAP_POKEMON_MANSION_2F:2/MAP_POKEMON_MANSION_1F:1": "Pokemon Mansion 2F Stairs (Bottom Left)",
+      "MAP_POKEMON_MANSION_2F:3/MAP_POKEMON_MANSION_3F:2": "Pokemon Mansion 2F Stairs (Bottom Right)"
+    }
   },
   "REGION_POKEMON_MANSION_2F/CENTER": {
     "parent_map": "MAP_POKEMON_MANSION_2F",
-    "name": "Pokemon Mansion 2F - Center",
+    "name": "Pokemon Mansion 2F Center",
     "encounter_region": "Pokemon Mansion 2F",
     "has_land": true,
     "has_water": false,
@@ -2627,11 +2507,13 @@
     "exits": [
       "REGION_POKEMON_MANSION_2F/MAIN"
     ],
-    "warps": []
+    "warps": {
+      "MAP_POKEMON_MANSION_2F:4,5/MAP_POKEMON_MANSION_3F:6,7": ""
+    }
   },
   "REGION_POKEMON_MANSION_2F/EAST": {
     "parent_map": "MAP_POKEMON_MANSION_2F",
-    "name": "Pokemon Mansion 2F - East",
+    "name": "Pokemon Mansion 2F East",
     "encounter_region": "Pokemon Mansion 2F",
     "has_land": true,
     "has_water": false,
@@ -2641,13 +2523,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_MANSION_2F:1/MAP_POKEMON_MANSION_3F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_2F:1/MAP_POKEMON_MANSION_3F:1": "Pokemon Mansion 2F East Stairs"
+    }
   },
   "REGION_POKEMON_MANSION_3F/SOUTHWEST": {
     "parent_map": "MAP_POKEMON_MANSION_3F",
-    "name": "Pokemon Mansion 3F - Southwest",
+    "name": "Pokemon Mansion 3F Southwest",
     "encounter_region": "Pokemon Mansion 3F",
     "has_land": true,
     "has_water": false,
@@ -2658,13 +2540,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_MANSION_3F:2/MAP_POKEMON_MANSION_2F:3"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_3F:2/MAP_POKEMON_MANSION_2F:3": "Pokemon Mansion 3F Southwest Stairs"
+    }
   },
   "REGION_POKEMON_MANSION_3F/NORTH": {
     "parent_map": "MAP_POKEMON_MANSION_3F",
-    "name": "Pokemon Mansion 3F - North",
+    "name": "Pokemon Mansion 3F North",
     "encounter_region": "Pokemon Mansion 3F",
     "has_land": true,
     "has_water": false,
@@ -2676,13 +2558,13 @@
     "exits": [
       "REGION_POKEMON_MANSION_3F/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_POKEMON_MANSION_3F:0/MAP_POKEMON_MANSION_2F:0"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_3F:0/MAP_POKEMON_MANSION_2F:0": "Pokemon Mansion 3F North Stairs"
+    }
   },
   "REGION_POKEMON_MANSION_3F/SOUTHEAST": {
     "parent_map": "MAP_POKEMON_MANSION_3F",
-    "name": "Pokemon Mansion 3F - Southeast",
+    "name": "Pokemon Mansion 3F Southeast",
     "encounter_region": "Pokemon Mansion 3F",
     "has_land": true,
     "has_water": false,
@@ -2693,13 +2575,13 @@
     ],
     "events": [],
     "exits": [
-      "REGION_POKEMON_MANSION_3F/NORTH",
-      "REGION_POKEMON_MANSION_1F/SOUTH_DROP",
-      "REGION_POKEMON_MANSION_2F/CENTER_DROP"
+      "REGION_POKEMON_MANSION_3F/NORTH"
     ],
-    "warps": [
-      "MAP_POKEMON_MANSION_3F:1/MAP_POKEMON_MANSION_2F:1"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_3F:1/MAP_POKEMON_MANSION_2F:1": "Pokemon Mansion 3F Southeast Stairs",
+      "MAP_POKEMON_MANSION_3F:3,4,5/MAP_POKEMON_MANSION_1F:4,5,6": "Pokemon Mansion 3F Drop (Left)",
+      "MAP_POKEMON_MANSION_3F:6,7/MAP_POKEMON_MANSION_2F:4,5": "Pokemon Mansion 3F Drop (Right)"
+    }
   },
   "REGION_POKEMON_MANSION_B1F": {
     "parent_map": "MAP_POKEMON_MANSION_B1F",
@@ -2719,13 +2601,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_POKEMON_MANSION_B1F:0/MAP_POKEMON_MANSION_1F:2"
-    ]
+    "warps": {
+      "MAP_POKEMON_MANSION_B1F:0/MAP_POKEMON_MANSION_1F:2": "Pokemon Mansion B1F Stairs"
+    }
   },
   "REGION_VICTORY_ROAD_1F/SOUTH": {
     "parent_map": "MAP_VICTORY_ROAD_1F",
-    "name": "Victory Road 1F - South",
+    "name": "Victory Road 1F South",
     "encounter_region": "Victory Road 1F",
     "has_land": true,
     "has_water": false,
@@ -2735,13 +2617,13 @@
     "exits": [
       "REGION_VICTORY_ROAD_1F/NORTH"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_1F:1/MAP_ROUTE23:0"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_1F:1/MAP_ROUTE23:0": "Victory Road 1F Exit"
+    }
   },
   "REGION_VICTORY_ROAD_1F/NORTH": {
     "parent_map": "MAP_VICTORY_ROAD_1F",
-    "name": "Victory Road 1F - North",
+    "name": "Victory Road 1F North",
     "encounter_region": "Victory Road 1F",
     "has_land": true,
     "has_water": false,
@@ -2758,13 +2640,13 @@
     "exits": [
       "REGION_VICTORY_ROAD_1F/SOUTH"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_1F:0/MAP_VICTORY_ROAD_2F:0"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_1F:0/MAP_VICTORY_ROAD_2F:0": "Victory Road 1F North Ladder"
+    }
   },
   "REGION_VICTORY_ROAD_2F/SOUTHWEST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F - Southwest",
+    "name": "Victory Road 2F Southwest",
     "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
@@ -2774,27 +2656,13 @@
     "exits": [
       "REGION_VICTORY_ROAD_2F/CENTER"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_2F:0/MAP_VICTORY_ROAD_1F:0"
-    ]
-  },
-  "REGION_VICTORY_ROAD_2F/CENTER_DROP": {
-    "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F - Center (Drop)",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_VICTORY_ROAD_2F/CENTER"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_VICTORY_ROAD_2F:0/MAP_VICTORY_ROAD_1F:0": "Victory Road 2F Southwest Ladder"
+    }
   },
   "REGION_VICTORY_ROAD_2F/CENTER": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F - Center",
+    "name": "Victory Road 2F Center",
     "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
@@ -2812,13 +2680,14 @@
     "exits": [
       "REGION_VICTORY_ROAD_2F/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_2F:2/MAP_VICTORY_ROAD_3F:1"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_2F:2/MAP_VICTORY_ROAD_3F:1": "Victory Road 2F Center Ladder",
+      "MAP_VICTORY_ROAD_2F:6/MAP_VICTORY_ROAD_3F:4": ""
+    }
   },
   "REGION_VICTORY_ROAD_2F/SOUTHEAST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F - Southeast",
+    "name": "Victory Road 2F Southeast",
     "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
@@ -2826,13 +2695,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_VICTORY_ROAD_2F:4/MAP_VICTORY_ROAD_3F:3"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_2F:4/MAP_VICTORY_ROAD_3F:3": "Victory Road 2F Southeast Ladder"
+    }
   },
   "REGION_VICTORY_ROAD_2F/NORTHWEST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F - Northwest",
+    "name": "Victory Road 2F Northwest",
     "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
@@ -2845,13 +2714,13 @@
     "exits": [
       "REGION_VICTORY_ROAD_2F/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_2F:1/MAP_VICTORY_ROAD_3F:0"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_2F:1/MAP_VICTORY_ROAD_3F:0": "Victory Road 2F Northwest Ladder"
+    }
   },
   "REGION_VICTORY_ROAD_2F/EAST": {
     "parent_map": "MAP_VICTORY_ROAD_2F",
-    "name": "Victory Road 2F - East",
+    "name": "Victory Road 2F East",
     "encounter_region": "Victory Road 2F",
     "has_land": true,
     "has_water": false,
@@ -2859,14 +2728,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_VICTORY_ROAD_2F:3/MAP_VICTORY_ROAD_3F:2",
-      "MAP_VICTORY_ROAD_2F:5/MAP_ROUTE23:1"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_2F:3/MAP_VICTORY_ROAD_3F:2": "Victory Road 2F East Ladder",
+      "MAP_VICTORY_ROAD_2F:5/MAP_ROUTE23:1": "Victory Road 2F Exit"
+    }
   },
   "REGION_VICTORY_ROAD_3F/NORTH": {
     "parent_map": "MAP_VICTORY_ROAD_3F",
-    "name": "Victory Road 3F - North",
+    "name": "Victory Road 3F North",
     "encounter_region": "Victory Road 3F",
     "has_land": true,
     "has_water": false,
@@ -2881,14 +2750,14 @@
     "exits": [
       "REGION_VICTORY_ROAD_3F/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_3F:0/MAP_VICTORY_ROAD_2F:1",
-      "MAP_VICTORY_ROAD_3F:1/MAP_VICTORY_ROAD_2F:2"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_3F:0/MAP_VICTORY_ROAD_2F:1": "Victory Road 3F North Ladder (Left)",
+      "MAP_VICTORY_ROAD_3F:1/MAP_VICTORY_ROAD_2F:2": "Victory Road 3F North Ladder (Right)"
+    }
   },
   "REGION_VICTORY_ROAD_3F/SOUTHWEST": {
     "parent_map": "MAP_VICTORY_ROAD_3F",
-    "name": "Victory Road 3F - Southwest",
+    "name": "Victory Road 3F Southwest",
     "encounter_region": "Victory Road 3F",
     "has_land": true,
     "has_water": false,
@@ -2899,14 +2768,15 @@
     ],
     "events": [],
     "exits": [
-      "REGION_VICTORY_ROAD_3F/NORTH",
-      "REGION_VICTORY_ROAD_2F/CENTER_DROP"
+      "REGION_VICTORY_ROAD_3F/NORTH"
     ],
-    "warps": []
+    "warps": {
+      "MAP_VICTORY_ROAD_3F:4/MAP_VICTORY_ROAD_2F:6": "Victory Road 3F Drop"
+    }
   },
   "REGION_VICTORY_ROAD_3F/SOUTHEAST": {
     "parent_map": "MAP_VICTORY_ROAD_3F",
-    "name": "Victory Road 3F - Southeast",
+    "name": "Victory Road 3F Southeast",
     "encounter_region": "Victory Road 3F",
     "has_land": true,
     "has_water": false,
@@ -2918,14 +2788,14 @@
     "exits": [
       "REGION_VICTORY_ROAD_3F/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_VICTORY_ROAD_3F:2/MAP_VICTORY_ROAD_2F:3",
-      "MAP_VICTORY_ROAD_3F:3/MAP_VICTORY_ROAD_2F:4"
-    ]
+    "warps": {
+      "MAP_VICTORY_ROAD_3F:2/MAP_VICTORY_ROAD_2F:3": "Victory Road 3F Southeast Ladder (Top)",
+      "MAP_VICTORY_ROAD_3F:3/MAP_VICTORY_ROAD_2F:4": "Victory Road 3F Southeast Ladder (Bottom)"
+    }
   },
   "REGION_MT_EMBER_EXTERIOR/SOUTH": {
     "parent_map": "MAP_MT_EMBER_EXTERIOR",
-    "name": "Mt. Ember Exterior - South",
+    "name": "Mt. Ember Exterior South",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -2938,14 +2808,14 @@
     "exits": [
       "REGION_MT_EMBER_EXTERIOR/CENTER"
     ],
-    "warps": [
-      "MAP_MT_EMBER_EXTERIOR:0,1/MAP_ONE_ISLAND_KINDLE_ROAD:0,1",
-      "MAP_MT_EMBER_EXTERIOR:5/MAP_MT_EMBER_RUBY_PATH_1F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_EXTERIOR:0,1/MAP_ONE_ISLAND_KINDLE_ROAD:0,1": "Mt. Ember Exterior Exit",
+      "MAP_MT_EMBER_EXTERIOR:5/MAP_MT_EMBER_RUBY_PATH_1F:0": "Mt. Ember Ruby Path Entrance"
+    }
   },
   "REGION_MT_EMBER_EXTERIOR/CENTER": {
     "parent_map": "MAP_MT_EMBER_EXTERIOR",
-    "name": "Mt. Ember Exterior - Center",
+    "name": "Mt. Ember Exterior Center",
     "encounter_region": "Mt. Ember Exterior",
     "has_land": true,
     "has_water": false,
@@ -2961,13 +2831,13 @@
     "exits": [
       "REGION_MT_EMBER_EXTERIOR/SOUTH"
     ],
-    "warps": [
-      "MAP_MT_EMBER_EXTERIOR:2/MAP_MT_EMBER_SUMMIT_PATH_1F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_EXTERIOR:2/MAP_MT_EMBER_SUMMIT_PATH_1F:0": "Mt. Ember Summit Path Entrance (Bottom)"
+    }
   },
   "REGION_MT_EMBER_EXTERIOR/NORTH": {
     "parent_map": "MAP_MT_EMBER_EXTERIOR",
-    "name": "Mt. Ember Exterior - North",
+    "name": "Mt. Ember Exterior North",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -2981,10 +2851,10 @@
     "exits": [
       "REGION_MT_EMBER_EXTERIOR/CENTER"
     ],
-    "warps": [
-      "MAP_MT_EMBER_EXTERIOR:3/MAP_MT_EMBER_SUMMIT_PATH_3F:1",
-      "MAP_MT_EMBER_EXTERIOR:4/MAP_MT_EMBER_SUMMIT:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_EXTERIOR:3/MAP_MT_EMBER_SUMMIT_PATH_3F:1": "Mt. Ember Summit Path Entrance (Top)",
+      "MAP_MT_EMBER_EXTERIOR:4/MAP_MT_EMBER_SUMMIT:0": "Mt. Ember Summit Entrance"
+    }
   },
   "REGION_MT_EMBER_SUMMIT_PATH_1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_1F",
@@ -2996,10 +2866,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_SUMMIT_PATH_1F:0/MAP_MT_EMBER_EXTERIOR:2",
-      "MAP_MT_EMBER_SUMMIT_PATH_1F:1/MAP_MT_EMBER_SUMMIT_PATH_2F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_SUMMIT_PATH_1F:0/MAP_MT_EMBER_EXTERIOR:2": "Mt. Ember Summit Path 1F Exit (Bottom)",
+      "MAP_MT_EMBER_SUMMIT_PATH_1F:1/MAP_MT_EMBER_SUMMIT_PATH_2F:0": "Mt. Ember Summit Path 1F Exit (Top)"
+    }
   },
   "REGION_MT_EMBER_SUMMIT_PATH_2F/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_2F",
@@ -3011,10 +2881,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_SUMMIT_PATH_2F:0/MAP_MT_EMBER_SUMMIT_PATH_1F:1",
-      "MAP_MT_EMBER_SUMMIT_PATH_2F:1/MAP_MT_EMBER_SUMMIT_PATH_3F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_SUMMIT_PATH_2F:0/MAP_MT_EMBER_SUMMIT_PATH_1F:1": "Mt. Ember Summit Path 2F Exit (Bottom)",
+      "MAP_MT_EMBER_SUMMIT_PATH_2F:1/MAP_MT_EMBER_SUMMIT_PATH_3F:0": "Mt. Ember Summit Path 2F Exit (Top)"
+    }
   },
   "REGION_MT_EMBER_SUMMIT_PATH_3F/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT_PATH_3F",
@@ -3026,10 +2896,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_SUMMIT_PATH_3F:0/MAP_MT_EMBER_SUMMIT_PATH_2F:1",
-      "MAP_MT_EMBER_SUMMIT_PATH_3F:1/MAP_MT_EMBER_EXTERIOR:3"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_SUMMIT_PATH_3F:0/MAP_MT_EMBER_SUMMIT_PATH_2F:1": "Mt. Ember Summit Path 3F Exit (Left)",
+      "MAP_MT_EMBER_SUMMIT_PATH_3F:1/MAP_MT_EMBER_EXTERIOR:3": "Mt. Ember Summit Path 3F Exit (Right)"
+    }
   },
   "REGION_MT_EMBER_SUMMIT/MAIN": {
     "parent_map": "MAP_MT_EMBER_SUMMIT",
@@ -3041,15 +2911,15 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_MT_EMBER_SUMMIT/MOLTRES"
+      "REGION_MT_EMBER_SUMMIT/NEAR_MOLTRES"
     ],
-    "warps": [
-      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4": "Mt. Ember Summit Exit"
+    }
   },
-  "REGION_MT_EMBER_SUMMIT/MOLTRES": {
+  "REGION_MT_EMBER_SUMMIT/NEAR_MOLTRES": {
     "parent_map": "MAP_MT_EMBER_SUMMIT",
-    "name": "Mt. Ember Summit - Moltres",
+    "name": "Mt. Ember Summit Near Moltres",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -3059,7 +2929,7 @@
       "LEGENDARY_POKEMON_MOLTRES"
     ],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_MT_EMBER_RUBY_PATH_1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",
@@ -3071,14 +2941,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_1F:0/MAP_MT_EMBER_EXTERIOR:5",
-      "MAP_MT_EMBER_RUBY_PATH_1F:1/MAP_MT_EMBER_RUBY_PATH_B1F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_1F:0/MAP_MT_EMBER_EXTERIOR:5": "Mt. Ember Ruby Path 1F Exit",
+      "MAP_MT_EMBER_RUBY_PATH_1F:1/MAP_MT_EMBER_RUBY_PATH_B1F:0": "Mt. Ember Ruby Path 1F Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_1F/LEDGE": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",
-    "name": "Mt. Ember Ruby Path 1F - Ledge",
+    "name": "Mt. Ember Ruby Path 1F Ledge",
     "encounter_region": "Mt. Ember Ruby Path 1F",
     "has_land": true,
     "has_water": false,
@@ -3088,9 +2958,9 @@
     "exits": [
       "REGION_MT_EMBER_RUBY_PATH_1F/MAIN"
     ],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_1F:2/MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_1F:2/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:1": "Mt. Ember Ruby Path 1F Ledge Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
@@ -3102,29 +2972,29 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B1F:0/MAP_MT_EMBER_RUBY_PATH_1F:1",
-      "MAP_MT_EMBER_RUBY_PATH_B1F:1/MAP_MT_EMBER_RUBY_PATH_B2F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B1F:0/MAP_MT_EMBER_RUBY_PATH_1F:1": "Mt. Ember Ruby Path B1F Ladder (Bottom)",
+      "MAP_MT_EMBER_RUBY_PATH_B1F:1/MAP_MT_EMBER_RUBY_PATH_B2F:0": "Mt. Ember Ruby Path B1F Ladder (Top)"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B1F_STAIRS/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS",
-    "name": "Mt. Ember Ruby Path B1F Stairs",
-    "encounter_region": "Mt. Ember Ruby Path B1F Stairs",
+    "name": "Mt. Ember Ruby Path B1F Return",
+    "encounter_region": "Mt. Ember Ruby Path B1F Return",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0/MAP_MT_EMBER_RUBY_PATH_B3F:1",
-      "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0/MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1": "Mt. Ember Ruby Path B1F Return Ladder (Top Right)",
+      "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_1F:2": "Mt. Ember Ruby Path B1F Return Ladder (Bottom Left)"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B2F/WEST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
-    "name": "Mt. Ember Ruby Path B2F - West",
+    "name": "Mt. Ember Ruby Path B2F West",
     "encounter_region": "Mt. Ember Ruby Path B2F",
     "has_land": true,
     "has_water": false,
@@ -3134,13 +3004,13 @@
     "exits": [
       "REGION_MT_EMBER_RUBY_PATH_B2F/EAST"
     ],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B2F:0/MAP_MT_EMBER_RUBY_PATH_B1F:1"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B2F:0/MAP_MT_EMBER_RUBY_PATH_B1F:1": "Mt. Ember Ruby Path B2F West Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B2F/EAST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
-    "name": "Mt. Ember Ruby Path B2F - East",
+    "name": "Mt. Ember Ruby Path B2F East",
     "encounter_region": "Mt. Ember Ruby Path B2F",
     "has_land": true,
     "has_water": false,
@@ -3150,28 +3020,28 @@
     "exits": [
       "REGION_MT_EMBER_RUBY_PATH_B2F/WEST"
     ],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B2F:1/MAP_MT_EMBER_RUBY_PATH_B3F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B2F:1/MAP_MT_EMBER_RUBY_PATH_B3F:0": "Mt. Ember Ruby Path B2F East Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B2F_STAIRS/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS",
-    "name": "Mt. Ember Ruby Path B2F Stairs",
-    "encounter_region": "Mt. Ember Ruby Path B2F Stairs",
+    "name": "Mt. Ember Ruby Path B2F Return",
+    "encounter_region": "Mt. Ember Ruby Path B2F Return",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:0/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:1",
-      "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_1F:2"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:0/MAP_MT_EMBER_RUBY_PATH_B3F:1": "Mt. Ember Ruby Path B2F Return (Top Right)",
+      "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:1/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0": "Mt. Ember Ruby Path B2F Return (Bottom Left)"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B3F/NORTHWEST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
-    "name": "Mt. Ember Ruby Path B3F - Northwest",
+    "name": "Mt. Ember Ruby Path B3F Northwest",
     "encounter_region": "Mt. Ember Ruby Path B3F",
     "has_land": true,
     "has_water": false,
@@ -3182,13 +3052,13 @@
       "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST",
       "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B3F:0/MAP_MT_EMBER_RUBY_PATH_B2F:1"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B3F:0/MAP_MT_EMBER_RUBY_PATH_B2F:1": "Mt. Ember Ruby Path B3F Northwest Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
-    "name": "Mt. Ember Ruby Path B3F - Southwest",
+    "name": "Mt. Ember Ruby Path B3F Southwest",
     "encounter_region": "Mt. Ember Ruby Path B3F",
     "has_land": true,
     "has_water": false,
@@ -3199,13 +3069,13 @@
       "REGION_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
       "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST"
     ],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B3F:2/MAP_MT_EMBER_RUBY_PATH_B4F:1"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B3F:2/MAP_MT_EMBER_RUBY_PATH_B4F:1": "Mt. Ember Ruby Path B3F Southwest Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHEAST": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
-    "name": "Mt. Ember Ruby Path B3F - Southeast",
+    "name": "Mt. Ember Ruby Path B3F Southeast",
     "encounter_region": "Mt. Ember Ruby Path B3F",
     "has_land": true,
     "has_water": false,
@@ -3216,9 +3086,9 @@
       "REGION_MT_EMBER_RUBY_PATH_B3F/NORTHWEST",
       "REGION_MT_EMBER_RUBY_PATH_B3F/SOUTHWEST"
     ],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B3F:1/MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B3F:1/MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS:0": "Mt. Ember Ruby Path B3F Southeast Ladder"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B4F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B4F",
@@ -3230,10 +3100,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B4F:0/MAP_MT_EMBER_RUBY_PATH_B5F:0",
-      "MAP_MT_EMBER_RUBY_PATH_B4F:1/MAP_MT_EMBER_RUBY_PATH_B3F:2"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B4F:0/MAP_MT_EMBER_RUBY_PATH_B5F:0": "Mt. Ember Ruby Path B4F Ladder (Bottom Right)",
+      "MAP_MT_EMBER_RUBY_PATH_B4F:1/MAP_MT_EMBER_RUBY_PATH_B3F:2": "Mt. Ember Ruby Path B4F Ladder (Top Left)"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_B5F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_B5F",
@@ -3247,9 +3117,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_MT_EMBER_RUBY_PATH_B5F:0/MAP_MT_EMBER_RUBY_PATH_B4F:0"
-    ]
+    "warps": {
+      "MAP_MT_EMBER_RUBY_PATH_B5F:0/MAP_MT_EMBER_RUBY_PATH_B4F:0": "Mt. Ember Ruby Path B5F Ladder"
+    }
   },
   "REGION_THREE_ISLAND_BERRY_FOREST/MAIN": {
     "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
@@ -3283,13 +3153,13 @@
     "exits": [
       "REGION_THREE_ISLAND_BERRY_FOREST/WATER"
     ],
-    "warps": [
-      "MAP_THREE_ISLAND_BERRY_FOREST:0,1,2/MAP_THREE_ISLAND_BOND_BRIDGE:0,1"
-    ]
+    "warps": {
+      "MAP_THREE_ISLAND_BERRY_FOREST:0,1,2/MAP_THREE_ISLAND_BOND_BRIDGE:0,1": "Berry Forest Exit"
+    }
   },
   "REGION_THREE_ISLAND_BERRY_FOREST/WATER": {
     "parent_map": "MAP_THREE_ISLAND_BERRY_FOREST",
-    "name": "Berry Forest - Water",
+    "name": "Berry Forest Water",
     "encounter_region": "Berry Forest",
     "has_land": false,
     "has_water": true,
@@ -3299,12 +3169,12 @@
     ],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance - South",
-    "encounter_region": "Icefall Cave Entrance",
+    "name": "Icefall Cave Front South",
+    "encounter_region": "Icefall Cave Front",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3313,14 +3183,14 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:0/MAP_FOUR_ISLAND:3"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:0/MAP_FOUR_ISLAND:3": "Icefall Cave Exit"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance - Water S",
-    "encounter_region": "Icefall Cave Entrance",
+    "name": "Icefall Cave Front South Water",
+    "encounter_region": "Icefall Cave Front",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -3331,12 +3201,12 @@
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/CENTER",
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH_WATER"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/CENTER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance - Center",
-    "encounter_region": "Icefall Cave Entrance",
+    "name": "Icefall Cave Front Center",
+    "encounter_region": "Icefall Cave Front",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3345,14 +3215,14 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0": "Icefall Cave 1F Entrance"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH_WATER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance - Water N",
-    "encounter_region": "Icefall Cave Entrance",
+    "name": "Icefall Cave Front North Water",
+    "encounter_region": "Icefall Cave Front",
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
@@ -3362,12 +3232,12 @@
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/SOUTH_WATER",
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
-    "name": "Icefall Cave Entrance - North",
-    "encounter_region": "Icefall Cave Entrance",
+    "name": "Icefall Cave Front North",
+    "encounter_region": "Icefall Cave Front",
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
@@ -3376,9 +3246,9 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE/NORTH_WATER"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1": "Icefall Cave Front North Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
@@ -3392,16 +3262,16 @@
     ],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST_DROP",
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH_DROP"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST",
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:1": "Icefall Cave 1F Exit"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/EAST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave - East",
+    "name": "Icefall Cave 1F East",
     "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -3411,13 +3281,13 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0": "Icefall Cave 1F East Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/NORTHEAST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave - Northeast",
+    "name": "Icefall Cave 1F Northeast",
     "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -3425,15 +3295,15 @@
     "locations": [],
     "events": [],
     "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST_DROP"
+      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1": "Icefall Cave 1F Northeast Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/SOUTHEAST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave 1F - Southeast",
+    "name": "Icefall Cave 1F Southeast",
     "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -3445,13 +3315,13 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4/MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2": "Icefall Cave 1F Southeast Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/NORTHWEST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
-    "name": "Icefall Cave 1F - Northwest",
+    "name": "Icefall Cave 1F Northwest",
     "encounter_region": "Icefall Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -3461,28 +3331,14 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_1F/MAIN"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2",
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5/MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0"
-    ]
-  },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST_DROP": {
-    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F - West (Drop)",
-    "encounter_region": "Icefall Cave B1F",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE:2": "Icefall Cave 1F Northwest Ladder",
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5/MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0": "Icefall Cave Back Entrance"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/WEST": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F - West",
+    "name": "Icefall Cave B1F West",
     "encounter_region": "Icefall Cave B1F",
     "has_land": true,
     "has_water": false,
@@ -3490,27 +3346,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2"
-    ]
-  },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH_DROP": {
-    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F - North (Drop)",
-    "encounter_region": "Icefall Cave B1F",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:2": "Icefall Cave B1F West Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F - North",
+    "name": "Icefall Cave B1F North",
     "encounter_region": "Icefall Cave B1F",
     "has_land": true,
     "has_water": false,
@@ -3518,27 +3360,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3"
-    ]
-  },
-  "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST_DROP": {
-    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F - East (Drop)",
-    "encounter_region": "Icefall Cave B1F",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "locations": [],
-    "events": [],
-    "exits": [
-      "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST"
-    ],
-    "warps": []
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:1/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:3": "Icefall Cave B1F North Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/EAST": {
-    "parent_map":"MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
-    "name": "Icefall Cave B1F - East",
+    "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+    "name": "Icefall Cave B1F East",
     "encounter_region": "Icefall Cave B1F",
     "has_land": true,
     "has_water": false,
@@ -3551,9 +3379,9 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_B1F/NORTH"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F:2/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:4": "Icefall Cave B1F East Ladder"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_BACK/MAIN": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
@@ -3571,13 +3399,13 @@
     "exits": [
       "REGION_FOUR_ISLAND_ICEFALL_CAVE_BACK/WATER"
     ],
-    "warps": [
-      "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5"
-    ]
+    "warps": {
+      "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK:0/MAP_FOUR_ISLAND_ICEFALL_CAVE_1F:5": "Icefall Cave Back Exit"
+    }
   },
   "REGION_FOUR_ISLAND_ICEFALL_CAVE_BACK/WATER": {
     "parent_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
-    "name": "Icefall Cave Back - Water",
+    "name": "Icefall Cave Back Water",
     "encounter_region": "Icefall Cave Back",
     "has_land": false,
     "has_water": true,
@@ -3585,7 +3413,7 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": []
+    "warps": {}
   },
   "REGION_FIVE_ISLAND_ROCKET_WAREHOUSE/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE",
@@ -3611,13 +3439,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE:0/MAP_FIVE_ISLAND_MEADOW:0"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE:0/MAP_FIVE_ISLAND_MEADOW:0": "Rocket Warehouse Exit"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ENTRANCE/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE",
-    "name": "Lost Cave Entrance",
+    "name": "Lost Cave 1F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -3625,15 +3453,15 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:0/MAP_FIVE_ISLAND_RESORT_GORGEOUS:0",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:0"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:0/MAP_FIVE_ISLAND_RESORT_GORGEOUS:0": "Lost Cave 1F Exit",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:0": "Lost Cave 1F Ladder"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM1/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1",
-    "name": "Lost Cave Room 1",
-    "encounter_region": "Lost Cave Room 1",
+    "name": "Lost Cave B1F Room 1",
+    "encounter_region": "Lost Cave B1F Room 1",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3642,52 +3470,52 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:0/MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:1",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:3",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:0/MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE:1": "Lost Cave B1F Room 1 Ladder",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3": "Lost Cave B1F Room 1 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:3": "Lost Cave B1F Room 1 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1": "Lost Cave B1F Room 1 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 1 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM2/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2",
-    "name": "Lost Cave Room 2",
-    "encounter_region": "Lost Cave Room 2",
+    "name": "Lost Cave B1F Room 2",
+    "encounter_region": "Lost Cave B1F Room 2",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:2!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM11:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:2!": "Lost Cave B1F Room 2 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!": "Lost Cave B1F Room 2 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM11:0!": "Lost Cave B1F Room 2 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2": "Lost Cave B1F Room 2 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM3/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3",
-    "name": "Lost Cave Room 3",
-    "encounter_region": "Lost Cave Room 3",
+    "name": "Lost Cave B1F Room 3",
+    "encounter_region": "Lost Cave B1F Room 3",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!": "Lost Cave B1F Room 3 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!": "Lost Cave B1F Room 3 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:0!": "Lost Cave B1F Room 3 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 3 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM4/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4",
-    "name": "Lost Cave Room 4",
-    "encounter_region": "Lost Cave Room 4",
+    "name": "Lost Cave B1F Room 4",
+    "encounter_region": "Lost Cave B1F Room 4",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3696,102 +3524,102 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM12:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM12:0!": "Lost Cave B1F Room 4 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!": "Lost Cave B1F Room 4 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:0!": "Lost Cave B1F Room 4 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 4 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM5/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5",
-    "name": "Lost Cave Room 5",
-    "encounter_region": "Lost Cave Room 5",
+    "name": "Lost Cave B1F Room 5",
+    "encounter_region": "Lost Cave B1F Room 5",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!": "Lost Cave B1F Room 5 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:3!": "Lost Cave B1F Room 5 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!": "Lost Cave B1F Room 5 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 5 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM6/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6",
-    "name": "Lost Cave Room 6",
-    "encounter_region": "Lost Cave Room 6",
+    "name": "Lost Cave B1F Room 6",
+    "encounter_region": "Lost Cave B1F Room 6",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM13:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:1!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!": "Lost Cave B1F Room 6 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM13:0!": "Lost Cave B1F Room 6 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!": "Lost Cave B1F Room 6 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:1!": "Lost Cave B1F Room 6 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM7/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7",
-    "name": "Lost Cave Room 7",
-    "encounter_region": "Lost Cave Room 7",
+    "name": "Lost Cave B1F Room 7",
+    "encounter_region": "Lost Cave B1F Room 7",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!": "Lost Cave B1F Room 7 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!": "Lost Cave B1F Room 7 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:0!": "Lost Cave B1F Room 7 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 7 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM8/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8",
-    "name": "Lost Cave Room 8",
-    "encounter_region": "Lost Cave Room 8",
+    "name": "Lost Cave B1F Room 8",
+    "encounter_region": "Lost Cave B1F Room 8",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:3!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM14:0!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!": "Lost Cave B1F Room 8 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:3!": "Lost Cave B1F Room 8 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!": "Lost Cave B1F Room 8 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM14:0!": "Lost Cave B1F Room 8 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM9/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9",
-    "name": "Lost Cave Room 9",
-    "encounter_region": "Lost Cave Room 9",
+    "name": "Lost Cave B1F Room 9",
+    "encounter_region": "Lost Cave B1F Room 9",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM10:0!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!",
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM10:0!": "Lost Cave B1F Room 9 Exit (Top)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:1/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!": "Lost Cave B1F Room 9 Exit (Right)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:2/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!": "Lost Cave B1F Room 9 Exit (Bottom)",
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9:3/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 9 Exit (Left)"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM10/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10",
-    "name": "Lost Cave Room 10",
-    "encounter_region": "Lost Cave Room 10",
+    "name": "Lost Cave B1F Room 10",
+    "encounter_region": "Lost Cave B1F Room 10",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3801,14 +3629,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!": "Lost Cave B1F Room 10 Exit"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM11/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11",
-    "name": "Lost Cave Room 11",
-    "encounter_region": "Lost Cave Room 11",
+    "name": "Lost Cave B1F Room 11",
+    "encounter_region": "Lost Cave B1F Room 11",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3817,14 +3645,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:3!": "Lost Cave B1F Room 11 Exit"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM12/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12",
-    "name": "Lost Cave Room 12",
-    "encounter_region": "Lost Cave Room 12",
+    "name": "Lost Cave B1F Room 12",
+    "encounter_region": "Lost Cave B1F Room 12",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3833,14 +3661,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:1!": "Lost Cave B1F Room 12 Exit"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM13/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13",
-    "name": "Lost Cave Room 13",
-    "encounter_region": "Lost Cave Room 13",
+    "name": "Lost Cave B1F Room 13",
+    "encounter_region": "Lost Cave B1F Room 13",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3849,14 +3677,14 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:2!": "Lost Cave B1F Room 13 Exit"
+    }
   },
   "REGION_FIVE_ISLAND_LOST_CAVE_ROOM14/MAIN": {
     "parent_map": "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14",
-    "name": "Lost Cave Room 14",
-    "encounter_region": "Lost Cave Room 14",
+    "name": "Lost Cave B1F Room 14",
+    "encounter_region": "Lost Cave B1F Room 14",
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
@@ -3865,9 +3693,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!"
-    ]
+    "warps": {
+      "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14:0/MAP_FIVE_ISLAND_LOST_CAVE_ROOM1:4!": "Lost Cave B1F Room 14 Exit"
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
@@ -3878,16 +3706,16 @@
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SIX_ISLAND_DOTTED_HOLE_B1F/MAIN"
-    ],
-    "warps": [
-      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:0/MAP_SIX_ISLAND_RUIN_VALLEY:0"
-    ]
+    "exits": [],
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:0/MAP_SIX_ISLAND_RUIN_VALLEY:0": "Dotted Hole 1F Exit",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:1/MAP_SIX_ISLAND_DOTTED_HOLE_B1F:0": "Dotted Hole 1F Drop",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:3/MAP_SIX_ISLAND_DOTTED_HOLE_B1F:2": ""
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_1F/LEDGE": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_1F",
-    "name": "Dotted Hole 1F - Ledge",
+    "name": "Dotted Hole 1F Ledge",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -3897,9 +3725,9 @@
     "exits": [
       "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN"
     ],
-    "warps": [
-      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:2/MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:0"
-    ]
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_1F:2/MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:0": "Dotted Hole 1F Ledge Ladder"
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_B1F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B1F",
@@ -3910,11 +3738,14 @@
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
-      "REGION_SIX_ISLAND_DOTTED_HOLE_B2F/MAIN"
-    ],
-    "warps": []
+    "exits": [],
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B1F:0/MAP_SIX_ISLAND_DOTTED_HOLE_1F:1": "",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B1F:1/MAP_SIX_ISLAND_DOTTED_HOLE_B2F:0": "Dotted Hole B1F Drop (Top)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B1F:2/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3": "Dotted Hole B1F Drop (Right)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B1F:3/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B1F Drop (Bottom)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B1F:4/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B1F Drop (Left)"
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_B2F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B2F",
@@ -3925,11 +3756,14 @@
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
-      "REGION_SIX_ISLAND_DOTTED_HOLE_B3F/MAIN"
-    ],
-    "warps": []
+    "exits": [],
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B2F:0/MAP_SIX_ISLAND_DOTTED_HOLE_B1F:1": "",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B2F:1/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B2F Drop (Top)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B2F:2/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B2F Drop (Right)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B2F:3/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B2F Drop (Bottom)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B2F:4/MAP_SIX_ISLAND_DOTTED_HOLE_B3F:0": "Dotted Hole B2F Drop (Left)"
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_B3F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B3F",
@@ -3940,11 +3774,14 @@
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
-      "REGION_SIX_ISLAND_DOTTED_HOLE_B4F/MAIN"
-    ],
-    "warps": []
+    "exits": [],
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B3F:0/MAP_SIX_ISLAND_DOTTED_HOLE_B2F:4": "",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B3F:1/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B3F Drop (Top)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B3F:2/MAP_SIX_ISLAND_DOTTED_HOLE_B4F:0": "Dotted Hole B3F Drop (Right)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B3F:3/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B3F Drop (Bottom)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B3F:4/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B3F Drop (Left)"
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_B4F/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_B4F",
@@ -3955,11 +3792,14 @@
     "has_fishing": false,
     "locations": [],
     "events": [],
-    "exits": [
-      "REGION_SIX_ISLAND_DOTTED_HOLE_1F/MAIN",
-      "REGION_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM/MAIN"
-    ],
-    "warps": []
+    "exits": [],
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B4F:0/MAP_SIX_ISLAND_DOTTED_HOLE_B3F:2": "",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B4F:1/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B4F Drop (Top)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B4F:2/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B4F Drop (Right)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B4F:3/MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:1": "Dotted Hole B4F Drop (Bottom)",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_B4F:4/MAP_SIX_ISLAND_DOTTED_HOLE_1F:3!": "Dotted Hole B4F Drop (Left)"
+    }
   },
   "REGION_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM",
@@ -3973,9 +3813,10 @@
       "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD"
     ],
     "exits": [],
-    "warps": [
-      "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:0/MAP_SIX_ISLAND_DOTTED_HOLE_1F:2"
-    ]
+    "warps": {
+      "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:0/MAP_SIX_ISLAND_DOTTED_HOLE_1F:2": "Dotted Hole Sapphire Room Ladder",
+      "MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM:1/MAP_SIX_ISLAND_DOTTED_HOLE_B4F:3": ""
+    }
   },
   "REGION_SIX_ISLAND_PATTERN_BUSH/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
@@ -4000,10 +3841,10 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SIX_ISLAND_PATTERN_BUSH:0,1,2/MAP_SIX_ISLAND_GREEN_PATH:0,1",
-      "MAP_SIX_ISLAND_PATTERN_BUSH:3,4,5/MAP_SIX_ISLAND_GREEN_PATH:2,3"
-    ]
+    "warps": {
+      "MAP_SIX_ISLAND_PATTERN_BUSH:0,1,2/MAP_SIX_ISLAND_GREEN_PATH:0,1": "Pattern Bush Exit (Right)",
+      "MAP_SIX_ISLAND_PATTERN_BUSH:3,4,5/MAP_SIX_ISLAND_GREEN_PATH:2,3": "Pattern Bush Exit (Left)"
+    }
   },
   "REGION_SIX_ISLAND_ALTERING_CAVE/MAIN": {
     "parent_map": "MAP_SIX_ISLAND_ALTERING_CAVE",
@@ -4015,9 +3856,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SIX_ISLAND_ALTERING_CAVE:0/MAP_SIX_ISLAND_OUTCAST_ISLAND:0"
-    ]
+    "warps": {
+      "MAP_SIX_ISLAND_ALTERING_CAVE:0/MAP_SIX_ISLAND_OUTCAST_ISLAND:0": "Altering Cave Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY": {
     "parent_map": "MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY",
@@ -4031,9 +3872,9 @@
       "EVENT_SPAWN_UNOWN"
     ],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY:0/MAP_SEVEN_ISLAND_SEVAULT_CANYON:0"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY:0/MAP_SEVEN_ISLAND_SEVAULT_CANYON:0": "Tanoby Key Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER",
@@ -4045,9 +3886,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:0"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:0": "Monean Chamber Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER",
@@ -4059,9 +3900,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:1"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:1": "Liptoo Chamber Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER",
@@ -4073,9 +3914,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:2"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:2": "Weepth Chamber Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER",
@@ -4087,9 +3928,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:3"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:3": "Dilford Chamber Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER",
@@ -4101,9 +3942,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:4"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:4": "Scufib Chamber Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER",
@@ -4115,9 +3956,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:5"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:5": "Rixy Chamber Exit"
+    }
   },
   "REGION_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER/MAIN": {
     "parent_map": "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER",
@@ -4129,9 +3970,9 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:6"
-    ]
+    "warps": {
+      "MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER:0/MAP_SEVEN_ISLAND_TANOBY_RUINS:6": "Viapois Chamber Exit"
+    }
   },
   "REGION_TRAINER_TOWER_LOBBY/MAIN": {
     "parent_map": "MAP_TRAINER_TOWER_LOBBY",
@@ -4143,13 +3984,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_TRAINER_TOWER_LOBBY:1/MAP_SEVEN_ISLAND_TRAINER_TOWER:0"
-    ]
+    "warps": {
+      "MAP_TRAINER_TOWER_LOBBY:1/MAP_SEVEN_ISLAND_TRAINER_TOWER:0": "Trainer Tower Lobby Exit"
+    }
   },
   "REGION_CERULEAN_CAVE_1F/SOUTHEAST": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F - Southeast",
+    "name": "Cerulean Cave 1F Southeast",
     "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -4159,13 +4000,13 @@
     "exits": [
       "REGION_CERULEAN_CAVE_1F/WATER"
     ],
-    "warps": [
-      "MAP_CERULEAN_CAVE_1F:0/MAP_CERULEAN_CITY:8"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_1F:0/MAP_CERULEAN_CITY:8": "Cerulean Cave 1F Exit"
+    }
   },
   "REGION_CERULEAN_CAVE_1F/WATER": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F - Water",
+    "name": "Cerulean Cave 1F Water",
     "encounter_region": "Cerulean Cave 1F",
     "has_land": false,
     "has_water": true,
@@ -4177,11 +4018,11 @@
       "REGION_CERULEAN_CAVE_1F/NORTHEAST",
       "REGION_CERULEAN_CAVE_1F/MAIN"
     ],
-    "warps": []
+    "warps": {}
   },
   "REGION_CERULEAN_CAVE_1F/NORTHEAST": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F - Northeast",
+    "name": "Cerulean Cave 1F Northeast",
     "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -4191,9 +4032,9 @@
     "exits": [
       "REGION_CERULEAN_CAVE_1F/WATER"
     ],
-    "warps": [
-      "MAP_CERULEAN_CAVE_1F:1/MAP_CERULEAN_CAVE_2F:0"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_1F:1/MAP_CERULEAN_CAVE_2F:0": "Cerulean Cave 1F Northeast Ladder"
+    }
   },
   "REGION_CERULEAN_CAVE_1F/MAIN": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
@@ -4212,16 +4053,16 @@
     "exits": [
       "REGION_CERULEAN_CAVE_1F/WATER"
     ],
-    "warps": [
-      "MAP_CERULEAN_CAVE_1F:3/MAP_CERULEAN_CAVE_2F:1",
-      "MAP_CERULEAN_CAVE_1F:4/MAP_CERULEAN_CAVE_2F:2",
-      "MAP_CERULEAN_CAVE_1F:5/MAP_CERULEAN_CAVE_2F:3",
-      "MAP_CERULEAN_CAVE_1F:6/MAP_CERULEAN_CAVE_2F:4"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_1F:3/MAP_CERULEAN_CAVE_2F:1": "Cerulean Cave 1F Ladder (Top Left)",
+      "MAP_CERULEAN_CAVE_1F:4/MAP_CERULEAN_CAVE_2F:2": "Cerulean Cave 1F Ladder (Bottom Left)",
+      "MAP_CERULEAN_CAVE_1F:5/MAP_CERULEAN_CAVE_2F:3": "Cerulean Cave 1F Ladder (Right)",
+      "MAP_CERULEAN_CAVE_1F:6/MAP_CERULEAN_CAVE_2F:4": "Cerulean Cave 1F Ladder (Middle)"
+    }
   },
   "REGION_CERULEAN_CAVE_1F/NORTHWEST": {
     "parent_map": "MAP_CERULEAN_CAVE_1F",
-    "name": "Cerulean Cave 1F - Northwest",
+    "name": "Cerulean Cave 1F Northwest",
     "encounter_region": "Cerulean Cave 1F",
     "has_land": true,
     "has_water": false,
@@ -4229,14 +4070,14 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_CERULEAN_CAVE_1F:2/MAP_CERULEAN_CAVE_B1F:0",
-      "MAP_CERULEAN_CAVE_1F:7/MAP_CERULEAN_CAVE_2F:5"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_1F:2/MAP_CERULEAN_CAVE_B1F:0": "Cerulean Cave 1F Northwest Ladder (Bottom)",
+      "MAP_CERULEAN_CAVE_1F:7/MAP_CERULEAN_CAVE_2F:5": "Cerulean Cave 1F Northwest Ladder (Top)"
+    }
   },
   "REGION_CERULEAN_CAVE_2F/NORTHEAST": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F - Northeast",
+    "name": "Cerulean Cave 2F Northeast",
     "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
@@ -4246,13 +4087,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_CERULEAN_CAVE_2F:0/MAP_CERULEAN_CAVE_1F:1"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_2F:0/MAP_CERULEAN_CAVE_1F:1": "Cerulean Cave 2F Northeast Ladder"
+    }
   },
   "REGION_CERULEAN_CAVE_2F/NORTHWEST": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F - Northwest",
+    "name": "Cerulean Cave 2F Northwest",
     "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
@@ -4260,13 +4101,13 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_CERULEAN_CAVE_2F:1/MAP_CERULEAN_CAVE_1F:3"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_2F:1/MAP_CERULEAN_CAVE_1F:3": "Cerulean Cave 2F Northwest Ladder"
+    }
   },
   "REGION_CERULEAN_CAVE_2F/WEST": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F - West",
+    "name": "Cerulean Cave 2F West",
     "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
@@ -4276,13 +4117,13 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_CERULEAN_CAVE_2F:2/MAP_CERULEAN_CAVE_1F:4"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_2F:2/MAP_CERULEAN_CAVE_1F:4": "Cerulean Cave 2F West Ladder"
+    }
   },
   "REGION_CERULEAN_CAVE_2F/CENTER": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
-    "name": "Cerulean Cave 2F - Center",
+    "name": "Cerulean Cave 2F Center",
     "encounter_region": "Cerulean Cave 2F",
     "has_land": true,
     "has_water": false,
@@ -4292,9 +4133,9 @@
     ],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_CERULEAN_CAVE_2F:3/MAP_CERULEAN_CAVE_1F:5"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_2F:3/MAP_CERULEAN_CAVE_1F:5": "Cerulean Cave 2F Center Ladder"
+    }
   },
   "REGION_CERULEAN_CAVE_2F/MAIN": {
     "parent_map": "MAP_CERULEAN_CAVE_2F",
@@ -4306,10 +4147,10 @@
     "locations": [],
     "events": [],
     "exits": [],
-    "warps": [
-      "MAP_CERULEAN_CAVE_2F:4/MAP_CERULEAN_CAVE_1F:6",
-      "MAP_CERULEAN_CAVE_2F:5/MAP_CERULEAN_CAVE_1F:7"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_2F:4/MAP_CERULEAN_CAVE_1F:6": "Cerulean Cave 2F Ladder (Right)",
+      "MAP_CERULEAN_CAVE_2F:5/MAP_CERULEAN_CAVE_1F:7": "Cerulean Cave 2F Ladder (Left)"
+    }
   },
   "REGION_CERULEAN_CAVE_B1F/MAIN": {
     "parent_map": "MAP_CERULEAN_CAVE_B1F",
@@ -4326,13 +4167,13 @@
     "exits": [
       "REGION_CERULEAN_CAVE_B1F/WATER"
     ],
-    "warps": [
-      "MAP_CERULEAN_CAVE_B1F:0/MAP_CERULEAN_CAVE_1F:2"
-    ]
+    "warps": {
+      "MAP_CERULEAN_CAVE_B1F:0/MAP_CERULEAN_CAVE_1F:2": "Cerulean Cave B1F Ladder"
+    }
   },
   "REGION_CERULEAN_CAVE_B1F/WATER": {
     "parent_map": "MAP_CERULEAN_CAVE_B1F",
-    "name": "Cerulean Cave B1F - Water",
+    "name": "Cerulean Cave B1F Water",
     "encounter_region": "Cerulean Cave B1F",
     "has_land": false,
     "has_water": true,
@@ -4342,6 +4183,6 @@
       "LEGENDARY_POKEMON_MEWTWO"
     ],
     "exits": [],
-    "warps": []
+    "warps": {}
   }
 }

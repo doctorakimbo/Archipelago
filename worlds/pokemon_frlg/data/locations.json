@@ -45,11 +45,11 @@
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM04": {
-    "name": "Fuchsia Warden's House - Safari Zone Warden",
+    "name": "Safari Zone Warden's House - Safari Zone Warden",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM05": {
-    "name": "Route 2 East Building - Professor Oak's Aide",
+    "name": "Route 2 Gate - Professor Oak's Aide",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM06": {
@@ -62,11 +62,11 @@
   },
 
   "NPC_GIFT_GOT_BICYCLE": {
-    "name": "Cerulean Bike Shop - Owner",
+    "name": "Bike Shop - Owner",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_BIKE_VOUCHER": {
-    "name": "Vermilion Pokemon Fan Club - Chairman",
+    "name": "Pokemon Fan Club - Chairman",
     "tags": ["KeyItem"]
   },
   "ITEM_SILPH_CO_5F_CARD_KEY": {
@@ -98,7 +98,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "name": "Route 11 East Entrance 2F - Professor Oak's Aide",
+    "name": "Route 11 Gate 2F - Professor Oak's Aide",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
@@ -122,11 +122,11 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POKE_FLUTE": {
-    "name": "Lavender Volunteer Pokemon House - Mr. Fuji",
+    "name": "Volunteer Pokemon House - Mr. Fuji",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POWDER_JAR": {
-    "name": "Cerulean Berry Powder Man's House - Berry Powder Man",
+    "name": "Berry Powder Man's House - Berry Powder Man",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RAINBOW_PASS": {
@@ -150,7 +150,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SS_TICKET": {
-    "name": "Route 25 Sea Cottage - Bill",
+    "name": "Sea Cottage - Bill",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SUPER_ROD": {
@@ -183,7 +183,7 @@
     "tags": ["ExtraKeyItem"]
   },
   "NPC_GIFT_GOT_LETTER": {
-    "name": "Cinnabar Pokemon Lab Research Room - Scientist",
+    "name": "Pokemon Lab Research Room - Scientist",
     "tags": ["ExtraKeyItem"]
   },
   "HIDDEN_ITEM_CERULEAN_CITY_GYM_MACHINE_PART": {
@@ -232,23 +232,23 @@
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF": {
-    "name": "Lost Cave Room 10 - Item",
+    "name": "Lost Cave B1F Room 10 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM11_LAX_INCENSE": {
-    "name": "Lost Cave Room 11 - Item",
+    "name": "Lost Cave B1F Room 11 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM12_SEA_INCENSE": {
-    "name": "Lost Cave Room 12 - Item",
+    "name": "Lost Cave B1F Room 12 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM13_MAX_REVIVE": {
-    "name": "Lost Cave Room 13 - Item",
+    "name": "Lost Cave B1F Room 13 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM14_RARE_CANDY": {
-    "name": "Lost Cave Room 14 - Item",
+    "name": "Lost Cave B1F Room 14 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_FIVE_ISLAND_MEADOW_MAX_POTION": {
@@ -300,7 +300,7 @@
     "tags": ["Overworld"]
   },
   "ITEM_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY": {
-    "name": "Fuchsia Warden's House - Item",
+    "name": "Safari Zone Warden's House - Item",
     "tags": ["Overworld"]
   },
   "ITEM_MT_EMBER_EXTERIOR_DIRE_HIT": {
@@ -584,47 +584,47 @@
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_CENTER_NUGGET": {
-    "name": "Safari Zone Center - Island Item",
+    "name": "Safari Zone Center Area - Island Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_FULL_RESTORE": {
-    "name": "Safari Zone East - Item Near Rest House",
+    "name": "Safari Zone East Area - Item Near Rest House",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_LEAF_STONE": {
-    "name": "Safari Zone East - Southeast Plateau Item",
+    "name": "Safari Zone East Area - Southeast Plateau Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_MAX_POTION": {
-    "name": "Safari Zone East - Item Near Bush",
+    "name": "Safari Zone East Area - Item Near Bush",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_EAST_TM11": {
-    "name": "Safari Zone East - Tall Grass Item",
+    "name": "Safari Zone East Area - Tall Grass Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_NORTH_PROTEIN": {
-    "name": "Safari Zone North - North Item",
+    "name": "Safari Zone North Area - North Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_NORTH_QUICK_CLAW": {
-    "name": "Safari Zone North - South Item",
+    "name": "Safari Zone North Area - South Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_NORTH_TM47": {
-    "name": "Safari Zone North - Center Item",
+    "name": "Safari Zone North Area - Center Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_WEST_MAX_POTION": {
-    "name": "Safari Zone West - Southwest Item",
+    "name": "Safari Zone West Area - Southwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_WEST_MAX_REVIVE": {
-    "name": "Safari Zone West - Southeast Item",
+    "name": "Safari Zone West Area - Southeast Item",
     "tags": ["Overworld"]
   },
   "ITEM_SAFARI_ZONE_WEST_TM32": {
-    "name": "Safari Zone West - Northwest Item",
+    "name": "Safari Zone West Area - Northwest Item",
     "tags": ["Overworld"]
   },
   "ITEM_SEAFOAM_ISLANDS_1F_ICE_HEAL": {
@@ -1225,15 +1225,15 @@
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFARI_ZONE_CENTER_LEAF_STONE": {
-    "name": "Safari Zone Center - Island Hidden Item",
+    "name": "Safari Zone Center Area - Island Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFARI_ZONE_WEST_REVIVE": {
-    "name": "Safari Zone West - Hidden Item Near Secret House",
+    "name": "Safari Zone West Area - Hidden Item Near Secret House",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SAFFRON_CITY_COPYCATS_HOUSE_2F_NUGGET": {
-    "name": "Saffron Copycat's House 2F - Desk Hidden Item",
+    "name": "Copycat's House 2F - Desk Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SEAFOAM_ISLANDS_B3F_NUGGET": {
@@ -1538,7 +1538,7 @@
   },
 
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
-    "name": "Route 16 North Entrance 2F - Professor Oak's Aide",
+    "name": "Route 16 Gate 2F - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
@@ -1546,7 +1546,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 West Entrance 2F - Professor Oak's Aide",
+    "name": "Route 15 Gate 2F - Professor Oak's Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FIRST_POKEBALLS": {
@@ -1618,7 +1618,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC": {
-    "name": "Saffron Mr Psychic's House - Mr. Psychic",
+    "name": "Mr. Psychic's House - Mr. Psychic",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL": {

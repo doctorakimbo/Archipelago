@@ -240,8 +240,8 @@
   },
   "TRADE_POKEMON_NIDORAN": {
     "name": [
-      "Underground Path North Entrance - Trade Nidoran M",
-      "Underground Path North Entrance - Trade Nidoran F"
+      "Underground Path North - Trade Nidoran M",
+      "Underground Path North - Trade Nidoran F"
     ],
     "item": [
       "Static Nidoran F",
@@ -256,8 +256,8 @@
   },
   "TRADE_POKEMON_NIDORINOA": {
     "name": [
-      "Route 11 East Entrance 2F - Trade Nidorino",
-      "Route 11 East Entrance 2F - Trade Nidorina"
+      "Route 11 Gate 2F - Trade Nidorino",
+      "Route 11 Gate 2F - Trade Nidorina"
     ],
     "item": [
       "Static Nidorina",
@@ -333,8 +333,8 @@
   },
   "TRADE_POKEMON_LICKITUNG": {
     "name": [
-      "Route 18 East Entrance 2F - Trade Golduck",
-      "Route 18 East Entrance 2F - Trade Slowbro"
+      "Route 18 Gate 2F - Trade Golduck",
+      "Route 18 Gate 2F - Trade Slowbro"
     ],
     "item": "Static Lickitung",
     "tags": ["Pokemon", "Misc"]
@@ -360,32 +360,32 @@
     "tags": ["Pokemon", "Legendary"]
   },
   "TRADE_POKEMON_ELECTRODE": {
-    "name": "Cinnabar Pokemon Lab Lounge - Trade Raichu",
+    "name": "Pokemon Lab Lounge - Trade Raichu",
     "item": "Static Electrode",
     "tags": ["Pokemon", "Misc"]
   },
   "TRADE_POKEMON_TANGELA": {
-    "name": "Cinnabar Pokemon Lab Lounge - Trade Venonat",
+    "name": "Pokemon Lab Lounge - Trade Venonat",
     "item": "Static Tangela",
     "tags": ["Pokemon", "Misc"]
   },
   "GIFT_POKEMON_OMANYTE": {
-    "name": "Cinnabar Pokemon Lab Experiment Room - Revive Helix Fossil",
+    "name": "Pokemon Lab Experiment Room - Revive Helix Fossil",
     "item": "Static Omanyte",
     "tags": ["Pokemon", "Misc"]
   },
   "GIFT_POKEMON_KABUTO": {
-    "name": "Cinnabar Pokemon Lab Experiment Room - Revive Dome Fossil",
+    "name": "Pokemon Lab Experiment Room - Revive Dome Fossil",
     "item": "Static Kabuto",
     "tags": ["Pokemon", "Misc"]
   },
   "GIFT_POKEMON_AERODACTYL": {
-    "name": "Cinnabar Pokemon Lab Experiment Room - Revive Old Amber",
+    "name": "Pokemon Lab Experiment Room - Revive Old Amber",
     "item": "Static Aerodactyl",
     "tags": ["Pokemon", "Misc"]
   },
   "TRADE_POKEMON_SEEL": {
-    "name": "Cinnabar Pokemon Lab Experiment Room - Trade Ponyta",
+    "name": "Pokemon Lab Experiment Room - Trade Ponyta",
     "item": "Static Seel",
     "tags": ["Pokemon", "Misc"]
   },
