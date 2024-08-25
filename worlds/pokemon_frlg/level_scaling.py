@@ -63,7 +63,7 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
                          {"name": "Super Nerd Miguel", "data_ids": ["TRAINER_SUPER_NERD_MIGUEL"]}],
         "Mt. Moon B2F Center": [{"name": "Team Rocket Grunt 2", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT_2"]}],
         "Mt. Moon B2F Northeast": [{"name": "Team Rocket Grunt 3", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT_3"]}],
-        "Route 4 Ledge": [{"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]}],
+        "Route 4 Northeast": [{"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]}],
         "Cerulean City": [{"name": "Cerulean City Rival", "data_ids": ["TRAINER_RIVAL_CERULEAN_BULBASAUR",
                                                                        "TRAINER_RIVAL_CERULEAN_CHARMANDER",
                                                                        "TRAINER_RIVAL_CERULEAN_SQUIRTLE"]}],
@@ -442,8 +442,8 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
         "Lost Cave B1F Room 10": [{"name": "Lady Selphy", "data_ids": ["TRAINER_LADY_SELPHY"]}],
         "Water Path South": [{"name": "Juggler Edward", "data_ids": ["TRAINER_JUGGLER_EDWARD"]},
                              {"name": "Hiker Earl", "data_ids": ["TRAINER_HIKER_EARL"]}],
-        "Water Path Water": [{"name": "Swimmer Denise", "data_ids": ["TRAINER_SWIMMER_FEMALE_DENISE"]},
-                             {"name": "Swimmer Samir", "data_ids": ["TRAINER_SWIMMER_MALE_SAMIR"]}],
+        "Water Path South Water": [{"name": "Swimmer Denise", "data_ids": ["TRAINER_SWIMMER_FEMALE_DENISE"]},
+                                   {"name": "Swimmer Samir", "data_ids": ["TRAINER_SWIMMER_MALE_SAMIR"]}],
         "Water Path North": [{"name": "Twins Miu & Mia", "data_ids": ["TRAINER_TWINS_MIU_MIA"]},
                              {"name": "Aroma Lady Rose", "data_ids": ["TRAINER_AROMA_LADY_ROSE"]}],
         "Ruin Valley": [{"name": "Hiker Daryl", "data_ids": ["TRAINER_HIKER_DARYL"]},
@@ -481,14 +481,10 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
                            {"name": "Crush Girl Cyndy", "data_ids": ["TRAINER_CRUSH_GIRL_CYNDY"]},
                            {"name": "Cooltrainer Leroy", "data_ids": ["TRAINER_COOLTRAINER_LEROY"]},
                            {"name": "Cooltrainer Michelle", "data_ids": ["TRAINER_COOLTRAINER_MICHELLE"]}],
-        "Tanoby Ruins Scufib Chamber Island": [{"name": "Ruin Maniac Brandon",
-                                                "data_ids": ["TRAINER_RUIN_MANIAC_BRANDON"]}],
-        "Tanoby Ruins Weepth Chamber Island": [{"name": "Gentleman Clifford",
-                                                "data_ids": ["TRAINER_GENTLEMAN_CLIFFORD"]},
-                                               {"name": "Painter Edna",
-                                                "data_ids": ["TRAINER_PAINTER_EDNA"]}],
-        "Tanoby Ruins Monean Chamber Island": [{"name": "Ruin Maniac Benjamin",
-                                                "data_ids": ["TRAINER_RUIN_MANIAC_BENJAMIN"]}],
+        "Tanoby Ruins Scufib Island": [{"name": "Ruin Maniac Brandon", "data_ids": ["TRAINER_RUIN_MANIAC_BRANDON"]}],
+        "Tanoby Ruins Weepth Island": [{"name": "Gentleman Clifford", "data_ids": ["TRAINER_GENTLEMAN_CLIFFORD"]},
+                                       {"name": "Painter Edna", "data_ids": ["TRAINER_PAINTER_EDNA"]}],
+        "Tanoby Ruins Monean Island": [{"name": "Ruin Maniac Benjamin", "data_ids": ["TRAINER_RUIN_MANIAC_BENJAMIN"]}],
         "Trainer Tower Exterior South": [{"name": "Psychic Rodette", "data_ids": ["TRAINER_PSYCHIC_RODETTE"]},
                                          {"name": "Psychic Dario", "data_ids": ["TRAINER_PSYCHIC_DARIO"]}]
     }
@@ -866,7 +862,8 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
         "Saffron Dojo": [{"name": "Gift Hitmonchan", "data_ids": ["GIFT_POKEMON_HITMONCHAN"]},
                          {"name": "Gift Hitmonlee", "data_ids": ["GIFT_POKEMON_HITMONLEE"]}],
         "Silph Co. 7F Northwest Room": [{"name": "Gift Lapras", "data_ids": ["GIFT_POKEMON_LAPRAS"]}],
-        "Seafoam Islands B4F Near Articuno": [{"name": "Legendary Articuno", "data_ids": ["LEGENDARY_POKEMON_ARTICUNO"]}],
+        "Seafoam Islands B4F Near Articuno": [{"name": "Legendary Articuno",
+                                               "data_ids": ["LEGENDARY_POKEMON_ARTICUNO"]}],
         "Pokemon Lab Experiment Room": [{"name": "Gift Omanyte",
                                          "rule": lambda state: state.has("Helix Fossil", world.player),
                                          "data_ids": ["GIFT_POKEMON_OMANYTE"]},
@@ -969,8 +966,8 @@ def level_scaling(multiworld):
                             return True
                         if ("Rock Tunnel 1F Land Scaling" in location.name and
                                 any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                     for e in ["Rock Tunnel 1F Northeast -> Rock Tunnel 1F Northeast Ladder (Left)",
-                                               "Rock Tunnel 1F South -> Rock Tunnel 1F Exit"]])):
+                                     for e in ["Rock Tunnel 1F Northeast Ladder (Northeast)",
+                                               "Rock Tunnel 1F South Exit"]])):
                             return True
                         return False
 

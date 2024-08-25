@@ -170,7 +170,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
                 if scaling_data.connections is not None:
                     for connection in scaling_data.connections:
-                        name = f"{regions[connection].name} -> {region.name}"
+                        name = f"{regions[connection].name} Scaling Group"
                         regions[connection].connect(region, name)
             else:
                 region = regions[scaling_data.region]

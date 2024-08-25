@@ -19,14 +19,12 @@ exclusive_gift_pokemon: List[str] = {
 }
 
 
-indirect_conditions: Dict[str, List[Tuple[str, str]]] = {
-    "Seafoam Islands 1F": [("Seafoam Islands B3F West", "Seafoam Islands B3F Water"),
-                           ("Seafoam Islands B3F Southeast", "Seafoam Islands B3F Water"),
-                           ("Seafoam Islands B3F Water", "Seafoam Islands B3F West"),
-                           ("Seafoam Islands B3F Water", "Seafoam Islands B3F Southeast")],
-    "Seafoam Islands B3F West": [("Seafoam Islands B4F", "Seafoam Islands B4F West Water"),
-                                 ("Seafoam Islands B4F West Water", "Seafoam Islands B4F Near Articuno")],
-    "Victory Road 3F Southwest": [("Victory Road 2F Center", "Victory Road 2F Southeast")]
+indirect_conditions: Dict[str, List[str]] = {
+    "Seafoam Islands 1F": ["Seafoam Islands B3F West Surfing Spot", "Seafoam Islands B3F Southeast Surfing Spot",
+                           "Seafoam Islands B3F West Landing", "Seafoam Islands B3F Southeast Landing"],
+    "Seafoam Islands B3F West": ["Seafoam Islands B4F Surfing Spot (West)",
+                                 "Seafoam Islands B4F Near Articuno Landing"],
+    "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"]
 }
 
 
@@ -60,9 +58,6 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         These regions are created lazily and dynamically so as not to bother with unused maps.
         """
         game_version = world.options.game_version.current_key
-
-        if encounter_region_name is None:
-            AssertionError(f"Region {region} has encounters but doesn't have an encounter region name")
 
         for i, encounter_category in enumerate(encounter_categories.items()):
             if include_slots[i]:
@@ -118,7 +113,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     regions[region_name] = encounter_region
 
                 # Encounter region exists, just connect to it
-                region.connect(encounter_region, f"{region.name} -> {region_name}")
+                region.connect(encounter_region, f"{region.name} {encounter_category[0]} Battle")
 
     regions: Dict[str, Region] = {}
     connections: List[Tuple[str, str, str]] = []
@@ -162,9 +157,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
             if "Trade" in name:
                 world.trade_pokemon.append([region_name, name])
 
-        for region_exit in region_data.exits:
-            exit_name = data.regions[region_exit].name
-            connections.append((f"{region_name} -> {exit_name}", region_name, exit_name))
+        for region_id, exit_name in region_data.exits.items():
+            region_exit = data.regions[region_id].name
+            connections.append((exit_name, region_name, region_exit))
 
         for warp in region_data.warps:
             source_warp = data.warps[warp]
@@ -174,11 +169,12 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
             if dest_warp.parent_region_id is None:
                 continue
             dest_region_name = data.regions[dest_warp.parent_region_id].name
-            connections.append((f"{region_name} -> {source_warp.name}", region_name, dest_region_name))
+            connections.append((source_warp.name, region_name, dest_region_name))
 
         regions[region_name] = new_region
 
-        connect_to_map_encounters(regions, new_region, region_data.parent_map.name, region_data.encounter_region,
+        parent_map_name = region_data.parent_map.name if region_data.parent_map is not None else None
+        connect_to_map_encounters(regions, new_region, parent_map_name, region_data.encounter_region,
                                   (region_data.has_land, region_data.has_water, region_data.has_fishing))
 
     for name, source, dest in connections:
@@ -195,5 +191,4 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
 def create_indirect_conditions(world: "PokemonFRLGWorld"):
     for region, entrances in indirect_conditions.items():
         for entrance in entrances:
-            world.multiworld.register_indirect_condition(world.get_region(region),
-                                                         world.get_entrance(f"{entrance[0]} -> {entrance[1]}"))
+            world.multiworld.register_indirect_condition(world.get_region(region), world.get_entrance(entrance))

@@ -119,17 +119,17 @@ class EventData(NamedTuple):
 class RegionData:
     id: str
     name: str
-    parent_map: MapData
+    parent_map: Optional[MapData]
     encounter_region: str
     has_land: bool
     has_water: bool
     has_fishing: bool
-    exits: List[str]
+    exits: Dict[str, str]
     warps: List[str]
     locations: List[str]
     events: List[str]
 
-    def __init__(self, region_id: str, name: str, parent_map: MapData, encounter_region: str,
+    def __init__(self, region_id: str, name: str, parent_map: Optional[MapData], encounter_region: str,
                  has_land: bool, has_water: bool, has_fishing: bool):
         self.id = region_id
         self.name = name
@@ -796,10 +796,12 @@ def _init() -> None:
 
     data.regions = {}
     for region_id, region_json in regions_json.items():
+        parent_map = data.maps[region_json["parent_map"]] if region_json["parent_map"] is not None else None
+
         new_region = RegionData(
             region_id,
             region_json["name"],
-            data.maps[region_json["parent_map"]],
+            parent_map,
             region_json["encounter_region"],
             region_json["has_land"],
             region_json["has_water"],
@@ -872,8 +874,7 @@ def _init() -> None:
         new_region.events.sort(key=lambda event: data.events[event].name)
 
         # Exits
-        for region_exit in region_json["exits"]:
-            new_region.exits.append(region_exit)
+        new_region.exits = region_json["exits"]
 
         # Warps
         for encoded_warp, name in region_json["warps"].items():
