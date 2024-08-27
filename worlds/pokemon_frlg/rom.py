@@ -4,21 +4,21 @@ Classes and functions related to creating a ROM patch
 import bsdiff4
 import struct
 import logging
-from typing import TYPE_CHECKING, Dict, List, Tuple, Union
+from typing import TYPE_CHECKING, Dict, List, Tuple
 
 from worlds.Files import APPatchExtension, APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data, TrainerPokemonDataTypeEnum
 from .items import reverse_offset_item_value
 from .locations import reverse_offset_flag
-from .options import (ItemfinderRequired, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters,
-                      RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems, TmTutorCompatibility,
-                      ViridianCityRoadblock)
+from .options import (ItemfinderRequired, HmCompatibility, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+                      RandomizeStarters, RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems,
+                      TmTutorCompatibility, ViridianCityRoadblock)
 from .pokemon import STARTER_INDEX, randomize_tutor_moves
 from .util import bool_array_to_int, bound, encode_string
+
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
-
 
 FIRERED_REV0_HASH = "e26ee0d44e809351c8ce2d73c7400cdd"
 FIRERED_REV1_HASH = "51901a6e40661b3914aa333c802e24e8"
@@ -176,11 +176,12 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                 f"TRAINER_{trainer}_SQUIRTLE"
             ]
 
-            location_info.extend((
-                data.constants["TRAINER_FLAGS_START"] + data.constants[alternate],
-                location.item.player,
-                location.item.name
-            ) for alternate in alternates)
+            location_info.extend(
+                (
+                    data.constants["TRAINER_FLAGS_START"] + data.constants[alternate],
+                    location.item.player,
+                    location.item.name
+                ) for alternate in alternates)
 
     player_name_ids: Dict[str, int] = {world.player_name: 0}
     item_name_offsets: Dict[str, int] = {}
@@ -294,7 +295,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # Set trainer parties
     _set_trainer_parties(world, tokens, game_version_revision)
 
-    # Set TM/HM compatability
+    # Set TM/HM compatibility
     _set_tmhm_compatibility(world, tokens, game_version_revision)
 
     # Set TM Moves
@@ -531,7 +532,7 @@ def _set_starters(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_
 
 def _set_legendaries(world: "PokemonFRLGWorld", tokens: APTokenMixin,
                      game_version: str, game_version_revision: str) -> None:
-    if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla:
+    if not world.options.level_scaling and world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla:
         return
 
     for name, legendary in world.modified_legendary_pokemon.items():
@@ -545,7 +546,7 @@ def _set_legendaries(world: "PokemonFRLGWorld", tokens: APTokenMixin,
 
 def _set_misc_pokemon(world: "PokemonFRLGWorld", tokens: APTokenMixin,
                       game_version: str, game_version_revision: str) -> None:
-    if world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla:
+    if not world.options.level_scaling and world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla:
         return
 
     for name, misc_pokemon in world.modified_misc_pokemon.items():
@@ -559,7 +560,8 @@ def _set_misc_pokemon(world: "PokemonFRLGWorld", tokens: APTokenMixin,
 
 
 def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
-    if (world.options.trainers == RandomizeTrainerParties.option_vanilla and
+    if (not world.options.level_scaling and
+            world.options.trainers == RandomizeTrainerParties.option_vanilla and
             world.options.starters == RandomizeStarters.option_vanilla and
             world.options.modify_trainer_levels.value == 0):
         return
@@ -600,7 +602,8 @@ def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_v
 
 
 def _set_tmhm_compatibility(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
-    if world.options.tm_tutor_compatability == TmTutorCompatibility.special_range_names["vanilla"]:
+    if (world.options.hm_compatibility == HmCompatibility.special_range_names["vanilla"] and
+            world.options.tm_tutor_compatibility == TmTutorCompatibility.special_range_names["vanilla"]):
         return
 
     learnsets_address = data.rom_addresses[game_version_revision]["sTMHMLearnsets"]
@@ -635,7 +638,7 @@ def _randomize_move_tutors(world: "PokemonFRLGWorld", tokens: APTokenMixin, game
         for i, move in enumerate(new_tutor_moves):
             tokens.write_token(APTokenTypes.WRITE, address + (i * 2), struct.pack("<H", move))
 
-    if world.options.tm_tutor_compatability != TmTutorCompatibility.special_range_names["vanilla"]:
+    if world.options.tm_tutor_compatibility != TmTutorCompatibility.special_range_names["vanilla"]:
         learnsets_address = data.rom_addresses[game_version_revision]["sTutorLearnsets"]
 
         for species in world.modified_species.values():
@@ -643,7 +646,7 @@ def _randomize_move_tutors(world: "PokemonFRLGWorld", tokens: APTokenMixin, game
                 APTokenTypes.WRITE,
                 learnsets_address + (species.species_id * 2),
                 struct.pack("<H", bool_array_to_int([
-                    world.random.randrange(0, 100) < world.options.tm_tutor_compatability.value
+                    world.random.randrange(0, 100) < world.options.tm_tutor_compatibility.value
                     for _ in range(16)
                 ]))
             )

@@ -9,6 +9,7 @@ from .data import data
 from .options import (ViridianCityRoadblock, ViridianGymRequirement, Route22GateRequirement, ItemfinderRequired,
                       PewterCityRoadblock, CeruleanCaveRequirement, Route23GuardRequirement, EliteFourRequirement,
                       ShuffleHiddenItems, GameVersion)
+
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
@@ -67,7 +68,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                 and can_use_hm(state, "Waterfall"))
 
     def can_use_hm(state: CollectionState, hm: str):
-        species_can_use_hm: List[str] = world.hm_compatability[hm]
+        species_can_use_hm: List[str] = world.hm_compatibility[hm]
         return state.has_any(species_can_use_hm, player)
 
     def has_n_badges(state: CollectionState, n: int):

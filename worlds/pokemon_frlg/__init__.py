@@ -22,10 +22,10 @@ from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_
 from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeWildPokemon, ShuffleHiddenItems, ShuffleBadges, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
-                      randomize_starters, randomize_tm_hm_compatability, randomize_tm_moves,
+                      randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
 from .rom import get_tokens, PokemonFireRedProcedurePatch, PokemonLeafGreenProcedurePatch
-from .util import int_to_bool_array, HM_TO_COMPATABILITY_ID
+from .util import int_to_bool_array, HM_TO_COMPATIBILITY_ID
 
 
 class PokemonFRLGWebWorld(WebWorld):
@@ -81,7 +81,7 @@ class PokemonFRLGWorld(World):
     item_name_to_id = create_item_name_to_id_map()
     location_name_to_id = create_location_name_to_id_map()
     item_name_groups = ITEM_GROUPS
-    location_name_groups = LOCATION_GROUPS  
+    location_name_groups = LOCATION_GROUPS
 
     required_client_version = (0, 5, 0)
 
@@ -94,7 +94,7 @@ class PokemonFRLGWorld(World):
     modified_misc_pokemon: Dict[str, MiscPokemonData]
     modified_trainers: Dict[str, TrainerData]
     modified_tmhm_moves: List[int]
-    hm_compatability: Dict[str, List[str]]
+    hm_compatibility: Dict[str, List[str]]
     per_species_tmhm_moves: Dict[int, List[int]]
     trade_pokemon: List[Tuple[str, str]]
     blacklisted_wild_pokemon: Set[int]
@@ -122,7 +122,7 @@ class PokemonFRLGWorld(World):
         self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
         self.modified_trainers = copy.deepcopy(frlg_data.trainers)
         self.modified_tmhm_moves = copy.deepcopy(frlg_data.tmhm_moves)
-        self.hm_compatability = {}
+        self.hm_compatibility = {}
         self.per_species_tmhm_moves = {}
         self.trade_pokemon = []
         self.trainer_name_level_dict = {}
@@ -177,8 +177,8 @@ class PokemonFRLGWorld(World):
         randomize_starters(self)
         randomize_legendaries(self)
         randomize_misc_pokemon(self)
-        randomize_tm_hm_compatability(self)
-        self.create_hm_compatability_dict()
+        randomize_tm_hm_compatibility(self)
+        self.create_hm_compatibility_dict()
 
     def create_regions(self) -> None:
         from .regions import create_indirect_conditions, create_regions
@@ -421,11 +421,11 @@ class PokemonFRLGWorld(World):
             self.player
         )
 
-    def create_hm_compatability_dict(self):
+    def create_hm_compatibility_dict(self):
         hms = frozenset({"Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"})
         for hm in hms:
-            self.hm_compatability[hm] = list()
+            self.hm_compatibility[hm] = list()
             for species in self.modified_species.values():
                 combatibility_array = int_to_bool_array(species.tm_hm_compatibility)
-                if combatibility_array[HM_TO_COMPATABILITY_ID[hm]] == 1:
-                    self.hm_compatability[hm].append(species.name)
+                if combatibility_array[HM_TO_COMPATIBILITY_ID[hm]] == 1:
+                    self.hm_compatibility[hm].append(species.name)

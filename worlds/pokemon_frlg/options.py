@@ -727,8 +727,8 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     ability_blacklist: AbilityBlacklist
     moves: RandomizeMoves
     move_blacklist: MoveBlacklist
-    hm_compatability: HmCompatibility
-    tm_tutor_compatability: TmTutorCompatibility
+    hm_compatibility: HmCompatibility
+    tm_tutor_compatibility: TmTutorCompatibility
     tm_tutor_moves: TmTutorMoves
 
     reusable_tm_tutors: ReusableTmsTutors

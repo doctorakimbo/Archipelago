@@ -1,7 +1,6 @@
 from typing import List, Optional
 
-
-HM_TO_COMPATABILITY_ID = {
+HM_TO_COMPATIBILITY_ID = {
     "Cut": 50,
     "Fly": 51,
     "Surf": 52,
@@ -10,7 +9,6 @@ HM_TO_COMPATABILITY_ID = {
     "Rock Smash": 55,
     "Waterfall": 56
 }
-
 
 CHARACTER_DECODING_MAP = {
     0x00: " ", 0x01: "À", 0x02: "Á", 0x03: "Â", 0x04: "Ç",
@@ -44,7 +42,6 @@ CHARACTER_DECODING_MAP = {
     0xF0: ":", 0xF1: "Ä", 0xF2: "Ö", 0xF3: "Ü", 0xF4: "ä",
     0xF5: "ö", 0xF6: "ü", 0xFF: "$"
 }
-
 
 CHARACTER_ENCODING_MAP = {value: key for key, value in CHARACTER_DECODING_MAP.items()}
 CHARACTER_ENCODING_MAP.update({

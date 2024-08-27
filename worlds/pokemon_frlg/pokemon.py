@@ -757,19 +757,19 @@ def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
                                                               False)
 
 
-def randomize_tm_hm_compatability(world: "PokemonFRLGWorld") -> None:
+def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
     for species in world.modified_species.values():
-        compatability_array = int_to_bool_array(species.tm_hm_compatibility)
+        compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
 
-        if world.options.tm_tutor_compatability != TmTutorCompatibility.special_range_names["vanilla"]:
+        if world.options.tm_tutor_compatibility != TmTutorCompatibility.special_range_names["vanilla"]:
             for i in range(0, 50):
-                compatability_array[i] = world.random.random() < world.options.tm_tutor_compatability / 100
+                compatibility_array[i] = world.random.random() < world.options.tm_tutor_compatibility / 100
 
-        if world.options.hm_compatability != HmCompatibility.special_range_names["vanilla"]:
+        if world.options.hm_compatibility != HmCompatibility.special_range_names["vanilla"]:
             for i in range(50, 58):
-                compatability_array[i] = world.random.random() < world.options.hm_compatability / 100
+                compatibility_array[i] = world.random.random() < world.options.hm_compatibility / 100
 
-        species.tm_hm_compatibility = bool_array_to_int(compatability_array)
+        species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
 
 
 def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
