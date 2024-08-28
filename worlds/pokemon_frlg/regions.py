@@ -46,6 +46,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         ],
     }
 
+    kanto_only = world.options.kanto_only
+
     def connect_to_map_encounters(regions: Dict[str, Region], region: Region, map_name: str, encounter_region_name: str,
                                   include_slots: Tuple[bool, bool, bool]):
         """
@@ -58,6 +60,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         These regions are created lazily and dynamically so as not to bother with unused maps.
         """
         game_version = world.options.game_version.current_key
+
+        if True in include_slots and encounter_region_name is None:
+            raise AssertionError(f"{region.name} has encounters but does not have an encounter region name")
 
         for i, encounter_category in enumerate(encounter_categories.items()):
             if include_slots[i]:
@@ -118,6 +123,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
     regions: Dict[str, Region] = {}
     connections: List[Tuple[str, str, str]] = []
     for region_data in data.regions.values():
+        if kanto_only and not region_data.kanto:
+            continue
+
         region_name = region_data.name
         new_region = Region(region_name, world.player, world.multiworld)
 
@@ -158,6 +166,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                 world.trade_pokemon.append([region_name, name])
 
         for region_id, exit_name in region_data.exits.items():
+            if kanto_only and not data.regions[region_id].kanto:
+                continue
             region_exit = data.regions[region_id].name
             connections.append((exit_name, region_name, region_exit))
 
@@ -167,6 +177,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                 continue
             dest_warp = data.warps[data.warp_map[warp]]
             if dest_warp.parent_region_id is None:
+                continue
+            if kanto_only and not data.regions[dest_warp.parent_region_id].kanto:
                 continue
             dest_region_name = data.regions[dest_warp.parent_region_id].name
             connections.append((source_warp.name, region_name, dest_region_name))

@@ -218,34 +218,18 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Saffron City Fly Destination"), lambda state: state.has("Fly Saffron City", player))
     set_rule(get_entrance("Cinnabar Island Fly Destination"), lambda state: state.has("Fly Cinnabar Island", player))
     set_rule(get_entrance("Indigo Plateau Fly Destination"), lambda state: state.has("Fly Indigo Plateau", player))
-    set_rule(get_entrance("One Island Fly Destination"), lambda state: state.has("Fly One Island", player))
-    set_rule(get_entrance("Two Island Fly Destination"), lambda state: state.has("Fly Two Island", player))
-    set_rule(get_entrance("Three Island Fly Destination"), lambda state: state.has("Fly Three Island", player))
-    set_rule(get_entrance("Four Island Fly Destination"), lambda state: state.has("Fly Four Island", player))
-    set_rule(get_entrance("Five Island Fly Destination"), lambda state: state.has("Fly Five Island", player))
-    set_rule(get_entrance("Six Island Fly Destination"), lambda state: state.has("Fly Six Island", player))
-    set_rule(get_entrance("Seven Island Fly Destination"), lambda state: state.has("Fly Seven Island", player))
 
     # Seagallop
-    set_rule(get_entrance("One Island Arrival"), lambda state: state.has("Tri Pass", player))
-    set_rule(get_entrance("Two Island Arrival"), lambda state: state.has("Tri Pass", player))
-    set_rule(get_entrance("Three Island Arrival"), lambda state: state.has("Tri Pass", player))
-    set_rule(get_entrance("Four Island Arrival"), lambda state: state.has("Rainbow Pass", player))
-    set_rule(get_entrance("Five Island Arrival"), lambda state: state.has("Rainbow Pass", player))
-    set_rule(get_entrance("Six Island Arrival"), lambda state: state.has("Rainbow Pass", player))
-    set_rule(get_entrance("Seven Island Arrival"), lambda state: state.has("Rainbow Pass", player))
     set_rule(get_entrance("Navel Rock Arrival"), lambda state: state.has("Mystic Ticket", player))
     set_rule(get_entrance("Birth Island Arrival"), lambda state: state.has("Aurora Ticket", player))
 
     # Pallet Town
-    set_rule(get_location("Pallet Town - Oak's Post Champion Gift 1"),
-             lambda state: state.has("Defeat Champion", player))
-    set_rule(get_location("Pallet Town - Oak's Post Champion Gift 2"),
-             lambda state: state.has("Defeat Champion", player))
+    set_rule(get_location("Pallet Town - Oak (First Gift)"), lambda state: state.has("Defeat Champion", player))
+    set_rule(get_location("Pallet Town - Oak (Second Gift)"), lambda state: state.has("Defeat Champion", player))
     set_rule(get_location("Rival's House - Daisy"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Parcel Delivery Gift"),
+    set_rule(get_location("Professor Oak's Lab - Oak (Deliver Parcel)"),
              lambda state: state.has("Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Post Route 22 Rival Gift"),
+    set_rule(get_location("Professor Oak's Lab - Oak (After Route 22 Rival)"),
              lambda state: state.has("Defeat Route 22 Rival", player))
     set_rule(get_location("Professor Oak's Lab - Oak's Delivery"), lambda state: state.has("Oak's Parcel", player))
     set_rule(get_entrance("Pallet Town Surfing Spot"), lambda state: can_surf(state))
@@ -263,7 +247,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 22 Gate Exit (North)"), lambda state: can_pass_route_22_gate(state))
 
     # Route 2
-    set_rule(get_location("Route 2 Gate - Professor Oak's Aide"),
+    set_rule(get_location("Route 2 Gate - Oak's Aide"),
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_2.value * 1.2)))
     set_rule(get_entrance("Route 2 Southwest Cuttable Trees"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 Northwest Cuttable Tree"), lambda state: can_cut(state))
@@ -276,7 +260,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_pewter_city_roadblock(state))
 
     # Cerulean City
-    set_rule(get_location("Bike Shop - Owner"), lambda state: state.has("Bike Voucher", player))
+    set_rule(get_location("Bike Shop - Bicycle Purchase"), lambda state: state.has("Bike Voucher", player))
     set_rule(get_entrance("Cerulean City Cuttable Tree"),
              lambda state: can_pass_cerulean_city_roadblocks(state) and can_cut(state))
     set_rule(get_entrance("Robbed House (Front)"), lambda state: can_pass_cerulean_city_roadblocks(state))
@@ -311,7 +295,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("S.S. Anne Exterior Surfing Spot"), lambda state: can_surf(state))
 
     # Route 11
-    set_rule(get_location("Route 11 Gate 2F - Professor Oak's Aide"),
+    set_rule(get_location("Route 11 Gate 2F - Oak's Aide"),
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_11.value * 1.2)))
     set_rule(get_entrance("Route 11 West Surfing Spot"), lambda state: can_surf(state))
 
@@ -319,7 +303,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 9 Exit (West)"), lambda state: can_cut(state))
 
     # Route 10
-    set_rule(get_location("Route 10 Pokemon Center 1F - Professor Oak's Aide"),
+    set_rule(get_location("Route 10 Pokemon Center 1F - Oak's Aide"),
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_10.value * 1.2)))
     set_rule(get_entrance("Route 10 North Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 10 Near Power Plant Surfing Spot"), lambda state: can_surf(state))
@@ -376,11 +360,11 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 14 Cuttable Tree (South)"), lambda state: can_cut(state))
 
     # Route 15
-    set_rule(get_location("Route 15 Gate 2F - Professor Oak's Aide"),
+    set_rule(get_location("Route 15 Gate 2F - Oak's Aide"),
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_15.value * 1.2)))
 
     # Route 16
-    set_rule(get_location("Route 16 Gate 2F - Professor Oak's Aide"),
+    set_rule(get_location("Route 16 Gate 2F - Oak's Aide"),
              lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_16.value * 1.2)))
     set_rule(get_entrance("Route 16 Southeast Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 16 Southeast Play Poke Flute"), lambda state: state.has("Poke Flute", player))
@@ -470,7 +454,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: can_strength(state) and state.can_reach_region("Seafoam Islands B3F West", player))
 
     # Cinnabar Island
-    set_rule(get_location("Cinnabar Pokemon Center 1F - Bill"), lambda state: state.has("Defeat Blaine", player))
     set_rule(get_entrance("Cinnabar Island Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Cinnabar Gym"), lambda state: state.has("Secret Key", player))
     set_rule(get_entrance("Pokemon Mansion"), lambda state: state.has("Letter", player) or not options.extra_key_items)
@@ -495,130 +478,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Indigo Plateau
     set_rule(get_entrance("Pokemon League"), lambda state: can_challenge_elite_four(state))
-
-    # One Island Town
-    set_rule(get_location("One Island Pokemon Center 1F - Celio"),
-             lambda state: state.has_all(["Deliver Meteorite", "Ruby"], player))
-    set_rule(get_location("One Island Pokemon Center 1F - Help Celio"),
-             lambda state: state.has_all(["Deliver Meteorite", "Ruby", "Sapphire"], player))
-    set_rule(get_entrance("One Island Town Surfing Spot"), lambda state: can_surf(state))
-
-    # Kindle Road
-    set_rule(get_location("Kindle Road - Plateau Item"), lambda state: can_rock_smash(state))
-    set_rule(get_location("Kindle Road - Item Behind Smashable Rock"), lambda state: can_rock_smash(state))
-    set_rule(get_entrance("Kindle Road South Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Kindle Road Center Surfing Spot (South)"), lambda state: can_surf(state))
-    set_rule(get_entrance("Kindle Road Center Surfing Spot (North)"), lambda state: can_surf(state))
-    set_rule(get_entrance("Kindle Road North Surfing Spot"), lambda state: can_surf(state))
-
-    # Mt. Ember
-    set_rule(get_location("Mt. Ember Exterior - Item Near Summit"),
-             lambda state: can_strength(state) and can_rock_smash(state))
-    set_rule(get_entrance("Mt. Ember Exterior South Strength Boulders"), lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path"), lambda state: state.has("Deliver Meteorite", player))
-    set_rule(get_entrance("Mt. Ember Summit Strength Boulders"), lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B2F West Strength Boulders"), lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B2F East Strength Boulders"), lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B3F Northwest Strength Boulder (Southwest)"),
-             lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B3F Northwest Strength Boulder (Southeast)"),
-             lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B3F Southwest Strength Boulder (Northwest)"),
-             lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B3F Southwest Strength Boulder (Southeast)"),
-             lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B3F Southeast Strength Boulder (Northwest)"),
-             lambda state: can_strength(state))
-    set_rule(get_entrance("Mt. Ember Ruby Path B3F Southeast Strength Boulder (Southwest)"),
-             lambda state: can_strength(state))
-
-    # Two Island Town
-    set_rule(get_location("Two Island Town - Item Behind Cuttable Tree"), lambda state: can_cut(state))
-    set_rule(get_location("Two Island Game Corner - Lostelle's Father"),
-             lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
-    set_rule(get_location("Two Island Town - Market Stall"), lambda state: state.has("Defeat Champion", player))
-    set_rule(get_location("Two Island Game Corner - Gift for Lostelle's Father"),
-             lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
-
-    # Cape Brink
-    set_rule(get_entrance("Cape Brink Surfing Spot"), lambda state: can_surf(state))
-
-    # Three Island Town
-    set_rule(get_entrance("Three Island Town Cuttable Tree"), lambda state: can_cut(state))
-
-    # Bond Bridge
-    set_rule(get_entrance("Bond Bridge Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Bond Bridge Cuttable Tree"), lambda state: can_cut(state))
-
-    # Berry Forest
-    set_rule(get_location("Berry Forest - Item Past Southwest Pond"), lambda state: can_cut(state))
-    set_rule(get_entrance("Berry Forest Surfing Spot"), lambda state: can_surf(state))
-
-    # Four Island Town
-    set_rule(get_location("Four Island Town - Beach Item"), lambda state: can_rock_smash(state))
-    set_rule(get_entrance("Four Island Town Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Four Island Town Near Cave Surfing Spot"), lambda state: can_surf(state))
-
-    # Icefall Cave
-    set_rule(get_entrance("Icefall Cave Front South Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Icefall Cave Front Waterfall Ascend"), lambda state: can_waterfall(state))
-    set_rule(get_entrance("Icefall Cave Front Center Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Icefall Cave Front North Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Icefall Cave Back Surfing Spot"), lambda state: can_surf(state))
-
-    # Five Island Town
-    set_rule(get_entrance("Five Island Town Surfing Spot"), lambda state: can_surf(state))
-
-    # Five Isle Meadow
-    set_rule(get_location("Five Isle Meadow - Item Behind Cuttable Tree"), lambda state: can_cut(state))
-    set_rule(get_entrance("Five Isle Meadow Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Rocket Warehouse"), lambda state: state.has("Learn Rocket Warehouse Password", player))
-
-    # Memorial Pillar
-    set_rule(get_location("Memorial Pillar - Memorial Man"), lambda state: state.has("Buy Lemonade", player))
-
-    # Resort Gorgeous
-    set_rule(get_entrance("Resort Gorgeous Near Resort Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Resort Gorgeous Near Cave Surfing Spot"), lambda state: can_surf(state))
-
-    # Water Path
-    set_rule(get_entrance("Water Path South Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Water Path North Surfing Spot (South)"), lambda state: can_surf(state))
-    set_rule(get_entrance("Water Path North Surfing Spot (North)"), lambda state: can_surf(state))
-
-    # Ruin Valley
-    set_rule(get_location("Ruin Valley - Plateau Item"), lambda state: can_strength(state))
-    set_rule(get_location("Ruin Valley - Southwest Item"), lambda state: can_strength(state))
-    set_rule(get_location("Ruin Valley - Southeast Item"), lambda state: can_strength(state))
-    set_rule(get_entrance("Ruin Valley Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Dotted Hole"), lambda state: state.has("Help Lorelei", player) and can_cut(state))
-
-    # Green Path
-    set_rule(get_entrance("Green Path West Surfing Spot"), lambda state: can_surf(state))
-
-    # Outcast Island
-    set_rule(get_entrance("Outcast Island Surfing Spot"), lambda state: can_surf(state))
-
-    # Sevault Canyon
-    set_rule(get_location("Sevault Canyon - Item Behind Smashable Rocks"),
-             lambda state: can_strength(state) and can_rock_smash(state))
-
-    # Tanoby Key
-    set_rule(get_location("Tanoby Key - Solve Puzzle"), lambda state: can_strength(state))
-
-    # Tanoby Ruins
-    set_rule(get_entrance("Tanoby Ruins Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Viapois Island Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Rixy Island Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Scufib Island Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Dilford Island Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Weepth Island Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Liptoo Island Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Tanoby Ruins Monean Island Surfing Spot"), lambda state: can_surf(state))
-
-    # Trainer Tower
-    set_rule(get_entrance("Trainer Tower Exterior South Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Trainer Tower Exterior North Surfing Spot"), lambda state: can_surf(state))
 
     # Cerulean Cave
     set_rule(get_location("Cerulean Cave 2F - East Item"), lambda state: can_rock_smash(state))
@@ -645,9 +504,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         # Route 16
         set_rule(get_location("Route 16 - Hidden Item Under Snorlax"), lambda state: state.has("Itemfinder", player))
 
-        # Cape Brink
-        set_rule(get_location("Cape Brink - Hidden Item Across Pond"), lambda state: state.has("Itemfinder", player))
-
         # Navel Rock
         set_rule(get_location("Navel Rock - Hidden Item Near Ho-Oh"), lambda state: state.has("Itemfinder", player))
 
@@ -660,7 +516,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Extra Key Items
     if options.extra_key_items:
         # Cerulean City
-        set_rule(get_location("Cerulean Gym - Hidden Item In Water"),
+        set_rule(get_location("Cerulean Gym - Hidden Item in Water"),
                  lambda state: can_surf(state) and state.has("Itemfinder", player))
 
     # Trainersanity
@@ -669,12 +525,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_location("Route 22 - Early Rival Reward"), lambda state: state.has("Deliver Oak's Parcel", player))
         set_rule(get_location("Route 22 - Late Rival Reward"),
                  lambda state: state.has_all(["Defeat Route 22 Rival", "Defeat Giovanni"], player))
-
-        # Mt. Ember
-        set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Left)"),
-                 lambda state: state.has("Deliver Meteorite", player))
-        set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Right)"),
-                 lambda state: state.has("Deliver Meteorite", player))
 
     # Static Pokémon
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
@@ -723,14 +573,176 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_location(f"Seafoam Islands B3F - Water Encounter {i}"),
                  lambda state: can_strength(state) and state.can_reach_region("Seafoam Islands 1F", player))
 
-    # Tanoby Ruins encounters
-    set_rule(get_location("Monean Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
-    set_rule(get_location("Liptoo Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
-    set_rule(get_location("Weepth Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
-    set_rule(get_location("Dilford Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
-    set_rule(get_location("Scufib Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
-    set_rule(get_location("Rixy Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
-    set_rule(get_location("Viapos Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+    # Sevii Islands
+    if not options.kanto_only:
+        # Sky
+        set_rule(get_entrance("One Island Fly Destination"), lambda state: state.has("Fly One Island", player))
+        set_rule(get_entrance("Two Island Fly Destination"), lambda state: state.has("Fly Two Island", player))
+        set_rule(get_entrance("Three Island Fly Destination"), lambda state: state.has("Fly Three Island", player))
+        set_rule(get_entrance("Four Island Fly Destination"), lambda state: state.has("Fly Four Island", player))
+        set_rule(get_entrance("Five Island Fly Destination"), lambda state: state.has("Fly Five Island", player))
+        set_rule(get_entrance("Six Island Fly Destination"), lambda state: state.has("Fly Six Island", player))
+        set_rule(get_entrance("Seven Island Fly Destination"), lambda state: state.has("Fly Seven Island", player))
+
+        # Seagallop
+        set_rule(get_entrance("One Island Arrival"), lambda state: state.has("Tri Pass", player))
+        set_rule(get_entrance("Two Island Arrival"), lambda state: state.has("Tri Pass", player))
+        set_rule(get_entrance("Three Island Arrival"), lambda state: state.has("Tri Pass", player))
+        set_rule(get_entrance("Four Island Arrival"), lambda state: state.has("Rainbow Pass", player))
+        set_rule(get_entrance("Five Island Arrival"), lambda state: state.has("Rainbow Pass", player))
+        set_rule(get_entrance("Six Island Arrival"), lambda state: state.has("Rainbow Pass", player))
+        set_rule(get_entrance("Seven Island Arrival"), lambda state: state.has("Rainbow Pass", player))
+
+        # Cinnabar Island
+        set_rule(get_entrance("Follow Bill"), lambda state: state.has("Defeat Blaine", player))
+
+        # One Island Town
+        set_rule(get_location("One Island Pokemon Center 1F - Celio (Deliver Ruby)"),
+                 lambda state: state.has_all(["Deliver Meteorite", "Ruby"], player))
+        set_rule(get_location("One Island Pokemon Center 1F - Help Celio"),
+                 lambda state: state.has_all(["Deliver Meteorite", "Ruby", "Sapphire"], player))
+        set_rule(get_entrance("One Island Town Surfing Spot"), lambda state: can_surf(state))
+
+        # Kindle Road
+        set_rule(get_location("Kindle Road - Plateau Item"), lambda state: can_rock_smash(state))
+        set_rule(get_location("Kindle Road - Item Behind Smashable Rock"), lambda state: can_rock_smash(state))
+        set_rule(get_entrance("Kindle Road South Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Kindle Road Center Surfing Spot (South)"), lambda state: can_surf(state))
+        set_rule(get_entrance("Kindle Road Center Surfing Spot (North)"), lambda state: can_surf(state))
+        set_rule(get_entrance("Kindle Road North Surfing Spot"), lambda state: can_surf(state))
+
+        # Mt. Ember
+        set_rule(get_location("Mt. Ember Exterior - Item Near Summit"),
+                 lambda state: can_strength(state) and can_rock_smash(state))
+        set_rule(get_entrance("Mt. Ember Exterior South Strength Boulders"), lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path"), lambda state: state.has("Deliver Meteorite", player))
+        set_rule(get_entrance("Mt. Ember Summit Strength Boulders"), lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B2F West Strength Boulders"), lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B2F East Strength Boulders"), lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B3F Northwest Strength Boulder (Southwest)"),
+                 lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B3F Northwest Strength Boulder (Southeast)"),
+                 lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B3F Southwest Strength Boulder (Northwest)"),
+                 lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B3F Southwest Strength Boulder (Southeast)"),
+                 lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B3F Southeast Strength Boulder (Northwest)"),
+                 lambda state: can_strength(state))
+        set_rule(get_entrance("Mt. Ember Ruby Path B3F Southeast Strength Boulder (Southwest)"),
+                 lambda state: can_strength(state))
+
+        # Two Island Town
+        set_rule(get_location("Two Island Town - Item Behind Cuttable Tree"), lambda state: can_cut(state))
+        set_rule(get_location("Two Island Game Corner - Lostelle's Dad"),
+                 lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
+        set_rule(get_location("Two Island Town - Market Stall"), lambda state: state.has("Defeat Champion", player))
+        set_rule(get_location("Two Island Game Corner - Lostelle's Dad's Delivery"),
+                 lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
+
+        # Cape Brink
+        set_rule(get_entrance("Cape Brink Surfing Spot"), lambda state: can_surf(state))
+
+        # Three Island Town
+        set_rule(get_entrance("Three Island Town Cuttable Tree"), lambda state: can_cut(state))
+
+        # Bond Bridge
+        set_rule(get_entrance("Bond Bridge Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Bond Bridge Cuttable Tree"), lambda state: can_cut(state))
+
+        # Berry Forest
+        set_rule(get_location("Berry Forest - Item Past Southwest Pond"), lambda state: can_cut(state))
+        set_rule(get_entrance("Berry Forest Surfing Spot"), lambda state: can_surf(state))
+
+        # Four Island Town
+        set_rule(get_location("Four Island Town - Beach Item"), lambda state: can_rock_smash(state))
+        set_rule(get_entrance("Four Island Town Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Four Island Town Near Cave Surfing Spot"), lambda state: can_surf(state))
+
+        # Icefall Cave
+        set_rule(get_entrance("Icefall Cave Front South Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Icefall Cave Front Waterfall Ascend"), lambda state: can_waterfall(state))
+        set_rule(get_entrance("Icefall Cave Front Center Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Icefall Cave Front North Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Icefall Cave Back Surfing Spot"), lambda state: can_surf(state))
+
+        # Five Island Town
+        set_rule(get_entrance("Five Island Town Surfing Spot"), lambda state: can_surf(state))
+
+        # Five Isle Meadow
+        set_rule(get_location("Five Isle Meadow - Item Behind Cuttable Tree"), lambda state: can_cut(state))
+        set_rule(get_entrance("Five Isle Meadow Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Rocket Warehouse"), lambda state: state.has("Learn Rocket Warehouse Password", player))
+
+        # Memorial Pillar
+        set_rule(get_location("Memorial Pillar - Memorial Man"),
+                 lambda state: state.has("Buy Lemonade", player))
+
+        # Resort Gorgeous
+        set_rule(get_entrance("Resort Gorgeous Near Resort Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Resort Gorgeous Near Cave Surfing Spot"), lambda state: can_surf(state))
+
+        # Water Path
+        set_rule(get_entrance("Water Path South Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Water Path North Surfing Spot (South)"), lambda state: can_surf(state))
+        set_rule(get_entrance("Water Path North Surfing Spot (North)"), lambda state: can_surf(state))
+
+        # Ruin Valley
+        set_rule(get_location("Ruin Valley - Plateau Item"), lambda state: can_strength(state))
+        set_rule(get_location("Ruin Valley - Southwest Item"), lambda state: can_strength(state))
+        set_rule(get_location("Ruin Valley - Southeast Item"), lambda state: can_strength(state))
+        set_rule(get_entrance("Ruin Valley Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Dotted Hole"), lambda state: state.has("Help Lorelei", player) and can_cut(state))
+
+        # Green Path
+        set_rule(get_entrance("Green Path West Surfing Spot"), lambda state: can_surf(state))
+
+        # Outcast Island
+        set_rule(get_entrance("Outcast Island Surfing Spot"), lambda state: can_surf(state))
+
+        # Sevault Canyon
+        set_rule(get_location("Sevault Canyon - Item Behind Smashable Rocks"),
+                 lambda state: can_strength(state) and can_rock_smash(state))
+
+        # Tanoby Key
+        set_rule(get_location("Tanoby Key - Solve Puzzle"), lambda state: can_strength(state))
+
+        # Tanoby Ruins
+        set_rule(get_entrance("Tanoby Ruins Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Viapois Island Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Rixy Island Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Scufib Island Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Dilford Island Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Weepth Island Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Liptoo Island Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Tanoby Ruins Monean Island Surfing Spot"), lambda state: can_surf(state))
+
+        # Trainer Tower
+        set_rule(get_entrance("Trainer Tower Exterior South Surfing Spot"), lambda state: can_surf(state))
+        set_rule(get_entrance("Trainer Tower Exterior North Surfing Spot"), lambda state: can_surf(state))
+
+        # Hidden Items
+        if options.shuffle_hidden != ShuffleHiddenItems.option_off:
+            # Cape Brink
+            set_rule(get_location("Cape Brink - Hidden Item Across Pond"),
+                     lambda state: state.has("Itemfinder", player))
+
+        # Trainersanity
+        if options.trainersanity:
+            # Mt. Ember
+            set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Left)"),
+                     lambda state: state.has("Deliver Meteorite", player))
+            set_rule(get_location("Mt. Ember Exterior - Team Rocket Grunt Reward (Right)"),
+                     lambda state: state.has("Deliver Meteorite", player))
+
+        # Tanoby Ruins encounters
+        set_rule(get_location("Monean Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+        set_rule(get_location("Liptoo Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+        set_rule(get_location("Weepth Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+        set_rule(get_location("Dilford Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+        set_rule(get_location("Scufib Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+        set_rule(get_location("Rixy Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
+        set_rule(get_location("Viapos Chamber - Land Encounter 1"), lambda state: state.has("Spawn Unown", player))
 
     # Evolutions
     set_rule(get_location("Evolution - Bulbasaur"),

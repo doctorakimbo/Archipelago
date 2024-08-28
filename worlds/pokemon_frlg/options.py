@@ -16,6 +16,16 @@ class GameVersion(Choice):
     default = "random"
 
 
+class KantoOnly(Toggle):
+    """
+    Excludes all the Sevii Island locations. Navel Rock and Birth Island are still included.
+    The Rock Smash and Waterfall HMs will still be in the item pool and their vanilla locations will have a random
+    filler item.
+    """
+    display_name = "Kanto Only"
+    default = 0
+
+
 class ShuffleBadges(Toggle):
     """
     Shuffle Gym Badges into the general item pool. If turned off, Badges will be shuffled among themselves.
@@ -681,6 +691,8 @@ class ReceiveItemMessages(Choice):
 @dataclass
 class PokemonFRLGOptions(PerGameCommonOptions):
     game_version: GameVersion
+
+    kanto_only: KantoOnly
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems

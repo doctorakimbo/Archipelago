@@ -6,6 +6,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVOLVE_BULBASAUR",
@@ -186,6 +187,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -219,6 +221,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -242,6 +245,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_RECEIVED_MYSTIC_TICKET",
       "NPC_GIFT_RECEIVED_AURORA_TICKET"
@@ -265,6 +269,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -281,6 +286,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_PALLET_TOWN"
@@ -295,6 +301,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -310,10 +317,9 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
-    "events": [
-      "EVENT_FREE_FLY_LOCATION"
-    ],
+    "events": [],
     "exits": {},
     "warps": {
       "MAP_PALLET_TOWN_PLAYERS_HOUSE_2F:0/MAP_PALLET_TOWN_PLAYERS_HOUSE_1F:1": "Player's House 2F Stairs"
@@ -326,6 +332,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TOWN_MAP"
     ],
@@ -342,6 +349,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_FIRST_POKEBALLS",
       "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL",
@@ -362,6 +370,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TEACHY_TV",
       "ITEM_VIRIDIAN_CITY_POTION"
@@ -388,6 +397,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -406,6 +416,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -418,6 +429,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_VIRIDIAN_CITY"
@@ -432,6 +444,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -447,6 +460,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -461,6 +475,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -475,6 +490,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_8",
       "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE",
@@ -504,6 +520,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -518,6 +535,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_OAKS_PARCEL"
     ],
@@ -534,6 +552,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL"
     ],
@@ -560,6 +579,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -577,6 +597,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_PEWTER_CITY"
@@ -591,6 +612,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -606,6 +628,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_OLD_AMBER"
     ],
@@ -622,6 +645,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -636,6 +660,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_1",
       "NPC_GIFT_GOT_TM39_FROM_BROCK",
@@ -657,6 +682,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -671,6 +697,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -685,6 +712,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -700,6 +728,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -714,6 +743,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -728,6 +758,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_FAME_CHECKER",
       "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD"
@@ -758,6 +789,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY"
     ],
@@ -776,6 +808,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TM28_FROM_ROCKET",
       "TRAINER_TEAM_ROCKET_GRUNT_5_REWARD"
@@ -798,6 +831,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -814,6 +848,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -832,6 +867,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_CERULEAN_CITY"
@@ -846,6 +882,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -861,6 +898,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -876,6 +914,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "TRADE_POKEMON_JYNX"
@@ -892,6 +931,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -907,6 +947,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -921,6 +962,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_2",
       "NPC_GIFT_GOT_TM03_FROM_MISTY",
@@ -944,6 +986,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_BICYCLE"
     ],
@@ -960,6 +1003,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -974,6 +1018,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -988,6 +1033,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_POWDER_JAR"
     ],
@@ -1004,6 +1050,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER"
     ],
@@ -1033,6 +1080,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1051,6 +1099,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1066,6 +1115,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_VERMILION_CITY"
@@ -1080,6 +1130,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_OLD_ROD"
     ],
@@ -1096,6 +1147,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_VS_SEEKER"
     ],
@@ -1113,6 +1165,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1127,6 +1180,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_BIKE_VOUCHER"
     ],
@@ -1143,6 +1197,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "TRADE_POKEMON_FARFETCHD"
@@ -1159,6 +1214,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1173,6 +1229,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1187,6 +1244,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_3",
       "NPC_GIFT_GOT_TM34_FROM_SURGE",
@@ -1210,6 +1268,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1234,6 +1293,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_LAVENDER_TOWN"
@@ -1248,6 +1308,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1263,6 +1324,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1277,6 +1339,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_POKE_FLUTE"
     ],
@@ -1293,6 +1356,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1307,6 +1371,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1321,6 +1386,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1335,6 +1401,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "ITEM_CELADON_CITY_ETHER",
       "HIDDEN_ITEM_CELADON_CITY_PP_UP"
@@ -1367,6 +1434,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1384,6 +1452,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1396,6 +1465,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_CELADON_CITY"
@@ -1410,6 +1480,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_TEAM_ROCKET_GRUNT_7_REWARD"
     ],
@@ -1427,6 +1498,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1445,6 +1517,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1462,6 +1535,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1479,6 +1553,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_BUY_EVO_STONES"
@@ -1498,6 +1573,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1515,6 +1591,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL",
       "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL",
@@ -1535,6 +1612,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1553,6 +1631,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TEA"
     ],
@@ -1570,6 +1649,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1585,6 +1665,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1600,6 +1681,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1615,6 +1697,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1630,6 +1713,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1645,6 +1729,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1659,6 +1744,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1674,6 +1760,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "GIFT_POKEMON_EEVEE"
@@ -1690,6 +1777,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1705,6 +1793,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1719,6 +1808,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "CELADON_PRIZE_POKEMON_1",
@@ -1739,6 +1829,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_BEAUTY_BRIDGET_REWARD",
       "TRAINER_BEAUTY_TAMIA_REWARD",
@@ -1760,6 +1851,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_4",
       "NPC_GIFT_GOT_TM19_FROM_ERIKA",
@@ -1781,6 +1873,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_COIN_CASE"
     ],
@@ -1797,6 +1890,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "ITEM_CELADON_CITY_HOUSE_HIDEOUT_KEY"
     ],
@@ -1813,6 +1907,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1827,6 +1922,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1854,6 +1950,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE"
     ],
@@ -1873,6 +1970,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1885,6 +1983,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_FUCHSIA_CITY"
@@ -1899,6 +1998,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1914,6 +2014,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_HM04",
       "ITEM_FUCHSIA_CITY_WARDENS_HOUSE_RARE_CANDY"
@@ -1931,6 +2032,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1945,6 +2047,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_SAFARI_PASS"
     ],
@@ -1961,6 +2064,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_5",
       "NPC_GIFT_GOT_TM06_FROM_KOGA",
@@ -1987,6 +2091,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2001,6 +2106,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2016,6 +2122,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2030,6 +2137,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_GOOD_ROD"
     ],
@@ -2047,6 +2155,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2061,6 +2170,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -2089,6 +2199,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_SAFFRON_CITY"
@@ -2103,6 +2214,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2118,6 +2230,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_SAFFRON_CITY_COPYCATS_HOUSE_2F_NUGGET"
     ],
@@ -2134,6 +2247,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_BLACK_BELT_AARON_REWARD",
       "TRAINER_BLACK_BELT_HIDEKI_REWARD",
@@ -2157,6 +2271,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_PSYCHIC_PRESTON_REWARD"
     ],
@@ -2176,6 +2291,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_CHANNELER_AMANDA_REWARD"
     ],
@@ -2195,6 +2311,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_PSYCHIC_JOHAN_REWARD"
     ],
@@ -2214,6 +2331,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_CHANNELER_STACY_REWARD"
     ],
@@ -2233,6 +2351,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_6",
       "NPC_GIFT_GOT_TM04_FROM_SABRINA",
@@ -2253,6 +2372,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_PSYCHIC_TYRON_REWARD"
     ],
@@ -2272,6 +2392,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_CHANNELER_TASHA_REWARD"
     ],
@@ -2291,6 +2412,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2306,6 +2428,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_PSYCHIC_CAMERON_REWARD"
     ],
@@ -2325,6 +2448,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2339,6 +2463,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2353,6 +2478,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2368,6 +2494,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2382,6 +2509,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC"
     ],
@@ -2398,6 +2526,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2412,6 +2541,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -2433,6 +2563,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -2449,6 +2580,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_CINNABAR_ISLAND"
@@ -2463,6 +2595,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "BADGE_7",
       "NPC_GIFT_GOT_TM38_FROM_BLAINE",
@@ -2490,6 +2623,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2507,6 +2641,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "TRADE_POKEMON_ELECTRODE",
@@ -2524,6 +2659,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_LETTER"
     ],
@@ -2540,6 +2676,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "GIFT_POKEMON_OMANYTE",
@@ -2559,11 +2696,12 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "locations": [
-      "NPC_GIFT_GOT_TRI_PASS"
-    ],
+    "kanto": true,
+    "locations": [],
     "events": [],
-    "exits": {},
+    "exits": {
+      "REGION_ONE_ISLAND_POKEMON_CENTER_1F/MAIN": "Follow Bill"
+    },
     "warps": {
       "MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F:0/MAP_CINNABAR_ISLAND:3": "Cinnabar Pokemon Center 1F Exit",
       "MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F:1/MAP_CINNABAR_ISLAND_POKEMON_CENTER_2F:0": "Cinnabar Pokemon Center 1F Stairs"
@@ -2576,6 +2714,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2590,6 +2729,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2604,6 +2744,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -2621,6 +2762,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_INDIGO_PLATEAU"
@@ -2635,6 +2777,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2651,6 +2794,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -2665,6 +2809,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_ELITE_FOUR_LORELEI_REWARD"
     ],
@@ -2682,6 +2827,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_ELITE_FOUR_BRUNO_REWARD"
     ],
@@ -2699,6 +2845,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_ELITE_FOUR_AGATHA_REWARD"
     ],
@@ -2716,6 +2863,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_ELITE_FOUR_LANCE_REWARD"
     ],
@@ -2733,6 +2881,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD"
     ],
@@ -2750,6 +2899,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_DEFEAT_CHAMPION"

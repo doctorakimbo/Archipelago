@@ -2,6 +2,7 @@
 Archipelago World definition for Pokémon FireRed/LeafGreen
 """
 import copy
+import logging
 import os.path
 import threading
 import settings
@@ -20,8 +21,9 @@ from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, ge
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, GameVersion, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
-                      RandomizeWildPokemon, ShuffleHiddenItems, ShuffleBadges, ViridianCityRoadblock)
+from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, GameVersion, RandomizeLegendaryPokemon,
+                      RandomizeMiscPokemon, RandomizeWildPokemon, ShuffleHiddenItems, ShuffleBadges,
+                      ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -169,6 +171,13 @@ class PokemonFRLGWorld(World):
         self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
         self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
+        if (self.options.kanto_only and
+                self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
+                self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_restore_network):
+            logging.warning("Pokemon FRLG: Cerulean Cave Requirement for Player %s (%s) incompatible with Kanto Only. "
+                            "Setting requirement to Defeat Champion.", self.player, self.player_name)
+            self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
+
         create_scaling_data(self)
         randomize_types(self)
         randomize_abilities(self)
@@ -210,6 +219,15 @@ class PokemonFRLGWorld(World):
             item_locations = [location for location in item_locations if "Badge" not in location.tags]
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
+
+        if self.options.kanto_only:
+            items_to_add = ["HM06 Rock Smash", "HM07 Waterfall"]
+            for item_name in items_to_add:
+                itempool.append(self.create_item(item_name))
+                filler_items = [item for item in itempool
+                                if item.classification == ItemClassification.filler and "Unique" not in item.tags]
+                item_to_remove = self.random.choice(filler_items)
+                itempool.remove(item_to_remove)
 
         for item in self.options.start_inventory.keys():
             if "Unique" in frlg_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
@@ -389,6 +407,7 @@ class PokemonFRLGWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data = self.options.as_dict(
+            "kanto_only",
             "shuffle_badges",
             "shuffle_hidden",
             "extra_key_items",

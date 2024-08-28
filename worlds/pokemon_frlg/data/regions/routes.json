@@ -6,6 +6,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_POTION_ON_ROUTE_1"
     ],
@@ -23,6 +24,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -40,6 +42,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -57,6 +60,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -75,6 +79,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -91,6 +96,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE2_ETHER",
       "ITEM_ROUTE2_PARALYZE_HEAL"
@@ -110,6 +116,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -125,6 +132,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -140,6 +148,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_HM05"
     ],
@@ -157,6 +166,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "TRADE_POKEMON_MR_MIME"
@@ -173,6 +183,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE3_ORAN_BERRY",
       "TRAINER_BUG_CATCHER_COLTON_REWARD",
@@ -198,6 +209,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE4_PERSIM_BERRY"
     ],
@@ -217,6 +229,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE4_TM05",
       "HIDDEN_ITEM_ROUTE4_GREAT_BALL",
@@ -237,6 +250,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -251,6 +265,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -263,6 +278,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_LASS_CRISSY_REWARD"
     ],
@@ -279,6 +295,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "GIFT_POKEMON_MAGIKARP"
@@ -298,6 +315,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_ROUTE4"
@@ -312,6 +330,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -326,6 +345,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -344,6 +364,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -358,6 +379,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -374,6 +396,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -390,6 +413,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE6_RARE_CANDY",
       "HIDDEN_ITEM_ROUTE6_SITRUS_BERRY",
@@ -417,6 +441,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -429,6 +454,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -445,6 +471,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -461,6 +488,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY"
     ],
@@ -480,6 +508,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -496,6 +525,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -512,6 +542,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_BIKER_JAREN_REWARD",
       "TRAINER_BIKER_RICARDO_REWARD",
@@ -543,6 +574,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE8_LEPPA_BERRY",
       "HIDDEN_ITEM_ROUTE8_LUM_BERRY",
@@ -559,6 +591,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -575,6 +608,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -591,6 +625,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE9_BURN_HEAL",
       "ITEM_ROUTE9_TM40",
@@ -621,6 +656,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE10_CHERI_BERRY",
       "HIDDEN_ITEM_ROUTE10_PERSIM_BERRY",
@@ -644,6 +680,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE10_NANAB_BERRY",
       "TRAINER_HIKER_CLARK_REWARD",
@@ -666,6 +703,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -681,6 +719,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE10_MAX_ETHER",
       "TRAINER_POKEMANIAC_MARK_REWARD"
@@ -700,6 +739,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -716,6 +756,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE"
     ],
@@ -735,6 +776,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "EVENT_FLY_ROUTE10"
@@ -749,6 +791,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -763,6 +806,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE11_AWAKENING",
       "ITEM_ROUTE11_GREAT_BALL",
@@ -796,6 +840,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -812,6 +857,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -824,6 +870,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -840,6 +887,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_ITEMFINDER"
     ],
@@ -858,6 +906,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -873,6 +922,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -890,6 +940,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -902,6 +953,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE12_HYPER_POTION",
       "TRAINER_FISHERMAN_CHIP_REWARD",
@@ -926,6 +978,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "TRAINER_FISHERMAN_ANDREW_REWARD",
       "TRAINER_ROCKER_LUCA_REWARD"
@@ -949,6 +1002,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE12_TM48"
     ],
@@ -966,6 +1020,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE12_LEFTOVERS"
     ],
@@ -986,6 +1041,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE12_IRON",
       "TRAINER_CAMPER_JUSTIN_REWARD"
@@ -1001,6 +1057,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE12_RARE_CANDY"
     ],
@@ -1015,6 +1072,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_SUPER_ROD"
     ],
@@ -1031,6 +1089,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1047,6 +1106,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_TM27"
     ],
@@ -1063,6 +1123,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE13_PP_UP",
       "TRAINER_BEAUTY_LOLA_REWARD",
@@ -1092,6 +1153,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1104,6 +1166,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1116,6 +1179,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE14_PINAP_BERRY",
       "TRAINER_BIKER_GERALD_REWARD",
@@ -1146,6 +1210,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE14_ZINC"
     ],
@@ -1160,6 +1225,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_BEAUTY_GRACE_REWARD",
       "TRAINER_BEAUTY_OLIVIA_REWARD",
@@ -1185,6 +1251,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE15_TM18",
       "TRAINER_CRUSH_KIN_RON_MYA_REWARD",
@@ -1202,6 +1269,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1218,6 +1286,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1234,6 +1303,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE"
     ],
@@ -1250,6 +1320,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1266,6 +1337,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_YOUNG_COUPLE_LEA_JED_REWARD"
     ],
@@ -1284,6 +1356,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1299,6 +1372,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE16_LEFTOVERS"
     ],
@@ -1318,6 +1392,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1334,6 +1409,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_BIKER_HIDEO_REWARD",
       "TRAINER_BIKER_LAO_REWARD",
@@ -1357,6 +1433,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_HM02"
     ],
@@ -1373,6 +1450,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1388,6 +1466,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1405,6 +1484,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1421,6 +1501,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE"
     ],
@@ -1437,6 +1518,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE17_FULL_RESTORE",
       "HIDDEN_ITEM_ROUTE17_MAX_ELIXIR",
@@ -1468,6 +1550,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1484,6 +1567,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "TRAINER_BIRD_KEEPER_JACOB_REWARD",
       "TRAINER_BIRD_KEEPER_RAMIRO_REWARD",
@@ -1504,6 +1588,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1520,6 +1605,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1537,6 +1623,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [
       "TRADE_POKEMON_LICKITUNG"
@@ -1553,6 +1640,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "TRAINER_SWIMMER_MALE_REECE_REWARD",
       "TRAINER_SWIMMER_MALE_RICHARD_REWARD"
@@ -1571,6 +1659,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "TRAINER_SIS_AND_BRO_LIA_LUC_REWARD",
       "TRAINER_SWIMMER_FEMALE_ALICE_REWARD",
@@ -1596,6 +1685,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "TRAINER_SWIMMER_FEMALE_SHIRLEY_REWARD",
       "TRAINER_SWIMMER_FEMALE_TIFFANY_REWARD",
@@ -1616,6 +1706,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1632,6 +1723,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "TRAINER_PICNICKER_IRENE_REWARD"
     ],
@@ -1650,6 +1742,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE20_STARDUST",
       "TRAINER_BIRD_KEEPER_ROGER_REWARD",
@@ -1672,6 +1765,7 @@
     "has_land": true,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE21_NORTH_PEARL",
       "TRAINER_FISHERMAN_CLAUDE_REWARD",
@@ -1698,6 +1792,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR_REWARD",
       "TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR_REWARD"
@@ -1720,6 +1815,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1732,6 +1828,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1747,6 +1844,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE23_LEPPA_BERRY"
     ],
@@ -1765,6 +1863,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE23_MAX_ETHER"
     ],
@@ -1782,6 +1881,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY",
       "HIDDEN_ITEM_ROUTE23_FULL_RESTORE",
@@ -1801,6 +1901,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE23_SITRUS_BERRY"
     ],
@@ -1819,6 +1920,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "HIDDEN_ITEM_ROUTE23_LUM_BERRY",
       "HIDDEN_ITEM_ROUTE23_MAX_ELIXIR"
@@ -1838,6 +1940,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE24_TM45",
       "HIDDEN_ITEM_ROUTE24_PECHA_BERRY",
@@ -1865,6 +1968,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {
@@ -1880,6 +1984,7 @@
     "has_land": true,
     "has_water": false,
     "has_fishing": true,
+    "kanto": true,
     "locations": [
       "ITEM_ROUTE25_TM43",
       "HIDDEN_ITEM_ROUTE25_BLUK_BERRY",
@@ -1912,6 +2017,7 @@
     "has_land": false,
     "has_water": true,
     "has_fishing": true,
+    "kanto": true,
     "locations": [],
     "events": [],
     "exits": {},
@@ -1924,6 +2030,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
+    "kanto": true,
     "locations": [
       "NPC_GIFT_GOT_SS_TICKET"
     ],

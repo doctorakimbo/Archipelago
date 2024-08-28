@@ -124,13 +124,14 @@ class RegionData:
     has_land: bool
     has_water: bool
     has_fishing: bool
+    kanto: bool
     exits: Dict[str, str]
     warps: List[str]
     locations: List[str]
     events: List[str]
 
     def __init__(self, region_id: str, name: str, parent_map: Optional[MapData], encounter_region: str,
-                 has_land: bool, has_water: bool, has_fishing: bool):
+                 has_land: bool, has_water: bool, has_fishing: bool, kanto: bool):
         self.id = region_id
         self.name = name
         self.parent_map = parent_map
@@ -138,6 +139,7 @@ class RegionData:
         self.has_land = has_land
         self.has_water = has_water
         self.has_fishing = has_fishing
+        self.kanto = kanto
         self.exits = []
         self.warps = []
         self.locations = []
@@ -787,7 +789,7 @@ def _init() -> None:
     for region_subset in region_json_list:
         for region_name, region_json in region_subset.items():
             if region_name in regions_json:
-                raise AssertionError("Region [{region_name}] was defined multiple times")
+                raise AssertionError("Pokemon FRLG: Region [{region_name}] was defined multiple times")
             regions_json[region_name] = region_json
 
     # Create region data
@@ -805,13 +807,14 @@ def _init() -> None:
             region_json["encounter_region"],
             region_json["has_land"],
             region_json["has_water"],
-            region_json["has_fishing"]
+            region_json["has_fishing"],
+            region_json["kanto"]
         )
 
         # Locations
         for location_id in region_json["locations"]:
             if location_id in claimed_locations:
-                raise AssertionError(f"Location [{location_id}] was claimed by multiple regions")
+                raise AssertionError(f"Pokemon FRLG: Location [{location_id}] was claimed by multiple regions")
 
             location_json = extracted_data["locations"][location_id]
 
@@ -879,7 +882,7 @@ def _init() -> None:
         # Warps
         for encoded_warp, name in region_json["warps"].items():
             if encoded_warp in claimed_warps:
-                raise AssertionError(f"Warp [{encoded_warp}] was claimed by multiple regions")
+                raise AssertionError(f"Pokemon FRLG: Warp [{encoded_warp}] was claimed by multiple regions")
             new_region.warps.append(encoded_warp)
             data.warps[encoded_warp] = Warp(encoded_warp, name, region_id)
             claimed_warps.add(encoded_warp)

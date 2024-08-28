@@ -9,31 +9,31 @@ if TYPE_CHECKING:
 
 LOCATION_GROUPS = {
     "Badges": {
-        "Pewter Gym - Leader Brock Prize",
-        "Cerulean Gym - Leader Misty Prize",
-        "Vermilion Gym - Leader Lt. Surge Prize",
-        "Celadon Gym - Leader Erika Prize",
-        "Fuchsia Gym - Leader Koga Prize",
-        "Saffron Gym - Leader Sabrina Prize",
-        "Cinnabar Gym - Leader Blaine Prize",
-        "Viridian Gym - Leader Giovanni Prize"
+        "Pewter Gym - Prize",
+        "Cerulean Gym - Prize",
+        "Vermilion Gym - Prize",
+        "Celadon Gym - Prize",
+        "Fuchsia Gym - Prize",
+        "Saffron Gym - Prize",
+        "Cinnabar Gym - Prize",
+        "Viridian Gym - Prize"
     },
     "Gym TMs": {
-        "Pewter Gym - Leader Brock Reward",
-        "Cerulean Gym - Leader Misty Reward",
-        "Vermilion Gym - Leader Lt. Surge Reward",
-        "Celadon Gym - Leader Erika Reward",
-        "Fuchsia Gym - Leader Koga Reward",
-        "Saffron Gym - Leader Sabrina Reward",
-        "Cinnabar Gym - Leader Blaine Reward",
-        "Viridian Gym - Leader Giovanni Reward"
+        "Pewter Gym - Brock TM",
+        "Cerulean Gym - Misty TM",
+        "Vermilion Gym - Lt. Surge TM",
+        "Celadon Gym - Erika TM",
+        "Fuchsia Gym - Koga TM",
+        "Saffron Gym - Sabrina TM",
+        "Cinnabar Gym - Blaine TM",
+        "Viridian Gym - Giovanni TM"
     },
     "Oak's Aides": {
-        "Route 2 Gate - Professor Oak's Aide",
-        "Route 10 Pokemon Center 1F - Professor Oak's Aide",
-        "Route 11 Gate 2F - Professor Oak's Aide",
-        "Route 16 Gate 2F - Professor Oak's Aide",
-        "Route 15 Gate 2F - Professor Oak's Aide"
+        "Route 2 Gate - Oak's Aide",
+        "Route 10 Pokemon Center 1F - Oak's Aide",
+        "Route 11 Gate 2F - Oak's Aide",
+        "Route 16 Gate 2F - Oak's Aide",
+        "Route 15 Gate 2F - Oak's Aide"
     }
 }
 
@@ -119,6 +119,9 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
     tags = set(tags)
 
     for region_data in data.regions.values():
+        if world.options.kanto_only and not region_data.kanto:
+            continue
+
         region = regions[region_data.name]
         included_locations = [loc for loc in region_data.locations
                               if len(tags & data.locations[loc].tags) >= len(data.locations[loc].tags)]
@@ -162,16 +165,23 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
         encounter_name_level_list: List[Tuple[str, int]] = []
 
         game_version = world.options.game_version.current_key
+        region_names = list(regions.keys())
+        included_maps = [region.parent_map.name for region in data.regions.values()
+                         if region.name in region_names and region.parent_map is not None]
 
         for scaling_data in world.scaling_data:
             if scaling_data.region not in regions:
-                region = Region(scaling_data.region, world.player, world.multiworld)
-                regions[scaling_data.region] = region
+                if scaling_data.connections is not None and any(x in region_names for x in scaling_data.connections):
+                    region = Region(scaling_data.region, world.player, world.multiworld)
+                    regions[scaling_data.region] = region
 
-                if scaling_data.connections is not None:
                     for connection in scaling_data.connections:
+                        if connection not in region_names:
+                            continue
                         name = f"{regions[connection].name} Scaling Group"
                         regions[connection].connect(region, name)
+                else:
+                    continue
             else:
                 region = regions[scaling_data.region]
 
@@ -220,15 +230,17 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             elif "Wild" in scaling_data.tags:
                 index = 1
                 events: Dict[str, Tuple[str, List[str], Optional[Callable[[CollectionState], bool]]]] = {}
-                encounter_category = encounter_categories[scaling_data.type]
+                encounter_category_data = encounter_categories[scaling_data.type]
                 for data_id in scaling_data.data_ids:
+                    if data_id not in included_maps:
+                        continue
                     map_data = data.maps[data_id]
                     encounters = (map_data.land_encounters if scaling_data.type == "Land" else
                                   map_data.water_encounters if scaling_data.type == "Water" else
                                   map_data.fishing_encounters)
-                    for subcategory in encounter_category:
+                    for subcategory in encounter_category_data:
                         for i in subcategory[1]:
-                            subcategory_name = subcategory[0] if subcategory[0] is not None else encounter_category[0]
+                            subcategory_name = subcategory[0] if subcategory[0] is not None else scaling_data.type
                             species_name = f"{subcategory_name} {encounters.slots[game_version][i].species_id}"
                             if species_name not in events:
                                 encounter_data = (f"{scaling_data.name} {index}", [f"{data_id} {i}"], subcategory[2])
@@ -312,7 +324,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
 def set_free_fly(world: "PokemonFRLGWorld") -> None:
     # Set our free fly location
-    free_fly_location_id = "EVENT_FLY_PALLET_TOWN"
+    world.free_fly_location_id = FLY_EVENT_NAME_TO_ID["EVENT_FLY_PALLET_TOWN"]
     if world.options.free_fly_location != FreeFlyLocation.option_off:
         free_fly_list: List[str] = [
             "EVENT_FLY_ROUTE10",
@@ -320,34 +332,36 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
             "EVENT_FLY_CELADON_CITY",
             "EVENT_FLY_FUCHSIA_CITY",
             "EVENT_FLY_SAFFRON_CITY",
-            "EVENT_FLY_CINNABAR_ISLAND",
-            "EVENT_FLY_ONE_ISLAND",
-            "EVENT_FLY_TWO_ISLAND",
-            "EVENT_FLY_THREE_ISLAND",
-            "EVENT_FLY_FOUR_ISLAND",
-            "EVENT_FLY_FIVE_ISLAND",
-            "EVENT_FLY_SIX_ISLAND",
-            "EVENT_FLY_SEVEN_ISLAND"
+            "EVENT_FLY_CINNABAR_ISLAND"
         ]
 
         if world.options.viridian_city_roadblock == ViridianCityRoadblock.option_vanilla:
             free_fly_list.append("EVENT_FLY_PEWTER_CITY")
         if world.options.pewter_city_roadblock != PewterCityRoadblock.option_open:
-            free_fly_list.append("EVENT_FLY_ROUTE4")
-            free_fly_list.append("EVENT_FLY_CERULEAN_CITY")
-            free_fly_list.append("EVENT_FLY_VERMILION_CITY")
+            free_fly_list.extend(["EVENT_FLY_ROUTE4", "EVENT_FLY_CERULEAN_CITY", "EVENT_FLY_VERMILION_CITY"])
         if world.options.free_fly_location == FreeFlyLocation.option_any:
             free_fly_list.append("EVENT_FLY_INDIGO_PLATEAU")
+        if not world.options.kanto_only:
+            free_fly_list.extend(["EVENT_FLY_ONE_ISLAND", "EVENT_FLY_TWO_ISLAND", "EVENT_FLY_THREE_ISLAND",
+                                  "EVENT_FLY_FOUR_ISLAND", "EVENT_FLY_FIVE_ISLAND", "EVENT_FLY_SIX_ISLAND",
+                                  "EVENT_FLY_SEVEN_ISLAND"])
 
         free_fly_location_id = world.random.choice(free_fly_list)
+        world.free_fly_location_id = FLY_EVENT_NAME_TO_ID[free_fly_location_id]
 
-    world.free_fly_location_id = FLY_EVENT_NAME_TO_ID[free_fly_location_id]
-
-    free_fly_location = world.multiworld.get_location("Free Fly Location", world.player)
-    free_fly_location.item = None
-    free_fly_location.place_locked_item(PokemonFRLGItem(
-        data.events[free_fly_location_id].item,
-        ItemClassification.progression,
-        None,
-        world.player
-    ))
+        menu_region = world.multiworld.get_region("Menu", world.player)
+        free_fly_location = PokemonFRLGLocation(
+            world.player,
+            "Free Fly Location",
+            None,
+            menu_region,
+            None,
+            None,
+            frozenset({"Event"})
+        )
+        free_fly_location.place_locked_item(PokemonFRLGItem(data.events[free_fly_location_id].item,
+                                                            ItemClassification.progression,
+                                                            None,
+                                                            world.player))
+        free_fly_location.show_in_spoiler = False
+        menu_region.locations.append(free_fly_location)

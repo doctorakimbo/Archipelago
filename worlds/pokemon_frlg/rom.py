@@ -6,10 +6,12 @@ import struct
 import logging
 from typing import TYPE_CHECKING, Dict, List, Tuple
 
+from BaseClasses import ItemClassification
+
 from worlds.Files import APPatchExtension, APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
 from .data import data, TrainerPokemonDataTypeEnum
-from .items import reverse_offset_item_value
+from .items import get_random_item, reverse_offset_item_value
 from .locations import reverse_offset_flag
 from .options import (ItemfinderRequired, HmCompatibility, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeStarters, RandomizeTrainerParties, RandomizeWildPokemon, ShuffleHiddenItems,
@@ -238,6 +240,21 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
             struct.pack("<B", player_name_ids[player_name])
         )
 
+    # Replace unique items if necessary
+    if world.options.kanto_only:
+        location_ids = ["NPC_GIFT_GOT_HM06", "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07"]
+        for location_id in location_ids:
+            location_data = data.locations[location_id]
+            new_item_id = reverse_offset_item_value(
+                world.item_name_to_id[get_random_item(world, ItemClassification.filler)]
+            )
+
+            tokens.write_token(
+                APTokenTypes.WRITE,
+                location_data.address[game_version_revision],
+                struct.pack("<H", new_item_id)
+            )
+
     # Set starting items
     start_inventory = world.options.start_inventory.value.copy()
 
@@ -342,8 +359,9 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     #
     # /* 0x20 */ bool8 isTrainersanity;
     # /* 0x21 */ bool8 extraKeyItems;
+    # /* 0x22 */ bool8 kantoOnly;
     #
-    # /* 0x22 */ bool8 removeBadgeRequirement[7]; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
+    # /* 0x23 */ bool8 removeBadgeRequirement[7]; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -459,11 +477,15 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     extra_key_items = 1 if world.options.extra_key_items else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x21, struct.pack("<B", extra_key_items))
 
+    # Set kanto only
+    kanto_only = 1 if world.options.kanto_only else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x22, struct.pack("<B", kanto_only))
+
     # Set remove badge requirements
     hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
     for i, hm in enumerate(hms):
         remove_badge_requirement = 1 if hm in world.options.remove_badge_requirement.value else 0
-        tokens.write_token(APTokenTypes.WRITE, options_address + 0x22 + i, struct.pack("<B", remove_badge_requirement))
+        tokens.write_token(APTokenTypes.WRITE, options_address + 0x23 + i, struct.pack("<B", remove_badge_requirement))
 
     # Set slot auth
     tokens.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)

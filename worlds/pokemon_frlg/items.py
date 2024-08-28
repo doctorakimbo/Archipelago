@@ -75,8 +75,9 @@ def get_item_classification(item_id: int) -> ItemClassification:
     return data.items[reverse_offset_item_value(item_id)].classification
 
 
-def get_random_item(world: "PokemonFRLGWorld") -> str:
-    item_classification = ItemClassification.useful if world.random.random() < 0.20 else ItemClassification.filler
+def get_random_item(world: "PokemonFRLGWorld", item_classification: ItemClassification = None) -> str:
+    if item_classification is None:
+        item_classification = ItemClassification.useful if world.random.random() < 0.20 else ItemClassification.filler
     items = [item for item in data.items.values()
              if item.classification == item_classification and "Unique" not in item.tags]
     return world.random.choice(items).name

@@ -1,10 +1,4 @@
 {
-  "EVENT_FREE_FLY_LOCATION": {
-    "name": "Free Fly Location",
-    "item": "Fly Pallet Town",
-    "tags": ["Event"]
-  },
-
   "EVENT_FLY_PALLET_TOWN": {
     "name": "Pallet Town - Visit Pallet Town",
     "item": "Fly Pallet Town",
@@ -198,7 +192,7 @@
     "tags": ["Event"]
   },
   "EVENT_DELIVER_METEORITE": {
-    "name": "Two Island Game Corner - Gift for Lostelle's Father",
+    "name": "Two Island Game Corner - Lostelle's Dad's Delivery",
     "item": "Deliver Meteorite",
     "tags": ["Event"]
   },
