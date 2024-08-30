@@ -382,10 +382,10 @@ class PokemonFRLGWorld(World):
     def write_spoiler_header(self, spoiler_handle: TextIO) -> None:
         if self.options.free_fly_location != FreeFlyLocation.option_off:
             free_fly_location = self.multiworld.get_location("Free Fly Location", self.player)
-            spoiler_handle.write(f"Free Fly Location:               {free_fly_location.item.name}\n")
+            spoiler_handle.write(f"Free Fly Location:               {free_fly_location.item.name[4:]}\n")
         if self.options.town_map_fly_location != TownMapFlyLocation.option_off:
             town_map_fly_location = self.multiworld.get_location("Town Map Fly Location", self.player)
-            spoiler_handle.write(f"Town Map Fly Location:           {town_map_fly_location.item.name}\n")
+            spoiler_handle.write(f"Town Map Fly Location:           {town_map_fly_location.item.name[4:]}\n")
 
     def write_spoiler(self, spoiler_handle: TextIO) -> None:
         # Add Pokémon locations to the spoiler log if they are not vanilla
