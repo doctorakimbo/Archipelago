@@ -195,6 +195,87 @@
     "tags": ["ExtraKeyItem"]
   },
 
+  "FLY_UNLOCK_VISITED_CELADON_CITY": {
+    "name": "Celadon City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_CERULEAN_CITY": {
+    "name": "Cerulean City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_CINNABAR_ISLAND": {
+    "name": "Cinnabar Island - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_FIVE_ISLAND": {
+    "name": "Five Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_FOUR_ISLAND": {
+    "name": "Four Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_FUCHSIA_CITY": {
+    "name": "Fuchsia City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_INDIGO_PLATEAU": {
+    "name": "Indigo Plateau Exterior - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_LAVENDER_TOWN": {
+    "name": "Lavender Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_ONE_ISLAND": {
+    "name": "One Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_PALLET_TOWN": {
+    "name": "Pallet Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_PEWTER_CITY": {
+    "name": "Pewter City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_ROUTE10": {
+    "name": "Route 10 Pokemon Center 1F - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_ROUTE4": {
+    "name": "Route 4 Pokemon Center 1F - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_SAFFRON_CITY": {
+    "name": "Saffron City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_SEVEN_ISLAND": {
+    "name": "Seven Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_SIX_ISLAND": {
+    "name": "Six Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_THREE_ISLAND": {
+    "name": "Three Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_TWO_ISLAND": {
+    "name": "Two Island Town - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_VERMILION_CITY": {
+    "name": "Vermilion City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_VIRIDIAN_CITY": {
+    "name": "Viridian City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+
   "ITEM_CELADON_CITY_ETHER": {
     "name": "Celadon City - Northwest Item",
     "tags": ["Overworld"]

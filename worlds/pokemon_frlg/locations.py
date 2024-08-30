@@ -1,11 +1,12 @@
+import copy
 from typing import TYPE_CHECKING, Callable, Dict, FrozenSet, Iterable, List, Optional, Tuple, Union
 from BaseClasses import CollectionState, Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
-from .options import FreeFlyLocation, PewterCityRoadblock, ViridianCityRoadblock
+from .options import FreeFlyLocation, PewterCityRoadblock, TownMapFlyLocation, ViridianCityRoadblock
+
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
-
 
 LOCATION_GROUPS = {
     "Badges": {
@@ -37,28 +38,28 @@ LOCATION_GROUPS = {
     }
 }
 
-
-FLY_EVENT_NAME_TO_ID = {
-    "EVENT_FLY_PALLET_TOWN": 0,
-    "EVENT_FLY_VIRIDIAN_CITY": 1,
-    "EVENT_FLY_PEWTER_CITY": 2,
-    "EVENT_FLY_ROUTE4": 3,
-    "EVENT_FLY_CERULEAN_CITY": 4,
-    "EVENT_FLY_VERMILION_CITY": 5,
-    "EVENT_FLY_ROUTE10": 6,
-    "EVENT_FLY_LAVENDER_TOWN": 7,
-    "EVENT_FLY_CELADON_CITY": 8,
-    "EVENT_FLY_FUCHSIA_CITY": 9,
-    "EVENT_FLY_SAFFRON_CITY": 10,
-    "EVENT_FLY_CINNABAR_ISLAND": 11,
-    "EVENT_FLY_INDIGO_PLATEAU": 12,
-    "EVENT_FLY_ONE_ISLAND": 13,
-    "EVENT_FLY_TWO_ISLAND": 14,
-    "EVENT_FLY_THREE_ISLAND": 15,
-    "EVENT_FLY_FOUR_ISLAND": 16,
-    "EVENT_FLY_FIVE_ISLAND": 17,
-    "EVENT_FLY_SIX_ISLAND": 18,
-    "EVENT_FLY_SEVEN_ISLAND": 19
+FLY_ITEM_ID_MAP = {
+    "ITEM_FLY_NONE": 0,
+    "ITEM_FLY_PALLET": 1,
+    "ITEM_FLY_VIRIDIAN": 2,
+    "ITEM_FLY_PEWTER": 3,
+    "ITEM_FLY_CERULEAN": 4,
+    "ITEM_FLY_LAVENDER": 5,
+    "ITEM_FLY_VERMILION": 6,
+    "ITEM_FLY_CELADON": 7,
+    "ITEM_FLY_FUCHSIA": 8,
+    "ITEM_FLY_CINNABAR": 9,
+    "ITEM_FLY_INDIGO": 10,
+    "ITEM_FLY_SAFFRON": 11,
+    "ITEM_FLY_ONE_ISLAND": 12,
+    "ITEM_FLY_TWO_ISLAND": 13,
+    "ITEM_FLY_THREE_ISLAND": 14,
+    "ITEM_FLY_FOUR_ISLAND": 15,
+    "ITEM_FLY_FIVE_ISLAND": 16,
+    "ITEM_FLY_SEVEN_ISLAND": 17,
+    "ITEM_FLY_SIX_ISLAND": 18,
+    "ITEM_FLY_ROUTE4": 19,
+    "ITEM_FLY_ROUTE10": 20
 }
 
 
@@ -132,7 +133,9 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             location_id = offset_flag(location_data.flag)
 
             if location_data.default_item == data.constants["ITEM_NONE"]:
-                default_item = reverse_offset_item_value(world.item_name_to_id[get_random_item(world)])
+                default_item = reverse_offset_item_value(
+                    world.item_name_to_id[get_random_item(world,ItemClassification.filler)]
+                )
             else:
                 default_item = location_data.default_item
 
@@ -324,30 +327,45 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
 
 def set_free_fly(world: "PokemonFRLGWorld") -> None:
     # Set our free fly location
-    world.free_fly_location_id = FLY_EVENT_NAME_TO_ID["EVENT_FLY_PALLET_TOWN"]
+    world.free_fly_location_id = FLY_ITEM_ID_MAP["ITEM_FLY_NONE"]
+    world.town_map_fly_location_id = FLY_ITEM_ID_MAP["ITEM_FLY_NONE"]
+
+    if (world.options.free_fly_location == FreeFlyLocation.option_off and
+            world.options.town_map_fly_location == TownMapFlyLocation.option_off):
+        return
+
+    free_fly_list: List[str] = [
+        "ITEM_FLY_LAVENDER",
+        "ITEM_FLY_CELADON",
+        "ITEM_FLY_FUCHSIA",
+        "ITEM_FLY_CINNABAR",
+        "ITEM_FLY_SAFFRON",
+        "ITEM_FLY_ROUTE10",
+    ]
+
+    if world.options.viridian_city_roadblock == ViridianCityRoadblock.option_vanilla:
+        free_fly_list.append("ITEM_FLY_PEWTER")
+    if world.options.pewter_city_roadblock != PewterCityRoadblock.option_open:
+        free_fly_list.extend(["ITEM_FLY_CERULEAN", "ITEM_FLY_VERMILION", "ITEM_FLY_ROUTE4"])
+    if not world.options.kanto_only:
+        free_fly_list.extend(["ITEM_FLY_ONE_ISLAND", "ITEM_FLY_TWO_ISLAND", "ITEM_FLY_THREE_ISLAND",
+                              "ITEM_FLY_FOUR_ISLAND", "ITEM_FLY_FIVE_ISLAND", "ITEM_FLY_SEVEN_ISLAND",
+                              "ITEM_FLY_SIX_ISLAND"])
+
+    town_map_fly_list = copy.deepcopy(free_fly_list)
+
+    if world.options.free_fly_location == FreeFlyLocation.option_any:
+        free_fly_list.append("ITEM_FLY_INDIGO")
+
+    if world.options.town_map_fly_location == TownMapFlyLocation.option_any:
+        town_map_fly_list.append("ITEM_FLY_INDIGO")
+
     if world.options.free_fly_location != FreeFlyLocation.option_off:
-        free_fly_list: List[str] = [
-            "EVENT_FLY_ROUTE10",
-            "EVENT_FLY_LAVENDER_TOWN",
-            "EVENT_FLY_CELADON_CITY",
-            "EVENT_FLY_FUCHSIA_CITY",
-            "EVENT_FLY_SAFFRON_CITY",
-            "EVENT_FLY_CINNABAR_ISLAND"
-        ]
-
-        if world.options.viridian_city_roadblock == ViridianCityRoadblock.option_vanilla:
-            free_fly_list.append("EVENT_FLY_PEWTER_CITY")
-        if world.options.pewter_city_roadblock != PewterCityRoadblock.option_open:
-            free_fly_list.extend(["EVENT_FLY_ROUTE4", "EVENT_FLY_CERULEAN_CITY", "EVENT_FLY_VERMILION_CITY"])
-        if world.options.free_fly_location == FreeFlyLocation.option_any:
-            free_fly_list.append("EVENT_FLY_INDIGO_PLATEAU")
-        if not world.options.kanto_only:
-            free_fly_list.extend(["EVENT_FLY_ONE_ISLAND", "EVENT_FLY_TWO_ISLAND", "EVENT_FLY_THREE_ISLAND",
-                                  "EVENT_FLY_FOUR_ISLAND", "EVENT_FLY_FIVE_ISLAND", "EVENT_FLY_SIX_ISLAND",
-                                  "EVENT_FLY_SEVEN_ISLAND"])
-
         free_fly_location_id = world.random.choice(free_fly_list)
-        world.free_fly_location_id = FLY_EVENT_NAME_TO_ID[free_fly_location_id]
+        world.free_fly_location_id = FLY_ITEM_ID_MAP[free_fly_location_id]
+
+        if free_fly_location_id in town_map_fly_list:
+            town_map_fly_list.remove(free_fly_location_id)
 
         menu_region = world.multiworld.get_region("Menu", world.player)
         free_fly_location = PokemonFRLGLocation(
@@ -359,9 +377,33 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
             None,
             frozenset({"Event"})
         )
-        free_fly_location.place_locked_item(PokemonFRLGItem(data.events[free_fly_location_id].item,
+        item_id = data.constants[free_fly_location_id]
+        free_fly_location.place_locked_item(PokemonFRLGItem(data.items[item_id].name,
                                                             ItemClassification.progression,
                                                             None,
                                                             world.player))
         free_fly_location.show_in_spoiler = False
         menu_region.locations.append(free_fly_location)
+
+    if world.options.town_map_fly_location != TownMapFlyLocation.option_off:
+        town_map_fly_location_id = world.random.choice(free_fly_list)
+        world.town_map_fly_location_id = FLY_ITEM_ID_MAP[town_map_fly_location_id]
+
+        menu_region = world.multiworld.get_region("Menu", world.player)
+        town_map_fly_location = PokemonFRLGLocation(
+            world.player,
+            "Town Map Fly Location",
+            None,
+            menu_region,
+            None,
+            None,
+            frozenset({"Event"})
+        )
+        item_id = data.constants[town_map_fly_location_id]
+        town_map_fly_location.place_locked_item(PokemonFRLGItem(data.items[item_id].name,
+                                                                 ItemClassification.progression,
+                                                                 None,
+                                                                 world.player))
+        town_map_fly_location.access_rule = lambda state: state.has("Town Map", world.player)
+        town_map_fly_location.show_in_spoiler = False
+        menu_region.locations.append(town_map_fly_location)

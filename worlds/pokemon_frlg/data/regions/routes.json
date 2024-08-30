@@ -185,15 +185,15 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE3_ORAN_BERRY",
-      "TRAINER_BUG_CATCHER_COLTON_REWARD",
-      "TRAINER_BUG_CATCHER_GREG_REWARD",
-      "TRAINER_BUG_CATCHER_JAMES_REWARD",
       "TRAINER_LASS_JANICE_REWARD",
-      "TRAINER_LASS_ROBIN_REWARD",
-      "TRAINER_LASS_SALLY_REWARD",
+      "TRAINER_BUG_CATCHER_COLTON_REWARD",
       "TRAINER_YOUNGSTER_BEN_REWARD",
-      "TRAINER_YOUNGSTER_CALVIN_REWARD"
+      "TRAINER_BUG_CATCHER_GREG_REWARD",
+      "TRAINER_LASS_SALLY_REWARD",
+      "HIDDEN_ITEM_ROUTE3_ORAN_BERRY",
+      "TRAINER_YOUNGSTER_CALVIN_REWARD",
+      "TRAINER_BUG_CATCHER_JAMES_REWARD",
+      "TRAINER_LASS_ROBIN_REWARD"
     ],
     "events": [],
     "exits": {
@@ -231,9 +231,9 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "ITEM_ROUTE4_TM05",
       "HIDDEN_ITEM_ROUTE4_GREAT_BALL",
-      "HIDDEN_ITEM_ROUTE4_RAZZ_BERRY"
+      "HIDDEN_ITEM_ROUTE4_RAZZ_BERRY",
+      "ITEM_ROUTE4_TM05"
     ],
     "events": [],
     "exits": {
@@ -288,6 +288,21 @@
     },
     "warps": {}
   },
+  "REGION_ROUTE4_POKEMON_CENTER_1F/VISIT": {
+    "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
+    "name": "Route 4 Pokemon Center 1F Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_ROUTE4"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_ROUTE4_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
     "name": "Route 4 Pokemon Center 1F",
@@ -307,21 +322,6 @@
       "MAP_ROUTE4_POKEMON_CENTER_1F:0/MAP_ROUTE4:2": "Route 4 Pokemon Center 1F Exit",
       "MAP_ROUTE4_POKEMON_CENTER_1F:1/MAP_ROUTE4_POKEMON_CENTER_2F:0": "Route 4 Pokemon Center 1F Stairs"
     }
-  },
-  "REGION_ROUTE4_POKEMON_CENTER_1F/VISIT": {
-    "parent_map": "MAP_ROUTE4_POKEMON_CENTER_1F",
-    "name": "Route 4 Pokemon Center 1F Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_ROUTE4"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_ROUTE4_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE4_POKEMON_CENTER_2F",
@@ -415,14 +415,14 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE6_RARE_CANDY",
       "HIDDEN_ITEM_ROUTE6_SITRUS_BERRY",
-      "TRAINER_BUG_CATCHER_ELIJAH_REWARD",
+      "HIDDEN_ITEM_ROUTE6_RARE_CANDY",
       "TRAINER_BUG_CATCHER_KEIGO_REWARD",
-      "TRAINER_CAMPER_JEFF_REWARD",
       "TRAINER_CAMPER_RICKY_REWARD",
+      "TRAINER_PICNICKER_NANCY_REWARD",
+      "TRAINER_BUG_CATCHER_ELIJAH_REWARD",
       "TRAINER_PICNICKER_ISABELLE_REWARD",
-      "TRAINER_PICNICKER_NANCY_REWARD"
+      "TRAINER_CAMPER_JEFF_REWARD"
     ],
     "events": [],
     "exits": {
@@ -544,18 +544,18 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "TRAINER_LASS_JULIA_REWARD",
+      "TRAINER_GAMER_RICH_REWARD",
+      "TRAINER_SUPER_NERD_GLENN_REWARD",
+      "TRAINER_TWINS_ELI_ANNE_REWARD",
+      "TRAINER_LASS_PAIGE_REWARD",
+      "TRAINER_SUPER_NERD_LESLIE_REWARD",
+      "TRAINER_LASS_ANDREA_REWARD",
+      "TRAINER_LASS_MEGAN_REWARD",
       "TRAINER_BIKER_JAREN_REWARD",
       "TRAINER_BIKER_RICARDO_REWARD",
-      "TRAINER_GAMER_RICH_REWARD",
-      "TRAINER_GAMER_STAN_REWARD",
-      "TRAINER_LASS_ANDREA_REWARD",
-      "TRAINER_LASS_JULIA_REWARD",
-      "TRAINER_LASS_MEGAN_REWARD",
-      "TRAINER_LASS_PAIGE_REWARD",
       "TRAINER_SUPER_NERD_AIDAN_REWARD",
-      "TRAINER_SUPER_NERD_GLENN_REWARD",
-      "TRAINER_SUPER_NERD_LESLIE_REWARD",
-      "TRAINER_TWINS_ELI_ANNE_REWARD"
+      "TRAINER_GAMER_STAN_REWARD"
     ],
     "events": [],
     "exits": {
@@ -576,9 +576,9 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE8_LEPPA_BERRY",
       "HIDDEN_ITEM_ROUTE8_LUM_BERRY",
-      "HIDDEN_ITEM_ROUTE8_RAWST_BERRY"
+      "HIDDEN_ITEM_ROUTE8_RAWST_BERRY",
+      "HIDDEN_ITEM_ROUTE8_LEPPA_BERRY"
     ],
     "events": [],
     "exits": {},
@@ -627,19 +627,19 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "ITEM_ROUTE9_BURN_HEAL",
-      "ITEM_ROUTE9_TM40",
-      "HIDDEN_ITEM_ROUTE9_CHESTO_BERRY",
-      "HIDDEN_ITEM_ROUTE9_ETHER",
-      "HIDDEN_ITEM_ROUTE9_RARE_CANDY",
-      "TRAINER_BUG_CATCHER_BRENT_REWARD",
-      "TRAINER_BUG_CATCHER_CONNER_REWARD",
-      "TRAINER_CAMPER_CHRIS_REWARD",
-      "TRAINER_CAMPER_DREW_REWARD",
-      "TRAINER_HIKER_ALAN_REWARD",
-      "TRAINER_HIKER_BRICE_REWARD",
-      "TRAINER_HIKER_JEREMY_REWARD",
       "TRAINER_PICNICKER_ALICIA_REWARD",
+      "ITEM_ROUTE9_TM40",
+      "TRAINER_HIKER_JEREMY_REWARD",
+      "TRAINER_CAMPER_CHRIS_REWARD",
+      "TRAINER_BUG_CATCHER_BRENT_REWARD",
+      "HIDDEN_ITEM_ROUTE9_ETHER",
+      "TRAINER_HIKER_ALAN_REWARD",
+      "ITEM_ROUTE9_BURN_HEAL",
+      "TRAINER_BUG_CATCHER_CONNER_REWARD",
+      "TRAINER_CAMPER_DREW_REWARD",
+      "HIDDEN_ITEM_ROUTE9_CHESTO_BERRY",
+      "TRAINER_HIKER_BRICE_REWARD",
+      "HIDDEN_ITEM_ROUTE9_RARE_CANDY",
       "TRAINER_PICNICKER_CAITLIN_REWARD"
     ],
     "events": [],
@@ -658,10 +658,10 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE10_CHERI_BERRY",
       "HIDDEN_ITEM_ROUTE10_PERSIM_BERRY",
-      "HIDDEN_ITEM_ROUTE10_SUPER_POTION",
-      "TRAINER_PICNICKER_HEIDI_REWARD"
+      "TRAINER_PICNICKER_HEIDI_REWARD",
+      "HIDDEN_ITEM_ROUTE10_CHERI_BERRY",
+      "HIDDEN_ITEM_ROUTE10_SUPER_POTION"
     ],
     "events": [],
     "exits": {
@@ -682,11 +682,11 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE10_NANAB_BERRY",
-      "TRAINER_HIKER_CLARK_REWARD",
-      "TRAINER_HIKER_TRENT_REWARD",
       "TRAINER_PICNICKER_CAROL_REWARD",
-      "TRAINER_POKEMANIAC_HERMAN_REWARD"
+      "TRAINER_HIKER_CLARK_REWARD",
+      "HIDDEN_ITEM_ROUTE10_NANAB_BERRY",
+      "TRAINER_POKEMANIAC_HERMAN_REWARD",
+      "TRAINER_HIKER_TRENT_REWARD"
     ],
     "events": [],
     "exits": {
@@ -721,8 +721,8 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE10_MAX_ETHER",
-      "TRAINER_POKEMANIAC_MARK_REWARD"
+      "TRAINER_POKEMANIAC_MARK_REWARD",
+      "HIDDEN_ITEM_ROUTE10_MAX_ETHER"
     ],
     "events": [],
     "exits": {
@@ -749,6 +749,21 @@
       "MAP_ROUTE10:4/MAP_POWER_PLANT:1": "Power Plant (Back)"
     }
   },
+  "REGION_ROUTE10_POKEMON_CENTER_1F/VISIT": {
+    "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
+    "name": "Route 10 Pokemon Center 1F Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_ROUTE10"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_ROUTE10_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
     "name": "Route 10 Pokemon Center 1F",
@@ -768,21 +783,6 @@
       "MAP_ROUTE10_POKEMON_CENTER_1F:0/MAP_ROUTE10:3": "Route 10 Pokemon Center 1F Exit",
       "MAP_ROUTE10_POKEMON_CENTER_1F:1/MAP_ROUTE10_POKEMON_CENTER_2F:0": "Route 10 Pokemon Center 1F Stairs"
     }
-  },
-  "REGION_ROUTE10_POKEMON_CENTER_1F/VISIT": {
-    "parent_map": "MAP_ROUTE10_POKEMON_CENTER_1F",
-    "name": "Route 10 Pokemon Center 1F Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_ROUTE10"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_ROUTE10_POKEMON_CENTER_2F/MAIN": {
     "parent_map": "MAP_ROUTE10_POKEMON_CENTER_2F",
@@ -809,19 +809,19 @@
     "kanto": true,
     "locations": [
       "ITEM_ROUTE11_AWAKENING",
-      "ITEM_ROUTE11_GREAT_BALL",
-      "ITEM_ROUTE11_X_DEFEND",
-      "HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE",
-      "TRAINER_ENGINEER_BERNIE_REWARD",
-      "TRAINER_ENGINEER_BRAXTON_REWARD",
-      "TRAINER_GAMER_DARIAN_REWARD",
-      "TRAINER_GAMER_DIRK_REWARD",
+      "TRAINER_YOUNGSTER_EDDIE_REWARD",
       "TRAINER_GAMER_HUGO_REWARD",
-      "TRAINER_GAMER_JASPER_REWARD",
+      "TRAINER_ENGINEER_BERNIE_REWARD",
       "TRAINER_YOUNGSTER_DAVE_REWARD",
       "TRAINER_YOUNGSTER_DILLON_REWARD",
-      "TRAINER_YOUNGSTER_EDDIE_REWARD",
-      "TRAINER_YOUNGSTER_YASU_REWARD"
+      "TRAINER_ENGINEER_BRAXTON_REWARD",
+      "ITEM_ROUTE11_X_DEFEND",
+      "TRAINER_GAMER_JASPER_REWARD",
+      "TRAINER_YOUNGSTER_YASU_REWARD",
+      "TRAINER_GAMER_DARIAN_REWARD",
+      "HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE",
+      "TRAINER_GAMER_DIRK_REWARD",
+      "ITEM_ROUTE11_GREAT_BALL"
     ],
     "events": [],
     "exits": {
@@ -955,11 +955,11 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE12_HYPER_POTION",
-      "TRAINER_FISHERMAN_CHIP_REWARD",
-      "TRAINER_FISHERMAN_ELLIOT_REWARD",
-      "TRAINER_FISHERMAN_HANK_REWARD",
       "TRAINER_FISHERMAN_NED_REWARD",
+      "TRAINER_FISHERMAN_CHIP_REWARD",
+      "TRAINER_FISHERMAN_HANK_REWARD",
+      "HIDDEN_ITEM_ROUTE12_HYPER_POTION",
+      "TRAINER_FISHERMAN_ELLIOT_REWARD",
       "TRAINER_YOUNG_COUPLE_GIA_JES_REWARD"
     ],
     "events": [],
@@ -970,48 +970,6 @@
     "warps": {
       "MAP_ROUTE12:2/MAP_ROUTE12_NORTH_ENTRANCE_1F:1": "Route 12 Gate (South)"
     }
-  },
-  "REGION_ROUTE12/SOUTH": {
-    "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 South",
-    "encounter_region": "Route 12",
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": true,
-    "kanto": true,
-    "locations": [
-      "TRAINER_FISHERMAN_ANDREW_REWARD",
-      "TRAINER_ROCKER_LUCA_REWARD"
-    ],
-    "events": [],
-    "exits": {
-      "REGION_ROUTE12/SOUTH_WATER": "Route 12 South Surfing Spot",
-      "REGION_ROUTE12/BEHIND_NORTH_TREE": "Route 12 South Cuttable Tree (North)",
-      "REGION_ROUTE12/BEHIND_SOUTH_TREE": "Route 12 South Cuttable Tree (South)",
-      "REGION_ROUTE12/UNDER_SNORLAX": "Route 12 South Play Poke Flute",
-      "REGION_ROUTE13/MAIN": "Route 12 South Exit"
-    },
-    "warps": {
-      "MAP_ROUTE12:0/MAP_ROUTE12_FISHING_HOUSE:0": "Route 12 Fishing House"
-    }
-  },
-  "REGION_ROUTE12/SOUTH_WATER": {
-    "parent_map": "MAP_ROUTE12",
-    "name": "Route 12 South Water",
-    "encounter_region": "Route 12",
-    "has_land": false,
-    "has_water": true,
-    "has_fishing": true,
-    "kanto": true,
-    "locations": [
-      "ITEM_ROUTE12_TM48"
-    ],
-    "events": [],
-    "exits": {
-      "REGION_ROUTE12/CENTER": "Route 12 Center Landing",
-      "REGION_ROUTE12/SOUTH": "Route 12 South Landing"
-    },
-    "warps": {}
   },
   "REGION_ROUTE12/UNDER_SNORLAX": {
     "parent_map": "MAP_ROUTE12",
@@ -1034,6 +992,48 @@
     },
     "warps": {}
   },
+  "REGION_ROUTE12/SOUTH_WATER": {
+    "parent_map": "MAP_ROUTE12",
+    "name": "Route 12 South Water",
+    "encounter_region": "Route 12",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
+    "kanto": true,
+    "locations": [
+      "ITEM_ROUTE12_TM48"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_ROUTE12/CENTER": "Route 12 Center Landing",
+      "REGION_ROUTE12/SOUTH": "Route 12 South Landing"
+    },
+    "warps": {}
+  },
+  "REGION_ROUTE12/SOUTH": {
+    "parent_map": "MAP_ROUTE12",
+    "name": "Route 12 South",
+    "encounter_region": "Route 12",
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": true,
+    "kanto": true,
+    "locations": [
+      "TRAINER_ROCKER_LUCA_REWARD",
+      "TRAINER_FISHERMAN_ANDREW_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_ROUTE12/SOUTH_WATER": "Route 12 South Surfing Spot",
+      "REGION_ROUTE12/BEHIND_NORTH_TREE": "Route 12 South Cuttable Tree (North)",
+      "REGION_ROUTE12/BEHIND_SOUTH_TREE": "Route 12 South Cuttable Tree (South)",
+      "REGION_ROUTE12/UNDER_SNORLAX": "Route 12 South Play Poke Flute",
+      "REGION_ROUTE13/MAIN": "Route 12 South Exit"
+    },
+    "warps": {
+      "MAP_ROUTE12:0/MAP_ROUTE12_FISHING_HOUSE:0": "Route 12 Fishing House"
+    }
+  },
   "REGION_ROUTE12/BEHIND_NORTH_TREE": {
     "parent_map": "MAP_ROUTE12",
     "name": "Route 12 Behind North Tree",
@@ -1043,8 +1043,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "ITEM_ROUTE12_IRON",
-      "TRAINER_CAMPER_JUSTIN_REWARD"
+      "TRAINER_CAMPER_JUSTIN_REWARD",
+      "ITEM_ROUTE12_IRON"
     ],
     "events": [],
     "exits": {},
@@ -1125,17 +1125,17 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE13_PP_UP",
+      "TRAINER_PICNICKER_ALMA_REWARD",
+      "TRAINER_BIRD_KEEPER_SEBASTIAN_REWARD",
+      "TRAINER_PICNICKER_SUSIE_REWARD",
       "TRAINER_BEAUTY_LOLA_REWARD",
       "TRAINER_BEAUTY_SHEILA_REWARD",
-      "TRAINER_BIKER_JARED_REWARD",
-      "TRAINER_BIRD_KEEPER_PERRY_REWARD",
-      "TRAINER_BIRD_KEEPER_ROBERT_REWARD",
-      "TRAINER_BIRD_KEEPER_SEBASTIAN_REWARD",
-      "TRAINER_PICNICKER_ALMA_REWARD",
+      "TRAINER_PICNICKER_VALERIE_REWARD",
       "TRAINER_PICNICKER_GWEN_REWARD",
-      "TRAINER_PICNICKER_SUSIE_REWARD",
-      "TRAINER_PICNICKER_VALERIE_REWARD"
+      "HIDDEN_ITEM_ROUTE13_PP_UP",
+      "TRAINER_BIRD_KEEPER_ROBERT_REWARD",
+      "TRAINER_BIRD_KEEPER_PERRY_REWARD",
+      "TRAINER_BIKER_JARED_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1181,18 +1181,18 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE14_PINAP_BERRY",
-      "TRAINER_BIKER_GERALD_REWARD",
-      "TRAINER_BIKER_ISAAC_REWARD",
-      "TRAINER_BIKER_LUKAS_REWARD",
-      "TRAINER_BIKER_MALIK_REWARD",
-      "TRAINER_BIRD_KEEPER_BECK_REWARD",
-      "TRAINER_BIRD_KEEPER_BENNY_REWARD",
       "TRAINER_BIRD_KEEPER_CARTER_REWARD",
-      "TRAINER_BIRD_KEEPER_DONALD_REWARD",
-      "TRAINER_BIRD_KEEPER_MARLON_REWARD",
       "TRAINER_BIRD_KEEPER_MITCH_REWARD",
-      "TRAINER_TWINS_KIRI_JAN_REWARD"
+      "TRAINER_BIRD_KEEPER_MARLON_REWARD",
+      "TRAINER_BIRD_KEEPER_BECK_REWARD",
+      "TRAINER_BIRD_KEEPER_DONALD_REWARD",
+      "TRAINER_BIRD_KEEPER_BENNY_REWARD",
+      "HIDDEN_ITEM_ROUTE14_PINAP_BERRY",
+      "TRAINER_TWINS_KIRI_JAN_REWARD",
+      "TRAINER_BIKER_LUKAS_REWARD",
+      "TRAINER_BIKER_GERALD_REWARD",
+      "TRAINER_BIKER_MALIK_REWARD",
+      "TRAINER_BIKER_ISAAC_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1227,13 +1227,13 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "TRAINER_BIKER_ERNEST_REWARD",
+      "TRAINER_BIKER_ALEX_REWARD",
       "TRAINER_BEAUTY_GRACE_REWARD",
       "TRAINER_BEAUTY_OLIVIA_REWARD",
-      "TRAINER_BIKER_ALEX_REWARD",
-      "TRAINER_BIKER_ERNEST_REWARD",
+      "TRAINER_PICNICKER_KINDRA_REWARD",
       "TRAINER_BIRD_KEEPER_CHESTER_REWARD",
       "TRAINER_BIRD_KEEPER_EDWIN_REWARD",
-      "TRAINER_PICNICKER_KINDRA_REWARD",
       "TRAINER_PICNICKER_YAZMIN_REWARD"
     ],
     "events": [],
@@ -1253,10 +1253,10 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "ITEM_ROUTE15_TM18",
-      "TRAINER_CRUSH_KIN_RON_MYA_REWARD",
       "TRAINER_PICNICKER_BECKY_REWARD",
-      "TRAINER_PICNICKER_CELIA_REWARD"
+      "TRAINER_CRUSH_KIN_RON_MYA_REWARD",
+      "TRAINER_PICNICKER_CELIA_REWARD",
+      "ITEM_ROUTE15_TM18"
     ],
     "events": [],
     "exits": {},
@@ -1411,12 +1411,12 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_BIKER_HIDEO_REWARD",
       "TRAINER_BIKER_LAO_REWARD",
-      "TRAINER_BIKER_RUBEN_REWARD",
-      "TRAINER_CUE_BALL_CAMRON_REWARD",
       "TRAINER_CUE_BALL_KOJI_REWARD",
-      "TRAINER_CUE_BALL_LUKE_REWARD"
+      "TRAINER_CUE_BALL_LUKE_REWARD",
+      "TRAINER_BIKER_HIDEO_REWARD",
+      "TRAINER_BIKER_RUBEN_REWARD",
+      "TRAINER_CUE_BALL_CAMRON_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1520,21 +1520,21 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "TRAINER_CUE_BALL_ISAIAH_REWARD",
+      "TRAINER_BIKER_VIRGIL_REWARD",
+      "TRAINER_CUE_BALL_RAUL_REWARD",
+      "TRAINER_BIKER_BILLY_REWARD",
+      "TRAINER_BIKER_NIKOLAS_REWARD",
       "HIDDEN_ITEM_ROUTE17_FULL_RESTORE",
-      "HIDDEN_ITEM_ROUTE17_MAX_ELIXIR",
-      "HIDDEN_ITEM_ROUTE17_MAX_REVIVE",
+      "TRAINER_CUE_BALL_JAMAL_REWARD",
+      "TRAINER_CUE_BALL_ZEEK_REWARD",
       "HIDDEN_ITEM_ROUTE17_PP_UP",
       "HIDDEN_ITEM_ROUTE17_RARE_CANDY",
-      "TRAINER_BIKER_BILLY_REWARD",
-      "TRAINER_BIKER_JAXON_REWARD",
-      "TRAINER_BIKER_NIKOLAS_REWARD",
-      "TRAINER_BIKER_VIRGIL_REWARD",
-      "TRAINER_BIKER_WILLIAM_REWARD",
       "TRAINER_CUE_BALL_COREY_REWARD",
-      "TRAINER_CUE_BALL_ISAIAH_REWARD",
-      "TRAINER_CUE_BALL_JAMAL_REWARD",
-      "TRAINER_CUE_BALL_RAUL_REWARD",
-      "TRAINER_CUE_BALL_ZEEK_REWARD"
+      "TRAINER_BIKER_JAXON_REWARD",
+      "HIDDEN_ITEM_ROUTE17_MAX_REVIVE",
+      "TRAINER_BIKER_WILLIAM_REWARD",
+      "HIDDEN_ITEM_ROUTE17_MAX_ELIXIR"
     ],
     "events": [],
     "exits": {
@@ -1569,9 +1569,9 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "TRAINER_BIRD_KEEPER_WILTON_REWARD",
       "TRAINER_BIRD_KEEPER_JACOB_REWARD",
-      "TRAINER_BIRD_KEEPER_RAMIRO_REWARD",
-      "TRAINER_BIRD_KEEPER_WILTON_REWARD"
+      "TRAINER_BIRD_KEEPER_RAMIRO_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1642,8 +1642,8 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "TRAINER_SWIMMER_MALE_REECE_REWARD",
-      "TRAINER_SWIMMER_MALE_RICHARD_REWARD"
+      "TRAINER_SWIMMER_MALE_RICHARD_REWARD",
+      "TRAINER_SWIMMER_MALE_REECE_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1661,15 +1661,15 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "TRAINER_SIS_AND_BRO_LIA_LUC_REWARD",
-      "TRAINER_SWIMMER_FEMALE_ALICE_REWARD",
-      "TRAINER_SWIMMER_FEMALE_ANYA_REWARD",
-      "TRAINER_SWIMMER_FEMALE_CONNIE_REWARD",
-      "TRAINER_SWIMMER_MALE_AXLE_REWARD",
+      "TRAINER_SWIMMER_MALE_TONY_REWARD",
       "TRAINER_SWIMMER_MALE_DAVID_REWARD",
       "TRAINER_SWIMMER_MALE_DOUGLAS_REWARD",
       "TRAINER_SWIMMER_MALE_MATTHEW_REWARD",
-      "TRAINER_SWIMMER_MALE_TONY_REWARD"
+      "TRAINER_SIS_AND_BRO_LIA_LUC_REWARD",
+      "TRAINER_SWIMMER_FEMALE_ALICE_REWARD",
+      "TRAINER_SWIMMER_FEMALE_CONNIE_REWARD",
+      "TRAINER_SWIMMER_MALE_AXLE_REWARD",
+      "TRAINER_SWIMMER_FEMALE_ANYA_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1687,10 +1687,10 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "TRAINER_SWIMMER_FEMALE_SHIRLEY_REWARD",
-      "TRAINER_SWIMMER_FEMALE_TIFFANY_REWARD",
       "TRAINER_SWIMMER_MALE_BARRY_REWARD",
-      "TRAINER_SWIMMER_MALE_DARRIN_REWARD"
+      "TRAINER_SWIMMER_MALE_DARRIN_REWARD",
+      "TRAINER_SWIMMER_FEMALE_SHIRLEY_REWARD",
+      "TRAINER_SWIMMER_FEMALE_TIFFANY_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1744,12 +1744,12 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE20_STARDUST",
-      "TRAINER_BIRD_KEEPER_ROGER_REWARD",
-      "TRAINER_PICNICKER_MISSY_REWARD",
       "TRAINER_SWIMMER_FEMALE_MELISSA_REWARD",
+      "TRAINER_PICNICKER_MISSY_REWARD",
+      "TRAINER_SWIMMER_MALE_DEAN_REWARD",
+      "HIDDEN_ITEM_ROUTE20_STARDUST",
       "TRAINER_SWIMMER_FEMALE_NORA_REWARD",
-      "TRAINER_SWIMMER_MALE_DEAN_REWARD"
+      "TRAINER_BIRD_KEEPER_ROGER_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1767,16 +1767,16 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "HIDDEN_ITEM_ROUTE21_NORTH_PEARL",
-      "TRAINER_FISHERMAN_CLAUDE_REWARD",
-      "TRAINER_FISHERMAN_NOLAN_REWARD",
       "TRAINER_FISHERMAN_RONALD_REWARD",
       "TRAINER_FISHERMAN_WADE_REWARD",
       "TRAINER_SIS_AND_BRO_LIL_IAN_REWARD",
+      "TRAINER_SWIMMER_MALE_SPENCER_REWARD",
+      "HIDDEN_ITEM_ROUTE21_NORTH_PEARL",
+      "TRAINER_FISHERMAN_CLAUDE_REWARD",
+      "TRAINER_FISHERMAN_NOLAN_REWARD",
       "TRAINER_SWIMMER_MALE_JACK_REWARD",
-      "TRAINER_SWIMMER_MALE_JEROME_REWARD",
       "TRAINER_SWIMMER_MALE_ROLAND_REWARD",
-      "TRAINER_SWIMMER_MALE_SPENCER_REWARD"
+      "TRAINER_SWIMMER_MALE_JEROME_REWARD"
     ],
     "events": [],
     "exits": {
@@ -1883,9 +1883,9 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
+      "HIDDEN_ITEM_ROUTE23_ULTRA_BALL",
       "HIDDEN_ITEM_ROUTE23_ASPEAR_BERRY",
-      "HIDDEN_ITEM_ROUTE23_FULL_RESTORE",
-      "HIDDEN_ITEM_ROUTE23_ULTRA_BALL"
+      "HIDDEN_ITEM_ROUTE23_FULL_RESTORE"
     ],
     "events": [],
     "exits": {
@@ -1942,16 +1942,16 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "ITEM_ROUTE24_TM45",
-      "HIDDEN_ITEM_ROUTE24_PECHA_BERRY",
-      "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT",
       "TRAINER_BUG_CATCHER_CALE_REWARD",
-      "TRAINER_CAMPER_ETHAN_REWARD",
-      "TRAINER_CAMPER_SHANE_REWARD",
       "TRAINER_LASS_ALI_REWARD",
+      "TRAINER_YOUNGSTER_TIMMY_REWARD",
       "TRAINER_LASS_RELI_REWARD",
+      "TRAINER_CAMPER_ETHAN_REWARD",
       "TRAINER_TEAM_ROCKET_GRUNT_6_REWARD",
-      "TRAINER_YOUNGSTER_TIMMY_REWARD"
+      "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT",
+      "TRAINER_CAMPER_SHANE_REWARD",
+      "ITEM_ROUTE24_TM45",
+      "HIDDEN_ITEM_ROUTE24_PECHA_BERRY"
     ],
     "events": [],
     "exits": {
@@ -1986,20 +1986,20 @@
     "has_fishing": true,
     "kanto": true,
     "locations": [
-      "ITEM_ROUTE25_TM43",
-      "HIDDEN_ITEM_ROUTE25_BLUK_BERRY",
-      "HIDDEN_ITEM_ROUTE25_ELIXIR",
-      "HIDDEN_ITEM_ROUTE25_ETHER",
-      "HIDDEN_ITEM_ROUTE25_ORAN_BERRY",
-      "TRAINER_CAMPER_FLINT_REWARD",
       "TRAINER_HIKER_FRANKLIN_REWARD",
-      "TRAINER_HIKER_NOB_REWARD",
+      "HIDDEN_ITEM_ROUTE25_ELIXIR",
+      "TRAINER_YOUNGSTER_JOEY_REWARD",
       "TRAINER_HIKER_WAYNE_REWARD",
-      "TRAINER_LASS_HALEY_REWARD",
-      "TRAINER_PICNICKER_KELSEY_REWARD",
-      "TRAINER_YOUNGSTER_CHAD_REWARD",
       "TRAINER_YOUNGSTER_DAN_REWARD",
-      "TRAINER_YOUNGSTER_JOEY_REWARD"
+      "TRAINER_PICNICKER_KELSEY_REWARD",
+      "TRAINER_HIKER_NOB_REWARD",
+      "TRAINER_CAMPER_FLINT_REWARD",
+      "ITEM_ROUTE25_TM43",
+      "HIDDEN_ITEM_ROUTE25_ORAN_BERRY",
+      "TRAINER_YOUNGSTER_CHAD_REWARD",
+      "HIDDEN_ITEM_ROUTE25_BLUK_BERRY",
+      "TRAINER_LASS_HALEY_REWARD",
+      "HIDDEN_ITEM_ROUTE25_ETHER"
     ],
     "events": [],
     "exits": {

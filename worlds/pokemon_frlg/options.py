@@ -73,6 +73,15 @@ class Trainersanity(Toggle):
     default = 0
 
 
+class ShuffleFlyDestinationUnlocks(Toggle):
+    """
+    Shuffles the ability to fly to Pokémon Centers into the pool. Entering the map that normally would unlock the
+    fly destination gives a random item.
+    """
+    display_name = "Shuffle Fly Destination Unlocks"
+    default = 0
+
+
 class ItemfinderRequired(Choice):
     """
     Sets whether the Itemfinder if required for Hidden Items. Some items cannot be picked up without using the
@@ -635,6 +644,16 @@ class ExpModifier(Range):
     default = 100
 
 
+class StartingMoney(Range):
+    """
+    Sets the amount of moeny that you start with.
+    """
+    display_name = "Starting Money"
+    range_start = 0
+    range_end = 999999
+    default = 3000
+
+
 class BlindTrainers(Toggle):
     """
     Trainers will not start a battle with you unless you talk to them.
@@ -659,6 +678,18 @@ class FreeFlyLocation(Choice):
     Enables flying to one random location (excluding cities reachable with no items).
     """
     display_name = "Free Fly Location"
+    default = 0
+    option_off = 0
+    option_exclude_indigo = 1
+    option_any = 2
+
+
+class TownMapFlyLocation(Choice):
+    """
+    Enables flying to one random location once the town map has been obtained
+    (excluding cities reachable with no items).
+    """
+    display_name = "Town Map Fly Location"
     default = 0
     option_off = 0
     option_exclude_indigo = 1
@@ -698,6 +729,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     shuffle_hidden: ShuffleHiddenItems
     extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
+    shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
@@ -747,9 +779,11 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     min_catch_rate: MinCatchRate
     guaranteed_catch: GuaranteedCatch
     exp_modifier: ExpModifier
+    starting_money: StartingMoney
     blind_trainers: BlindTrainers
     better_shops: BetterShops
     free_fly_location: FreeFlyLocation
+    town_map_fly_location: TownMapFlyLocation
 
     turbo_a: TurboA
     receive_item_messages: ReceiveItemMessages

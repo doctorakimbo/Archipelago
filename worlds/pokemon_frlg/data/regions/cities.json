@@ -238,6 +238,21 @@
     },
     "warps": {}
   },
+  "REGION_PALLET_TOWN/VISIT": {
+    "parent_map": "MAP_PALLET_TOWN",
+    "name": "Pallet Town Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_PALLET_TOWN"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_PALLET_TOWN/MAIN": {
     "parent_map": "MAP_PALLET_TOWN",
     "name": "Pallet Town",
@@ -277,21 +292,6 @@
       "REGION_PALLET_TOWN/VISIT": "Pallet Town Water Visit",
       "REGION_ROUTE21/MAIN": "Pallet Town Water Exit"
     },
-    "warps": {}
-  },
-  "REGION_PALLET_TOWN/VISIT": {
-    "parent_map": "MAP_PALLET_TOWN",
-    "name": "Pallet Town Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_PALLET_TOWN"
-    ],
-    "exits": {},
     "warps": {}
   },
   "REGION_PALLET_TOWN_PLAYERS_HOUSE_1F/MAIN": {
@@ -351,9 +351,9 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "TRAINER_RIVAL_OAKS_LAB_BULBASAUR_REWARD",
       "NPC_GIFT_GOT_FIRST_POKEBALLS",
-      "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL",
-      "TRAINER_RIVAL_OAKS_LAB_BULBASAUR_REWARD"
+      "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL"
     ],
     "events": [
       "EVENT_DELIVER_OAKS_PARCEL"
@@ -362,6 +362,21 @@
     "warps": {
       "MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB:0/MAP_PALLET_TOWN:2": "Professor Oak's Lab Exit"
     }
+  },
+  "REGION_VIRIDIAN_CITY/VISIT": {
+    "parent_map": "MAP_VIRIDIAN_CITY",
+    "name": "Viridian City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_VIRIDIAN_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
   },
   "REGION_VIRIDIAN_CITY/SOUTH": {
     "parent_map": "MAP_VIRIDIAN_CITY",
@@ -422,21 +437,6 @@
     "exits": {},
     "warps": {}
   },
-  "REGION_VIRIDIAN_CITY/VISIT": {
-    "parent_map": "MAP_VIRIDIAN_CITY",
-    "name": "Viridian City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_VIRIDIAN_CITY"
-    ],
-    "exits": {},
-    "warps": {}
-  },
   "REGION_VIRIDIAN_CITY_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F",
     "name": "Viridian Pokemon Center 1F",
@@ -492,18 +492,18 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_8",
-      "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE",
-      "NPC_GIFT_GOT_TM26_FROM_GIOVANNI",
-      "TRAINER_BLACK_BELT_ATSUSHI_REWARD",
-      "TRAINER_BLACK_BELT_KIYO_REWARD",
-      "TRAINER_BLACK_BELT_TAKASHI_REWARD",
-      "TRAINER_COOLTRAINER_SAMUEL_REWARD",
-      "TRAINER_COOLTRAINER_WARREN_REWARD",
-      "TRAINER_COOLTRAINER_YUJI_REWARD",
-      "TRAINER_LEADER_GIOVANNI_REWARD",
       "TRAINER_TAMER_COLE_REWARD",
-      "TRAINER_TAMER_JASON_REWARD"
+      "TRAINER_BLACK_BELT_KIYO_REWARD",
+      "TRAINER_COOLTRAINER_SAMUEL_REWARD",
+      "TRAINER_COOLTRAINER_YUJI_REWARD",
+      "TRAINER_BLACK_BELT_ATSUSHI_REWARD",
+      "TRAINER_TAMER_JASON_REWARD",
+      "TRAINER_COOLTRAINER_WARREN_REWARD",
+      "TRAINER_BLACK_BELT_TAKASHI_REWARD",
+      "TRAINER_LEADER_GIOVANNI_REWARD",
+      "BADGE_8",
+      "NPC_GIFT_GOT_TM26_FROM_GIOVANNI",
+      "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE"
     ],
     "events": [
       "EVENT_DEFEAT_GIOVANNI"
@@ -544,6 +544,21 @@
     "warps": {
       "MAP_VIRIDIAN_CITY_MART:0/MAP_VIRIDIAN_CITY:4": "Viridian Poke Mart Exit"
     }
+  },
+  "REGION_PEWTER_CITY/VISIT": {
+    "parent_map": "MAP_PEWTER_CITY",
+    "name": "Pewter City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_PEWTER_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
   },
   "REGION_PEWTER_CITY/MAIN": {
     "parent_map": "MAP_PEWTER_CITY",
@@ -589,21 +604,6 @@
     "warps": {
       "MAP_PEWTER_CITY:1/MAP_PEWTER_CITY_MUSEUM_1F:1": "Pewter Museum (East)"
     }
-  },
-  "REGION_PEWTER_CITY/VISIT": {
-    "parent_map": "MAP_PEWTER_CITY",
-    "name": "Pewter City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_PEWTER_CITY"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_MAP_PEWTER_CITY_MUSEUM_1F/WEST": {
     "parent_map": "MAP_PEWTER_CITY_MUSEUM_1F",
@@ -662,10 +662,10 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_1",
-      "NPC_GIFT_GOT_TM39_FROM_BROCK",
       "TRAINER_CAMPER_LIAM_REWARD",
-      "TRAINER_LEADER_BROCK_REWARD"
+      "TRAINER_LEADER_BROCK_REWARD",
+      "BADGE_1",
+      "NPC_GIFT_GOT_TM39_FROM_BROCK"
     ],
     "events": [
       "EVENT_DEFEAT_BROCK"
@@ -751,6 +751,21 @@
       "MAP_PEWTER_CITY_HOUSE2:0/MAP_PEWTER_CITY:6": "Pewter Info House Exit"
     }
   },
+  "REGION_CERULEAN_CITY/VISIT": {
+    "parent_map": "MAP_CERULEAN_CITY",
+    "name": "Cerulean City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_CERULEAN_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_CERULEAN_CITY/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY",
     "name": "Cerulean City",
@@ -760,8 +775,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "NPC_GIFT_GOT_FAME_CHECKER",
-      "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD"
+      "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD",
+      "NPC_GIFT_GOT_FAME_CHECKER"
     ],
     "events": [],
     "exits": {
@@ -810,8 +825,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "NPC_GIFT_GOT_TM28_FROM_ROCKET",
-      "TRAINER_TEAM_ROCKET_GRUNT_5_REWARD"
+      "TRAINER_TEAM_ROCKET_GRUNT_5_REWARD",
+      "NPC_GIFT_GOT_TM28_FROM_ROCKET"
     ],
     "events": [],
     "exits": {
@@ -859,21 +874,6 @@
     "warps": {
       "MAP_CERULEAN_CITY:8/MAP_CERULEAN_CAVE_1F:0": "Cerulean Cave"
     }
-  },
-  "REGION_CERULEAN_CITY/VISIT": {
-    "parent_map": "MAP_CERULEAN_CITY",
-    "name": "Cerulean City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_CERULEAN_CITY"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_CERULEAN_CITY_HOUSE1/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE1",
@@ -964,12 +964,12 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_2",
-      "NPC_GIFT_GOT_TM03_FROM_MISTY",
+      "TRAINER_SWIMMER_MALE_LUIS_REWARD",
+      "TRAINER_PICNICKER_DIANA_REWARD",
       "HIDDEN_ITEM_CERULEAN_CITY_GYM_MACHINE_PART",
       "TRAINER_LEADER_MISTY_REWARD",
-      "TRAINER_PICNICKER_DIANA_REWARD",
-      "TRAINER_SWIMMER_MALE_LUIS_REWARD"
+      "BADGE_2",
+      "NPC_GIFT_GOT_TM03_FROM_MISTY"
     ],
     "events": [
       "EVENT_DEFEAT_MISTY"
@@ -1043,6 +1043,21 @@
       "MAP_CERULEAN_CITY_HOUSE5:0/MAP_CERULEAN_CITY:12": "Berry Powder Man's House Exit"
     }
   },
+  "REGION_VERMILION_CITY/VISIT": {
+    "parent_map": "MAP_VERMILION_CITY",
+    "name": "Vermilion City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_VERMILION_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_VERMILION_CITY/MAIN": {
     "parent_map": "MAP_VERMILION_CITY",
     "name": "Vermilion City",
@@ -1106,21 +1121,6 @@
       "REGION_VERMILION_CITY/MAIN": "Vermilion City Landing",
       "REGION_VERMILION_CITY/NEAR_GYM": "Vermilion City Near Gym Landing"
     },
-    "warps": {}
-  },
-  "REGION_VERMILION_CITY/VISIT": {
-    "parent_map": "MAP_VERMILION_CITY",
-    "name": "Vermilion City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_VERMILION_CITY"
-    ],
-    "exits": {},
     "warps": {}
   },
   "REGION_VERMILION_CITY_HOUSE1/MAIN": {
@@ -1246,12 +1246,12 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_3",
-      "NPC_GIFT_GOT_TM34_FROM_SURGE",
+      "TRAINER_SAILOR_DWAYNE_REWARD",
       "TRAINER_ENGINEER_BAILY_REWARD",
       "TRAINER_GENTLEMAN_TUCKER_REWARD",
       "TRAINER_LEADER_LT_SURGE_REWARD",
-      "TRAINER_SAILOR_DWAYNE_REWARD"
+      "BADGE_3",
+      "NPC_GIFT_GOT_TM34_FROM_SURGE"
     ],
     "events": [
       "EVENT_DEFEAT_LT_SURGE"
@@ -1260,6 +1260,21 @@
     "warps": {
       "MAP_VERMILION_CITY_GYM:0/MAP_VERMILION_CITY:7": "Vermilion Gym Exit"
     }
+  },
+  "REGION_LAVENDER_TOWN/VISIT": {
+    "parent_map": "MAP_LAVENDER_TOWN",
+    "name": "Lavender Town Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_LAVENDER_TOWN"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
   },
   "REGION_LAVENDER_TOWN/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN",
@@ -1285,21 +1300,6 @@
       "MAP_LAVENDER_TOWN:4/MAP_LAVENDER_TOWN_HOUSE2:0": "Name Rater's House",
       "MAP_LAVENDER_TOWN:5/MAP_LAVENDER_TOWN_MART:0": "Lavender Poke Mart"
     }
-  },
-  "REGION_LAVENDER_TOWN/VISIT": {
-    "parent_map": "MAP_LAVENDER_TOWN",
-    "name": "Lavender Town Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_LAVENDER_TOWN"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_LAVENDER_TOWN_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_LAVENDER_TOWN_POKEMON_CENTER_1F",
@@ -1394,6 +1394,21 @@
       "MAP_LAVENDER_TOWN_MART:0/MAP_LAVENDER_TOWN:5": "Lavender Poke Mart Exit"
     }
   },
+  "REGION_CELADON_CITY/VISIT": {
+    "parent_map": "MAP_CELADON_CITY",
+    "name": "Celadon City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_CELADON_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_CELADON_CITY/MAIN": {
     "parent_map": "MAP_CELADON_CITY",
     "name": "Celadon City",
@@ -1455,21 +1470,6 @@
     "kanto": true,
     "locations": [],
     "events": [],
-    "exits": {},
-    "warps": {}
-  },
-  "REGION_CELADON_CITY/VISIT": {
-    "parent_map": "MAP_CELADON_CITY",
-    "name": "Celadon City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_CELADON_CITY"
-    ],
     "exits": {},
     "warps": {}
   },
@@ -1831,9 +1831,9 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "TRAINER_LASS_KAY_REWARD",
       "TRAINER_BEAUTY_BRIDGET_REWARD",
       "TRAINER_BEAUTY_TAMIA_REWARD",
-      "TRAINER_LASS_KAY_REWARD",
       "TRAINER_PICNICKER_TINA_REWARD"
     ],
     "events": [],
@@ -1853,12 +1853,12 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_4",
-      "NPC_GIFT_GOT_TM19_FROM_ERIKA",
-      "TRAINER_BEAUTY_LORI_REWARD",
       "TRAINER_COOLTRAINER_MARY_REWARD",
+      "TRAINER_BEAUTY_LORI_REWARD",
       "TRAINER_LASS_LISA_REWARD",
-      "TRAINER_LEADER_ERIKA_REWARD"
+      "TRAINER_LEADER_ERIKA_REWARD",
+      "BADGE_4",
+      "NPC_GIFT_GOT_TM19_FROM_ERIKA"
     ],
     "events": [
       "EVENT_DEFEAT_ERIKA"
@@ -1914,6 +1914,21 @@
     "warps": {
       "MAP_CELADON_CITY_HOTEL:0/MAP_CELADON_CITY:9": "Celadon Hotel Exit"
     }
+  },
+  "REGION_FUCHSIA_CITY/VISIT": {
+    "parent_map": "MAP_FUCHSIA_CITY",
+    "name": "Fuchsia City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_FUCHSIA_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
   },
   "REGION_FUCHSIA_CITY/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY",
@@ -1973,21 +1988,6 @@
     "kanto": true,
     "locations": [],
     "events": [],
-    "exits": {},
-    "warps": {}
-  },
-  "REGION_FUCHSIA_CITY/VISIT": {
-    "parent_map": "MAP_FUCHSIA_CITY",
-    "name": "Fuchsia City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_FUCHSIA_CITY"
-    ],
     "exits": {},
     "warps": {}
   },
@@ -2066,15 +2066,15 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_5",
-      "NPC_GIFT_GOT_TM06_FROM_KOGA",
+      "TRAINER_JUGGLER_NATE_REWARD",
       "TRAINER_JUGGLER_KAYDEN_REWARD",
       "TRAINER_JUGGLER_KIRK_REWARD",
-      "TRAINER_JUGGLER_NATE_REWARD",
+      "TRAINER_TAMER_EDGAR_REWARD",
+      "TRAINER_TAMER_PHIL_REWARD",
       "TRAINER_JUGGLER_SHAWN_REWARD",
       "TRAINER_LEADER_KOGA_REWARD",
-      "TRAINER_TAMER_EDGAR_REWARD",
-      "TRAINER_TAMER_PHIL_REWARD"
+      "BADGE_5",
+      "NPC_GIFT_GOT_TM06_FROM_KOGA"
     ],
     "events": [
       "EVENT_DEFEAT_KOGA"
@@ -2163,6 +2163,21 @@
       "MAP_FUCHSIA_CITY_HOUSE3:0/MAP_FUCHSIA_CITY:9": "Move Deleter's House Exit"
     }
   },
+  "REGION_SAFFRON_CITY/VISIT": {
+    "parent_map": "MAP_SAFFRON_CITY",
+    "name": "Saffron City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_SAFFRON_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_SAFFRON_CITY/MAIN": {
     "parent_map": "MAP_SAFFRON_CITY",
     "name": "Saffron City",
@@ -2191,21 +2206,6 @@
       "MAP_SAFFRON_CITY:12,13/MAP_ROUTE6_NORTH_ENTRANCE:0": "Route 6 Gate (North)",
       "MAP_SAFFRON_CITY:14/MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0": "Pokemon Trainer Fan Club"
     }
-  },
-  "REGION_SAFFRON_CITY/VISIT": {
-    "parent_map": "MAP_SAFFRON_CITY",
-    "name": "Saffron City Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_SAFFRON_CITY"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_SAFFRON_CITY_COPYCATS_HOUSE_1F/MAIN": {
     "parent_map": "MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F",
@@ -2249,11 +2249,11 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_BLACK_BELT_AARON_REWARD",
       "TRAINER_BLACK_BELT_HIDEKI_REWARD",
       "TRAINER_BLACK_BELT_HITOSHI_REWARD",
-      "TRAINER_BLACK_BELT_KOICHI_REWARD",
-      "TRAINER_BLACK_BELT_MIKE_REWARD"
+      "TRAINER_BLACK_BELT_MIKE_REWARD",
+      "TRAINER_BLACK_BELT_AARON_REWARD",
+      "TRAINER_BLACK_BELT_KOICHI_REWARD"
     ],
     "events": [
       "GIFT_POKEMON_HITMONCHAN",
@@ -2262,147 +2262,6 @@
     "exits": {},
     "warps": {
       "MAP_SAFFRON_CITY_DOJO:0/MAP_SAFFRON_CITY:2": "Saffron Dojo Exit"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/NORTHWEST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym Northwest",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_PSYCHIC_PRESTON_REWARD"
-    ],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:2/MAP_SAFFRON_CITY_GYM:20": "Saffron Gym Northwest Warp Tile (Top Left)",
-      "MAP_SAFFRON_CITY_GYM:3/MAP_SAFFRON_CITY_GYM:18": "Saffron Gym Northwest Warp Tile (Bottom Left)",
-      "MAP_SAFFRON_CITY_GYM:8/MAP_SAFFRON_CITY_GYM:16": "Saffron Gym Northwest Warp Tile (Top Right)",
-      "MAP_SAFFRON_CITY_GYM:9/MAP_SAFFRON_CITY_GYM:5": "Saffron Gym Northwest Warp Tile (Bottom Right)"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/NORTH": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym North",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_CHANNELER_AMANDA_REWARD"
-    ],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:14/MAP_SAFFRON_CITY_GYM:22": "Saffron Gym North Warp Tile (Top Left)",
-      "MAP_SAFFRON_CITY_GYM:15/MAP_SAFFRON_CITY_GYM:10": "Saffron Gym North Warp Tile (Bottom Left)",
-      "MAP_SAFFRON_CITY_GYM:16/MAP_SAFFRON_CITY_GYM:8": "Saffron Gym North Warp Tile (Top Right)",
-      "MAP_SAFFRON_CITY_GYM:17/MAP_SAFFRON_CITY_GYM:7": "Saffron Gym North Warp Tile (Bottom Right)"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/NORTHEAST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym Northeast",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_PSYCHIC_JOHAN_REWARD"
-    ],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:19/MAP_SAFFRON_CITY_GYM:21": "Saffron Gym Northeast Warp Tile (Top Left)",
-      "MAP_SAFFRON_CITY_GYM:20/MAP_SAFFRON_CITY_GYM:2": "Saffron Gym Northeast Warp Tile (Bottom Left)",
-      "MAP_SAFFRON_CITY_GYM:25/MAP_SAFFRON_CITY_GYM:23": "Saffron Gym Northeast Warp Tile (Top Right)",
-      "MAP_SAFFRON_CITY_GYM:26/MAP_SAFFRON_CITY_GYM:6": "Saffron Gym Northeast Warp Tile (Bottom Right)"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/WEST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym West",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_CHANNELER_STACY_REWARD"
-    ],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:4/MAP_SAFFRON_CITY_GYM:28": "Saffron Gym West Warp Tile (Top Left)",
-      "MAP_SAFFRON_CITY_GYM:5/MAP_SAFFRON_CITY_GYM:9": "Saffron Gym West Warp Tile (Bottom Left)",
-      "MAP_SAFFRON_CITY_GYM:10/MAP_SAFFRON_CITY_GYM:15": "Saffron Gym West Warp Tile (Top Right)",
-      "MAP_SAFFRON_CITY_GYM:11/MAP_SAFFRON_CITY_GYM:13": "Saffron Gym West Warp Tile (Bottom Right)"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/CENTER": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym Center",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "BADGE_6",
-      "NPC_GIFT_GOT_TM04_FROM_SABRINA",
-      "TRAINER_LEADER_SABRINA_REWARD"
-    ],
-    "events": [
-      "EVENT_DEFEAT_SABRINA"
-    ],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:18/MAP_SAFFRON_CITY_GYM:3": "Saffron Gym Center Warp Tile"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/EAST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym East",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_PSYCHIC_TYRON_REWARD"
-    ],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:21/MAP_SAFFRON_CITY_GYM:19": "Saffron Gym East Warp Tile (Top Left)",
-      "MAP_SAFFRON_CITY_GYM:22/MAP_SAFFRON_CITY_GYM:14": "Saffron Gym East Warp Tile (Bottom Left)",
-      "MAP_SAFFRON_CITY_GYM:27/MAP_SAFFRON_CITY_GYM:29": "Saffron Gym East Warp Tile (Top Right)",
-      "MAP_SAFFRON_CITY_GYM:28/MAP_SAFFRON_CITY_GYM:4": "Saffron Gym East Warp Tile (Bottom Right)"
-    }
-  },
-  "REGION_SAFFRON_CITY_GYM/SOUTHWEST": {
-    "parent_map": "MAP_SAFFRON_CITY_GYM",
-    "name": "Saffron Gym Southwest",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_CHANNELER_TASHA_REWARD"
-    ],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_SAFFRON_CITY_GYM:6/MAP_SAFFRON_CITY_GYM:26": "Saffron Gym Southwest Warp Tile (Top Left)",
-      "MAP_SAFFRON_CITY_GYM:7/MAP_SAFFRON_CITY_GYM:17": "Saffron Gym Southwest Warp Tile (Bottom Left)",
-      "MAP_SAFFRON_CITY_GYM:12/MAP_SAFFRON_CITY_GYM:24": "Saffron Gym Southwest Warp Tile (Top Right)",
-      "MAP_SAFFRON_CITY_GYM:13/MAP_SAFFRON_CITY_GYM:11": "Saffron Gym Southwest Warp Tile (Bottom Right)"
     }
   },
   "REGION_SAFFRON_CITY_GYM/SOUTH": {
@@ -2439,6 +2298,147 @@
       "MAP_SAFFRON_CITY_GYM:24/MAP_SAFFRON_CITY_GYM:12": "Saffron Gym Southeast Warp Tile (Bottom Left)",
       "MAP_SAFFRON_CITY_GYM:29/MAP_SAFFRON_CITY_GYM:27": "Saffron Gym Southeast Warp Tile (Top Right)",
       "MAP_SAFFRON_CITY_GYM:30/MAP_SAFFRON_CITY_GYM:1": "Saffron Gym Southeast Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/SOUTHWEST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Southwest",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_CHANNELER_TASHA_REWARD"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:6/MAP_SAFFRON_CITY_GYM:26": "Saffron Gym Southwest Warp Tile (Top Left)",
+      "MAP_SAFFRON_CITY_GYM:7/MAP_SAFFRON_CITY_GYM:17": "Saffron Gym Southwest Warp Tile (Bottom Left)",
+      "MAP_SAFFRON_CITY_GYM:12/MAP_SAFFRON_CITY_GYM:24": "Saffron Gym Southwest Warp Tile (Top Right)",
+      "MAP_SAFFRON_CITY_GYM:13/MAP_SAFFRON_CITY_GYM:11": "Saffron Gym Southwest Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/EAST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym East",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_PSYCHIC_TYRON_REWARD"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:21/MAP_SAFFRON_CITY_GYM:19": "Saffron Gym East Warp Tile (Top Left)",
+      "MAP_SAFFRON_CITY_GYM:22/MAP_SAFFRON_CITY_GYM:14": "Saffron Gym East Warp Tile (Bottom Left)",
+      "MAP_SAFFRON_CITY_GYM:27/MAP_SAFFRON_CITY_GYM:29": "Saffron Gym East Warp Tile (Top Right)",
+      "MAP_SAFFRON_CITY_GYM:28/MAP_SAFFRON_CITY_GYM:4": "Saffron Gym East Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/WEST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym West",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_CHANNELER_STACY_REWARD"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:4/MAP_SAFFRON_CITY_GYM:28": "Saffron Gym West Warp Tile (Top Left)",
+      "MAP_SAFFRON_CITY_GYM:5/MAP_SAFFRON_CITY_GYM:9": "Saffron Gym West Warp Tile (Bottom Left)",
+      "MAP_SAFFRON_CITY_GYM:10/MAP_SAFFRON_CITY_GYM:15": "Saffron Gym West Warp Tile (Top Right)",
+      "MAP_SAFFRON_CITY_GYM:11/MAP_SAFFRON_CITY_GYM:13": "Saffron Gym West Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/NORTHEAST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Northeast",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_PSYCHIC_JOHAN_REWARD"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:19/MAP_SAFFRON_CITY_GYM:21": "Saffron Gym Northeast Warp Tile (Top Left)",
+      "MAP_SAFFRON_CITY_GYM:20/MAP_SAFFRON_CITY_GYM:2": "Saffron Gym Northeast Warp Tile (Bottom Left)",
+      "MAP_SAFFRON_CITY_GYM:25/MAP_SAFFRON_CITY_GYM:23": "Saffron Gym Northeast Warp Tile (Top Right)",
+      "MAP_SAFFRON_CITY_GYM:26/MAP_SAFFRON_CITY_GYM:6": "Saffron Gym Northeast Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/NORTH": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym North",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_CHANNELER_AMANDA_REWARD"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:14/MAP_SAFFRON_CITY_GYM:22": "Saffron Gym North Warp Tile (Top Left)",
+      "MAP_SAFFRON_CITY_GYM:15/MAP_SAFFRON_CITY_GYM:10": "Saffron Gym North Warp Tile (Bottom Left)",
+      "MAP_SAFFRON_CITY_GYM:16/MAP_SAFFRON_CITY_GYM:8": "Saffron Gym North Warp Tile (Top Right)",
+      "MAP_SAFFRON_CITY_GYM:17/MAP_SAFFRON_CITY_GYM:7": "Saffron Gym North Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/NORTHWEST": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Northwest",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_PSYCHIC_PRESTON_REWARD"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:2/MAP_SAFFRON_CITY_GYM:20": "Saffron Gym Northwest Warp Tile (Top Left)",
+      "MAP_SAFFRON_CITY_GYM:3/MAP_SAFFRON_CITY_GYM:18": "Saffron Gym Northwest Warp Tile (Bottom Left)",
+      "MAP_SAFFRON_CITY_GYM:8/MAP_SAFFRON_CITY_GYM:16": "Saffron Gym Northwest Warp Tile (Top Right)",
+      "MAP_SAFFRON_CITY_GYM:9/MAP_SAFFRON_CITY_GYM:5": "Saffron Gym Northwest Warp Tile (Bottom Right)"
+    }
+  },
+  "REGION_SAFFRON_CITY_GYM/CENTER": {
+    "parent_map": "MAP_SAFFRON_CITY_GYM",
+    "name": "Saffron Gym Center",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "TRAINER_LEADER_SABRINA_REWARD",
+      "BADGE_6",
+      "NPC_GIFT_GOT_TM04_FROM_SABRINA"
+    ],
+    "events": [
+      "EVENT_DEFEAT_SABRINA"
+    ],
+    "exits": {},
+    "warps": {
+      "MAP_SAFFRON_CITY_GYM:18/MAP_SAFFRON_CITY_GYM:3": "Saffron Gym Center Warp Tile"
     }
   },
   "REGION_SAFFRON_CITY_HOUSE/MAIN": {
@@ -2534,6 +2534,21 @@
       "MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB:0/MAP_SAFFRON_CITY:14": "Pokemon Trainer Fan Club Exit"
     }
   },
+  "REGION_CINNABAR_ISLAND/VISIT": {
+    "parent_map": "MAP_CINNABAR_ISLAND",
+    "name": "Cinnabar Island Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_CINNABAR_ISLAND"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_CINNABAR_ISLAND/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND",
     "name": "Cinnabar Island",
@@ -2573,21 +2588,6 @@
     },
     "warps": {}
   },
-  "REGION_CINNABAR_ISLAND/VISIT": {
-    "parent_map": "MAP_CINNABAR_ISLAND",
-    "name": "Cinnabar Island Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_CINNABAR_ISLAND"
-    ],
-    "exits": {},
-    "warps": {}
-  },
   "REGION_CINNABAR_ISLAND_GYM/MAIN": {
     "parent_map": "MAP_CINNABAR_ISLAND_GYM",
     "name": "Cinnabar Gym",
@@ -2597,16 +2597,16 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "BADGE_7",
-      "NPC_GIFT_GOT_TM38_FROM_BLAINE",
-      "TRAINER_BURGLAR_DUSTY_REWARD",
       "TRAINER_BURGLAR_QUINN_REWARD",
-      "TRAINER_BURGLAR_RAMON_REWARD",
-      "TRAINER_LEADER_BLAINE_REWARD",
-      "TRAINER_SUPER_NERD_AVERY_REWARD",
-      "TRAINER_SUPER_NERD_DEREK_REWARD",
       "TRAINER_SUPER_NERD_ERIK_REWARD",
-      "TRAINER_SUPER_NERD_ZAC_REWARD"
+      "TRAINER_SUPER_NERD_AVERY_REWARD",
+      "TRAINER_BURGLAR_RAMON_REWARD",
+      "TRAINER_SUPER_NERD_DEREK_REWARD",
+      "TRAINER_BURGLAR_DUSTY_REWARD",
+      "TRAINER_SUPER_NERD_ZAC_REWARD",
+      "TRAINER_LEADER_BLAINE_REWARD",
+      "BADGE_7",
+      "NPC_GIFT_GOT_TM38_FROM_BLAINE"
     ],
     "events": [
       "EVENT_DEFEAT_BLAINE"
@@ -2737,6 +2737,21 @@
       "MAP_CINNABAR_ISLAND_MART:0/MAP_CINNABAR_ISLAND:4": "Cinnabar Poke Mart Exit"
     }
   },
+  "REGION_INDIGO_PLATEAU_EXTERIOR/VISIT": {
+    "parent_map": "MAP_INDIGO_PLATEAU_EXTERIOR",
+    "name": "Indigo Plateau Exterior Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "kanto": true,
+    "locations": [
+      "FLY_UNLOCK_VISITED_INDIGO_PLATEAU"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
   "REGION_INDIGO_PLATEAU_EXTERIOR/MAIN": {
     "parent_map": "MAP_INDIGO_PLATEAU_EXTERIOR",
     "name": "Indigo Plateau Exterior",
@@ -2754,21 +2769,6 @@
     "warps": {
       "MAP_INDIGO_PLATEAU_EXTERIOR:0/MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F:0": "Indigo Plateau Pokemon Center"
     }
-  },
-  "REGION_INDIGO_PLATEAU_EXTERIOR/VISIT": {
-    "parent_map": "MAP_INDIGO_PLATEAU_EXTERIOR",
-    "name": "Indigo Plateau Exterior Visit",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [
-      "EVENT_FLY_INDIGO_PLATEAU"
-    ],
-    "exits": {},
-    "warps": {}
   },
   "REGION_INDIGO_PLATEAU_POKEMON_CENTER_1F/MAIN": {
     "parent_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F",

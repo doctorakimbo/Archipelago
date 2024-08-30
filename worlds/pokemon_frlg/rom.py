@@ -3,7 +3,6 @@ Classes and functions related to creating a ROM patch
 """
 import bsdiff4
 import struct
-import logging
 from typing import TYPE_CHECKING, Dict, List, Tuple
 
 from BaseClasses import ItemClassification
@@ -117,14 +116,6 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         game_version_revision = game_version
     else:
         game_version_revision = f'{game_version}_rev1'
-
-    # Set free fly location
-    if world.options.free_fly_location:
-        tokens.write_token(
-            APTokenTypes.WRITE,
-            data.rom_addresses[game_version_revision]["gArchipelagoOptions"] + 0x18,
-            struct.pack("<B", world.free_fly_location_id)
-        )
 
     # Set item values
     location_info: List[Tuple[int, int, str]] = []
@@ -276,6 +267,48 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     if start_inventory.pop("Earth Badge", 0) > 0:
         starting_badges |= (1 << 7)
 
+    starting_fly_unlocks = 0
+    if start_inventory.pop("Fly Pallet Town", 0) > 0:
+        starting_fly_unlocks |= (1 << 0)
+    if start_inventory.pop("Fly Viridian City", 0) > 0:
+        starting_fly_unlocks |= (1 << 1)
+    if start_inventory.pop("Fly Pewter City", 0) > 0:
+        starting_fly_unlocks |= (1 << 2)
+    if start_inventory.pop("Fly Cerulean City", 0) > 0:
+        starting_fly_unlocks |= (1 << 3)
+    if start_inventory.pop("Fly Lavender Town", 0) > 0:
+        starting_fly_unlocks |= (1 << 4)
+    if start_inventory.pop("Fly Vermilion City", 0) > 0:
+        starting_fly_unlocks |= (1 << 5)
+    if start_inventory.pop("Fly Celadon City", 0) > 0:
+        starting_fly_unlocks |= (1 << 6)
+    if start_inventory.pop("Fly Fuchsia City", 0) > 0:
+        starting_fly_unlocks |= (1 << 7)
+    if start_inventory.pop("Fly Cinnabar Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 8)
+    if start_inventory.pop("Fly Indigo Plateau", 0) > 0:
+        starting_fly_unlocks |= (1 << 9)
+    if start_inventory.pop("Fly Saffron City", 0) > 0:
+        starting_fly_unlocks |= (1 << 10)
+    if start_inventory.pop("Fly One Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 11)
+    if start_inventory.pop("Fly Two Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 12)
+    if start_inventory.pop("Fly Three Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 13)
+    if start_inventory.pop("Fly Four Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 14)
+    if start_inventory.pop("Fly Five Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 15)
+    if start_inventory.pop("Fly Seven Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 16)
+    if start_inventory.pop("Fly Six Island", 0) > 0:
+        starting_fly_unlocks |= (1 << 17)
+    if start_inventory.pop("Fly Route 4", 0) > 0:
+        starting_fly_unlocks |= (1 << 18)
+    if start_inventory.pop("Fly Route 10", 0) > 0:
+        starting_fly_unlocks |= (1 << 19)
+
     pc_slots: List[Tuple[str, int]] = []
     for item, quantity in start_inventory.items():
         if len(pc_slots) >= 19:
@@ -350,18 +383,23 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x16 */ u8 ceruleanCaveRequiredCount;
     #
     # /* 0x17 */ u8 startingBadges;
-    # /* 0x18 */ u8 freeFlyLocation;
+    # /* 0x18 */ u32 startingFlyUnlocks;
+    # /* 0x1C */ u32 startingMoney;
     #
-    # /* 0x19 */ bool8 itemfinderRequired;
-    # /* 0x1A */ bool8 reccuringHiddenItems;
+    # /* 0x20 */ bool8 itemfinderRequired;
+    # /* 0x21 */ bool8 reccuringHiddenItems;
     #
-    # /* 0x1B */ u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
+    # /* 0x22 */ u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
     #
-    # /* 0x20 */ bool8 isTrainersanity;
-    # /* 0x21 */ bool8 extraKeyItems;
-    # /* 0x22 */ bool8 kantoOnly;
+    # /* 0x27 */ bool8 isTrainersanity;
+    # /* 0x28 */ bool8 extraKeyItems;
+    # /* 0x29 */ bool8 kantoOnly;
+    # /* 0x2A */ bool8 flyUnlocks;
     #
-    # /* 0x23 */ bool8 removeBadgeRequirement[7]; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
+    # /* 0x2B */ u8 removeBadgeRequirement; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
+    #
+    # /* 0x2C */ u8 free_fly_id;
+    # /* 0x2D */ u8 town_free_fly_id;
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -449,43 +487,61 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # Set starting badges
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x17, struct.pack("<B", starting_badges))
 
+    # Set starting fly unlocks
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x18, struct.pack("<I", starting_fly_unlocks))
+
+    # Set starting money
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1C, struct.pack("<I",
+                                                                               world.options.starting_money.value))
     # Set itemfinder required
     itemfinder_required = 1 if world.options.itemfinder_required.value == ItemfinderRequired.option_required else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x19, struct.pack("<B", itemfinder_required))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", itemfinder_required))
 
     # Set recurring hidden items shuffled
     recurring_hidden_items = 1 if world.options.shuffle_hidden.value == ShuffleHiddenItems.option_all else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1A, struct.pack("<B", recurring_hidden_items))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x21, struct.pack("<B", recurring_hidden_items))
 
     # Set Oak's Aides counts
     oaks_aide_route_2 = world.options.oaks_aide_route_2.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1B, struct.pack("<B", oaks_aide_route_2))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x22, struct.pack("<B", oaks_aide_route_2))
     oaks_aide_route_10 = world.options.oaks_aide_route_10.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1C, struct.pack("<B", oaks_aide_route_10))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x23, struct.pack("<B", oaks_aide_route_10))
     oaks_aide_route_11 = world.options.oaks_aide_route_11.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", oaks_aide_route_11))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x24, struct.pack("<B", oaks_aide_route_11))
     oaks_aide_route_16 = world.options.oaks_aide_route_16.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", oaks_aide_route_16))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x25, struct.pack("<B", oaks_aide_route_16))
     oaks_aide_route_15 = world.options.oaks_aide_route_15.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1F, struct.pack("<B", oaks_aide_route_15))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x26, struct.pack("<B", oaks_aide_route_15))
 
     # Set trainersanity
     trainersanity = 1 if world.options.trainersanity else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", trainersanity))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x27, struct.pack("<B", trainersanity))
 
     # Set extra key items
     extra_key_items = 1 if world.options.extra_key_items else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x21, struct.pack("<B", extra_key_items))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x28, struct.pack("<B", extra_key_items))
 
     # Set kanto only
     kanto_only = 1 if world.options.kanto_only else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x22, struct.pack("<B", kanto_only))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x29, struct.pack("<B", kanto_only))
+
+    # Set fly unlocks
+    fly_unlocks = 1 if world.options.shuffle_fly_destination_unlocks else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2A, struct.pack("B", fly_unlocks))
 
     # Set remove badge requirements
     hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
+    remove_badge_requirements = 0
     for i, hm in enumerate(hms):
-        remove_badge_requirement = 1 if hm in world.options.remove_badge_requirement.value else 0
-        tokens.write_token(APTokenTypes.WRITE, options_address + 0x23 + i, struct.pack("<B", remove_badge_requirement))
+        if hm in world.options.remove_badge_requirement.value:
+            remove_badge_requirements |= (1 << i)
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2B, struct.pack("<B", remove_badge_requirements))
+
+    # Set free fly location
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2C, struct.pack("<B", world.free_fly_location_id))
+
+    # Set town map fly location
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2D, struct.pack("<B", world.town_map_fly_location_id))
 
     # Set slot auth
     tokens.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
