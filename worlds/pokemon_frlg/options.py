@@ -646,7 +646,7 @@ class ExpModifier(Range):
 
 class StartingMoney(Range):
     """
-    Sets the amount of moeny that you start with.
+    Sets the amount of money that you start with.
     """
     display_name = "Starting Money"
     range_start = 0
