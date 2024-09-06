@@ -62,6 +62,14 @@ FLY_ITEM_ID_MAP = {
     "ITEM_FLY_ROUTE10": 20
 }
 
+sevii_required_locations = [
+    "Lorelei's Room - Elite Four Lorelei Rematch Reward",
+    "Bruno's Room - Elite Four Bruno Rematch Reward",
+    "Agatha's Room - Elite Four Agatha Rematch Reward",
+    "Lance's Room - Elite Four Lance Rematch Reward",
+    "Champion's Room - Champion Rematch Reward"
+]
+
 
 class PokemonFRLGLocation(Location):
     game: str = "Pokemon FireRed and LeafGreen"
@@ -130,11 +138,14 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
         for location_flag in included_locations:
             location_data = data.locations[location_flag]
 
+            if world.options.kanto_only and location_data.name in sevii_required_locations:
+                continue
+
             location_id = offset_flag(location_data.flag)
 
             if location_data.default_item == data.constants["ITEM_NONE"]:
                 default_item = reverse_offset_item_value(
-                    world.item_name_to_id[get_random_item(world,ItemClassification.filler)]
+                    world.item_name_to_id[get_random_item(world, ItemClassification.filler)]
                 )
             else:
                 default_item = location_data.default_item
@@ -168,23 +179,15 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
         encounter_name_level_list: List[Tuple[str, int]] = []
 
         game_version = world.options.game_version.current_key
-        region_names = list(regions.keys())
-        included_maps = [region.parent_map.name for region in data.regions.values()
-                         if region.name in region_names and region.parent_map is not None]
 
         for scaling_data in world.scaling_data:
             if scaling_data.region not in regions:
-                if scaling_data.connections is not None and any(x in region_names for x in scaling_data.connections):
-                    region = Region(scaling_data.region, world.player, world.multiworld)
-                    regions[scaling_data.region] = region
+                region = Region(scaling_data.region, world.player, world.multiworld)
+                regions[scaling_data.region] = region
 
-                    for connection in scaling_data.connections:
-                        if connection not in region_names:
-                            continue
-                        name = f"{regions[connection].name} Scaling Group"
-                        regions[connection].connect(region, name)
-                else:
-                    continue
+                for connection in scaling_data.connections:
+                    name = f"{regions[connection].name} -> {region.name}"
+                    regions[connection].connect(region, name)
             else:
                 region = regions[scaling_data.region]
 
@@ -235,8 +238,6 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
                 events: Dict[str, Tuple[str, List[str], Optional[Callable[[CollectionState], bool]]]] = {}
                 encounter_category_data = encounter_categories[scaling_data.type]
                 for data_id in scaling_data.data_ids:
-                    if data_id not in included_maps:
-                        continue
                     map_data = data.maps[data_id]
                     encounters = (map_data.land_encounters if scaling_data.type == "Land" else
                                   map_data.water_encounters if scaling_data.type == "Water" else

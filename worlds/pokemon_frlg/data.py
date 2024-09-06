@@ -860,7 +860,7 @@ def _init() -> None:
             data.locations[location_id] = new_location
             claimed_locations.add(location_id)
 
-        new_region.locations.sort(key=lambda loc: data.locations[loc].name)
+        # new_region.locations.sort(key=lambda loc: data.locations[loc].name)
 
         # Events
         for event_id in region_json["events"]:
@@ -874,7 +874,7 @@ def _init() -> None:
             new_region.events.append(event_id)
             data.events[event_id] = new_event
 
-        new_region.events.sort(key=lambda event: data.events[event].name)
+        # new_region.events.sort(key=lambda event: data.events[event].name)
 
         # Exits
         new_region.exits = region_json["exits"]

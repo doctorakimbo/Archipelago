@@ -2811,7 +2811,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_ELITE_FOUR_LORELEI_REWARD"
+      "TRAINER_ELITE_FOUR_LORELEI_REWARD",
+      "TRAINER_ELITE_FOUR_LORELEI_2_REWARD"
     ],
     "events": [],
     "exits": {},
@@ -2829,7 +2830,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_ELITE_FOUR_BRUNO_REWARD"
+      "TRAINER_ELITE_FOUR_BRUNO_REWARD",
+      "TRAINER_ELITE_FOUR_BRUNO_2_REWARD"
     ],
     "events": [],
     "exits": {},
@@ -2847,7 +2849,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_ELITE_FOUR_AGATHA_REWARD"
+      "TRAINER_ELITE_FOUR_AGATHA_REWARD",
+      "TRAINER_ELITE_FOUR_AGATHA_2_REWARD"
     ],
     "events": [],
     "exits": {},
@@ -2865,7 +2868,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_ELITE_FOUR_LANCE_REWARD"
+      "TRAINER_ELITE_FOUR_LANCE_REWARD",
+      "TRAINER_ELITE_FOUR_LANCE_2_REWARD"
     ],
     "events": [],
     "exits": {},
@@ -2883,9 +2887,13 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD"
+      "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD",
+      "TRAINER_CHAMPION_REMATCH_BULBASAUR_REWARD"
     ],
-    "events": [],
+    "events": [
+      "EVENT_DEFEAT_CHAMPION",
+      "EVENT_DEFEAT_CHAMPION_REMATCH"
+    ],
     "exits": {},
     "warps": {
       "MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM:0/MAP_POKEMON_LEAGUE_LANCES_ROOM:1": "Pokemon League Champion's Room Exit (South)",
@@ -2901,9 +2909,7 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [],
-    "events": [
-      "EVENT_DEFEAT_CHAMPION"
-    ],
+    "events": [],
     "exits": {},
     "warps": {
       "MAP_POKEMON_LEAGUE_HALL_OF_FAME:0/MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM:1": "Pokemon League Hall of Fame Exit"

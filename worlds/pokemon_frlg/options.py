@@ -16,6 +16,19 @@ class GameVersion(Choice):
     default = "random"
 
 
+class Goal(Choice):
+    """
+    Sets what your goal is to consider the game beaten.
+
+    - Elite Four: Defeat the Elite Four
+    - Elite Four Rematch: Defeat the Elite Four Rematch
+    """
+    display_name = "Goal"
+    default = 0
+    option_elite_four = 0
+    option_elite_four_rematch = 1
+
+
 class KantoOnly(Toggle):
     """
     Excludes all the Sevii Island locations. Navel Rock and Birth Island are still included.
@@ -723,6 +736,7 @@ class ReceiveItemMessages(Choice):
 class PokemonFRLGOptions(PerGameCommonOptions):
     game_version: GameVersion
 
+    goal: Goal
     kanto_only: KantoOnly
 
     shuffle_badges: ShuffleBadges

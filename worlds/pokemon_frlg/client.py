@@ -1,10 +1,11 @@
-from typing import TYPE_CHECKING, Dict, List, Set, Tuple
+from typing import TYPE_CHECKING, Dict, List, Optional, Set, Tuple
 from NetUtils import ClientStatus
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
 from .data import data
 from .items import reverse_offset_item_value
 from .locations import offset_flag
+from .options import Goal
 
 if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
@@ -115,6 +116,7 @@ class PokemonFRLGClient(BizHawkClient):
     system = "GBA"
     patch_suffix = (".apfirered", ".apleafgreen", ".apfireredrev1", ".apleafgreenrev1")
     game_version: str
+    goal_flag: Optional[int]
     local_checked_locations: Set[int]
     local_set_events: Dict[str, bool]
     local_set_fly_unlocks: Dict[str, bool]
@@ -124,6 +126,7 @@ class PokemonFRLGClient(BizHawkClient):
     def __init__(self) -> None:
         super().__init__()
         self.game_version = None
+        self.goal_flag = None
         self.local_checked_locations = set()
         self.local_set_events = {}
         self.local_set_fly_unlocks = {}
@@ -179,6 +182,11 @@ class PokemonFRLGClient(BizHawkClient):
     async def game_watcher(self, ctx: "BizHawkClientContext") -> None:
         if ctx.server is None or ctx.server.socket.closed or ctx.slot_data is None:
             return
+
+        if ctx.slot_data["goal"] == Goal.option_elite_four:
+            self.goal_flag = data.constants["FLAG_DEFEATED_CHAMP"]
+        if ctx.slot_data["goal"] == Goal.option_elite_four_rematch:
+            self.goal_flag = data.constants["FLAG_DEFEATED_CHAMP_REMATCH"]
 
         try:
             guards: Dict[str, Tuple[int, bytes, str]] = {}
@@ -259,7 +267,7 @@ class PokemonFRLGClient(BizHawkClient):
                         if location_id in ctx.server_locations:
                             local_checked_locations.add(location_id)
 
-                        if flag_id == data.constants["FLAG_DEFEATED_CHAMP"]:
+                        if flag_id == self.goal_flag:
                             game_clear = True
 
                         if flag_id in EVENT_FLAG_MAP:

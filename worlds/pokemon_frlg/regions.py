@@ -27,6 +27,10 @@ indirect_conditions: Dict[str, List[str]] = {
     "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"]
 }
 
+sevii_required_events = [
+    "Champion's Room - Champion Rematch Battle"
+]
+
 
 def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
     """
@@ -131,6 +135,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
 
         for event_id in region_data.events:
             event_data = world.modified_events[event_id]
+
+            if world.options.kanto_only and event_data.name in sevii_required_events:
+                continue
 
             if type(event_data.name) is list:
                 if world.options.game_version == GameVersion.option_firered:

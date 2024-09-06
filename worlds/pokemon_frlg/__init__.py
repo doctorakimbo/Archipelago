@@ -21,7 +21,7 @@ from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, ge
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FreeFlyLocation, GameVersion,
+from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FreeFlyLocation, GameVersion, Goal,
                       RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, ShuffleHiddenItems,
                       ShuffleBadges, TownMapFlyLocation, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
@@ -173,12 +173,17 @@ class PokemonFRLGWorld(World):
         self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
         self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
-        if (self.options.kanto_only and
-                (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
-                self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_restore_network)):
-            logging.warning("Pokemon FRLG: Cerulean Cave Requirement for Player %s (%s) incompatible with Kanto Only. "
-                            "Setting requirement to Defeat Champion.", self.player, self.player_name)
-            self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
+        if self.options.kanto_only:
+            if self.options.goal == Goal.option_elite_four_rematch:
+                logging.warning("Pokemon FRLG: Goal for Player %s (%s) incompatible with Kanto Only. "
+                                "Setting goal to Elite Four.", self.player, self.player_name)
+                self.options.goal.value = Goal.option_elite_four
+            if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
+                    self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_restore_network):
+                logging.warning("Pokemon FRLG: Cerulean Cave Requirement for Player %s (%s) "
+                                "incompatible with Kanto Only. Setting requirement to Defeat Champion.",
+                                self.player, self.player_name)
+                self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
 
         create_scaling_data(self)
         randomize_types(self)
@@ -211,6 +216,36 @@ class PokemonFRLGWorld(World):
         self.multiworld.regions.extend(regions.values())
 
         create_indirect_conditions(self)
+
+        def exclude_locations(locations: List[str]):
+            for location in locations:
+                try:
+                    self.multiworld.get_location(location, self.player).progress_type = LocationProgressType.EXCLUDED
+                except KeyError:
+                    continue
+
+        if self.options.goal == Goal.option_elite_four:
+            excluded_locations = [
+                "Champion's Room - Champion Reward",
+                "Pallet Town - Oak (First Gift)",
+                "Pallet Town - Oak (Second Gift)"
+            ]
+
+            if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
+                    self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_champion):
+                excluded_locations.extend([
+                    "Cerulean Cave 1F - Southwest Item",
+                    "Cerulean Cave 1F - East Plateau Item",
+                    "Cerulean Cave 1F - West Plateau Item",
+                    "Cerulean Cave 2F - East Item",
+                    "Cerulean Cave 2F - West Item",
+                    "Cerulean Cave 2F - Center Item",
+                    "Cerulean Cave B1F - Northeast Item",
+                    "Cerulean Cave B1F - East Plateau Item",
+                    "Cerulean Cave 1F - West Plateau Hidden Item"
+                ])
+
+            exclude_locations(excluded_locations)
 
     def create_items(self) -> None:
         item_locations: List[PokemonFRLGLocation] = [
@@ -295,8 +330,9 @@ class PokemonFRLGWorld(World):
         if self.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel:
             self.multiworld.local_early_items[self.player]["Oak's Parcel"] = 1
 
-        # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
         collection_state = self.multiworld.get_all_state(False)
+
+        # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
         evolution_region = self.multiworld.get_region("Evolutions", self.player)
         for location in evolution_region.locations.copy():
             if not collection_state.can_reach(location, player=self.player):

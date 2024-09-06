@@ -2127,6 +2127,10 @@
     "name": "Champion's Room - Champion Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_CHAMPION_REMATCH_BULBASAUR_REWARD": {
+    "name": "Champion's Room - Champion Rematch Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_CHANNELER_AMANDA_REWARD": {
     "name": "Saffron Gym - Channeler Amanda Reward",
     "tags": ["Trainer"]
@@ -2311,16 +2315,32 @@
     "name": "Agatha's Room - Elite Four Agatha Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_ELITE_FOUR_AGATHA_2_REWARD": {
+    "name": "Agatha's Room - Elite Four Agatha Rematch Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_ELITE_FOUR_BRUNO_REWARD": {
     "name": "Bruno's Room - Elite Four Bruno Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ELITE_FOUR_BRUNO_2_REWARD": {
+    "name": "Bruno's Room - Elite Four Bruno Rematch Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_ELITE_FOUR_LANCE_REWARD": {
     "name": "Lance's Room - Elite Four Lance Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_ELITE_FOUR_LANCE_2_REWARD": {
+    "name": "Lance's Room - Elite Four Lance Rematch Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_ELITE_FOUR_LORELEI_REWARD": {
     "name": "Lorelei's Room - Elite Four Lorelei Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ELITE_FOUR_LORELEI_2_REWARD": {
+    "name": "Lorelei's Room - Elite Four Lorelei Rematch Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_ENGINEER_BAILY_REWARD": {

@@ -2959,7 +2959,9 @@
       "TRAINER_TEAM_ROCKET_GRUNT_43_REWARD",
       "TRAINER_TEAM_ROCKET_GRUNT_44_REWARD"
     ],
-    "events": [],
+    "events": [
+      "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD"
+    ],
     "exits": {
       "REGION_MT_EMBER_EXTERIOR/CENTER": "Mt. Ember Exterior South Strength Boulders"
     },
@@ -3631,7 +3633,9 @@
       "NPC_GIFT_RECOVERED_SAPPHIRE",
       "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL"
     ],
-    "events": [],
+    "events": [
+      "EVENT_DEFEAT_TEAM_ROCKET_ADMIN"
+    ],
     "exits": {},
     "warps": {
       "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE:0/MAP_FIVE_ISLAND_MEADOW:0": "Rocket Warehouse Exit"
@@ -4028,7 +4032,7 @@
     "kanto": false,
     "locations": [],
     "events": [
-      "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD"
+      "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD_2"
     ],
     "exits": {},
     "warps": {
