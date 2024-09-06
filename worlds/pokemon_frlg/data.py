@@ -106,6 +106,7 @@ class MapData:
     land_encounters: Optional[EncounterTableData]
     water_encounters: Optional[EncounterTableData]
     fishing_encounters: Optional[EncounterTableData]
+    kanto: bool
 
 
 class EventData(NamedTuple):
@@ -776,7 +777,8 @@ def _init() -> None:
             map_json["header_address"],
             land_encounters,
             water_encounters,
-            fishing_encounters
+            fishing_encounters,
+            True
         )
 
     # Load/merge region json files
@@ -799,6 +801,9 @@ def _init() -> None:
     data.regions = {}
     for region_id, region_json in regions_json.items():
         parent_map = data.maps[region_json["parent_map"]] if region_json["parent_map"] is not None else None
+
+        if parent_map is not None:
+            parent_map.kanto = region_json["kanto"]
 
         new_region = RegionData(
             region_id,

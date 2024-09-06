@@ -14,8 +14,8 @@ from BaseClasses import Tutorial, MultiWorld, ItemClassification, LocationProgre
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
-from .data import (data as frlg_data, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData, StarterData,
-                   TrainerData)
+from .data import (data as frlg_data, ALL_SPECIES, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData,
+                   StarterData, TrainerData)
 from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, get_item_classification,
                     reverse_offset_item_value, PokemonFRLGItem)
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
@@ -90,6 +90,7 @@ class PokemonFRLGWorld(World):
 
     free_fly_location_id: int
     town_map_fly_location_id: int
+    resort_gorgeous_mon: Tuple[str, str, int]
     modified_species: Dict[int, SpeciesData]
     modified_maps: Dict[str, MapData]
     modified_starters: Dict[str, StarterData]
@@ -119,6 +120,7 @@ class PokemonFRLGWorld(World):
         super(PokemonFRLGWorld, self).__init__(multiworld, player)
         self.free_fly_location_id = 0
         self.town_map_fly_location_id = 0
+        self.resort_gorgeous_mon = ("SPECIES_PIKACHU", "Pikachu", 25)
         self.modified_species = copy.deepcopy(frlg_data.species)
         self.modified_maps = copy.deepcopy(frlg_data.maps)
         self.modified_starters = copy.deepcopy(frlg_data.starters)
@@ -211,11 +213,22 @@ class PokemonFRLGWorld(World):
             tags.add("ExtraKeyItem")
         if self.options.trainersanity:
             tags.add("Trainer")
+        if self.options.pokemon_request_locations:
+            tags.add("PokemonRequest")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
 
         create_indirect_conditions(self)
+
+        # Choose Selphy's requested Pokémon among available wild encounters if necessary
+        if self.options.pokemon_request_locations and not self.options.kanto_only:
+            wild_encounter_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Wild" in location.tags
+            ]
+            location = self.random.choice(wild_encounter_locations)
+            self.resort_gorgeous_mon = next(species for species in ALL_SPECIES if species[1] == location.item.name)
 
         def exclude_locations(locations: List[str]):
             for location in locations:

@@ -1074,7 +1074,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "NPC_GIFT_GOT_SUPER_ROD"
+      "NPC_GIFT_GOT_SUPER_ROD",
+      "NPC_GIFT_GOT_NET_BALL_FROM_ROUTE12_FISHING_HOUSE"
     ],
     "events": [],
     "exits": {},

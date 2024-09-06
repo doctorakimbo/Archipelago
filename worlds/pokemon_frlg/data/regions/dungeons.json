@@ -3836,7 +3836,9 @@
       "TRAINER_LADY_SELPHY_REWARD",
       "ITEM_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF"
     ],
-    "events": [],
+    "events": [
+      "EVENT_RESCUE_SELPHY"
+    ],
     "exits": {
       "REGION_FIVE_ISLAND_RESORT_GORGEOUS/NEAR_RESORT": "Follow Selphy"
     },

@@ -381,6 +381,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Pokemon Tower 6F Stairs (South)"), lambda state: state.has("Silph Scope", player))
 
     # Route 12
+    set_rule(get_location("Route 12 Fishing House - Fishing Guru's Brother (Show Magikarp)"),
+             lambda state: state.has("Magikarp", player))
     set_rule(get_entrance("Route 12 West Play Poke Flute"), lambda state: state.has("Poke Flute", player))
     set_rule(get_entrance("Route 12 North Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 12 Center Surfing Spot"), lambda state: can_surf(state))
@@ -724,10 +726,14 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has("Buy Lemonade", player))
 
         # Resort Gorgeous
+        set_rule(get_location("Resort Gorgeous House - Selphy"),
+                 lambda state: state.has_all(["Rescue Selphy", world.resort_gorgeous_mon[1]], player))
         set_rule(get_entrance("Resort Gorgeous Near Resort Surfing Spot"), lambda state: can_surf(state))
         set_rule(get_entrance("Resort Gorgeous Near Cave Surfing Spot"), lambda state: can_surf(state))
 
         # Water Path
+        set_rule(get_location("Water Path Heracross Woman's House - Heracross Woman"),
+                 lambda state: state.has("Heracross", player))
         set_rule(get_entrance("Water Path South Surfing Spot"), lambda state: can_surf(state))
         set_rule(get_entrance("Water Path North Surfing Spot (South)"), lambda state: can_surf(state))
         set_rule(get_entrance("Water Path North Surfing Spot (North)"), lambda state: can_surf(state))

@@ -115,6 +115,11 @@
     "item": "Help Lorelei",
     "tags": ["Event"]
   },
+  "EVENT_RESCUE_SELPHY": {
+    "name": "Lost Cave B1F Room 10 - Lady Selphy Battle",
+    "item": "Rescue Selphy",
+    "tags": ["Event"]
+  },
   "EVENT_LEARN_ROCKET_WAREHOUSE_PASSWORD_2": {
     "name": "Dotted Hole Sapphire Room - Gideon Steals Sapphire",
     "item": "Learn Yes Nah Chansey",

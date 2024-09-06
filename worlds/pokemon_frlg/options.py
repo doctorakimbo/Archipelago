@@ -2,7 +2,7 @@
 Option definitions for Pokémon FireRed/LeafGreen
 """
 from dataclasses import dataclass
-from Options import Choice, NamedRange, OptionSet, PerGameCommonOptions, Range, Toggle
+from Options import Choice, DefaultOnToggle, NamedRange, OptionSet, PerGameCommonOptions, Range, Toggle
 from .data import data
 
 
@@ -36,15 +36,13 @@ class KantoOnly(Toggle):
     filler item.
     """
     display_name = "Kanto Only"
-    default = 0
 
 
-class ShuffleBadges(Toggle):
+class ShuffleBadges(DefaultOnToggle):
     """
     Shuffle Gym Badges into the general item pool. If turned off, Badges will be shuffled among themselves.
     """
     display_name = "Shuffle Badges"
-    default = 1
 
 
 class ShuffleHiddenItems(Choice):
@@ -73,7 +71,6 @@ class ExtraKeyItems(Toggle):
     - Hidden Item in the Cerulean Gym (requires Surf & Itemfinder)
     """
     display_name = "Extra Key Items"
-    default = 0
 
 
 class Trainersanity(Toggle):
@@ -83,7 +80,6 @@ class Trainersanity(Toggle):
     Trainers are no longer missable. Each trainer will add a random filler item into the pool.
     """
     display_name = "Trainersanity"
-    default = 0
 
 
 class ShuffleFlyDestinationUnlocks(Toggle):
@@ -92,7 +88,15 @@ class ShuffleFlyDestinationUnlocks(Toggle):
     fly destination gives a random item.
     """
     display_name = "Shuffle Fly Destination Unlocks"
-    default = 0
+
+
+class PokemonRequestLocations(Toggle):
+    """
+    Shuffle the locations that require you to show a specific Pokémon to an NPC. If turned on, the Pokémon that are
+    required will be found somewhere in the wild. Talking to the NPC that wants to see the Pokémon will provide you with
+    the Pokédex info for where to find it as well as tell you the item they'll give.
+    """
+    display_name = "Include Pokémon Request Locations"
 
 
 class ItemfinderRequired(Choice):
@@ -111,12 +115,11 @@ class ItemfinderRequired(Choice):
     option_required = 2
 
 
-class FlashRequired(Toggle):
+class FlashRequired(DefaultOnToggle):
     """
     Sets whether HM05 Flash is logically required to navigate Rock Tunnel.
     """
     display_name = "Flash Required"
-    default = 1
 
 
 class RemoveBadgeRequirement(OptionSet):
@@ -218,12 +221,11 @@ class PewterCityRoadblock(Choice):
     option_any_badge = 4
 
 
-class CeruleanCityRoadblocks(Toggle):
+class CeruleanCityRoadblocks(DefaultOnToggle):
     """
     Sets whether the Policeman and Slowpoke are blocking the exits of the city until you save Bill.
     """
     display_name = "Cerulean City Roadblocks"
-    default = 1
 
 
 class ViridianGymRequirement(Choice):
@@ -353,7 +355,6 @@ class LevelScaling(Toggle):
     Sets whether encounter levels are scaled by sphere access.
     """
     display_name = "Level Scaling"
-    default = 0
 
 
 class ModifyTrainerLevels(Range):
@@ -744,6 +745,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
+    pokemon_request_locations: PokemonRequestLocations
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired

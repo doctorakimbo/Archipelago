@@ -1698,6 +1698,10 @@
     "name": "Three Island Town - Anti-Biker",
     "tags": ["NPCGift"]
   },
+  "NPC_GIFT_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE": {
+    "name": "Resort Gorgeous House - Selphy",
+    "tags": ["NPCGift", "PokemonRequest"]
+  },
   "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH": {
     "name": "Silph Co. 11F - President",
     "tags": ["NPCGift"]
@@ -1705,6 +1709,14 @@
   "NPC_GIFT_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER": {
     "name": "Two Island Game Corner - Lostelle's Dad",
     "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1": {
+    "name": "Water Path Heracross Woman's House - Heracross Woman",
+    "tags": ["NPCGift", "PokemonRequest"]
+  },
+  "NPC_GIFT_GOT_NET_BALL_FROM_ROUTE12_FISHING_HOUSE": {
+    "name": "Route 12 Fishing House - Fishing Guru's Brother (Show Magikarp)",
+    "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL": {
     "name": "Three Isle Path - Prospector",
@@ -2628,7 +2640,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_LADY_SELPHY_REWARD": {
-    "name": "Lost Cave Room 10 - Lady Selphy Reward",
+    "name": "Lost Cave B1F Room 10 - Lady Selphy Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_ALI_REWARD": {

@@ -1261,7 +1261,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE"
+    ],
     "events": [],
     "exits": {},
     "warps": {
@@ -1473,7 +1475,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1"
+    ],
     "events": [],
     "exits": {},
     "warps": {
