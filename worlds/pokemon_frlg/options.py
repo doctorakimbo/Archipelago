@@ -82,6 +82,15 @@ class Trainersanity(Toggle):
     display_name = "Trainersanity"
 
 
+class Famesanity(Toggle):
+    """
+    Unlocking entries in the Fame Checker gives you an item.
+
+    Each entry will add a random filler item into the pool.
+    """
+    display_name = "Famesanity"
+
+
 class ShuffleFlyDestinationUnlocks(Toggle):
     """
     Shuffles the ability to fly to Pokémon Centers into the pool. Entering the map that normally would unlock the
@@ -120,6 +129,15 @@ class FlashRequired(DefaultOnToggle):
     Sets whether HM05 Flash is logically required to navigate Rock Tunnel.
     """
     display_name = "Flash Required"
+
+
+class FameCheckerRequired(DefaultOnToggle):
+    """
+    Sets whether it is required to have the Fame Checker in order unlock entries.
+
+    All Fame Checker entries that are one time occurences have been changed so that you can trigger them repeatedly.
+    """
+    display_name = "Fame Checker Required"
 
 
 class RemoveBadgeRequirement(OptionSet):
@@ -744,11 +762,13 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     shuffle_hidden: ShuffleHiddenItems
     extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
+    famesanity: Famesanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
     pokemon_request_locations: PokemonRequestLocations
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
+    fame_checker_required: FameCheckerRequired
     remove_badge_requirement: RemoveBadgeRequirement
     oaks_aide_route_2: OaksAideRoute2
     oaks_aide_route_10: OaksAideRoute10

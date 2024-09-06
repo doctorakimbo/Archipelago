@@ -1,8 +1,9 @@
 from typing import TYPE_CHECKING, Dict, List, Optional, Set, Tuple
 from NetUtils import ClientStatus
+from Options import Toggle
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
-from .data import data
+from .data import data, FAMESANITY_OFFSET
 from .items import reverse_offset_item_value
 from .locations import offset_flag
 from .options import Goal
@@ -222,7 +223,7 @@ class PokemonFRLGClient(BizHawkClient):
             # Read flags in 2 chunks
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
-                [(sb1_address + 0x1090, 0x90, "System Bus")],  # Flags
+                [(sb1_address + 0x10E0, 0x90, "System Bus")],  # Flags
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
             )
 
@@ -233,23 +234,37 @@ class PokemonFRLGClient(BizHawkClient):
 
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
-                [(sb1_address + 0x1120, 0x90, "System Bus")],  # Flags continued
+                [(sb1_address + 0x1170, 0x90, "System Bus")],  # Flags continued
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
             )
 
             if read_result is not None:
                 flag_bytes += read_result[0]
 
+            # Read pokedex flags
+            pokemon_caught_bytes = bytes(0)
+            pokedex_read_status = False
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
                 [(sb2_address + 0x028, 0x34, "System Bus")],  # Caught Pokémon
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 2"]]
             )
 
-            if read_result is None:  # Not in overworld or save block moved
-                return
+            if read_result is not None:
+                pokemon_caught_bytes = read_result[0]
+                pokedex_read_status = True
 
-            pokemon_caught_bytes = read_result[0]
+            # Read fame checker flags
+            fame_checker_bytes = bytes(0)
+            if ctx.slot_data["famesanity"] == Toggle.option_true:
+                read_result = await bizhawk.guarded_read(
+                    ctx.bizhawk_ctx,
+                    [(sb1_address + 0x3AC4, 0x20, "System Bus")],  # Fame Checker Data
+                    [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
+                )
+
+                if read_result is not None:
+                    fame_checker_bytes = read_result[0]
 
             game_clear = False
             local_set_events = {flag_name: False for flag_name in TRACKER_EVENT_FLAGS}
@@ -276,11 +291,27 @@ class PokemonFRLGClient(BizHawkClient):
                         if flag_id in FLY_UNLOCK_FLAG_MAP:
                             local_set_fly_unlocks[FLY_UNLOCK_FLAG_MAP[flag_id]] = True
 
+            # Check fame checker
+            if ctx.slot_data["famesanity"]:
+                index = 0
+                for byte_i, byte in enumerate(fame_checker_bytes):
+                    if byte_i % 2 == 1:
+                        continue
+                    for i in range(2, 8):
+                        if byte & (1 << i) != 0:
+                            location_id = offset_flag(index + FAMESANITY_OFFSET)
+
+                            if location_id in ctx.server_locations:
+                                local_checked_locations.add(location_id)
+
+                            index += 1
+
             # Get caught Pokémon count
-            for byte_i, byte in enumerate(pokemon_caught_bytes):
-                for i in range(8):
-                    if byte & (1 << i) != 0:
-                        caught_pokemon += 1
+            if pokedex_read_status:
+                for byte_i, byte in enumerate(pokemon_caught_bytes):
+                    for i in range(8):
+                        if byte & (1 << i) != 0:
+                            caught_pokemon += 1
 
             # Send locations
             if local_checked_locations != self.local_checked_locations:
@@ -332,15 +363,16 @@ class PokemonFRLGClient(BizHawkClient):
                 self.local_set_fly_unlocks = local_set_fly_unlocks
 
             # Send caught Pokémon amount
-            if caught_pokemon != self.caught_pokemon and ctx.slot is not None:
-                await ctx.send_msgs([{
-                    "cmd": "Set",
-                    "key": f"pokemon_frlg_pokedex_{ctx.team}_{ctx.slot}",
-                    "default": 0,
-                    "want_reply": False,
-                    "operations": [{"operation": "replace", "value": caught_pokemon},]
-                }])
-                self.caught_pokemon = caught_pokemon
+            if pokedex_read_status:
+                if caught_pokemon != self.caught_pokemon and ctx.slot is not None:
+                    await ctx.send_msgs([{
+                        "cmd": "Set",
+                        "key": f"pokemon_frlg_pokedex_{ctx.team}_{ctx.slot}",
+                        "default": 0,
+                        "want_reply": False,
+                        "operations": [{"operation": "replace", "value": caught_pokemon},]
+                    }])
+                    self.caught_pokemon = caught_pokemon
 
         except bizhawk.RequestFailedError:
             # Exit handler and return to main loop to reconnect

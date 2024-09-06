@@ -347,12 +347,19 @@ def randomize_moves(world: "PokemonFRLGWorld") -> None:
 
 
 def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
+    game_version = world.options.game_version.current_key
+
     if world.options.wild_pokemon == RandomizeWildPokemon.option_vanilla:
+        # If Famesanity and Pokémon Request locations are on, we need to place Togepi somewhere
+        if world.options.famesanity and world.options.pokemon_request_locations and not world.options.kanto_only:
+            map_data = world.modified_maps["MAP_FIVE_ISLAND_MEMORIAL_PILLAR"]
+            slots = map_data.land_encounters.slots[game_version]
+            for slot in slots:
+                slot.species_id = data.constants["SPECIES_TOGEPI"]
         return
 
     from collections import defaultdict
 
-    game_version = world.options.game_version.current_key
     min_pokemon_needed = math.ceil(max(world.options.oaks_aide_route_2.value,
                                        world.options.oaks_aide_route_10.value,
                                        world.options.oaks_aide_route_11.value,
@@ -383,6 +390,8 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         priority_species.append(data.constants["SPECIES_MAGIKARP"])
         if not world.options.kanto_only:
             priority_species.append(data.constants["SPECIES_HERACROSS"])
+            if world.options.famesanity:
+                priority_species.extend(["SPECIES_TOGEPI", "SPECIES_TOGETIC"])
 
     map_names = list(world.modified_maps.keys())
     world.random.shuffle(map_names)

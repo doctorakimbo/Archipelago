@@ -213,6 +213,8 @@ class PokemonFRLGWorld(World):
             tags.add("ExtraKeyItem")
         if self.options.trainersanity:
             tags.add("Trainer")
+        if self.options.famesanity:
+            tags.add("FameChecker")
         if self.options.pokemon_request_locations:
             tags.add("PokemonRequest")
         create_locations_from_tags(self, regions, tags)
@@ -257,6 +259,33 @@ class PokemonFRLGWorld(World):
                     "Cerulean Cave B1F - East Plateau Item",
                     "Cerulean Cave 1F - West Plateau Hidden Item"
                 ])
+
+            if self.options.famesanity:
+                excluded_locations.extend([
+                    "Professor Oak's Lab - Oak's Aide's Info (Daisy 1)",
+                    "Professor Oak's Lab - Oak's Aide's Info (Oak 6)",
+                    "Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)",
+                    "Pokemon Fan Club - Worker's Info (Daisy 2)",
+                    "Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)",
+                    "Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)",
+                    "Celadon Department Store 2F - Woman's Info (Lance 4)",
+                    "Fuchsia City - Koga's Daughter's Info (Koga 4)",
+                    "Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)",
+                    "Saffron City - Battle Girl's Info (Lance 3)",
+                    "Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)",
+                    "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)",
+                    "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)",
+                    "Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)",
+                    "Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"
+                ])
+
+                if not self.options.kanto_only:
+                    excluded_locations.extend([
+                        "Ember Spa - Black Belt's Info (Bruno 4)",
+                        "Two Island Town - Beauty's Info (Bruno 5)",
+                        "Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)",
+                        "Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"
+                    ])
 
             exclude_locations(excluded_locations)
 
@@ -312,6 +341,7 @@ class PokemonFRLGWorld(World):
                                                            self.player))
                 location.progress_type = LocationProgressType.DEFAULT
                 location.address = None
+                location.show_in_spoiler = False
 
         if not self.options.shuffle_fly_destination_unlocks:
             create_events_for_unrandomized_items("FlyUnlock")
@@ -482,14 +512,18 @@ class PokemonFRLGWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data = self.options.as_dict(
+            "goal",
             "kanto_only",
             "shuffle_badges",
             "shuffle_hidden",
             "extra_key_items",
             "trainersanity",
+            "famesanity",
             "shuffle_fly_destination_unlocks",
+            "pokemon_request_locations",
             "itemfinder_required",
             "flash_required",
+            "fame_checker_required",
             "remove_badge_requirement",
             "oaks_aide_route_2",
             "oaks_aide_route_10",

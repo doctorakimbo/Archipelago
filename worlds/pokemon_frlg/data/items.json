@@ -108,7 +108,7 @@
   },
   "ITEM_FAME_CHECKER": {
     "name": "Fame Checker",
-    "classification": "FILLER",
+    "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
   "ITEM_GOOD_ROD": {

@@ -45,6 +45,7 @@
       "TRAINER_BUG_CATCHER_ROBBY_REWARD",
       "ITEM_MT_MOON_1F_RARE_CANDY",
       "ITEM_MT_MOON_1F_ESCAPE_ROPE",
+      "FAME_CHECKER_BROCK_5",
       "TRAINER_LASS_MIRIAM_REWARD",
       "TRAINER_YOUNGSTER_JOSH_REWARD",
       "TRAINER_HIKER_MARCOS_REWARD",
@@ -1047,6 +1048,7 @@
     "locations": [
       "TRAINER_TEAM_ROCKET_GRUNT_19_REWARD",
       "TRAINER_TEAM_ROCKET_GRUNT_20_REWARD",
+      "FAME_CHECKER_MRFUJI_2",
       "TRAINER_TEAM_ROCKET_GRUNT_21_REWARD",
       "HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL"
     ],
@@ -1254,6 +1256,7 @@
       "ITEM_ROCKET_HIDEOUT_B4F_CALCIUM",
       "TRAINER_TEAM_ROCKET_GRUNT_16_REWARD",
       "TRAINER_TEAM_ROCKET_GRUNT_17_REWARD",
+      "FAME_CHECKER_GIOVANNI_1",
       "TRAINER_BOSS_GIOVANNI_REWARD",
       "NPC_GIFT_GOT_SILPH_SCOPE",
       "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL",
@@ -1528,7 +1531,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
-    "locations": [],
+    "locations": [
+      "FAME_CHECKER_KOGA_6"
+    ],
     "events": [],
     "exits": {},
     "warps": {
@@ -1832,7 +1837,8 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "ITEM_SILPH_CO_5F_PROTEIN"
+      "ITEM_SILPH_CO_5F_PROTEIN",
+      "FAME_CHECKER_GIOVANNI_2"
     ],
     "events": [],
     "exits": {},
@@ -2008,7 +2014,8 @@
       "TRAINER_TEAM_ROCKET_GRUNT_36_REWARD",
       "TRAINER_SCIENTIST_PARKER_REWARD",
       "ITEM_SILPH_CO_8F_IRON",
-      "HIDDEN_ITEM_SILPH_CO_8F_NUGGET"
+      "HIDDEN_ITEM_SILPH_CO_8F_NUGGET",
+      "FAME_CHECKER_GIOVANNI_3"
     ],
     "events": [],
     "exits": {
@@ -3631,6 +3638,7 @@
       "TRAINER_TEAM_ROCKET_ADMIN_2_REWARD",
       "TRAINER_SCIENTIST_GIDEON_REWARD",
       "NPC_GIFT_RECOVERED_SAPPHIRE",
+      "FAME_CHECKER_GIOVANNI_6",
       "HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NEST_BALL"
     ],
     "events": [
