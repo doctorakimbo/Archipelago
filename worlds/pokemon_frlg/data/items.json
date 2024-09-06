@@ -1579,5 +1579,26 @@
     "name": "TM50",
     "classification": "USEFUL",
     "tags": ["TM"]
+  },
+
+  "ITEM_COINS_10": {
+    "name": "10 Coins",
+    "classification": "FILLER",
+    "tags": ["Coins"]
+  },
+  "ITEM_COINS_20": {
+    "name": "20 Coins",
+    "classification": "FILLER",
+    "tags": ["Coins"]
+  },
+  "ITEM_COINS_40": {
+    "name": "40 Coins",
+    "classification": "FILLER",
+    "tags": ["Coins"]
+  },
+  "ITEM_COINS_100": {
+    "name": "100 Coins",
+    "classification": "FILLER",
+    "tags": ["Coins"]
   }
 }

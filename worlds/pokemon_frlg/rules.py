@@ -361,6 +361,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_location("Celadon Department Store Roof - Thirsty Girl (Give Lemonade)"),
              lambda state: can_grind_money(state))
     set_rule(get_location("Celadon Department Store Roof - Vending Machine"), lambda state: can_grind_money(state))
+    set_rule(get_location("Celadon Game Corner - Fisherman"), lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner - Scientist"), lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner - Gentleman"), lambda state: state.has("Coin Case", player))
     set_rule(get_entrance("Celadon City Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Celadon City Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Celadon City Near Gym Cuttable Tree"), lambda state: can_cut(state))

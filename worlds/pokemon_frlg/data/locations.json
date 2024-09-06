@@ -933,6 +933,54 @@
     "tags": ["Overworld"]
   },
 
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS": {
+    "name": "Celadon Game Corner - Northwest Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_2": {
+    "name": "Celadon Game Corner - West Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_3": {
+    "name": "Celadon Game Corner - Southwest Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_4": {
+    "name": "Celadon Game Corner - South Hidden Item (Left)",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_5": {
+    "name": "Celadon Game Corner - Center Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_6": {
+    "name": "Celadon Game Corner - North Hidden Item (Left)",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_7": {
+    "name": "Celadon Game Corner - North Hidden Item (Right)",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_8": {
+    "name": "Celadon Game Corner - Northeast Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_9": {
+    "name": "Celadon Game Corner - East Hidden Item (Left)",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_10": {
+    "name": "Celadon Game Corner - East Hidden Item (Right)",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_11": {
+    "name": "Celadon Game Corner - Southeast Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_12": {
+    "name": "Celadon Game Corner - South Hidden Item (Right)",
+    "tags": ["Hidden"]
+  },
   "HIDDEN_ITEM_CELADON_CITY_PP_UP": {
     "name": "Celadon City - Hidden Item Near Cuttable Tree",
     "tags": ["Hidden"]
@@ -1618,6 +1666,18 @@
     "tags": ["Hidden"]
   },
 
+  "NPC_GIFT_GOT_10_COINS_FROM_GAMBLER": {
+    "name": "Celadon Game Corner - Fisherman",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_20_COINS_FROM_GAMBLER": {
+    "name": "Celadon Game Corner - Scientist",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_20_COINS_FROM_GAMBLER_2": {
+    "name": "Celadon Game Corner - Gentleman",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
     "name": "Route 16 Gate 2F - Oak's Aide",
     "tags": ["NPCGift"]
