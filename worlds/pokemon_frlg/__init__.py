@@ -22,8 +22,8 @@ from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
 from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FreeFlyLocation, GameVersion, Goal,
-                      RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, ShuffleHiddenItems,
-                      ShuffleBadges, TownMapFlyLocation, ViridianCityRoadblock)
+                      RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, SeviiIslandPasses,
+                      ShuffleHiddenItems, ShuffleBadges, SilphCoCardKey, TownMapFlyLocation, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -187,6 +187,42 @@ class PokemonFRLGWorld(World):
                                 self.player, self.player_name)
                 self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
 
+        card_key_vanilla = ["Card Key"]
+        card_key_split = ["Card Key 2F", "Card Key 3F", "Card Key 4F", "Card Key 5F", "Card Key 6F",
+                          "Card Key 7F", "Card Key 8F", "Card Key 9F", "Card Key 10F", "Card Key 11F"]
+        card_key_progressive = ["Progressive Card Key"]
+        passes_vanilla = ["Tri Pass", "Rainbow Pass"]
+        passes_split = ["One Pass", "Two Pass", "Three Pass", "Four Pass", "Five Pass", "Six Pass", "Seven Pass"]
+        passes_progressive = ["Progressive Pass"]
+        not_allowed_card_key = list()
+        not_allowed_pass = list()
+
+        if self.options.card_key == SilphCoCardKey.option_vanilla:
+            not_allowed_card_key.extend(card_key_split)
+            not_allowed_card_key.extend(card_key_progressive)
+        elif self.options.card_key == SilphCoCardKey.option_split:
+            not_allowed_card_key.extend(card_key_vanilla)
+            not_allowed_card_key.extend(card_key_progressive)
+        elif self.options.card_key == SilphCoCardKey.option_progressive:
+            not_allowed_card_key.extend(card_key_vanilla)
+            not_allowed_card_key.extend(card_key_split)
+
+        if self.options.island_passes == SeviiIslandPasses.option_vanilla:
+            not_allowed_pass.extend(passes_split)
+            not_allowed_pass.extend(passes_progressive)
+        elif self.options.island_passes == SeviiIslandPasses.option_split:
+            not_allowed_pass.extend(passes_vanilla)
+            not_allowed_pass.extend(passes_progressive)
+        elif (self.options.island_passes == SeviiIslandPasses.option_progressive or
+              self.options.island_passes == SeviiIslandPasses.option_progressive_split):
+            not_allowed_pass.extend(passes_vanilla)
+            not_allowed_pass.extend(passes_split)
+
+        self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
+                                              if k not in not_allowed_card_key}
+        self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
+                                              if k not in not_allowed_pass}
+
         create_scaling_data(self)
         randomize_types(self)
         randomize_abilities(self)
@@ -217,6 +253,11 @@ class PokemonFRLGWorld(World):
             tags.add("FameChecker")
         if self.options.pokemon_request_locations:
             tags.add("PokemonRequest")
+        if self.options.card_key != SilphCoCardKey.option_vanilla:
+            tags.add("SplitCardKey")
+        if (self.options.island_passes == SeviiIslandPasses.option_split or
+                self.options.island_passes == SeviiIslandPasses.option_progressive_split):
+            tags.add("SplitIslandPasses")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
@@ -301,6 +342,29 @@ class PokemonFRLGWorld(World):
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
 
+        if self.options.card_key == SilphCoCardKey.option_split:
+            itempool = [item for item in itempool if item.name != "Card Key"]
+            itempool.append(self.create_item("Card Key 11F"))
+        elif self.options.card_key == SilphCoCardKey.option_progressive:
+            itempool = [item for item in itempool if "Card Key" not in item.name]
+            for _ in range(10):
+                itempool.append(self.create_item("Progressive Card Key"))
+
+        if self.options.island_passes == SeviiIslandPasses.option_progressive:
+            itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
+            for _ in range(2):
+                itempool.append(self.create_item("Progressive Pass"))
+        elif self.options.island_passes == SeviiIslandPasses.option_split:
+            itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
+            itempool.append(self.create_item("One Pass"))
+            itempool.append(self.create_item("Four Pass"))
+        elif self.options.island_passes == SeviiIslandPasses.option_progressive_split:
+            items_to_remove = ["Tri Pass", "Two Pass", "Three Pass", "Rainbow Pass",
+                               "Five Pass", "Six Pass", "Seven Pass"]
+            itempool = [item for item in itempool if item.name not in items_to_remove]
+            for _ in range(7):
+                itempool.append(self.create_item("Progressive Pass"))
+
         if self.options.kanto_only:
             items_to_add = ["HM06 Rock Smash", "HM07 Waterfall"]
             for item_name in items_to_add:
@@ -310,11 +374,16 @@ class PokemonFRLGWorld(World):
                 item_to_remove = self.random.choice(filler_items)
                 itempool.remove(item_to_remove)
 
-        for item in self.options.start_inventory.keys():
+        for item, quantity in self.options.start_inventory.value.items():
             if "Unique" in frlg_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
-                itempool_len = len(itempool)
-                itempool = [i for i in itempool if i.name != item]
-                removed_items_count = itempool_len - len(itempool)
+                removed_items_count = 0
+                for _ in range(quantity):
+                    try:
+                        item_to_remove = next(i for i in itempool if i.name == item)
+                        itempool.remove(item_to_remove)
+                        removed_items_count += 1
+                    except StopIteration:
+                        break
                 while removed_items_count > 0:
                     itempool.append(self.create_item(get_random_item(self, ItemClassification.filler)))
                     removed_items_count -= 1

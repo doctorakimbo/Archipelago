@@ -338,6 +338,7 @@
     "kanto": false,
     "locations": [
       "ITEM_TWO_ISLAND_REVIVE",
+      "NPC_GIFT_GOT_TWO_PASS",
       "FAME_CHECKER_BRUNO_5"
     ],
     "events": [
@@ -566,7 +567,8 @@
       "TRAINER_BIKER_GOON_2_REWARD",
       "TRAINER_BIKER_GOON_3_REWARD",
       "TRAINER_CUE_BALL_PAXTON_REWARD",
-      "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER"
+      "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER",
+      "NPC_GIFT_GOT_THREE_PASS"
     ],
     "events": [],
     "exits": {
@@ -1029,7 +1031,9 @@
     "has_water": false,
     "has_fishing": true,
     "kanto": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_FIVE_PASS"
+    ],
     "events": [],
     "exits": {
       "REGION_FIVE_ISLAND/WATER": "Five Island Town Surfing Spot",
@@ -1328,6 +1332,7 @@
     "has_fishing": false,
     "kanto": false,
     "locations": [
+      "NPC_GIFT_GOT_SIX_PASS",
       "HIDDEN_ITEM_SIX_ISLAND_LEPPA_BERRY"
     ],
     "events": [],
@@ -1694,7 +1699,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_SEVEN_PASS"
+    ],
     "events": [],
     "exits": {
       "REGION_SEVEN_ISLAND/VISIT": "Seven Island Town Visit",

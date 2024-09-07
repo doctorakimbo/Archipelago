@@ -8,7 +8,7 @@ from worlds.generic.Rules import add_rule, set_rule
 from .data import data
 from .options import (ViridianCityRoadblock, ViridianGymRequirement, Route22GateRequirement, ItemfinderRequired,
                       PewterCityRoadblock, CeruleanCaveRequirement, Route23GuardRequirement, EliteFourRequirement,
-                      ShuffleHiddenItems, GameVersion, Goal)
+                      ShuffleHiddenItems, GameVersion, Goal, SilphCoCardKey, SeviiIslandPasses)
 
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -44,6 +44,16 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         "Green Path Water", "Outcast Island Water", "Canyon Entrance", "Sevault Canyon", "Tanoby Ruins Scufib Island",
         "Tanoby Ruins Weepth Island", "Tanoby Ruins Monean Island", "Trainer Tower Exterior South"
     ]
+
+    sevii_island_passes: Dict[int, List[str]] = {
+        1: ["Tri Pass", "One Pass"],
+        2: ["Tri Pass", "Two Pass"],
+        3: ["Tri Pass", "Three Pass"],
+        4: ["Rainbow Pass", "Four Pass"],
+        5: ["Rainbow Pass", "Five Pass"],
+        6: ["Rainbow Pass", "Six Pass"],
+        7: ["Rainbow Pass", "Seven Pass"]
+    }
 
     rematchable_trainer_regions = kanto_rematchable_trainer_regions
     if not options.kanto_only:
@@ -220,6 +230,17 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     def can_grind_money(state: CollectionState):
         return state.has("Vs. Seeker", player) and can_reach_any_region(rematchable_trainer_regions, state)
+
+    def can_open_silph_door(floor: int, state: CollectionState):
+        return (state.has_any(["Card Key", f"Card Key {floor}F"], player) or
+                state.has("Progressive Card Key", player, floor - 1))
+
+    def can_sail_island(island: int, state: CollectionState):
+        allowed_passes = sevii_island_passes[island]
+        if (options.island_passes == SeviiIslandPasses.option_vanilla or
+                options.island_passes == SeviiIslandPasses.option_progressive):
+            island = 1 if island <= 3 else 2
+        return state.has_any(allowed_passes, player) or state.has("Progressive Pass", player, island)
 
     def get_entrance(entrance: str):
         return multiworld.get_entrance(entrance, player)
@@ -477,36 +498,36 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Saffron Pidgey House"), lambda state: state.has("Liberate Silph Co.", player))
 
     # Silph Co.
-    set_rule(get_entrance("Silph Co. 2F Barrier (Northwest)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 2F Barrier (Southwest)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 2F Northwest Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 2F Southwest Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 3F Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 3F Center Room Barrier (East)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 3F Center Room Barrier (West)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 3F West Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 4F Barrier (West)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 4F Barrier (Center)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 4F North Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 5F Barrier (Northwest)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 5F Barrier (Center)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 5F Barrier (Southwest)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 5F Southwest Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 6F Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 7F Barrier (Center)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 7F Barrier (East)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 7F East Room Barrier (North)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 7F East Room Barrier (South)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 7F Southeast Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 8F Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 8F West Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 9F Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 9F Northwest Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 9F Southwest Room Barrier (East)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 9F Southwest Room Barrier (West)"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 10F Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 10F Southeast Room Barrier"), lambda state: state.has("Card Key", player))
-    set_rule(get_entrance("Silph Co. 11F West Barrier"), lambda state: state.has("Card Key", player))
+    set_rule(get_entrance("Silph Co. 2F Barrier (Northwest)"), lambda state: can_open_silph_door(2, state))
+    set_rule(get_entrance("Silph Co. 2F Barrier (Southwest)"), lambda state: can_open_silph_door(2, state))
+    set_rule(get_entrance("Silph Co. 2F Northwest Room Barrier"), lambda state: can_open_silph_door(2, state))
+    set_rule(get_entrance("Silph Co. 2F Southwest Room Barrier"), lambda state: can_open_silph_door(2, state))
+    set_rule(get_entrance("Silph Co. 3F Barrier"), lambda state: can_open_silph_door(3, state))
+    set_rule(get_entrance("Silph Co. 3F Center Room Barrier (East)"), lambda state: can_open_silph_door(3, state))
+    set_rule(get_entrance("Silph Co. 3F Center Room Barrier (West)"), lambda state: can_open_silph_door(3, state))
+    set_rule(get_entrance("Silph Co. 3F West Room Barrier"), lambda state: can_open_silph_door(3, state))
+    set_rule(get_entrance("Silph Co. 4F Barrier (West)"), lambda state: can_open_silph_door(4, state))
+    set_rule(get_entrance("Silph Co. 4F Barrier (Center)"), lambda state: can_open_silph_door(4, state))
+    set_rule(get_entrance("Silph Co. 4F North Room Barrier"), lambda state: can_open_silph_door(4, state))
+    set_rule(get_entrance("Silph Co. 5F Barrier (Northwest)"), lambda state: can_open_silph_door(5, state))
+    set_rule(get_entrance("Silph Co. 5F Barrier (Center)"), lambda state: can_open_silph_door(5, state))
+    set_rule(get_entrance("Silph Co. 5F Barrier (Southwest)"), lambda state: can_open_silph_door(5, state))
+    set_rule(get_entrance("Silph Co. 5F Southwest Room Barrier"), lambda state: can_open_silph_door(5, state))
+    set_rule(get_entrance("Silph Co. 6F Barrier"), lambda state: can_open_silph_door(6, state))
+    set_rule(get_entrance("Silph Co. 7F Barrier (Center)"), lambda state: can_open_silph_door(7, state))
+    set_rule(get_entrance("Silph Co. 7F Barrier (East)"), lambda state: can_open_silph_door(7, state))
+    set_rule(get_entrance("Silph Co. 7F East Room Barrier (North)"), lambda state: can_open_silph_door(7, state))
+    set_rule(get_entrance("Silph Co. 7F East Room Barrier (South)"), lambda state: can_open_silph_door(7, state))
+    set_rule(get_entrance("Silph Co. 7F Southeast Room Barrier"), lambda state: can_open_silph_door(7, state))
+    set_rule(get_entrance("Silph Co. 8F Barrier"), lambda state: can_open_silph_door(8, state))
+    set_rule(get_entrance("Silph Co. 8F West Room Barrier"), lambda state: can_open_silph_door(8, state))
+    set_rule(get_entrance("Silph Co. 9F Barrier"), lambda state: can_open_silph_door(9, state))
+    set_rule(get_entrance("Silph Co. 9F Northwest Room Barrier"), lambda state: can_open_silph_door(9, state))
+    set_rule(get_entrance("Silph Co. 9F Southwest Room Barrier (East)"), lambda state: can_open_silph_door(9, state))
+    set_rule(get_entrance("Silph Co. 9F Southwest Room Barrier (West)"), lambda state: can_open_silph_door(9, state))
+    set_rule(get_entrance("Silph Co. 10F Barrier"), lambda state: can_open_silph_door(10, state))
+    set_rule(get_entrance("Silph Co. 10F Southeast Room Barrier"), lambda state: can_open_silph_door(10, state))
+    set_rule(get_entrance("Silph Co. 11F West Barrier"), lambda state: can_open_silph_door(11, state))
 
     # Route 19
     set_rule(get_entrance("Route 19 Surfing Spot"), lambda state: can_surf(state))
@@ -593,13 +614,13 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Seven Island Fly Destination"), lambda state: state.has("Fly Seven Island", player))
 
         # Seagallop
-        set_rule(get_entrance("One Island Arrival"), lambda state: state.has("Tri Pass", player))
-        set_rule(get_entrance("Two Island Arrival"), lambda state: state.has("Tri Pass", player))
-        set_rule(get_entrance("Three Island Arrival"), lambda state: state.has("Tri Pass", player))
-        set_rule(get_entrance("Four Island Arrival"), lambda state: state.has("Rainbow Pass", player))
-        set_rule(get_entrance("Five Island Arrival"), lambda state: state.has("Rainbow Pass", player))
-        set_rule(get_entrance("Six Island Arrival"), lambda state: state.has("Rainbow Pass", player))
-        set_rule(get_entrance("Seven Island Arrival"), lambda state: state.has("Rainbow Pass", player))
+        set_rule(get_entrance("One Island Arrival"), lambda state: can_sail_island(1, state))
+        set_rule(get_entrance("Two Island Arrival"), lambda state: can_sail_island(2, state))
+        set_rule(get_entrance("Three Island Arrival"), lambda state: can_sail_island(3, state))
+        set_rule(get_entrance("Four Island Arrival"), lambda state: can_sail_island(4, state))
+        set_rule(get_entrance("Five Island Arrival"), lambda state: can_sail_island(5, state))
+        set_rule(get_entrance("Six Island Arrival"), lambda state: can_sail_island(6, state))
+        set_rule(get_entrance("Seven Island Arrival"), lambda state: can_sail_island(7, state))
 
         # Cinnabar Island
         set_rule(get_entrance("Follow Bill"), lambda state: state.has("Defeat Blaine", player))
@@ -933,6 +954,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             # Water Path
             set_rule(get_location("Water Path Heracross Woman's House - Heracross Woman's Gift"),
                      lambda state: state.has("Heracross", player))
+
+    # Split Card Key
+    if options.card_key != SilphCoCardKey.option_vanilla:
+        # Silph Co.
+        set_rule(get_location("Silph Co. 1F - Receptionist's Gift"),
+                 lambda state: state.has("Liberate Silph Co.", player))
 
     # Evolutions
     set_rule(get_location("Evolution - Bulbasaur"),

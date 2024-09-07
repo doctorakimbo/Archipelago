@@ -105,7 +105,41 @@ class PokemonRequestLocations(Toggle):
     required will be found somewhere in the wild. Talking to the NPC that wants to see the Pokémon will provide you with
     the Pokédex info for where to find it as well as tell you the item they'll give.
     """
-    display_name = "Include Pokémon Request Locations"
+    display_name = "Pokémon Request Locations"
+
+
+class SilphCoCardKey(Choice):
+    """
+    Sets how the card key that unlocks the doors in Silph Co. is handled.
+
+    Vanilla: There is one Card Key in the pool that unlocks every door in Silph Co.
+    Split: The Card Key is split into ten items, one for each floor of Silph Co. that has doors.
+    Progressive: The Card Key is split into ten items, and you will always obtain them in order from 2F to 11F.
+    """
+    display_name = "Silph Co. Card Key"
+    default = 0
+    option_vanilla = 0
+    option_split = 1
+    option_progressive = 2
+
+
+class SeviiIslandPasses(Choice):
+    """
+    Sets how the passes that allow you to travel to the Sevii Islands are handled.
+
+    Vanilla: The Tri Pass and Rainbow Pass are two separate items in the pool and can be found in any order.
+    Progressive: There are two Progressive Passes in the pool. You will always obtain the Tri Pass before the Rainbow
+                 Pass.
+    Split: The Tri Pass and Rainbow Pass are split into seven items, one for each island.
+    Progressive Split: The Tri Pass and Rainbow Pass are split into seven items, and you will always obtain the Passes
+                       in order from the First Pass to the Seventh Pass.
+    """
+    display_name = "Sevii Island Passes"
+    default = 0
+    option_vanilla = 0
+    option_progressive = 1
+    option_split = 2
+    option_progressive_split = 3
 
 
 class ItemfinderRequired(Choice):
@@ -765,6 +799,8 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     famesanity: Famesanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
     pokemon_request_locations: PokemonRequestLocations
+    card_key: SilphCoCardKey
+    island_passes: SeviiIslandPasses
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired

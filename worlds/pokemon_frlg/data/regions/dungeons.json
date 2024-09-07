@@ -1580,7 +1580,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_2F_CARD_KEY"
+    ],
     "events": [],
     "exits": {
       "REGION_SILPH_CO_ELEVATOR/MAIN": "Silph Co. 1F Elevator"
@@ -1663,6 +1665,7 @@
     "kanto": true,
     "locations": [
       "TRAINER_TEAM_ROCKET_GRUNT_25_REWARD",
+      "NPC_GIFT_GOT_3F_CARD_KEY",
       "HIDDEN_ITEM_SILPH_CO_3F_PROTEIN"
     ],
     "events": [],
@@ -1776,7 +1779,8 @@
     "locations": [
       "ITEM_SILPH_CO_4F_FULL_HEAL",
       "ITEM_SILPH_CO_4F_ESCAPE_ROPE",
-      "ITEM_SILPH_CO_4F_MAX_REVIVE"
+      "ITEM_SILPH_CO_4F_MAX_REVIVE",
+      "NPC_GIFT_GOT_4F_CARD_KEY"
     ],
     "events": [],
     "exits": {},
@@ -1822,6 +1826,7 @@
     "has_fishing": false,
     "kanto": true,
     "locations": [
+      "NPC_GIFT_GOT_5F_CARD_KEY",
       "HIDDEN_ITEM_SILPH_CO_5F_ELIXIR"
     ],
     "events": [],
@@ -1873,6 +1878,7 @@
     "kanto": true,
     "locations": [
       "TRAINER_TEAM_ROCKET_GRUNT_30_REWARD",
+      "NPC_GIFT_GOT_6F_CARD_KEY",
       "HIDDEN_ITEM_SILPH_CO_6F_CARBOS",
       "TRAINER_SCIENTIST_TAYLOR_REWARD",
       "TRAINER_TEAM_ROCKET_GRUNT_31_REWARD"
@@ -1976,7 +1982,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_7F_CARD_KEY"
+    ],
     "events": [],
     "exits": {},
     "warps": {}
@@ -2038,7 +2046,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_8F_CARD_KEY"
+    ],
     "events": [],
     "exits": {
       "REGION_SILPH_CO_8F/MAIN": "Silph Co. 8F West Room Barrier"
@@ -2080,6 +2090,7 @@
     "kanto": true,
     "locations": [
       "HIDDEN_ITEM_SILPH_CO_9F_MAX_POTION",
+      "NPC_GIFT_GOT_9F_CARD_KEY",
       "HIDDEN_ITEM_SILPH_CO_9F_CALCIUM"
     ],
     "events": [],
@@ -2143,7 +2154,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_10F_CARD_KEY"
+    ],
     "events": [],
     "exits": {
       "REGION_SILPH_CO_10F/MAIN": "Silph Co. 10F Southeast Room Barrier"

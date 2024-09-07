@@ -391,7 +391,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         if not world.options.kanto_only:
             priority_species.append(data.constants["SPECIES_HERACROSS"])
             if world.options.famesanity:
-                priority_species.extend(["SPECIES_TOGEPI", "SPECIES_TOGETIC"])
+                priority_species.extend([data.constants["SPECIES_TOGEPI"], data.constants["SPECIES_TOGETIC"]])
 
     map_names = list(world.modified_maps.keys())
     world.random.shuffle(map_names)
