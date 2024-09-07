@@ -20,21 +20,21 @@ LOCATION_GROUPS = {
         "Viridian Gym - Prize"
     },
     "Gym TMs": {
-        "Pewter Gym - Brock TM",
-        "Cerulean Gym - Misty TM",
-        "Vermilion Gym - Lt. Surge TM",
-        "Celadon Gym - Erika TM",
-        "Fuchsia Gym - Koga TM",
-        "Saffron Gym - Sabrina TM",
-        "Cinnabar Gym - Blaine TM",
-        "Viridian Gym - Giovanni TM"
+        "Pewter Gym - Brock's TM",
+        "Cerulean Gym - Misty's TM",
+        "Vermilion Gym - Lt. Surge's TM",
+        "Celadon Gym - Erika's TM",
+        "Fuchsia Gym - Koga's TM",
+        "Saffron Gym - Sabrina's TM",
+        "Cinnabar Gym - Blaine's TM",
+        "Viridian Gym - Giovanni's TM"
     },
     "Oak's Aides": {
-        "Route 2 Gate - Oak's Aide",
-        "Route 10 Pokemon Center 1F - Oak's Aide",
-        "Route 11 Gate 2F - Oak's Aide",
-        "Route 16 Gate 2F - Oak's Aide",
-        "Route 15 Gate 2F - Oak's Aide"
+        "Route 2 Gate - Oak's Aide's Gift",
+        "Route 10 Pokemon Center 1F - Oak's Aide's Gift",
+        "Route 11 Gate 2F - Oak's Aide's Gift",
+        "Route 16 Gate 2F - Oak's Aide's Gift",
+        "Route 15 Gate 2F - Oak's Aide's Gift"
     }
 }
 

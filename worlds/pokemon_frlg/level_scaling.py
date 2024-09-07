@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 from BaseClasses import CollectionState
 
+from .options import FlashRequired
 from .util import bound
 
 if TYPE_CHECKING:
@@ -61,7 +62,7 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
         "Mt. Moon B2F": [{"name": "Team Rocket Grunt 1", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT"]},
                          {"name": "Team Rocket Grunt 4", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT_4"]},
                          {"name": "Super Nerd Miguel", "data_ids": ["TRAINER_SUPER_NERD_MIGUEL"]}],
-        "Mt. Moon B2F Center": [{"name": "Team Rocket Grunt 2", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT_2"]}],
+        "Mt. Moon B2F South": [{"name": "Team Rocket Grunt 2", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT_2"]}],
         "Mt. Moon B2F Northeast": [{"name": "Team Rocket Grunt 3", "data_ids": ["TRAINER_TEAM_ROCKET_GRUNT_3"]}],
         "Route 4 Northeast": [{"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]}],
         "Cerulean City": [{"name": "Cerulean City Rival", "data_ids": ["TRAINER_RIVAL_CERULEAN_BULBASAUR",
@@ -858,8 +859,7 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
         "Power Plant": [{"name": "Static Electrode 1", "data_ids": ["STATIC_POKEMON_ELECTRODE_1"]},
                         {"name": "Static Electrode 2", "data_ids": ["STATIC_POKEMON_ELECTRODE_2"]},
                         {"name": "Legendary Zapdos", "data_ids": ["LEGENDARY_POKEMON_ZAPDOS"]}],
-        "Pokemon Tower 6F": [{"name": "Static Marowak", "rule": lambda state: state.has("Silph Scope", world.player),
-                              "data_ids": ["STATIC_POKEMON_MAROWAK"]}],
+        "Pokemon Tower Ghost Encounter": [{"name": "Static Marowak", "data_ids": ["STATIC_POKEMON_MAROWAK"]}],
         "Celadon Game Corner Prize Room": [{"name": "Prize Pokemon 1",
                                             "rule": lambda state: state.has("Coin Case", world.player),
                                             "data_ids": ["CELADON_PRIZE_POKEMON_1"]},
@@ -876,8 +876,8 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
                                             "rule": lambda state: state.has("Coin Case", world.player),
                                             "data_ids": ["CELADON_PRIZE_POKEMON_5"]}],
         "Celadon Condominiums Roof Room": [{"name": "Gift Eevee", "data_ids": ["GIFT_POKEMON_EEVEE"]}],
-        "Route 12 Under Snorlax": [{"name": "Static Snorlax 1", "data_ids": ["STATIC_POKEMON_ROUTE12_SNORLAX"]}],
-        "Route 16 Under Snorlax": [{"name": "Static Snorlax 2", "data_ids": ["STATIC_POKEMON_ROUTE16_SNORLAX"]}],
+        "Route 12 Snorlax Area": [{"name": "Static Snorlax 1", "data_ids": ["STATIC_POKEMON_ROUTE12_SNORLAX"]}],
+        "Route 16 Snorlax Area": [{"name": "Static Snorlax 2", "data_ids": ["STATIC_POKEMON_ROUTE16_SNORLAX"]}],
         "Saffron Dojo": [{"name": "Gift Hitmonchan", "data_ids": ["GIFT_POKEMON_HITMONCHAN"]},
                          {"name": "Gift Hitmonlee", "data_ids": ["GIFT_POKEMON_HITMONLEE"]}],
         "Silph Co. 7F Northwest Room": [{"name": "Gift Lapras", "data_ids": ["GIFT_POKEMON_LAPRAS"]}],
@@ -1010,11 +1010,74 @@ def level_scaling(multiworld):
                     def can_reach():
                         if location.can_reach(state):
                             return True
-                        if ("Rock Tunnel 1F Land Scaling" in location.name and
-                                any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                     for e in ["Rock Tunnel 1F Northeast Ladder (Northeast)",
-                                               "Rock Tunnel 1F South Exit"]])):
-                            return True
+                        if multiworld.worlds[location.player].options.flash_required != FlashRequired.option_required:
+                            if ("Mt. Moon 1F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Mt. Moon 1F Exit",
+                                                   "Mt. Moon 1F Ladder (Center-Right)",
+                                                   "Mt. Moon 1F Ladder (Center-Left)",
+                                                   "Mt. Moon 1F Ladder (Northwest)"]])):
+                                return True
+                            elif ("Mt. Moon B1F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Mt. Moon B1F First Tunnel Ladder (Northeast)",
+                                                   "Mt. Moon B1F First Tunnel Ladder (Southwest)",
+                                                   "Mt. Moon B1F Second Tunnel Ladder (East)",
+                                                   "Mt. Moon B1F Second Tunnel Ladder (West)",
+                                                   "Mt. Moon B1F Third Tunnel Ladder (Northwest)",
+                                                   "Mt. Moon B1F Third Tunnel Ladder (Southeast)",
+                                                   "Mt. Moon B1F Fourth Tunnel Ladder (West)",
+                                                   "Mt. Moon B1F Fourth Tunnel Ladder (East)"]])):
+                                return True
+                            elif ("Mt. Moon B2F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Mt. Moon B2F South Ladder",
+                                                   "Mt. Moon B2F Northeast Ladder",
+                                                   "Mt. Moon B2F Ladder (Center)",
+                                                   "Mt. Moon B2F Ladder (Northwest)"]])):
+                                return True
+                            elif ("Diglett's Cave B1F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Diglett's Cave B1F Ladder (Northwest)",
+                                                   "Diglett's Cave B1F Ladder (Southeast)"]])):
+                                return True
+                            elif ("Rock Tunnel 1F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Rock Tunnel 1F Northeast Ladder (Northeast)",
+                                                   "Rock Tunnel 1F Northeast Ladder (Northwest)",
+                                                   "Rock Tunnel 1F Northwest Ladder (Northwest)",
+                                                   "Rock Tunnel 1F Northwest Ladder (East)",
+                                                   "Rock Tunnel 1F South Ladder",
+                                                   "Rock Tunnel 1F South Exit"]])):
+                                return True
+                            elif ("Rock Tunnel B1F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Rock Tunnel B1F Southeast Ladder (Southeast)",
+                                                   "Rock Tunnel B1F Southeast Ladder (Northeast)",
+                                                   "Rock Tunnel B1F Northwest Ladder (East)",
+                                                   "Rock Tunnel B1F Northwest Ladder (Northwest)"]])):
+                                return True
+                            elif ("Victory Road 1F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Victory Road 1F South Exit",
+                                                   "Victory Road 1F North Ladder"]])):
+                                return True
+                            elif ("Victory Road 2F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Victory Road 2F Southwest Ladder",
+                                                   "Victory Road 2F Center Ladder",
+                                                   "Victory Road 2F Northwest Ladder",
+                                                   "Victory Road 2F Southeast Ladder",
+                                                   "Victory Road 2F East Ladder",
+                                                   "Victory Road 2F East Exit"]])):
+                                return True
+                            elif ("Victory Road 2F Land Scaling" in location.name and
+                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
+                                         for e in ["Victory Road 3F North Ladder (West)",
+                                                   "Victory Road 3F North Ladder (East)",
+                                                   "Victory Road 3F Southeast Ladder (North)",
+                                                   "Victory Road 3F Southeast Ladder (South)"]])):
+                                return True
                         return False
 
                     if can_reach():

@@ -18,7 +18,6 @@ exclusive_gift_pokemon: List[str] = {
     "TRADE_POKEMON_LICKITUNG"
 }
 
-
 indirect_conditions: Dict[str, List[str]] = {
     "Seafoam Islands 1F": ["Seafoam Islands B3F West Surfing Spot", "Seafoam Islands B3F Southeast Surfing Spot",
                            "Seafoam Islands B3F West Landing", "Seafoam Islands B3F Southeast Landing"],
@@ -122,7 +121,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     regions[region_name] = encounter_region
 
                 # Encounter region exists, just connect to it
-                region.connect(encounter_region, f"{region.name} {encounter_category[0]} Battle")
+                region.connect(encounter_region, f"{region.name} ({encounter_category[0]} Battle)")
 
     regions: Dict[str, Region] = {}
     connections: List[Tuple[str, str, str]] = []
@@ -197,6 +196,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                   (region_data.has_land, region_data.has_water, region_data.has_fishing))
 
     for name, source, dest in connections:
+        name = modify_entrance_name(world, name)
         regions[source].connect(regions[dest], name)
 
     regions["Menu"] = Region("Menu", world.player, world.multiworld)
@@ -211,3 +211,45 @@ def create_indirect_conditions(world: "PokemonFRLGWorld"):
     for region, entrances in indirect_conditions.items():
         for entrance in entrances:
             world.multiworld.register_indirect_condition(world.get_region(region), world.get_entrance(entrance))
+
+
+def modify_entrance_name(world: "PokemonFRLGWorld", name: str) -> str:
+    route_2_modification = {
+        "Route 2 Northwest Cuttable Tree": "Route 2 Northwest Smashable Rock",
+        "Route 2 Northeast Cuttable Tree (North)": "Route 2 Northeast Smashable Rock",
+        "Route 2 Northeast Cuttable Tree (South)": "Route 2 Northeast Cuttable Tree"
+    }
+    block_tunnels = {
+        "Route 5 Unobstructed Path": "Route 5 Smashable Rocks",
+        "Route 5 Near Tunnel Unobstructed Path": "Route 5 Near Tunnel Smashable Rocks",
+        "Route 6 Unobstructed Path": "Route 6 Smashable Rocks",
+        "Route 6 Near Tunnel Unobstructed Path": "Route 6 Near Tunnel Smashable Rocks",
+        "Route 7 Unobstructed Path": "Route 7 Smashable Rocks",
+        "Route 7 Near Tunnel Unobstructed Path": "Route 7 Near Tunnel Smashable Rocks",
+        "Route 8 Unobstructed Path": "Route 8 Smashable Rocks",
+        "Route 8 Near Tunnel Unobstructed Path": "Route 8 Near Tunnel Smashable Rocks"
+    }
+    block_pokemon_tower = {
+        "Pokemon Tower 1F Unobstructed Path": "Pokemon Tower 1F Reveal Ghost",
+        "Pokemon Tower 1F Near Stairs Unobstructed Path": "Pokemon Tower 1F Near Stairs Pass Ghost"
+    }
+    rotue_23_trees = {
+        "Route 23 Near Water Unobstructed Path": "Route 23 Near Water Cuttable Trees",
+        "Route 23 Center Unobstructed Path": "Route 23 Center Cuttable Trees"
+    }
+    route_23_modification = {
+        "Route 23 South Water Unobstructed Path": "Route 23 Waterfall Ascend",
+        "Route 23 North Water Unobstructed Path": "Route 23 Waterfall Drop"
+    }
+
+    if "Modify Route 2" in world.options.modify_world_state.value and name in route_2_modification.keys():
+        return route_2_modification[name]
+    if "Block Underground Tunnels" in world.options.modify_world_state.value and name in block_tunnels.keys():
+        return block_tunnels[name]
+    if "Block Pokemon Tower" in world.options.modify_world_state.value and name in block_pokemon_tower.keys():
+        return block_pokemon_tower[name]
+    if "Route 23 Trees" in world.options.modify_world_state.value and name in rotue_23_trees.keys():
+        return rotue_23_trees[name]
+    if "Modify Route 23" in world.options.modify_world_state.value and name in route_23_modification.keys():
+        return route_23_modification[name]
+    return name

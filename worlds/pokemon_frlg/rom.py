@@ -444,7 +444,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x0B, struct.pack("<B", route_3_condition))
 
     # Set Cerulean City roadblocs
-    save_bill = 1 if world.options.cerulean_city_roadblocks else 0
+    save_bill = 1 if "Remove Cerulean Roadblocks" in world.options.modify_world_state.value else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x0C, struct.pack("<B", save_bill))
 
     # Set Viridian Gym Rrquirement

@@ -21,7 +21,7 @@ from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, ge
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FreeFlyLocation, GameVersion, Goal,
+from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, GameVersion, Goal,
                       RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, SeviiIslandPasses,
                       ShuffleHiddenItems, ShuffleBadges, SilphCoCardKey, TownMapFlyLocation, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
@@ -175,6 +175,7 @@ class PokemonFRLGWorld(World):
         self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
         self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
 
+        # Modify options that are incompatible with each other
         if self.options.kanto_only:
             if self.options.goal == Goal.option_elite_four_rematch:
                 logging.warning("Pokemon FRLG: Goal for Player %s (%s) incompatible with Kanto Only. "
@@ -187,6 +188,13 @@ class PokemonFRLGWorld(World):
                                 self.player, self.player_name)
                 self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
 
+        if ("Total Darkness" in self.options.modify_world_state.value and
+                self.options.flash_required == FlashRequired.option_off):
+            logging.warning("Pokemon FRLG: Flash Required option for Player %s (%s) incompatible with Total"
+                            "Darkness. Setting Flash Required to Logic.", self.player, self.player_name)
+            self.options.flash_required.value = FlashRequired.option_logic
+
+        # Remove items from start inventory that are incompatible with certain settings
         card_key_vanilla = ["Card Key"]
         card_key_split = ["Card Key 2F", "Card Key 3F", "Card Key 4F", "Card Key 5F", "Card Key 6F",
                           "Card Key 7F", "Card Key 8F", "Card Key 9F", "Card Key 10F", "Card Key 11F"]
@@ -350,20 +358,21 @@ class PokemonFRLGWorld(World):
             for _ in range(10):
                 itempool.append(self.create_item("Progressive Card Key"))
 
-        if self.options.island_passes == SeviiIslandPasses.option_progressive:
-            itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
-            for _ in range(2):
-                itempool.append(self.create_item("Progressive Pass"))
-        elif self.options.island_passes == SeviiIslandPasses.option_split:
-            itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
-            itempool.append(self.create_item("One Pass"))
-            itempool.append(self.create_item("Four Pass"))
-        elif self.options.island_passes == SeviiIslandPasses.option_progressive_split:
-            items_to_remove = ["Tri Pass", "Two Pass", "Three Pass", "Rainbow Pass",
-                               "Five Pass", "Six Pass", "Seven Pass"]
-            itempool = [item for item in itempool if item.name not in items_to_remove]
-            for _ in range(7):
-                itempool.append(self.create_item("Progressive Pass"))
+        if not self.options.kanto_only:
+            if self.options.island_passes == SeviiIslandPasses.option_progressive:
+                itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
+                for _ in range(2):
+                    itempool.append(self.create_item("Progressive Pass"))
+            elif self.options.island_passes == SeviiIslandPasses.option_split:
+                itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
+                itempool.append(self.create_item("One Pass"))
+                itempool.append(self.create_item("Four Pass"))
+            elif self.options.island_passes == SeviiIslandPasses.option_progressive_split:
+                items_to_remove = ["Tri Pass", "Two Pass", "Three Pass", "Rainbow Pass",
+                                   "Five Pass", "Six Pass", "Seven Pass"]
+                itempool = [item for item in itempool if item.name not in items_to_remove]
+                for _ in range(7):
+                    itempool.append(self.create_item("Progressive Pass"))
 
         if self.options.kanto_only:
             items_to_add = ["HM06 Rock Smash", "HM07 Waterfall"]
@@ -601,7 +610,8 @@ class PokemonFRLGWorld(World):
             "oaks_aide_route_15",
             "viridian_city_roadblock",
             "pewter_city_roadblock",
-            "cerulean_city_roadblocks",
+            "modify_world_state",
+            "additional_dark_caves",
             "viridian_gym_requirement",
             "viridian_gym_count",
             "route22_gate_requirement",

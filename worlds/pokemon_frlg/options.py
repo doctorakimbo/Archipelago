@@ -112,9 +112,9 @@ class SilphCoCardKey(Choice):
     """
     Sets how the card key that unlocks the doors in Silph Co. is handled.
 
-    Vanilla: There is one Card Key in the pool that unlocks every door in Silph Co.
-    Split: The Card Key is split into ten items, one for each floor of Silph Co. that has doors.
-    Progressive: The Card Key is split into ten items, and you will always obtain them in order from 2F to 11F.
+    - Vanilla: There is one Card Key in the pool that unlocks every door in Silph Co.
+    - Split: The Card Key is split into ten items, one for each floor of Silph Co. that has doors.
+    - Progressive: The Card Key is split into ten items, and you will always obtain them in order from 2F to 11F.
     """
     display_name = "Silph Co. Card Key"
     default = 0
@@ -127,12 +127,12 @@ class SeviiIslandPasses(Choice):
     """
     Sets how the passes that allow you to travel to the Sevii Islands are handled.
 
-    Vanilla: The Tri Pass and Rainbow Pass are two separate items in the pool and can be found in any order.
-    Progressive: There are two Progressive Passes in the pool. You will always obtain the Tri Pass before the Rainbow
-                 Pass.
-    Split: The Tri Pass and Rainbow Pass are split into seven items, one for each island.
-    Progressive Split: The Tri Pass and Rainbow Pass are split into seven items, and you will always obtain the Passes
-                       in order from the First Pass to the Seventh Pass.
+    - Vanilla: The Tri Pass and Rainbow Pass are two separate items in the pool and can be found in any order.
+    - Progressive: There are two Progressive Passes in the pool. You will always obtain the Tri Pass before the Rainbow
+                   Pass.
+    - Split: The Tri Pass and Rainbow Pass are split into seven items, one for each island.
+    - Progressive Split: The Tri Pass and Rainbow Pass are split into seven items, and you will always obtain the Passes
+                         in order from the First Pass to the Seventh Pass.
     """
     display_name = "Sevii Island Passes"
     default = 0
@@ -158,20 +158,101 @@ class ItemfinderRequired(Choice):
     option_required = 2
 
 
-class FlashRequired(DefaultOnToggle):
+class FlashRequired(Choice):
     """
-    Sets whether HM05 Flash is logically required to navigate Rock Tunnel.
+    Sets whether HM05 Flash is logically required to navigate dark caves.
+
+    - Off: Flash is not required to navigate dark caves.
+    - Logic: Flash is logically required to navigate dark caves.
+    - Required: Flash is required to navigate dark caves.
     """
     display_name = "Flash Required"
+    default = 1
+    option_off = 0
+    option_logic = 1
+    option_required = 2
 
 
 class FameCheckerRequired(DefaultOnToggle):
     """
-    Sets whether it is required to have the Fame Checker in order unlock entries.
+    Sets whether it is required to have the Fame Checker in order to unlock entries.
 
     All Fame Checker entries that are one time occurences have been changed so that you can trigger them repeatedly.
     """
     display_name = "Fame Checker Required"
+
+
+class ViridianCityRoadblock(Choice):
+    """
+    Sets the requirement for passing the Viridian City Roadblock.
+
+    - Vanilla: The Old Man moves out of the way after delivering Oak's Parcel.
+    - Early Parcel: Same as Vanilla but Oak's Parcel will be available at the beginning of your game.
+    - Open: The Old Man is moved out of the way at the start of the game.
+    """
+    display_name = "Viridian City Roadblock"
+    default = 1
+    option_vanilla = 0
+    option_early_parcel = 1
+    option_open = 2
+
+
+class PewterCityRoadblock(Choice):
+    """
+    Sets the requirement for passing the Pewter City Roadblock.
+
+    - Open: The boy will not stop you from entering Route 3.
+    - Brock: The boy will stop you from entering Route 3 until you defeat Brock.
+    - Any Gym Leader: The boy will stop you from entering Route 3 until you defeat any Gym Leader.
+    - Boulder Badge: The boy will stop you from entering Route 3 until you have the Boulder Badge.
+    - Any Badge: The boy will stop you from entering Route 3 until you have a Badge.
+    """
+    display_name = "Pewter City Roadblock"
+    default = 1
+    option_open = 0
+    option_brock = 1
+    option_any_gym = 2
+    option_boulder_badge = 3
+    option_any_badge = 4
+
+
+class ModifyWorldState(OptionSet):
+    """
+    Set various changes to the world's state that changes how you can access various regions and locations.
+    The valid options and their effects are the following:
+
+    - Modify Route 2: Replaces the northmost cuttable tree with a smashable rock.
+    - Remove Cerulean Roadblocks: Removes the policeman and slowpoke that block the exits of the city.
+    - Block Underground Tunnels: Blocks the entrances to the underground tunnels with smashable rocks.
+    - Modify Route 9: Replaces the cuttable tree with a smashable rock.
+    - Modify Route 10: Adds a waterfall to Route 10 that connects the north and south sides.
+    - Block Pokemon Tower: Blocks the 1F stairs of Pokemon Tower with a ghost battle.
+    - Route 12 Boulders: Adds boulders to Route 12 that block the exits to Route 11 & 13.
+    - Modify Route 12: Adds impassable rocks to Route 12 that prevent surfing around Snorlax.
+    - Modify Route 16: Adds a smashable rock to Route 16 that allows you to bypass the Snorlax.
+    - Route 23 Trees: Adds cuttable trees to Route 23 under the sixth checkpoint.
+    - Modify Route 23: Adds a waterfall to Route 23 at the end of the water section.
+    - Victory Road Rocks: Adds smashable rocks to Victory Road that block the floor switches.
+    - Early Gossipers: Removes the requirement to have entered the Hall of Fame from various Famesanity locations.
+    - Total Darkness: Changes dark caves to be completely black and provide no vision without Flash.
+    """
+    display_name = "Modify World State"
+    valid_keys = ["Modify Route 2", "Remove Cerulean Roadblocks", "Block Underground Tunnels", "Modify Route 9",
+                  "Modify Route 10", "Block Pokemon Tower", "Route 12 Boulders", "Modify Route 12", "Modify Route 16",
+                  "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness"]
+
+
+class AdditionalDarkCaves(OptionSet):
+    """
+    Set additional caves to be dark caves, potentially requiring Flash to navigate them.
+
+    The caves that can be turned into dark caves are:
+    - Mt. Moon
+    - Diglett's Cave
+    - Victory Road
+    """
+    display_name = "Additional Dark Caves"
+    valid_keys = ["Mt. Moon", "Diglett's Cave", "Victory Road"]
 
 
 class RemoveBadgeRequirement(OptionSet):
@@ -237,47 +318,6 @@ class OaksAideRoute15(Range):
     default = 25
     range_start = 0
     range_end = 50
-
-
-class ViridianCityRoadblock(Choice):
-    """
-    Sets the requirement for passing the Viridian City Roadblock.
-    
-    - Vanilla: The Old Man moves out of the way after delivering Oak's Parcel.
-    - Early Parcel: Same as Vanilla but Oak's Parcel will be available at the beginning of your game.
-    - Open: The Old Man is moved out of the way at the start of the game.
-    """
-    display_name = "Viridian City Roadblock"
-    default = 1
-    option_vanilla = 0
-    option_early_parcel = 1
-    option_open = 2
-
-
-class PewterCityRoadblock(Choice):
-    """
-    Sets the requirement for passing the Pewter City Roadblock.
-
-    - Open: The boy will not stop you from entering Route 3.
-    - Brock: The boy will stop you from entering Route 3 until you defeat Brock.
-    - Any Gym Leader: The boy will stop you from entering Route 3 until you defeat any Gym Leader.
-    - Boulder Badge: The boy will stop you from entering Route 3 until you have the Boulder Badge.
-    - Any Badge: The boy will stop you from entering Route 3 until you have a Badge.
-    """
-    display_name = "Pewter City Roadblock"
-    default = 1
-    option_open = 0
-    option_brock = 1
-    option_any_gym = 2
-    option_boulder_badge = 3
-    option_any_badge = 4
-
-
-class CeruleanCityRoadblocks(DefaultOnToggle):
-    """
-    Sets whether the Policeman and Slowpoke are blocking the exits of the city until you save Bill.
-    """
-    display_name = "Cerulean City Roadblocks"
 
 
 class ViridianGymRequirement(Choice):
@@ -805,16 +845,18 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
     fame_checker_required: FameCheckerRequired
+    viridian_city_roadblock: ViridianCityRoadblock
+    pewter_city_roadblock: PewterCityRoadblock
+    modify_world_state: ModifyWorldState
+    additional_dark_caves: AdditionalDarkCaves
     remove_badge_requirement: RemoveBadgeRequirement
+
     oaks_aide_route_2: OaksAideRoute2
     oaks_aide_route_10: OaksAideRoute10
     oaks_aide_route_11: OaksAideRoute11
     oaks_aide_route_16: OaksAideRoute16
     oaks_aide_route_15: OaksAideRoute15
 
-    viridian_city_roadblock: ViridianCityRoadblock
-    pewter_city_roadblock: PewterCityRoadblock
-    cerulean_city_roadblocks: CeruleanCityRoadblocks
     viridian_gym_requirement: ViridianGymRequirement
     viridian_gym_count: ViridianGymCount
     route22_gate_requirement: Route22GateRequirement
