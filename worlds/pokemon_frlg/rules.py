@@ -459,14 +459,14 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 10 Near Power Plant Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Power Plant (Front)"),
              lambda state: state.has("Machine Part", player) or not options.extra_key_items)
+    set_rule(get_entrance("Route 10 Waterfall Drop"), lambda state: can_waterfall(state))
+    set_rule(get_entrance("Route 10 Waterfall Ascend"), lambda state: can_waterfall(state))
 
     if "Modify Route 10" in options.modify_world_state.value:
         set_rule(get_entrance("Route 10 South Surfing Spot"), lambda state: can_surf(state))
-        set_rule(get_entrance("Route 10 Waterfall Drop"), lambda state: can_waterfall(state))
-        set_rule(get_entrance("Route 10 Waterfall Ascend"), lambda state: can_waterfall(state))
     else:
         set_rule(get_entrance("Route 10 South Surfing Spot"), lambda state: False)
-        set_rule(get_entrance("Route 10 Waterfall Drop"), lambda state: False)
+        set_rule(get_entrance("Route 10 South Landing"), lambda state: False)
         set_rule(get_entrance("Route 10 South (Fishing Battle)"), lambda state: False)
 
     # Rock Tunnel
