@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 from BaseClasses import CollectionState
 
-from .options import FlashRequired
+from .options import FlashRequired, LevelScaling
 from .util import bound
 
 if TYPE_CHECKING:
@@ -22,7 +22,7 @@ class ScalingData:
 
 
 def create_scaling_data(world: "PokemonFRLGWorld"):
-    if not world.options.level_scaling:
+    if world.options.level_scaling == LevelScaling.option_off:
         return
 
     kanto_trainer_data = {
@@ -984,7 +984,7 @@ def level_scaling(multiworld):
     spheres = []
 
     for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
-        if world.options.level_scaling:
+        if world.options.level_scaling != LevelScaling.option_off:
             level_scaling_required = True
         else:
             world.finished_level_scaling.set()
@@ -1002,86 +1002,62 @@ def level_scaling(multiworld):
             events_found = True
             sphere = set()
             old_sphere = set()
+            distances = {}
 
             while events_found:
                 events_found = False
 
+                for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+                    if world.options.level_scaling != LevelScaling.option_spheres_and_distance:
+                        continue
+                    regions = {multiworld.get_region("Menu", world.player)}
+                    checked_regions = set()
+                    distance = 0
+                    while regions:
+                        update_regions = True
+                        while update_regions:
+                            update_regions = False
+                            same_distance_regions = set()
+                            for region in regions:
+                                keys = ["Encounter", "Encounters", "Trainers"]
+                                encounter_regions = {e.connected_region for e in region.exits
+                                                     if e.access_rule(state)
+                                                     and any(key in e.connected_region.name for key in keys)}
+                                same_distance_regions.update(encounter_regions)
+                            regions_len = len(regions)
+                            regions.update(same_distance_regions)
+                            if len(regions) > regions_len:
+                                update_regions = True
+                        next_regions = set()
+                        for region in regions:
+                            if not getattr(region, "distance"):
+                                region.distance = distance
+                            next_regions.update({e.connected_region for e in region.exits if e.connected_region not in
+                                                 checked_regions and e.access_rule(state)})
+                        checked_regions.update(regions)
+                        regions = next_regions
+                        distance += 1
+
                 for location in locations:
                     def can_reach():
+                        player = location.player
                         if location.can_reach(state):
                             return True
-                        if multiworld.worlds[location.player].options.flash_required != FlashRequired.option_required:
-                            if ("Mt. Moon 1F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Mt. Moon 1F Exit",
-                                                   "Mt. Moon 1F Ladder (Center-Right)",
-                                                   "Mt. Moon 1F Ladder (Center-Left)",
-                                                   "Mt. Moon 1F Ladder (Northwest)"]])):
-                                return True
-                            elif ("Mt. Moon B1F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Mt. Moon B1F First Tunnel Ladder (Northeast)",
-                                                   "Mt. Moon B1F First Tunnel Ladder (Southwest)",
-                                                   "Mt. Moon B1F Second Tunnel Ladder (East)",
-                                                   "Mt. Moon B1F Second Tunnel Ladder (West)",
-                                                   "Mt. Moon B1F Third Tunnel Ladder (Northwest)",
-                                                   "Mt. Moon B1F Third Tunnel Ladder (Southeast)",
-                                                   "Mt. Moon B1F Fourth Tunnel Ladder (West)",
-                                                   "Mt. Moon B1F Fourth Tunnel Ladder (East)"]])):
-                                return True
-                            elif ("Mt. Moon B2F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Mt. Moon B2F South Ladder",
-                                                   "Mt. Moon B2F Northeast Ladder",
-                                                   "Mt. Moon B2F Ladder (Center)",
-                                                   "Mt. Moon B2F Ladder (Northwest)"]])):
-                                return True
-                            elif ("Diglett's Cave B1F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Diglett's Cave B1F Ladder (Northwest)",
-                                                   "Diglett's Cave B1F Ladder (Southeast)"]])):
-                                return True
-                            elif ("Rock Tunnel 1F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Rock Tunnel 1F Northeast Ladder (Northeast)",
-                                                   "Rock Tunnel 1F Northeast Ladder (Northwest)",
-                                                   "Rock Tunnel 1F Northwest Ladder (Northwest)",
-                                                   "Rock Tunnel 1F Northwest Ladder (East)",
-                                                   "Rock Tunnel 1F South Ladder",
-                                                   "Rock Tunnel 1F South Exit"]])):
-                                return True
-                            elif ("Rock Tunnel B1F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Rock Tunnel B1F Southeast Ladder (Southeast)",
-                                                   "Rock Tunnel B1F Southeast Ladder (Northeast)",
-                                                   "Rock Tunnel B1F Northwest Ladder (East)",
-                                                   "Rock Tunnel B1F Northwest Ladder (Northwest)"]])):
-                                return True
-                            elif ("Victory Road 1F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Victory Road 1F South Exit",
-                                                   "Victory Road 1F North Ladder"]])):
-                                return True
-                            elif ("Victory Road 2F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Victory Road 2F Southwest Ladder",
-                                                   "Victory Road 2F Center Ladder",
-                                                   "Victory Road 2F Northwest Ladder",
-                                                   "Victory Road 2F Southeast Ladder",
-                                                   "Victory Road 2F East Ladder",
-                                                   "Victory Road 2F East Exit"]])):
-                                return True
-                            elif ("Victory Road 2F Land Scaling" in location.name and
-                                    any([multiworld.get_entrance(e, location.player).connected_region.can_reach(state)
-                                         for e in ["Victory Road 3F North Ladder (West)",
-                                                   "Victory Road 3F North Ladder (East)",
-                                                   "Victory Road 3F Southeast Ladder (North)",
-                                                   "Victory Road 3F Southeast Ladder (South)"]])):
-                                return True
                         return False
 
                     if can_reach():
                         sphere.add(location)
+                        parent_region = location.parent_region
+
+                        if getattr(parent_region, "distance", None) is None:
+                            distance = 0
+                        else:
+                            distance = parent_region.distance
+
+                        if distance not in distances:
+                            distances[distance] = {location}
+                        else:
+                            distances[distance].add(location)
 
                 locations -= sphere
                 old_sphere ^= sphere
@@ -1099,7 +1075,8 @@ def level_scaling(multiworld):
                 old_sphere |= sphere
 
             if sphere:
-                new_spheres.append(sphere)
+                for distance in sorted(distances.keys()):
+                    new_spheres.append(distances[distance])
 
             for event in new_battle_events:
                 if event.item and event not in collected_locations:
@@ -1119,10 +1096,12 @@ def level_scaling(multiworld):
             break
 
     for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
-        if not world.options.level_scaling:
+        if world.options.level_scaling == LevelScaling.option_off:
             continue
 
         game_version = world.options.game_version.current_key
+        e4_rematch_adjustment = 63 / 51
+        e4_base_level = 51
 
         for sphere in spheres:
             scaling_locations = [loc for loc in sphere if loc.player == world.player and "Scaling" in loc.tags]
@@ -1135,6 +1114,11 @@ def level_scaling(multiworld):
             for trainer_location in trainer_locations:
                 new_base_level = world.trainer_level_list.pop(0)
                 old_base_level = world.trainer_name_level_dict[trainer_location.name]
+
+                if trainer_location.name == "Elite Four":
+                    e4_base_level = new_base_level
+                elif trainer_location.name == "Elite Four Rematch":
+                    new_base_level = max(new_base_level, round(e4_base_level * e4_rematch_adjustment))
 
                 for data_id in trainer_location.data_ids:
                     trainer_data = world.modified_trainers[data_id]

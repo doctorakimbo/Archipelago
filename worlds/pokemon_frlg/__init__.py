@@ -190,8 +190,6 @@ class PokemonFRLGWorld(World):
 
         if ("Total Darkness" in self.options.modify_world_state.value and
                 self.options.flash_required == FlashRequired.option_off):
-            logging.warning("Pokemon FRLG: Flash Required option for Player %s (%s) incompatible with Total"
-                            "Darkness. Setting Flash Required to Logic.", self.player, self.player_name)
             self.options.flash_required.value = FlashRequired.option_logic
 
         # Remove items from start inventory that are incompatible with certain settings
@@ -291,8 +289,8 @@ class PokemonFRLGWorld(World):
         if self.options.goal == Goal.option_elite_four:
             excluded_locations = [
                 "Champion's Room - Champion Reward",
-                "Pallet Town - Oak (First Gift)",
-                "Pallet Town - Oak (Second Gift)"
+                "Hall of Fame - Oak's Gift (First)",
+                "Hall of Fame - Oak's Gift (Second)"
             ]
 
             if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
@@ -310,31 +308,34 @@ class PokemonFRLGWorld(World):
                 ])
 
             if self.options.famesanity:
-                excluded_locations.extend([
-                    "Professor Oak's Lab - Oak's Aide's Info (Daisy 1)",
-                    "Professor Oak's Lab - Oak's Aide's Info (Oak 6)",
-                    "Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)",
-                    "Pokemon Fan Club - Worker's Info (Daisy 2)",
-                    "Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)",
-                    "Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)",
-                    "Celadon Department Store 2F - Woman's Info (Lance 4)",
-                    "Fuchsia City - Koga's Daughter's Info (Koga 4)",
-                    "Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)",
-                    "Saffron City - Battle Girl's Info (Lance 3)",
-                    "Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)",
-                    "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)",
-                    "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)",
-                    "Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)",
-                    "Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"
-                ])
-
                 if not self.options.kanto_only:
+                    excluded_locations.append("Two Island Town - Beauty's Info (Bruno 5)")
+
+                if "Early Gossipers" in self.options.modify_world_state.value:
                     excluded_locations.extend([
-                        "Ember Spa - Black Belt's Info (Bruno 4)",
-                        "Two Island Town - Beauty's Info (Bruno 5)",
-                        "Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)",
-                        "Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"
+                        "Professor Oak's Lab - Oak's Aide's Info (Daisy 1)",
+                        "Professor Oak's Lab - Oak's Aide's Info (Oak 6)",
+                        "Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)",
+                        "Pokemon Fan Club - Worker's Info (Daisy 2)",
+                        "Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)",
+                        "Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)",
+                        "Celadon Department Store 2F - Woman's Info (Lance 4)",
+                        "Fuchsia City - Koga's Daughter's Info (Koga 4)",
+                        "Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)",
+                        "Saffron City - Battle Girl's Info (Lance 3)",
+                        "Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)",
+                        "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)",
+                        "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)",
+                        "Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)",
+                        "Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"
                     ])
+
+                    if not self.options.kanto_only:
+                        excluded_locations.extend([
+                            "Ember Spa - Black Belt's Info (Bruno 4)",
+                            "Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)",
+                            "Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"
+                        ])
 
             exclude_locations(excluded_locations)
 
@@ -599,6 +600,8 @@ class PokemonFRLGWorld(World):
             "famesanity",
             "shuffle_fly_destination_unlocks",
             "pokemon_request_locations",
+            "card_key",
+            "island_passes",
             "itemfinder_required",
             "flash_required",
             "fame_checker_required",

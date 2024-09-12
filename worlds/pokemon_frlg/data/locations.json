@@ -1853,11 +1853,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
-    "name": "Pallet Town - Oak's Gift (First)",
+    "name": "Hall of Fame - Oak's Gift (First)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Pallet Town - Oak's Gift (Second)",
+    "name": "Hall of Fame - Oak's Gift (Second)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {

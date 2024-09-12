@@ -7,9 +7,9 @@ from BaseClasses import CollectionState
 from worlds.generic.Rules import add_rule, set_rule
 from .data import data
 from .options import (CeruleanCaveRequirement, EliteFourRequirement, FlashRequired, GameVersion, Goal,
-                      ItemfinderRequired, PewterCityRoadblock, Route22GateRequirement, Route23GuardRequirement,
-                      SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey, ViridianCityRoadblock,
-                      ViridianGymRequirement)
+                      ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
+                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey,
+                      ViridianCityRoadblock, ViridianGymRequirement)
 
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -194,8 +194,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         requirement = options.cerulean_cave_requirement
         count = options.cerulean_cave_count.value
         if requirement == CeruleanCaveRequirement.option_vanilla:
-            return (state.has("Defeat Champion", player) and
-                    state.has("Restore Pokemon Network Machine", player))
+            return state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player)
         elif requirement == CeruleanCaveRequirement.option_champion:
             return state.has("Defeat Champion", player)
         elif requirement == CeruleanCaveRequirement.option_restore_network:
@@ -230,7 +229,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         return gyms_beaten(state) >= level / 7
 
     def can_grind_money(state: CollectionState):
-        return state.has("Vs. Seeker", player) and can_reach_any_region(rematchable_trainer_regions, state)
+        return ((state.has("Vs. Seeker", player) and can_reach_any_region(rematchable_trainer_regions, state)) or
+                state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
 
     def can_open_silph_door(floor: int, state: CollectionState):
         return (state.has_any(["Card Key", f"Card Key {floor}F"], player) or
@@ -290,8 +290,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Birth Island Arrival"), lambda state: state.has("Aurora Ticket", player))
 
     # Pallet Town
-    set_rule(get_location("Pallet Town - Oak's Gift (First)"), lambda state: state.has("Defeat Champion", player))
-    set_rule(get_location("Pallet Town - Oak's Gift (Second)"), lambda state: state.has("Defeat Champion", player))
     set_rule(get_location("Rival's House - Daisy's Gift"), lambda state: state.has("Deliver Oak's Parcel", player))
     set_rule(get_location("Professor Oak's Lab - Oak's Gift (Deliver Parcel)"),
              lambda state: state.has("Oak's Parcel", player))
@@ -354,6 +352,18 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Mt. Moon B2F Leave Center Entry"), lambda state: dark_cave(state))
         set_rule(get_entrance("Mt. Moon B2F Leave Northwest Entry"), lambda state: dark_cave(state))
 
+        for i in range(1, 5):
+            set_rule(get_location(f"Mt. Moon 1F - Land Encounter {i}"), lambda state: dark_cave(state))
+            set_rule(get_location(f"Mt. Moon B2F - Land Encounter {i}"), lambda state: dark_cave(state))
+            if (options.flash_required == FlashRequired.option_required and
+                    options.level_scaling != LevelScaling.option_off):
+                set_rule(get_location(f"Mt. Moon 1F Land Scaling {i}"), lambda state: dark_cave(state))
+                set_rule(get_location(f"Mt. Moon B2F Land Scaling {i}"), lambda state: dark_cave(state))
+
+        set_rule(get_location("Mt. Moon B1F - Land Encounter 1"), lambda state: dark_cave(state))
+        if options.flash_required == FlashRequired.option_required and options.level_scaling != LevelScaling.option_off:
+            set_rule(get_location("Mt. Moon B1F Land Scaling 1"), lambda state: dark_cave(state))
+
     # Cerulean City
     set_rule(get_location("Bike Shop - Bicycle Purchase"), lambda state: state.has("Bike Voucher", player))
     set_rule(get_location("Cerulean Trade House - Trade Poliwhirl"), lambda state: state.has("Poliwhirl", player))
@@ -380,7 +390,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 5 Gate North Guard Checkpoint"), lambda state: state.has("Tea", player))
     set_rule(get_entrance("Route 5 Gate South Guard Checkpoint"), lambda state: state.has("Tea", player))
 
-    if "Block Underground Tunnels" in options.modify_world_state.value:
+    if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 5 Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Route 5 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
@@ -397,7 +407,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 6 Gate South Guard Checkpoint"), lambda state: state.has("Tea", player))
     set_rule(get_entrance("Route 6 Gate North Guard Checkpoint"), lambda state: state.has("Tea", player))
 
-    if "Block Underground Tunnels" in options.modify_world_state.value:
+    if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 6 Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Route 6 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
@@ -429,6 +439,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     if "Diglett's Cave" in options.additional_dark_caves.value:
         set_rule(get_entrance("Diglett's Cave B1F Leave Northwest Entry"), lambda state: dark_cave(state))
         set_rule(get_entrance("Diglett's Cave B1F Leave Southeast Entry"), lambda state: dark_cave(state))
+
+        for i in range(1, 3):
+            set_rule(get_location(f"Diglett's Cave B1F - Land Encounter {i}"), lambda state: dark_cave(state))
+            if (options.flash_required == FlashRequired.option_required and
+                    options.level_scaling != LevelScaling.option_off):
+                set_rule(get_location(f"Diglett's Cave B1F Land Scaling {i}"), lambda state: dark_cave(state))
 
     # Route 9
     if "Modify Route 9" in options.modify_world_state.value:
@@ -465,6 +481,13 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Rock Tunnel B1F Leave Northwest Entry (East)"), lambda state: dark_cave(state))
     set_rule(get_entrance("Rock Tunnel B1F Leave Northwest Entry (Northwest)"), lambda state: dark_cave(state))
 
+    for i in range(1, 6):
+        set_rule(get_location(f"Rock Tunnel 1F - Land Encounter {i}"), lambda state: dark_cave(state))
+        set_rule(get_location(f"Rock Tunnel B1F - Land Encounter {i}"), lambda state: dark_cave(state))
+        if options.flash_required == FlashRequired.option_required and options.level_scaling != LevelScaling.option_off:
+            set_rule(get_location(f"Rock Tunnel 1F Land Scaling {i}"), lambda state: dark_cave(state))
+            set_rule(get_location(f"Rock Tunnel B1F Land Scaling {i}"), lambda state: dark_cave(state))
+
     # Lavender Town
     set_rule(get_location("Volunteer Pokemon House - Mr. Fuji's Gift"),
              lambda state: state.has("Rescue Mr. Fuji", player))
@@ -474,7 +497,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 8 Gate East Guard Checkpoint"), lambda state: state.has("Tea", player))
     set_rule(get_entrance("Route 8 Gate West Guard Checkpoint"), lambda state: state.has("Tea", player))
 
-    if "Block Underground Tunnels" in options.modify_world_state.value:
+    if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 8 Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Route 8 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
@@ -482,7 +505,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 7 Gate West Guard Checkpoint"), lambda state: state.has("Tea", player))
     set_rule(get_entrance("Route 7 Gate East Guard Checkpoint"), lambda state: state.has("Tea", player))
 
-    if "Block Underground Tunnels" in options.modify_world_state.value:
+    if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 7 Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Route 7 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
@@ -524,7 +547,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Pokemon Tower 6F Near Stairs (Ghost Battle)"), lambda state: state.has("Silph Scope", player))
     set_rule(get_entrance("Pokemon Tower 6F Reveal Ghost"), lambda state: state.has("Silph Scope", player))
 
-    if "Block Pokemon Tower" in options.modify_world_state.value:
+    if "Block Tower" in options.modify_world_state.value:
         set_rule(get_entrance("Pokemon Tower 1F (Ghost Battle)"), lambda state: state.has("Silph Scope", player))
         set_rule(get_entrance("Pokemon Tower 1F Near Stairs (Ghost Battle)"),
                  lambda state: state.has("Silph Scope", player))
@@ -740,6 +763,20 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Victory Road 3F Leave North Entry (East)"), lambda state: dark_cave(state))
         set_rule(get_entrance("Victory Road 3F Leave Southeast Entry (North)"), lambda state: dark_cave(state))
         set_rule(get_entrance("Victory Road 3F Leave Southeast Entry (South)"), lambda state: dark_cave(state))
+
+        for i in range(1, 9):
+            set_rule(get_location(f"Victory Road 1F - Land Encounter {i}"), lambda state: dark_cave(state))
+            set_rule(get_location(f"Victory Road 2F - Land Encounter {i}"), lambda state: dark_cave(state))
+            set_rule(get_location(f"Victory Road 3F - Land Encounter {i}"), lambda state: dark_cave(state))
+            if (options.flash_required == FlashRequired.option_required and
+                    options.level_scaling != LevelScaling.option_off):
+                set_rule(get_location(f"Victory Road 1F Land Scaling {i}"), lambda state: dark_cave(state))
+                set_rule(get_location(f"Victory Road 2F Land Scaling {i}"), lambda state: dark_cave(state))
+                set_rule(get_location(f"Victory Road 3F Land Scaling {i}"), lambda state: dark_cave(state))
+
+        set_rule(get_location("Victory Road 2F - Land Encounter 9"), lambda state: dark_cave(state))
+        if options.flash_required == FlashRequired.option_required and options.level_scaling != LevelScaling.option_off:
+            set_rule(get_location("Victory Road 2F Land Scaling 9"), lambda state: dark_cave(state))
 
     # Indigo Plateau
     set_rule(get_entrance("Pokemon League"), lambda state: can_challenge_elite_four(state))

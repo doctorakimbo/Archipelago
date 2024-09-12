@@ -40,12 +40,16 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
     "FLAG_RESCUED_MR_FUJI",
     "FLAG_HIDE_SAFFRON_ROCKETS",  # Liberated Silph Co.
-    "FLAG_SYS_CAN_LINK_WITH_RS",  # Restored Pokémon Network Machine
+    "FLAG_DEFEATED_CHAMP",
     "FLAG_RESCUED_LOSTELLE",
     "FLAG_SEVII_DETOUR_FINISHED",  # Gave Meteorite to Lostelle's Dad
+    "FLAG_LEARNED_GOLDEEN_NEED_LOG",
     "FLAG_HIDE_RUIN_VALLEY_SCIENTIST",  # Helped Lorelei in Icefall Cave
+    "FLAG_RESCUED_SELPHY",
     "FLAG_LEARNED_YES_NAH_CHANSEY",
-    "FLAG_DEFEATED_CHAMP",
+    "FLAG_DEFEATED_ROCKETS_IN_WAREHOUSE",  # Freed Pokémon in Rocket Warehouse
+    "FLAG_SYS_CAN_LINK_WITH_RS",  # Restored Pokémon Network Machine
+    "FLAG_DEFEATED_CHAMP_REMATCH",
     "FLAG_PURCHASED_LEMONADE"
 ]
 EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_EVENT_FLAGS}
@@ -254,18 +258,6 @@ class PokemonFRLGClient(BizHawkClient):
                 pokemon_caught_bytes = read_result[0]
                 pokedex_read_status = True
 
-            # Read fame checker flags
-            fame_checker_bytes = bytes(0)
-            if ctx.slot_data["famesanity"] == Toggle.option_true:
-                read_result = await bizhawk.guarded_read(
-                    ctx.bizhawk_ctx,
-                    [(sb1_address + 0x3AC4, 0x20, "System Bus")],  # Fame Checker Data
-                    [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
-                )
-
-                if read_result is not None:
-                    fame_checker_bytes = read_result[0]
-
             game_clear = False
             local_set_events = {flag_name: False for flag_name in TRACKER_EVENT_FLAGS}
             local_set_fly_unlocks = {flag_name: False for flag_name in TRACKER_FLY_UNLOCK_FLAGS}
@@ -290,21 +282,6 @@ class PokemonFRLGClient(BizHawkClient):
 
                         if flag_id in FLY_UNLOCK_FLAG_MAP:
                             local_set_fly_unlocks[FLY_UNLOCK_FLAG_MAP[flag_id]] = True
-
-            # Check fame checker
-            if ctx.slot_data["famesanity"]:
-                index = 0
-                for byte_i, byte in enumerate(fame_checker_bytes):
-                    if byte_i % 2 == 1:
-                        continue
-                    for i in range(2, 8):
-                        if byte & (1 << i) != 0:
-                            location_id = offset_flag(index + FAMESANITY_OFFSET)
-
-                            if location_id in ctx.server_locations:
-                                local_checked_locations.add(location_id)
-
-                            index += 1
 
             # Get caught Pokémon count
             if pokedex_read_status:

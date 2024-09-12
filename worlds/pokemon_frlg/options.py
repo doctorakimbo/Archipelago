@@ -187,7 +187,8 @@ class ViridianCityRoadblock(Choice):
     Sets the requirement for passing the Viridian City Roadblock.
 
     - Vanilla: The Old Man moves out of the way after delivering Oak's Parcel.
-    - Early Parcel: Same as Vanilla but Oak's Parcel will be available at the beginning of your game.
+    - Early Parcel: Same as Vanilla but Oak's Parcel will be available at the beginning of your game. This option will
+                    have no effect and be treated as Vanilla if Random Starting Town is on.
     - Open: The Old Man is moved out of the way at the start of the game.
     """
     display_name = "Viridian City Roadblock"
@@ -223,10 +224,10 @@ class ModifyWorldState(OptionSet):
 
     - Modify Route 2: Replaces the northmost cuttable tree with a smashable rock.
     - Remove Cerulean Roadblocks: Removes the policeman and slowpoke that block the exits of the city.
-    - Block Underground Tunnels: Blocks the entrances to the underground tunnels with smashable rocks.
+    - Block Tunnels: Blocks the entrances to the underground tunnels with smashable rocks.
     - Modify Route 9: Replaces the cuttable tree with a smashable rock.
     - Modify Route 10: Adds a waterfall to Route 10 that connects the north and south sides.
-    - Block Pokemon Tower: Blocks the 1F stairs of Pokemon Tower with a ghost battle.
+    - Block Tower: Blocks the 1F stairs of Pokémon Tower with a ghost battle.
     - Route 12 Boulders: Adds boulders to Route 12 that block the exits to Route 11 & 13.
     - Modify Route 12: Adds impassable rocks to Route 12 that prevent surfing around Snorlax.
     - Modify Route 16: Adds a smashable rock to Route 16 that allows you to bypass the Snorlax.
@@ -237,8 +238,8 @@ class ModifyWorldState(OptionSet):
     - Total Darkness: Changes dark caves to be completely black and provide no vision without Flash.
     """
     display_name = "Modify World State"
-    valid_keys = ["Modify Route 2", "Remove Cerulean Roadblocks", "Block Underground Tunnels", "Modify Route 9",
-                  "Modify Route 10", "Block Pokemon Tower", "Route 12 Boulders", "Modify Route 12", "Modify Route 16",
+    valid_keys = ["Modify Route 2", "Remove Cerulean Roadblocks", "Block Tunnels", "Modify Route 9",
+                  "Modify Route 10", "Block Tower", "Route 12 Boulders", "Modify Route 12", "Modify Route 16",
                   "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness"]
 
 
@@ -442,11 +443,19 @@ class CeruleanCaveCount(Range):
     range_end = 8
 
 
-class LevelScaling(Toggle):
+class LevelScaling(Choice):
     """
     Sets whether encounter levels are scaled by sphere access.
+
+    - Off: Vanilla levels are used.
+    - Spheres: Levels are scaled based on sphere access.
+    - Spheres and Distance: Levels are scaled based on sphere access and the distance they are from your starting town.
     """
     display_name = "Level Scaling"
+    default = 0
+    option_off = 0
+    option_spheres = 1
+    option_spheres_and_distance = 2
 
 
 class ModifyTrainerLevels(Range):
