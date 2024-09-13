@@ -11,12 +11,10 @@ from .options import Goal
 if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
 
-
 BASE_ROM_NAME: Dict[str, str] = {
     "firered": "pokemon red version",
     "leafgreen": "pokemon green version"
 }
-
 
 EXPECTED_ROM_NAME: Dict[str, str] = {
     "firered": "pokemon red version AP",
@@ -24,7 +22,6 @@ EXPECTED_ROM_NAME: Dict[str, str] = {
     "firered_rev1": "pokemon red version AP Rev 1",
     "leafgreen_rev1": "pokemon green version AP Rev 1",
 }
-
 
 TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_BROCK",
@@ -54,7 +51,6 @@ TRACKER_EVENT_FLAGS = [
 ]
 EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_EVENT_FLAGS}
 
-
 TRACKER_FLY_UNLOCK_FLAGS = [
     "FLAG_WORLD_MAP_PALLET_TOWN",
     "FLAG_WORLD_MAP_VIRIDIAN_CITY",
@@ -78,7 +74,6 @@ TRACKER_FLY_UNLOCK_FLAGS = [
     "FLAG_WORLD_MAP_SEVEN_ISLAND"
 ]
 FLY_UNLOCK_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_FLY_UNLOCK_FLAGS}
-
 
 MAP_SECTION_EDGES: Dict[str, List[Tuple[int, int]]] = {
     "MAP_ROUTE2": [(23, 39)],
@@ -370,7 +365,7 @@ class PokemonFRLGClient(BizHawkClient):
         read_result = await bizhawk.guarded_read(
             ctx.bizhawk_ctx,
             [
-                (sb1_address + 0x3D88, 2, "System Bus"),
+                (sb1_address + 0x3DD8, 2, "System Bus"),
                 (received_item_address + 4, 1, "System Bus")
             ],
             [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]

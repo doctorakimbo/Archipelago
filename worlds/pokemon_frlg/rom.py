@@ -187,8 +187,8 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         player_name = world.multiworld.get_player_name(item_player)
 
         if player_name not in player_name_ids:
-            # Only space for 50 player names
-            if len(player_name_ids) >= 50:
+            # Only space for 250 player names
+            if len(player_name_ids) >= 250:
                 continue
 
             player_name_ids[player_name] = len(player_name_ids)
@@ -205,7 +205,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                 item_name = item_name[:34] + "…"
 
             # Only 36 * 500 bytes for item names
-            if next_item_name_offset + len(item_name) + 1 > 36 * 500:
+            if next_item_name_offset + len(item_name) + 1 > 36 * 1500:
                 continue
 
             item_name_offsets[item_name] = next_item_name_offset
