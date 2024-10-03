@@ -13,7 +13,9 @@ if TYPE_CHECKING:
 
 BASE_ROM_NAME: Dict[str, str] = {
     "firered": "pokemon red version",
-    "leafgreen": "pokemon green version"
+    "leafgreen": "pokemon green version",
+    "firered_rev1": "pokemon red version",
+    "leafgreen_rev1": "pokemon green version"
 }
 
 TRACKER_EVENT_FLAGS = [
