@@ -287,15 +287,21 @@ class PokemonFRLGWorld(World):
                     continue
 
         if self.options.goal == Goal.option_elite_four:
-            excluded_locations = [
+            exclude_locations([
+                "Lorelei's Room - Elite Four Lorelei Rematch Reward",
+                "Bruno's Room - Elite Four Bruno Rematch Reward",
+                "Agatha's Room - Elite Four Agatha Rematch Reward",
+                "Lance's Room - Elite Four Lance Rematch Reward",
                 "Champion's Room - Champion Reward",
+                "Champion's Room - Champion Rematch Reward",
                 "Hall of Fame - Oak's Gift (First)",
-                "Hall of Fame - Oak's Gift (Second)"
-            ]
+                "Hall of Fame - Oak's Gift (Second)",
+                "Two Island Town - Beauty's Info (Bruno 5)"
+            ])
 
             if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
                     self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_champion):
-                excluded_locations.extend([
+                exclude_locations([
                     "Cerulean Cave 1F - Southwest Item",
                     "Cerulean Cave 1F - East Plateau Item",
                     "Cerulean Cave 1F - West Plateau Item",
@@ -307,37 +313,27 @@ class PokemonFRLGWorld(World):
                     "Cerulean Cave 1F - West Plateau Hidden Item"
                 ])
 
-            if self.options.famesanity:
-                if not self.options.kanto_only:
-                    excluded_locations.append("Two Island Town - Beauty's Info (Bruno 5)")
-
-                if "Early Gossipers" not in self.options.modify_world_state.value:
-                    excluded_locations.extend([
-                        "Professor Oak's Lab - Oak's Aide's Info (Daisy 1)",
-                        "Professor Oak's Lab - Oak's Aide's Info (Oak 6)",
-                        "Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)",
-                        "Pokemon Fan Club - Worker's Info (Daisy 2)",
-                        "Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)",
-                        "Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)",
-                        "Celadon Department Store 2F - Woman's Info (Lance 4)",
-                        "Fuchsia City - Koga's Daughter's Info (Koga 4)",
-                        "Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)",
-                        "Saffron City - Battle Girl's Info (Lance 3)",
-                        "Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)",
-                        "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)",
-                        "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)",
-                        "Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)",
-                        "Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"
-                    ])
-
-                    if not self.options.kanto_only:
-                        excluded_locations.extend([
-                            "Ember Spa - Black Belt's Info (Bruno 4)",
-                            "Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)",
-                            "Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"
-                        ])
-
-            exclude_locations(excluded_locations)
+            if "Early Gossipers" not in self.options.modify_world_state.value:
+                exclude_locations([
+                    "Professor Oak's Lab - Oak's Aide's Info (Daisy 1)",
+                    "Professor Oak's Lab - Oak's Aide's Info (Oak 6)",
+                    "Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)",
+                    "Pokemon Fan Club - Worker's Info (Daisy 2)",
+                    "Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)",
+                    "Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)",
+                    "Celadon Department Store 2F - Woman's Info (Lance 4)",
+                    "Fuchsia City - Koga's Daughter's Info (Koga 4)",
+                    "Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)",
+                    "Saffron City - Battle Girl's Info (Lance 3)",
+                    "Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)",
+                    "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)",
+                    "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)",
+                    "Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)",
+                    "Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)",
+                    "Ember Spa - Black Belt's Info (Bruno 4)",
+                    "Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)",
+                    "Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"
+                ])
 
     def create_items(self) -> None:
         item_locations: List[PokemonFRLGLocation] = [
@@ -476,6 +472,7 @@ class PokemonFRLGWorld(World):
         for sphere in multiworld.get_spheres():
             for location in sphere:
                 if (location.game == "Pokemon FireRed and LeafGreen" and
+                        location.item.game == "Pokemon FireRed and LeafGreen" and
                         (location.item.name in pokemon or "Static " in location.item.name)
                         and location.item.advancement):
                     key = (location.player, location.item.name)
