@@ -124,6 +124,9 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         if location.address is None:
             continue
 
+        if location.item is None:
+            continue
+
         item_address = location.item_address[game_version_revision]
 
         if location.item.player == world.player:
