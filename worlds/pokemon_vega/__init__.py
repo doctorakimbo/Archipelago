@@ -1,5 +1,5 @@
 """
-Archipelago World definition for Pokémon FireRed/LeafGreen
+Archipelago World definition for Pokémon Vega
 """
 import copy
 import logging
@@ -13,31 +13,31 @@ from typing import Any, ClassVar, Dict, List, Set, TextIO, Tuple
 from BaseClasses import Tutorial, MultiWorld, ItemClassification, LocationProgressType
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
-from .client import PokemonFRLGClient
-from .data import (data as frlg_data, ALL_SPECIES, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData,
+from .client import PokemonVegaClient
+from .data import (data as vega_data, ALL_SPECIES, LEGENDARY_POKEMON, EventData, MapData, MiscPokemonData, SpeciesData,
                    StarterData, TrainerData)
 from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, get_item_classification,
-                    reverse_offset_item_value, PokemonFRLGItem)
+                    reverse_offset_item_value, PokemonVegaItem)
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
-                        PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, GameVersion, Goal,
+                        PokemonVegaLocation)
+from .options import (PokemonVegaOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, Goal,
                       RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, SeviiIslandPasses,
                       ShuffleHiddenItems, ShuffleBadges, SilphCoCardKey, TownMapFlyLocation, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
-from .rom import get_tokens, PokemonFireRedProcedurePatch, PokemonLeafGreenProcedurePatch
+from .rom import get_tokens, PokemonVegaProcedurePatch
 from .util import int_to_bool_array, HM_TO_COMPATIBILITY_ID
 
 
-class PokemonFRLGWebWorld(WebWorld):
+class PokemonVegaWebWorld(WebWorld):
     """
-    Webhost info for Pokémon FireRed and LeafGreen
+    Webhost info for Pokémon Vega
     """
     setup_en = Tutorial(
         "Multiworld Setup Guide",
-        "A guide to playing Pokémon FireRed and LeafGreen with Archipelago.",
+        "A guide to playing Pokémon Vega with Archipelago.",
         "English",
         "setup_en.md",
         "setup/en",
@@ -47,39 +47,29 @@ class PokemonFRLGWebWorld(WebWorld):
     tutorials = [setup_en]
 
 
-class PokemonFRLGSettings(settings.Group):
-    class PokemonFireRedRomFile(settings.UserFilePath):
-        """File name of your English Pokémon FireRed ROM"""
-        description = "Pokemon FireRed ROM File"
-        copy_to = "Pokemon - FireRed Version (USA, Europe).gba"
-        md5s = PokemonFireRedProcedurePatch.hash
+class PokemonVegaSettings(settings.Group):
+    class PokemonVegaRomFile(settings.UserFilePath):
+        """File name of your English Pokémon Vega ROM"""
+        description = "Pokemon Vega ROM File"
+        copy_to = "Pokemon Vega.gba"
+        md5s = [PokemonVegaProcedurePatch.hash]
 
-    class PokemonLeafGreenRomFile(settings.UserFilePath):
-        """File name of your English Pokémon LeafGreen ROM"""
-        description = "Pokemon LeafGreen ROM File"
-        copy_to = "Pokemon - LeafGreen Version (USA, Europe).gba"
-        md5s = PokemonLeafGreenProcedurePatch.hash
-
-    firered_rom_file: PokemonFireRedRomFile = PokemonFireRedRomFile(PokemonFireRedRomFile.copy_to)
-    leafgreen_rom_file: PokemonLeafGreenRomFile = PokemonLeafGreenRomFile(PokemonLeafGreenRomFile.copy_to)
+    vega_rom_file: PokemonVegaRomFile = PokemonVegaRomFile(PokemonVegaRomFile.copy_to)
 
 
-class PokemonFRLGWorld(World):
+class PokemonVegaWorld(World):
     """
-    Pokémon FireRed and LeafGreen are remakes of the very first Pokémon games.
-    Experience the Kanto region with several updated features from Gen III.
-    Catch, train, and battle Pokémon, face off against the evil organization Team Rocket, challenge Gyms in order to
-    earn Badges, help resolve the many crises on the Sevii Islands, and become the Pokémon Champion!
+    SUMMARY OF VEGA GOES HERE
     """
-    game = "Pokemon FireRed and LeafGreen"
-    web = PokemonFRLGWebWorld()
+    game = "Pokemon Vega"
+    web = PokemonVegaWebWorld()
     topology_present = True
 
-    settings_key = "pokemon_frlg_settings"
-    settings: ClassVar[PokemonFRLGSettings]
+    settings_key = "pokemon_vega_settings"
+    settings: ClassVar[PokemonVegaSettings]
 
-    options_dataclass = PokemonFRLGOptions
-    options: PokemonFRLGOptions
+    options_dataclass = PokemonVegaOptions
+    options: PokemonVegaOptions
 
     item_name_to_id = create_item_name_to_id_map()
     location_name_to_id = create_location_name_to_id_map()
@@ -117,18 +107,18 @@ class PokemonFRLGWorld(World):
     auth: bytes
 
     def __init__(self, multiworld, player):
-        super(PokemonFRLGWorld, self).__init__(multiworld, player)
+        super(PokemonVegaWorld, self).__init__(multiworld, player)
         self.free_fly_location_id = 0
         self.town_map_fly_location_id = 0
         self.resort_gorgeous_mon = ("SPECIES_PIKACHU", "Pikachu", 25)
-        self.modified_species = copy.deepcopy(frlg_data.species)
-        self.modified_maps = copy.deepcopy(frlg_data.maps)
-        self.modified_starters = copy.deepcopy(frlg_data.starters)
-        self.modified_events = copy.deepcopy(frlg_data.events)
-        self.modified_legendary_pokemon = copy.deepcopy(frlg_data.legendary_pokemon)
-        self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
-        self.modified_trainers = copy.deepcopy(frlg_data.trainers)
-        self.modified_tmhm_moves = copy.deepcopy(frlg_data.tmhm_moves)
+        self.modified_species = copy.deepcopy(vega_data.species)
+        self.modified_maps = copy.deepcopy(vega_data.maps)
+        self.modified_starters = copy.deepcopy(vega_data.starters)
+        self.modified_events = copy.deepcopy(vega_data.events)
+        self.modified_legendary_pokemon = copy.deepcopy(vega_data.legendary_pokemon)
+        self.modified_misc_pokemon = copy.deepcopy(vega_data.misc_pokemon)
+        self.modified_trainers = copy.deepcopy(vega_data.trainers)
+        self.modified_tmhm_moves = copy.deepcopy(vega_data.tmhm_moves)
         self.hm_compatibility = {}
         self.per_species_tmhm_moves = {}
         self.trade_pokemon = []
@@ -172,18 +162,18 @@ class PokemonFRLGWorld(World):
         if "Legendaries" in self.options.trainer_blacklist.value:
             self.blacklisted_trainer_pokemon |= LEGENDARY_POKEMON
 
-        self.blacklisted_abilities = {frlg_data.abilities[name] for name in self.options.ability_blacklist.value}
-        self.blacklisted_moves = {frlg_data.moves[name] for name in self.options.move_blacklist.value}
+        self.blacklisted_abilities = {vega_data.abilities[name] for name in self.options.ability_blacklist.value}
+        self.blacklisted_moves = {vega_data.moves[name] for name in self.options.move_blacklist.value}
 
         # Modify options that are incompatible with each other
         if self.options.kanto_only:
             if self.options.goal == Goal.option_elite_four_rematch:
-                logging.warning("Pokemon FRLG: Goal for Player %s (%s) incompatible with Kanto Only. "
+                logging.warning("Pokemon Vega: Goal for Player %s (%s) incompatible with Kanto Only. "
                                 "Setting goal to Elite Four.", self.player, self.player_name)
                 self.options.goal.value = Goal.option_elite_four
             if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
                     self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_restore_network):
-                logging.warning("Pokemon FRLG: Cerulean Cave Requirement for Player %s (%s) "
+                logging.warning("Pokemon Vega: Cerulean Cave Requirement for Player %s (%s) "
                                 "incompatible with Kanto Only. Setting requirement to Defeat Champion.",
                                 self.player, self.player_name)
                 self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
@@ -272,7 +262,7 @@ class PokemonFRLGWorld(World):
 
         # Choose Selphy's requested Pokémon among available wild encounters if necessary
         if self.options.pokemon_request_locations and not self.options.kanto_only:
-            wild_encounter_locations: List[PokemonFRLGLocation] = [
+            wild_encounter_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Wild" in location.tags
             ]
@@ -340,7 +330,7 @@ class PokemonFRLGWorld(World):
             exclude_locations(excluded_locations)
 
     def create_items(self) -> None:
-        item_locations: List[PokemonFRLGLocation] = [
+        item_locations: List[PokemonVegaLocation] = [
             location for location in self.multiworld.get_locations(self.player) if location.address is not None
         ]
 
@@ -385,7 +375,7 @@ class PokemonFRLGWorld(World):
                 itempool.remove(item_to_remove)
 
         for item, quantity in self.options.start_inventory.value.items():
-            if "Unique" in frlg_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
+            if "Unique" in vega_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
                 removed_items_count = 0
                 for _ in range(quantity):
                     try:
@@ -414,7 +404,7 @@ class PokemonFRLGWorld(World):
             locations = [location for location in self.multiworld.get_locations(self.player)
                          if tag in location.tags]
             for location in locations:
-                location.place_locked_item(PokemonFRLGItem(self.item_id_to_name[location.default_item_id],
+                location.place_locked_item(PokemonVegaItem(self.item_id_to_name[location.default_item_id],
                                                            ItemClassification.progression,
                                                            None,
                                                            self.player))
@@ -428,10 +418,10 @@ class PokemonFRLGWorld(World):
     def pre_fill(self) -> None:
         # If badges aren't shuffled among all locations, shuffle them among themselves
         if not self.options.shuffle_badges:
-            badge_locations: List[PokemonFRLGLocation] = [
+            badge_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player) if "Badge" in location.tags
             ]
-            badge_items: List[PokemonFRLGItem] = [
+            badge_items: List[PokemonVegaItem] = [
                 self.create_item_by_id(location.default_item_id) for location in badge_locations
             ]
 
@@ -472,10 +462,10 @@ class PokemonFRLGWorld(World):
         # Change all but one instance of a Pokémon in each sphere to useful classification
         # This cuts down on time calculating the playthrough
         found_mons = set()
-        pokemon = {species.name for species in frlg_data.species.values()}
+        pokemon = {species.name for species in vega_data.species.values()}
         for sphere in multiworld.get_spheres():
             for location in sphere:
-                if (location.game == "Pokemon FireRed and LeafGreen" and
+                if (location.game == "Pokemon Vega" and
                         (location.item.name in pokemon or "Static " in location.item.name)
                         and location.item.advancement):
                     key = (location.player, location.item.name)
@@ -499,24 +489,12 @@ class PokemonFRLGWorld(World):
         randomize_tm_moves(self)
         randomize_trainer_parties(self)
 
-        if self.options.game_version == GameVersion.option_firered:
-            patch = PokemonFireRedProcedurePatch(player=self.player, player_name=self.player_name)
-            patch.write_file("base_patch_rev0.bsdiff4",
-                             pkgutil.get_data(__name__, "data/base_patch_firered.bsdiff4"))
-            patch.write_file("base_patch_rev1.bsdiff4",
-                             pkgutil.get_data(__name__, "data/base_patch_firered_rev1.bsdiff4"))
-        else:
-            patch = PokemonLeafGreenProcedurePatch(player=self.player, player_name=self.player_name)
-            patch.write_file("base_patch_rev0.bsdiff4",
-                             pkgutil.get_data(__name__, "data/base_patch_leafgreen.bsdiff4"))
-            patch.write_file("base_patch_rev1.bsdiff4",
-                             pkgutil.get_data(__name__, "data/base_patch_leafgreen_rev1.bsdiff4"))
+        patch = PokemonVegaProcedurePatch(player=self.player, player_name=self.player_name)
+        patch.write_file("base_patch.bsdiff4", pkgutil.get_data(__name__, "data/base_patch.bsdiff4"))
 
-        tokens_rev0 = get_tokens(self, 0)
-        tokens_rev1 = get_tokens(self, 1)
+        tokens = get_tokens(self)
 
-        patch.write_file("token_data_rev0.bin", tokens_rev0.get_token_binary())
-        patch.write_file("token_data_rev1.bin", tokens_rev1.get_token_binary())
+        patch.write_file("token_data.bin", tokens.get_token_binary())
 
         # Write output
         out_file_name = self.multiworld.get_out_file_name_base(self.player)
@@ -553,7 +531,7 @@ class PokemonFRLGWorld(World):
             spoiler_handle.write(f"\n\nPokemon Locations ({self.multiworld.player_name[self.player]}):\n\n")
 
         if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
-            pokemon_locations: List[PokemonFRLGLocation] = [
+            pokemon_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Wild" in location.tags
             ]
@@ -561,7 +539,7 @@ class PokemonFRLGWorld(World):
                 spoiler_handle.write(location.name + ": " + location.item.name + "\n")
 
         if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
-            pokemon_locations: List[PokemonFRLGLocation] = [
+            pokemon_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Misc" in location.tags
             ]
@@ -573,7 +551,7 @@ class PokemonFRLGWorld(World):
                 spoiler_handle.write(location.name + ": " + name + "\n")
 
         if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
-            pokemon_locations: List[PokemonFRLGLocation] = [
+            pokemon_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Legendary" in location.tags
             ]
@@ -630,11 +608,11 @@ class PokemonFRLGWorld(World):
         slot_data["town_map_fly_location_id"] = self.town_map_fly_location_id
         return slot_data
 
-    def create_item(self, name: str) -> "PokemonFRLGItem":
+    def create_item(self, name: str) -> "PokemonVegaItem":
         return self.create_item_by_id(self.item_name_to_id[name])
 
     def create_item_by_id(self, item_id: int):
-        return PokemonFRLGItem(
+        return PokemonVegaItem(
             self.item_id_to_name[item_id],
             get_item_classification(item_id),
             item_id,

@@ -1,19 +1,9 @@
 """
-Option definitions for Pokémon FireRed/LeafGreen
+Option definitions for Pokémon Vega
 """
 from dataclasses import dataclass
 from Options import Choice, DefaultOnToggle, NamedRange, OptionSet, PerGameCommonOptions, Range, Toggle
 from .data import data
-
-
-class GameVersion(Choice):
-    """
-    Select FireRed or LeafGreen version.
-    """
-    display_name = "Game Version"
-    option_firered = 0
-    option_leafgreen = 1
-    default = "random"
 
 
 class Goal(Choice):
@@ -835,9 +825,7 @@ class ReceiveItemMessages(Choice):
 
 
 @dataclass
-class PokemonFRLGOptions(PerGameCommonOptions):
-    game_version: GameVersion
-
+class PokemonVegaOptions(PerGameCommonOptions):
     goal: Goal
     kanto_only: KantoOnly
 

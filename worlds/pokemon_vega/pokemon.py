@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
 from .data import (data, LEGENDARY_POKEMON, NUM_REAL_SPECIES, EncounterSpeciesData, EventData, LearnsetMove,
                    SpeciesData, TrainerPokemonData)
-from .options import (GameVersion, HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+from .options import (HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
                       TmTutorCompatibility, WildPokemonGroups)
 from .util import bool_array_to_int, int_to_bool_array
 
 if TYPE_CHECKING:
     from random import Random
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 _DAMAGING_MOVES = frozenset({
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -182,7 +182,7 @@ def _filter_species_by_nearby_bst(species: List[SpeciesData], target_bst: int) -
     return species[:cutoff_index + 1]
 
 
-def _get_trainer_pokemon_moves(world: "PokemonFRLGWorld",
+def _get_trainer_pokemon_moves(world: "PokemonVegaWorld",
                                species: SpeciesData,
                                pokemon: TrainerPokemonData) -> Tuple[int, int, int, int]:
     if species.species_id not in world.per_species_tmhm_moves:
@@ -225,7 +225,7 @@ def _get_trainer_pokemon_moves(world: "PokemonFRLGWorld",
     return new_moves
 
 
-def randomize_types(world: "PokemonFRLGWorld") -> None:
+def randomize_types(world: "PokemonVegaWorld") -> None:
     if world.options.types == RandomizeTypes.option_shuffle:
         type_map = list(range(18))
         world.random.shuffle(type_map)
@@ -270,7 +270,7 @@ def randomize_types(world: "PokemonFRLGWorld") -> None:
                 evolutions += [world.modified_species[evo.species_id] for evo in evolution.evolutions]
 
 
-def randomize_abilities(world: "PokemonFRLGWorld") -> None:
+def randomize_abilities(world: "PokemonVegaWorld") -> None:
     if world.options.abilities == RandomizeAbilities.option_vanilla:
         return
 
@@ -313,7 +313,7 @@ def randomize_abilities(world: "PokemonFRLGWorld") -> None:
             species.abilities = new_abilities
 
 
-def randomize_moves(world: "PokemonFRLGWorld") -> None:
+def randomize_moves(world: "PokemonVegaWorld") -> None:
     if world.options.moves == RandomizeMoves.option_vanilla:
         return
 
@@ -346,14 +346,12 @@ def randomize_moves(world: "PokemonFRLGWorld") -> None:
         species.learnset = new_learnset
 
 
-def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
-    game_version = world.options.game_version.current_key
-
+def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
     if world.options.wild_pokemon == RandomizeWildPokemon.option_vanilla:
         # If Famesanity and Pokémon Request locations are on, we need to place Togepi somewhere
         if world.options.famesanity and world.options.pokemon_request_locations and not world.options.kanto_only:
             map_data = world.modified_maps["MAP_FIVE_ISLAND_MEMORIAL_PILLAR"]
-            slots = map_data.land_encounters.slots[game_version]
+            slots = map_data.land_encounters.slots
             for slot in slots:
                 slot.species_id = data.constants["SPECIES_TOGEPI"]
         return
@@ -410,20 +408,20 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         # Check if the current map is a Route 21 map and the other one has already been randomized.
         # If so, set the encounters of the current map based on the other Route 21 map.
         if map_name == "MAP_ROUTE21_NORTH" and route_21_randomized:
-            map_data.land_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots[game_version])
-            map_data.water_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots[game_version])
-            map_data.fishing_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots[game_version])
+            map_data.land_encounters.slots = \
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots)
+            map_data.water_encounters.slots = \
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots)
+            map_data.fishing_encounters.slots = \
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots)
             continue
         elif map_name == "MAP_ROUTE21_SOUTH" and route_21_randomized:
-            map_data.land_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots[game_version])
-            map_data.water_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots[game_version])
-            map_data.fishing_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots[game_version])
+            map_data.land_encounters.slots = \
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots)
+            map_data.water_encounters.slots = \
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots)
+            map_data.fishing_encounters.slots = \
+                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots)
             continue
 
         if map_name == "MAP_ROUTE21_NORTH" or map_name == "MAP_ROUTE21_SOUTH":
@@ -435,7 +433,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                 # instead of just randomizing every slot.
                 # Force area 1-to-1 mapping, in other words.
                 species_old_to_new_map: Dict[int, int] = {}
-                for species_data in table.slots[game_version]:
+                for species_data in table.slots:
                     species_id = species_data.species_id
                     if species_id not in species_old_to_new_map:
                         original_species = data.species[species_id]
@@ -516,7 +514,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
 
                 # Actually create the new list of slots and encounter table
                 new_slots: List[EncounterSpeciesData] = []
-                for species_data in table.slots[game_version]:
+                for species_data in table.slots:
                     new_slots.append(EncounterSpeciesData(
                         species_old_to_new_map[species_data.species_id],
                         species_data.min_level,
@@ -526,14 +524,14 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                 new_encounter_slots[i] = new_slots
 
         if map_data.land_encounters is not None:
-            map_data.land_encounters.slots[game_version] = new_encounter_slots[0]
+            map_data.land_encounters.slots = new_encounter_slots[0]
         if map_data.water_encounters is not None:
-            map_data.water_encounters.slots[game_version] = new_encounter_slots[1]
+            map_data.water_encounters.slots = new_encounter_slots[1]
         if map_data.fishing_encounters is not None:
-            map_data.fishing_encounters.slots[game_version] = new_encounter_slots[2]
+            map_data.fishing_encounters.slots = new_encounter_slots[2]
 
 
-def randomize_starters(world: "PokemonFRLGWorld") -> None:
+def randomize_starters(world: "PokemonVegaWorld") -> None:
     if world.options.starters == RandomizeStarters.option_vanilla:
         return
 
@@ -602,11 +600,9 @@ def randomize_starters(world: "PokemonFRLGWorld") -> None:
                                                                            True)
 
 
-def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
+def randomize_legendaries(world: "PokemonVegaWorld") -> None:
     if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla:
         return
-
-    game_version = world.options.game_version.current_key
 
     should_match_bst = world.options.legendary_pokemon in {
         RandomizeLegendaryPokemon.option_match_base_stats,
@@ -620,7 +616,7 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
     placed_species = set()
 
     for name, legendary in data.legendary_pokemon.items():
-        original_species = world.modified_species[legendary.species_id[game_version]]
+        original_species = world.modified_species[legendary.species_id]
 
         if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_legendaries:
             candidates = [species for species in world.modified_species.values() if
@@ -637,7 +633,7 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
             candidates = _filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
 
         new_species_id = world.random.choice(candidates).species_id
-        world.modified_legendary_pokemon[name].species_id[game_version] = new_species_id
+        world.modified_legendary_pokemon[name].species_id = new_species_id
         placed_species.add(new_species_id)
 
     # Update the events that correspond to the legendary Pokémon
@@ -645,7 +641,7 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
         if name not in world.modified_events:
             continue
 
-        species = world.modified_species[legendary_pokemon.species_id[game_version]]
+        species = world.modified_species[legendary_pokemon.species_id]
         item_name = data.events[name].item.split()
 
         if item_name[0] == "Static":
@@ -666,11 +662,9 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
         world.modified_events[name] = new_event
 
 
-def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
+def randomize_misc_pokemon(world: "PokemonVegaWorld") -> None:
     if world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla:
         return
-
-    game_version = world.options.game_version.current_key
 
     should_match_bst = world.options.misc_pokemon in {
         RandomizeMiscPokemon.option_match_base_stats,
@@ -682,7 +676,7 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
     }
 
     for name, misc_pokemon in data.misc_pokemon.items():
-        original_species = world.modified_species[misc_pokemon.species_id[game_version]]
+        original_species = world.modified_species[misc_pokemon.species_id]
 
         candidates = list(world.modified_species.values())
         if should_match_type:
@@ -694,22 +688,16 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
         if should_match_bst:
             candidates = _filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
 
-        world.modified_misc_pokemon[name].species_id[game_version] = world.random.choice(candidates).species_id
+        world.modified_misc_pokemon[name].species_id = world.random.choice(candidates).species_id
 
     # Update the events that correspond to the misc Pokémon
     for name, misc_pokemon in world.modified_misc_pokemon.items():
         if name not in world.modified_events:
             continue
 
-        species = world.modified_species[misc_pokemon.species_id[game_version]]
+        species = world.modified_species[misc_pokemon.species_id]
 
-        if type(data.events[name].item) is list:
-            if game_version == GameVersion.option_firered:
-                item_name = data.events[name].item[0].split()
-            else:
-                item_name = data.events[name].item[1].split()
-        else:
-            item_name = data.events[name].item.split()
+        item_name = data.events[name].item.split()
 
         if item_name[0] == "Static":
             item = f"Static {species.name}"
@@ -729,7 +717,7 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
         world.modified_events[name] = new_event
 
 
-def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
+def randomize_trainer_parties(world: "PokemonVegaWorld") -> None:
     if world.options.trainers == RandomizeTrainerParties.option_vanilla:
         return
 
@@ -777,7 +765,7 @@ def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
                                                               False)
 
 
-def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
+def randomize_tm_hm_compatibility(world: "PokemonVegaWorld") -> None:
     for species in world.modified_species.values():
         compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
 
@@ -792,7 +780,7 @@ def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
         species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
 
 
-def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
+def randomize_tm_moves(world: "PokemonVegaWorld") -> None:
     if not world.options.tm_tutor_moves:
         return
 
@@ -804,7 +792,7 @@ def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
         world.modified_tmhm_moves[i] = new_move
 
 
-def randomize_tutor_moves(world: "PokemonFRLGWorld") -> List[int]:
+def randomize_tutor_moves(world: "PokemonVegaWorld") -> List[int]:
     new_moves = []
 
     for i in range(15):

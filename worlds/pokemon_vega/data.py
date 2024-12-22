@@ -1,5 +1,5 @@
 """
-Pulls data from JSON files in worlds/pokemon_frlg/data/ into classes.
+Pulls data from JSON files in worlds/pokemon_vega/data/ into classes.
 This also includes marrying automatically extracted data with manually
 defined data (like location names or usable Pokémon species), some cleanup
 and sorting, and Warp methods.
@@ -275,8 +275,8 @@ class TrainerData:
     address: Dict[str, int]
 
 
-class PokemonFRLGData:
-    rom_names: Dict[str, str]
+class PokemonVegaData:
+    rom_name: str
     constants: Dict[str, int]
     ram_addresses: Dict[str, Dict[str, int]]
     rom_addresses: Dict[str, Dict[str, int]]
@@ -714,7 +714,7 @@ def load_json_data(data_name: str) -> Union[List[Any], Dict[str, Any]]:
 
 def _init() -> None:
     extracted_data: Dict[str, Any] = load_json_data("extracted_data.json")
-    data.rom_names = extracted_data["rom_names"]
+    data.rom_name = extracted_data["rom_name"]
     data.constants = extracted_data["constants"]
     data.ram_addresses = extracted_data["misc_ram_addresses"]
     data.rom_addresses = extracted_data["misc_rom_addresses"]
@@ -730,46 +730,37 @@ def _init() -> None:
         fishing_encounters = None
 
         if "land_encounters" in map_json:
-            land_slots: Dict[str, List[EncounterSpeciesData]] = {}
-            for version, slots in map_json["land_encounters"]["slots"].items():
-                version_slots: List[EncounterSpeciesData] = []
-                for slot_data in slots:
-                    version_slots.append(EncounterSpeciesData(
-                        slot_data["default_species"],
-                        slot_data["min_level"],
-                        slot_data["max_level"]
-                    ))
-                land_slots[version] = version_slots
+            land_slots: List[EncounterSpeciesData] = []
+            for slot_data in map_json["land_encounters"]["slots"]:
+                land_slots.append(EncounterSpeciesData(
+                    slot_data["default_species"],
+                    slot_data["min_level"],
+                    slot_data["max_level"]
+                ))
             land_encounters = EncounterTableData(
                 land_slots,
                 map_json["land_encounters"]["address"]
             )
         if "water_encounters" in map_json:
-            water_slots: Dict[str, List[EncounterSpeciesData]] = {}
-            for version, slots in map_json["water_encounters"]["slots"].items():
-                version_slots: List[EncounterSpeciesData] = []
-                for slot_data in slots:
-                    version_slots.append(EncounterSpeciesData(
-                        slot_data["default_species"],
-                        slot_data["min_level"],
-                        slot_data["max_level"]
-                    ))
-                water_slots[version] = version_slots
+            water_slots: List[EncounterSpeciesData] = []
+            for slot_data in map_json["water_encounters"]["slots"]:
+                water_slots.append(EncounterSpeciesData(
+                    slot_data["default_species"],
+                    slot_data["min_level"],
+                    slot_data["max_level"]
+                ))
             water_encounters = EncounterTableData(
                 water_slots,
                 map_json["water_encounters"]["address"]
             )
         if "fishing_encounters" in map_json:
-            fishing_slots: Dict[str, List[EncounterSpeciesData]] = {}
-            for version, slots in map_json["fishing_encounters"]["slots"].items():
-                version_slots: List[EncounterSpeciesData] = []
-                for slot_data in slots:
-                    version_slots.append(EncounterSpeciesData(
-                        slot_data["default_species"],
-                        slot_data["min_level"],
-                        slot_data["max_level"]
-                    ))
-                fishing_slots[version] = version_slots
+            fishing_slots: List[EncounterSpeciesData] = []
+            for slot_data in map_json["fishing_encounters"]["slots"]:
+                fishing_slots.append(EncounterSpeciesData(
+                    slot_data["default_species"],
+                    slot_data["min_level"],
+                    slot_data["max_level"]
+                ))
             fishing_encounters = EncounterTableData(
                 fishing_slots,
                 map_json["fishing_encounters"]["address"]
@@ -794,7 +785,7 @@ def _init() -> None:
     for region_subset in region_json_list:
         for region_name, region_json in region_subset.items():
             if region_name in regions_json:
-                raise AssertionError("Pokemon FRLG: Region [{region_name}] was defined multiple times")
+                raise AssertionError("Pokemon Vega: Region [{region_name}] was defined multiple times")
             regions_json[region_name] = region_json
 
     # Create region data
@@ -822,7 +813,7 @@ def _init() -> None:
         # Locations
         for location_id in region_json["locations"]:
             if location_id in claimed_locations:
-                raise AssertionError(f"Pokemon FRLG: Location [{location_id}] was claimed by multiple regions")
+                raise AssertionError(f"Pokemon Vega: Location [{location_id}] was claimed by multiple regions")
 
             location_json = extracted_data["locations"][location_id]
 
@@ -834,15 +825,12 @@ def _init() -> None:
                     f"TRAINER_{trainer}_SQUIRTLE_REWARD"
                 ]]
 
-                location_address: Dict[str, List[int]] = {}
+                location_address: List[int] = []
 
-                for game_version_revision in location_json["address"].keys():
-                    location_address[game_version_revision] = [location_json["address"][game_version_revision]]
+                location_address = [location_json["address"]]
 
-                for game_version_revision in location_address.keys():
-                    for alternate_rival_json in alternate_rival_jsons:
-                        location_address[game_version_revision].append(
-                            alternate_rival_json["address"][game_version_revision])
+                for alternate_rival_json in alternate_rival_jsons:
+                    location_address.append(alternate_rival_json["address"])
 
                 new_location = LocationData(
                     location_id,
@@ -886,7 +874,7 @@ def _init() -> None:
         # Warps
         for encoded_warp, name in region_json["warps"].items():
             if encoded_warp in claimed_warps:
-                raise AssertionError(f"Pokemon FRLG: Warp [{encoded_warp}] was claimed by multiple regions")
+                raise AssertionError(f"Pokemon Vega: Warp [{encoded_warp}] was claimed by multiple regions")
             new_region.warps.append(encoded_warp)
             data.warps[encoded_warp] = Warp(encoded_warp, name, region_id)
             claimed_warps.add(encoded_warp)
@@ -1450,7 +1438,7 @@ def _init() -> None:
     ]}
 
 
-data = PokemonFRLGData()
+data = PokemonVegaData()
 _init()
 
 LEGENDARY_POKEMON = frozenset([data.constants[species] for species in [

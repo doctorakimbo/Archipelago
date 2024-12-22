@@ -152,14 +152,8 @@
     "tags": ["Pokemon", "Misc"]
   },
   "TRADE_POKEMON_NIDORAN": {
-    "name": [
-      "Underground Path North Entrance - Trade Nidoran M",
-      "Underground Path North Entrance - Trade Nidoran F"
-    ],
-    "item": [
-      "Static Nidoran F",
-      "Static Nidoran M"
-      ],
+    "name": "Underground Path North Entrance - Trade Nidoran M",
+    "item": "Static Nidoran F",
     "tags": ["Pokemon", "Misc"]
   },
   "TRADE_POKEMON_FARFETCHD": {
@@ -168,14 +162,8 @@
     "tags": ["Pokemon", "Misc"]
   },
   "TRADE_POKEMON_NIDORINOA": {
-    "name": [
-      "Route 11 Gate 2F - Trade Nidorino",
-      "Route 11 Gate 2F - Trade Nidorina"
-    ],
-    "item": [
-      "Static Nidorina",
-      "Static Nidorino"
-      ],
+    "name": "Route 11 Gate 2F - Trade Nidorino",
+    "item": "Static Nidorina",
     "tags": ["Pokemon", "Misc"]
   },
   "STATIC_POKEMON_ELECTRODE_1": {
@@ -210,18 +198,12 @@
   },
   "CELADON_PRIZE_POKEMON_3": {
     "name": "Celadon Game Corner Prize Room - Prize Pokemon 3",
-    "item": [
-      "Dratini",
-      "Pinsir"
-      ],
+    "item": "Dratini",
     "tags": ["Pokemon", "Misc"]
   },
   "CELADON_PRIZE_POKEMON_4": {
     "name": "Celadon Game Corner Prize Room - Prize Pokemon 4",
-    "item": [
-      "Scyther",
-      "Dratini"
-      ],
+    "item": "Scyther",
     "tags": ["Pokemon", "Misc"]
   },
   "CELADON_PRIZE_POKEMON_5": {
@@ -245,10 +227,7 @@
     "tags": ["Pokemon", "Misc"]
   },
   "TRADE_POKEMON_LICKITUNG": {
-    "name": [
-      "Route 18 Gate 2F - Trade Golduck",
-      "Route 18 Gate 2F - Trade Slowbro"
-    ],
+    "name": "Route 18 Gate 2F - Trade Golduck",
     "item": "Static Lickitung",
     "tags": ["Pokemon", "Misc"]
   },

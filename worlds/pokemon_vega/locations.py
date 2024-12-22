@@ -3,11 +3,11 @@ import stat
 from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Union
 from BaseClasses import CollectionState, Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
-from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
+from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonVegaItem
 from .options import FreeFlyLocation, PewterCityRoadblock, TownMapFlyLocation, ViridianCityRoadblock
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 LOCATION_GROUPS = {
     "Badges": {
@@ -95,8 +95,8 @@ fly_item_exclusion_map = {
 }
 
 
-class PokemonFRLGLocation(Location):
-    game: str = "Pokemon FireRed and LeafGreen"
+class PokemonVegaLocation(Location):
+    game: str = "Pokemon Vega"
     item_address = Optional[Dict[str, int]]
     default_item_id: Optional[int]
     tags: FrozenSet[str]
@@ -144,7 +144,7 @@ def create_location_name_to_id_map() -> Dict[str, int]:
     return name_to_id_mapping
 
 
-def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Region], tags: Iterable[str]) -> None:
+def create_locations_from_tags(world: "PokemonVegaWorld", regions: Dict[str, Region], tags: Iterable[str]) -> None:
     """
     Iterates through region data and adds locations to the multiworld if
     those locations include any of the provided tags.
@@ -174,7 +174,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             else:
                 default_item = location_data.default_item
 
-            location = PokemonFRLGLocation(
+            location = PokemonVegaLocation(
                 world.player,
                 location_data.name,
                 location_id,
@@ -186,7 +186,7 @@ def create_locations_from_tags(world: "PokemonFRLGWorld", regions: Dict[str, Reg
             region.locations.append(location)
 
 
-def set_free_fly(world: "PokemonFRLGWorld") -> None:
+def set_free_fly(world: "PokemonVegaWorld") -> None:
     # Set our free fly location
     world.free_fly_location_id = FLY_ITEM_ID_MAP["ITEM_FLY_NONE"]
     world.town_map_fly_location_id = FLY_ITEM_ID_MAP["ITEM_FLY_NONE"]
@@ -221,7 +221,7 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
     ]
 
     if world.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel:
-        item = PokemonFRLGItem("Oak's Parcel", ItemClassification.progression, None, world.player)
+        item = PokemonVegaItem("Oak's Parcel", ItemClassification.progression, None, world.player)
         state.collect(item, True)
 
     found_event = True
@@ -268,7 +268,7 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
             town_map_fly_list.remove(free_fly_location_id)
 
         menu_region = world.multiworld.get_region("Menu", world.player)
-        free_fly_location = PokemonFRLGLocation(
+        free_fly_location = PokemonVegaLocation(
             world.player,
             "Free Fly Location",
             None,
@@ -278,7 +278,7 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
             frozenset({"Event"})
         )
         item_id = data.constants[free_fly_location_id]
-        free_fly_location.place_locked_item(PokemonFRLGItem(data.items[item_id].name,
+        free_fly_location.place_locked_item(PokemonVegaItem(data.items[item_id].name,
                                                             ItemClassification.progression,
                                                             None,
                                                             world.player))
@@ -290,7 +290,7 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
         world.town_map_fly_location_id = FLY_ITEM_ID_MAP[town_map_fly_location_id]
 
         menu_region = world.multiworld.get_region("Menu", world.player)
-        town_map_fly_location = PokemonFRLGLocation(
+        town_map_fly_location = PokemonVegaLocation(
             world.player,
             "Town Map Fly Location",
             None,
@@ -300,7 +300,7 @@ def set_free_fly(world: "PokemonFRLGWorld") -> None:
             frozenset({"Event"})
         )
         item_id = data.constants[town_map_fly_location_id]
-        town_map_fly_location.place_locked_item(PokemonFRLGItem(data.items[item_id].name,
+        town_map_fly_location.place_locked_item(PokemonVegaItem(data.items[item_id].name,
                                                                  ItemClassification.progression,
                                                                  None,
                                                                  world.player))

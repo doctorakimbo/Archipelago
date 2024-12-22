@@ -3,7 +3,7 @@ from BaseClasses import Item, ItemClassification
 from .data import data, BASE_OFFSET
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 ITEM_GROUPS = {
     "Badges": {
@@ -57,8 +57,8 @@ ITEM_GROUPS = {
 }
 
 
-class PokemonFRLGItem(Item):
-    game: str = "Pokemon FireRed and LeafGreen"
+class PokemonVegaItem(Item):
+    game: str = "Pokemon Vega"
     tags: FrozenSet[str]
 
     def __init__(self, name: str, classification: ItemClassification, code: Optional[int], player: int) -> None:
@@ -96,7 +96,7 @@ def get_item_classification(item_id: int) -> ItemClassification:
     return data.items[reverse_offset_item_value(item_id)].classification
 
 
-def get_random_item(world: "PokemonFRLGWorld", item_classification: ItemClassification = None) -> str:
+def get_random_item(world: "PokemonVegaWorld", item_classification: ItemClassification = None) -> str:
     if item_classification is None:
         item_classification = ItemClassification.useful if world.random.random() < 0.20 else ItemClassification.filler
     items = [item for item in data.items.values()

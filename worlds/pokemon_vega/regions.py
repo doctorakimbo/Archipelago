@@ -1,15 +1,15 @@
 """
-Functions related to AP regions for Pokémon FireRed and LeafGreen (see ./data/regions for region definitions)
+Functions related to AP regions for Pokémon Vega (see ./data/regions for region definitions)
 """
 from typing import TYPE_CHECKING, Dict, List, Tuple, Optional, Callable
 from BaseClasses import Region, CollectionState, ItemClassification
 from .data import data
-from .items import PokemonFRLGItem
-from .locations import PokemonFRLGLocation
-from .options import GameVersion, LevelScaling
+from .items import PokemonVegaItem
+from .locations import PokemonVegaLocation
+from .options import LevelScaling
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 exclusive_gift_pokemon: List[str] = {
     "TRADE_POKEMON_NIDORAN",
@@ -32,7 +32,7 @@ sevii_required_events = [
 ]
 
 
-class PokemonFRLGRegion(Region):
+class PokemonVegaRegion(Region):
     distance: Optional[int]
 
     def __init__(self, name, player, multiworld):
@@ -40,7 +40,7 @@ class PokemonFRLGRegion(Region):
         self.distance = None
 
 
-def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
+def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
     """
     Iterates through regions created from JSON to create regions and adds them to the multiworld.
     Also creates and places events and connects regions via warps and the exits defined in the JSON.
@@ -58,7 +58,6 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         ],
     }
 
-    game_version = world.options.game_version.current_key
     kanto_only = world.options.kanto_only
 
     def connect_to_map_encounters(regions: Dict[str, Region], region: Region, map_name: str, encounter_region_name: str,
@@ -84,9 +83,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                 try:
                     encounter_region = regions[region_name]
                 except KeyError:
-                    encounter_region = PokemonFRLGRegion(region_name, world.player, world.multiworld)
+                    encounter_region = PokemonVegaRegion(region_name, world.player, world.multiworld)
                     encounter_slots = getattr(world.modified_maps[map_name],
-                                              f"{encounter_category[0].lower()}_encounters").slots[game_version]
+                                              f"{encounter_category[0].lower()}_encounters").slots
 
                     # Subcategory is for splitting fishing rods; land and water only have one subcategory
                     for subcategory in encounter_category[1]:
@@ -102,7 +101,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                         for j, species_id in enumerate(unique_species):
                             subcategory_name = subcategory[0] if subcategory[0] is not None else encounter_category[0]
 
-                            encounter_location = PokemonFRLGLocation(
+                            encounter_location = PokemonVegaLocation(
                                 world.player,
                                 f"{encounter_region_name} - {subcategory_name} Encounter {j + 1}",
                                 None,
@@ -118,7 +117,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                 encounter_location.access_rule = subcategory[2]
 
                             # Fill the location with an event for catching that species
-                            encounter_location.place_locked_item(PokemonFRLGItem(
+                            encounter_location.place_locked_item(PokemonVegaItem(
                                 data.species[species_id].name,
                                 ItemClassification.progression,
                                 None,
@@ -139,7 +138,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
             continue
 
         region_name = region_data.name
-        new_region = PokemonFRLGRegion(region_name, world.player, world.multiworld)
+        new_region = PokemonVegaRegion(region_name, world.player, world.multiworld)
 
         for event_id in region_data.events:
             event_data = world.modified_events[event_id]
@@ -147,30 +146,17 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
             if world.options.kanto_only and event_data.name in sevii_required_events:
                 continue
 
-            if type(event_data.name) is list:
-                if world.options.game_version == GameVersion.option_firered:
-                    name = event_data.name[0]
-                else:
-                    name = event_data.name[1]
-            else:
-                name = event_data.name
+            name = event_data.name
+            item = event_data.item
 
-            if type(event_data.item) is list:
-                if world.options.game_version == GameVersion.option_firered:
-                    item = event_data.item[0]
-                else:
-                    item = event_data.item[1]
-            else:
-                item = event_data.item
-
-            event = PokemonFRLGLocation(world.player,
+            event = PokemonVegaLocation(world.player,
                                         name,
                                         None,
                                         new_region,
                                         None,
                                         None,
                                         event_data.tags)
-            event.place_locked_item(PokemonFRLGItem(item,
+            event.place_locked_item(PokemonVegaItem(item,
                                                     ItemClassification.progression,
                                                     None,
                                                     world.player))
@@ -212,11 +198,9 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         trainer_name_level_list: List[Tuple[str, int]] = []
         encounter_name_level_list: List[Tuple[str, int]] = []
 
-        game_version = world.options.game_version.current_key
-
         for scaling_data in world.scaling_data:
             if scaling_data.region not in regions:
-                region = PokemonFRLGRegion(scaling_data.region, world.player, world.multiworld)
+                region = PokemonVegaRegion(scaling_data.region, world.player, world.multiworld)
                 regions[scaling_data.region] = region
 
                 for connection in scaling_data.connections:
@@ -226,7 +210,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                 region = regions[scaling_data.region]
 
             if "Trainer" in scaling_data.tags:
-                scaling_event = PokemonFRLGLocation(
+                scaling_event = PokemonVegaLocation(
                     world.player,
                     scaling_data.name,
                     None,
@@ -236,7 +220,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     scaling_data.tags,
                     scaling_data.data_ids
                 )
-                scaling_event.place_locked_item(PokemonFRLGItem("Trainer Party",
+                scaling_event.place_locked_item(PokemonVegaItem("Trainer Party",
                                                                 ItemClassification.filler,
                                                                 None,
                                                                 world.player))
@@ -247,7 +231,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
 
                 region.locations.append(scaling_event)
             elif "Static" in scaling_data.tags:
-                scaling_event = PokemonFRLGLocation(
+                scaling_event = PokemonVegaLocation(
                     world.player,
                     scaling_data.name,
                     None,
@@ -257,7 +241,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     scaling_data.tags,
                     scaling_data.data_ids
                 )
-                scaling_event.place_locked_item(PokemonFRLGItem("Static Encounter",
+                scaling_event.place_locked_item(PokemonVegaItem("Static Encounter",
                                                                 ItemClassification.filler,
                                                                 None,
                                                                 world.player))
@@ -279,7 +263,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                     for subcategory in encounter_category_data:
                         for i in subcategory[1]:
                             subcategory_name = subcategory[0] if subcategory[0] is not None else scaling_data.type
-                            species_name = f"{subcategory_name} {encounters.slots[game_version][i].species_id}"
+                            species_name = f"{subcategory_name} {encounters.slots[i].species_id}"
                             if species_name not in events:
                                 encounter_data = (f"{scaling_data.name} {index}", [f"{data_id} {i}"], subcategory[2])
                                 events[species_name] = encounter_data
@@ -288,7 +272,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                 events[species_name][1].append(f"{data_id} {i}")
 
                 for event in events.values():
-                    scaling_event = PokemonFRLGLocation(
+                    scaling_event = PokemonVegaLocation(
                         world.player,
                         event[0],
                         None,
@@ -299,7 +283,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                         event[1]
                     )
 
-                    scaling_event.place_locked_item(PokemonFRLGItem("Wild Encounter",
+                    scaling_event.place_locked_item(PokemonVegaItem("Wild Encounter",
                                                                     ItemClassification.filler,
                                                                     None,
                                                                     world.player))
@@ -334,8 +318,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                             elif data_id in data.legendary_pokemon:
                                 pokemon_data = data.legendary_pokemon[data_id]
 
-                            encounter_name_level_list.append((location.name, pokemon_data.level[game_version]))
-                            world.encounter_name_level_dict[location.name] = pokemon_data.level[game_version]
+                            encounter_name_level_list.append((location.name, pokemon_data.level))
+                            world.encounter_name_level_dict[location.name] = pokemon_data.level
                     elif "Wild" in location.tags:
                         max_level = 1
 
@@ -346,7 +330,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                           map_data.water_encounters if "Water" in location.tags else
                                           map_data.fishing_encounters)
 
-                            encounter_max_level = encounters.slots[game_version][int(data_ids[1])].max_level
+                            encounter_max_level = encounters.slots[int(data_ids[1])].max_level
                             max_level = max(max_level, encounter_max_level)
 
                         encounter_name_level_list.append((location.name, max_level)),
@@ -359,7 +343,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
         world.encounter_name_list = [i[0] for i in encounter_name_level_list]
         world.encounter_level_list = [i[1] for i in encounter_name_level_list]
 
-    regions["Menu"] = PokemonFRLGRegion("Menu", world.player, world.multiworld)
+    regions["Menu"] = PokemonVegaRegion("Menu", world.player, world.multiworld)
     regions["Menu"].connect(regions["Player's House 2F"], "Start Game")
     regions["Menu"].connect(regions["Evolutions"], "Evolve")
     regions["Menu"].connect(regions["Sky"], "Flying")
@@ -367,13 +351,13 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
     return regions
 
 
-def create_indirect_conditions(world: "PokemonFRLGWorld"):
+def create_indirect_conditions(world: "PokemonVegaWorld"):
     for region, entrances in indirect_conditions.items():
         for entrance in entrances:
             world.multiworld.register_indirect_condition(world.get_region(region), world.get_entrance(entrance))
 
 
-def modify_entrance_name(world: "PokemonFRLGWorld", name: str) -> str:
+def modify_entrance_name(world: "PokemonVegaWorld", name: str) -> str:
     route_2_modification = {
         "Route 2 Northwest Cuttable Tree": "Route 2 Northwest Smashable Rock",
         "Route 2 Northeast Cuttable Tree (North)": "Route 2 Northeast Smashable Rock",

@@ -133,7 +133,7 @@ _IGNORABLE_WARPS = frozenset({
 
 def validate_regions() -> bool:
     """
-    Verifies that FireRed/LeafGreen's data doesn't have duplicate or missing
+    Verifies that Vega's data doesn't have duplicate or missing
     regions/warps/locations. Meant to catch problems during development like
     forgetting to add a new location or incorrectly splitting a region.
     """
@@ -155,7 +155,7 @@ def validate_regions() -> bool:
     for name, region in data.regions.items():
         for region_exit in region.exits:
             if region_exit not in data.regions:
-                error(f"Pokemon FRLG: Region [{region_exit}] referenced by [{name}] was not defined")
+                error(f"Pokemon Vega: Region [{region_exit}] referenced by [{name}] was not defined")
 
     # Check warps
     for source, dest in data.warp_map.items():
@@ -163,21 +163,21 @@ def validate_regions() -> bool:
             continue
 
         if dest is None:
-            error(f"Pokemon FRLG: Warp [{source}] has no destination")
+            error(f"Pokemon Vega: Warp [{source}] has no destination")
         elif not data.warps[dest].connects_to(data.warps[source]) and not data.warps[source].is_one_way:
-            error(f"Pokemon FRLG: Warp [{source}] appears to be a one-way warp but was not marked as one")
+            error(f"Pokemon Vega: Warp [{source}] appears to be a one-way warp but was not marked as one")
 
     # Check locations
     region_locations = [location for region in data.regions.values() for location in region.locations]
     claimed_locations = set()
     for location_id in region_locations:
         if location_id in claimed_locations:
-            error(f"Pokemon FRLG: Location [{location_id}] exists in multiple regions")
+            error(f"Pokemon Vega: Location [{location_id}] exists in multiple regions")
         claimed_locations.add(location_id)
 
     for location_id in extracted_data["locations"]:
         if location_id not in claimed_locations and location_id not in _IGNORABLE_LOCATIONS:
-            warn(f"Pokemon FRLG: Location [{location_id}] does not belong to any region")
+            warn(f"Pokemon Vega: Location [{location_id}] does not belong to any region")
 
     warn_messages.sort()
     error_messages.sort()
@@ -188,7 +188,7 @@ def validate_regions() -> bool:
     for message in error_messages:
         logging.error(message)
 
-    logging.debug("Pokemon FRLG sanity check done. Found %s errors and %s warnings.",
+    logging.debug("Pokemon Vega sanity check done. Found %s errors and %s warnings.",
                   len(error_messages),
                   len(warn_messages))
 

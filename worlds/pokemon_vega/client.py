@@ -11,13 +11,6 @@ from .options import Goal
 if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
 
-BASE_ROM_NAME: Dict[str, str] = {
-    "firered": "pokemon red version",
-    "leafgreen": "pokemon green version",
-    "firered_rev1": "pokemon red version",
-    "leafgreen_rev1": "pokemon green version"
-}
-
 TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_BROCK",
     "FLAG_DEFEATED_MISTY",
@@ -106,11 +99,10 @@ MAP_SECTION_EDGES: Dict[str, List[Tuple[int, int]]] = {
 SECTION_EDGES_MAP = {data.constants[map_name]: map_name for map_name in MAP_SECTION_EDGES}
 
 
-class PokemonFRLGClient(BizHawkClient):
-    game = "Pokemon FireRed and LeafGreen"
+class PokemonVegaClient(BizHawkClient):
+    game = "Pokemon Vega"
     system = "GBA"
-    patch_suffix = (".apfirered", ".apleafgreen")
-    game_version: str
+    patch_suffix = (".apvega")
     goal_flag: Optional[int]
     local_checked_locations: Set[int]
     local_set_events: Dict[str, bool]
@@ -120,7 +112,6 @@ class PokemonFRLGClient(BizHawkClient):
 
     def __init__(self) -> None:
         super().__init__()
-        self.game_version = None
         self.goal_flag = None
         self.local_checked_locations = set()
         self.local_set_events = {}
@@ -135,35 +126,14 @@ class PokemonFRLGClient(BizHawkClient):
             # Check rom name and patch version
             rom_name_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(0x108, 32, "ROM")]))[0]
             rom_name = bytes([byte for byte in rom_name_bytes if byte != 0]).decode("ascii")
-            game_version_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(0x100, 4, "ROM")]))[0]
-            game_version = int.from_bytes(game_version_bytes, "little")
-            game_revision_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(0xBC, 1, "ROM")]))[0]
-            game_revision = int.from_bytes(game_revision_bytes, "little")
 
-            if game_version == 0x4:
-                if game_revision == 0x0:
-                    self.game_version = "firered"
-                elif game_revision == 0x1:
-                    self.game_version = "firered_rev1"
-                else:
-                    return False
-            elif game_version == 0x5:
-                if game_revision == 0x0:
-                    self.game_version = "leafgreen"
-                elif game_revision == 0x1:
-                    self.game_version = "leafgreen_rev1"
-                else:
-                    return False
-            else:
+            if not rom_name.startswith("pokemon red version"):
                 return False
-
-            if not rom_name.startswith(BASE_ROM_NAME[self.game_version]):
-                return False
-            if rom_name == BASE_ROM_NAME[self.game_version]:
-                logger.info("ERROR: You appear to be running an unpatched version of Pokemon FireRed or LeafGreen."
+            if rom_name == "pokemon red version":
+                logger.info("ERROR: You appear to be running a FireRed or Vega ROM that has not been patched by Archipelago."
                             "You need to generate a patch file and use it to create a patched ROM.")
                 return False
-            if not rom_name.startswith(data.rom_names[self.game_version]):
+            if not rom_name.startswith(data.rom_name):
                 logger.info("ERROR: The patch file used to create this ROM is not compatible with "
                             "this client. Double check your client version against the version being "
                             "used by the generator.")
@@ -183,7 +153,7 @@ class PokemonFRLGClient(BizHawkClient):
     async def set_auth(self, ctx: "BizHawkClientContext") -> None:
         import base64
         auth_raw = (await bizhawk.read(ctx.bizhawk_ctx,
-                                       [(data.rom_addresses[self.game_version]["gArchipelagoInfo"], 16, "ROM")]))[0]
+                                       [(data.rom_addresses["gArchipelagoInfo"], 16, "ROM")]))[0]
         ctx.auth = base64.b64encode(auth_raw).decode("utf-8")
 
     async def game_watcher(self, ctx: "BizHawkClientContext") -> None:
@@ -200,8 +170,8 @@ class PokemonFRLGClient(BizHawkClient):
 
             # Checks that the player is in the overworld
             guards["IN OVERWORLD"] = (
-                data.ram_addresses[self.game_version]["gMain"] + 4,
-                (data.ram_addresses[self.game_version]["CB2_Overworld"] + 1).to_bytes(4, "little"),
+                data.ram_addresses["gMain"] + 4,
+                (data.ram_addresses["CB2_Overworld"] + 1).to_bytes(4, "little"),
                 "System Bus"
             )
 
@@ -209,15 +179,15 @@ class PokemonFRLGClient(BizHawkClient):
             read_result = await bizhawk.read(
                 ctx.bizhawk_ctx,
                 [
-                    (data.ram_addresses[self.game_version]["gSaveBlock1Ptr"], 4, "System Bus"),
-                    (data.ram_addresses[self.game_version]["gSaveBlock2Ptr"], 4, "System Bus")
+                    (data.ram_addresses["gSaveBlock1Ptr"], 4, "System Bus"),
+                    (data.ram_addresses["gSaveBlock2Ptr"], 4, "System Bus")
                 ]
             )
 
             # Check that the save data hasn't moved
-            guards["SAVE BLOCK 1"] = (data.ram_addresses[self.game_version]["gSaveBlock1Ptr"],
+            guards["SAVE BLOCK 1"] = (data.ram_addresses["gSaveBlock1Ptr"],
                                       read_result[0], "System Bus")
-            guards["SAVE BLOCK 2"] = (data.ram_addresses[self.game_version]["gSaveBlock2Ptr"],
+            guards["SAVE BLOCK 2"] = (data.ram_addresses["gSaveBlock2Ptr"],
                                       read_result[1], "System Bus")
 
             sb1_address = int.from_bytes(guards["SAVE BLOCK 1"][1], "little")
@@ -319,7 +289,7 @@ class PokemonFRLGClient(BizHawkClient):
 
                 await ctx.send_msgs([{
                     "cmd": "Set",
-                    "key": f"pokemon_frlg_events_{ctx.team}_{ctx.slot}",
+                    "key": f"pokemon_vega_events_{ctx.team}_{ctx.slot}",
                     "default": 0,
                     "want_reply": False,
                     "operations": [{"operation": "or", "value": event_bitfield}],
@@ -335,7 +305,7 @@ class PokemonFRLGClient(BizHawkClient):
 
                 await ctx.send_msgs([{
                     "cmd": "Set",
-                    "key": f"pokemon_frlg_fly_unlocks_{ctx.team}_{ctx.slot}",
+                    "key": f"pokemon_vega_fly_unlocks_{ctx.team}_{ctx.slot}",
                     "default": 0,
                     "want_reply": False,
                     "operations": [{"operation": "or", "value": event_bitfield}],
@@ -347,7 +317,7 @@ class PokemonFRLGClient(BizHawkClient):
                 if caught_pokemon != self.caught_pokemon and ctx.slot is not None:
                     await ctx.send_msgs([{
                         "cmd": "Set",
-                        "key": f"pokemon_frlg_pokedex_{ctx.team}_{ctx.slot}",
+                        "key": f"pokemon_vega_pokedex_{ctx.team}_{ctx.slot}",
                         "default": 0,
                         "want_reply": False,
                         "operations": [{"operation": "replace", "value": caught_pokemon},]
@@ -365,7 +335,7 @@ class PokemonFRLGClient(BizHawkClient):
         Checks the index of the most recently received item and whether the item queue is full. Writes the next item
         into the game if necessary.
         """
-        received_item_address = data.ram_addresses[self.game_version]["gArchipelagoReceivedItem"]
+        received_item_address = data.ram_addresses["gArchipelagoReceivedItem"]
 
         sb1_address = int.from_bytes(guards["SAVE BLOCK 1"][1], "little")
 

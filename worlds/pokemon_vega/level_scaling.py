@@ -7,7 +7,7 @@ from .options import LevelScaling
 from .util import bound
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 
 @dataclass
@@ -21,7 +21,7 @@ class ScalingData:
     tags: FrozenSet
 
 
-def create_scaling_data(world: "PokemonFRLGWorld"):
+def create_scaling_data(world: "PokemonVegaWorld"):
     if world.options.level_scaling == LevelScaling.option_off:
         return
 
@@ -979,11 +979,11 @@ def level_scaling(multiworld):
     level_scaling_required = False
     state = CollectionState(multiworld)
     locations = {loc for loc in multiworld.get_filled_locations()
-                 if loc.item.advancement or loc.game == "Pokemon FireRed and LeafGreen" and "Scaling" in loc.tags}
+                 if loc.item.advancement or loc.game == "Pokemon Vega" and "Scaling" in loc.tags}
     collected_locations = set()
     spheres = []
 
-    for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+    for world in multiworld.get_game_worlds("Pokemon Vega"):
         if world.options.level_scaling != LevelScaling.option_off:
             level_scaling_required = True
         else:
@@ -1007,7 +1007,7 @@ def level_scaling(multiworld):
             while events_found:
                 events_found = False
 
-                for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+                for world in multiworld.get_game_worlds("Pokemon Vega"):
                     if world.options.level_scaling != LevelScaling.option_spheres_and_distance:
                         continue
                     regions = {multiworld.get_region("Menu", world.player)}
@@ -1094,11 +1094,10 @@ def level_scaling(multiworld):
             spheres.append(locations)
             break
 
-    for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+    for world in multiworld.get_game_worlds("Pokemon Vega"):
         if world.options.level_scaling == LevelScaling.option_off:
             continue
 
-        game_version = world.options.game_version.current_key
         e4_rematch_adjustment = 63 / 51
         e4_base_level = 51
 
@@ -1140,14 +1139,14 @@ def level_scaling(multiworld):
                         elif data_id in world.modified_legendary_pokemon:
                             pokemon_data = world.modified_legendary_pokemon[data_id]
 
-                        pokemon_data.level[game_version] = new_base_level
+                        pokemon_data.level = new_base_level
                     elif "Wild" in encounter_location.tags:
                         data_ids = data_id.split()
                         map_data = world.modified_maps[data_ids[0]]
                         encounters = (map_data.land_encounters if "Land" in encounter_location.tags else
                                       map_data.water_encounters if "Water" in encounter_location.tags else
                                       map_data.fishing_encounters)
-                        encounter_data = encounters.slots[game_version][int(data_ids[1])]
+                        encounter_data = encounters.slots[int(data_ids[1])]
                         new_max_level = round(max((new_base_level * encounter_data.max_level / old_base_level),
                                                   (new_base_level + encounter_data.max_level - old_base_level)))
                         new_min_level = round(max((new_base_level * encounter_data.min_level / old_base_level),

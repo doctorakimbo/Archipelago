@@ -1,21 +1,21 @@
 """
-Logic rule definitions for Pokémon FireRed and LeafGreen
+Logic rule definitions for Pokémon Vega
 """
 import math
 from typing import TYPE_CHECKING, Dict, List
 from BaseClasses import CollectionState
 from worlds.generic.Rules import add_rule, set_rule
 from .data import data
-from .options import (CeruleanCaveRequirement, EliteFourRequirement, FlashRequired, GameVersion, Goal,
+from .options import (CeruleanCaveRequirement, EliteFourRequirement, FlashRequired, Goal,
                       ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
                       Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey,
                       ViridianCityRoadblock, ViridianGymRequirement)
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 
-def set_rules(world: "PokemonFRLGWorld") -> None:
+def set_rules(world: "PokemonVegaWorld") -> None:
     player = world.player
     options = world.options
     multiworld = world.multiworld
@@ -394,13 +394,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Route 5 Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Route 5 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
-    # Underground Path North-South Tunnel
-    if options.game_version == GameVersion.option_firered:
-        set_rule(get_location("Underground Path North Entrance - Trade Nidoran M"),
-                 lambda state: state.has("Nidoran M", player))
-    elif options.game_version == GameVersion.option_leafgreen:
-        set_rule(get_location("Underground Path North Entrance - Trade Nidoran F"),
-                 lambda state: state.has("Nidoran F", player))
+    # Underground Path North-South Tunnel:
+    set_rule(get_location("Underground Path North Entrance - Trade Nidoran M"),
+             lambda state: state.has("Nidoran M", player))
 
     # Route 6
     set_rule(get_entrance("Route 6 Surfing Spot"), lambda state: can_surf(state))
@@ -430,10 +426,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     if "Route 12 Boulders" in options.modify_world_state.value:
         set_rule(get_entrance("Route 11 East Exit"), lambda state: can_strength(state))
 
-    if options.game_version == GameVersion.option_firered:
-        set_rule(get_location("Route 11 Gate 2F - Trade Nidorino"), lambda state: state.has("Nidorino", player))
-    elif options.game_version == GameVersion.option_leafgreen:
-        set_rule(get_location("Route 11 Gate 2F - Trade Nidorina"), lambda state: state.has("Nidorina", player))
+    set_rule(get_location("Route 11 Gate 2F - Trade Nidorino"), lambda state: state.has("Nidorino", player))
 
     # Diglett's Cave
     if "Diglett's Cave" in options.additional_dark_caves.value:
@@ -612,11 +605,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Route 18
     set_rule(get_entrance("Route 18 Gate 1F East Bike Checkpoint"), lambda state: state.has("Bicycle", player))
-
-    if options.game_version == GameVersion.option_firered:
-        set_rule(get_location("Route 18 Gate 2F - Trade Golduck"), lambda state: state.has("Golduck", player))
-    elif options.game_version == GameVersion.option_leafgreen:
-        set_rule(get_location("Route 18 Gate 2F - Trade Slowbro"), lambda state: state.has("Slowbro", player))
+    set_rule(get_location("Route 18 Gate 2F - Trade Golduck"), lambda state: state.has("Golduck", player))
 
     # Fuchsia City
     set_rule(get_location("Safari Zone Warden's House - Safari Zone Warden's Gift"),
