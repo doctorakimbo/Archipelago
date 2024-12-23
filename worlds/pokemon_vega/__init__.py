@@ -41,7 +41,7 @@ class PokemonVegaWebWorld(WebWorld):
         "English",
         "setup_en.md",
         "setup/en",
-        ["Vyneras"]
+        ["Dr. Akimbo"]
     )
 
     tutorials = [setup_en]
