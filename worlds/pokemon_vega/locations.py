@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Uni
 from BaseClasses import CollectionState, Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonVegaItem
-from .options import FreeFlyLocation, PewterCityRoadblock, TownMapFlyLocation, ViridianCityRoadblock
+from .options import FreeFlyLocation, JunopsisCityRoadblock, TownMapFlyLocation
 
 if TYPE_CHECKING:
     from . import PokemonVegaWorld
@@ -152,7 +152,7 @@ def create_locations_from_tags(world: "PokemonVegaWorld", regions: Dict[str, Reg
     tags = set(tags)
 
     for region_data in data.regions.values():
-        if world.options.kanto_only and not region_data.kanto:
+        if world.options.exclude_sphere_ruins and region_data.sphere_ruins:
             continue
 
         region = regions[region_data.name]
@@ -161,9 +161,6 @@ def create_locations_from_tags(world: "PokemonVegaWorld", regions: Dict[str, Reg
 
         for location_flag in included_locations:
             location_data = data.locations[location_flag]
-
-            if world.options.kanto_only and location_data.name in sevii_required_locations:
-                continue
 
             location_id = offset_flag(location_data.flag)
 
@@ -220,10 +217,6 @@ def set_free_fly(world: "PokemonVegaWorld") -> None:
         "ITEM_FLY_SEVEN_ISLAND"
     ]
 
-    if world.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel:
-        item = PokemonVegaItem("Oak's Parcel", ItemClassification.progression, None, world.player)
-        state.collect(item, True)
-
     found_event = True
     collected_events = set()
     while found_event:
@@ -239,18 +232,13 @@ def set_free_fly(world: "PokemonVegaWorld") -> None:
         if region.can_reach(state):
             reachable_regions.add(region.name)
 
-    if world.options.kanto_only:
-        sevii_islands = ["ITEM_FLY_ONE_ISLAND", "ITEM_FLY_TWO_ISLAND", "ITEM_FLY_THREE_ISLAND", "ITEM_FLY_FOUR_ISLAND",
-                         "ITEM_FLY_FIVE_ISLAND", "ITEM_FLY_SIX_ISLAND", "ITEM_FLY_SEVEN_ISLAND"]
-        free_fly_list = [fly for fly in free_fly_list if fly not in sevii_islands]
-
     town_map_fly_list = copy.deepcopy(free_fly_list)
 
     if world.options.free_fly_location == FreeFlyLocation.option_any:
-        free_fly_list.append("ITEM_FLY_INDIGO")
+        free_fly_list.append("ITEM_FLY_SHAKUDO")
 
     if world.options.town_map_fly_location == TownMapFlyLocation.option_any:
-        town_map_fly_list.append("ITEM_FLY_INDIGO")
+        town_map_fly_list.append("ITEM_FLY_SHAKUDO")
 
     for region in reachable_regions:
         if region in fly_item_exclusion_map.keys():

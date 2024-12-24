@@ -347,22 +347,8 @@ def randomize_moves(world: "PokemonVegaWorld") -> None:
 
 
 def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
-    if world.options.wild_pokemon == RandomizeWildPokemon.option_vanilla:
-        # If Famesanity and Pokémon Request locations are on, we need to place Togepi somewhere
-        if world.options.famesanity and world.options.pokemon_request_locations and not world.options.kanto_only:
-            map_data = world.modified_maps["MAP_FIVE_ISLAND_MEMORIAL_PILLAR"]
-            slots = map_data.land_encounters.slots
-            for slot in slots:
-                slot.species_id = data.constants["SPECIES_TOGEPI"]
-        return
-
     from collections import defaultdict
 
-    min_pokemon_needed = math.ceil(max(world.options.oaks_aide_route_2.value,
-                                       world.options.oaks_aide_route_10.value,
-                                       world.options.oaks_aide_route_11.value,
-                                       world.options.oaks_aide_route_16.value,
-                                       world.options.oaks_aide_route_15.value) * 1.2)
     should_match_bst = world.options.wild_pokemon in {
         RandomizeWildPokemon.option_match_base_stats,
         RandomizeWildPokemon.option_match_base_stats_and_type
@@ -384,12 +370,6 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
 
     placed_species = set()
     priority_species = list()
-    if world.options.pokemon_request_locations:
-        priority_species.append(data.constants["SPECIES_MAGIKARP"])
-        if not world.options.kanto_only:
-            priority_species.append(data.constants["SPECIES_HERACROSS"])
-            if world.options.famesanity:
-                priority_species.extend([data.constants["SPECIES_TOGEPI"], data.constants["SPECIES_TOGETIC"]])
 
     map_names = list(world.modified_maps.keys())
     world.random.shuffle(map_names)
@@ -397,7 +377,7 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
         placed_priority_species = False
         map_data = world.modified_maps[map_name]
 
-        if not map_data.kanto and world.options.kanto_only:
+        if map_data.sphere_ruins and world.options.exclude_sphere_ruins:
             continue
 
         new_encounter_slots: List[List[int]] = [None, None, None]
@@ -465,11 +445,6 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
                                 elif (world.options.wild_pokemon_groups == WildPokemonGroups.option_dungeons and
                                       map_name in _DUNGEON_GROUPS):
                                     blacklists[0].append(set(dungeon_species_map[_DUNGEON_GROUPS[map_name]].values()))
-
-                                # If we haven't placed enough species for Oak's Aides yet, blacklist
-                                # species that have already been placed until we reach that number
-                                if len(placed_species) < min_pokemon_needed:
-                                    blacklists[1].append(placed_species)
 
                                 # Blacklist from player's options
                                 blacklists[2].append(world.blacklisted_wild_pokemon)

@@ -11,21 +11,22 @@ class Goal(Choice):
     Sets what your goal is to consider the game beaten.
 
     - Elite Four: Defeat the Elite Four
-    - Elite Four Rematch: Defeat the Elite Four Rematch
+    - Distant Island: Get to Distant Island and enter the Sphere Ruins' first room
+    - Asphere: Catch or defeat Asphere at the core of the Sphere Ruins
     """
     display_name = "Goal"
     default = 0
     option_elite_four = 0
-    option_elite_four_rematch = 1
+    option_distant_island = 1
+    option_asphere = 2
 
 
-class KantoOnly(Toggle):
+class ExcludeSphereRuins(DefaultOnToggle):
     """
-    Excludes all the Sevii Island locations. Navel Rock and Birth Island are still included.
-    The Rock Smash and Waterfall HMs will still be in the item pool and their vanilla locations will have a random
-    filler item.
+    Excludes all the Sphere Ruins locations. Locations on Distant Island outside the ruins are still included.
+    This is compatible with the Distant Island goal, but obviously not the Asphere goal.
     """
-    display_name = "Kanto Only"
+    display_name = "Exclude Sphere Ruins"
 
 
 class ShuffleBadges(DefaultOnToggle):
@@ -35,7 +36,7 @@ class ShuffleBadges(DefaultOnToggle):
     display_name = "Shuffle Badges"
 
 
-class ShuffleHiddenItems(Choice):
+class ShuffleHiddenItems(Choice): # note: are there even recurring hidden items in vega?
     """
     Shuffle Hidden Items into the general item pool.
 
@@ -50,15 +51,15 @@ class ShuffleHiddenItems(Choice):
     option_all = 2
 
 
-class ExtraKeyItems(Toggle):
+class ExtraKeyItems(Toggle): # todo: edit rules; edit baserom; different item for Spirit Mansion; Machine Part -> Lab Pass
     """
-    Adds key items that are required to access the Rocket Hideout, Safari Zone, Pokémon Mansion, and Power Plant.
+    Adds key items that are required to access the DH Hideout, Safari Zone, Spirit Mansion, and the back room of Perimeter Labs.
 
     Adds four new locations:
-    - Item in the Celadon Rocket House
-    - Item given by a Worker in the Fuchsia Safari Office
-    - Item given by the Scientist in the Cinnabar Pokémon Lab Research Room
-    - Hidden Item in the Cerulean Gym (requires Surf & Itemfinder)
+    - Item in the house leading to DH Hideout
+    - Second item given by the man with the hungry Rynos
+    - Second item given by rival outside Spirit Mansion
+    - Item given by the Perimeter Labs receptionist
     """
     display_name = "Extra Key Items"
 
@@ -72,64 +73,12 @@ class Trainersanity(Toggle):
     display_name = "Trainersanity"
 
 
-class Famesanity(Toggle):
-    """
-    Unlocking entries in the Fame Checker gives you an item.
-
-    Each entry will add a random filler item into the pool.
-    """
-    display_name = "Famesanity"
-
-
-class ShuffleFlyDestinationUnlocks(Toggle):
+class ShuffleFlyDestinationUnlocks(Toggle): # todo: don't have an item for distant island fly, as it's pointless - just unlock it immediately
     """
     Shuffles the ability to fly to Pokémon Centers into the pool. Entering the map that normally would unlock the
     fly destination gives a random item.
     """
     display_name = "Shuffle Fly Destination Unlocks"
-
-
-class PokemonRequestLocations(Toggle):
-    """
-    Shuffle the locations that require you to show a specific Pokémon to an NPC. If turned on, the Pokémon that are
-    required will be found somewhere in the wild. Talking to the NPC that wants to see the Pokémon will provide you with
-    the Pokédex info for where to find it as well as tell you the item they'll give.
-    """
-    display_name = "Pokémon Request Locations"
-
-
-class SilphCoCardKey(Choice):
-    """
-    Sets how the card key that unlocks the doors in Silph Co. is handled.
-
-    - Vanilla: There is one Card Key in the pool that unlocks every door in Silph Co.
-    - Split: The Card Key is split into ten items, one for each floor of Silph Co. that has doors.
-    - Progressive: The Card Key is split into ten items, and you will always obtain them in order from 2F to 11F.
-    """
-    display_name = "Silph Co. Card Key"
-    default = 0
-    option_vanilla = 0
-    option_split = 1
-    option_progressive = 2
-
-
-class SeviiIslandPasses(Choice):
-    """
-    Sets how the passes that allow you to travel to the Sevii Islands are handled.
-
-    - Vanilla: The Tri Pass and Rainbow Pass are two separate items in the pool and can be found in any order.
-    - Progressive: There are two Progressive Passes in the pool. You will always obtain the Tri Pass before the Rainbow
-                   Pass.
-    - Split: The Tri Pass and Rainbow Pass are split into seven items, one for each island.
-    - Progressive Split: The Tri Pass and Rainbow Pass are split into seven items, and you will always obtain the Passes
-                         in order from the First Pass to the Seventh Pass.
-    """
-    display_name = "Sevii Island Passes"
-    default = 0
-    option_vanilla = 0
-    option_progressive = 1
-    option_split = 2
-    option_progressive_split = 3
 
 
 class ItemfinderRequired(Choice):
@@ -150,11 +99,11 @@ class ItemfinderRequired(Choice):
 
 class FlashRequired(Choice):
     """
-    Sets whether HM05 Flash is logically required to navigate dark caves.
+    Sets whether HM05 Flash is logically required to navigate dark areas.
 
-    - Off: Flash is not required to navigate dark caves.
-    - Logic: Flash is logically required to navigate dark caves.
-    - Required: Flash is required to navigate dark caves.
+    - Off: Flash is not required to navigate dark areas.
+    - Logic: Flash is logically required to navigate dark areas.
+    - Required: Flash is required to navigate dark areas.
     """
     display_name = "Flash Required"
     default = 1
@@ -163,51 +112,26 @@ class FlashRequired(Choice):
     option_required = 2
 
 
-class FameCheckerRequired(DefaultOnToggle):
+class JunopsisCityRoadblock(Choice):
     """
-    Sets whether it is required to have the Fame Checker in order to unlock entries.
+    Sets the requirement for passing the Junopsis City Roadblock.
 
-    All Fame Checker entries that are one time occurences have been changed so that you can trigger them repeatedly.
+    - Open: The man will not stop you from entering Route 503.
+    - Annette: The man will stop you from entering Route 503 until you defeat Annette.
+    - Any Gym Leader: The man will stop you from entering Route 503 until you defeat any Gym Leader.
+    - Elnath Badge: The man will stop you from entering Route 503 until you have the Elnath Badge.
+    - Any Badge: The man will stop you from entering Route 503 until you have a Badge.
     """
-    display_name = "Fame Checker Required"
-
-
-class ViridianCityRoadblock(Choice):
-    """
-    Sets the requirement for passing the Viridian City Roadblock.
-
-    - Vanilla: The Old Man moves out of the way after delivering Oak's Parcel.
-    - Early Parcel: Same as Vanilla but Oak's Parcel will be available at the beginning of your game. This option will
-                    have no effect and be treated as Vanilla if Random Starting Town is on.
-    - Open: The Old Man is moved out of the way at the start of the game.
-    """
-    display_name = "Viridian City Roadblock"
-    default = 1
-    option_vanilla = 0
-    option_early_parcel = 1
-    option_open = 2
-
-
-class PewterCityRoadblock(Choice):
-    """
-    Sets the requirement for passing the Pewter City Roadblock.
-
-    - Open: The boy will not stop you from entering Route 3.
-    - Brock: The boy will stop you from entering Route 3 until you defeat Brock.
-    - Any Gym Leader: The boy will stop you from entering Route 3 until you defeat any Gym Leader.
-    - Boulder Badge: The boy will stop you from entering Route 3 until you have the Boulder Badge.
-    - Any Badge: The boy will stop you from entering Route 3 until you have a Badge.
-    """
-    display_name = "Pewter City Roadblock"
+    display_name = "Junopsis City Roadblock"
     default = 1
     option_open = 0
-    option_brock = 1
+    option_annette = 1
     option_any_gym = 2
-    option_boulder_badge = 3
+    option_elnath_badge = 3
     option_any_badge = 4
 
 
-class ModifyWorldState(OptionSet):
+class ModifyWorldState(OptionSet): # not even touching this yet
     """
     Set various changes to the world's state that changes how you can access various regions and locations.
     The valid options and their effects are the following:
@@ -233,7 +157,7 @@ class ModifyWorldState(OptionSet):
                   "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness"]
 
 
-class AdditionalDarkCaves(OptionSet):
+class AdditionalDarkCaves(OptionSet): # not even touching this yet
     """
     Set additional caves to be dark caves, potentially requiring Flash to navigate them.
 
@@ -244,6 +168,9 @@ class AdditionalDarkCaves(OptionSet):
     """
     display_name = "Additional Dark Caves"
     valid_keys = ["Mt. Moon", "Diglett's Cave", "Victory Road"]
+    
+    
+# todo: add options for when legendaries appear: vanilla/pokemon castle/immediately; note: hide ganimede during mt. snowfall cutscene and add funny dialogue to people there
 
 
 class RemoveBadgeRequirement(OptionSet):
@@ -256,126 +183,25 @@ class RemoveBadgeRequirement(OptionSet):
     valid_keys = ["Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"]
 
 
-class OaksAideRoute2(Range):
+class Route523GuardRequirement(Choice):
     """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
-    on Route 2. Vanilla is 10.
-    """
-    display_name = "Oak's Aide Route 2"
-    default = 5
-    range_start = 0
-    range_end = 50
-
-
-class OaksAideRoute10(Range):
-    """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
-    on Route 10. Vanilla is 20.
-    """
-    display_name = "Oak's Aide Route 10"
-    default = 10
-    range_start = 0
-    range_end = 50
-
-
-class OaksAideRoute11(Range):
-    """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
-    on Route 11. Vanilla is 30.
-    """
-    display_name = "Oak's Aide Route 11"
-    default = 15
-    range_start = 0
-    range_end = 50
-
-
-class OaksAideRoute16(Range):
-    """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
-    on Route 16. Vanilla is 40.
-    """
-    display_name = "Oak's Aide Route 16"
-    default = 20
-    range_start = 0
-    range_end = 50
-
-
-class OaksAideRoute15(Range):
-    """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
-    on Route 15. Vanilla is 50.
-    """
-    display_name = "Oak's Aide Route 15"
-    default = 25
-    range_start = 0
-    range_end = 50
-
-
-class ViridianGymRequirement(Choice):
-    """
-    Sets the requirement for opening the Viridian Gym.
+    Sets the requirement for passing the guard in Orpimence City blocking Route 523.
 
     - Badges: Obtain some number of Badges.
     - Gyms: Beat some number of Gyms.
     """
-    display_name = "Viridian Gym Requirement"
+    display_name = "Route 523 Guard Requirement"
     default = 0
     option_badges = 0
     option_gyms = 1
 
 
-class ViridianGymCount(Range):
+class Route523GuardCount(Range):
     """
-    Sets the number of Badges/Gyms required to open the Viridian Gym.
+    Sets the number of Badges/Gyms required to pass the Route 523 Guard.
     """
-    display_name = "Viridian Gym Count"
-    default = 7
-    range_start = 0
-    range_end = 7
-
-
-class Route22GateRequirement(Choice):
-    """
-    Sets the requirement for passing through the Route 22 Gate.
-
-    - Badges: Obtain some number of Badges.
-    - Gyms: Beat some number of Gyms.
-    """
-    display_name = "Route 22 Gate Requirement"
-    default = 0
-    option_badges = 0
-    option_gyms = 1
-
-
-class Route22GateCount(Range):
-    """
-    Sets the number of Badges/Gyms required to pass through the Route 22 Gate.
-    """
-    display_name = "Route 22 Gate Count"
-    default = 7
-    range_start = 0
-    range_end = 8
-
-
-class Route23GuardRequirement(Choice):
-    """
-    Sets the requirement for passing the Route 23 Guard.
-
-    - Badges: Obtain some number of Badges.
-    - Gyms: Beat some number of Gyms.
-    """
-    display_name = "Route 23 Guard Requirement"
-    default = 0
-    option_badges = 0
-    option_gyms = 1
-
-
-class Route23GuardCount(Range):
-    """
-    Sets the number of Badges/Gyms required to pass the Route 23 Guard.
-    """
-    display_name = "Route 23 Guard Count"
-    default = 7
+    display_name = "Route 523 Guard Count"
+    default = 8
     range_start = 0
     range_end = 8
 
@@ -403,7 +229,7 @@ class EliteFourCount(Range):
     range_end = 8
 
 
-class CeruleanCaveRequirement(Choice):
+class CeruleanCaveRequirement(Choice): # distant island: rematches/badges/gyms; also add new option for determining which rematches count (similar to legendary hunt)
     """
     Sets the requirement for being able to enter Cerulean Cave.
 
@@ -670,6 +496,9 @@ class MoveBlacklist(OptionSet):
     """
     display_name = "Move Blacklist"
     valid_keys = sorted(data.moves.keys())
+    
+    
+# todo: option to only randomize types/abilities/moves of vanilla mons; option to randomize moves from within pool of level+egg
 
 
 class HmCompatibility(NamedRange):
@@ -766,14 +595,14 @@ class BlindTrainers(Toggle):
     display_name = "Blind Trainers"
 
 
-class BetterShops(Toggle):
+class BetterShops(Toggle): # todo: actually change marts
     """
     Most Pokemarts will sell all normal Pokemart items. The exceptions are the following:
 
-    - Celadon Department Store 2F TM Pokemart
-    - Celadon Department Store 4F Evo Stone Pokemart
-    - Celadon Department Store 5F Vitamin Pokemart
-    - Two Island Market Stall
+    - Shamouti Department Store 2F TM Pokemart
+    - Shamouti Department Store 4F Evo Stone Pokemart
+    - Shamouti Department Store 5F Vitamin Pokemart
+    - Distant Island Market Stalls
     """
     display_name = "Better Shops"
 
@@ -785,7 +614,7 @@ class FreeFlyLocation(Choice):
     display_name = "Free Fly Location"
     default = 0
     option_off = 0
-    option_exclude_indigo = 1
+    option_exclude_shakudo = 1
     option_any = 2
 
 
@@ -797,7 +626,7 @@ class TownMapFlyLocation(Choice):
     display_name = "Town Map Fly Location"
     default = 0
     option_off = 0
-    option_exclude_indigo = 1
+    option_exclude_shakudo = 1
     option_any = 2
 
 
@@ -827,39 +656,23 @@ class ReceiveItemMessages(Choice):
 @dataclass
 class PokemonVegaOptions(PerGameCommonOptions):
     goal: Goal
-    kanto_only: KantoOnly
+    exclude_sphere_ruins: ExcludeSphereRuins
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
     extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
-    famesanity: Famesanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
-    pokemon_request_locations: PokemonRequestLocations
-    card_key: SilphCoCardKey
-    island_passes: SeviiIslandPasses
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
-    fame_checker_required: FameCheckerRequired
-    viridian_city_roadblock: ViridianCityRoadblock
-    pewter_city_roadblock: PewterCityRoadblock
+    junopsis_city_roadblock: JunopsisCityRoadblock
     modify_world_state: ModifyWorldState
     additional_dark_caves: AdditionalDarkCaves
     remove_badge_requirement: RemoveBadgeRequirement
 
-    oaks_aide_route_2: OaksAideRoute2
-    oaks_aide_route_10: OaksAideRoute10
-    oaks_aide_route_11: OaksAideRoute11
-    oaks_aide_route_16: OaksAideRoute16
-    oaks_aide_route_15: OaksAideRoute15
-
-    viridian_gym_requirement: ViridianGymRequirement
-    viridian_gym_count: ViridianGymCount
-    route22_gate_requirement: Route22GateRequirement
-    route22_gate_count: Route22GateCount
-    route23_guard_requirement: Route23GuardRequirement
-    route23_guard_count: Route23GuardCount
+    route523_guard_requirement: Route523GuardRequirement
+    route523_guard_count: Route523GuardCount
     elite_four_requirement: EliteFourRequirement
     elite_four_count: EliteFourCount
     cerulean_cave_requirement: CeruleanCaveRequirement

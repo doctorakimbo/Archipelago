@@ -22,8 +22,8 @@ from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonVegaLocation)
 from .options import (PokemonVegaOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, Goal,
-                      RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, SeviiIslandPasses,
-                      ShuffleHiddenItems, ShuffleBadges, SilphCoCardKey, TownMapFlyLocation, ViridianCityRoadblock)
+                      RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon,
+                      ShuffleHiddenItems, ShuffleBadges, TownMapFlyLocation)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -166,58 +166,15 @@ class PokemonVegaWorld(World):
         self.blacklisted_moves = {vega_data.moves[name] for name in self.options.move_blacklist.value}
 
         # Modify options that are incompatible with each other
-        if self.options.kanto_only:
-            if self.options.goal == Goal.option_elite_four_rematch:
-                logging.warning("Pokemon Vega: Goal for Player %s (%s) incompatible with Kanto Only. "
-                                "Setting goal to Elite Four.", self.player, self.player_name)
-                self.options.goal.value = Goal.option_elite_four
-            if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
-                    self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_restore_network):
-                logging.warning("Pokemon Vega: Cerulean Cave Requirement for Player %s (%s) "
-                                "incompatible with Kanto Only. Setting requirement to Defeat Champion.",
-                                self.player, self.player_name)
-                self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
+        if self.options.exclude_sphere_ruins:
+            if self.options.goal == Goal.option_asphere:
+                logging.warning("Pokemon Vega: Goal for Player %s (%s) incompatible with Exclude Sphere Ruins. "
+                                "Setting goal to Distant Island.", self.player, self.player_name)
+                self.options.goal.value = Goal.option_distant_island
 
         if ("Total Darkness" in self.options.modify_world_state.value and
                 self.options.flash_required == FlashRequired.option_off):
             self.options.flash_required.value = FlashRequired.option_logic
-
-        # Remove items from start inventory that are incompatible with certain settings
-        card_key_vanilla = ["Card Key"]
-        card_key_split = ["Card Key 2F", "Card Key 3F", "Card Key 4F", "Card Key 5F", "Card Key 6F",
-                          "Card Key 7F", "Card Key 8F", "Card Key 9F", "Card Key 10F", "Card Key 11F"]
-        card_key_progressive = ["Progressive Card Key"]
-        passes_vanilla = ["Tri Pass", "Rainbow Pass"]
-        passes_split = ["One Pass", "Two Pass", "Three Pass", "Four Pass", "Five Pass", "Six Pass", "Seven Pass"]
-        passes_progressive = ["Progressive Pass"]
-        not_allowed_card_key = list()
-        not_allowed_pass = list()
-
-        if self.options.card_key == SilphCoCardKey.option_vanilla:
-            not_allowed_card_key.extend(card_key_split)
-            not_allowed_card_key.extend(card_key_progressive)
-        elif self.options.card_key == SilphCoCardKey.option_split:
-            not_allowed_card_key.extend(card_key_vanilla)
-            not_allowed_card_key.extend(card_key_progressive)
-        elif self.options.card_key == SilphCoCardKey.option_progressive:
-            not_allowed_card_key.extend(card_key_vanilla)
-            not_allowed_card_key.extend(card_key_split)
-
-        if self.options.island_passes == SeviiIslandPasses.option_vanilla:
-            not_allowed_pass.extend(passes_split)
-            not_allowed_pass.extend(passes_progressive)
-        elif self.options.island_passes == SeviiIslandPasses.option_split:
-            not_allowed_pass.extend(passes_vanilla)
-            not_allowed_pass.extend(passes_progressive)
-        elif (self.options.island_passes == SeviiIslandPasses.option_progressive or
-              self.options.island_passes == SeviiIslandPasses.option_progressive_split):
-            not_allowed_pass.extend(passes_vanilla)
-            not_allowed_pass.extend(passes_split)
-
-        self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
-                                              if k not in not_allowed_card_key}
-        self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
-                                              if k not in not_allowed_pass}
 
         create_scaling_data(self)
         randomize_types(self)
@@ -245,29 +202,11 @@ class PokemonVegaWorld(World):
             tags.add("ExtraKeyItem")
         if self.options.trainersanity:
             tags.add("Trainer")
-        if self.options.famesanity:
-            tags.add("FameChecker")
-        if self.options.pokemon_request_locations:
-            tags.add("PokemonRequest")
-        if self.options.card_key != SilphCoCardKey.option_vanilla:
-            tags.add("SplitCardKey")
-        if (self.options.island_passes == SeviiIslandPasses.option_split or
-                self.options.island_passes == SeviiIslandPasses.option_progressive_split):
-            tags.add("SplitIslandPasses")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
 
         create_indirect_conditions(self)
-
-        # Choose Selphy's requested Pokémon among available wild encounters if necessary
-        if self.options.pokemon_request_locations and not self.options.kanto_only:
-            wild_encounter_locations: List[PokemonVegaLocation] = [
-                location for location in self.multiworld.get_locations(self.player)
-                if "Pokemon" in location.tags and "Wild" in location.tags
-            ]
-            location = self.random.choice(wild_encounter_locations)
-            self.resort_gorgeous_mon = next(species for species in ALL_SPECIES if species[1] == location.item.name)
 
         def exclude_locations(locations: List[str]):
             for location in locations:
@@ -297,36 +236,6 @@ class PokemonVegaWorld(World):
                     "Cerulean Cave 1F - West Plateau Hidden Item"
                 ])
 
-            if self.options.famesanity:
-                if not self.options.kanto_only:
-                    excluded_locations.append("Two Island Town - Beauty's Info (Bruno 5)")
-
-                if "Early Gossipers" not in self.options.modify_world_state.value:
-                    excluded_locations.extend([
-                        "Professor Oak's Lab - Oak's Aide's Info (Daisy 1)",
-                        "Professor Oak's Lab - Oak's Aide's Info (Oak 6)",
-                        "Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)",
-                        "Pokemon Fan Club - Worker's Info (Daisy 2)",
-                        "Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)",
-                        "Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)",
-                        "Celadon Department Store 2F - Woman's Info (Lance 4)",
-                        "Fuchsia City - Koga's Daughter's Info (Koga 4)",
-                        "Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)",
-                        "Saffron City - Battle Girl's Info (Lance 3)",
-                        "Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)",
-                        "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)",
-                        "Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)",
-                        "Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)",
-                        "Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"
-                    ])
-
-                    if not self.options.kanto_only:
-                        excluded_locations.extend([
-                            "Ember Spa - Black Belt's Info (Bruno 4)",
-                            "Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)",
-                            "Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"
-                        ])
-
             exclude_locations(excluded_locations)
 
     def create_items(self) -> None:
@@ -340,39 +249,6 @@ class PokemonVegaWorld(World):
             item_locations = [location for location in item_locations if "FlyUnlock" not in location.tags]
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
-
-        if self.options.card_key == SilphCoCardKey.option_split:
-            itempool = [item for item in itempool if item.name != "Card Key"]
-            itempool.append(self.create_item("Card Key 11F"))
-        elif self.options.card_key == SilphCoCardKey.option_progressive:
-            itempool = [item for item in itempool if "Card Key" not in item.name]
-            for _ in range(10):
-                itempool.append(self.create_item("Progressive Card Key"))
-
-        if not self.options.kanto_only:
-            if self.options.island_passes == SeviiIslandPasses.option_progressive:
-                itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
-                for _ in range(2):
-                    itempool.append(self.create_item("Progressive Pass"))
-            elif self.options.island_passes == SeviiIslandPasses.option_split:
-                itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
-                itempool.append(self.create_item("One Pass"))
-                itempool.append(self.create_item("Four Pass"))
-            elif self.options.island_passes == SeviiIslandPasses.option_progressive_split:
-                items_to_remove = ["Tri Pass", "Two Pass", "Three Pass", "Rainbow Pass",
-                                   "Five Pass", "Six Pass", "Seven Pass"]
-                itempool = [item for item in itempool if item.name not in items_to_remove]
-                for _ in range(7):
-                    itempool.append(self.create_item("Progressive Pass"))
-
-        if self.options.kanto_only:
-            items_to_add = ["HM06 Rock Smash", "HM07 Waterfall"]
-            for item_name in items_to_add:
-                itempool.append(self.create_item(item_name))
-                filler_items = [item for item in itempool
-                                if item.classification == ItemClassification.filler and "Unique" not in item.tags]
-                item_to_remove = self.random.choice(filler_items)
-                itempool.remove(item_to_remove)
 
         for item, quantity in self.options.start_inventory.value.items():
             if "Unique" in vega_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
@@ -438,9 +314,6 @@ class PokemonVegaWorld(World):
                 except FillError as exc:
                     if attempts_remaining == 0:
                         raise exc
-
-        if self.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel:
-            self.multiworld.local_early_items[self.player]["Oak's Parcel"] = 1
 
         collection_state = self.multiworld.get_all_state(False)
 
@@ -570,35 +443,20 @@ class PokemonVegaWorld(World):
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data = self.options.as_dict(
             "goal",
-            "kanto_only",
+            "exclude_sphere_ruins",
             "shuffle_badges",
             "shuffle_hidden",
             "extra_key_items",
             "trainersanity",
-            "famesanity",
             "shuffle_fly_destination_unlocks",
-            "pokemon_request_locations",
-            "card_key",
-            "island_passes",
             "itemfinder_required",
             "flash_required",
-            "fame_checker_required",
             "remove_badge_requirement",
-            "oaks_aide_route_2",
-            "oaks_aide_route_10",
-            "oaks_aide_route_11",
-            "oaks_aide_route_16",
-            "oaks_aide_route_15",
-            "viridian_city_roadblock",
-            "pewter_city_roadblock",
+            "junopsis_city_roadblock",
             "modify_world_state",
             "additional_dark_caves",
-            "viridian_gym_requirement",
-            "viridian_gym_count",
-            "route22_gate_requirement",
-            "route22_gate_count",
-            "route23_guard_requirement",
-            "route23_guard_count",
+            "route523_guard_requirement",
+            "route523_guard_count",
             "elite_four_requirement",
             "elite_four_count",
             "cerulean_cave_requirement",

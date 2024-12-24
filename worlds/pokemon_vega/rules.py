@@ -7,9 +7,7 @@ from BaseClasses import CollectionState
 from worlds.generic.Rules import add_rule, set_rule
 from .data import data
 from .options import (CeruleanCaveRequirement, EliteFourRequirement, FlashRequired, Goal,
-                      ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
-                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey,
-                      ViridianCityRoadblock, ViridianGymRequirement)
+                      ItemfinderRequired, LevelScaling, JunopsisCityRoadblock, ShuffleHiddenItems)
 
 if TYPE_CHECKING:
     from . import PokemonVegaWorld
@@ -45,16 +43,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         "Green Path Water", "Outcast Island Water", "Canyon Entrance", "Sevault Canyon", "Tanoby Ruins Scufib Island",
         "Tanoby Ruins Weepth Island", "Tanoby Ruins Monean Island", "Trainer Tower Exterior South"
     ]
-
-    island_passes: Dict[int, List[str]] = {
-        1: ["Tri Pass", "One Pass"],
-        2: ["Tri Pass", "Two Pass"],
-        3: ["Tri Pass", "Three Pass"],
-        4: ["Rainbow Pass", "Four Pass"],
-        5: ["Rainbow Pass", "Five Pass"],
-        6: ["Rainbow Pass", "Six Pass"],
-        7: ["Rainbow Pass", "Seven Pass"]
-    }
 
     rematchable_trainer_regions = kanto_rematchable_trainer_regions
     if not options.kanto_only:
@@ -152,36 +140,15 @@ def set_rules(world: "PokemonVegaWorld") -> None:
                 return True
         return False
 
-    def can_pass_viridian_city_roadblock(state: CollectionState):
-        if options.viridian_city_roadblock != ViridianCityRoadblock.option_open:
-            return state.has("Deliver Oak's Parcel", player)
-        return True
-
-    def can_enter_viridian_gym(state: CollectionState):
-        requirement = options.viridian_gym_requirement
-        count = options.viridian_gym_count.value
-        if requirement == ViridianGymRequirement.option_badges:
-            return has_n_badges(state, count)
-        elif requirement == ViridianGymRequirement.option_gyms:
-            return has_n_gyms(state, count)
-
-    def can_pass_route_22_gate(state: CollectionState):
-        requirement = options.route22_gate_requirement
-        count = options.route22_gate_count.value
-        if requirement == Route22GateRequirement.option_badges:
-            return has_n_badges(state, count)
-        elif requirement == Route22GateRequirement.option_gyms:
-            return has_n_gyms(state, count)
-
-    def can_pass_pewter_city_roadblock(state: CollectionState):
-        requirement = options.pewter_city_roadblock
-        if requirement == PewterCityRoadblock.option_brock:
-            return state.has("Defeat Brock", player)
-        elif requirement == PewterCityRoadblock.option_any_gym:
+    def can_pass_junopsis_city_roadblock(state: CollectionState):
+        requirement = options.junopsis_city_roadblock
+        if requirement == JunopsisCityRoadblock.option_annette:
+            return state.has("Defeat Annette", player)
+        elif requirement == JunopsisCityRoadblock.option_any_gym:
             return has_n_gyms(state, 1)
-        elif requirement == PewterCityRoadblock.option_boulder_badge:
-            return state.has("Boulder Badge", player)
-        elif requirement == PewterCityRoadblock.option_any_badge:
+        elif requirement == JunopsisCityRoadblock.option_elnath_badge:
+            return state.has("Elnath Badge", player)
+        elif requirement == JunopsisCityRoadblock.option_any_badge:
             return has_n_badges(state, 1)
         return True
 
@@ -209,12 +176,12 @@ def set_rules(world: "PokemonVegaWorld") -> None:
             return can_flash(state)
         return True
 
-    def can_pass_route_23_guard(state: CollectionState):
-        requirement = options.route23_guard_requirement
-        count = options.route23_guard_count.value
-        if requirement == Route23GuardRequirement.option_badges:
+    def can_pass_route_523_guard(state: CollectionState):
+        requirement = options.route523_guard_requirement
+        count = options.route523_guard_count.value
+        if requirement == Route523GuardRequirement.option_badges:
             return has_n_badges(state, count)
-        elif requirement == Route23GuardRequirement.option_gyms:
+        elif requirement == Route523GuardRequirement.option_gyms:
             return has_n_gyms(state, count)
 
     def can_challenge_elite_four(state: CollectionState):
@@ -236,23 +203,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         return (state.has_any(["Card Key", f"Card Key {floor}F"], player) or
                 state.has("Progressive Card Key", player, floor - 1))
 
-    def can_sail_island(island: int, state: CollectionState):
-        progressives_needed = {
-            1: (1, 1),
-            2: (1, 2),
-            3: (1, 3),
-            4: (2, 4),
-            5: (2, 5),
-            6: (2, 6),
-            7: (2, 7)
-        }
-        if any(options.island_passes == option
-               for option in [SeviiIslandPasses.option_vanilla, SeviiIslandPasses.option_progressive]):
-            progressives_count = progressives_needed[island][0]
-        else:
-            progressives_count = progressives_needed[island][1]
-        return state.has_any(island_passes[island], player) or state.has("Progressive Pass", player, progressives_count)
-
     def post_game_gossipers(state: CollectionState):
         if "Early Gossipers" in options.modify_world_state.value:
             return True
@@ -264,10 +214,13 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     def get_location(location: str):
         return multiworld.get_location(location, player)
 
+    # TODO: Actually set up states for Sphere Ruins entry and Asphere defeat
     if options.goal == Goal.option_elite_four:
         multiworld.completion_condition[player] = lambda state: state.has("Defeat Champion", player)
-    elif options.goal == Goal.option_elite_four_rematch:
-        multiworld.completion_condition[player] = lambda state: state.has("Defeat Champion (Rematch)", player)
+    elif options.goal == Goal.option_distant_island:
+        multiworld.completion_condition[player] = lambda state: state.has("Enter Sphere Ruins", player)
+    elif options.goal == Goal.option_asphere:
+        multiworld.completion_condition[player] = lambda state: state.has("Defeat Asphere", player)
 
     # Sky
     set_rule(get_entrance("Flying"), lambda state: can_fly(state))
@@ -299,20 +252,13 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     set_rule(get_entrance("Pallet Town Surfing Spot"), lambda state: can_surf(state))
 
     # Viridian City
-    set_rule(get_location("Viridian City - Old Man's Gift"), lambda state: can_pass_viridian_city_roadblock(state))
-    set_rule(get_entrance("Viridian City South Roadblock"),
-             lambda state: can_pass_viridian_city_roadblock(state) or can_cut(state))
     set_rule(get_entrance("Viridian City South Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Viridian Gym"), lambda state: can_enter_viridian_gym(state))
 
     # Route 22
     set_rule(get_location("Route 22 - Early Rival Battle"), lambda state: state.has("Deliver Oak's Parcel", player))
     set_rule(get_entrance("Route 22 Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Route 22 Gate Exit (North)"), lambda state: can_pass_route_22_gate(state))
 
     # Route 2
-    set_rule(get_location("Route 2 Gate - Oak's Aide's Gift"),
-             lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_2.value * 1.2)))
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_entrance("Route 2 Southwest Cuttable Trees"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 East Cuttable Tree"), lambda state: can_cut(state))
@@ -328,7 +274,7 @@ def set_rules(world: "PokemonVegaWorld") -> None:
 
     # Pewter City
     set_rule(get_entrance("Pewter City Cuttable Tree"), lambda state: can_cut(state))
-    set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_pewter_city_roadblock(state))
+    set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_junopsis_city_roadblock(state))
 
     # Route 4
     set_rule(get_location("Route 4 Pokemon Center 1F - Salesman Purchase"), lambda state: can_grind_money(state))
@@ -419,8 +365,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     set_rule(get_entrance("S.S. Anne Exterior Surfing Spot"), lambda state: can_surf(state))
 
     # Route 11
-    set_rule(get_location("Route 11 Gate 2F - Oak's Aide's Gift"),
-             lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_11.value * 1.2)))
     set_rule(get_entrance("Route 11 West Surfing Spot"), lambda state: can_surf(state))
 
     if "Route 12 Boulders" in options.modify_world_state.value:
@@ -446,8 +390,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         set_rule(get_entrance("Route 9 Exit (West)"), lambda state: can_cut(state))
 
     # Route 10
-    set_rule(get_location("Route 10 Pokemon Center 1F - Oak's Aide's Gift"),
-             lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_10.value * 1.2)))
     set_rule(get_entrance("Route 10 North Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 10 Near Power Plant Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Power Plant (Front)"),
@@ -583,13 +525,7 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     set_rule(get_entrance("Route 14 Cuttable Tree (North)"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 14 Cuttable Tree (South)"), lambda state: can_cut(state))
 
-    # Route 15
-    set_rule(get_location("Route 15 Gate 2F - Oak's Aide's Gift"),
-             lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_15.value * 1.2)))
-
     # Route 16
-    set_rule(get_location("Route 16 Gate 2F - Oak's Aide's Gift"),
-             lambda state: has_n_pokemon(state, math.ceil(options.oaks_aide_route_16.value * 1.2)))
     set_rule(get_entrance("Route 16 Southeast Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 16 Southeast Play Poke Flute"), lambda state: state.has("Poke Flute", player))
     set_rule(get_entrance("Route 16 Northeast Cuttable Tree"), lambda state: can_cut(state))
@@ -707,7 +643,7 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     # Route 23
     set_rule(get_entrance("Route 23 South Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 23 Near Water Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Route 23 Center Guard Checkpoint"), lambda state: can_pass_route_23_guard(state))
+    set_rule(get_entrance("Route 23 Center Guard Checkpoint"), lambda state: can_pass_route_523_guard(state))
 
     if "Route 23 Trees" in options.modify_world_state.value:
         set_rule(get_entrance("Route 23 Near Water Cuttable Trees"), lambda state: can_cut(state))
@@ -789,15 +725,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         set_rule(get_entrance("Five Island Fly Destination"), lambda state: state.has("Fly Five Island", player))
         set_rule(get_entrance("Six Island Fly Destination"), lambda state: state.has("Fly Six Island", player))
         set_rule(get_entrance("Seven Island Fly Destination"), lambda state: state.has("Fly Seven Island", player))
-
-        # Seagallop
-        set_rule(get_entrance("One Island Arrival"), lambda state: can_sail_island(1, state))
-        set_rule(get_entrance("Two Island Arrival"), lambda state: can_sail_island(2, state))
-        set_rule(get_entrance("Three Island Arrival"), lambda state: can_sail_island(3, state))
-        set_rule(get_entrance("Four Island Arrival"), lambda state: can_sail_island(4, state))
-        set_rule(get_entrance("Five Island Arrival"), lambda state: can_sail_island(5, state))
-        set_rule(get_entrance("Six Island Arrival"), lambda state: can_sail_island(6, state))
-        set_rule(get_entrance("Seven Island Arrival"), lambda state: can_sail_island(7, state))
 
         # Cinnabar Island
         set_rule(get_entrance("Follow Bill"), lambda state: state.has("Defeat Blaine", player))
@@ -1010,137 +937,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
                      lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
             set_rule(get_location("Champion's Room - Champion Rematch Reward"),
                      lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
-
-    # Famesanity
-    if options.famesanity:
-        # Pallet Town
-        set_rule(get_location("Professor Oak's Lab - Oak's Aide's Info (Daisy 1)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Professor Oak's Lab - Oak's Info (Oak 2)"),
-                 lambda state: state.has("Oak's Parcel", player))
-        set_rule(get_location("Professor Oak's Lab - Oak's Aide's Info (Oak 6)"),
-                 lambda state: post_game_gossipers(state))
-
-        # Viridian City
-        set_rule(get_location("Viridian Gym - Gym Guy's Info (Giovanni 5)"),
-                 lambda state: state.has("Defeat Giovanni", player))
-
-        # Cerulean City
-        set_rule(get_location("Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)"),
-                 lambda state: post_game_gossipers(state))
-
-        # Vermilion City
-        set_rule(get_location("Pokemon Fan Club - Worker's Info (Daisy 2)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Vermilion Pokemon Center 1F - Bookshelf's Info (Lt. Surge 6)"),
-                 lambda state: state.has("Defeat Lt. Surge", player))
-
-        # Lavender Town
-        set_rule(get_location("Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)"),
-                 lambda state: post_game_gossipers(state))
-
-        # Celadon City
-        set_rule(get_location("Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Celadon Condominiums 2F - Bookshelf's Info (Erika 6)"),
-                 lambda state: state.has("Defeat Erika", player))
-        set_rule(get_location("Celadon Department Store 2F - Woman's Info (Lance 4)"),
-                 lambda state: post_game_gossipers(state))
-
-        # Fuchsia City
-        set_rule(get_location("Fuchsia City - Koga's Daughter's Info (Koga 4)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Safari Zone Warden's House - Bookshelf's Info (Koga 5)"),
-                 lambda state: state.has("Defeat Koga", player))
-
-        # Saffron City
-        set_rule(get_location("Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Saffron City - Battle Girl's Info (Lance 3)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Saffron Pokemon Center 1F - Bookshelf's Info (Sabrina 5)"),
-                 lambda state: state.has("Defeat Sabrina", player))
-
-        # Cinnabar Island
-        set_rule(get_location("Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)"),
-                 lambda state: post_game_gossipers(state))
-
-        # Indigo Plateau
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)"),
-                 lambda state: post_game_gossipers(state))
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"),
-                 lambda state: post_game_gossipers(state))
-
-        # Sevii Islands
-        if not options.kanto_only:
-            # One Island Town
-            set_rule(get_location("One Island Pokemon Center 1F - Celio's Info (Bill 3)"),
-                     lambda state: state.has("Restore Pokemon Network Machine", player))
-            set_rule(get_location("One Island Pokemon Center 1F - Celio's Info (Bill 4)"),
-                     lambda state: state.has("Restore Pokemon Network Machine", player))
-            set_rule(get_location("One Island Pokemon Center 1F - Celio's Info (Bill 5)"),
-                     lambda state: state.has("Restore Pokemon Network Machine", player))
-
-            # Ember Spa
-            set_rule(get_location("Ember Spa - Black Belt's Info (Bruno 4)"),
-                     lambda state: post_game_gossipers(state))
-
-            # Two Island Town
-            set_rule(get_location("Two Island Town - Beauty's Info (Bruno 5)"),
-                     lambda state: state.has_all(["Rescue Lostelle", "Defeat Champion"], player))
-
-            # Four Island Town
-            set_rule(get_location("Four Island Town - Old Woman's Info (Lorelei 6)"),
-                     lambda state: state.has("Restore Pokemon Network Machine", player))
-
-            # Five Island Town
-            set_rule(get_location("Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)"),
-                     lambda state: post_game_gossipers(state))
-
-            # Rocket Warehouse
-            set_rule(get_location("Rocket Warehouse - Scientist Gideon's Info (Giovanni 6)"),
-                     lambda state: state.has("Restore Pokemon Network Machine", player))
-
-            # Water Labyrinth
-            if options.pokemon_request_locations:
-                set_rule(get_location("Water Labyrinth - Gentleman's Info (Daisy 3)"),
-                         lambda state: state.has_any(["Togepi", "Togetic"], player))
-
-            # Seven Island
-            set_rule(get_location("Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"),
-                     lambda state: post_game_gossipers(state))
-
-        # Add rules for fame checker locations
-        if world.options.fame_checker_required:
-            for location in multiworld.get_locations(player):
-                if location.tags is not None and ("FameChecker" in location.tags):
-                    add_rule(location, lambda state: state.has("Fame Checker", player))
-
-    # Pokemon Requests
-    if options.pokemon_request_locations:
-        # Route 12
-        set_rule(get_location("Route 12 Fishing House - Fishing Guru's Brother's Gift (Show Magikarp)"),
-                 lambda state: state.has("Magikarp", player))
-
-        # Sevii Islands
-        if not options.kanto_only:
-            # Resort Gorgeous
-            set_rule(get_location("Resort Gorgeous House - Selphy's Gift"),
-                     lambda state: state.has_all(["Rescue Selphy", world.resort_gorgeous_mon[1]], player))
-
-            # Water Path
-            set_rule(get_location("Water Path Heracross Woman's House - Heracross Woman's Gift"),
-                     lambda state: state.has("Heracross", player))
-
-    # Split Card Key
-    if options.card_key != SilphCoCardKey.option_vanilla:
-        # Silph Co.
-        set_rule(get_location("Silph Co. 1F - Receptionist's Gift"),
-                 lambda state: state.has("Liberate Silph Co.", player))
 
     # Evolutions
     set_rule(get_location("Evolution - Bulbasaur"),

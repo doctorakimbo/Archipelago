@@ -58,7 +58,7 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
         ],
     }
 
-    kanto_only = world.options.kanto_only
+    exclude_sphere_ruins = world.options.exclude_sphere_ruins
 
     def connect_to_map_encounters(regions: Dict[str, Region], region: Region, map_name: str, encounter_region_name: str,
                                   include_slots: Tuple[bool, bool, bool]):
@@ -134,7 +134,7 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
     regions: Dict[str, Region] = {}
     connections: List[Tuple[str, str, str]] = []
     for region_data in data.regions.values():
-        if kanto_only and not region_data.kanto:
+        if exclude_sphere_ruins and region_data.sphere_ruins:
             continue
 
         region_name = region_data.name
@@ -142,9 +142,6 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
 
         for event_id in region_data.events:
             event_data = world.modified_events[event_id]
-
-            if world.options.kanto_only and event_data.name in sevii_required_events:
-                continue
 
             name = event_data.name
             item = event_data.item
@@ -167,7 +164,7 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
                 world.trade_pokemon.append([region_name, name])
 
         for region_id, exit_name in region_data.exits.items():
-            if kanto_only and not data.regions[region_id].kanto:
+            if exclude_sphere_ruins and data.regions[region_id].sphere_ruins:
                 continue
             region_exit = data.regions[region_id].name
             connections.append((exit_name, region_name, region_exit))
@@ -179,7 +176,7 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
             dest_warp = data.warps[data.warp_map[warp]]
             if dest_warp.parent_region_id is None:
                 continue
-            if kanto_only and not data.regions[dest_warp.parent_region_id].kanto:
+            if exclude_sphere_ruins and data.regions[dest_warp.parent_region_id].sphere_ruins:
                 continue
             dest_region_name = data.regions[dest_warp.parent_region_id].name
             connections.append((source_warp.name, region_name, dest_region_name))

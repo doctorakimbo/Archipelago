@@ -3,7 +3,7 @@ from NetUtils import ClientStatus
 from Options import Toggle
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
-from .data import data, FAMESANITY_OFFSET
+from .data import data
 from .items import reverse_offset_item_value
 from .locations import offset_flag
 from .options import Goal

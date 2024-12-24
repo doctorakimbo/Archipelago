@@ -14,8 +14,7 @@ from .items import get_random_item, reverse_offset_item_value
 from .locations import reverse_offset_flag
 from .options import (FlashRequired, ItemfinderRequired, HmCompatibility, LevelScaling, RandomizeLegendaryPokemon,
                       RandomizeMiscPokemon, RandomizeStarters, RandomizeTrainerParties, RandomizeWildPokemon,
-                      SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey, TmTutorCompatibility,
-                      ViridianCityRoadblock)
+                      ShuffleHiddenItems, TmTutorCompatibility)
 from .pokemon import STARTER_INDEX, randomize_tutor_moves
 from .util import bool_array_to_int, bound, encode_string
 
@@ -130,8 +129,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     if world.options.trainersanity:
         rival_rewards = ["RIVAL_OAKS_LAB", "RIVAL_ROUTE22_EARLY", "RIVAL_CERULEAN", "RIVAL_SS_ANNE",
                          "RIVAL_POKEMON_TOWER", "RIVAL_SILPH", "RIVAL_ROUTE22_LATE", "CHAMPION_FIRST"]
-        if not world.options.kanto_only:
-            rival_rewards.append("CHAMPION_REMATCH")
         for trainer in rival_rewards:
             location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_BULBASAUR_REWARD"].name,
                                                      world.player)
@@ -202,21 +199,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
             struct.pack("<B", player_name_ids[player_name])
         )
 
-    # Replace unique items if necessary
-    if world.options.kanto_only:
-        location_ids = ["NPC_GIFT_GOT_HM06", "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07"]
-        for location_id in location_ids:
-            location_data = data.locations[location_id]
-            new_item_id = reverse_offset_item_value(
-                world.item_name_to_id[get_random_item(world, ItemClassification.filler)]
-            )
-
-            tokens.write_token(
-                APTokenTypes.WRITE,
-                location_data.address,
-                struct.pack("<H", new_item_id)
-            )
-
     # Set starting items
     start_inventory = world.options.start_inventory.value.copy()
 
@@ -280,12 +262,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     if start_inventory.pop("Fly Route 10", 0) > 0:
         starting_fly_unlocks |= (1 << 19)
 
-    starting_prog_card_keys = min(start_inventory.pop("Progressive Card Key", 0), 10)
-    if world.options.island_passes == SeviiIslandPasses.option_progressive:
-        starting_prog_passes = min(start_inventory.pop("Progressive Pass", 0), 2)
-    else:
-        starting_prog_passes = min(start_inventory.pop("Progressive Pass", 0), 7)
-
     starting_items: List[Tuple[str, int]] = []
     for item, quantity in start_inventory.items():
         if "Unique" in data.items[reverse_offset_item_value(world.item_name_to_id[item])].tags:
@@ -342,8 +318,8 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     # /* 0x08 */ u16 expMultiplierDenominator;
     #
     # /* 0x0A */ bool8 openViridianCity;
-    # /* 0x0B */ u8 route3Requirement; // 0 = Open, 1 = Defeat Brock, 2 = Defeat Any Gym Leader,
-    #                                     3 = Boulder Badge, 4 = Any Badge
+    # /* 0x0B */ u8 route503Requirement; // 0 = Open, 1 = Defeat Annette, 2 = Defeat Any Gym Leader,
+    #                                     3 = Elnath Badge, 4 = Any Badge
     # /* 0x0C */ bool8 saveBillRequired;
     # /* 0x0D */ bool8 modifyRoute2;
     # /* 0x0E */ bool8 modifyRoute9;
@@ -362,8 +338,8 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     # /* 0x1A */ u8 giovanniRequiredCount;
     # /* 0x1B */ bool8 route22GateRequiresGyms;
     # /* 0x1C */ u8 route22GateRequiredCount;
-    # /* 0x1D */ bool8 route23GuardRequiresGyms;
-    # /* 0x1E */ u8 route23GuardRequiredCount;
+    # /* 0x1D */ bool8 route523GuardRequiresGyms;
+    # /* 0x1E */ u8 route523GuardRequiredCount;
     # /* 0x1F */ bool8 eliteFourRequiresGyms;
     # /* 0x20 */ u8 eliteFourRequiredCount;
     # /* 0x21 */ u8 ceruleanCaveRequirement; // 0 = Vanilla, 1 = Become Champion, 2 = Restore Network Center,
@@ -385,7 +361,7 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     # /* 0x36 */ bool8 reccuringHiddenItems;
     # /* 0x37 */ bool8 isTrainersanity;
     # /* 0x38 */ bool8 extraKeyItems;
-    # /* 0x39 */ bool8 kantoOnly;
+    # /* 0x39 */ bool8 excludeSphereRuins;
     # /* 0x3A */ bool8 flyUnlocks;
     # /* 0x3B */ bool8 isFamesanity;
     #
@@ -431,13 +407,9 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x06, struct.pack("<H", numerator))
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x08, struct.pack("<H", 100))
 
-    # Set Viridian City roadblock
-    open_viridian = 1 if world.options.viridian_city_roadblock.value == ViridianCityRoadblock.option_open else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0A, struct.pack("<B", open_viridian))
-
-    # Set Pewter City roadblock
-    route_3_condition = world.options.pewter_city_roadblock.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0B, struct.pack("<B", route_3_condition))
+    # Set Junopsis City roadblock
+    route_503_condition = world.options.junopsis_city_roadblock.value
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0B, struct.pack("<B", route_503_condition))
 
     # Set Cerulean City roadblocks
     save_bill = 0 if "Remove Cerulean Roadblocks" in world.options.modify_world_state.value else 1
@@ -491,29 +463,13 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     early_gossipers = 1 if "Early Gossipers" in world.options.modify_world_state.value else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x18, struct.pack("<B", early_gossipers))
 
-    # Set Viridian Gym Rrquirement
-    viridian_gym_requirement = world.options.viridian_gym_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x19, struct.pack("<B", viridian_gym_requirement))
+    # Set Route 523 requirement
+    route_523_requirement = world.options.route523_guard_requirement.value
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", route_523_requirement))
 
-    # Set Viridian Gym count
-    viridian_gym_count = world.options.viridian_gym_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1A, struct.pack("<B", viridian_gym_count))
-
-    # Set Route 22 requirement
-    route_22_requirement = world.options.route22_gate_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1B, struct.pack("<B", route_22_requirement))
-
-    # Set Route 22 count
-    route_22_count = world.options.route22_gate_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1C, struct.pack("<B", route_22_count))
-
-    # Set Route 23 requirement
-    route_23_requirement = world.options.route23_guard_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", route_23_requirement))
-
-    # Set Route 23 count
-    route_23_count = world.options.route23_guard_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", route_23_count))
+    # Set Route 523 count
+    route_523_count = world.options.route523_guard_count.value
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", route_523_count))
 
     # Set Elite Four requirement
     elite_four_requirement = world.options.elite_four_requirement.value
@@ -534,12 +490,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     # Set starting badges
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x23, struct.pack("<B", starting_badges))
 
-    # Set starting progressive card keys
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x24, struct.pack("<B", starting_prog_card_keys))
-
-    # Set starting progressive passes
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x25, struct.pack("<B", starting_prog_passes))
-
     # Set starting fly unlocks
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x26, struct.pack("<I", starting_fly_unlocks))
 
@@ -554,22 +504,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     flash_required = 1 if world.options.flash_required.value == FlashRequired.option_required else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x2F, struct.pack("<B", flash_required))
 
-    # Set fame checker required
-    fame_checker_required = 1 if world.options.fame_checker_required else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x30, struct.pack("<B", fame_checker_required))
-
-    # Set Oak's Aides counts
-    oaks_aide_route_2 = world.options.oaks_aide_route_2.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x31, struct.pack("<B", oaks_aide_route_2))
-    oaks_aide_route_10 = world.options.oaks_aide_route_10.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x32, struct.pack("<B", oaks_aide_route_10))
-    oaks_aide_route_11 = world.options.oaks_aide_route_11.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x33, struct.pack("<B", oaks_aide_route_11))
-    oaks_aide_route_16 = world.options.oaks_aide_route_16.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x34, struct.pack("<B", oaks_aide_route_16))
-    oaks_aide_route_15 = world.options.oaks_aide_route_15.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x35, struct.pack("<B", oaks_aide_route_15))
-
     # Set recurring hidden items shuffled
     recurring_hidden_items = 1 if world.options.shuffle_hidden.value == ShuffleHiddenItems.option_all else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x36, struct.pack("<B", recurring_hidden_items))
@@ -582,17 +516,13 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     extra_key_items = 1 if world.options.extra_key_items else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x38, struct.pack("<B", extra_key_items))
 
-    # Set kanto only
-    kanto_only = 1 if world.options.kanto_only else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x39, struct.pack("<B", kanto_only))
+    # Set exclude sphere ruins
+    exclude_sphere_ruins = 1 if world.options.exclude_sphere_ruins else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x39, struct.pack("<B", exclude_sphere_ruins))
 
     # Set fly unlocks
     fly_unlocks = 1 if world.options.shuffle_fly_destination_unlocks else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x3A, struct.pack("B", fly_unlocks))
-
-    # Set famesanity
-    famesanity = 1 if world.options.famesanity else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3B, struct.pack("B", famesanity))
 
     # Set remove badge requirements
     hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
@@ -616,16 +546,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
                 header_address = map_data.header_address
                 tokens.write_token(APTokenTypes.WRITE, header_address + 21, struct.pack("<B", 1))
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x3D, struct.pack("<B", additional_dark_caves))
-
-    # Set passes split
-    passes_split = 1 if world.options.island_passes.value in [SeviiIslandPasses.option_split,
-                                                              SeviiIslandPasses.option_progressive_split] else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3E, struct.pack("<B", passes_split))
-
-    # Set card keys split
-    card_keys_split = 1 if world.options.card_key.value in [SilphCoCardKey.option_split,
-                                                            SilphCoCardKey.option_progressive] else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3F, struct.pack("<B", card_keys_split))
 
     # Set free fly location
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x41, struct.pack("<B", world.free_fly_location_id))
