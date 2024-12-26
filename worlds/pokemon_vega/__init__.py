@@ -80,7 +80,6 @@ class PokemonVegaWorld(World):
 
     free_fly_location_id: int
     town_map_fly_location_id: int
-    resort_gorgeous_mon: Tuple[str, str, int]
     modified_species: Dict[int, SpeciesData]
     modified_maps: Dict[str, MapData]
     modified_starters: Dict[str, StarterData]
@@ -110,7 +109,6 @@ class PokemonVegaWorld(World):
         super(PokemonVegaWorld, self).__init__(multiworld, player)
         self.free_fly_location_id = 0
         self.town_map_fly_location_id = 0
-        self.resort_gorgeous_mon = ("SPECIES_PIKACHU", "Pikachu", 25)
         self.modified_species = copy.deepcopy(vega_data.species)
         self.modified_maps = copy.deepcopy(vega_data.maps)
         self.modified_starters = copy.deepcopy(vega_data.starters)
@@ -216,27 +214,7 @@ class PokemonVegaWorld(World):
                     continue
 
         if self.options.goal == Goal.option_elite_four:
-            excluded_locations = [
-                "Champion's Room - Champion Reward",
-                "Hall of Fame - Oak's Gift (First)",
-                "Hall of Fame - Oak's Gift (Second)"
-            ]
-
-            if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
-                    self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_champion):
-                excluded_locations.extend([
-                    "Cerulean Cave 1F - Southwest Item",
-                    "Cerulean Cave 1F - East Plateau Item",
-                    "Cerulean Cave 1F - West Plateau Item",
-                    "Cerulean Cave 2F - East Item",
-                    "Cerulean Cave 2F - West Item",
-                    "Cerulean Cave 2F - Center Item",
-                    "Cerulean Cave B1F - Northeast Item",
-                    "Cerulean Cave B1F - East Plateau Item",
-                    "Cerulean Cave 1F - West Plateau Hidden Item"
-                ])
-
-            exclude_locations(excluded_locations)
+            exclude_locations("Champion's Room - Champion Reward")
 
     def create_items(self) -> None:
         item_locations: List[PokemonVegaLocation] = [

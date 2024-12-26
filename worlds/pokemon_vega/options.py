@@ -21,12 +21,19 @@ class Goal(Choice):
     option_asphere = 2
 
 
-class ExcludeSphereRuins(DefaultOnToggle):
+class ExcludeSphereRuins(DefaultOnToggle): #todo: make sure this works
     """
     Excludes all the Sphere Ruins locations. Locations on Distant Island outside the ruins are still included.
     This is compatible with the Distant Island goal, but obviously not the Asphere goal.
     """
     display_name = "Exclude Sphere Ruins"
+    
+    
+# todo: option for opening postgame early is important enough to be up here instead of in ModifyWorldState
+# (warn to turn on level scaling in the desc)
+
+
+# todo: option to remove hax items from trainers (replace with type-booster)
 
 
 class ShuffleBadges(DefaultOnToggle):
@@ -57,8 +64,8 @@ class ExtraKeyItems(Toggle): # todo: edit rules; edit baserom; different item fo
 
     Adds four new locations:
     - Item in the house leading to DH Hideout
-    - Second item given by the man with the hungry Rynos
-    - Second item given by rival outside Spirit Mansion
+    - Item given by the man with the hungry Rynos
+    - Second item given by your rival outside Spirit Mansion
     - Item given by the Perimeter Labs receptionist
     """
     display_name = "Extra Key Items"
@@ -131,7 +138,7 @@ class JunopsisCityRoadblock(Choice):
     option_any_badge = 4
 
 
-class ModifyWorldState(OptionSet): # not even touching this yet
+class ModifyWorldState(OptionSet): # not even touching this yet, but maybe option to open distant island via porcelia when reqs reached
     """
     Set various changes to the world's state that changes how you can access various regions and locations.
     The valid options and their effects are the following:
@@ -360,7 +367,8 @@ class StarterBlacklist(OptionSet):
     display_name = "Starter Blacklist"
     valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
 
-
+# if choice band, replace with type-booster if new pkmn has all special moves
+# porygon-z should have upgrade only if it's porygon-z and wild/starter/movepool/tm randomization are all off (prevent thievery), otherwise type-booster
 class RandomizeTrainerParties(Choice):
     """
     Randomizes the Pokémon in all trainer's parties.
@@ -595,7 +603,10 @@ class BlindTrainers(Toggle):
     display_name = "Blind Trainers"
 
 
-class BetterShops(Toggle): # todo: actually change marts
+# todo: actually change shops; also add options for restoring x items (w/ dialogue changes),
+# revives (guy in stall just complains that he's useless now); restore full restores no matter what
+# also auto add moon/sun stones to shamouti dept store
+class BetterShops(Toggle):
     """
     Most Pokemarts will sell all normal Pokemart items. The exceptions are the following:
 

@@ -33,7 +33,20 @@ _DAMAGING_MOVES = frozenset({
     307, 308, 309, 310, 311, 314, 315, 317, 318, 323,
     324, 325, 326, 327, 328, 330, 331, 332, 333, 337,
     338, 340, 341, 342, 343, 344, 345, 348, 350, 351,
-    352, 353, 354
+    352, 353, 354, 355, 356, 357, 358, 359, 360, 361,
+    362, 363, 364, 365, 366, 368, 369, 370, 371, 372,
+    373, 374, 375, 376, 377, 378, 379, 380, 381, 382,
+    383, 384, 386, 387, 388, 389, 390, 391, 392, 393,
+    394, 395, 396, 397, 398, 399, 400, 401, 402, 403,
+    404, 405, 406, 407, 408, 409, 410, 411, 412, 415,
+    416, 417, 418, 420, 421, 422, 423, 424, 425, 426,
+    427, 428, 431, 432, 433, 434, 435, 436, 437, 438,
+    439, 441, 442, 443, 444, 446, 447, 448, 449, 450,
+    451, 452, 453, 454, 455, 456, 457, 458, 459, 460,
+    461, 462, 463, 464, 465, 466, 467, 468, 469, 470,
+    471, 473, 474, 475, 476, 477, 479, 480, 481, 482,
+    485, 486, 487, 488, 489, 491, 493, 494, 495, 496,
+    499, 501, 502, 503, 505, 506, 507, 508, 509, 510
 })
 
 _HM_MOVES = frozenset({
@@ -44,6 +57,7 @@ _MOVE_BLACKLIST = frozenset({
     0, 165
 })
 
+# todo: fill this out
 _DUNGEON_GROUPS: Dict[str, str] = {
     "MAP_MT_MOON_1F": "MAP_MT_MOON",
     "MAP_MT_MOON_B1F": "MAP_MT_MOON",
@@ -105,11 +119,12 @@ _DUNGEON_GROUPS: Dict[str, str] = {
 }
 
 STARTER_INDEX: Dict[str, int] = {
-    "STARTER_POKEMON_BULBASAUR": 0,
-    "STARTER_POKEMON_SQUIRTLE": 1,
-    "STARTER_POKEMON_CHARMANDER": 2,
+    "STARTER_POKEMON_NIMBLEAF": 0,
+    "STARTER_POKEMON_LIQUIPUT": 1,
+    "STARTER_POKEMON_PEYERO": 2,
 }
 
+# todo: this
 # The tuple represnts (trainer name, starter index in party, starter evolution stage)
 _RIVAL_STARTER_POKEMON: List[Tuple[str, int, int]] = [
     [
@@ -366,6 +381,7 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
 
     # Route 21 is split into a North and South Map. We'll set this after we randomize one of them
     # in order to ensure that both maps have the same encounters
+    # todo: is there a vega equivalent?
     route_21_randomized = False
 
     placed_species = set()
@@ -387,6 +403,7 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
 
         # Check if the current map is a Route 21 map and the other one has already been randomized.
         # If so, set the encounters of the current map based on the other Route 21 map.
+        # todo: vega?
         if map_name == "MAP_ROUTE21_NORTH" and route_21_randomized:
             map_data.land_encounters.slots = \
                 copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots)

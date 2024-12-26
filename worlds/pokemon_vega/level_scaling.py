@@ -21,6 +21,7 @@ class ScalingData:
     tags: FrozenSet
 
 
+# todo: all this
 def create_scaling_data(world: "PokemonVegaWorld"):
     if world.options.level_scaling == LevelScaling.option_off:
         return
@@ -967,6 +968,7 @@ def create_scaling_data(world: "PokemonVegaWorld"):
 
 
 def level_scaling(multiworld):
+    # todo: this list too
     battle_events = ["Route 22 - Early Rival Battle", "Pewter Gym - Gym Leader Battle",
                      "Cerulean Gym - Gym Leader Battle", "Vermilion Gym - Gym Leader Battle",
                      "Celadon Gym - Gym Leader Battle", "Fuchsia Gym - Gym Leader Battle",
@@ -1098,6 +1100,7 @@ def level_scaling(multiworld):
         if world.options.level_scaling == LevelScaling.option_off:
             continue
 
+        # todo: find whatever this was derived from and change it
         e4_rematch_adjustment = 63 / 51
         e4_base_level = 51
 
@@ -1113,6 +1116,7 @@ def level_scaling(multiworld):
                 new_base_level = world.trainer_level_list.pop(0)
                 old_base_level = world.trainer_name_level_dict[trainer_location.name]
 
+                # todo: ???
                 if trainer_location.name == "Elite Four":
                     e4_base_level = new_base_level
                 elif trainer_location.name == "Elite Four Rematch":

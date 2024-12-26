@@ -19,15 +19,16 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     multiworld = world.multiworld
 
     badge_requirements: Dict[str, str] = {
-        "Cut": "Cascade Badge",
-        "Fly": "Thunder Badge",
-        "Surf": "Soul Badge",
-        "Strength": "Rainbow Badge",
-        "Flash": "Boulder Badge",
-        "Rock Smash": "Marsh Badge",
-        "Waterfall": "Volcano Badge"
+        "Cut": "Gemma Badge",
+        "Fly": "Hadar Badge",
+        "Surf": "Phact Badge",
+        "Strength": "Arneb Badge",
+        "Flash": "Elnath Badge",
+        "Rock Smash": "Sarfah Badge",
+        "Waterfall": "Prior Badge"
     }
 
+    # todo: vega
     kanto_rematchable_trainer_regions: List[str] = [
         "Route 3", "Route 4 Northeast", "Route 6", "Route 8", "Route 9", "Route 10 North", "Route 10 South",
         "Route 10 Near Power Plant", "Route 11 West", "Route 12 Center", "Route 12 South", "Route 12 Behind North Tree",
@@ -95,38 +96,38 @@ def set_rules(world: "PokemonVegaWorld") -> None:
 
     def has_n_badges(state: CollectionState, n: int):
         return sum([state.has(badge, player) for badge in [
-            "Boulder Badge",
-            "Cascade Badge",
-            "Thunder Badge",
-            "Rainbow Badge",
-            "Soul Badge",
-            "Marsh Badge",
-            "Volcano Badge",
-            "Earth Badge"
+            "Elnath Badge",
+            "Arneb Badge",
+            "Phact Badge",
+            "Sarfah Badge",
+            "Gemma Badge",
+            "Hadar Badge",
+            "Prior Badge",
+            "Mirach Badge"
         ]]) >= n
 
     def has_n_gyms(state: CollectionState, n: int):
         return sum([state.has(gym, player) for gym in [
-            "Defeat Brock",
-            "Defeat Misty",
-            "Defeat Lt. Surge",
-            "Defeat Erika",
-            "Defeat Koga",
-            "Defeat Sabrina",
-            "Defeat Blaine",
-            "Defeat Giovanni"
+            "Defeat Annette",
+            "Defeat Geoff",
+            "Defeat Brooke",
+            "Defeat Avery",
+            "Defeat Chie and Rito",
+            "Defeat Fenton",
+            "Defeat Tara",
+            "Defeat Mewtwo"
         ]]) >= n
 
     def gyms_beaten(state: CollectionState):
         return sum([state.has(gym, player) for gym in [
-            "Defeat Brock",
-            "Defeat Misty",
-            "Defeat Lt. Surge",
-            "Defeat Erika",
-            "Defeat Koga",
-            "Defeat Sabrina",
-            "Defeat Blaine",
-            "Defeat Giovanni"
+            "Defeat Annette",
+            "Defeat Geoff",
+            "Defeat Brooke",
+            "Defeat Avery",
+            "Defeat Chie and Rito",
+            "Defeat Fenton",
+            "Defeat Tara",
+            "Defeat Mewtwo"
         ]])
 
     def has_n_pokemon(state: CollectionState, n: int):
@@ -224,23 +225,18 @@ def set_rules(world: "PokemonVegaWorld") -> None:
 
     # Sky
     set_rule(get_entrance("Flying"), lambda state: can_fly(state))
-    set_rule(get_entrance("Pallet Town Fly Destination"), lambda state: state.has("Fly Pallet Town", player))
-    set_rule(get_entrance("Viridian City Fly Destination"), lambda state: state.has("Fly Viridian City", player))
-    set_rule(get_entrance("Pewter City Fly Destination"), lambda state: state.has("Fly Pewter City", player))
-    set_rule(get_entrance("Route 4 Fly Destination"), lambda state: state.has("Fly Route 4", player))
-    set_rule(get_entrance("Cerulean City Fly Destination"), lambda state: state.has("Fly Cerulean City", player))
-    set_rule(get_entrance("Vermilion City Fly Destination"), lambda state: state.has("Fly Vermilion City", player))
-    set_rule(get_entrance("Route 10 Fly Destination"), lambda state: state.has("Fly Route 10", player))
-    set_rule(get_entrance("Lavender Town Fly Destination"), lambda state: state.has("Fly Lavender Town", player))
-    set_rule(get_entrance("Celadon City Fly Destination"), lambda state: state.has("Fly Celadon City", player))
-    set_rule(get_entrance("Fuchsia City Fly Destination"), lambda state: state.has("Fly Fuchsia City", player))
-    set_rule(get_entrance("Saffron City Fly Destination"), lambda state: state.has("Fly Saffron City", player))
-    set_rule(get_entrance("Cinnabar Island Fly Destination"), lambda state: state.has("Fly Cinnabar Island", player))
-    set_rule(get_entrance("Indigo Plateau Fly Destination"), lambda state: state.has("Fly Indigo Plateau", player))
-
-    # Seagallop
-    set_rule(get_entrance("Navel Rock Arrival"), lambda state: state.has("Mystic Ticket", player))
-    set_rule(get_entrance("Birth Island Arrival"), lambda state: state.has("Aurora Ticket", player))
+    set_rule(get_entrance("Porcelia Town Fly Destination"), lambda state: state.has("Fly Porcelia Town", player))
+    set_rule(get_entrance("Junopsis City Fly Destination"), lambda state: state.has("Fly Junopsis City", player))
+    set_rule(get_entrance("Seafin City Fly Destination"), lambda state: state.has("Fly Seafin City", player))
+    set_rule(get_entrance("Gamboge City Fly Destination"), lambda state: state.has("Fly Gamboge City", player))
+    set_rule(get_entrance("Shamouti Island Fly Destination"), lambda state: state.has("Fly Shamouti Island", player))
+    set_rule(get_entrance("Nephrite City Fly Destination"), lambda state: state.has("Fly Nephrite City", player))
+    set_rule(get_entrance("Orpimence City Fly Destination"), lambda state: state.has("Fly Orpimence City", player))
+    set_rule(get_entrance("Ravenplume City Fly Destination"), lambda state: state.has("Fly Ravenplume City", player))
+    set_rule(get_entrance("Lapizula City Fly Destination"), lambda state: state.has("Fly Lapizula City", player))
+    set_rule(get_entrance("Route 510 Fly Destination"), lambda state: state.has("Fly Route 510", player))
+    set_rule(get_entrance("New Island Fly Destination"), lambda state: state.has("Fly New Island", player))
+    set_rule(get_entrance("Shakudo Island Fly Destination"), lambda state: state.has("Fly Shakudo Island", player))
 
     # Pallet Town
     set_rule(get_location("Rival's House - Daisy's Gift"), lambda state: state.has("Deliver Oak's Parcel", player))
@@ -939,6 +935,174 @@ def set_rules(world: "PokemonVegaWorld") -> None:
                      lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
 
     # Evolutions
+    set_rule(get_location("Evolution - Nimbleaf"),
+             lambda state: state.has("Nimbleaf", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Leafrond"),
+             lambda state: state.has("Leafrond", player) and evolve_level(state, 34))
+    set_rule(get_location("Evolution - Peyero"),
+             lambda state: state.has("Peyero", player) and evolve_level(state, 18))
+    set_rule(get_location("Evolution - Infiris"),
+             lambda state: state.has("Infiris", player) and evolve_level(state, 32))
+    set_rule(get_location("Evolution - Liquiput"),
+             lambda state: state.has("Liquiput", player) and evolve_level(state, 14))
+    set_rule(get_location("Evolution - Hydrush"),
+             lambda state: state.has("Hydrush", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Taillow"),
+             lambda state: state.has("Taillow", player) and evolve_level(state, 22))
+    set_rule(get_location("Evolution - Riolu"),
+             lambda state: state.has("Riolu", player))
+    set_rule(get_location("Evolution - Houndour"),
+             lambda state: state.has("Houndour", player) and evolve_level(state, 24))
+    set_rule(get_location("Evolution - Diglett"),
+             lambda state: state.has("Diglett", player) and evolve_level(state, 26))
+    set_rule(get_location("Evolution - Togepi"),
+             lambda state: state.has("Togepi", player))
+    set_rule(get_location("Evolution - Togetic"),
+             lambda state: state.has("Togetic", player)) # todo: what's the sun stone condition
+    set_rule(get_location("Evolution - Glachild"),
+             lambda state: state.has("Glachild", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Frozaiden"),
+             lambda state: state.has("Frozaiden", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Pichu"),
+             lambda state: state.has("Pichu", player))
+    set_rule(get_location("Evolution - Pikachu (Thunder Stone)"),
+             lambda state: state.has("Pikachu", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Pikachu (Friendship)"),
+             lambda state: state.has("Pikachu", player))
+    set_rule(get_location("Evolution - Nidoran F"),
+             lambda state: state.has("Nidoran F", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Nidorina"),
+             lambda state: state.has("Nidorina", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Nidoran M"),
+             lambda state: state.has("Nidoran M", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Nidorino"),
+             lambda state: state.has("Nidorino", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Buizel"),
+             lambda state: state.has("Buizel", player) and evolve_level(state, 26))
+    set_rule(get_location("Evolution - Jamberree"),
+             lambda state: state.has("Jamberree", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Pineco"),
+             lambda state: state.has("Pineco", player) and evolve_level(state, 31))
+    set_rule(get_location("Evolution - Shellder"),
+             lambda state: state.has("Shellder", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Psycolt (Moon Stone)"),
+             lambda state: state.has("Psycolt", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Psycolt (Sun Stone)"),
+             lambda state: state.has("Psycolt", player)) # todo: what's the sun stone condition
+    set_rule(get_location("Evolution - Tyrogue (Atk < Def)"),
+             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Tyrogue (Atk > Def)"),
+             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Tyrogue (Atk = Def)"),
+             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Rynos"),
+             lambda state: state.has("Rynos", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Absol"),
+             lambda state: state.has("Absol", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Girafarig"),
+             lambda state: state.has("Girafarig", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Willisp"),
+             lambda state: state.has("Willisp", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Magnemite"),
+             lambda state: state.has("Magnemite", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Magneton"),
+             lambda state: state.has("Magneton", player))
+    set_rule(get_location("Evolution - Staryu"),
+             lambda state: state.has("Staryu", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Gastly"),
+             lambda state: state.has("Gastly", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Haunter"),
+             lambda state: state.has("Haunter", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Exeggcute"),
+             lambda state: state.has("Exeggcute", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Velvelt"),
+             lambda state: state.has("Velvelt", player) and evolve_level(state, 35))
+    set_rule(get_location("Evolution - Rhyhorn"),
+             lambda state: state.has("Rhyhorn", player) and evolve_level(state, 42))
+    set_rule(get_location("Evolution - Rhydon"),
+             lambda state: state.has("Rhydon", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Porygon"),
+             lambda state: state.has("Porygon", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Porygon2"),
+             lambda state: state.has("Porygon2", player))
+    set_rule(get_location("Evolution - Spheal"),
+             lambda state: state.has("Spheal", player) and evolve_level(state, 32))
+    set_rule(get_location("Evolution - Sealeo"),
+             lambda state: state.has("Sealeo", player) and evolve_level(state, 44))
+    set_rule(get_location("Evolution - Rollder"),
+             lambda state: state.has("Rollder", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Snalo"),
+             lambda state: state.has("Snalo", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Snover"),
+             lambda state: state.has("Snover", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Yucarlia"),
+             lambda state: state.has("Yucarlia", player) and evolve_level(state, 35))
+    set_rule(get_location("Evolution - Cupricorn"),
+             lambda state: state.has("Cupricorn", player) and evolve_level(state, 18))
+    set_rule(get_location("Evolution - Hornikel"),
+             lambda state: state.has("Hornikel", player) and evolve_level(state, 32))
+    set_rule(get_location("Evolution - Mornwing"),
+             lambda state: state.has("Mornwing", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Guldawn"),
+             lambda state: state.has("Guldawn", player) and evolve_level(state, 45))
+    set_rule(get_location("Evolution - Mintch"),
+             lambda state: state.has("Mintch", player) and evolve_level(state, 18))
+    set_rule(get_location("Evolution - Maneko"),
+             lambda state: state.has("Maneko", player) and evolve_level(state, 18))
+    set_rule(get_location("Evolution - Plasmox"),
+             lambda state: state.has("Plasmox", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Cuppa"),
+             lambda state: state.has("Cuppa", player) and evolve_level(state, 28))
+    set_rule(get_location("Evolution - Clotaku"),
+             lambda state: state.has("Clotaku", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Ajarimus"),
+             lambda state: state.has("Ajarimus", player) and evolve_level(state, 32))
+    set_rule(get_location("Evolution - Hoothoot"),
+             lambda state: state.has("Hoothoot", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Elekid"),
+             lambda state: state.has("Elekid", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Electabuzz"),
+             lambda state: state.has("Electabuzz", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Magby"),
+             lambda state: state.has("Magby", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Magmar"),
+             lambda state: state.has("Magmar", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Lileep"),
+             lambda state: state.has("Lileep", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Grindon"),
+             lambda state: state.has("Grindon", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Larvitar"),
+             lambda state: state.has("Larvitar", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Pupitar"),
+             lambda state: state.has("Pupitar", player) and evolve_level(state, 55))
+    set_rule(get_location("Evolution - Beldum"),
+             lambda state: state.has("Beldum", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Metang"),
+             lambda state: state.has("Metang", player) and evolve_level(state, 45))
+    set_rule(get_location("Evolution - Gible"),
+             lambda state: state.has("Gible", player) and evolve_level(state, 24))
+    set_rule(get_location("Evolution - Gabite"),
+             lambda state: state.has("Gabite", player) and evolve_level(state, 48))
+    set_rule(get_location("Evolution - Laquagon"),
+             lambda state: state.has("Laquagon", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Dragune"),
+             lambda state: state.has("Dragune", player) and evolve_level(state, 50))
     set_rule(get_location("Evolution - Bulbasaur"),
              lambda state: state.has("Bulbasaur", player) and evolve_level(state, 16))
     set_rule(get_location("Evolution - Ivysaur"),
@@ -951,353 +1115,253 @@ def set_rules(world: "PokemonVegaWorld") -> None:
              lambda state: state.has("Squirtle", player) and evolve_level(state, 16))
     set_rule(get_location("Evolution - Wartortle"),
              lambda state: state.has("Wartortle", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Caterpie"),
-             lambda state: state.has("Caterpie", player) and evolve_level(state, 7))
-    set_rule(get_location("Evolution - Metapod"),
-             lambda state: state.has("Metapod", player) and evolve_level(state, 10))
-    set_rule(get_location("Evolution - Weedle"),
-             lambda state: state.has("Weedle", player) and evolve_level(state, 7))
-    set_rule(get_location("Evolution - Kakuna"),
-             lambda state: state.has("Kakuna", player) and evolve_level(state, 10))
-    set_rule(get_location("Evolution - Pidgey"),
-             lambda state: state.has("Pidgey", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Pidgeotto"),
-             lambda state: state.has("Pidgeotto", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Rattata"),
-             lambda state: state.has("Rattata", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Spearow"),
-             lambda state: state.has("Spearow", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Ekans"),
-             lambda state: state.has("Ekans", player) and evolve_level(state, 22))
-    set_rule(get_location("Evolution - Pikachu"),
-             lambda state: state.has("Pikachu", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Sandshrew"),
-             lambda state: state.has("Sandshrew", player) and evolve_level(state, 22))
-    set_rule(get_location("Evolution - Nidoran F"),
-             lambda state: state.has("Nidoran F", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Nidoran M"),
-             lambda state: state.has("Nidoran M", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Vulpix"),
-             lambda state: state.has("Vulpix", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Zubat"),
-             lambda state: state.has("Zubat", player) and evolve_level(state, 22))
-    set_rule(get_location("Evolution - Golbat"),
-             lambda state: state.has("Golbat", player))
-    set_rule(get_location("Evolution - Oddish"),
-             lambda state: state.has("Oddish", player) and evolve_level(state, 21))
-    set_rule(get_location("Evolution - Gloom"),
-             lambda state: state.has("Gloom", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Paras"),
-             lambda state: state.has("Paras", player) and evolve_level(state, 24))
-    set_rule(get_location("Evolution - Venonat"),
-             lambda state: state.has("Venonat", player) and evolve_level(state, 31))
-    set_rule(get_location("Evolution - Diglett"),
-             lambda state: state.has("Diglett", player) and evolve_level(state, 26))
-    set_rule(get_location("Evolution - Meowth"),
-             lambda state: state.has("Meowth", player) and evolve_level(state, 28))
-    set_rule(get_location("Evolution - Psyduck"),
-             lambda state: state.has("Psyduck", player) and evolve_level(state, 33))
-    set_rule(get_location("Evolution - Mankey"),
-             lambda state: state.has("Mankey", player) and evolve_level(state, 28))
-    set_rule(get_location("Evolution - Growlithe"),
-             lambda state: state.has("Growlithe", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Poliwag"),
-             lambda state: state.has("Poliwag", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Poliwhirl"),
-             lambda state: state.has("Poliwhirl", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Abra"),
-             lambda state: state.has("Abra", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Kadabra"),
-             lambda state: state.has("Kadabra", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Machop"),
-             lambda state: state.has("Machop", player) and evolve_level(state, 28))
-    set_rule(get_location("Evolution - Machoke"),
-             lambda state: state.has("Machoke", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Bellsprout"),
-             lambda state: state.has("Bellsprout", player) and evolve_level(state, 21))
-    set_rule(get_location("Evolution - Weepinbell"),
-             lambda state: state.has("Weepinbell", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Tentacool"),
-             lambda state: state.has("Tentacool", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Geodude"),
-             lambda state: state.has("Geodude", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Graveler"),
-             lambda state: state.has("Graveler", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Ponyta"),
-             lambda state: state.has("Ponyta", player) and evolve_level(state, 40))
-    set_rule(get_location("Evolution - Slowpoke"),
-             lambda state: state.has("Slowpoke", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Magnemite"),
-             lambda state: state.has("Magnemite", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Doduo"),
-             lambda state: state.has("Doduo", player) and evolve_level(state, 31))
-    set_rule(get_location("Evolution - Seel"),
-             lambda state: state.has("Seel", player) and evolve_level(state, 34))
-    set_rule(get_location("Evolution - Grimer"),
-             lambda state: state.has("Grimer", player) and evolve_level(state, 38))
-    set_rule(get_location("Evolution - Shellder"),
-             lambda state: state.has("Shellder", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Gastly"),
-             lambda state: state.has("Gastly", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Haunter"),
-             lambda state: state.has("Haunter", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Drowzee"),
-             lambda state: state.has("Drowzee", player) and evolve_level(state, 26))
-    set_rule(get_location("Evolution - Krabby"),
-             lambda state: state.has("Krabby", player) and evolve_level(state, 28))
-    set_rule(get_location("Evolution - Voltorb"),
-             lambda state: state.has("Voltorb", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Exeggcute"),
-             lambda state: state.has("Exeggcute", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Cubone"),
-             lambda state: state.has("Cubone", player) and evolve_level(state, 28))
-    set_rule(get_location("Evolution - Koffing"),
-             lambda state: state.has("Koffing", player) and evolve_level(state, 35))
-    set_rule(get_location("Evolution - Rhyhorn"),
-             lambda state: state.has("Rhyhorn", player) and evolve_level(state, 42))
-    set_rule(get_location("Evolution - Chansey"),
-             lambda state: state.has("Chansey", player))
-    set_rule(get_location("Evolution - Horsea"),
-             lambda state: state.has("Horsea", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Goldeen"),
-             lambda state: state.has("Goldeen", player) and evolve_level(state, 33))
-    set_rule(get_location("Evolution - Staryu"),
-             lambda state: state.has("Staryu", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Magikarp"),
-             lambda state: state.has("Magikarp", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Eevee (Thunder Stone)"),
-             lambda state: state.has("Eevee", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Eevee (Water Stone)"),
-             lambda state: state.has("Eevee", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Eevee (Fire Stone)"),
-             lambda state: state.has("Eevee", player) and
-                           state.has("Buy Evo Stones", player) and
-                           can_grind_money(state))
-    set_rule(get_location("Evolution - Omanyte"),
-             lambda state: state.has("Omanyte", player) and evolve_level(state, 40))
-    set_rule(get_location("Evolution - Kabuto"),
-             lambda state: state.has("Kabuto", player) and evolve_level(state, 40))
-    set_rule(get_location("Evolution - Dratini"),
-             lambda state: state.has("Dratini", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Dragonair"),
-             lambda state: state.has("Dragonair", player) and evolve_level(state, 55))
-    set_rule(get_location("Evolution - Chikorita"),
-             lambda state: state.has("Chikorita", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Bayleef"),
-             lambda state: state.has("Bayleef", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Cyndaquil"),
-             lambda state: state.has("Cyndaquil", player) and evolve_level(state, 14))
-    set_rule(get_location("Evolution - Quilava"),
-             lambda state: state.has("Quilava", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Totodile"),
-             lambda state: state.has("Totodile", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Croconaw"),
-             lambda state: state.has("Croconaw", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Sentret"),
-             lambda state: state.has("Sentret", player) and evolve_level(state, 15))
-    set_rule(get_location("Evolution - Hoothoot"),
-             lambda state: state.has("Hoothoot", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Ledyba"),
-             lambda state: state.has("Ledyba", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Spinarak"),
-             lambda state: state.has("Spinarak", player) and evolve_level(state, 22))
-    set_rule(get_location("Evolution - Chinchou"),
-             lambda state: state.has("Chinchou", player) and evolve_level(state, 27))
-    set_rule(get_location("Evolution - Pichu"),
-             lambda state: state.has("Pichu", player))
-    set_rule(get_location("Evolution - Cleffa"),
-             lambda state: state.has("Cleffa", player))
-    set_rule(get_location("Evolution - Igglybuff"),
-             lambda state: state.has("Igglybuff", player))
-    set_rule(get_location("Evolution - Togepi"),
-             lambda state: state.has("Togepi", player))
-    set_rule(get_location("Evolution - Natu"),
-             lambda state: state.has("Natu", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Mareep"),
-             lambda state: state.has("Mareep", player) and evolve_level(state, 15))
-    set_rule(get_location("Evolution - Flaaffy"),
-             lambda state: state.has("Flaaffy", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Marill"),
-             lambda state: state.has("Marill", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Hoppip"),
-             lambda state: state.has("Hoppip", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Skiploom"),
-             lambda state: state.has("Skiploom", player) and evolve_level(state, 27))
-    set_rule(get_location("Evolution - Wooper"),
-             lambda state: state.has("Wooper", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Pineco"),
-             lambda state: state.has("Pineco", player) and evolve_level(state, 31))
-    set_rule(get_location("Evolution - Snubbull"),
-             lambda state: state.has("Snubbull", player) and evolve_level(state, 23))
-    set_rule(get_location("Evolution - Teddiursa"),
-             lambda state: state.has("Teddiursa", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Slugma"),
-             lambda state: state.has("Slugma", player) and evolve_level(state, 38))
-    set_rule(get_location("Evolution - Swinub"),
-             lambda state: state.has("Swinub", player) and evolve_level(state, 33))
-    set_rule(get_location("Evolution - Remoraid"),
-             lambda state: state.has("Remoraid", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Houndour"),
-             lambda state: state.has("Houndour", player) and evolve_level(state, 24))
-    set_rule(get_location("Evolution - Phanpy"),
-             lambda state: state.has("Phanpy", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Tyrogue (Atk < Def)"),
-             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Tyrogue (Atk > Def)"),
-             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Tyrogue (Atk = Def)"),
-             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Basille"),
+             lambda state: state.has("Basille", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Basield"),
+             lambda state: state.has("Basield", player) and evolve_level(state, 34))
+    set_rule(get_location("Evolution - Patroleo"),
+             lambda state: state.has("Patroleo", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Gardleon"),
+             lambda state: state.has("Gardleon", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Katuna"),
+             lambda state: state.has("Katuna", player) and evolve_level(state, 16))
+    set_rule(get_location("Evolution - Maelstream"),
+             lambda state: state.has("Maelstream", player) and evolve_level(state, 32))
+    set_rule(get_location("Evolution - Cheshile (Low Personality)"),
+             lambda state: state.has("Cheshile", player) and evolve_level(state, 24))
+    set_rule(get_location("Evolution - Cheshile (High Personality)"),
+             lambda state: state.has("Cheshile", player) and evolve_level(state, 24))
+    set_rule(get_location("Evolution - Rivird"),
+             lambda state: state.has("Rivird", player) and evolve_level(state, 23))
+    set_rule(get_location("Evolution - Pachirisu"),
+             lambda state: state.has("Pachirisu", player) and evolve_level(state, 26))
+    set_rule(get_location("Evolution - Pumpkid"),
+             lambda state: state.has("Pumpkid", player) and evolve_level(state, 31))
+    set_rule(get_location("Evolution - Lunabitt"),
+             lambda state: state.has("Lunabitt", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Liepus"),
+             lambda state: state.has("Liepus", player)) # todo: what's the sun stone condition
     set_rule(get_location("Evolution - Smoochum"),
              lambda state: state.has("Smoochum", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Elekid"),
-             lambda state: state.has("Elekid", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Magby"),
-             lambda state: state.has("Magby", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Larvitar"),
-             lambda state: state.has("Larvitar", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Pupitar"),
-             lambda state: state.has("Pupitar", player) and evolve_level(state, 55))
-    set_rule(get_location("Evolution - Treecko"),
-             lambda state: state.has("Treecko", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Grovyle"),
-             lambda state: state.has("Grovyle", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Torchic"),
-             lambda state: state.has("Torchic", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Combusken"),
-             lambda state: state.has("Combusken", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Mudkip"),
-             lambda state: state.has("Mudkip", player) and evolve_level(state, 16))
-    set_rule(get_location("Evolution - Marshtomp"),
-             lambda state: state.has("Marshtomp", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Poochyena"),
-             lambda state: state.has("Poochyena", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Zigzagoon"),
-             lambda state: state.has("Zigzagoon", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Wurmple (Low Personality)"),
-             lambda state: state.has("Wurmple", player) and evolve_level(state, 7))
-    set_rule(get_location("Evolution - Wurmple (High Personality)"),
-             lambda state: state.has("Wurmple", player) and evolve_level(state, 7))
-    set_rule(get_location("Evolution - Silcoon"),
-             lambda state: state.has("Silcoon", player) and evolve_level(state, 10))
-    set_rule(get_location("Evolution - Cascoon"),
-             lambda state: state.has("Cascoon", player) and evolve_level(state, 10))
-    set_rule(get_location("Evolution - Lotad"),
-             lambda state: state.has("Lotad", player) and evolve_level(state, 14))
-    set_rule(get_location("Evolution - Lombre"),
-             lambda state: state.has("Lombre", player) and
-                           state.has("Buy Evo Stones", player) and
+    set_rule(get_location("Evolution - Jynx"),
+             lambda state: state.has("Jynx", player) and evolve_level(state, 45))
+    set_rule(get_location("Evolution - Takuni"),
+             lambda state: state.has("Takuni", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Percussoon"),
+             lambda state: state.has("Percussoon", player) and evolve_level(state, 34))
+    set_rule(get_location("Evolution - Shivermin"),
+             lambda state: state.has("Shivermin", player) and evolve_level(state, 29))
+    set_rule(get_location("Evolution - Chatot"),
+             lambda state: state.has("Chatot", player) and evolve_level(state, 42))
+    set_rule(get_location("Evolution - Ledyba"),
+             lambda state: state.has("Ledyba", player) and evolve_level(state, 18))
+    set_rule(get_location("Evolution - Ledian"),
+             lambda state: state.has("Ledian", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Bisos"),
+             lambda state: state.has("Bisos", player))
+    set_rule(get_location("Evolution - Lunatone"),
+             lambda state: state.has("Lunatone", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Solrock"),
+             lambda state: state.has("Solrock", player)) # todo: what's the sun stone condition
+    set_rule(get_location("Evolution - Stellith (Moon Stone)"),
+             lambda state: state.has("Stellith", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Stellith (Sun Stone)"),
+             lambda state: state.has("Stellith", player)) # todo: what's the sun stone condition
+    set_rule(get_location("Evolution - Modra"),
+             lambda state: state.has("Modra", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Remoraid"),
+             lambda state: state.has("Remoraid", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Tentacool"),
+             lambda state: state.has("Tentacool", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Tentacruel"),
+             lambda state: state.has("Tentacruel", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
                            can_grind_money(state))
-    set_rule(get_location("Evolution - Seedot"),
-             lambda state: state.has("Seedot", player) and evolve_level(state, 14))
-    set_rule(get_location("Evolution - Nuzleaf"),
-             lambda state: state.has("Nuzleaf", player) and
-                           state.has("Buy Evo Stones", player) and
+    set_rule(get_location("Evolution - Lilynary"),
+             lambda state: state.has("Lilynary", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Grieflame"),
+             lambda state: state.has("Grieflame", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Strawick"),
+             lambda state: state.has("Strawick", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
                            can_grind_money(state))
-    set_rule(get_location("Evolution - Nincada"),
-             lambda state: state.has("Nincada", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Nincada (Extra)"),
-             lambda state: state.has("Nincada", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Taillow"),
-             lambda state: state.has("Taillow", player) and evolve_level(state, 22))
-    set_rule(get_location("Evolution - Shroomish"),
-             lambda state: state.has("Shroomish", player) and evolve_level(state, 23))
-    set_rule(get_location("Evolution - Wingull"),
-             lambda state: state.has("Wingull", player) and evolve_level(state, 25))
-    set_rule(get_location("Evolution - Surskit"),
-             lambda state: state.has("Surskit", player) and evolve_level(state, 22))
-    set_rule(get_location("Evolution - Wailmer"),
-             lambda state: state.has("Wailmer", player) and evolve_level(state, 40))
-    set_rule(get_location("Evolution - Baltoy"),
-             lambda state: state.has("Baltoy", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Barboach"),
-             lambda state: state.has("Barboach", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Corphish"),
-             lambda state: state.has("Corphish", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Feebas"),
-             lambda state: state.has("Feebas", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Carvanha"),
-             lambda state: state.has("Carvanha", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Trapinch"),
-             lambda state: state.has("Trapinch", player) and evolve_level(state, 35))
-    set_rule(get_location("Evolution - Vibrava"),
-             lambda state: state.has("Vibrava", player) and evolve_level(state, 45))
-    set_rule(get_location("Evolution - Makuhita"),
-             lambda state: state.has("Makuhita", player) and evolve_level(state, 24))
-    set_rule(get_location("Evolution - Electrike"),
-             lambda state: state.has("Electrike", player) and evolve_level(state, 26))
-    set_rule(get_location("Evolution - Numel"),
-             lambda state: state.has("Numel", player) and evolve_level(state, 33))
-    set_rule(get_location("Evolution - Spheal"),
-             lambda state: state.has("Spheal", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Sealeo"),
-             lambda state: state.has("Sealeo", player) and evolve_level(state, 44))
-    set_rule(get_location("Evolution - Cacnea"),
-             lambda state: state.has("Cacnea", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Snorunt"),
-             lambda state: state.has("Snorunt", player) and evolve_level(state, 42))
-    set_rule(get_location("Evolution - Azurill"),
-             lambda state: state.has("Azurill", player))
-    set_rule(get_location("Evolution - Spoink"),
-             lambda state: state.has("Spoink", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Meditite"),
-             lambda state: state.has("Meditite", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Swablu"),
-             lambda state: state.has("Swablu", player) and evolve_level(state, 35))
-    set_rule(get_location("Evolution - Wynaut"),
-             lambda state: state.has("Wynaut", player) and evolve_level(state, 15))
-    set_rule(get_location("Evolution - Duskull"),
-             lambda state: state.has("Duskull", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Slakoth"),
-             lambda state: state.has("Slakoth", player) and evolve_level(state, 18))
-    set_rule(get_location("Evolution - Vigoroth"),
-             lambda state: state.has("Vigoroth", player) and evolve_level(state, 36))
-    set_rule(get_location("Evolution - Gulpin"),
-             lambda state: state.has("Gulpin", player) and evolve_level(state, 26))
+    set_rule(get_location("Evolution - Voltorb"),
+             lambda state: state.has("Voltorb", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Electrode"),
+             lambda state: state.has("Electrode", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Murkrow"),
+             lambda state: state.has("Murkrow", player)) # todo: what's the moon stone condition
     set_rule(get_location("Evolution - Whismur"),
              lambda state: state.has("Whismur", player) and evolve_level(state, 20))
     set_rule(get_location("Evolution - Loudred"),
              lambda state: state.has("Loudred", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Krabby"),
+             lambda state: state.has("Krabby", player) and evolve_level(state, 28))
+    set_rule(get_location("Evolution - Puffume"),
+             lambda state: state.has("Puffume", player) and evolve_level(state, 31))
+    set_rule(get_location("Evolution - Yolkid (Water Stone)"),
+             lambda state: state.has("Yolkid", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Yolkid (Leaf Stone)"),
+             lambda state: state.has("Yolkid", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Yolkid (Sun Stone)"),
+             lambda state: state.has("Yolkid", player)) # todo: what's the sun stone condition
+    set_rule(get_location("Evolution - Yolkid (Moon Stone)"),
+             lambda state: state.has("Yolkid", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Lizzle"),
+             lambda state: state.has("Lizzle", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Droudrop"),
+             lambda state: state.has("Droudrop", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Clouff"),
+             lambda state: state.has("Clouff", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Sneasel"),
+             lambda state: state.has("Sneasel", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Shroomish"),
+             lambda state: state.has("Shroomish", player) and evolve_level(state, 23))
+    set_rule(get_location("Evolution - Sableye"),
+             lambda state: state.has("Sableye", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Mawile"),
+             lambda state: state.has("Mawile", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Scyther"),
+             lambda state: state.has("Scyther", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Pinsir"),
+             lambda state: state.has("Pinsir", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Ekans"),
+             lambda state: state.has("Ekans", player) and evolve_level(state, 22))
+    set_rule(get_location("Evolution - Arbok"),
+             lambda state: state.has("Arbok", player) and evolve_level(state, 44))
+    set_rule(get_location("Evolution - Koffing"),
+             lambda state: state.has("Koffing", player) and evolve_level(state, 35))
+    set_rule(get_location("Evolution - Weezing"),
+             lambda state: state.has("Weezing", player) and evolve_level(state, 45))
+    set_rule(get_location("Evolution - Duskull"),
+             lambda state: state.has("Duskull", player) and evolve_level(state, 37))
+    set_rule(get_location("Evolution - Dusclops"),
+             lambda state: state.has("Dusclops", player) and evolve_level(state, 48))
+    set_rule(get_location("Evolution - Lickitung"),
+             lambda state: state.has("Lickitung", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Spinarak"),
+             lambda state: state.has("Spinarak", player) and evolve_level(state, 22))
+    set_rule(get_location("Evolution - Joltik"),
+             lambda state: state.has("Joltik", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Nincada"),
+             lambda state: state.has("Nincada", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Nincada (Extra)"),
+             lambda state: state.has("Nincada", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Guppyre"),
+             lambda state: state.has("Guppyre", player) and evolve_level(state, 28))
+    set_rule(get_location("Evolution - Relicanth"),
+             lambda state: state.has("Relicanth", player) and evolve_level(state, 48))
+    set_rule(get_location("Evolution - Punchild"),
+             lambda state: state.has("Punchild", player) and evolve_level(state, 30))
     set_rule(get_location("Evolution - Shuppet"),
              lambda state: state.has("Shuppet", player) and evolve_level(state, 37))
-    set_rule(get_location("Evolution - Aron"),
-             lambda state: state.has("Aron", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Lairon"),
-             lambda state: state.has("Lairon", player) and evolve_level(state, 42))
-    set_rule(get_location("Evolution - Lileep"),
-             lambda state: state.has("Lileep", player) and evolve_level(state, 40))
-    set_rule(get_location("Evolution - Anorith"),
-             lambda state: state.has("Anorith", player) and evolve_level(state, 40))
-    set_rule(get_location("Evolution - Ralts"),
+    set_rule(get_location("Evolution - Banette"),
+             lambda state: state.has("Banette", player) and evolve_level(state, 47))
+    set_rule(get_location("Evolution - Ralts (Level)"),
              lambda state: state.has("Ralts", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Kirlia"),
+    set_rule(get_location("Evolution - Ralts (Friendship)"),
+             lambda state: state.has("Ralts", player))
+    set_rule(get_location("Evolution - Kirlia (Atk != Def)"),
              lambda state: state.has("Kirlia", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Bagon"),
-             lambda state: state.has("Bagon", player) and evolve_level(state, 30))
-    set_rule(get_location("Evolution - Shelgon"),
-             lambda state: state.has("Shelgon", player) and evolve_level(state, 50))
-    set_rule(get_location("Evolution - Beldum"),
-             lambda state: state.has("Beldum", player) and evolve_level(state, 20))
-    set_rule(get_location("Evolution - Metang"),
-             lambda state: state.has("Metang", player) and evolve_level(state, 45))
+    set_rule(get_location("Evolution - Kirlia (Atk = Def)"),
+             lambda state: state.has("Kirlia", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Dwebble"),
+             lambda state: state.has("Dwebble", player) and evolve_level(state, 34))
+    set_rule(get_location("Evolution - Cacnea"),
+             lambda state: state.has("Cacnea", player) and evolve_level(state, 32))
+    set_rule(get_location("Evolution - Piloswine"),
+             lambda state: state.has("Piloswine", player))
+    set_rule(get_location("Evolution - Pressie"),
+             lambda state: state.has("Pressie", player))
+    set_rule(get_location("Evolution - Shretainer"),
+             lambda state: state.has("Shretainer", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Skorupi"),
+             lambda state: state.has("Skorupi", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Carnivine"),
+             lambda state: state.has("Carnivine", player) and evolve_level(state, 35))
+    set_rule(get_location("Evolution - Toxroach"),
+             lambda state: state.has("Toxroach", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Dorfin (Low Personality)"),
+             lambda state: state.has("Dorfin", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Dorfin (High Personality)"),
+             lambda state: state.has("Dorfin", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Dislichen"),
+             lambda state: state.has("Dislichen", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Swinub"),
+             lambda state: state.has("Swinub", player) and evolve_level(state, 33))
+    set_rule(get_location("Evolution - Dunsparce"),
+             lambda state: state.has("Dunsparce", player) and evolve_level(state, 42))
+    set_rule(get_location("Evolution - Farfetch'd"),
+             lambda state: state.has("Farfetch'd", player) and evolve_level(state, 35))
+    set_rule(get_location("Evolution - Lephan"),
+             lambda state: state.has("Lephan", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Torkoal"),
+             lambda state: state.has("Torkoal", player) and evolve_level(state, 45))
+    set_rule(get_location("Evolution - Luvdisc"),
+             lambda state: state.has("Luvdisc", player))
+    set_rule(get_location("Evolution - Rooten"),
+             lambda state: state.has("Rooten", player) and evolve_level(state, 29))
+    set_rule(get_location("Evolution - Klink"),
+             lambda state: state.has("Klink", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Tynamo"),
+             lambda state: state.has("Tynamo", player) and evolve_level(state, 39))
+    set_rule(get_location("Evolution - Geodude"),
+             lambda state: state.has("Geodude", player) and evolve_level(state, 25))
+    set_rule(get_location("Evolution - Happiny"),
+             lambda state: state.has("Happiny", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Chansey"),
+             lambda state: state.has("Chansey", player))
+    set_rule(get_location("Evolution - Graveler"),
+             lambda state: state.has("Graveler", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Eelektrik"),
+             lambda state: state.has("Eelektrik", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Sandshrew"),
+             lambda state: state.has("Sandshrew", player) and evolve_level(state, 22))
+    set_rule(get_location("Evolution - Sandslash"),
+             lambda state: state.has("Sandslash", player) and evolve_level(state, 36))
+    set_rule(get_location("Evolution - Scraggy"),
+             lambda state: state.has("Scraggy", player) and evolve_level(state, 39))
+    set_rule(get_location("Evolution - Delibird"),
+             lambda state: state.has("Delibird", player) and evolve_level(state, 30))
+    set_rule(get_location("Evolution - Ferroseed"),
+             lambda state: state.has("Ferroseed", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Klang"),
+             lambda state: state.has("Klang", player) and evolve_level(state, 49))
+    set_rule(get_location("Evolution - Petilil"),
+             lambda state: state.has("Petilil", player)) # todo: what's the sun stone condition
+    set_rule(get_location("Evolution - Kirgicia"),
+             lambda state: state.has("Kirgicia", player)) # todo: what's the moon stone condition
+    set_rule(get_location("Evolution - Sealkie"),
+             lambda state: state.has("Sealkie", player) and evolve_level(state, 35))
+    set_rule(get_location("Evolution - Ptervus"),
+             lambda state: state.has("Ptervus", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Ambilade (Low Personality)"),
+             lambda state: state.has("Ambilade", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Ambilade (High Personality)"),
+             lambda state: state.has("Ambilade", player) and evolve_level(state, 38))
+    set_rule(get_location("Evolution - Fujinel"),
+             lambda state: state.has("Fujinel", player) and evolve_level(state, 24))
+    set_rule(get_location("Evolution - Smalmon"),
+             lambda state: state.has("Smalmon", player) and evolve_level(state, 34))
+    set_rule(get_location("Evolution - Mienfoo"),
+             lambda state: state.has("Mienfoo", player) and evolve_level(state, 50))
+    set_rule(get_location("Evolution - Sandile"),
+             lambda state: state.has("Sandile", player) and evolve_level(state, 29))
+    set_rule(get_location("Evolution - Krokorok"),
+             lambda state: state.has("Krokorok", player) and evolve_level(state, 40))
+    set_rule(get_location("Evolution - Lukewran"),
+             lambda state: state.has("Lukewran", player) and
+                           state.has("Buy Evo Stones", player) and # todo: check if evo stones elsewhere in vega
+                           can_grind_money(state))
+    set_rule(get_location("Evolution - Aldina"),
+             lambda state: state.has("Aldina", player))

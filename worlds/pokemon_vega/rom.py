@@ -127,14 +127,15 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
         location_info.append((reverse_offset_flag(location.address), location.item.player, location.item.name))
 
     if world.options.trainersanity:
-        rival_rewards = ["RIVAL_OAKS_LAB", "RIVAL_ROUTE22_EARLY", "RIVAL_CERULEAN", "RIVAL_SS_ANNE",
-                         "RIVAL_POKEMON_TOWER", "RIVAL_SILPH", "RIVAL_ROUTE22_LATE", "CHAMPION_FIRST"]
+        # Sphere Ruins rival left his starter in the PC, and Mirage System isn't part of Trainersanity
+        rival_rewards = ["RIVAL_HOLLYS_LAB", "RIVAL_SEAFIN", "MOS_RANGER_SQUAD", "RIVAL_ORPIMENCE",
+                         "RIVAL_RAVENPLUME", "RIVAL_VICTORY_ROAD"]
         for trainer in rival_rewards:
-            location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_BULBASAUR_REWARD"].name,
+            location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_NIMBLEAF_REWARD"].name,
                                                      world.player)
             alternates = [
-                f"TRAINER_{trainer}_CHARMANDER",
-                f"TRAINER_{trainer}_SQUIRTLE"
+                f"TRAINER_{trainer}_PEYERO",
+                f"TRAINER_{trainer}_LIQUIPUT"
             ]
 
             location_info.extend(
@@ -203,63 +204,47 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     start_inventory = world.options.start_inventory.value.copy()
 
     starting_badges = 0
-    if start_inventory.pop("Boulder Badge", 0) > 0:
+    if start_inventory.pop("Elnath Badge", 0) > 0:
         starting_badges |= (1 << 0)
-    if start_inventory.pop("Cascade Badge", 0) > 0:
+    if start_inventory.pop("Gemma Badge", 0) > 0:
         starting_badges |= (1 << 1)
-    if start_inventory.pop("Thunder Badge", 0) > 0:
+    if start_inventory.pop("Hadar Badge", 0) > 0:
         starting_badges |= (1 << 2)
-    if start_inventory.pop("Rainbow Badge", 0) > 0:
+    if start_inventory.pop("Arneb Badge", 0) > 0:
         starting_badges |= (1 << 3)
-    if start_inventory.pop("Soul Badge", 0) > 0:
+    if start_inventory.pop("Phact Badge", 0) > 0:
         starting_badges |= (1 << 4)
-    if start_inventory.pop("Marsh Badge", 0) > 0:
+    if start_inventory.pop("Sarfah Badge", 0) > 0:
         starting_badges |= (1 << 5)
-    if start_inventory.pop("Volcano Badge", 0) > 0:
+    if start_inventory.pop("Prior Badge", 0) > 0:
         starting_badges |= (1 << 6)
-    if start_inventory.pop("Earth Badge", 0) > 0:
+    if start_inventory.pop("Mirach Badge", 0) > 0:
         starting_badges |= (1 << 7)
 
     starting_fly_unlocks = 0
-    if start_inventory.pop("Fly Pallet Town", 0) > 0:
+    if start_inventory.pop("Fly Porcelia Town", 0) > 0:
         starting_fly_unlocks |= (1 << 0)
-    if start_inventory.pop("Fly Viridian City", 0) > 0:
+    if start_inventory.pop("Fly Junopsis City", 0) > 0:
         starting_fly_unlocks |= (1 << 1)
-    if start_inventory.pop("Fly Pewter City", 0) > 0:
+    if start_inventory.pop("Fly Seafin City", 0) > 0:
         starting_fly_unlocks |= (1 << 2)
-    if start_inventory.pop("Fly Cerulean City", 0) > 0:
+    if start_inventory.pop("Fly Gamboge City", 0) > 0:
         starting_fly_unlocks |= (1 << 3)
-    if start_inventory.pop("Fly Lavender Town", 0) > 0:
+    if start_inventory.pop("Fly Shamouti Island", 0) > 0:
         starting_fly_unlocks |= (1 << 4)
-    if start_inventory.pop("Fly Vermilion City", 0) > 0:
+    if start_inventory.pop("Fly Nephrite City", 0) > 0:
         starting_fly_unlocks |= (1 << 5)
-    if start_inventory.pop("Fly Celadon City", 0) > 0:
+    if start_inventory.pop("Fly Orpimence City", 0) > 0:
         starting_fly_unlocks |= (1 << 6)
-    if start_inventory.pop("Fly Fuchsia City", 0) > 0:
+    if start_inventory.pop("Fly Lapizula City", 0) > 0:
         starting_fly_unlocks |= (1 << 7)
-    if start_inventory.pop("Fly Cinnabar Island", 0) > 0:
+    if start_inventory.pop("Fly New Island", 0) > 0:
         starting_fly_unlocks |= (1 << 8)
-    if start_inventory.pop("Fly Indigo Plateau", 0) > 0:
+    if start_inventory.pop("Fly Shakudo Island", 0) > 0:
         starting_fly_unlocks |= (1 << 9)
-    if start_inventory.pop("Fly Saffron City", 0) > 0:
+    if start_inventory.pop("Fly Ravenplume City", 0) > 0:
         starting_fly_unlocks |= (1 << 10)
-    if start_inventory.pop("Fly One Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 11)
-    if start_inventory.pop("Fly Two Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 12)
-    if start_inventory.pop("Fly Three Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 13)
-    if start_inventory.pop("Fly Four Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 14)
-    if start_inventory.pop("Fly Five Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 15)
-    if start_inventory.pop("Fly Seven Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 16)
-    if start_inventory.pop("Fly Six Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 17)
-    if start_inventory.pop("Fly Route 4", 0) > 0:
-        starting_fly_unlocks |= (1 << 18)
-    if start_inventory.pop("Fly Route 10", 0) > 0:
+    if start_inventory.pop("Fly Route 510", 0) > 0:
         starting_fly_unlocks |= (1 << 19)
 
     starting_items: List[Tuple[str, int]] = []
@@ -552,10 +537,6 @@ def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
 
     # Set town map fly location
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x42, struct.pack("<B", world.town_map_fly_location_id))
-
-    # Set resort gorgeous mon
-    species_id = data.constants[world.resort_gorgeous_mon[0]]
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x43, struct.pack("<H", species_id))
 
     # Set total darkness
     if "Total Darkness" in world.options.modify_world_state.value:

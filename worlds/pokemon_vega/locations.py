@@ -11,87 +11,56 @@ if TYPE_CHECKING:
 
 LOCATION_GROUPS = {
     "Badges": {
-        "Pewter Gym - Prize",
-        "Cerulean Gym - Prize",
-        "Vermilion Gym - Prize",
-        "Celadon Gym - Prize",
-        "Fuchsia Gym - Prize",
-        "Saffron Gym - Prize",
-        "Cinnabar Gym - Prize",
-        "Viridian Gym - Prize"
+        "Junopsis Gym - Prize",
+        "Seafin Gym - Prize",
+        "Gamboge Gym - Prize",
+        "Nephrite Gym - Prize",
+        "Orpimence Gym - Prize",
+        "Ravenplume Gym - Prize",
+        "Lapizula Gym - Prize",
+        "New Island Gym - Prize"
     },
     "Gym TMs": {
-        "Pewter Gym - Brock's TM",
-        "Cerulean Gym - Misty's TM",
-        "Vermilion Gym - Lt. Surge's TM",
-        "Celadon Gym - Erika's TM",
-        "Fuchsia Gym - Koga's TM",
-        "Saffron Gym - Sabrina's TM",
-        "Cinnabar Gym - Blaine's TM",
-        "Viridian Gym - Giovanni's TM"
-    },
-    "Oak's Aides": {
-        "Route 2 Gate - Oak's Aide's Gift",
-        "Route 10 Pokemon Center 1F - Oak's Aide's Gift",
-        "Route 11 Gate 2F - Oak's Aide's Gift",
-        "Route 16 Gate 2F - Oak's Aide's Gift",
-        "Route 15 Gate 2F - Oak's Aide's Gift"
+        "Junopsis Gym - Annette's TM",
+        "Seafin Gym - Geoff's TM",
+        "Gamboge Gym - Brooke's TM",
+        "Nephrite Gym - Avery's TM",
+        "Orpimence Gym - Chie and Rito's TM",
+        "Ravenplume Gym - Fenton's TM",
+        "Lapizula Gym - Tara's TM",
+        "New Island Gym - Mewtwo's TM"
     }
 }
 
 FLY_ITEM_ID_MAP = {
     "ITEM_FLY_NONE": 0,
-    "ITEM_FLY_PALLET": 1,
-    "ITEM_FLY_VIRIDIAN": 2,
-    "ITEM_FLY_PEWTER": 3,
-    "ITEM_FLY_CERULEAN": 4,
-    "ITEM_FLY_LAVENDER": 5,
-    "ITEM_FLY_VERMILION": 6,
-    "ITEM_FLY_CELADON": 7,
-    "ITEM_FLY_FUCHSIA": 8,
-    "ITEM_FLY_CINNABAR": 9,
-    "ITEM_FLY_INDIGO": 10,
-    "ITEM_FLY_SAFFRON": 11,
-    "ITEM_FLY_ONE_ISLAND": 12,
-    "ITEM_FLY_TWO_ISLAND": 13,
-    "ITEM_FLY_THREE_ISLAND": 14,
-    "ITEM_FLY_FOUR_ISLAND": 15,
-    "ITEM_FLY_FIVE_ISLAND": 16,
-    "ITEM_FLY_SEVEN_ISLAND": 17,
-    "ITEM_FLY_SIX_ISLAND": 18,
-    "ITEM_FLY_ROUTE4": 19,
-    "ITEM_FLY_ROUTE10": 20
+    "ITEM_FLY_PORCELIA": 1,
+    "ITEM_FLY_JUNOPSIS": 2,
+    "ITEM_FLY_SEAFIN": 3,
+    "ITEM_FLY_GAMBOGE": 4,
+    "ITEM_FLY_SHAMOUTI": 5,
+    "ITEM_FLY_NEPHRITE": 6,
+    "ITEM_FLY_ORPIMENCE": 7,
+    "ITEM_FLY_LAPIZULA": 8,
+    "ITEM_FLY_NEW_ISLAND": 9,
+    "ITEM_FLY_SHAKUDO": 10,
+    "ITEM_FLY_RAVENPLUME": 11,
+    "ITEM_FLY_ROUTE510": 20
 }
 
-sevii_required_locations = [
-    "Lorelei's Room - Elite Four Lorelei Rematch Reward",
-    "Bruno's Room - Elite Four Bruno Rematch Reward",
-    "Agatha's Room - Elite Four Agatha Rematch Reward",
-    "Lance's Room - Elite Four Lance Rematch Reward",
-    "Champion's Room - Champion Rematch Reward"
-]
-
 fly_item_exclusion_map = {
-    "Pallet Town": "ITEM_FLY_PALLET",
-    "Viridian City South": "ITEM_FLY_VIRIDIAN",
-    "Pewter City": "ITEM_FLY_PEWTER",
-    "Cerulean City": "ITEM_FLY_CERULEAN",
-    "Lavender Town": "ITEM_FLY_LAVENDER",
-    "Vermilion City": "ITEM_FLY_VERMILION",
-    "Celadon City": "ITEM_FLY_CELADON",
-    "Fuchsia City": "ITEM_FLY_FUCHSIA",
-    "Cinnabar Island": "ITEM_FLY_CINNABAR",
-    "Indigo Plateau Exterior": "ITEM_FLY_INDIGO",
-    "Saffron City": "ITEM_FLY_SAFFRON",
-    "One Island Town": "ITEM_FLY_ONE_ISLAND",
-    "Two Island Town": "ITEM_FLY_TWO_ISLAND",
-    "Three Island Town": "ITEM_FLY_THREE_ISLAND",
-    "Four Island Town": "ITEM_FLY_FOUR_ISLAND",
-    "Five Island Town": "ITEM_FLY_FIVE_ISLAND",
-    "Six Island Town": "ITEM_FLY_SIX_ISLAND",
-    "Seven Island Town": "ITEM_FLY_SEVEN_ISLAND",
-    "Route 4 West": "ITEM_FLY_ROUTE4",
-    "Route 10 North": "ITEM_FLY_ROUTE10"
+    "Porcelia Town": "ITEM_FLY_PORCELIA",
+    "Junopsis City": "ITEM_FLY_JUNOPSIS",
+    "Seafin City": "ITEM_FLY_SEAFIN",
+    "Gamboge City": "ITEM_FLY_GAMBOGE",
+    "Shamouti Island": "ITEM_FLY_SHAMOUTI",
+    "Nephrite City": "ITEM_FLY_NEPHRITE",
+    "Orpimence City": "ITEM_FLY_ORPIMENCE",
+    "Lapizula City": "ITEM_FLY_LAPIZULA",
+    "New Island": "ITEM_FLY_NEW_ISLAND",
+    "Shakudo Island": "ITEM_FLY_SHAKUDO",
+    "Ravenplume City": "ITEM_FLY_RAVENPLUME",
+    "Route 510": "ITEM_FLY_ROUTE10"
 }
 
 
@@ -196,25 +165,17 @@ def set_free_fly(world: "PokemonVegaWorld") -> None:
     regions = world.multiworld.get_regions(world.player)
     locations = world.multiworld.get_locations(world.player)
     free_fly_list: List[str] = [
-        "ITEM_FLY_PALLET",
-        "ITEM_FLY_VIRIDIAN",
-        "ITEM_FLY_PEWTER",
-        "ITEM_FLY_CERULEAN",
-        "ITEM_FLY_VERMILION",
-        "ITEM_FLY_LAVENDER",
-        "ITEM_FLY_CELADON",
-        "ITEM_FLY_FUCHSIA",
-        "ITEM_FLY_CINNABAR",
-        "ITEM_FLY_SAFFRON",
-        "ITEM_FLY_ROUTE4",
-        "ITEM_FLY_ROUTE10",
-        "ITEM_FLY_ONE_ISLAND",
-        "ITEM_FLY_TWO_ISLAND",
-        "ITEM_FLY_THREE_ISLAND",
-        "ITEM_FLY_FOUR_ISLAND",
-        "ITEM_FLY_FIVE_ISLAND",
-        "ITEM_FLY_SIX_ISLAND",
-        "ITEM_FLY_SEVEN_ISLAND"
+        "ITEM_FLY_PORCELIA",
+        "ITEM_FLY_JUNOPSIS",
+        "ITEM_FLY_SEAFIN",
+        "ITEM_FLY_GAMBOGE",
+        "ITEM_FLY_SHAMOUTI",
+        "ITEM_FLY_NEPHRITE",
+        "ITEM_FLY_ORPIMENCE",
+        "ITEM_FLY_LAPIZULA",
+        "ITEM_FLY_NEW_ISLAND",
+        "ITEM_FLY_RAVENPLUME",
+        "ITEM_FLY_ROUTE510",
     ]
 
     found_event = True

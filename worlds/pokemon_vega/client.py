@@ -11,6 +11,7 @@ from .options import Goal
 if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
 
+# TODO: update
 TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_BROCK",
     "FLAG_DEFEATED_MISTY",
@@ -39,6 +40,7 @@ TRACKER_EVENT_FLAGS = [
 ]
 EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_EVENT_FLAGS}
 
+# TODO: update
 TRACKER_FLY_UNLOCK_FLAGS = [
     "FLAG_WORLD_MAP_PALLET_TOWN",
     "FLAG_WORLD_MAP_VIRIDIAN_CITY",
@@ -63,6 +65,7 @@ TRACKER_FLY_UNLOCK_FLAGS = [
 ]
 FLY_UNLOCK_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_FLY_UNLOCK_FLAGS}
 
+# TODO: update
 MAP_SECTION_EDGES: Dict[str, List[Tuple[int, int]]] = {
     "MAP_ROUTE2": [(23, 39)],
     "MAP_ROUTE3": [(41, 19)],
@@ -160,10 +163,13 @@ class PokemonVegaClient(BizHawkClient):
         if ctx.server is None or ctx.server.socket.closed or ctx.slot_data is None:
             return
 
+        # TODO: add flags for entering Sphere Ruins and defeating Asphere
         if ctx.slot_data["goal"] == Goal.option_elite_four:
             self.goal_flag = data.constants["FLAG_DEFEATED_CHAMP"]
-        if ctx.slot_data["goal"] == Goal.option_elite_four_rematch:
-            self.goal_flag = data.constants["FLAG_DEFEATED_CHAMP_REMATCH"]
+        if ctx.slot_data["goal"] == Goal.option_distant_island:
+            self.goal_flag = data.constants["FLAG_ENTERED_SPHERE_RUINS"]
+        if ctx.slot_data["goal"] == Goal.option_asphere:
+            self.goal_flag = data.constants["FLAG_DEFEATED_ASPHERE"]
 
         try:
             guards: Dict[str, Tuple[int, bytes, str]] = {}

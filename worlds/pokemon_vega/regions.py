@@ -11,14 +11,7 @@ from .options import LevelScaling
 if TYPE_CHECKING:
     from . import PokemonVegaWorld
 
-exclusive_gift_pokemon: List[str] = {
-    "TRADE_POKEMON_NIDORAN",
-    "TRADE_POKEMON_NIDORINOA",
-    "CELADON_PRIZE_POKEMON_3",
-    "CELADON_PRIZE_POKEMON_4",
-    "TRADE_POKEMON_LICKITUNG"
-}
-
+# todo: vega
 indirect_conditions: Dict[str, List[str]] = {
     "Seafoam Islands 1F": ["Seafoam Islands B3F West Surfing Spot", "Seafoam Islands B3F Southeast Surfing Spot",
                            "Seafoam Islands B3F West Landing", "Seafoam Islands B3F Southeast Landing"],
@@ -26,10 +19,6 @@ indirect_conditions: Dict[str, List[str]] = {
                                  "Seafoam Islands B4F Near Articuno Landing"],
     "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"]
 }
-
-sevii_required_events = [
-    "Champion's Room - Champion Rematch Battle"
-]
 
 
 class PokemonVegaRegion(Region):
@@ -354,6 +343,7 @@ def create_indirect_conditions(world: "PokemonVegaWorld"):
             world.multiworld.register_indirect_condition(world.get_region(region), world.get_entrance(entrance))
 
 
+# todo: vega
 def modify_entrance_name(world: "PokemonVegaWorld", name: str) -> str:
     route_2_modification = {
         "Route 2 Northwest Cuttable Tree": "Route 2 Northwest Smashable Rock",
