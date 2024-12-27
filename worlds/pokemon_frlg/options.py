@@ -62,12 +62,12 @@ class ShuffleHiddenItems(Choice):
 
 class ExtraKeyItems(Toggle):
     """
-    Adds key items that are required to access the Rocket Hideout, Safari Zone, Pokémon Mansion, and Power Plant.
+    Adds key items that are required to access the Rocket Hideout, Safari Zone, Pokemon Mansion, and Power Plant.
 
     Adds four new locations:
     - Item in the Celadon Rocket House
     - Item given by a Worker in the Fuchsia Safari Office
-    - Item given by the Scientist in the Cinnabar Pokémon Lab Research Room
+    - Item given by the Scientist in the Cinnabar Pokemon Lab Research Room
     - Hidden Item in the Cerulean Gym (requires Surf & Itemfinder)
     """
     display_name = "Extra Key Items"
@@ -93,7 +93,7 @@ class Famesanity(Toggle):
 
 class ShuffleFlyDestinationUnlocks(Toggle):
     """
-    Shuffles the ability to fly to Pokémon Centers into the pool. Entering the map that normally would unlock the
+    Shuffles the ability to fly to Pokemon Centers into the pool. Entering the map that normally would unlock the
     fly destination gives a random item.
     """
     display_name = "Shuffle Fly Destination Unlocks"
@@ -101,11 +101,11 @@ class ShuffleFlyDestinationUnlocks(Toggle):
 
 class PokemonRequestLocations(Toggle):
     """
-    Shuffle the locations that require you to show a specific Pokémon to an NPC. If turned on, the Pokémon that are
-    required will be found somewhere in the wild. Talking to the NPC that wants to see the Pokémon will provide you with
-    the Pokédex info for where to find it as well as tell you the item they'll give.
+    Shuffle the locations that require you to show a specific Pokemon to an NPC. If turned on, the Pokemon that are
+    required will be found somewhere in the wild. Talking to the NPC that wants to see the Pokemon will provide you with
+    the Pokedex info for where to find it as well as tell you the item they'll give.
     """
-    display_name = "Pokémon Request Locations"
+    display_name = "Pokemon Request Locations"
 
 
 class SilphCoCardKey(Choice):
@@ -227,7 +227,7 @@ class ModifyWorldState(OptionSet):
     - Block Tunnels: Blocks the entrances to the underground tunnels with smashable rocks.
     - Modify Route 9: Replaces the cuttable tree with a smashable rock.
     - Modify Route 10: Adds a waterfall to Route 10 that connects the north and south sides.
-    - Block Tower: Blocks the 1F stairs of Pokémon Tower with a ghost battle.
+    - Block Tower: Blocks the 1F stairs of Pokemon Tower with a ghost battle.
     - Route 12 Boulders: Adds boulders to Route 12 that block the exits to Route 11 & 13.
     - Modify Route 12: Adds impassable rocks to Route 12 that prevent surfing around Snorlax.
     - Modify Route 16: Adds a smashable rock to Route 16 that allows you to bypass the Snorlax.
@@ -268,7 +268,7 @@ class RemoveBadgeRequirement(OptionSet):
 
 class OaksAideRoute2(Range):
     """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
+    Sets the number of Pokemon that need to be registered in the Pokedex to receive the item from Professor Oak's Aide
     on Route 2. Vanilla is 10.
     """
     display_name = "Oak's Aide Route 2"
@@ -279,7 +279,7 @@ class OaksAideRoute2(Range):
 
 class OaksAideRoute10(Range):
     """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
+    Sets the number of Pokemon that need to be registered in the Pokedex to receive the item from Professor Oak's Aide
     on Route 10. Vanilla is 20.
     """
     display_name = "Oak's Aide Route 10"
@@ -290,7 +290,7 @@ class OaksAideRoute10(Range):
 
 class OaksAideRoute11(Range):
     """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
+    Sets the number of Pokemon that need to be registered in the Pokedex to receive the item from Professor Oak's Aide
     on Route 11. Vanilla is 30.
     """
     display_name = "Oak's Aide Route 11"
@@ -301,7 +301,7 @@ class OaksAideRoute11(Range):
 
 class OaksAideRoute16(Range):
     """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
+    Sets the number of Pokemon that need to be registered in the Pokedex to receive the item from Professor Oak's Aide
     on Route 16. Vanilla is 40.
     """
     display_name = "Oak's Aide Route 16"
@@ -312,7 +312,7 @@ class OaksAideRoute16(Range):
 
 class OaksAideRoute15(Range):
     """
-    Sets the number of Pokémon that need to be registered in the Pokédex to receive the item from Professor Oak's Aide
+    Sets the number of Pokemon that need to be registered in the Pokedex to receive the item from Professor Oak's Aide
     on Route 15. Vanilla is 50.
     """
     display_name = "Oak's Aide Route 15"
@@ -460,7 +460,7 @@ class LevelScaling(Choice):
 
 class ModifyTrainerLevels(Range):
     """
-    Modifies the level of all Trainer's Pokémon by the specified percentage.
+    Modifies the level of all Trainer's Pokemon by the specified percentage.
     """
     display_name = "Modify Trainer Levels"
     default = 0
@@ -470,11 +470,11 @@ class ModifyTrainerLevels(Range):
 
 class RandomizeWildPokemon(Choice):
     """
-    Randomizes wild Pokémon encounters (grass, caves, water, fishing)
+    Randomizes wild Pokemon encounters (grass, caves, water, fishing)
 
-    - Vanilla: Wild Pokémon are unchanged
-    - Match Base Stats: Wild Pokémon are replaced with species with approximately the same BST
-    - Match Type: Wild Pokémon are replaced with species that share a type with the original
+    - Vanilla: Wild Pokemon are unchanged
+    - Match Base Stats: Wild Pokemon are replaced with species with approximately the same BST
+    - Match Type: Wild Pokemon are replaced with species that share a type with the original
     - Match Base Stats and Type: Apply both Match Base Stats and Match Type
     - Completely Random: There are no restrictions
     """
@@ -489,11 +489,11 @@ class RandomizeWildPokemon(Choice):
 
 class WildPokemonGroups(Choice):
     """
-    If wild Pokémon are not vanilla, they will be randomized according to the grouping specified.
+    If wild Pokemon are not vanilla, they will be randomized according to the grouping specified.
 
-    - None: Pokémon are not randomized together based on any groupings
-    - Dungeons: All Pokémon of the same species in a dungeon are randomized together
-    - Species: All Pokémon of the same species are randomized together
+    - None: Pokemon are not randomized together based on any groupings
+    - Dungeons: All Pokemon of the same species in a dungeon are randomized together
+    - Species: All Pokemon of the same species are randomized together
     """
     display_name = "Wild Pokemon Groups"
     default = 0
@@ -504,11 +504,11 @@ class WildPokemonGroups(Choice):
 
 class WildPokemonBlacklist(OptionSet):
     """
-    Prevents listed species from appearing in the wild when wild Pokémon are randomized.
+    Prevents listed species from appearing in the wild when wild Pokemon are randomized.
 
     May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
 
-    Use "Legendaries" as a shortcut for all legendary Pokémon.
+    Use "Legendaries" as a shortcut for all legendary Pokemon.
     """
     display_name = "Wild Pokemon Blacklist"
     valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
@@ -516,7 +516,7 @@ class WildPokemonBlacklist(OptionSet):
 
 class RandomizeStarters(Choice):
     """
-    Randomizes the starter Pokémon in Professor Oak's Lab.
+    Randomizes the starter Pokemon in Professor Oak's Lab.
 
     - Vanilla: Starters are unchanged
     - Match Base Stats: Starters are replaced with species with approximately the same BST
@@ -539,7 +539,7 @@ class StarterBlacklist(OptionSet):
 
     May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
 
-    Use "Legendaries" as a shortcut for all legendary Pokémon.
+    Use "Legendaries" as a shortcut for all legendary Pokemon.
     """
     display_name = "Starter Blacklist"
     valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
@@ -547,11 +547,11 @@ class StarterBlacklist(OptionSet):
 
 class RandomizeTrainerParties(Choice):
     """
-    Randomizes the Pokémon in all trainer's parties.
+    Randomizes the Pokemon in all trainer's parties.
 
     - Vanilla: Parties are unchanged
-    - Match Base Stats: Trainer Pokémon are replaced with species with approximately the same BST
-    - Match Type: Trainer Pokémon are replaced with species that share a type with the original
+    - Match Base Stats: Trainer Pokemon are replaced with species with approximately the same BST
+    - Match Type: Trainer Pokemon are replaced with species that share a type with the original
     - Match Base Stats and Type: Apply both Match Base Stats and Match Type
     - Completely Random: There are no restrictions
     """
@@ -570,7 +570,7 @@ class TrainerPartyBlacklist(OptionSet):
 
     May be overridden if enforcing other restrictions in combination with this blacklist is impossible.
 
-    Use "Legendaries" as a shortcut for all legendary Pokémon.
+    Use "Legendaries" as a shortcut for all legendary Pokemon.
     """
     display_name = "Trainer Party Blacklist"
     valid_keys = ["Legendaries"] + sorted([species.name for species in data.species.values()])
@@ -578,10 +578,10 @@ class TrainerPartyBlacklist(OptionSet):
 
 class RandomizeLegendaryPokemon(Choice):
     """
-    Randomizes legendary Pokémon (Mewtwo, Zapdos, Deoxys, etc.). Does not randomize the roamer.
+    Randomizes legendary Pokemon (Mewtwo, Zapdos, Deoxys, etc.). Does not randomize the roamer.
 
     - Vanilla: Legendary encounters are unchanged
-    - Legendaries: Legendary encounters are replaced with another legendary Pokémon
+    - Legendaries: Legendary encounters are replaced with another legendary Pokemon
     - Match Base Stats: Legendary encounters are replaced with species with approximately the same BST
     - Match Type: Legendary encounters are replaced with species that share a type with the original
     - Match Base Stats and Type: Apply both Match Base Stats and Match Type
@@ -599,7 +599,7 @@ class RandomizeLegendaryPokemon(Choice):
 
 class RandomizeMiscPokemon(Choice):
     """
-    Randomizes misc Pokémon. This includes non-legendary static encounters, gift Pokémon, and trade Pokémon
+    Randomizes misc Pokemon. This includes non-legendary static encounters, gift Pokemon, and trade Pokemon
 
     - Vanilla: Species are unchanged
     - Match Base Stats: Species are replaced with species with approximately the same bst
@@ -618,10 +618,10 @@ class RandomizeMiscPokemon(Choice):
 
 class RandomizeTypes(Choice):
     """
-    Randomizes the type(s) of every Pokémon. Each species will have the same number of types.
+    Randomizes the type(s) of every Pokemon. Each species will have the same number of types.
 
     - Vanilla: Types are unchanged
-    - Shuffle: Types are shuffled globally for all species (e.g. every Water-type Pokémon becomes Fire-type)
+    - Shuffle: Types are shuffled globally for all species (e.g. every Water-type Pokemon becomes Fire-type)
     - Completely Random: Each species has its type(s) randomized
     - Follow Evolutions: Types are randomized per evolution line instead of per species
     """
@@ -660,12 +660,12 @@ class AbilityBlacklist(OptionSet):
 
 class RandomizeMoves(Choice):
     """
-    Randomizes the moves a Pokémon learns through leveling.
+    Randomizes the moves a Pokemon learns through leveling.
     Your starter is guaranteed to have a usable damaging move.
 
     - Vanilla: Learnset is unchanged
     - Randomized: Moves are randomized
-    - Start with Four Moves: Moves are randomized and all Pokémon know 4 moves at level 1
+    - Start with Four Moves: Moves are randomized and all Pokemon know 4 moves at level 1
     """
     display_name = "Randomize Moves"
     default = 0
@@ -728,7 +728,7 @@ class ReusableTmsTutors(Toggle):
 
 class MinCatchRate(Range):
     """
-    Sets the minimum catch rate a Pokémon can have. It will raise any Pokémon's catch rate to this value if its normal
+    Sets the minimum catch rate a Pokemon can have. It will raise any Pokemon's catch rate to this value if its normal
     catch rate is lower than the chosen value.
     """
     display_name = "Minimum Catch Rate"
@@ -739,7 +739,7 @@ class MinCatchRate(Range):
 
 class GuaranteedCatch(Toggle):
     """
-    Pokeballs are guaranteed to catch wild Pokémon regardless of catch rate.
+    Pokeballs are guaranteed to catch wild Pokemon regardless of catch rate.
     """
     display_name = "Guarenteed Catch"
 
