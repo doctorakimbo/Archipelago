@@ -1267,7 +1267,7 @@ def _init() -> None:
         ("MOVE_PROTECT", "Protect"),
         ("MOVE_MACH_PUNCH", "Mach Punch"),
         ("MOVE_SCARY_FACE", "Scary Face"),
-        ("MOVE_FAINT_ATTACK", "Faint Attack"),
+        ("MOVE_FEINT_ATTACK", "Feint Attack"),
         ("MOVE_SWEET_KISS", "Sweet Kiss"),
         ("MOVE_BELLY_DRUM", "Belly Drum"),
         ("MOVE_SLUDGE_BOMB", "Sludge Bomb"),
