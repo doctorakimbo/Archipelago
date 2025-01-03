@@ -642,6 +642,8 @@ class PokemonFRLGWorld(World):
             "route23_guard_count",
             "elite_four_requirement",
             "elite_four_count",
+            "elite_four_rematch_requirement",
+            "elite_four_rematch_count",
             "cerulean_cave_requirement",
             "cerulean_cave_count",
             "provide_hints"

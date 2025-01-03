@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING, Dict, List
 from BaseClasses import CollectionState
 from worlds.generic.Rules import add_rule, set_rule
 from .data import data
-from .options import (CeruleanCaveRequirement, EliteFourRequirement, FlashRequired, GameVersion, Goal,
-                      ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
+from .options import (CeruleanCaveRequirement, EliteFourRequirement, EliteFourRematchRequirement, FlashRequired,
+                      GameVersion, Goal, ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
                       Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey,
                       ViridianCityRoadblock, ViridianGymRequirement)
 
@@ -225,12 +225,22 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         elif requirement == EliteFourRequirement.option_gyms:
             return has_n_gyms(state, count)
 
+    def can_challenge_elite_four_rematch(state: CollectionState):
+        requirement = options.elite_four_rematch_requirement
+        count = options.elite_four_rematch_count.value
+        if state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player):
+            if requirement == EliteFourRematchRequirement.option_badges:
+                return has_n_badges(state, count)
+            elif requirement == EliteFourRematchRequirement.option_gyms:
+                return has_n_gyms(state, count)
+        return False
+
     def evolve_level(state: CollectionState, level: int):
         return gyms_beaten(state) >= level / 7
 
     def can_grind_money(state: CollectionState):
         return ((state.has("Vs. Seeker", player) and can_reach_any_region(rematchable_trainer_regions, state)) or
-                state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                can_challenge_elite_four_rematch(state))
 
     def can_open_silph_door(floor: int, state: CollectionState):
         return (state.has_any(["Card Key", f"Card Key {floor}F"], player) or
@@ -982,7 +992,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
         # Indigo Plateau
         set_rule(get_location("Champion's Room - Champion Rematch Battle"),
-                 lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                 lambda state: can_challenge_elite_four_rematch(state))
 
     # Hidden Items
     if options.shuffle_hidden != ShuffleHiddenItems.option_off:
@@ -1065,15 +1075,15 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
             # Indigo Plateau
             set_rule(get_location("Lorelei's Room - Elite Four Lorelei Rematch Reward"),
-                     lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                     lambda state: can_challenge_elite_four_rematch(state))
             set_rule(get_location("Bruno's Room - Elite Four Bruno Rematch Reward"),
-                     lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                     lambda state: can_challenge_elite_four_rematch(state))
             set_rule(get_location("Agatha's Room - Elite Four Agatha Rematch Reward"),
-                     lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                     lambda state: can_challenge_elite_four_rematch(state))
             set_rule(get_location("Lance's Room - Elite Four Lance Rematch Reward"),
-                     lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                     lambda state: can_challenge_elite_four_rematch(state))
             set_rule(get_location("Champion's Room - Champion Rematch Reward"),
-                     lambda state: state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player))
+                     lambda state: can_challenge_elite_four_rematch(state))
 
     # Famesanity
     if options.famesanity:

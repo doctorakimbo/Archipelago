@@ -441,6 +441,29 @@ class EliteFourCount(Range):
     range_end = 8
 
 
+class EliteFourRematchRequirement(Choice):
+    """
+    Sets the requirement for challenging the Elite Four Rematch.
+
+    - Badges: Obtain some number of Badges.
+    - Gyms: Beat some number of Gyms.
+    """
+    display_name = "Elite Four Rematch Requirement"
+    default = 0
+    option_badges = 0
+    option_gyms = 1
+
+
+class EliteFourRematchCount(Range):
+    """
+    Sets the number of Badges/Gyms required to challenge the Elite Four Rematch.
+    """
+    display_name = "Elite Four Rematch Count"
+    default = 8
+    range_start = 0
+    range_end = 8
+
+
 class CeruleanCaveRequirement(Choice):
     """
     Sets the requirement for being able to enter Cerulean Cave.
@@ -923,6 +946,8 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     route23_guard_count: Route23GuardCount
     elite_four_requirement: EliteFourRequirement
     elite_four_count: EliteFourCount
+    elite_four_rematch_requirement: EliteFourRematchRequirement
+    elite_four_rematch_count: EliteFourRematchCount
     cerulean_cave_requirement: CeruleanCaveRequirement
     cerulean_cave_count: CeruleanCaveCount
 
