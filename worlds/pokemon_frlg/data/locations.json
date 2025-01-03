@@ -1741,6 +1741,10 @@
     "tags": ["Hidden"]
   },
 
+  "PC_ITEM_POTION": {
+    "name": "Player's PC - PC Item",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_10_COINS_FROM_GAMBLER": {
     "name": "Celadon Game Corner - Fisherman's Gift",
     "tags": ["NPCGift"]

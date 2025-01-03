@@ -317,7 +317,9 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
-    "locations": [],
+    "locations": [
+      "PC_ITEM_POTION"
+    ],
     "events": [],
     "exits": {},
     "warps": {

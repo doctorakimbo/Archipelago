@@ -253,6 +253,12 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                 struct.pack("<H", new_item_id)
             )
 
+    # Set the item in the PC
+    pc_item_location = world.get_location("Player's PC - PC Item")
+    item_id = reverse_offset_item_value(pc_item_location.item.code)
+    pc_item_address = data.rom_addresses[game_version_revision]["sArchipelagoPCItemId"]
+    tokens.write_token(APTokenTypes.WRITE, pc_item_address, struct.pack("<H", item_id))
+
     # Set starting items
     start_inventory = world.options.start_inventory.value.copy()
 
