@@ -772,6 +772,16 @@ class GuaranteedCatch(Toggle):
     display_name = "Guarenteed Catch"
 
 
+class NormalizeEncounterRates(Toggle):
+    """
+    Make every slot on an encounter table approximately equally likely.
+
+    This does NOT mean each species is equally likely. Each species may occupy more than one slot and slots vary in
+    probability.
+    """
+    display_name = "Normalize Encounter Rates"
+
+
 class ExpModifier(Range):
     """
     Multiplies gained EXP by a percentage.
@@ -931,6 +941,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate
     guaranteed_catch: GuaranteedCatch
+    normalize_encounter_rates: NormalizeEncounterRates
     exp_modifier: ExpModifier
     starting_money: StartingMoney
     blind_trainers: BlindTrainers
