@@ -188,10 +188,6 @@ class PokemonFRLGWorld(World):
                                 self.player, self.player_name)
                 self.options.cerulean_cave_requirement.value = CeruleanCaveRequirement.option_champion
 
-        if ("Total Darkness" in self.options.modify_world_state.value and
-                self.options.flash_required == FlashRequired.option_off):
-            self.options.flash_required.value = FlashRequired.option_logic
-
         # Remove items from start inventory that are incompatible with certain settings
         card_key_vanilla = ["Card Key"]
         card_key_split = ["Card Key 2F", "Card Key 3F", "Card Key 4F", "Card Key 5F", "Card Key 6F",
