@@ -137,6 +137,10 @@
     "name": "Mt. Ember Ruby Path B5F - Ruby",
     "tags": ["KeyItem"]
   },
+  "NPC_GIFT_GOT_RUNNING_SHOES": {
+    "name": "Pewter City - Oak's Aide's Gift",
+    "tags": ["KeyItem", "RunningShoes"]
+  },
   "NPC_GIFT_RECOVERED_SAPPHIRE": {
     "name": "Rocket Warehouse - Recover Stolen Gem",
     "tags": ["KeyItem"]

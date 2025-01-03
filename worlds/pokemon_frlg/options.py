@@ -108,6 +108,17 @@ class PokemonRequestLocations(Toggle):
     display_name = "Pokemon Request Locations"
 
 
+class ShuffleRunningShoes(Choice):
+    """
+    Shuffle the running shoes into the item pool, or start with it.
+    """
+    display_name = "Shuffle Running Shoes"
+    default = 2
+    option_vanilla = 0
+    option_shuffle = 1
+    option_start_with = 2
+
+
 class SilphCoCardKey(Choice):
     """
     Sets how the card key that unlocks the doors in Silph Co. is handled.
@@ -865,6 +876,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     famesanity: Famesanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
     pokemon_request_locations: PokemonRequestLocations
+    shuffle_running_shoes: ShuffleRunningShoes
     card_key: SilphCoCardKey
     island_passes: SeviiIslandPasses
     split_teas: SplitTeas

@@ -579,7 +579,8 @@
     "locations": [
       "FAME_CHECKER_BROCK_1",
       "FAME_CHECKER_BROCK_3",
-      "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL"
+      "HIDDEN_ITEM_PEWTER_CITY_POKE_BALL",
+      "NPC_GIFT_GOT_RUNNING_SHOES"
     ],
     "events": [],
     "exits": {

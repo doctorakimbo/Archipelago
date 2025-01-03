@@ -291,6 +291,11 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_RUNNING_SHOES": {
+    "name": "Running Shoes",
+    "classification": "USEFUL",
+    "tags": ["Unique"]
+  },
   "ITEM_SAFARI_PASS": {
     "name": "Safari Pass",
     "classification": "PROGRESSION",

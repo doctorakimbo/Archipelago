@@ -23,7 +23,8 @@ from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_
                         PokemonFRLGLocation)
 from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, GameVersion, Goal,
                       RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, SeviiIslandPasses,
-                      ShuffleHiddenItems, ShuffleBadges, SilphCoCardKey, TownMapFlyLocation, ViridianCityRoadblock)
+                      ShuffleHiddenItems, ShuffleBadges, ShuffleRunningShoes, SilphCoCardKey, TownMapFlyLocation,
+                      ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -235,6 +236,10 @@ class PokemonFRLGWorld(World):
         self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
                                               if k not in not_allowed_tea}
 
+        # Add starting items from settings
+        if self.options.shuffle_running_shoes == ShuffleRunningShoes.option_start_with:
+            self.options.start_inventory.value["Running Shoes"] = 1
+
         create_scaling_data(self)
         randomize_types(self)
         randomize_abilities(self)
@@ -251,7 +256,7 @@ class PokemonFRLGWorld(World):
 
         regions = create_regions(self)
 
-        tags = {"Badge", "HM", "KeyItem", "FlyUnlock", "Overworld", "NPCGift"}
+        tags = {"Badge", "HM", "KeyItem", "FlyUnlock", "Overworld", "NPCGift", "RunningShoes"}
         if self.options.shuffle_hidden == ShuffleHiddenItems.option_all:
             tags.add("Hidden")
             tags.add("Recurring")
@@ -352,6 +357,8 @@ class PokemonFRLGWorld(World):
             item_locations = [location for location in item_locations if "Badge" not in location.tags]
         if not self.options.shuffle_fly_destination_unlocks:
             item_locations = [location for location in item_locations if "FlyUnlock" not in location.tags]
+        if self.options.shuffle_running_shoes == ShuffleRunningShoes.option_vanilla:
+            item_locations = [location for location in item_locations if "RunningShoes" not in location.tags]
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
 
@@ -432,6 +439,8 @@ class PokemonFRLGWorld(World):
 
         if not self.options.shuffle_fly_destination_unlocks:
             create_events_for_unrandomized_items("FlyUnlock")
+        if self.options.shuffle_running_shoes == ShuffleRunningShoes.option_vanilla:
+            create_events_for_unrandomized_items("RunningShoes")
 
     def pre_fill(self) -> None:
         # If badges aren't shuffled among all locations, shuffle them among themselves

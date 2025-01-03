@@ -335,6 +335,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Route 2 Northeast Cuttable Tree (South)"), lambda state: can_cut(state))
 
     # Pewter City
+    set_rule(get_location("Pewter City - Oak's Aide's Gift"),
+             lambda state: state.has("Defeat Brock", player) and state.can_reach_region("Route 3", player))
     set_rule(get_entrance("Pewter City Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_pewter_city_roadblock(state))
 
