@@ -964,6 +964,30 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         # Route 10
         set_rule(get_location("Route 10 - Hidden Item Behind Cuttable Tree"), lambda state: can_cut(state))
 
+        # Celadon City
+        set_rule(get_location("Celadon Game Corner - Northwest Hidden Item"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - North Hidden Item (Left)"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - North Hidden Item (Right)"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - Northeast Hidden Item"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - West Hidden Item"), lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - Center Hidden Item"), lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - East Hidden Item (Left)"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - East Hidden Item (Right)"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - Southwest Hidden Item"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - South Hidden Item (Left)"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - South Hidden Item (Right)"),
+                 lambda state: state.has("Coin Case", player))
+        set_rule(get_location("Celadon Game Corner - Southeast Hidden Item"),
+                 lambda state: state.has("Coin Case", player))
+
         # Pokemon Tower
         set_rule(get_location("Pokemon Tower 7F - Hidden Item Under Mr. Fuji"),
                  lambda state: state.has("Itemfinder", player))
