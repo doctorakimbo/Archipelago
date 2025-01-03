@@ -209,6 +209,16 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             return can_flash(state)
         return True
 
+    def silph_open(state: CollectionState):
+        if "Open Silph" in options.modify_world_state.value:
+            return True
+        return state.has("Rescue Mr. Fuji", player)
+
+    def saffron_rockets_gone(state: CollectionState):
+        if "Remove Saffron Rockets" in options.modify_world_state.value:
+            return True
+        return state.has("Liberate Silph Co.", player)
+
     def can_pass_route_23_guard(state: CollectionState):
         requirement = options.route23_guard_requirement
         count = options.route23_guard_count.value
@@ -668,10 +678,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Safari Zone West Area South Surfing Spot"), lambda state: can_surf(state))
 
     # Saffron City
-    set_rule(get_entrance("Silph Co."), lambda state: state.has_any(["Rescue Mr. Fuji", "Liberate Silph Co."], player))
-    set_rule(get_entrance("Copycat's House"), lambda state: state.has("Liberate Silph Co.", player))
-    set_rule(get_entrance("Saffron Gym"), lambda state: state.has("Liberate Silph Co.", player))
-    set_rule(get_entrance("Saffron Pidgey House"), lambda state: state.has("Liberate Silph Co.", player))
+    set_rule(get_entrance("Silph Co."), lambda state: silph_open(state) or saffron_rockets_gone(state))
+    set_rule(get_entrance("Copycat's House"), lambda state: saffron_rockets_gone(state))
+    set_rule(get_entrance("Saffron Gym"), lambda state: saffron_rockets_gone(state))
+    set_rule(get_entrance("Saffron Pidgey House"), lambda state: saffron_rockets_gone(state))
 
     # Silph Co.
     set_rule(get_entrance("Silph Co. 2F Barrier (Northwest)"), lambda state: can_open_silph_door(2, state))
@@ -1213,8 +1223,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Split Card Key
     if options.card_key != SilphCoCardKey.option_vanilla:
         # Silph Co.
-        set_rule(get_location("Silph Co. 1F - Receptionist's Gift"),
-                 lambda state: state.has("Liberate Silph Co.", player))
+        set_rule(get_location("Silph Co. 1F - Receptionist's Gift"), lambda state: saffron_rockets_gone(state))
 
     # Split Teas
     if options.split_teas:

@@ -256,6 +256,8 @@ class ModifyWorldState(OptionSet):
     - Route 12 Boulders: Adds boulders to Route 12 that block the exits to Route 11 & 13.
     - Modify Route 12: Adds impassable rocks to Route 12 that prevent surfing around Snorlax.
     - Modify Route 16: Adds a smashable rock to Route 16 that allows you to bypass the Snorlax.
+    - Open Silph: Moves the Team Rocket Grunt that blocks the entrance to Silph Co.
+    - Remove Saffron Rockets: Removed the Team Rocket Grunts from Saffron City
     - Route 23 Trees: Adds cuttable trees to Route 23 under the sixth checkpoint.
     - Modify Route 23: Adds a waterfall to Route 23 at the end of the water section.
     - Victory Road Rocks: Adds smashable rocks to Victory Road that block the floor switches.
@@ -267,8 +269,8 @@ class ModifyWorldState(OptionSet):
     display_name = "Modify World State"
     valid_keys = ["Modify Route 2", "Remove Cerulean Roadblocks", "Block Tunnels", "Modify Route 9",
                   "Modify Route 10", "Block Tower", "Route 12 Boulders", "Modify Route 12", "Modify Route 16",
-                  "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness",
-                  "Block Vermilion Sailing"]
+                  "Open Silph", "Remove Saffron Rockets", "Route 23 Trees", "Modify Route 23", "Victory Road Rocks",
+                  "Early Gossipers", "Total Darkness", "Block Vermilion Sailing"]
 
 
 class AdditionalDarkCaves(OptionSet):
