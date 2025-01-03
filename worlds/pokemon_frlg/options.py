@@ -872,6 +872,15 @@ class ReceiveItemMessages(Choice):
     option_none = 2
 
 
+class ProvideHints(Toggle):
+    """
+    Provides an Archipelago Hint for locations that tell you what item they give once you've gotten the in game hint.
+
+    This includes the Oak's Aides, Bicycle Shop, and Pokemon Request Locations
+    """
+    display_name = "Provide Hints"
+
+
 @dataclass
 class PokemonFRLGOptions(PerGameCommonOptions):
     game_version: GameVersion
@@ -951,3 +960,4 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     turbo_a: TurboA
     receive_item_messages: ReceiveItemMessages
+    provide_hints: ProvideHints

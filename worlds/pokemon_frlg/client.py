@@ -70,6 +70,20 @@ TRACKER_FLY_UNLOCK_FLAGS = [
 ]
 FLY_UNLOCK_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_FLY_UNLOCK_FLAGS}
 
+HINT_FLAGS = {
+    "FLAG_HINT_ROUTE_2_OAKS_AIDE": "NPC_GIFT_GOT_HM05",
+    "FLAG_HINT_ROUTE_10_OAKS_AIDE": "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE",
+    "FLAG_HINT_ROUTE_11_OAKS_AIDE": "NPC_GIFT_GOT_ITEMFINDER",
+    "FLAG_HINT_ROUTE_16_OAKS_AIDE": "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE",
+    "FLAG_HINT_ROUTE_15_OAKS_AIDE": "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE",
+    "FLAG_HINT_BICYCLE_SHOP": "NPC_GIFT_GOT_BICYCLE",
+    "FLAG_HINT_SHOW_MAGIKARP": "NPC_GIFT_GOT_NET_BALL_FROM_ROUTE12_FISHING_HOUSE",
+    "FLAG_HINT_SHOW_HERACROSS": "NPC_GIFT_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1",
+    "FLAG_HINT_SHOW_RESORT_GORGEOUS_MON": "NPC_GIFT_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE",
+    "FLAG_HINT_SHOW_TOGEPI": "FAME_CHECKER_DAISY_3"
+}
+HINT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in HINT_FLAGS.keys()}
+
 MAP_SECTION_EDGES: Dict[str, List[Tuple[int, int]]] = {
     "MAP_ROUTE2": [(23, 39)],
     "MAP_ROUTE3": [(41, 19)],
@@ -125,6 +139,7 @@ class PokemonFRLGClient(BizHawkClient):
         self.local_checked_locations = set()
         self.local_set_events = {}
         self.local_set_fly_unlocks = {}
+        self.local_hints = []
         self.caught_pokemon = 0
         self.current_map = (0, 0)
 
@@ -263,6 +278,7 @@ class PokemonFRLGClient(BizHawkClient):
             game_clear = False
             local_set_events = {flag_name: False for flag_name in TRACKER_EVENT_FLAGS}
             local_set_fly_unlocks = {flag_name: False for flag_name in TRACKER_FLY_UNLOCK_FLAGS}
+            local_hints = {flag_name: False for flag_name in HINT_FLAGS.keys()}
             local_checked_locations = set()
             caught_pokemon = 0
 
@@ -284,6 +300,9 @@ class PokemonFRLGClient(BizHawkClient):
 
                         if flag_id in FLY_UNLOCK_FLAG_MAP:
                             local_set_fly_unlocks[FLY_UNLOCK_FLAG_MAP[flag_id]] = True
+
+                        if flag_id in HINT_FLAG_MAP:
+                            local_hints[HINT_FLAG_MAP[flag_id]] = True
 
             # Get caught Pokémon count
             if pokedex_read_status:
@@ -353,6 +372,22 @@ class PokemonFRLGClient(BizHawkClient):
                         "operations": [{"operation": "replace", "value": caught_pokemon},]
                     }])
                     self.caught_pokemon = caught_pokemon
+
+            # Send AP Hints
+            if ctx.slot_data["provide_hints"]:
+                hints_locations = []
+                for flag_name, loc_name in HINT_FLAGS.items():
+                    if local_hints[flag_name] and flag_name not in self.local_hints:
+                        hints_locations.append(loc_name)
+                        self.local_hints.append(flag_name)
+                hint_ids = [offset_flag(data.locations[loc].flag) for loc in hints_locations
+                            if offset_flag(data.locations[loc].flag) in ctx.missing_locations]
+                if hint_ids:
+                    await ctx.send_msgs([{
+                        "cmd": "LocationScouts",
+                        "locations": hint_ids,
+                        "create_as_hint": 2
+                    }])
 
         except bizhawk.RequestFailedError:
             # Exit handler and return to main loop to reconnect

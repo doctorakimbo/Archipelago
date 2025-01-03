@@ -644,6 +644,7 @@ class PokemonFRLGWorld(World):
             "elite_four_count",
             "cerulean_cave_requirement",
             "cerulean_cave_count",
+            "provide_hints"
         )
         slot_data["free_fly_location_id"] = self.free_fly_location_id
         slot_data["town_map_fly_location_id"] = self.town_map_fly_location_id
