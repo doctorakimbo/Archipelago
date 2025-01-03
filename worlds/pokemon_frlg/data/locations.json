@@ -334,6 +334,19 @@
     "tags": ["SplitIslandPasses"]
   },
 
+  "NPC_GIFT_GOT_RED_TEA": {
+    "name": "Celadon Condominiums 1F - Brock's Gift",
+    "tags": ["SplitTeas"]
+  },
+  "NPC_GIFT_GOT_BLUE_TEA": {
+    "name": "Celadon Condominiums 1F - Misty's Gift",
+    "tags": ["SplitTeas"]
+  },
+  "NPC_GIFT_GOT_PURPLE_TEA": {
+    "name": "Celadon Condominiums 1F - Erika's Gift",
+    "tags": ["SplitTeas"]
+  },
+
   "ITEM_CELADON_CITY_ETHER": {
     "name": "Celadon City - Northwest Item",
     "tags": ["Overworld"]

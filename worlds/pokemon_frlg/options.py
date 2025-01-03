@@ -142,6 +142,20 @@ class SeviiIslandPasses(Choice):
     option_progressive_split = 3
 
 
+class SplitTeas(Toggle):
+    """
+    Splits the Tea item into four different items. Each guard to Saffron City will require a different Tea to pass.
+    Brock, Misty, and Erika will appear in the Celadon Condominiums after beating them and give you a randomized item.
+
+    The Tea required to get past each guard are as follows:
+    - Route 5: Blue Tea
+    - Route 6: Red Tea
+    - Route 7: Green Tea
+    - Route 8: Purple Tea
+    """
+    display_name = "Split Teas"
+
+
 class ItemfinderRequired(Choice):
     """
     Sets whether the Itemfinder if required for Hidden Items. Some items cannot be picked up without using the
@@ -850,6 +864,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     pokemon_request_locations: PokemonRequestLocations
     card_key: SilphCoCardKey
     island_passes: SeviiIslandPasses
+    split_teas: SplitTeas
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired

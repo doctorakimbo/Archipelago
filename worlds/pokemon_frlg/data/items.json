@@ -91,6 +91,11 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_BLUE_TEA": {
+    "name": "Blue Tea",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_CARD_KEY": {
     "name": "Card Key",
     "classification": "PROGRESSION",
@@ -181,6 +186,11 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_GREEN_TEA": {
+    "name": "Green Tea",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_HELIX_FOSSIL": {
     "name": "Helix Fossil",
     "classification": "PROGRESSION",
@@ -261,8 +271,18 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_PURPLE_TEA": {
+    "name": "Purple Tea",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_RAINBOW_PASS": {
     "name": "Rainbow Pass",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_RED_TEA": {
+    "name": "Red Tea",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },

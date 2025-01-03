@@ -196,8 +196,11 @@ class PokemonFRLGWorld(World):
         passes_vanilla = ["Tri Pass", "Rainbow Pass"]
         passes_split = ["One Pass", "Two Pass", "Three Pass", "Four Pass", "Five Pass", "Six Pass", "Seven Pass"]
         passes_progressive = ["Progressive Pass"]
+        tea_vanilla = ["Tea"]
+        tea_split = ["Blue Tea", "Green Tea", "Purple Tea", "Red Tea"]
         not_allowed_card_key = list()
         not_allowed_pass = list()
+        not_allowed_tea = list()
 
         if self.options.card_key == SilphCoCardKey.option_vanilla:
             not_allowed_card_key.extend(card_key_split)
@@ -220,10 +223,17 @@ class PokemonFRLGWorld(World):
             not_allowed_pass.extend(passes_vanilla)
             not_allowed_pass.extend(passes_split)
 
+        if self.options.split_teas:
+            not_allowed_tea.extend(tea_vanilla)
+        else:
+            not_allowed_tea.extend(tea_split)
+
         self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
                                               if k not in not_allowed_card_key}
         self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
                                               if k not in not_allowed_pass}
+        self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
+                                              if k not in not_allowed_tea}
 
         create_scaling_data(self)
         randomize_types(self)
@@ -260,6 +270,8 @@ class PokemonFRLGWorld(World):
         if (self.options.island_passes == SeviiIslandPasses.option_split or
                 self.options.island_passes == SeviiIslandPasses.option_progressive_split):
             tags.add("SplitIslandPasses")
+        if self.options.split_teas:
+            tags.add("SplitTeas")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
@@ -366,6 +378,10 @@ class PokemonFRLGWorld(World):
                 itempool = [item for item in itempool if item.name not in items_to_remove]
                 for _ in range(7):
                     itempool.append(self.create_item("Progressive Pass"))
+
+        if self.options.split_teas:
+            itempool = [item for item in itempool if item.name != "Tea"]
+            itempool.append(self.create_item("Green Tea"))
 
         if self.options.kanto_only:
             items_to_add = ["HM06 Rock Smash", "HM07 Waterfall"]
@@ -595,6 +611,7 @@ class PokemonFRLGWorld(World):
             "pokemon_request_locations",
             "card_key",
             "island_passes",
+            "split_teas",
             "itemfinder_required",
             "flash_required",
             "fame_checker_required",

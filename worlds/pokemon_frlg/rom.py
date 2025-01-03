@@ -430,11 +430,12 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     #
     # /* 0x3E */ bool8 passesSplit;
     # /* 0x3F */ bool8 cardKeysSplit;
+    # /* 0x40 */ bool8 teasSplit;
     #
-    # /* 0x40 */ u8 startingLocation;
-    # /* 0x41 */ u8 free_fly_id;
-    # /* 0x42 */ u8 town_free_fly_id;
-    # /* 0x43 */ u16 resortGorgeousMon;
+    # /* 0x41 */ u8 startingLocation;
+    # /* 0x42 */ u8 free_fly_id;
+    # /* 0x43 */ u8 town_free_fly_id;
+    # /* 0x44 */ u16 resortGorgeousMon;
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -663,15 +664,19 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                                                             SilphCoCardKey.option_progressive] else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x3F, struct.pack("<B", card_keys_split))
 
+    # Set teas split
+    teas_split = 1 if world.options.split_teas else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x40, struct.pack("<B", teas_split))
+
     # Set free fly location
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x41, struct.pack("<B", world.free_fly_location_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x42, struct.pack("<B", world.free_fly_location_id))
 
     # Set town map fly location
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x42, struct.pack("<B", world.town_map_fly_location_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x43, struct.pack("<B", world.town_map_fly_location_id))
 
     # Set resort gorgeous mon
     species_id = data.constants[world.resort_gorgeous_mon[0]]
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x43, struct.pack("<H", species_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x44, struct.pack("<H", species_id))
 
     # Set total darkness
     if "Total Darkness" in world.options.modify_world_state.value:

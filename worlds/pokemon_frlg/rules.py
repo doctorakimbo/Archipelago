@@ -387,8 +387,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 25 Surfing Spot"), lambda state: can_surf(state))
 
     # Route 5
-    set_rule(get_entrance("Route 5 Gate North Guard Checkpoint"), lambda state: state.has("Tea", player))
-    set_rule(get_entrance("Route 5 Gate South Guard Checkpoint"), lambda state: state.has("Tea", player))
+    set_rule(get_entrance("Route 5 Gate North Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Blue Tea"], player))
+    set_rule(get_entrance("Route 5 Gate South Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Blue Tea"], player))
 
     if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 5 Smashable Rocks"), lambda state: can_rock_smash(state))
@@ -404,8 +406,10 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Route 6
     set_rule(get_entrance("Route 6 Surfing Spot"), lambda state: can_surf(state))
-    set_rule(get_entrance("Route 6 Gate South Guard Checkpoint"), lambda state: state.has("Tea", player))
-    set_rule(get_entrance("Route 6 Gate North Guard Checkpoint"), lambda state: state.has("Tea", player))
+    set_rule(get_entrance("Route 6 Gate South Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Red Tea"], player))
+    set_rule(get_entrance("Route 6 Gate North Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Red Tea"], player))
 
     if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 6 Smashable Rocks"), lambda state: can_rock_smash(state))
@@ -494,16 +498,20 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Route 8
     set_rule(get_entrance("Route 8 Cuttable Trees"), lambda state: can_cut(state))
-    set_rule(get_entrance("Route 8 Gate East Guard Checkpoint"), lambda state: state.has("Tea", player))
-    set_rule(get_entrance("Route 8 Gate West Guard Checkpoint"), lambda state: state.has("Tea", player))
+    set_rule(get_entrance("Route 8 Gate East Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Purple Tea"], player))
+    set_rule(get_entrance("Route 8 Gate West Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Purple Tea"], player))
 
     if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 8 Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Route 8 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
     # Route 7
-    set_rule(get_entrance("Route 7 Gate West Guard Checkpoint"), lambda state: state.has("Tea", player))
-    set_rule(get_entrance("Route 7 Gate East Guard Checkpoint"), lambda state: state.has("Tea", player))
+    set_rule(get_entrance("Route 7 Gate West Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Green Tea"], player))
+    set_rule(get_entrance("Route 7 Gate East Guard Checkpoint"),
+             lambda state: state.has_any(["Tea", "Green Tea"], player))
 
     if "Block Tunnels" in options.modify_world_state.value:
         set_rule(get_entrance("Route 7 Smashable Rocks"), lambda state: can_rock_smash(state))
@@ -544,7 +552,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     # Pokemon Tower
     set_rule(get_entrance("Pokemon Tower 6F (Ghost Battle)"), lambda state: state.has("Silph Scope", player))
-    set_rule(get_entrance("Pokemon Tower 6F Near Stairs (Ghost Battle)"), lambda state: state.has("Silph Scope", player))
+    set_rule(get_entrance("Pokemon Tower 6F Near Stairs (Ghost Battle)"),
+             lambda state: state.has("Silph Scope", player))
     set_rule(get_entrance("Pokemon Tower 6F Reveal Ghost"), lambda state: state.has("Silph Scope", player))
 
     if "Block Tower" in options.modify_world_state.value:
@@ -1176,6 +1185,16 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         # Silph Co.
         set_rule(get_location("Silph Co. 1F - Receptionist's Gift"),
                  lambda state: state.has("Liberate Silph Co.", player))
+
+    # Split Teas
+    if options.split_teas:
+        # Celadon City
+        set_rule(get_location("Celadon Condominiums 1F - Brock's Gift"),
+                 lambda state: state.has("Defeat Brock", player))
+        set_rule(get_location("Celadon Condominiums 1F - Misty's Gift"),
+                 lambda state: state.has("Defeat Misty", player))
+        set_rule(get_location("Celadon Condominiums 1F - Erika's Gift"),
+                 lambda state: state.has("Defeat Erika", player))
 
     # Evolutions
     set_rule(get_location("Evolution - Bulbasaur"),
