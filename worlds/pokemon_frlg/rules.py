@@ -506,6 +506,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_location("Volunteer Pokemon House - Mr. Fuji's Gift"),
              lambda state: state.has("Rescue Mr. Fuji", player))
 
+    if "Route 12 Boulders" in options.modify_world_state.value:
+        set_rule(get_entrance("Lavender Town Exit (South)"), lambda state: can_strength(state))
+
     # Route 8
     set_rule(get_entrance("Route 8 Cuttable Trees"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 8 Gate East Guard Checkpoint"),
@@ -592,6 +595,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
     if "Route 12 Boulders" in options.modify_world_state.value:
         set_rule(get_entrance("Route 12 West Exit"), lambda state: can_strength(state))
+        set_rule(get_entrance("Route 12 North Exit"), lambda state: can_strength(state))
         set_rule(get_entrance("Route 12 South Exit"), lambda state: can_strength(state))
 
     if "Modify Route 12" in options.modify_world_state.value:
