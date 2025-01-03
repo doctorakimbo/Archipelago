@@ -24,7 +24,8 @@ indirect_conditions: Dict[str, List[str]] = {
                            "Seafoam Islands B3F West Landing", "Seafoam Islands B3F Southeast Landing"],
     "Seafoam Islands B3F West": ["Seafoam Islands B4F Surfing Spot (West)",
                                  "Seafoam Islands B4F Near Articuno Landing"],
-    "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"]
+    "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"],
+    "Vermilion City": ["Navel Rock Arrival", "Birth Island Arrival"]
 }
 
 sevii_required_events = [

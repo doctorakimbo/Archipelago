@@ -250,11 +250,14 @@ class ModifyWorldState(OptionSet):
     - Victory Road Rocks: Adds smashable rocks to Victory Road that block the floor switches.
     - Early Gossipers: Removes the requirement to have entered the Hall of Fame from various Famesanity locations.
     - Total Darkness: Changes dark caves to be completely black and provide no vision without Flash.
+    - Block Vermilion Sailing: Prevents you from sailing to Vermilion City on the Seagallop until you have gotten
+                               the S.S. Ticket.
     """
     display_name = "Modify World State"
     valid_keys = ["Modify Route 2", "Remove Cerulean Roadblocks", "Block Tunnels", "Modify Route 9",
                   "Modify Route 10", "Block Tower", "Route 12 Boulders", "Modify Route 12", "Modify Route 16",
-                  "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness"]
+                  "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness",
+                  "Block Vermilion Sailing"]
 
 
 class AdditionalDarkCaves(OptionSet):

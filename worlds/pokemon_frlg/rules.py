@@ -258,6 +258,11 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             return True
         return state.has("Defeat Champion", player)
 
+    def sail_vermilion(state: CollectionState):
+        if "Block Vermilion Sailing" not in options.modify_world_state.value:
+            return True
+        return state.has("S.S. Ticket", player)
+
     def get_entrance(entrance: str):
         return multiworld.get_entrance(entrance, player)
 
@@ -286,8 +291,11 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Indigo Plateau Fly Destination"), lambda state: state.has("Fly Indigo Plateau", player))
 
     # Seagallop
-    set_rule(get_entrance("Navel Rock Arrival"), lambda state: state.has("Mystic Ticket", player))
-    set_rule(get_entrance("Birth Island Arrival"), lambda state: state.has("Aurora Ticket", player))
+    set_rule(get_entrance("Vermilion City Arrival"), lambda state: sail_vermilion(state))
+    set_rule(get_entrance("Navel Rock Arrival"),
+             lambda state: state.has("Mystic Ticket", player) and state.can_reach_region("Vermilion City", player))
+    set_rule(get_entrance("Birth Island Arrival"),
+             lambda state: state.has("Aurora Ticket", player) and state.can_reach_region("Vermilion City", player))
 
     # Pallet Town
     set_rule(get_location("Rival's House - Daisy's Gift"), lambda state: state.has("Deliver Oak's Parcel", player))
@@ -798,6 +806,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Cerulean Cave 1F Northeast Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Cerulean Cave 1F Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Cerulean Cave B1F Surfing Spot"), lambda state: can_surf(state))
+
+    # Navel Rock
+    set_rule(get_entrance("Navel Rock Seagallop"), lambda state: sail_vermilion(state))
+
+    # Birth Island
+    set_rule(get_entrance("Birth Island Seagallop"), lambda state: sail_vermilion(state))
 
     # Sevii Islands
     if not options.kanto_only:

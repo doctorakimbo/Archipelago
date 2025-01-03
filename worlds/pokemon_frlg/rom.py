@@ -393,49 +393,50 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x16 */ bool8 blockPokemonTower;
     # /* 0x17 */ bool8 victoryRoadRocks;
     # /* 0x18 */ bool8 earlyFameGossip;
+    # /* 0x19 */ bool8 blockVermilionSailing;
     #
-    # /* 0x19 */ bool8 giovanniRequiresGyms;
-    # /* 0x1A */ u8 giovanniRequiredCount;
-    # /* 0x1B */ bool8 route22GateRequiresGyms;
-    # /* 0x1C */ u8 route22GateRequiredCount;
-    # /* 0x1D */ bool8 route23GuardRequiresGyms;
-    # /* 0x1E */ u8 route23GuardRequiredCount;
-    # /* 0x1F */ bool8 eliteFourRequiresGyms;
-    # /* 0x20 */ u8 eliteFourRequiredCount;
-    # /* 0x21 */ u8 ceruleanCaveRequirement; // 0 = Vanilla, 1 = Become Champion, 2 = Restore Network Center,
+    # /* 0x1A */ bool8 giovanniRequiresGyms;
+    # /* 0x1B */ u8 giovanniRequiredCount;
+    # /* 0x1C */ bool8 route22GateRequiresGyms;
+    # /* 0x1D */ u8 route22GateRequiredCount;
+    # /* 0x1E */ bool8 route23GuardRequiresGyms;
+    # /* 0x1F */ u8 route23GuardRequiredCount;
+    # /* 0x20 */ bool8 eliteFourRequiresGyms;
+    # /* 0x21 */ u8 eliteFourRequiredCount;
+    # /* 0x22 */ u8 ceruleanCaveRequirement; // 0 = Vanilla, 1 = Become Champion, 2 = Restore Network Center,
     #                                           3 = Badges, 4 = Gyms
-    # /* 0x22 */ u8 ceruleanCaveRequiredCount;
+    # /* 0x23 */ u8 ceruleanCaveRequiredCount;
     #
-    # /* 0x23 */ u8 startingBadges;
-    # /* 0x24 */ u8 startingProgressiveCardKeys;
-    # /* 0x25 */ u8 startingProgressivePasses;
-    # /* 0x26 */ u32 startingFlyUnlocks;
-    # /* 0x2A */ u32 startingMoney;
+    # /* 0x24 */ u8 startingBadges;
+    # /* 0x25 */ u8 startingProgressiveCardKeys;
+    # /* 0x26 */ u8 startingProgressivePasses;
+    # /* 0x27 */ u32 startingFlyUnlocks;
+    # /* 0x2B */ u32 startingMoney;
     #
-    # /* 0x2E */ bool8 itemfinderRequired;
-    # /* 0x2F */ bool8 flashRequired;
-    # /* 0x30 */ bool8 fameCheckerRequired;
+    # /* 0x2F */ bool8 itemfinderRequired;
+    # /* 0x30 */ bool8 flashRequired;
+    # /* 0x31 */ bool8 fameCheckerRequired;
     #
-    # /* 0x31 */ u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
+    # /* 0x32 */ u8 oaksAideRequiredCounts[5]; // Route 2, Route 10, Route 11, Route 16, Route 15
     #
-    # /* 0x36 */ bool8 reccuringHiddenItems;
-    # /* 0x37 */ bool8 isTrainersanity;
-    # /* 0x38 */ bool8 extraKeyItems;
-    # /* 0x39 */ bool8 kantoOnly;
-    # /* 0x3A */ bool8 flyUnlocks;
-    # /* 0x3B */ bool8 isFamesanity;
+    # /* 0x37 */ bool8 reccuringHiddenItems;
+    # /* 0x38 */ bool8 isTrainersanity;
+    # /* 0x39 */ bool8 extraKeyItems;
+    # /* 0x3A */ bool8 kantoOnly;
+    # /* 0x3B */ bool8 flyUnlocks;
+    # /* 0x3C */ bool8 isFamesanity;
     #
-    # /* 0x3C */ u8 removeBadgeRequirement; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
-    # /* 0x3D */ u8 additionalDarkCaves; // Mt. Moon, Diglett's Cave, Victory Road
+    # /* 0x3D */ u8 removeBadgeRequirement; // Flash, Cut, Fly, Strength, Surf, Rock Smash, Waterfall
+    # /* 0x3E */ u8 additionalDarkCaves; // Mt. Moon, Diglett's Cave, Victory Road
     #
-    # /* 0x3E */ bool8 passesSplit;
-    # /* 0x3F */ bool8 cardKeysSplit;
-    # /* 0x40 */ bool8 teasSplit;
+    # /* 0x3F */ bool8 passesSplit;
+    # /* 0x40 */ bool8 cardKeysSplit;
+    # /* 0x41 */ bool8 teasSplit;
     #
-    # /* 0x41 */ u8 startingLocation;
-    # /* 0x42 */ u8 free_fly_id;
-    # /* 0x43 */ u8 town_free_fly_id;
-    # /* 0x44 */ u16 resortGorgeousMon;
+    # /* 0x42 */ u8 startingLocation;
+    # /* 0x43 */ u8 free_fly_id;
+    # /* 0x44 */ u8 town_free_fly_id;
+    # /* 0x45 */ u16 resortGorgeousMon;
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -528,108 +529,112 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     early_gossipers = 1 if "Early Gossipers" in world.options.modify_world_state.value else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x18, struct.pack("<B", early_gossipers))
 
+    # Set block Vermilion sailing
+    block_vermilion_sailing = 1 if "Block Vermilion Sailing" in world.options.modify_world_state.value else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x19, struct.pack("<B", block_vermilion_sailing))
+
     # Set Viridian Gym Rrquirement
     viridian_gym_requirement = world.options.viridian_gym_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x19, struct.pack("<B", viridian_gym_requirement))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1A, struct.pack("<B", viridian_gym_requirement))
 
     # Set Viridian Gym count
     viridian_gym_count = world.options.viridian_gym_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1A, struct.pack("<B", viridian_gym_count))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1B, struct.pack("<B", viridian_gym_count))
 
     # Set Route 22 requirement
     route_22_requirement = world.options.route22_gate_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1B, struct.pack("<B", route_22_requirement))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1C, struct.pack("<B", route_22_requirement))
 
     # Set Route 22 count
     route_22_count = world.options.route22_gate_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1C, struct.pack("<B", route_22_count))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", route_22_count))
 
     # Set Route 23 requirement
     route_23_requirement = world.options.route23_guard_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", route_23_requirement))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", route_23_requirement))
 
     # Set Route 23 count
     route_23_count = world.options.route23_guard_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", route_23_count))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1F, struct.pack("<B", route_23_count))
 
     # Set Elite Four requirement
     elite_four_requirement = world.options.elite_four_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1F, struct.pack("<B", elite_four_requirement))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", elite_four_requirement))
 
     # Set Elite Four count
     elite_four_count = world.options.elite_four_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x20, struct.pack("<B", elite_four_count))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x21, struct.pack("<B", elite_four_count))
 
     # Set Cerulean Cave requirement
     cerulean_cave_requirement = world.options.cerulean_cave_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x21, struct.pack("<B", cerulean_cave_requirement))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x22, struct.pack("<B", cerulean_cave_requirement))
 
     # Set Cerulean Cave count
     cerulean_cave_count = world.options.cerulean_cave_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x22, struct.pack("<B", cerulean_cave_count))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x23, struct.pack("<B", cerulean_cave_count))
 
     # Set starting badges
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x23, struct.pack("<B", starting_badges))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x24, struct.pack("<B", starting_badges))
 
     # Set starting progressive card keys
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x24, struct.pack("<B", starting_prog_card_keys))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x25, struct.pack("<B", starting_prog_card_keys))
 
     # Set starting progressive passes
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x25, struct.pack("<B", starting_prog_passes))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x26, struct.pack("<B", starting_prog_passes))
 
     # Set starting fly unlocks
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x26, struct.pack("<I", starting_fly_unlocks))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x27, struct.pack("<I", starting_fly_unlocks))
 
     # Set starting money
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2A, struct.pack("<I",
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2B, struct.pack("<I",
                                                                                world.options.starting_money.value))
     # Set itemfinder required
     itemfinder_required = 1 if world.options.itemfinder_required.value == ItemfinderRequired.option_required else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2E, struct.pack("<B", itemfinder_required))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2F, struct.pack("<B", itemfinder_required))
 
     # Set flash required
     flash_required = 1 if world.options.flash_required.value == FlashRequired.option_required else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x2F, struct.pack("<B", flash_required))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x30, struct.pack("<B", flash_required))
 
     # Set fame checker required
     fame_checker_required = 1 if world.options.fame_checker_required else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x30, struct.pack("<B", fame_checker_required))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x31, struct.pack("<B", fame_checker_required))
 
     # Set Oak's Aides counts
     oaks_aide_route_2 = world.options.oaks_aide_route_2.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x31, struct.pack("<B", oaks_aide_route_2))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x32, struct.pack("<B", oaks_aide_route_2))
     oaks_aide_route_10 = world.options.oaks_aide_route_10.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x32, struct.pack("<B", oaks_aide_route_10))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x33, struct.pack("<B", oaks_aide_route_10))
     oaks_aide_route_11 = world.options.oaks_aide_route_11.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x33, struct.pack("<B", oaks_aide_route_11))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x34, struct.pack("<B", oaks_aide_route_11))
     oaks_aide_route_16 = world.options.oaks_aide_route_16.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x34, struct.pack("<B", oaks_aide_route_16))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x35, struct.pack("<B", oaks_aide_route_16))
     oaks_aide_route_15 = world.options.oaks_aide_route_15.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x35, struct.pack("<B", oaks_aide_route_15))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x36, struct.pack("<B", oaks_aide_route_15))
 
     # Set recurring hidden items shuffled
     recurring_hidden_items = 1 if world.options.shuffle_hidden.value == ShuffleHiddenItems.option_all else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x36, struct.pack("<B", recurring_hidden_items))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x37, struct.pack("<B", recurring_hidden_items))
 
     # Set trainersanity
     trainersanity = 1 if world.options.trainersanity else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x37, struct.pack("<B", trainersanity))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x38, struct.pack("<B", trainersanity))
 
     # Set extra key items
     extra_key_items = 1 if world.options.extra_key_items else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x38, struct.pack("<B", extra_key_items))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x39, struct.pack("<B", extra_key_items))
 
     # Set kanto only
     kanto_only = 1 if world.options.kanto_only else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x39, struct.pack("<B", kanto_only))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3A, struct.pack("<B", kanto_only))
 
     # Set fly unlocks
     fly_unlocks = 1 if world.options.shuffle_fly_destination_unlocks else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3A, struct.pack("B", fly_unlocks))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3B, struct.pack("B", fly_unlocks))
 
     # Set famesanity
     famesanity = 1 if world.options.famesanity else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3B, struct.pack("B", famesanity))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3C, struct.pack("B", famesanity))
 
     # Set remove badge requirements
     hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
@@ -637,7 +642,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     for i, hm in enumerate(hms):
         if hm in world.options.remove_badge_requirement.value:
             remove_badge_requirements |= (1 << i)
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3C, struct.pack("<B", remove_badge_requirements))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3D, struct.pack("<B", remove_badge_requirements))
 
     # Set additional dark caves
     dark_caves = ["Mt. Moon", "Diglett's Cave", "Victory Road"]
@@ -652,31 +657,31 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                 map_data = world.modified_maps[map_id]
                 header_address = map_data.header_address[game_version_revision]
                 tokens.write_token(APTokenTypes.WRITE, header_address + 21, struct.pack("<B", 1))
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3D, struct.pack("<B", additional_dark_caves))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3E, struct.pack("<B", additional_dark_caves))
 
     # Set passes split
     passes_split = 1 if world.options.island_passes.value in [SeviiIslandPasses.option_split,
                                                               SeviiIslandPasses.option_progressive_split] else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3E, struct.pack("<B", passes_split))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3F, struct.pack("<B", passes_split))
 
     # Set card keys split
     card_keys_split = 1 if world.options.card_key.value in [SilphCoCardKey.option_split,
                                                             SilphCoCardKey.option_progressive] else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3F, struct.pack("<B", card_keys_split))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x40, struct.pack("<B", card_keys_split))
 
     # Set teas split
     teas_split = 1 if world.options.split_teas else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x40, struct.pack("<B", teas_split))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x41, struct.pack("<B", teas_split))
 
     # Set free fly location
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x42, struct.pack("<B", world.free_fly_location_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x43, struct.pack("<B", world.free_fly_location_id))
 
     # Set town map fly location
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x43, struct.pack("<B", world.town_map_fly_location_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x44, struct.pack("<B", world.town_map_fly_location_id))
 
     # Set resort gorgeous mon
     species_id = data.constants[world.resort_gorgeous_mon[0]]
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x44, struct.pack("<H", species_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x45, struct.pack("<H", species_id))
 
     # Set total darkness
     if "Total Darkness" in world.options.modify_world_state.value:
