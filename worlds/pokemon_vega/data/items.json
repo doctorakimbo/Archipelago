@@ -1,41 +1,41 @@
 {
   "ITEM_BADGE_1": {
-    "name": "Boulder Badge",
+    "name": "Elnath Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_2": {
-    "name": "Cascade Badge",
+    "name": "Gemma Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_3": {
-    "name": "Thunder Badge",
+    "name": "Hadar Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_4": {
-    "name": "Rainbow Badge",
+    "name": "Arneb Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_5": {
-    "name": "Soul Badge",
+    "name": "Phact Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_6": {
-    "name": "Marsh Badge",
+    "name": "Sarfah Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_7": {
-    "name": "Volcano Badge",
+    "name": "Prior Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
   "ITEM_BADGE_8": {
-    "name": "Earth Badge",
+    "name": "Mirach Badge",
     "classification": "PROGRESSION",
     "tags": ["Badge", "Unique"]
   },
@@ -76,73 +76,13 @@
     "tags": ["Unique"]
   },
 
-  "ITEM_AURORA_TICKET": {
-    "name": "Aurora Ticket",
+  "ITEM_ALTAIR": {
+    "name": "Altair",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_BICYCLE": {
-    "name": "Bicycle",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_BIKE_VOUCHER": {
-    "name": "Bike Voucher",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY": {
-    "name": "Card Key",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_2F": {
-    "name": "Card Key 2F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_3F": {
-    "name": "Card Key 3F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_4F": {
-    "name": "Card Key 4F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_5F": {
-    "name": "Card Key 5F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_6F": {
-    "name": "Card Key 6F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_7F": {
-    "name": "Card Key 7F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_8F": {
-    "name": "Card Key 8F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_9F": {
-    "name": "Card Key 9F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_10F": {
-    "name": "Card Key 10F",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_CARD_KEY_11F": {
-    "name": "Card Key 11F",
+  "ITEM_BLUE_SHARD": {
+    "name": "Blue Shard",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -151,23 +91,18 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_DOME_FOSSIL": {
-    "name": "Dome Fossil",
+  "ITEM_DARK_FOSSIL": {
+    "name": "Dark Fossil",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FAME_CHECKER": {
-    "name": "Fame Checker",
-    "classification": "PROGRESSION",
+  "ITEM_DOUBLE_BOARD": {
+    "name": "Double Board",
+    "classification": "USEFUL",
     "tags": ["Unique"]
   },
-  "ITEM_FIVE_PASS": {
-    "name": "Five Pass",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FOUR_PASS": {
-    "name": "Four Pass",
+  "ITEM_FANG_FOSSIL": {
+    "name": "Fang Fossil",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -176,13 +111,8 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_GOLD_TEETH": {
-    "name": "Gold Teeth",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_HELIX_FOSSIL": {
-    "name": "Helix Fossil",
+  "ITEM_GREEN_SHARD": {
+    "name": "Green Shard",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -201,28 +131,18 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_LAB_PASS": {
+    "name": "Lab Pass",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_LIFT_KEY": {
     "name": "Lift Key",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_MACHINE_PART": {
-    "name": "Machine Part",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
   "ITEM_METEORITE": {
     "name": "Meteorite",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_MYSTIC_TICKET": {
-    "name": "Mystic Ticket",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_OAKS_PARCEL": {
-    "name": "Oak's Parcel",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -236,14 +156,14 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_ONE_PASS": {
-    "name": "One Pass",
+  "ITEM_PACKAGE": {
+    "name": "Package",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
   "ITEM_POKE_FLUTE": {
     "name": "Poke Flute",
-    "classification": "PROGRESSION",
+    "classification": "FILLER",
     "tags": ["Unique"]
   },
   "ITEM_POWDER_JAR": {
@@ -251,23 +171,13 @@
     "classification": "FILLER",
     "tags": ["Unique"]
   },
-  "ITEM_PROG_CARD_KEY": {
-    "name": "Progressive Card Key",
+  "ITEM_RED_SHARD": {
+    "name": "Red Shard",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_PROG_PASS": {
-    "name": "Progressive Pass",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_RAINBOW_PASS": {
-    "name": "Rainbow Pass",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_RUBY": {
-    "name": "Ruby",
+  "ITEM_ROOT_FOSSIL": {
+    "name": "Root Fossil",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -276,18 +186,8 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_SAPPHIRE": {
-    "name": "Sapphire",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_SECRET_KEY": {
-    "name": "Secret Key",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_SEVEN_PASS": {
-    "name": "Seven Pass",
+  "ITEM_SIRIUS": {
+    "name": "Sirius",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -296,33 +196,8 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_SIX_PASS": {
-    "name": "Six Pass",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_SS_TICKET": {
-    "name": "S.S. Ticket",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
   "ITEM_SUPER_ROD": {
     "name": "Super Rod",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_TEA": {
-    "name": "Tea",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_TEACHY_TV": {
-    "name": "Teachy TV",
-    "classification": "FILLER",
-    "tags": ["Unique"]
-  },
-  "ITEM_THREE_PASS": {
-    "name": "Three Pass",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -331,13 +206,8 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_TRI_PASS": {
-    "name": "Tri Pass",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_TWO_PASS": {
-    "name": "Two Pass",
+  "ITEM_VEGA": {
+    "name": "Vega",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -346,104 +216,74 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_WING_FOSSIL": {
+    "name": "Wing Fossil",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_YELLOW_SHARD": {
+    "name": "Yellow Shard",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
 
-  "ITEM_FLY_PALLET": {
-    "name": "Fly Pallet Town",
+  "ITEM_FLY_PORCELIA": {
+    "name": "Fly Porcelia Town",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_VIRIDIAN": {
-    "name": "Fly Viridian City",
+  "ITEM_FLY_JUNOPSIS": {
+    "name": "Fly Junopsis City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_PEWTER": {
-    "name": "Fly Pewter City",
+  "ITEM_FLY_SEAFIN": {
+    "name": "Fly Seafin City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_CERULEAN": {
-    "name": "Fly Cerulean City",
+  "ITEM_FLY_GAMBOGE": {
+    "name": "Fly Gamboge City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_LAVENDER": {
-    "name": "Fly Lavender Town",
+  "ITEM_FLY_SHAMOUTI": {
+    "name": "Fly Shamouti Island",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_VERMILION": {
-    "name": "Fly Vermilion City",
+  "ITEM_FLY_NEPHRITE": {
+    "name": "Fly Nephrite City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_CELADON": {
-    "name": "Fly Celadon City",
+  "ITEM_FLY_ORPIMENCE": {
+    "name": "Fly Orpimence City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_FUCHSIA": {
-    "name": "Fly Fuchsia City",
+  "ITEM_FLY_LAPIZULA": {
+    "name": "Fly Lapizula City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_CINNABAR": {
-    "name": "Fly Cinnabar Island",
+  "ITEM_FLY_NEW_ISLAND": {
+    "name": "Fly New Island",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_INDIGO": {
-    "name": "Fly Indigo Plateau",
+  "ITEM_FLY_SHAKUDO": {
+    "name": "Fly Shakudo Island",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_SAFFRON": {
-    "name": "Fly Saffron City",
+  "ITEM_FLY_RAVENPLUME": {
+    "name": "Fly Ravenplume City",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
-  "ITEM_FLY_ONE_ISLAND": {
-    "name": "Fly One Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_TWO_ISLAND": {
-    "name": "Fly Two Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_THREE_ISLAND": {
-    "name": "Fly Three Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_FOUR_ISLAND": {
-    "name": "Fly Four Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_FIVE_ISLAND": {
-    "name": "Fly Five Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_SEVEN_ISLAND": {
-    "name": "Fly Seven Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_SIX_ISLAND": {
-    "name": "Fly Six Island",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_ROUTE4": {
-    "name": "Fly Route 4",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FLY_ROUTE10": {
-    "name": "Fly Route 10",
+  "ITEM_FLY_ROUTE510": {
+    "name": "Fly Route 510",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -675,26 +515,6 @@
     "classification": "FILLER",
     "tags": ["Misc"]
   },
-  "ITEM_RED_SHARD": {
-    "name": "Red Shard",
-    "classification": "FILLER",
-    "tags": ["Misc"]
-  },
-  "ITEM_BLUE_SHARD": {
-    "name": "Blue Shard",
-    "classification": "FILLER",
-    "tags": ["Misc"]
-  },
-  "ITEM_YELLOW_SHARD": {
-    "name": "Yellow Shard",
-    "classification": "FILLER",
-    "tags": ["Misc"]
-  },
-  "ITEM_GREEN_SHARD": {
-    "name": "Green Shard",
-    "classification": "FILLER",
-    "tags": ["Misc"]
-  },
 
   "ITEM_HP_UP": {
     "name": "HP Up",
@@ -757,8 +577,8 @@
     "classification": "FILLER",
     "tags": ["Misc"]
   },
-  "ITEM_X_DEFEND": {
-    "name": "X Defend",
+  "ITEM_X_DEFENSE": {
+    "name": "X Defense",
     "classification": "FILLER",
     "tags": ["Misc"]
   },
@@ -772,8 +592,8 @@
     "classification": "FILLER",
     "tags": ["Misc"]
   },
-  "ITEM_X_SPECIAL": {
-    "name": "X Special",
+  "ITEM_X_SP_ATK": {
+    "name": "X Sp. Atk",
     "classification": "FILLER",
     "tags": ["Misc"]
   },
@@ -788,8 +608,8 @@
     "classification": "FILLER",
     "tags": ["Misc"]
   },
-  "ITEM_POKE_DOLL": {
-    "name": "Poke Doll",
+  "ITEM_POKE_TOY": {
+    "name": "Poke Toy",
     "classification": "FILLER",
     "tags": ["Misc"]
   },
@@ -888,7 +708,7 @@
 
   "ITEM_HEART_SCALE": {
     "name": "Heart Scale",
-    "classification": "FILLER",
+    "classification": "USEFUL",
     "tags": ["Misc"]
   },
 
@@ -1229,13 +1049,13 @@
     "classification": "USEFUL",
     "tags": ["Held"]
   },
-  "ITEM_DEEP_SEA_TOOTH": {
-    "name": "Deep Sea Tooth",
+  "ITEM_FORECAST_MAP": {
+    "name": "Forecast Map",
     "classification": "USEFUL",
     "tags": ["Held"]
   },
-  "ITEM_DEEP_SEA_SCALE": {
-    "name": "Deep Sea Scale",
+  "ITEM_ANALYSIS_MAP": {
+    "name": "Analysis Map",
     "classification": "USEFUL",
     "tags": ["Held"]
   },
@@ -1359,11 +1179,6 @@
     "classification": "USEFUL",
     "tags": ["Held"]
   },
-  "ITEM_UP_GRADE": {
-    "name": "Up-Grade",
-    "classification": "USEFUL",
-    "tags": ["Held"]
-  },
   "ITEM_SHELL_BELL": {
     "name": "Shell Bell",
     "classification": "USEFUL",
@@ -1389,13 +1204,13 @@
     "classification": "USEFUL",
     "tags": ["Held"]
   },
-  "ITEM_THICK_CLUB": {
-    "name": "Thick Club",
+  "ITEM_PINK_SOAP": {
+    "name": "Pink Soap",
     "classification": "USEFUL",
     "tags": ["Held"]
   },
-  "ITEM_STICK": {
-    "name": "Stick",
+  "ITEM_HULA_HOOP": {
+    "name": "Hula Hoop",
     "classification": "USEFUL",
     "tags": ["Held"]
   },
@@ -1425,37 +1240,37 @@
     "tags": ["Held"]
   },
 
-  "ITEM_TM_FOCUS_PUNCH": {
+  "ITEM_TM_SWORDS_DANCE": {
     "name": "TM01",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_DRAGON_CLAW": {
+  "ITEM_TM_AIR_SLASH": {
     "name": "TM02",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_WATER_PULSE": {
+  "ITEM_TM_SPIKES": {
     "name": "TM03",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_CALM_MIND": {
+  "ITEM_TM_MAGNET_BOMB": {
     "name": "TM04",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_ROAR": {
+  "ITEM_TM_THUNDER_WAVE": {
     "name": "TM05",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_TOXIC": {
+  "ITEM_TM_HEADBUTT": {
     "name": "TM06",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_HAIL": {
+  "ITEM_TM_MEGAHORN": {
     "name": "TM07",
     "classification": "USEFUL",
     "tags": ["TM"]
@@ -1465,72 +1280,72 @@
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_BULLET_SEED": {
+  "ITEM_TM_ROCK_SLIDE": {
     "name": "TM09",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_HIDDEN_POWER": {
+  "ITEM_TM_DRAGON_RUSH": {
     "name": "TM10",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SUNNY_DAY": {
+  "ITEM_TM_SHADOW_CLAW": {
     "name": "TM11",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_TAUNT": {
+  "ITEM_TM_AMNESIA": {
     "name": "TM12",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_ICE_BEAM": {
+  "ITEM_TM_SUBSTITUTE": {
     "name": "TM13",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_BLIZZARD": {
+  "ITEM_TM_SHINE_BOMB": {
     "name": "TM14",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_HYPER_BEAM": {
+  "ITEM_TM_SIGNAL_BEAM": {
     "name": "TM15",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_LIGHT_SCREEN": {
+  "ITEM_TM_ENERGY_BALL": {
     "name": "TM16",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_PROTECT": {
+  "ITEM_TM_DARK_PULSE": {
     "name": "TM17",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_RAIN_DANCE": {
+  "ITEM_TM_AQUA_BOLT": {
     "name": "TM18",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_GIGA_DRAIN": {
+  "ITEM_TM_POISON_LEAF": {
     "name": "TM19",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SAFEGUARD": {
+  "ITEM_TM_ICY_WIND": {
     "name": "TM20",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_FRUSTRATION": {
+  "ITEM_TM_LEECH_SEED": {
     "name": "TM21",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SOLAR_BEAM": {
+  "ITEM_TM_POISON_JAB": {
     "name": "TM22",
     "classification": "USEFUL",
     "tags": ["TM"]
@@ -1540,27 +1355,27 @@
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_THUNDERBOLT": {
+  "ITEM_TM_IRON_DEFENSE": {
     "name": "TM24",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_THUNDER": {
+  "ITEM_TM_RAZE_EARTH": {
     "name": "TM25",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_EARTHQUAKE": {
+  "ITEM_TM_ZAP_CANNON": {
     "name": "TM26",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_RETURN": {
+  "ITEM_TM_HAZE": {
     "name": "TM27",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_DIG": {
+  "ITEM_TM_BRAVE_BIRD": {
     "name": "TM28",
     "classification": "USEFUL",
     "tags": ["TM"]
@@ -1580,22 +1395,22 @@
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_DOUBLE_TEAM": {
+  "ITEM_TM_TRI_ATTACK": {
     "name": "TM32",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_REFLECT": {
+  "ITEM_TM_DEVASTATE": {
     "name": "TM33",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SHOCK_WAVE": {
+  "ITEM_TM_BATON_PASS": {
     "name": "TM34",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_FLAMETHROWER": {
+  "ITEM_TM_CONFUSE_RAY": {
     "name": "TM35",
     "classification": "USEFUL",
     "tags": ["TM"]
@@ -1605,72 +1420,72 @@
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SANDSTORM": {
+  "ITEM_TM_MUD_BOMB": {
     "name": "TM37",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_FIRE_BLAST": {
+  "ITEM_TM_RAGING_FLAME": {
     "name": "TM38",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_ROCK_TOMB": {
+  "ITEM_TM_WOOD_HAMMER": {
     "name": "TM39",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_AERIAL_ACE": {
+  "ITEM_TM_HEAT_WAVE": {
     "name": "TM40",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_TORMENT": {
+  "ITEM_TM_FOCUS_BLAST": {
     "name": "TM41",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_FACADE": {
+  "ITEM_TM_DISCHARGE": {
     "name": "TM42",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SECRET_POWER": {
+  "ITEM_TM_DRAGON_BEAT": {
     "name": "TM43",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_REST": {
+  "ITEM_TM_WILL_O_WISP": {
     "name": "TM44",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_ATTRACT": {
+  "ITEM_TM_DIAMOND_BLAST": {
     "name": "TM45",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_THIEF": {
+  "ITEM_TM_MAGNET_FORCE": {
     "name": "TM46",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_STEEL_WING": {
+  "ITEM_TM_NIGHT_SLASH": {
     "name": "TM47",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SKILL_SWAP": {
+  "ITEM_TM_PSYCHO_PUNCH": {
     "name": "TM48",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_SNATCH": {
+  "ITEM_TM_FEATHER_DANCE": {
     "name": "TM49",
     "classification": "USEFUL",
     "tags": ["TM"]
   },
-  "ITEM_TM_OVERHEAT": {
+  "ITEM_TM_EXPLOSION": {
     "name": "TM50",
     "classification": "USEFUL",
     "tags": ["TM"]

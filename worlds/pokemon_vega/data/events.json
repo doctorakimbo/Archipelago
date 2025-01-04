@@ -4,44 +4,44 @@
     "item": "Defeat Route 22 Rival",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_BROCK": {
-    "name": "Pewter Gym - Gym Leader Battle",
-    "item": "Defeat Brock",
+  "EVENT_DEFEAT_ANNETTE": {
+    "name": "Junopsis Gym - Gym Leader Battle",
+    "item": "Defeat Annette",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_MISTY": {
-    "name": "Cerulean Gym - Gym Leader Battle",
-    "item": "Defeat Misty",
+  "EVENT_DEFEAT_GEOFF": {
+    "name": "Seafin Gym - Gym Leader Battle",
+    "item": "Defeat Geoff",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_LT_SURGE": {
-    "name": "Vermilion Gym - Gym Leader Battle",
-    "item": "Defeat Lt. Surge",
+  "EVENT_DEFEAT_BROOKE": {
+    "name": "Gamboge Gym - Gym Leader Battle",
+    "item": "Defeat Brooke",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_ERIKA": {
-    "name": "Celadon Gym - Gym Leader Battle",
-    "item": "Defeat Erika",
+  "EVENT_DEFEAT_AVERY": {
+    "name": "Nephrite Gym - Gym Leader Battle",
+    "item": "Defeat Avery",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_KOGA": {
-    "name": "Fuchsia Gym - Gym Leader Battle",
-    "item": "Defeat Koga",
+  "EVENT_DEFEAT_CHIE_RITO": {
+    "name": "Orpimence Gym - Gym Leader Battle",
+    "item": "Defeat Chie & Rito",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_SABRINA": {
-    "name": "Saffron Gym - Gym Leader Battle",
-    "item": "Defeat Sabrina",
+  "EVENT_DEFEAT_FENTON": {
+    "name": "Ravenplume Gym - Gym Leader Battle",
+    "item": "Defeat Fenton",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_BLAINE": {
-    "name": "Cinnabar Gym - Gym Leader Battle",
-    "item": "Defeat Blaine",
+  "EVENT_DEFEAT_TARA": {
+    "name": "Lapizula Gym - Gym Leader Battle",
+    "item": "Defeat Tara",
     "tags": ["Event"]
   },
-  "EVENT_DEFEAT_GIOVANNI": {
-    "name": "Viridian Gym - Gym Leader Battle",
-    "item": "Defeat Giovanni",
+  "EVENT_DEFEAT_LEADER_MEWTWO": {
+    "name": "New Island Gym - Gym Leader Battle",
+    "item": "Defeat Mewtwo",
     "tags": ["Event"]
   },
   "EVENT_DEFEAT_CHAMPION": {

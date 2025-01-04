@@ -29,25 +29,13 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     }
 
     # todo: vega
-    kanto_rematchable_trainer_regions: List[str] = [
+    rematchable_trainer_regions: List[str] = [
         "Route 3", "Route 4 Northeast", "Route 6", "Route 8", "Route 9", "Route 10 North", "Route 10 South",
         "Route 10 Near Power Plant", "Route 11 West", "Route 12 Center", "Route 12 South", "Route 12 Behind North Tree",
         "Route 13", "Route 14", "Route 15 South", "Route 15 North", "Route 16 Northeast", "Route 16 Southwest",
         "Route 17", "Route 18 East", "Route 19", "Route 19 Water", "Route 20 East", "Route 20 Near South Cave",
         "Route 20 West", "Route 21", "Route 24", "Route 25"
     ]
-
-    sevii_rematchable_trainer_regions: List[str] = [
-        "Treasure Beach Water", "Kindle Road South Water", "Kindle Road Center", "Kindle Road North Water",
-        "Bond Bridge", "Bond Bridge Water", "Memorial Pillar", "Water Labyrinth", "Resort Gorgeous Water",
-        "Resort Gorgeous Near Resort", "Water Path South", "Water Path South Water", "Water Path North", "Ruin Valley",
-        "Green Path Water", "Outcast Island Water", "Canyon Entrance", "Sevault Canyon", "Tanoby Ruins Scufib Island",
-        "Tanoby Ruins Weepth Island", "Tanoby Ruins Monean Island", "Trainer Tower Exterior South"
-    ]
-
-    rematchable_trainer_regions = kanto_rematchable_trainer_regions
-    if not options.kanto_only:
-        rematchable_trainer_regions.extend(sevii_rematchable_trainer_regions)
 
     def has_badge_requirement(hm: str, state: CollectionState):
         return hm in options.remove_badge_requirement.value or state.has(badge_requirements[hm], player)
@@ -124,7 +112,7 @@ def set_rules(world: "PokemonVegaWorld") -> None:
             "Defeat Geoff",
             "Defeat Brooke",
             "Defeat Avery",
-            "Defeat Chie and Rito",
+            "Defeat Chie & Rito",
             "Defeat Fenton",
             "Defeat Tara",
             "Defeat Mewtwo"
