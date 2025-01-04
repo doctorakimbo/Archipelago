@@ -8,8 +8,8 @@ from worlds.generic.Rules import add_rule, set_rule
 from .data import data
 from .options import (CeruleanCaveRequirement, EliteFourRequirement, EliteFourRematchRequirement, FlashRequired,
                       GameVersion, Goal, ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
-                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey,
-                      ViridianCityRoadblock, ViridianGymRequirement)
+                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, ViridianCityRoadblock,
+                      ViridianGymRequirement)
 
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -266,8 +266,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             6: (2, 6),
             7: (2, 7)
         }
-        if any(options.island_passes == option
-               for option in [SeviiIslandPasses.option_vanilla, SeviiIslandPasses.option_progressive]):
+        if options.island_passes.value in [SeviiIslandPasses.option_vanilla, SeviiIslandPasses.option_progressive]:
             progressives_count = progressives_needed[island][0]
         else:
             progressives_count = progressives_needed[island][1]
@@ -1220,10 +1219,25 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             set_rule(get_location("Water Path Heracross Woman's House - Heracross Woman's Gift"),
                      lambda state: state.has("Heracross", player))
 
-    # Split Card Key
-    if options.card_key != SilphCoCardKey.option_vanilla:
-        # Silph Co.
-        set_rule(get_location("Silph Co. 1F - Receptionist's Gift"), lambda state: saffron_rockets_gone(state))
+    # Split Passes
+    if (options.island_passes.value in [SeviiIslandPasses.option_split, SeviiIslandPasses.option_progressive_split]
+        and not options.kanto_only):
+        # Cinnabar Island
+        set_rule(get_location("Cinnabar Pokemon Center 1F - Bill's Gift"),
+                 lambda state: state.has("Defeat Blaine", player))
+
+        # One Island
+        set_rule(get_location("One Island Pokemon Center 1F - Celio's Gift (Deliver Sapphire)"),
+                 lambda state: state.has_all(["Deliver Meteorite", "Ruby", "Free Captured Pokemon", "Sapphire"],
+                                             player))
+
+        # Three Island
+        set_rule(get_location("Lostelle's House - Lostelle's Gift"),
+                 lambda state: state.has("Deliver Meteorite", player))
+
+        # Six Island
+        set_rule(get_location("Dotted Hole 1F - Dropped Item"),
+                 lambda state: state.has("Learn Yes Nah Chansey", player))
 
     # Split Teas
     if options.split_teas:

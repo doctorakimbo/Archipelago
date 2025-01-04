@@ -213,16 +213,21 @@ class PokemonFRLGWorld(World):
             not_allowed_card_key.extend(card_key_vanilla)
             not_allowed_card_key.extend(card_key_split)
 
-        if self.options.island_passes == SeviiIslandPasses.option_vanilla:
+        if not self.options.kanto_only:
+            if self.options.island_passes == SeviiIslandPasses.option_vanilla:
+                not_allowed_pass.extend(passes_split)
+                not_allowed_pass.extend(passes_progressive)
+            elif self.options.island_passes == SeviiIslandPasses.option_split:
+                not_allowed_pass.extend(passes_vanilla)
+                not_allowed_pass.extend(passes_progressive)
+            elif (self.options.island_passes == SeviiIslandPasses.option_progressive or
+                  self.options.island_passes == SeviiIslandPasses.option_progressive_split):
+                not_allowed_pass.extend(passes_vanilla)
+                not_allowed_pass.extend(passes_split)
+        else:
+            not_allowed_pass.extend(passes_vanilla)
             not_allowed_pass.extend(passes_split)
             not_allowed_pass.extend(passes_progressive)
-        elif self.options.island_passes == SeviiIslandPasses.option_split:
-            not_allowed_pass.extend(passes_vanilla)
-            not_allowed_pass.extend(passes_progressive)
-        elif (self.options.island_passes == SeviiIslandPasses.option_progressive or
-              self.options.island_passes == SeviiIslandPasses.option_progressive_split):
-            not_allowed_pass.extend(passes_vanilla)
-            not_allowed_pass.extend(passes_split)
 
         if self.options.split_teas:
             not_allowed_tea.extend(tea_vanilla)
@@ -364,7 +369,7 @@ class PokemonFRLGWorld(World):
 
         if self.options.card_key == SilphCoCardKey.option_split:
             itempool = [item for item in itempool if item.name != "Card Key"]
-            itempool.append(self.create_item("Card Key 11F"))
+            itempool.append(self.create_item("Card Key 3F"))
         elif self.options.card_key == SilphCoCardKey.option_progressive:
             itempool = [item for item in itempool if "Card Key" not in item.name]
             for _ in range(10):
@@ -377,10 +382,10 @@ class PokemonFRLGWorld(World):
                     itempool.append(self.create_item("Progressive Pass"))
             elif self.options.island_passes == SeviiIslandPasses.option_split:
                 itempool = [item for item in itempool if item.name not in ("Tri Pass", "Rainbow Pass")]
-                itempool.append(self.create_item("One Pass"))
+                itempool.append(self.create_item("Three Pass"))
                 itempool.append(self.create_item("Four Pass"))
             elif self.options.island_passes == SeviiIslandPasses.option_progressive_split:
-                items_to_remove = ["Tri Pass", "Two Pass", "Three Pass", "Rainbow Pass",
+                items_to_remove = ["Tri Pass", "One Pass", "Two Pass", "Rainbow Pass",
                                    "Five Pass", "Six Pass", "Seven Pass"]
                 itempool = [item for item in itempool if item.name not in items_to_remove]
                 for _ in range(7):

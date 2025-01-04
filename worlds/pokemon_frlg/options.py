@@ -121,7 +121,8 @@ class ShuffleRunningShoes(Choice):
 
 class SilphCoCardKey(Choice):
     """
-    Sets how the card key that unlocks the doors in Silph Co. is handled.
+    Sets how the card key that unlocks the doors in Silph Co. is handled. If Split or Progressive, nine new locations
+    will be added to Silph Co. in the form of item balls on floors 2 through 11 (except for floor five).
 
     - Vanilla: There is one Card Key in the pool that unlocks every door in Silph Co.
     - Split: The Card Key is split into ten items, one for each floor of Silph Co. that has doors.
@@ -136,7 +137,8 @@ class SilphCoCardKey(Choice):
 
 class SeviiIslandPasses(Choice):
     """
-    Sets how the passes that allow you to travel to the Sevii Islands are handled.
+    Sets how the passes that allow you to travel to the Sevii Islands are handled. If Split or Progressive, five new
+    locations will be added to events related to the Sevii Islands.
 
     - Vanilla: The Tri Pass and Rainbow Pass are two separate items in the pool and can be found in any order.
     - Progressive: There are two Progressive Passes in the pool. You will always obtain the Tri Pass before the Rainbow

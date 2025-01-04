@@ -280,61 +280,61 @@
     "tags": ["FlyUnlock"]
   },
 
-  "NPC_GIFT_GOT_2F_CARD_KEY": {
-    "name": "Silph Co. 1F - Receptionist's Gift",
+  "ITEM_SILPH_CO_2F_CARD_KEY_2F": {
+    "name": "Silph Co. 2F - Southeast Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_3F_CARD_KEY": {
-    "name": "Silph Co. 3F - Worker's Gift",
+  "ITEM_SILPH_CO_3F_CARD_KEY_5F": {
+    "name": "Silph Co. 3F - East Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_4F_CARD_KEY": {
-    "name": "Silph Co. 4F - Worker's Gift",
+  "ITEM_SILPH_CO_4F_CARD_KEY_4F": {
+    "name": "Silph Co. 4F - North Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_5F_CARD_KEY": {
-    "name": "Silph Co. 5F - Worker's Gift",
+  "ITEM_SILPH_CO_6F_CARD_KEY_6F": {
+    "name": "Silph Co. 6F - Center Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_6F_CARD_KEY": {
-    "name": "Silph Co. 6F - Worker's Gift",
+  "ITEM_SILPH_CO_7F_CARD_KEY_7F": {
+    "name": "Silph Co. 7F - Northwest Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_7F_CARD_KEY": {
-    "name": "Silph Co. 7F - Worker's Gift",
+  "ITEM_SILPH_CO_8F_CARD_KEY_8F": {
+    "name": "Silph Co. 8F - West Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_8F_CARD_KEY": {
-    "name": "Silph Co. 8F - Worker's Gift",
+  "ITEM_SILPH_CO_9F_CARD_KEY_9F": {
+    "name": "Silph Co. 9F - Northwest Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_9F_CARD_KEY": {
-    "name": "Silph Co. 9F - Nurse's Gift",
+  "ITEM_SILPH_CO_10F_CARD_KEY_10F": {
+    "name": "Silph Co. 10F - Southeast Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_10F_CARD_KEY": {
-    "name": "Silph Co. 10F - Worker's Gift",
+  "ITEM_SILPH_CO_11F_CARD_KEY_11F": {
+    "name": "Silph Co. 11F - West Hallway Item",
     "tags": ["SplitCardKey"]
   },
 
-  "NPC_GIFT_GOT_FIVE_PASS": {
-    "name": "Five Island Town - Fisherman's Gift",
-    "tags": ["SplitIslandPasses"]
-  },
-  "NPC_GIFT_GOT_SEVEN_PASS": {
-    "name": "Seven Island Town - Old Woman's Gift",
-    "tags": ["SplitIslandPasses"]
-  },
-  "NPC_GIFT_GOT_SIX_PASS": {
-    "name": "Six Island Town - Boy's Gift",
-    "tags": ["SplitIslandPasses"]
-  },
-  "NPC_GIFT_GOT_THREE_PASS": {
-    "name": "Three Island Town - Woman's Gift",
+  "NPC_GIFT_GOT_ONE_PASS": {
+    "name": "Cinnabar Pokemon Center 1F - Bill's Gift",
     "tags": ["SplitIslandPasses"]
   },
   "NPC_GIFT_GOT_TWO_PASS": {
-    "name": "Two Island Town - Sailor's Gift",
+    "name": "Lostelle's House - Lostelle's Gift",
+    "tags": ["SplitIslandPasses"]
+  },
+  "NPC_GIFT_GOT_FIVE_PASS": {
+    "name": "Dotted Hole 1F - Dropped Item",
+    "tags": ["SplitIslandPasses"]
+  },
+  "NPC_GIFT_GOT_SIX_PASS": {
+    "name": "Icefall Cave Back - Lorelei's Gift",
+    "tags": ["SplitIslandPasses"]
+  },
+  "NPC_GIFT_GOT_SEVEN_PASS": {
+    "name": "One Island Pokemon Center 1F - Celio's Gift (Deliver Sapphire)",
     "tags": ["SplitIslandPasses"]
   },
 
