@@ -379,11 +379,6 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
         if map_group not in dungeon_species_map:
             dungeon_species_map[map_group] = {}
 
-    # Route 21 is split into a North and South Map. We'll set this after we randomize one of them
-    # in order to ensure that both maps have the same encounters
-    # todo: is there a vega equivalent?
-    route_21_randomized = False
-
     placed_species = set()
     priority_species = list()
 
@@ -400,29 +395,6 @@ def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
         old_encounters = [map_data.land_encounters,
                           map_data.water_encounters,
                           map_data.fishing_encounters]
-
-        # Check if the current map is a Route 21 map and the other one has already been randomized.
-        # If so, set the encounters of the current map based on the other Route 21 map.
-        # todo: vega?
-        if map_name == "MAP_ROUTE21_NORTH" and route_21_randomized:
-            map_data.land_encounters.slots = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots)
-            map_data.water_encounters.slots = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots)
-            map_data.fishing_encounters.slots = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots)
-            continue
-        elif map_name == "MAP_ROUTE21_SOUTH" and route_21_randomized:
-            map_data.land_encounters.slots = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots)
-            map_data.water_encounters.slots = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots)
-            map_data.fishing_encounters.slots = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots)
-            continue
-
-        if map_name == "MAP_ROUTE21_NORTH" or map_name == "MAP_ROUTE21_SOUTH":
-            route_21_randomized = True
 
         for i, table in enumerate(old_encounters):
             if table is not None:
