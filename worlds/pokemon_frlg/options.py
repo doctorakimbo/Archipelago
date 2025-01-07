@@ -942,6 +942,22 @@ class ReceiveItemMessages(Choice):
     option_none = 2
 
 
+class RandomizeMusic(Toggle):
+    """
+    Shuffles music played in any situation where it loops.
+    """
+    display_name = "Randomize Music"
+
+
+class RandomizeFanfares(Toggle):
+    """
+    Shuffles fanfares for item pickups, healing at the pokecenter, etc.
+
+    When this option is enabled, pressing B will interrupt most fanfares.
+    """
+    display_name = "Randomize Fanfares"
+
+
 class ProvideHints(Toggle):
     """
     Provides an Archipelago Hint for locations that tell you what item they give once you've gotten the in game hint.
@@ -1034,4 +1050,6 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     turbo_a: TurboA
     receive_item_messages: ReceiveItemMessages
+    randomize_music: RandomizeMusic
+    randomize_fanfares: RandomizeFanfares
     provide_hints: ProvideHints

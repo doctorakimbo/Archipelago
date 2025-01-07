@@ -1,6 +1,8 @@
 """
 Classes and functions related to creating a ROM patch
 """
+import copy
+
 import bsdiff4
 import struct
 from typing import TYPE_CHECKING, Dict, List, Tuple
@@ -26,6 +28,40 @@ FIRERED_REV0_HASH = "e26ee0d44e809351c8ce2d73c7400cdd"
 FIRERED_REV1_HASH = "51901a6e40661b3914aa333c802e24e8"
 LEAFGREEN_REV0_HASH = "612ca9473451fa42b51d1711031ed5f6"
 LEAFGREEN_REV1_HASH = "9d33a02159e018d09073e700e1fd10fd"
+
+
+_LOOPING_MUSIC = [
+    "MUS_RS_VS_GYM_LEADER", "MUS_RS_VS_TRAINER", "MUS_SCHOOL", "MUS_FOLLOW_ME", "MUS_GAME_CORNER", "MUS_ROCKET_HIDEOUT",
+    "MUS_GYM", "MUS_CINNABAR", "MUS_LAVENDER", "MUS_CYCLING", "MUS_ENCOUNTER_ROCKET", "MUS_ENCOUNTER_GIRL",
+    "MUS_ENCOUNTER_BOY", "MUS_HALL_OF_FAME", "MUS_VIRIDIAN_FOREST", "MUS_MT_MOON", "MUS_POKE_MANSION", "MUS_ROUTE1",
+    "MUS_ROUTE24", "MUS_ROUTE3", "MUS_ROUTE11", "MUS_VICTORY_ROAD", "MUS_VS_GYM_LEADER", "MUS_VS_TRAINER",
+    "MUS_VS_WILD", "MUS_VS_CHAMPION", "MUS_PALLET", "MUS_OAK_LAB", "MUS_OAK", "MUS_POKE_CENTER", "MUS_SS_ANNE",
+    "MUS_SURF", "MUS_POKE_TOWER", "MUS_SILPH", "MUS_FUCHSIA", "MUS_CELADON", "MUS_VICTORY_TRAINER", "MUS_VICTORY_WILD",
+    "MUS_VICTORY_GYM_LEADER", "MUS_VERMILLION", "MUS_PEWTER", "MUS_ENCOUNTER_RIVAL", "MUS_RIVAL_EXIT", "MUS_CAUGHT",
+    "MUS_POKE_JUMP", "MUS_UNION_ROOM", "MUS_NET_CENTER", "MUS_MYSTERY_GIFT", "MUS_BERRY_PICK", "MUS_SEVII_CAVE",
+    "MUS_TEACHY_TV_SHOW", "MUS_SEVII_ROUTE", "MUS_SEVII_DUNGEON", "MUS_SEVII_123", "MUS_SEVII_45", "MUS_SEVII_67",
+    "MUS_VS_DEOXYS", "MUS_VS_MEWTWO", "MUS_VS_LEGEND", "MUS_ENCOUNTER_GYM_LEADER", "MUS_ENCOUNTER_DEOXYS",
+    "MUS_TRAINER_TOWER", "MUS_SLOW_PALLET", "MUS_TEACHY_TV_MENU"
+]
+
+
+_FANFARES: Dict[str, int] = {
+    "MUS_LEVEL_UP": 80,
+    "MUS_OBTAIN_ITEM": 160,
+    "MUS_EVOLVED": 220,
+    "MUS_OBTAIN_TMHM": 220,
+    "MUS_HEAL": 160,
+    "MUS_OBTAIN_BADGE": 340,
+    "MUS_MOVE_DELETED": 180,
+    "MUS_OBTAIN_BERRY": 120,
+    "MUS_SLOTS_JACKPOT": 250,
+    "MUS_SLOTS_WIN": 150,
+    "MUS_TOO_BAD": 160,
+    "MUS_POKE_FLUTE": 450,
+    "MUS_OBTAIN_KEY_ITEM": 170,
+    "MUS_DEX_RATING": 196
+}
+_EVOLUTION_FANFARE_INDEX = list(_FANFARES.keys()).index("MUS_EVOLVED")
 
 
 class PokemonFRLGPatchExtension(APPatchExtension):
@@ -430,7 +466,11 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     normalize_encounter_rates = 1 if world.options.normalize_encounter_rates else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x0A, struct.pack("<B", normalize_encounter_rates))
 
-    # Set all Pokemon seen
+    # Set skipping fanfares
+    skip_fanfares = 1 if world.options.randomize_fanfares else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0B, struct.pack("<B", skip_fanfares))
+
+    # Set unlock seen dex info
     all_pokemon_seen = 1 if world.options.all_pokemon_seen else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x0C, struct.pack("<B", all_pokemon_seen))
 
@@ -660,6 +700,47 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     if "Total Darkness" in world.options.modify_world_state.value:
         flash_level_address = data.rom_addresses[game_version_revision]["sFlashLevelToRadius"]
         tokens.write_token(APTokenTypes.WRITE, flash_level_address + 8, struct.pack("<H", 0))
+
+    # Randomize music
+    if world.options.randomize_music:
+        # The "randomized sound table" is a patchboard that redirects sounds just before they get played
+        randomized_looping_music = _LOOPING_MUSIC.copy()
+        world.random.shuffle(randomized_looping_music)
+        sound_table_address = data.rom_addresses[game_version_revision]["gRandomizedSoundTable"]
+        for original_music, randomized_music  in zip(_LOOPING_MUSIC, randomized_looping_music):
+            tokens.write_token(
+                APTokenTypes.WRITE,
+                sound_table_address + (data.constants[original_music] * 2),
+                struct.pack("<H", data.constants[randomized_music])
+            )
+
+    # Randomize fanfares
+    if world.options.randomize_fanfares:
+        # Shuffle the lists, pair new tracks with original tracks, set the new track ids, and set new fanfare durations
+        randomized_fanfares = [fanfare_name for fanfare_name in _FANFARES]
+        world.random.shuffle(randomized_fanfares)
+        sound_table_address = data.rom_addresses[game_version_revision]["gRandomizedSoundTable"]
+        fanfares_address = data.rom_addresses[game_version_revision]["sFanfares"]
+
+        # Prevent the evolution fanfare from receiving the poke flute by swapping it with something else.
+        # The poke flute sound causes the evolution scene to get stuck for like 40 seconds
+        if randomized_fanfares[_EVOLUTION_FANFARE_INDEX] == "MUS_POKE_FLUTE":
+            swap_index = (_EVOLUTION_FANFARE_INDEX + 1) % len(_FANFARES)
+            temp = randomized_fanfares[_EVOLUTION_FANFARE_INDEX]
+            randomized_fanfares[_EVOLUTION_FANFARE_INDEX] = randomized_fanfares[swap_index]
+            randomized_fanfares[swap_index] = temp
+
+        for i, fanfare_data in enumerate(zip(_FANFARES.keys(), randomized_fanfares)):
+            tokens.write_token(
+                APTokenTypes.WRITE,
+                sound_table_address + (data.constants[fanfare_data[0]] * 2),
+                struct.pack("<H", data.constants[fanfare_data[1]])
+            )
+            tokens.write_token(
+                APTokenTypes.WRITE,
+                fanfares_address + (i * 4) + 2,
+                struct.pack("<H", data.constants[fanfare_data[1]])
+            )
 
     # Set slot auth
     tokens.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
