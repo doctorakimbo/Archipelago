@@ -1,10 +1,9 @@
 import copy
-import stat
 from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Union
 from BaseClasses import CollectionState, Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonFRLGItem
-from .options import FreeFlyLocation, PewterCityRoadblock, TownMapFlyLocation, ViridianCityRoadblock
+from .options import FreeFlyLocation, TownMapFlyLocation, ViridianCityRoadblock
 
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld

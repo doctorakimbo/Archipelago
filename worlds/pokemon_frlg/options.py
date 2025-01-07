@@ -82,6 +82,28 @@ class Trainersanity(Toggle):
     display_name = "Trainersanity"
 
 
+class Dexsanity(NamedRange):
+    """
+    Adding a "caught" Pokedex entry gives you an item (catching, evolving, trading, etc.).
+
+    You can specify how many Pokedex entries should be a check between 1 and 386. Depending on your settings for
+    randomizing wild Pokemon, there might not actually be as many locations as you specify.
+
+    Defeating Gym Leaders provides seen Pokedex info, allowing you to see on the map where a Pokemon can be found in
+    the wild.
+
+    Each entry will add a random filler item into the pool.
+    """
+    display_name = "Dexsanity"
+    default = 0
+    range_start = 1
+    range_end = 386
+    special_range_names = {
+        "none": 0,
+        "all": 386,
+    }
+
+
 class Famesanity(Toggle):
     """
     Unlocking entries in the Fame Checker gives you an item.
@@ -740,6 +762,8 @@ class MoveBlacklist(OptionSet):
 class HmCompatibility(NamedRange):
     """
     Sets the percent chance that a given HM is compatible with a species.
+
+    If you have seen a Pokemon already, the HMs it can use are listed in the Pokedex.
     """
     display_name = "HM Compatibility"
     default = -1
@@ -796,7 +820,7 @@ class GuaranteedCatch(Toggle):
     """
     Pokeballs are guaranteed to catch wild Pokemon regardless of catch rate.
     """
-    display_name = "Guarenteed Catch"
+    display_name = "Guaranteed Catch"
 
 
 class NormalizeEncounterRates(Toggle):
@@ -807,6 +831,13 @@ class NormalizeEncounterRates(Toggle):
     probability.
     """
     display_name = "Normalize Encounter Rates"
+
+
+class AllPokemonSeen(Toggle):
+    """
+    Start will all Pokemon seen in you Pokedex. This allows you to see where the Pokemon can be encountered in the wild.
+    """
+    display_name = "All Pokemon Seen"
 
 
 class ExpModifier(Range):
@@ -919,6 +950,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     shuffle_hidden: ShuffleHiddenItems
     extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
+    dexsanity: Dexsanity
     famesanity: Famesanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
     pokemon_request_locations: PokemonRequestLocations
@@ -980,6 +1012,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     min_catch_rate: MinCatchRate
     guaranteed_catch: GuaranteedCatch
     normalize_encounter_rates: NormalizeEncounterRates
+    all_pokemon_seen: AllPokemonSeen
     exp_modifier: ExpModifier
     starting_money: StartingMoney
     blind_trainers: BlindTrainers

@@ -1,8 +1,7 @@
 ## Base Rom Changes
 
-* Text speed is instant
+* Added a new setting for text speed Instant. The game will default to this setting
 * With an option set, text will advance while A is held
-* Running is enabled from the beginning of the game
 * Cycling and running is allowed in most maps
 * The game will prompt you to use another repel when one runs out
 * Bag and PC space was expanded
@@ -17,15 +16,22 @@ predetermined priority
 * Increased Safari Zone steps from 600 to 60000
 * You can fly between Kanto and the Sevii Islands
 * Trainers will not approach the player if Blind Trainers is on
-* The text displayed when a Trainer is about to send out a new pokémon has been shortened so that you can still see the name of the pokémon when deciding if you want to swap
+* The text displayed when a Trainer is about to send out a new Pokémon has been shortened so that you can still see the name of the Pokémon when deciding if you want to swap
+* Increased the rate at which a Pokémon's HP drains in battle to be based on the Pokémon's max HP
 * Added a GO HOME option to the menu that teleports you to Pallet Town
+* The Pikachu tutorial in the intro is skipped
 * The Old Man catching tutorial is skipped
 * Miguel's position in Mt. Moon will change based on which side you enter from
 * You are able to pick up both fossils in Mt. Moon after beating Miguel
 * The Team Rocket Grunt on Route 24 won't give you your reward until after the battle
 * The S.S. Anne will never depart
 * The Vermilion Gym puzzle doesn't reset if you get the second trash can switch wrong
+* Updated the coin purchase NPC at the Celadon Game Corner
+  * Changed the 50 coin purchase to a 100 coin purchase
+  * Added a 1000 and 1500 coin purchase option
+  * Made it so that you can purchase coins even if it would put you over the max coins of 9999
 * The Saffron City guards will block your way from both directions (this only matters if your free fly is Saffron City)
+* You are able to pick up both Pokémon in the Saffron Dojo
 * The Seafoam Islands entrances on Route 20 have been swapped so that you can travel from Cinnabar to Fuchsia
 * Only the last guard on Route 23 will check for badges or gyms
 * Professor Oak will give you the Mystic and Aurora Ticket in the Hall of Fame

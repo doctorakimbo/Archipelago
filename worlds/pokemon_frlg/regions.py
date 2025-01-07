@@ -362,6 +362,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
 
     regions["Menu"] = PokemonFRLGRegion("Menu", world.player, world.multiworld)
     regions["Menu"].connect(regions["Player's House 2F"], "Start Game")
+    regions["Menu"].connect(regions["Pokedex"], "Pokedex")
     regions["Menu"].connect(regions["Evolutions"], "Evolve")
     regions["Menu"].connect(regions["Sky"], "Flying")
 

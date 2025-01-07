@@ -3,13 +3,16 @@ from NetUtils import ClientStatus
 from Options import Toggle
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
-from .data import data, FAMESANITY_OFFSET
+from .data import data
 from .items import reverse_offset_item_value
 from .locations import offset_flag
 from .options import Goal
 
 if TYPE_CHECKING:
     from worlds._bizhawk.context import BizHawkClientContext
+
+DEXSANITY_OFFSET = 0x5000
+FAMESANITY_OFFSET = 0x6000
 
 BASE_ROM_NAME: Dict[str, str] = {
     "firered": "pokemon red version",
@@ -244,7 +247,7 @@ class PokemonFRLGClient(BizHawkClient):
             # Read flags in 2 chunks
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
-                [(sb1_address + 0x10E0, 0x90, "System Bus")],  # Flags
+                [(sb1_address + 0x1130, 0x90, "System Bus")],  # Flags
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
             )
 
@@ -255,12 +258,26 @@ class PokemonFRLGClient(BizHawkClient):
 
             read_result = await bizhawk.guarded_read(
                 ctx.bizhawk_ctx,
-                [(sb1_address + 0x1170, 0x90, "System Bus")],  # Flags continued
+                [(sb1_address + 0x11C0, 0x90, "System Bus")],  # Flags continued
                 [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
             )
 
             if read_result is not None:
                 flag_bytes += read_result[0]
+
+            # Read fame checker flags
+            fame_checker_bytes = bytes(0)
+            fame_checker_read_status = False
+            if ctx.slot_data["famesanity"]:
+                read_result = await bizhawk.guarded_read(
+                    ctx.bizhawk_ctx,
+                    [(sb1_address + 0x3B14, 0x40, "System Bus")],  # Fame Checker
+                    [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]
+                )
+
+                if read_result is not None:
+                    fame_checker_bytes = read_result[0]
+                    fame_checker_read_status = True
 
             # Read pokedex flags
             pokemon_caught_bytes = bytes(0)
@@ -304,11 +321,27 @@ class PokemonFRLGClient(BizHawkClient):
                         if flag_id in HINT_FLAG_MAP:
                             local_hints[HINT_FLAG_MAP[flag_id]] = True
 
+            # Check set fame checker flags
+            if fame_checker_read_status:
+                fame_checker_index = 0
+                for byte_i, byte in enumerate(fame_checker_bytes):
+                    if byte_i % 4 == 0:  # The Fame Checker flags are every 4 bytes
+                        for i in range(2, 8):
+                            if byte & (1 << i) != 0:
+                                location_id = offset_flag(FAMESANITY_OFFSET + fame_checker_index)
+                                if location_id in ctx.server_locations:
+                                    local_checked_locations.add(location_id)
+                            fame_checker_index += 1
+
             # Get caught Pokémon count
             if pokedex_read_status:
                 for byte_i, byte in enumerate(pokemon_caught_bytes):
                     for i in range(8):
                         if byte & (1 << i) != 0:
+                            dex_number = byte_i * 8 + i
+                            location_id = offset_flag(DEXSANITY_OFFSET + dex_number)
+                            if location_id in ctx.server_locations:
+                                local_checked_locations.add(location_id)
                             caught_pokemon += 1
 
             # Send locations
@@ -407,7 +440,7 @@ class PokemonFRLGClient(BizHawkClient):
         read_result = await bizhawk.guarded_read(
             ctx.bizhawk_ctx,
             [
-                (sb1_address + 0x3DD8, 2, "System Bus"),
+                (sb1_address + 0x3DE8, 2, "System Bus"),
                 (received_item_address + 4, 1, "System Bus")
             ],
             [guards["IN OVERWORLD"], guards["SAVE BLOCK 1"]]

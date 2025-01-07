@@ -21,10 +21,10 @@ from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, ge
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, GameVersion, Goal,
-                      RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon, SeviiIslandPasses,
-                      ShuffleHiddenItems, ShuffleBadges, ShuffleRunningShoes, SilphCoCardKey, TownMapFlyLocation,
-                      ViridianCityRoadblock)
+from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, Dexsanity, FlashRequired, FreeFlyLocation,
+                      GameVersion, Goal, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon,
+                      SeviiIslandPasses, ShuffleHiddenItems, ShuffleBadges, ShuffleRunningShoes, SilphCoCardKey,
+                      TownMapFlyLocation, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -271,6 +271,8 @@ class PokemonFRLGWorld(World):
             tags.add("ExtraKeyItem")
         if self.options.trainersanity:
             tags.add("Trainer")
+        if self.options.dexsanity != Dexsanity.special_range_names["none"]:
+            tags.add("Pokedex")
         if self.options.famesanity:
             tags.add("FameChecker")
         if self.options.pokemon_request_locations:
@@ -488,6 +490,29 @@ class PokemonFRLGWorld(World):
             if not collection_state.can_reach(location, player=self.player):
                 region = self.multiworld.get_region(trade[0], self.player)
                 region.locations.remove(location)
+
+        # Delete dexsanity locations that are not in logic in an all_state since they aren't accessible
+        pokedex_region = self.multiworld.get_region("Pokedex", self.player)
+        for location in pokedex_region.locations.copy():
+            if not collection_state.can_reach(location, player=self.player):
+                pokedex_region.locations.remove(location)
+                item_to_remove = next(item for item in self.multiworld.itempool
+                                      if item.classification == ItemClassification.filler
+                                      and item.player == self.player)
+                self.multiworld.itempool.remove(item_to_remove)
+
+        # Delete dexsanity locations if there are more than the amount specified in the settings
+        if len(pokedex_region.locations) > self.options.dexsanity.value:
+            pokedex_region_locations = pokedex_region.locations.copy()
+            self.random.shuffle(pokedex_region_locations)
+            for location in pokedex_region_locations:
+                pokedex_region.locations.remove(location)
+                item_to_remove = next(item for item in self.multiworld.itempool
+                                      if item.classification == ItemClassification.filler
+                                      and item.player == self.player)
+                self.multiworld.itempool.remove(item_to_remove)
+                if len(pokedex_region.locations) <= self.options.dexsanity.value:
+                    break
 
     @classmethod
     def stage_post_fill(cls, multiworld):

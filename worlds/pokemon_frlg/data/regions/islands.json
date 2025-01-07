@@ -1697,7 +1697,10 @@
     "has_water": false,
     "has_fishing": false,
     "kanto": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_DEEP_SEA_SCALE",
+      "NPC_GIFT_GOT_DEEP_SEA_TOOTH"
+    ],
     "events": [],
     "exits": {
       "REGION_SEVEN_ISLAND/VISIT": "Seven Island Town Visit",
@@ -1870,7 +1873,9 @@
     "has_water": true,
     "has_fishing": true,
     "kanto": false,
-    "locations": [],
+    "locations": [
+      "NPC_GIFT_GOT_SCANNER"
+    ],
     "events": [],
     "exits": {
       "REGION_SEVEN_ISLAND_TANOBY_RUINS/MAIN": "Tanoby Ruins Landing",
