@@ -73,13 +73,24 @@ class ExtraKeyItems(Toggle):
     display_name = "Extra Key Items"
 
 
-class Trainersanity(Toggle):
+class Trainersanity(NamedRange):
     """
     Defeating a trainer gives you an item.
+
+    You can specify how many Trainers should be a check between 1 and 456. If you have Kanto Only on, the amount of
+    Trainer checks might be lower than the amount you specify. Trainers that have checks will periodically have an
+    exclamation mark appear above their head in game.
 
     Trainers are no longer missable. Each trainer will add a random filler item into the pool.
     """
     display_name = "Trainersanity"
+    default = 0
+    range_start = 1
+    range_end = 456
+    special_range_names = {
+        "none": 0,
+        "all": 456,
+    }
 
 
 class Dexsanity(NamedRange):
@@ -87,7 +98,8 @@ class Dexsanity(NamedRange):
     Adding a "caught" Pokedex entry gives you an item (catching, evolving, trading, etc.).
 
     You can specify how many Pokedex entries should be a check between 1 and 386. Depending on your settings for
-    randomizing wild Pokemon, there might not actually be as many locations as you specify.
+    randomizing wild Pokemon, there might not actually be as many locations as you specify. Pokemon that have checks
+    will have a black silhouette of a pokeball in the Pokedex and in the battle HUD if you have seen them already.
 
     Defeating Gym Leaders provides seen Pokedex info, allowing you to see on the map where a Pokemon can be found in
     the wild.

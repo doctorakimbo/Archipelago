@@ -19,6 +19,7 @@ predetermined priority
 * The text displayed when a Trainer is about to send out a new Pokémon has been shortened so that you can still see the name of the Pokémon when deciding if you want to swap
 * Increased the rate at which a Pokémon's HP drains in battle to be based on the Pokémon's max HP
 * Added a GO HOME option to the menu that teleports you to Pallet Town
+* All evolution items (Moon Stone, Dragon Scale, etc.) have been turned into key items that can be used repeatadly. The items that have a held effect (Metal Coat, Deep Sea Scale, etc.) will give you both a held item version and key item version of the item when you get them.
 * The Pikachu tutorial in the intro is skipped
 * The Old Man catching tutorial is skipped
 * Miguel's position in Mt. Moon will change based on which side you enter from
@@ -45,6 +46,7 @@ predetermined priority
   * The initial cutscene with the biker at the Two Island Game Corner has been removed
   * Three Isle Path is open immediately
   * The Rocket Warehouse requires both passwords to open
+  * A new event was added on Seven Island where you can get a Scanner in the Tanoby Ruins after solving the puzzle in the Tanoby Key. The Scanner can be traded to the Scientist in town for a Deep Sea Scale and Deep Sea Tooth.
 * Evolutions that would be impossible have been changed:
   * Regular trade evolutions now evolve at Level 37
   * Held item trade evolutions now evolve by using the item on the pokémon from the bag

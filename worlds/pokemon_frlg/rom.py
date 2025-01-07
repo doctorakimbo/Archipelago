@@ -169,19 +169,22 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         if not world.options.kanto_only:
             rival_rewards.append("CHAMPION_REMATCH")
         for trainer in rival_rewards:
-            location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_BULBASAUR_REWARD"].name,
-                                                     world.player)
-            alternates = [
-                f"TRAINER_{trainer}_CHARMANDER",
-                f"TRAINER_{trainer}_SQUIRTLE"
-            ]
+            try:
+                location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_BULBASAUR_REWARD"].name,
+                                                         world.player)
+                alternates = [
+                    f"TRAINER_{trainer}_CHARMANDER",
+                    f"TRAINER_{trainer}_SQUIRTLE"
+                ]
 
-            location_info.extend(
-                (
-                    data.constants["TRAINER_FLAGS_START"] + data.constants[alternate],
-                    location.item.player,
-                    location.item.name
-                ) for alternate in alternates)
+                location_info.extend(
+                    (
+                        data.constants["TRAINER_FLAGS_START"] + data.constants[alternate],
+                        location.item.player,
+                        location.item.name
+                    ) for alternate in alternates)
+            except KeyError:
+                continue
 
     player_name_ids: Dict[str, int] = {world.player_name: 0}
     item_name_offsets: Dict[str, int] = {}
