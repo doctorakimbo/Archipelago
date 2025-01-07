@@ -88,7 +88,7 @@
   },
   "ITEM_COIN_CASE": {
     "name": "Coin Case",
-    "classification": "PROGRESSION",
+    "classification": "FILLER",
     "tags": ["Unique"]
   },
   "ITEM_DARK_FOSSIL": {
@@ -164,6 +164,11 @@
   "ITEM_POKE_FLUTE": {
     "name": "Poke Flute",
     "classification": "FILLER",
+    "tags": ["Unique"]
+  },
+  "ITEM_POKEBLOCK_CASE": {
+    "name": "Pokeblock Case",
+    "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
   "ITEM_POWDER_JAR": {

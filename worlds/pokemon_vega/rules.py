@@ -981,9 +981,9 @@ def set_rules(world: "PokemonVegaWorld") -> None:
              lambda state: state.has("Psycolt", player)) # todo: what's the moon stone condition
     set_rule(get_location("Evolution - Psycolt (Sun Stone)"),
              lambda state: state.has("Psycolt", player)) # todo: what's the sun stone condition
-    set_rule(get_location("Evolution - Tyrogue (Atk < Def)"),
-             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
     set_rule(get_location("Evolution - Tyrogue (Atk > Def)"),
+             lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
+    set_rule(get_location("Evolution - Tyrogue (Atk < Def)"),
              lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
     set_rule(get_location("Evolution - Tyrogue (Atk = Def)"),
              lambda state: state.has("Tyrogue", player) and evolve_level(state, 20))
@@ -1115,9 +1115,9 @@ def set_rules(world: "PokemonVegaWorld") -> None:
              lambda state: state.has("Katuna", player) and evolve_level(state, 16))
     set_rule(get_location("Evolution - Maelstream"),
              lambda state: state.has("Maelstream", player) and evolve_level(state, 32))
-    set_rule(get_location("Evolution - Cheshile (Low Personality)"),
-             lambda state: state.has("Cheshile", player) and evolve_level(state, 24))
     set_rule(get_location("Evolution - Cheshile (High Personality)"),
+             lambda state: state.has("Cheshile", player) and evolve_level(state, 24))
+    set_rule(get_location("Evolution - Cheshile (Low Personality)"),
              lambda state: state.has("Cheshile", player) and evolve_level(state, 24))
     set_rule(get_location("Evolution - Rivird"),
              lambda state: state.has("Rivird", player) and evolve_level(state, 23))
