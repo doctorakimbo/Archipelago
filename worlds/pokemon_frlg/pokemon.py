@@ -37,11 +37,19 @@ _DAMAGING_MOVES = frozenset({
 })
 
 _HM_MOVES = frozenset({
-    15, 19, 57, 70, 127, 148, 249, 291
+    data.constants["MOVE_CUT"],
+    data.constants["MOVE_FLY"],
+    data.constants["MOVE_SURF"],
+    data.constants["MOVE_STRENGTH"],
+    data.constants["MOVE_FLASH"],
+    data.constants["MOVE_ROCK_SMASH"],
+    data.constants["MOVE_WATERFALL"],
+    data.constants["MOVE_DIVE"]
 })
 
 _MOVE_BLACKLIST = frozenset({
-    0, 165
+    data.constants["MOVE_NONE"],
+    data.constants["MOVE_STRUGGLE"]
 })
 
 _DUNGEON_GROUPS: Dict[str, str] = {
@@ -157,14 +165,15 @@ def _get_random_type(random: "Random") -> int:
 
 
 def _get_random_move(random: "Random", blacklist: Set[int]) -> int:
-    extended_blacklist = _HM_MOVES | _MOVE_BLACKLIST | blacklist
-    allowed_moves = [i for i in range(data.constants["MOVES_COUNT"]) if i not in extended_blacklist]
+    merged_blacklist = _HM_MOVES | _MOVE_BLACKLIST | blacklist
+    allowed_moves = [i for i in range(data.constants["MOVES_COUNT"]) if i not in merged_blacklist]
     return random.choice(allowed_moves)
 
 
 def _get_random_damaging_move(random: "Random", blacklist: Set[int]) -> int:
-    allowed_moves = [i for i in list(_DAMAGING_MOVES) if i not in blacklist]
-    return random.choice(allowed_moves)
+    non_damage_blacklist = {i for i in range(data.constants["MOVES_COUNT"]) if i not in _DAMAGING_MOVES}
+    merged_blacklist = blacklist | non_damage_blacklist
+    return _get_random_move(random, merged_blacklist)
 
 
 def _filter_species_by_nearby_bst(species: List[SpeciesData], target_bst: int) -> List[SpeciesData]:
