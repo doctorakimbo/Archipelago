@@ -20,6 +20,8 @@ predetermined priority
 * Increased the rate at which a Pokémon's HP drains in battle to be based on the Pokémon's max HP
 * Added a GO HOME option to the menu that teleports you to Pallet Town
 * All evolution items (Moon Stone, Dragon Scale, etc.) have been turned into key items that can be used repeatadly. The items that have a held effect (Metal Coat, Deep Sea Scale, etc.) will give you both a held item version and key item version of the item when you get them.
+* Talking to the Mystery Gift Man on the 2nd floor of any Pokemon Center will allow you to respawn any static encounters you haven't caught yet.
+* Talking to the Wireless Club Attendant (left) on the 2nd floor of any Pokemon Center will let you fight a random uncatchable Pokemon in order to grind exp and money.
 * The Pikachu tutorial in the intro is skipped
 * The Old Man catching tutorial is skipped
 * Miguel's position in Mt. Moon will change based on which side you enter from

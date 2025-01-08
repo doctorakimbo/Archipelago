@@ -31,22 +31,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         "Waterfall": "Volcano Badge"
     }
 
-    kanto_rematchable_trainer_regions: List[str] = [
-        "Route 3", "Route 4 Northeast", "Route 6", "Route 8", "Route 9", "Route 10 North", "Route 10 South",
-        "Route 10 Near Power Plant", "Route 11 West", "Route 12 Center", "Route 12 South", "Route 12 Behind North Tree",
-        "Route 13", "Route 14", "Route 15 South", "Route 15 North", "Route 16 Northeast", "Route 16 Southwest",
-        "Route 17", "Route 18 East", "Route 19", "Route 19 Water", "Route 20 East", "Route 20 Near South Cave",
-        "Route 20 West", "Route 21", "Route 24", "Route 25"
-    ]
-
-    sevii_rematchable_trainer_regions: List[str] = [
-        "Treasure Beach Water", "Kindle Road South Water", "Kindle Road Center", "Kindle Road North Water",
-        "Bond Bridge", "Bond Bridge Water", "Memorial Pillar", "Water Labyrinth", "Resort Gorgeous Water",
-        "Resort Gorgeous Near Resort", "Water Path South", "Water Path South Water", "Water Path North", "Ruin Valley",
-        "Green Path Water", "Outcast Island Water", "Canyon Entrance", "Sevault Canyon", "Tanoby Ruins Scufib Island",
-        "Tanoby Ruins Weepth Island", "Tanoby Ruins Monean Island", "Trainer Tower Exterior South"
-    ]
-
     island_passes: Dict[int, List[str]] = {
         1: ["Tri Pass", "One Pass"],
         2: ["Tri Pass", "Two Pass"],
@@ -57,15 +41,8 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         7: ["Rainbow Pass", "Seven Pass"]
     }
 
-    rematchable_trainer_regions = kanto_rematchable_trainer_regions
-    if not options.kanto_only:
-        rematchable_trainer_regions.extend(sevii_rematchable_trainer_regions)
-
     def has_badge_requirement(hm: str, state: CollectionState):
         return hm in options.remove_badge_requirement.value or state.has(badge_requirements[hm], player)
-
-    def can_reach_any_region(regions: List[str], state: CollectionState):
-        return any([state.can_reach_region(region, player) for region in regions])
 
     def can_cut(state: CollectionState):
         return (state.has("HM01 Cut", player)
@@ -249,10 +226,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                 return has_n_gyms(state, evolution_data.param / 7)
         return False
 
-    def can_grind_money(state: CollectionState):
-        return ((state.has("Vs. Seeker", player) and can_reach_any_region(rematchable_trainer_regions, state)) or
-                can_challenge_elite_four_rematch(state))
-
     def can_open_silph_door(floor: int, state: CollectionState):
         return (state.has_any(["Card Key", f"Card Key {floor}F"], player) or
                 state.has("Progressive Card Key", player, floor - 1))
@@ -359,9 +332,6 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Defeat Brock", player) and state.can_reach_region("Route 3", player))
     set_rule(get_entrance("Pewter City Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_pewter_city_roadblock(state))
-
-    # Route 4
-    set_rule(get_location("Route 4 Pokemon Center 1F - Salesman Purchase"), lambda state: can_grind_money(state))
 
     # Mt. Moon
     if "Mt. Moon" in options.additional_dark_caves.value:
@@ -551,26 +521,19 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Route 7 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
     # Celadon City
-    set_rule(get_location("Celadon Department Store Roof - Thirsty Girl's Gift (Give Fresh Water)"),
-             lambda state: can_grind_money(state))
-    set_rule(get_location("Celadon Department Store Roof - Thirsty Girl's Gift (Give Soda Pop)"),
-             lambda state: can_grind_money(state))
-    set_rule(get_location("Celadon Department Store Roof - Thirsty Girl's Gift (Give Lemonade)"),
-             lambda state: can_grind_money(state))
     set_rule(get_location("Celadon Game Corner - Fisherman's Gift"), lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner - Scientist's Gift"), lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner - Gentleman's Gift"), lambda state: state.has("Coin Case", player))
-    set_rule(get_location("Celadon Department Store Roof - Vending Machine"), lambda state: can_grind_money(state))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 1"),
-             lambda state: state.has("Coin Case", player) and can_grind_money(state))
+             lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 2"),
-             lambda state: state.has("Coin Case", player) and can_grind_money(state))
+             lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 3"),
-             lambda state: state.has("Coin Case", player) and can_grind_money(state))
+             lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 4"),
-             lambda state: state.has("Coin Case", player) and can_grind_money(state))
+             lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 5"),
-             lambda state: state.has("Coin Case", player) and can_grind_money(state))
+             lambda state: state.has("Coin Case", player))
     set_rule(get_entrance("Celadon City Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Celadon City Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Celadon City Near Gym Cuttable Tree"), lambda state: can_cut(state))
@@ -906,7 +869,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_location("Two Island Game Corner - Lostelle's Dad's Gift"),
                  lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
         set_rule(get_location("Two Island Town - Market Stall"),
-                 lambda state: state.has_all(["Rescue Lostelle", "Defeat Champion"], player) and can_grind_money(state))
+                 lambda state: state.has_all(["Rescue Lostelle", "Defeat Champion"], player))
         set_rule(get_location("Two Island Game Corner - Lostelle's Dad's Delivery"),
                  lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
 
