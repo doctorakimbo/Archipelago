@@ -464,17 +464,23 @@ class PokemonFRLGWorld(World):
                 region = self.multiworld.get_region(trade[0], self.player)
                 region.locations.remove(location)
 
+        # Get all filler items for player
+        filler_items = [item for item in self.multiworld.itempool
+                        if item.classification == ItemClassification.filler
+                        and item.player == self.player]
+        self.random.shuffle(filler_items)
+
         # Delete trainersanity locations if there are more than the amount specified in the settings
-        trainer_locations = [loc for loc in self.multiworld.get_locations(self.player) if "Trainer" in loc.tags]
+        trainer_locations = [loc for loc in self.multiworld.get_locations(self.player)
+                             if "Trainer" in loc.tags
+                             and not loc.is_event]
         locs_to_remove = len(trainer_locations) - self.options.trainersanity.value
         if locs_to_remove > 0:
             self.random.shuffle(trainer_locations)
             for location in trainer_locations:
                 region = location.parent_region
                 region.locations.remove(location)
-                item_to_remove = next(item for item in self.multiworld.itempool
-                                      if item.classification == ItemClassification.filler
-                                      and item.player == self.player)
+                item_to_remove = filler_items.pop(0)
                 self.multiworld.itempool.remove(item_to_remove)
                 locs_to_remove -= 1
                 if locs_to_remove <= 0:
@@ -485,9 +491,7 @@ class PokemonFRLGWorld(World):
         for location in pokedex_region.locations.copy():
             if not collection_state.can_reach(location, player=self.player):
                 pokedex_region.locations.remove(location)
-                item_to_remove = next(item for item in self.multiworld.itempool
-                                      if item.classification == ItemClassification.filler
-                                      and item.player == self.player)
+                item_to_remove = filler_items.pop(0)
                 self.multiworld.itempool.remove(item_to_remove)
 
         # Delete dexsanity locations if there are more than the amount specified in the settings
@@ -496,9 +500,7 @@ class PokemonFRLGWorld(World):
             self.random.shuffle(pokedex_region_locations)
             for location in pokedex_region_locations:
                 pokedex_region.locations.remove(location)
-                item_to_remove = next(item for item in self.multiworld.itempool
-                                      if item.classification == ItemClassification.filler
-                                      and item.player == self.player)
+                item_to_remove = filler_items.pop(0)
                 self.multiworld.itempool.remove(item_to_remove)
                 if len(pokedex_region.locations) <= self.options.dexsanity.value:
                     break
