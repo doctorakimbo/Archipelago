@@ -553,6 +553,25 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         if map_data.fishing_encounters is not None:
             map_data.fishing_encounters.slots[game_version] = new_encounter_slots[2]
 
+    # If we failed to place Magikarp, Heracross, and/or Togepi put them in their vanilla spots
+    if data.constants["SPECIES_MAGIKARP"] in priority_species:
+        map_data = world.modified_maps["MAP_PALLET_TOWN"]
+        slots = map_data.fishing_encounters.slots[game_version]
+        for i in [0, 1, 3]:
+            slots[i].species_id = data.constants["SPECIES_MAGIKARP"]
+
+    if data.constants["SPECIES_HERACROSS"] in priority_species:
+        map_data = world.modified_maps["MAP_SIX_ISLAND_PATTERN_BUSH"]
+        slots = map_data.land_encounters.slots[game_version]
+        for i in [5, 7, 9, 11]:
+            slots[i].species_id = data.constants["SPECIES_HERACROSS"]
+
+    if data.constants["SPECIES_TOGEPI"] in priority_species:
+        map_data = world.modified_maps["MAP_FIVE_ISLAND_MEMORIAL_PILLAR"]
+        slots = map_data.land_encounters.slots[game_version]
+        for slot in slots:
+            slot.species_id = data.constants["SPECIES_TOGEPI"]
+
 
 def randomize_starters(world: "PokemonFRLGWorld") -> None:
     if world.options.starters == RandomizeStarters.option_vanilla:
