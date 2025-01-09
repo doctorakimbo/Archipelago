@@ -115,6 +115,7 @@ class PokemonFRLGWorld(World):
     encounter_name_list: List[str]
     encounter_level_list: List[int]
     scaling_data: List[ScalingData]
+    filler_items: List[PokemonFRLGItem]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -140,6 +141,7 @@ class PokemonFRLGWorld(World):
         self.encounter_name_list = []
         self.encounter_level_list = []
         self.scaling_data = []
+        self.filler_items = []
         self.finished_level_scaling = threading.Event()
 
     @classmethod
@@ -420,6 +422,8 @@ class PokemonFRLGWorld(World):
                     itempool.append(self.create_item(get_random_item(self, ItemClassification.filler)))
                     removed_items_count -= 1
 
+        self.filler_items = [item for item in itempool if item.filler]
+        self.random.shuffle(self.filler_items)
         self.multiworld.itempool += itempool
 
     def set_rules(self) -> None:
@@ -464,12 +468,6 @@ class PokemonFRLGWorld(World):
                 region = self.multiworld.get_region(trade[0], self.player)
                 region.locations.remove(location)
 
-        # Get all filler items for player
-        filler_items = [item for item in self.multiworld.itempool
-                        if item.classification == ItemClassification.filler
-                        and item.player == self.player]
-        self.random.shuffle(filler_items)
-
         # Delete trainersanity locations if there are more than the amount specified in the settings
         trainer_locations = [loc for loc in self.multiworld.get_locations(self.player)
                              if "Trainer" in loc.tags
@@ -480,7 +478,7 @@ class PokemonFRLGWorld(World):
             for location in trainer_locations:
                 region = location.parent_region
                 region.locations.remove(location)
-                item_to_remove = filler_items.pop(0)
+                item_to_remove = self.filler_items.pop(0)
                 self.multiworld.itempool.remove(item_to_remove)
                 locs_to_remove -= 1
                 if locs_to_remove <= 0:
@@ -491,7 +489,7 @@ class PokemonFRLGWorld(World):
         for location in pokedex_region.locations.copy():
             if not collection_state.can_reach(location, player=self.player):
                 pokedex_region.locations.remove(location)
-                item_to_remove = filler_items.pop(0)
+                item_to_remove = self.filler_items.pop(0)
                 self.multiworld.itempool.remove(item_to_remove)
 
         # Delete dexsanity locations if there are more than the amount specified in the settings
@@ -500,7 +498,7 @@ class PokemonFRLGWorld(World):
             self.random.shuffle(pokedex_region_locations)
             for location in pokedex_region_locations:
                 pokedex_region.locations.remove(location)
-                item_to_remove = filler_items.pop(0)
+                item_to_remove = self.filler_items.pop(0)
                 self.multiworld.itempool.remove(item_to_remove)
                 if len(pokedex_region.locations) <= self.options.dexsanity.value:
                     break
@@ -618,37 +616,82 @@ class PokemonFRLGWorld(World):
                 self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla):
             spoiler_handle.write(f"\n\nPokemon Locations ({self.multiworld.player_name[self.player]}):\n\n")
 
-        if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
-            pokemon_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations(self.player)
-                if "Pokemon" in location.tags and "Wild" in location.tags
-            ]
-            for location in pokemon_locations:
-                spoiler_handle.write(location.name + ": " + location.item.name + "\n")
+            from collections import defaultdict
 
-        if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
-            pokemon_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations(self.player)
-                if "Pokemon" in location.tags and "Misc" in location.tags
-            ]
-            for location in pokemon_locations:
-                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
-                    name = location.item.name.split()[1]
-                else:
-                    name = location.item.name
-                spoiler_handle.write(location.name + ": " + name + "\n")
+            species_locations = defaultdict(set)
 
-        if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
-            pokemon_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations(self.player)
-                if "Pokemon" in location.tags and "Legendary" in location.tags
-            ]
-            for location in pokemon_locations:
-                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
-                    name = location.item.name.split()[1]
-                else:
-                    name = location.item.name
-                spoiler_handle.write(location.name + ": " + name + "\n")
+            if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
+                pokemon_locations: List[PokemonFRLGLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Wild" in location.tags
+                ]
+                for location in pokemon_locations:
+                    species_locations[location.item.name].add(location.spoiler_name)
+
+            if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+                pokemon_locations: List[PokemonFRLGLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Misc" in location.tags
+                ]
+                for location in pokemon_locations:
+                    if location.item.name.startswith("Missable"):
+                        continue
+                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+                pokemon_locations: List[PokemonFRLGLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Legendary" in location.tags
+                ]
+                for location in pokemon_locations:
+                    if location.item.name.startswith("Missable"):
+                        continue
+                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            lines = [f"{species}: {', '.join(sorted(locations))}\n"
+                     for species, locations in species_locations.items()]
+            lines.sort()
+            for line in lines:
+                spoiler_handle.write(line)
+
+    def extend_hint_information(self, hint_data):
+        if self.options.dexsanity != Dexsanity.special_range_names["none"]:
+            from collections import defaultdict
+
+            species_locations = defaultdict(set)
+
+            if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
+                pokemon_locations: List[PokemonFRLGLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Wild" in location.tags
+                ]
+                for location in pokemon_locations:
+                    species_locations[location.item.name].add(location.spoiler_name)
+
+            if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+                pokemon_locations: List[PokemonFRLGLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Misc" in location.tags
+                ]
+                for location in pokemon_locations:
+                    if location.item.name.startswith("Missable"):
+                        continue
+                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+                pokemon_locations: List[PokemonFRLGLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Legendary" in location.tags
+                ]
+                for location in pokemon_locations:
+                    if location.item.name.startswith("Missable"):
+                        continue
+                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            hint_data[self.player] = {
+                self.location_name_to_id[f"Pokedex - {species}"]: ", ".join(sorted(maps))
+                for species, maps in species_locations.items()
+            }
 
     def modify_multidata(self, multidata: Dict[str, Any]):
         import base64

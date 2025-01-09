@@ -101,6 +101,7 @@ class PokemonFRLGLocation(Location):
     default_item_id: Optional[int]
     tags: FrozenSet[str]
     data_ids: Optional[List[str]]
+    spoiler_name: str
 
     def __init__(
             self,
@@ -111,13 +112,14 @@ class PokemonFRLGLocation(Location):
             item_address: Optional[Dict[str, Union[int, List[int]]]] = None,
             default_item_id: Optional[int] = None,
             tags: FrozenSet[str] = frozenset(),
-            data_ids: Optional[List[str]] = None) -> None:
+            data_ids: Optional[List[str]] = None,
+            spoiler_name: Optional[str] = None) -> None:
         super().__init__(player, name, address, parent)
         self.default_item_id = None if default_item_id is None else offset_item_value(default_item_id)
         self.item_address = item_address
         self.tags = tags
         self.data_ids = data_ids
-
+        self.spoiler_name = spoiler_name if spoiler_name is not None else name
 
 def offset_flag(flag: int) -> int:
     if flag is None:

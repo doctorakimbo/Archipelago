@@ -756,7 +756,7 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
         elif item_name[0] == "Missable":
             item = f"Missable {species.name}"
         else:
-            item = item_name[0]
+            item = species.name
 
         new_event = EventData(
             world.modified_events[name].id,
