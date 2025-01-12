@@ -62,7 +62,7 @@
   },
   "EVENT_SAVE_BILL": {
     "name": "Route 25 Sea Cottage - Cell Separation System",
-    "item": "Save Bill",
+    "item": "Help Bill",
     "tags": ["Event"]
   },
   "EVENT_BUY_FIRE_STONE": {
@@ -145,7 +145,7 @@
     "item": "Free Captured Pokemon",
     "tags": ["Event"]
   },
-  "EVENT_SPAWN_UNOWN": {
+  "EVENT_UNLOCK_RUINS": {
     "name": "Tanoby Key - Solve Puzzle",
     "item": "Unlock Ruins",
     "tags": ["Event"]

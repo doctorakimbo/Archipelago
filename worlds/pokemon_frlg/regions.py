@@ -21,7 +21,7 @@ INDIRECT_CONDITIONS: Dict[str, List[str]] = {
 }
 
 SEVII_REQUIRED_EVENTS = [
-    "Champion's Room - Champion Rematch Battle"
+    "Champion's Room - Champion Rematch Reward"
 ]
 
 STATIC_POKEMON_SPOILER_NAMES = {

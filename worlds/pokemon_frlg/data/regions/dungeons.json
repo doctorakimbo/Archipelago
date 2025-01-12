@@ -4842,7 +4842,7 @@
     "kanto": false,
     "locations": [],
     "events": [
-      "EVENT_SPAWN_UNOWN"
+      "EVENT_UNLOCK_RUINS"
     ],
     "exits": {},
     "warps": {

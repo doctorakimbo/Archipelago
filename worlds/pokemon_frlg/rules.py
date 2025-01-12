@@ -157,7 +157,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     def can_pass_cerulean_city_roadblocks(state: CollectionState):
         if "Remove Cerulean Roadblocks" in options.modify_world_state.value:
             return True
-        return state.has("Save Bill", player)
+        return state.has("Help Bill", player)
 
     def can_enter_cerulean_cave(state: CollectionState):
         requirement = options.cerulean_cave_requirement
@@ -291,16 +291,16 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
              lambda state: state.has("Aurora Ticket", player) and state.can_reach_region("Vermilion City", player))
 
     # Pallet Town
-    set_rule(get_location("Rival's House - Daisy's Gift"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Gift (Deliver Parcel)"),
+    set_rule(get_location("Rival's House - Daisy"), lambda state: state.has("Deliver Oak's Parcel", player))
+    set_rule(get_location("Professor Oak's Lab - Oak (Deliver Parcel)"),
              lambda state: state.has("Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Gift (After Route 22 Rival)"),
+    set_rule(get_location("Professor Oak's Lab - Oak (Post Route 22 Rival)"),
              lambda state: state.has("Defeat Route 22 Rival", player))
     set_rule(get_location("Professor Oak's Lab - Oak's Delivery"), lambda state: state.has("Oak's Parcel", player))
     set_rule(get_entrance("Pallet Town Surfing Spot"), lambda state: can_surf(state))
 
     # Viridian City
-    set_rule(get_location("Viridian City - Old Man's Gift"), lambda state: can_pass_viridian_city_roadblock(state))
+    set_rule(get_location("Viridian City - Old Man"), lambda state: can_pass_viridian_city_roadblock(state))
     set_rule(get_entrance("Viridian City South Roadblock"),
              lambda state: can_pass_viridian_city_roadblock(state) or can_cut(state))
     set_rule(get_entrance("Viridian City South Surfing Spot"), lambda state: can_surf(state))
@@ -312,7 +312,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 22 Gate Exit (North)"), lambda state: can_pass_route_22_gate(state))
 
     # Route 2
-    set_rule(get_location("Route 2 Gate - Oak's Aide's Gift"),
+    set_rule(get_location("Route 2 Gate - Oak's Aide (Show Dex)"),
              lambda state: has_n_pokemon(state, options.oaks_aide_route_2.value))
     set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_entrance("Route 2 Southwest Cuttable Trees"), lambda state: can_cut(state))
@@ -328,7 +328,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Route 2 Northeast Cuttable Tree (South)"), lambda state: can_cut(state))
 
     # Pewter City
-    set_rule(get_location("Pewter City - Oak's Aide's Gift"),
+    set_rule(get_location("Pewter City - Gift from Mom"),
              lambda state: state.has("Defeat Brock", player) and state.can_reach_region("Route 3", player))
     set_rule(get_entrance("Pewter City Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_pewter_city_roadblock(state))
@@ -427,7 +427,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("S.S. Anne Exterior Surfing Spot"), lambda state: can_surf(state))
 
     # Route 11
-    set_rule(get_location("Route 11 Gate 2F - Oak's Aide's Gift"),
+    set_rule(get_location("Route 11 Gate 2F - Oak's Aide (Show Dex)"),
              lambda state: has_n_pokemon(state, options.oaks_aide_route_11.value))
     set_rule(get_entrance("Route 11 West Surfing Spot"), lambda state: can_surf(state))
 
@@ -457,7 +457,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Route 9 Exit (West)"), lambda state: can_cut(state))
 
     # Route 10
-    set_rule(get_location("Route 10 Pokemon Center 1F - Oak's Aide's Gift"),
+    set_rule(get_location("Route 10 Pokemon Center 1F - Oak's Aide (Show Dex)"),
              lambda state: has_n_pokemon(state, options.oaks_aide_route_10.value))
     set_rule(get_entrance("Route 10 North Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Route 10 Near Power Plant Surfing Spot"), lambda state: can_surf(state))
@@ -493,7 +493,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             set_rule(get_location(f"Rock Tunnel B1F Land Scaling {i}"), lambda state: dark_cave(state))
 
     # Lavender Town
-    set_rule(get_location("Volunteer Pokemon House - Mr. Fuji's Gift"),
+    set_rule(get_location("Volunteer Pokemon House - Mr. Fuji"),
              lambda state: state.has("Rescue Mr. Fuji", player))
 
     if "Route 12 Boulders" in options.modify_world_state.value:
@@ -521,9 +521,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Route 7 Near Tunnel Smashable Rocks"), lambda state: can_rock_smash(state))
 
     # Celadon City
-    set_rule(get_location("Celadon Game Corner - Fisherman's Gift"), lambda state: state.has("Coin Case", player))
-    set_rule(get_location("Celadon Game Corner - Scientist's Gift"), lambda state: state.has("Coin Case", player))
-    set_rule(get_location("Celadon Game Corner - Gentleman's Gift"), lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner - Fisherman"), lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner - Scientist"), lambda state: state.has("Coin Case", player))
+    set_rule(get_location("Celadon Game Corner - Gentleman"), lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 1"),
              lambda state: state.has("Coin Case", player))
     set_rule(get_location("Celadon Game Corner Prize Room - Prize Pokemon 2"),
@@ -597,11 +597,11 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     set_rule(get_entrance("Route 14 Cuttable Tree (South)"), lambda state: can_cut(state))
 
     # Route 15
-    set_rule(get_location("Route 15 Gate 2F - Oak's Aide's Gift"),
+    set_rule(get_location("Route 15 Gate 2F - Oak's Aide (Show Dex)"),
              lambda state: has_n_pokemon(state, options.oaks_aide_route_15.value))
 
     # Route 16
-    set_rule(get_location("Route 16 Gate 2F - Oak's Aide's Gift"),
+    set_rule(get_location("Route 16 Gate 2F - Oak's Aide (Show Dex)"),
              lambda state: has_n_pokemon(state, options.oaks_aide_route_16.value))
     set_rule(get_entrance("Route 16 Southeast Cuttable Tree"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 16 Southeast Play Poke Flute"), lambda state: state.has("Poke Flute", player))
@@ -625,7 +625,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_location("Route 18 Gate 2F - Trade Slowbro"), lambda state: state.has("Slowbro", player))
 
     # Fuchsia City
-    set_rule(get_location("Safari Zone Warden's House - Safari Zone Warden's Gift"),
+    set_rule(get_location("Safari Zone Warden's House - Warden (Return Teeth)"),
              lambda state: state.has("Gold Teeth", player))
     set_rule(get_location("Safari Zone Warden's House - Item"), lambda state: can_strength(state))
     set_rule(get_entrance("Fuchsia City Backyard Surfing Spot"), lambda state: can_surf(state))
@@ -826,7 +826,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Follow Bill"), lambda state: state.has("Defeat Blaine", player))
 
         # One Island Town
-        set_rule(get_location("One Island Pokemon Center 1F - Celio's Gift (Deliver Ruby)"),
+        set_rule(get_location("One Island Pokemon Center 1F - Celio (Deliver Ruby)"),
                  lambda state: state.has_all(["Deliver Meteorite", "Ruby"], player))
         set_rule(get_location("One Island Pokemon Center 1F - Help Celio"),
                  lambda state: state.has_all(["Deliver Meteorite", "Ruby", "Free Captured Pokemon", "Sapphire"],
@@ -866,7 +866,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
 
         # Two Island Town
         set_rule(get_location("Two Island Town - Item Behind Cuttable Tree"), lambda state: can_cut(state))
-        set_rule(get_location("Two Island Game Corner - Lostelle's Dad's Gift"),
+        set_rule(get_location("Two Island Game Corner - Lostelle's Dad (Deliver Meteorite)"),
                  lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
         set_rule(get_location("Two Island Town - Market Stall"),
                  lambda state: state.has_all(["Rescue Lostelle", "Defeat Champion"], player))
@@ -910,8 +910,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
                  lambda state: state.has_all(["Learn Goldeen Need Log", "Learn Yes Nah Chansey"], player))
 
         # Memorial Pillar
-        set_rule(get_location("Memorial Pillar - Memorial Man's Gift"),
-                 lambda state: state.has("Buy Lemonade", player))
+        set_rule(get_location("Memorial Pillar - Memorial Man"), lambda state: state.has("Buy Lemonade", player))
 
         # Resort Gorgeous
         set_rule(get_entrance("Resort Gorgeous Near Resort Surfing Spot"), lambda state: can_surf(state))
@@ -936,9 +935,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
         set_rule(get_entrance("Outcast Island Surfing Spot"), lambda state: can_surf(state))
 
         # Seven Island Town
-        set_rule(get_location("Seven Island Town - Scientist's Gift (First)"),
+        set_rule(get_location("Seven Island Town - Scientist 1 (Trade Scanner)"),
                  lambda state: state.has("Scanner", player))
-        set_rule(get_location("Seven Island Town - Scientist's Gift (Second)"),
+        set_rule(get_location("Seven Island Town - Scientist 2 (Trade Scanner)"),
                  lambda state: state.has("Scanner", player))
 
         # Sevault Canyon
@@ -1075,104 +1074,104 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Famesanity
     if options.famesanity:
         # Pallet Town
-        set_rule(get_location("Professor Oak's Lab - Oak's Aide's Info (Daisy 1)"),
+        set_rule(get_location("Professor Oak's Lab - Oak's Aide (Daisy Fame 1)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Professor Oak's Lab - Oak's Info (Oak 2)"),
+        set_rule(get_location("Professor Oak's Lab - Oak (Oak Fame 2)"),
                  lambda state: state.has("Oak's Parcel", player))
-        set_rule(get_location("Professor Oak's Lab - Oak's Aide's Info (Oak 6)"),
+        set_rule(get_location("Professor Oak's Lab - Oak's Aide (Oak Fame 6)"),
                  lambda state: post_game_gossipers(state))
 
         # Viridian City
-        set_rule(get_location("Viridian Gym - Gym Guy's Info (Giovanni 5)"),
+        set_rule(get_location("Viridian Gym - Gym Guy (Giovanni Fame 5)"),
                  lambda state: state.has("Defeat Giovanni", player))
 
         # Cerulean City
-        set_rule(get_location("Cerulean Pokemon Center 1F - Bookshelf's Info (Misty 6)"),
+        set_rule(get_location("Cerulean Pokemon Center 1F - Bookshelf (Misty Fame 6)"),
                  lambda state: post_game_gossipers(state))
 
         # Vermilion City
-        set_rule(get_location("Pokemon Fan Club - Worker's Info (Daisy 2)"),
+        set_rule(get_location("Pokemon Fan Club - Worker (Daisy Fame 2)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Vermilion Pokemon Center 1F - Bookshelf's Info (Lt. Surge 6)"),
+        set_rule(get_location("Vermilion Pokemon Center 1F - Bookshelf (Lt. Surge Fame 6)"),
                  lambda state: state.has("Defeat Lt. Surge", player))
 
         # Lavender Town
-        set_rule(get_location("Lavender Pokemon Center 1F - Balding Man's Info (Mr. Fuji 4)"),
+        set_rule(get_location("Lavender Pokemon Center 1F - Balding Man (Mr. Fuji Fame 4)"),
                  lambda state: post_game_gossipers(state))
 
         # Celadon City
-        set_rule(get_location("Celadon Condominiums 1F - Tea Woman's Info (Daisy 5)"),
+        set_rule(get_location("Celadon Condominiums 1F - Tea Woman (Daisy Fame 5)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Celadon Condominiums 2F - Bookshelf's Info (Erika 6)"),
+        set_rule(get_location("Celadon Condominiums 2F - Bookshelf (Erika Fame 6)"),
                  lambda state: state.has("Defeat Erika", player))
-        set_rule(get_location("Celadon Department Store 2F - Woman's Info (Lance 4)"),
+        set_rule(get_location("Celadon Department Store 2F - Woman (Lance Fame 4)"),
                  lambda state: post_game_gossipers(state))
 
         # Fuchsia City
-        set_rule(get_location("Fuchsia City - Koga's Daughter's Info (Koga 4)"),
+        set_rule(get_location("Fuchsia City - Koga's Daughter (Koga Fame 4)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Safari Zone Warden's House - Bookshelf's Info (Koga 5)"),
+        set_rule(get_location("Safari Zone Warden's House - Bookshelf (Koga Fame 5)"),
                  lambda state: state.has("Defeat Koga", player))
 
         # Saffron City
-        set_rule(get_location("Pokemon Trainer Fan Club - Bookshelf's Info (Bruno 3)"),
+        set_rule(get_location("Pokemon Trainer Fan Club - Bookshelf (Bruno Fame 3)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Saffron City - Battle Girl's Info (Lance 3)"),
+        set_rule(get_location("Saffron City - Reward Girl (Lance Fame 3)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Saffron Pokemon Center 1F - Bookshelf's Info (Sabrina 5)"),
+        set_rule(get_location("Saffron Pokemon Center 1F - Bookshelf (Sabrina Fame 5)"),
                  lambda state: state.has("Defeat Sabrina", player))
 
         # Cinnabar Island
-        set_rule(get_location("Cinnabar Pokemon Center 1F - Bookshelf's Info (Mr. Fuji 6)"),
+        set_rule(get_location("Cinnabar Pokemon Center 1F - Bookshelf (Mr. Fuji Fame 6)"),
                  lambda state: post_game_gossipers(state))
 
         # Indigo Plateau
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 2)"),
+        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Black Belt (Agatha Fame 2)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Black Belt's Info (Agatha 3)"),
+        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Black Belt (Agatha Fame 3)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Bookshelf's Info (Lance 5)"),
+        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Bookshelf (Lance Fame 5)"),
                  lambda state: post_game_gossipers(state))
-        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Cooltrainer's Info (Lance 6)"),
+        set_rule(get_location("Indigo Plateau Pokemon Center 1F - Cooltrainer (Lance Fame 6)"),
                  lambda state: post_game_gossipers(state))
 
         # Sevii Islands
         if not options.kanto_only:
             # One Island Town
-            set_rule(get_location("One Island Pokemon Center 1F - Celio's Info (Bill 3)"),
+            set_rule(get_location("One Island Pokemon Center 1F - Celio (Bill Fame 4)"),
                      lambda state: state.has("Restore Pokemon Network Machine", player))
-            set_rule(get_location("One Island Pokemon Center 1F - Celio's Info (Bill 4)"),
+            set_rule(get_location("One Island Pokemon Center 1F - Celio (Bill Fame 5)"),
                      lambda state: state.has("Restore Pokemon Network Machine", player))
-            set_rule(get_location("One Island Pokemon Center 1F - Celio's Info (Bill 5)"),
+            set_rule(get_location("One Island Pokemon Center 1F - Celio (Bill Fame 6)"),
                      lambda state: state.has("Restore Pokemon Network Machine", player))
 
             # Ember Spa
-            set_rule(get_location("Ember Spa - Black Belt's Info (Bruno 4)"),
+            set_rule(get_location("Ember Spa - Black Belt (Bruno Fame 4)"),
                      lambda state: post_game_gossipers(state))
 
             # Two Island Town
-            set_rule(get_location("Two Island Town - Beauty's Info (Bruno 5)"),
+            set_rule(get_location("Two Island Town - Beauty (Bruno Fame 5)"),
                      lambda state: state.has_all(["Rescue Lostelle", "Defeat Champion"], player))
 
             # Four Island Town
-            set_rule(get_location("Four Island Town - Old Woman's Info (Lorelei 6)"),
+            set_rule(get_location("Four Island Town - Old Woman (Lorelei Fame 6)"),
                      lambda state: state.has("Restore Pokemon Network Machine", player))
 
             # Five Island Town
-            set_rule(get_location("Five Island Pokemon Center 1F - Bookshelf's Info (Lorelei 4)"),
+            set_rule(get_location("Five Island Pokemon Center 1F - Bookshelf (Lorelei Fame 4)"),
                      lambda state: post_game_gossipers(state))
 
             # Rocket Warehouse
-            set_rule(get_location("Rocket Warehouse - Scientist Gideon's Info (Giovanni 6)"),
+            set_rule(get_location("Rocket Warehouse - Scientist Gideon (Giovanni Fame 6)"),
                      lambda state: state.has("Restore Pokemon Network Machine", player))
 
             # Water Labyrinth
             if options.pokemon_request_locations:
-                set_rule(get_location("Water Labyrinth - Gentleman's Info (Daisy 3)"),
+                set_rule(get_location("Water Labyrinth - Gentleman (Daisy Fame 3)"),
                          lambda state: state.has_any(["Togepi", "Togetic"], player))
 
             # Seven Island
-            set_rule(get_location("Seven Island Pokemon Center 1F - Bookshelf's Info (Agatha 4)"),
+            set_rule(get_location("Seven Island Pokemon Center 1F - Bookshelf (Agatha Fame 4)"),
                      lambda state: post_game_gossipers(state))
 
         # Add rules for fame checker locations
@@ -1184,47 +1183,47 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     # Pokemon Requests
     if options.pokemon_request_locations:
         # Route 12
-        set_rule(get_location("Route 12 Fishing House - Fishing Guru's Brother's Gift (Show Magikarp)"),
+        set_rule(get_location("Route 12 Fishing House - Fishing Guru's Brother (Show Magikarp)"),
                  lambda state: state.has("Magikarp", player))
 
         # Sevii Islands
         if not options.kanto_only:
             # Resort Gorgeous
-            set_rule(get_location("Resort Gorgeous House - Selphy's Gift"),
+            set_rule(get_location("Resort Gorgeous House - Selphy (Show Pokemon)"),
                      lambda state: state.has_all(["Rescue Selphy", world.resort_gorgeous_mon[1]], player))
 
             # Water Path
-            set_rule(get_location("Water Path Heracross Woman's House - Heracross Woman's Gift"),
+            set_rule(get_location("Water Path Heracross Woman's House - Woman (Show Heracross)"),
                      lambda state: state.has("Heracross", player))
 
     # Split Passes
     if (options.island_passes.value in [SeviiIslandPasses.option_split, SeviiIslandPasses.option_progressive_split]
             and not options.kanto_only):
         # Cinnabar Island
-        set_rule(get_location("Cinnabar Pokemon Center 1F - Bill's Gift"),
+        set_rule(get_location("One Cinnabar Pokemon Center 1F - Bill"),
                  lambda state: state.has("Defeat Blaine", player))
 
-        # One Island
-        set_rule(get_location("One Island Pokemon Center 1F - Celio's Gift (Deliver Sapphire)"),
+        # One Island Town
+        set_rule(get_location("One Island Pokemon Center 1F - Celio (Deliver Sapphire)"),
                  lambda state: state.has_all(["Deliver Meteorite", "Ruby", "Free Captured Pokemon", "Sapphire"],
                                              player))
 
-        # Three Island
-        set_rule(get_location("Lostelle's House - Lostelle's Gift"),
+        # Three Island Town
+        set_rule(get_location("Lostelle's House - Lostelle"),
                  lambda state: state.has("Deliver Meteorite", player))
 
-        # Six Island
+        # Dotted Hole
         set_rule(get_location("Dotted Hole 1F - Dropped Item"),
                  lambda state: state.has("Learn Yes Nah Chansey", player))
 
     # Split Teas
     if options.split_teas:
         # Celadon City
-        set_rule(get_location("Celadon Condominiums 1F - Brock's Gift"),
+        set_rule(get_location("Celadon Condominiums 1F - Brock"),
                  lambda state: state.has("Defeat Brock", player))
-        set_rule(get_location("Celadon Condominiums 1F - Misty's Gift"),
+        set_rule(get_location("Celadon Condominiums 1F - Misty"),
                  lambda state: state.has("Defeat Misty", player))
-        set_rule(get_location("Celadon Condominiums 1F - Erika's Gift"),
+        set_rule(get_location("Celadon Condominiums 1F - Erika"),
                  lambda state: state.has("Defeat Erika", player))
 
     # Evolutions

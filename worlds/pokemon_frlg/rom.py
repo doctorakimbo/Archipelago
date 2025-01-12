@@ -293,7 +293,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
             )
 
     # Set the item in the PC
-    pc_item_location = world.get_location("Player's PC - PC Item")
+    pc_item_location = world.get_location("Player's PC - Starting Item")
     item_id = reverse_offset_item_value(pc_item_location.item.code)
     tokens.write_token(
         APTokenTypes.WRITE,
