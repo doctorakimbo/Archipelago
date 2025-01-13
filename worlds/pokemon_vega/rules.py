@@ -226,14 +226,12 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     set_rule(get_entrance("New Island Fly Destination"), lambda state: state.has("Fly New Island", player))
     set_rule(get_entrance("Shakudo Island Fly Destination"), lambda state: state.has("Fly Shakudo Island", player))
 
-    # Pallet Town
-    set_rule(get_location("Rival's House - Daisy's Gift"), lambda state: state.has("Deliver Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Gift (Deliver Parcel)"),
-             lambda state: state.has("Oak's Parcel", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Gift (After Route 22 Rival)"),
-             lambda state: state.has("Defeat Route 22 Rival", player))
-    set_rule(get_location("Professor Oak's Lab - Oak's Delivery"), lambda state: state.has("Oak's Parcel", player))
-    set_rule(get_entrance("Pallet Town Surfing Spot"), lambda state: can_surf(state))
+    # Porcelia Town
+    set_rule(get_location("Professor Holly's Lab - Postgame Gift from Aide"), lambda state: state.has("Postgame", player)) # todo: call function instead (postgame_items)
+    set_rule(get_entrance("Porcelia Town Surfing Spot"), lambda state: can_surf(state))
+    set_rule(get_entrance("Porcelia Town Exit (South)"), lambda state: can_rock_smash(state))
+    set_rule(get_entrance("Porcelia Town Exit (North)"), lambda state: can_cut(state))
+    set_rule(get_entrance("Porcelia Town Warp Flowers"), lambda state: state.has("Distant Island Unlock", player)) # todo: call function instead
 
     # Viridian City
     set_rule(get_entrance("Viridian City South Surfing Spot"), lambda state: can_surf(state))

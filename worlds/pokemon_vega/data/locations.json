@@ -166,7 +166,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TOWN_MAP": {
-    "name": "Rival's House - Daisy's Gift",
+    "name": "Player's House 1F - Mom's Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TRI_PASS": {
@@ -1748,8 +1748,8 @@
     "name": "Route 15 Gate 2F - Oak's Aide's Gift",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_GOT_FIRST_POKEBALLS": {
-    "name": "Professor Oak's Lab - Oak's Gift (Deliver Parcel)",
+  "NPC_GIFT_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE": {
+    "name":"Professor Holly's Lab - Postgame Gift from Aide",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
@@ -1782,10 +1782,6 @@
   },
   "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT": {
     "name": "Route 24 - Clear Nugget Bridge",
-    "tags": ["NPCGift"]
-  },
-  "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL": {
-    "name":"Professor Oak's Lab - Oak's Gift (After Route 22 Rival)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POTION_ON_ROUTE_1": {

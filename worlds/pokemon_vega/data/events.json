@@ -55,11 +55,6 @@
     "tags": ["Event"]
   },
 
-  "EVENT_DELIVER_OAKS_PARCEL": {
-    "name": "Professor Oak's Lab - Oak's Delivery",
-    "item": "Deliver Oak's Parcel",
-    "tags": ["Event"]
-  },
   "EVENT_SAVE_BILL": {
     "name": "Route 25 Sea Cottage - Cell Separation System",
     "item": "Save Bill",
@@ -525,6 +520,11 @@
   "EVOLVE_RHYHORN": {
     "name": "Evolution - Rhyhorn",
     "item": "Rhydon",
+    "tags": ["Pokemon", "Evolution"]
+  },
+  "EVOLVE_RHYDON": {
+    "name": "Evolution - Rhydon",
+    "item": "Rhyperior",
     "tags": ["Pokemon", "Evolution"]
   },
   "EVOLVE_PORYGON": {
