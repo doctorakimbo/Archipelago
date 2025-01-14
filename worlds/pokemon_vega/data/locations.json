@@ -670,6 +670,10 @@
     "name": "Rock Tunnel B1F - Southeast Area Item",
     "tags": ["Overworld"]
   },
+  "ITEM_ROUTE501_POTION": {
+    "name": "Route 501 - Item",
+    "tags": ["Overworld"]
+  },
   "ITEM_ROUTE2_ETHER": {
     "name": "Route 2 - North Item",
     "tags": ["Overworld"]
@@ -1225,6 +1229,10 @@
   },
   "HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL": {
     "name": "Rocket Hideout B4F - Giovanni's Room Hidden Item Between West Plants",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE501_POTION": {
+    "name": "Route 501 - Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
@@ -1784,8 +1792,8 @@
     "name": "Route 24 - Clear Nugget Bridge",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_GOT_POTION_ON_ROUTE_1": {
-    "name": "Route 1 - Poke Mart Employee's Gift",
+  "NPC_GIFT_GOT_POKE_BALL_FROM_ROUTE501_HOUSE": {
+    "name": "Route 501 - Woman's Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM03_FROM_MISTY": {
@@ -2710,7 +2718,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_CRISSY_REWARD": {
-    "name": "Route 4 - Lass Crissy Reward",
+    "name": "Route 501 - Lass Crissy Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_DALIA_REWARD": {
@@ -3029,8 +3037,8 @@
     "name": "Cerulean City - Rival Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_RIVAL_OAKS_LAB_BULBASAUR_REWARD": {
-    "name": "Oak's Lab - Rival Reward",
+  "TRAINER_RIVAL_HOLLYS_LAB_NIMBLEAF_REWARD": {
+    "name": "Holly's Lab - Rival Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR_REWARD": {
@@ -3115,6 +3123,14 @@
   },
   "TRAINER_SAILOR_TREVOR_REWARD": {
     "name": "S.S. Anne Deck - Sailor Trevor Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCHOOL_KID_KAREN_REWARD": {
+    "name": "Route 501 - School Kid Karen Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCHOOL_KID_RICH_REWARD": {
+    "name": "Route 501 - School Kid Rich Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SCIENTIST_BEAU_REWARD": {
@@ -3610,7 +3626,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_BEN_REWARD": {
-    "name": "Route 3 - Youngster Ben Reward",
+    "name": "Route 501 - Youngster Ben Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_CALVIN_REWARD": {

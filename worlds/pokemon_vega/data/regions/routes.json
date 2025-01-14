@@ -1,21 +1,45 @@
 {
-  "REGION_ROUTE1/MAIN": {
-    "parent_map": "MAP_ROUTE1",
-    "name": "Route 1",
-    "encounter_region": "Route 1",
+  "REGION_ROUTE501/MAIN": {
+    "parent_map": "MAP_ROUTE501",
+    "name": "Route 501",
+    "encounter_region": "Route 501",
     "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+	  "ITEM_ROUTE501_POTION",
+	  "TRAINER_YOUNGSTER_BEN_REWARD",
+	  "HIDDEN_ITEM_ROUTE501_POTION",
+	  "TRAINER_LASS_CRISSY_REWARD",
+	  "TRAINER_SCHOOL_KID_RICH_REWARD",
+	  "TRAINER_SCHOOL_KID_KAREN_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_PALLET_TOWN/MAIN": "Route 501 Exit (West)",
+      "REGION_ROUTE502/MAIN": "Route 501 Exit (Northeast)"
+    },
+    "warps": {
+	  "MAP_ROUTE501:0/MAP_ROUTE501_HOUSE:0": "Route 501 House"
+	}
+  },
+  "REGION_ROUTE501_HOUSE/MAIN": {
+    "parent_map": "MAP_ROUTE501_HOUSE",
+    "name": "Route 501 House",
+    "encounter_region": null,
+    "has_land": false,
     "has_water": false,
     "has_fishing": false,
     "kanto": true,
     "locations": [
-      "NPC_GIFT_GOT_POTION_ON_ROUTE_1"
-    ],
+	  "NPC_GIFT_GOT_POKE_BALL_FROM_ROUTE501_HOUSE"
+	],
     "events": [],
-    "exits": {
-      "REGION_PALLET_TOWN/MAIN": "Route 1 Exit (South)",
-      "REGION_VIRIDIAN_CITY/SOUTH": "Route 1 Exit (North)"
-    },
-    "warps": {}
+    "exits": {},
+    "warps": {
+      "MAP_ROUTE501_HOUSE:0/MAP_ROUTE501:0": "Route 501 House Exit"
+    }
   },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",

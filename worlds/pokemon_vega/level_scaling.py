@@ -30,6 +30,10 @@ def create_scaling_data(world: "PokemonVegaWorld"):
         "Professor Holly's Lab": [{"name": "Holly's Lab Rival", "data_ids": ["TRAINER_RIVAL_HOLLYS_LAB_NIMBLEAF",
                                                                          "TRAINER_RIVAL_HOLLYS_LAB_PEYERO",
                                                                          "TRAINER_RIVAL_HOLLYS_LAB_LIQUIPUT"]}],
+        "Route 501": [{"name": "Youngster Ben", "data_ids": ["TRAINER_YOUNGSTER_BEN"]},
+                            {"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]},
+                            {"name": "School Kid Rich", "data_ids": ["TRAINER_SCHOOL_KID_RICH"]},
+                            {"name": "School Kid Karen", "data_ids": ["TRAINER_SCHOOL_KID_KAREN"]}],
         "Route 22": [{"name": "Route 22 Early Rival",
                       "rule": lambda state: state.has("Deliver Oak's Parcel", world.player),
                       "data_ids": ["TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR", "TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER",
@@ -507,7 +511,7 @@ def create_scaling_data(world: "PokemonVegaWorld"):
     }
 
     kanto_wild_encounter_data = {
-        "Route 1 Land Encounters": [{"name": "Route 1 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE1"]}],
+        "Route 501 Land Encounters": [{"name": "Route 501 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE501"]}],
         "Route 22 Land Encounters": [{"name": "Route 22 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE22"]}],
         "Route 2 Land Encounters": [{"name": "Route 2 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE2"]}],
         "Viridian Forest Land Encounters": [{"name": "Viridian Forest Land Scaling", "type": "Land",
