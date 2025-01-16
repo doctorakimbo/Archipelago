@@ -1,7 +1,7 @@
 {
-  "EVENT_DEFEAT_ROUTE22_RIVAL": {
-    "name": "Route 22 - Early Rival Battle",
-    "item": "Defeat Route 22 Rival",
+  "EVENT_DEFEAT_WINSTRATES": {
+    "name": "Route 502 Gatehouse 2F - Winstrate Siblings Battles",
+    "item": "Defeat Winstrate Siblings",
     "tags": ["Event"]
   },
   "EVENT_DEFEAT_ANNETTE": {
@@ -55,9 +55,9 @@
     "tags": ["Event"]
   },
 
-  "EVENT_SAVE_BILL": {
-    "name": "Route 25 Sea Cottage - Cell Separation System",
-    "item": "Save Bill",
+  "EVENT_ACTIVATE_WINSTRATES": {
+    "name": "Junopsis City - Talk to Girl Blocking Gym",
+    "item": "Talk to Girl Blocking Junopsis Gym",
     "tags": ["Event"]
   },
   "EVENT_BUY_EVO_STONES": {
@@ -131,6 +131,21 @@
     "tags": ["Event"]
   },
 
+  "GIFT_POKEMON_BULBASAUR": {
+    "name": "Route 502 Gatehouse 2F - Postgame Gift from Violet",
+    "item": "Static Bulbasaur",
+    "tags": ["Pokemon", "Misc"]
+  },
+  "GIFT_POKEMON_CHARMANDER": {
+    "name": "Route 502 Gatehouse 2F - Postgame Gift from Vincent",
+    "item": "Static Charmander",
+    "tags": ["Pokemon", "Misc"]
+  },
+  "GIFT_POKEMON_SQUIRTLE": {
+    "name": "Route 502 Gatehouse 2F - Postgame Gift from Vivian",
+    "item": "Static Squirtle",
+    "tags": ["Pokemon", "Misc"]
+  },
   "TRADE_POKEMON_MR_MIME": {
     "name": "Route 2 Trade House - Trade Abra",
     "item": "Static Mr. Mime",

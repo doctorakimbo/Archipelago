@@ -31,9 +31,37 @@ def create_scaling_data(world: "PokemonVegaWorld"):
                                                                          "TRAINER_RIVAL_HOLLYS_LAB_PEYERO",
                                                                          "TRAINER_RIVAL_HOLLYS_LAB_LIQUIPUT"]}],
         "Route 501": [{"name": "Youngster Ben", "data_ids": ["TRAINER_YOUNGSTER_BEN"]},
-                            {"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]},
-                            {"name": "School Kid Rich", "data_ids": ["TRAINER_SCHOOL_KID_RICH"]},
-                            {"name": "School Kid Karen", "data_ids": ["TRAINER_SCHOOL_KID_KAREN"]}],
+                      {"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]},
+                      {"name": "School Kid Rich", "data_ids": ["TRAINER_SCHOOL_KID_RICH"]},
+                      {"name": "School Kid Karen", "data_ids": ["TRAINER_SCHOOL_KID_KAREN"]}],
+        "Route 502 West": [{"name": "Youngster Josh", "data_ids": ["TRAINER_YOUNGSTER_JOSH"]},
+                           {"name": "Lass Robin", "data_ids": ["TRAINER_LASS_ROBIN"]},
+                           {"name": "Twins Joy & Meg", "data_ids": ["TRAINER_TWINS_JOY_MEG"]},
+                           {"name": "Bug Catcher Sammy", "data_ids": ["TRAINER_BUG_CATCHER_SAMMY"]},
+                           {"name": "School Kid Georgia", "data_ids": ["TRAINER_SCHOOL_KID_GEORGIA"]},
+                           {"name": "Youngster Timmy", "data_ids": ["TRAINER_YOUNGSTER_TIMMY"]}],
+        "Route 502 East": [{"name": "School Kid Chase", "data_ids": ["TRAINER_SCHOOL_KID_CHASE"]}],
+        "Route 502 Gatehouse 2F": [{"name": "School Kid Vivian",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player),
+                                    "data_ids": ["TRAINER_SCHOOL KID_VIVIAN"]},
+                                   {"name": "Youngster Vincent",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player),
+                                    "data_ids": ["TRAINER_YOUNGSTER_VINCENT"]},
+                                   {"name": "Lass Violet",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player),
+                                    "data_ids": ["TRAINER_LASS_VIOLET"]},
+                                   {"name": "School Kid Vivian Rematch",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["TRAINER_SCHOOL KID_VIVIAN_2"]},
+                                   {"name": "Youngster Vincent Rematch",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["TRAINER_YOUNGSTER_VINCENT_2"]},
+                                   {"name": "Lass Violet Rematch",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["TRAINER_LASS_VIOLET_2"]}],
         "Route 22": [{"name": "Route 22 Early Rival",
                       "rule": lambda state: state.has("Deliver Oak's Parcel", world.player),
                       "data_ids": ["TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR", "TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER",
@@ -512,8 +540,8 @@ def create_scaling_data(world: "PokemonVegaWorld"):
 
     kanto_wild_encounter_data = {
         "Route 501 Land Encounters": [{"name": "Route 501 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE501"]}],
+        "Route 502 Land Encounters": [{"name": "Route 502 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE502"]}],
         "Route 22 Land Encounters": [{"name": "Route 22 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE22"]}],
-        "Route 2 Land Encounters": [{"name": "Route 2 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE2"]}],
         "Viridian Forest Land Encounters": [{"name": "Viridian Forest Land Scaling", "type": "Land",
                                              "data_ids": ["MAP_VIRIDIAN_FOREST"]}],
         "Route 3 Land Encounters": [{"name": "Route 3 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE3"]}],
@@ -854,6 +882,18 @@ def create_scaling_data(world: "PokemonVegaWorld"):
     }
 
     kanto_static_encounter_data = {
+        "Route 502 Gatehouse 2F": [{"name": "Gift Bulbasaur",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["GIFT_POKEMON_BULBASAUR"]},
+                                    {"name": "Gift Charmander",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["GIFT_POKEMON_CHARMANDER"]},
+                                    {"name": "Gift Squirtle",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["GIFT_POKEMON_SQUIRTLE"]}],
         "Route 4 Pokemon Center 1F": [{"name": "Gift Magikarp", "data_ids": ["GIFT_POKEMON_MAGIKARP"]}],
         "Power Plant": [{"name": "Static Electrode 1", "data_ids": ["STATIC_POKEMON_ELECTRODE_1"]},
                         {"name": "Static Electrode 2", "data_ids": ["STATIC_POKEMON_ELECTRODE_2"]},
@@ -967,7 +1007,7 @@ def create_scaling_data(world: "PokemonVegaWorld"):
 
 def level_scaling(multiworld):
     # todo: this list too
-    battle_events = ["Route 22 - Early Rival Battle", "Pewter Gym - Gym Leader Battle",
+    battle_events = ["Route 502 Gatehouse 2F - Winstrate Siblings Battles", "Pewter Gym - Gym Leader Battle",
                      "Cerulean Gym - Gym Leader Battle", "Vermilion Gym - Gym Leader Battle",
                      "Celadon Gym - Gym Leader Battle", "Fuchsia Gym - Gym Leader Battle",
                      "Saffron Gym - Gym Leader Battle", "Cinnabar Gym - Gym Leader Battle",

@@ -576,6 +576,9 @@
 "FLAG_DEFEATED_ROCKETS_IN_WAREHOUSE":725,
 "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL":631,
 "FLAG_DEFEATED_SABRINA":1205,
+"FLAG_DEFEATED_VINCENT_REMATCH":4551,
+"FLAG_DEFEATED_VIOLET_REMATCH":4552,
+"FLAG_DEFEATED_VIVIAN_REMATCH":4550,
 "FLAG_DELIVERED_OAKS_PARCEL":610,
 "FLAG_DEOXYS_FLEW_AWAY":759,
 "FLAG_DID_CH_DING_TRADE":589,
@@ -616,13 +619,17 @@
 "FLAG_GOT_9F_CARD_KEY":523,
 "FLAG_GOT_AMULET_COIN_FROM_OAKS_AIDE":765,
 "FLAG_GOT_BICYCLE":625,
+"FLAG_GOT_BIG_MUSHROOM_FROM_VIOLET_WINSTRATE":594,
 "FLAG_GOT_BIKE_VOUCHER":577,
+"FLAG_GOT_BULBASAUR":4555,
+"FLAG_GOT_CHARMANDER":4554,
 "FLAG_GOT_COIN_CASE":579,
 "FLAG_GOT_DOME_FOSSIL":626,
 "FLAG_GOT_EEVEE":611,
 "FLAG_GOT_EVERSTONE_FROM_OAKS_AIDE":762,
 "FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE":598,
 "FLAG_GOT_FAME_CHECKER":667,
+"FLAG_GOT_FIRST_POKEBALLS":578,
 "FLAG_GOT_FIVE_PASS":513,
 "FLAG_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE":461,
 "FLAG_GOT_FOSSIL_FROM_MT_MOON":562,
@@ -651,6 +658,7 @@
 "FLAG_GOT_OLD_AMBER":606,
 "FLAG_GOT_OLD_ROD":576,
 "FLAG_GOT_POKE_BALL_FROM_ROUTE501_HOUSE":4353,
+"FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL":583,
 "FLAG_GOT_POKE_FLUTE":573,
 "FLAG_GOT_POTION_ON_ROUTE_1":560,
 "FLAG_GOT_POWDER_JAR":699,
@@ -660,6 +668,7 @@
 "FLAG_GOT_SEVEN_PASS":515,
 "FLAG_GOT_SILPH_SCOPE":602,
 "FLAG_GOT_SIX_PASS":514,
+"FLAG_GOT_SQUIRTLE":4553,
 "FLAG_GOT_SS_TICKET":564,
 "FLAG_GOT_SS_TICKET_DUP":565,
 "FLAG_GOT_SUPER_ROD":597,
@@ -786,6 +795,7 @@
 "FLAG_HIDDEN_ITEM_ROUTE4_PERSIM_BERRY":1114,
 "FLAG_HIDDEN_ITEM_ROUTE4_RAZZ_BERRY":1156,
 "FLAG_HIDDEN_ITEM_ROUTE501_POTION":1000,
+"FLAG_HIDDEN_ITEM_ROUTE502_RARE_CANDY":1001,
 "FLAG_HIDDEN_ITEM_ROUTE6_RARE_CANDY":1119,
 "FLAG_HIDDEN_ITEM_ROUTE6_SITRUS_BERRY":1118,
 "FLAG_HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY":1152,
@@ -878,7 +888,6 @@
 "FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE":1038,
 "FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL":1037,
 "FLAG_HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE":1189,
-"FLAG_HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE":1001,
 "FLAG_HIDE_ARTICUNO":130,
 "FLAG_HIDE_BILL_CLEFAIRY":50,
 "FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE":51,
@@ -1117,9 +1126,9 @@
 "FLAG_ITEM_ROUTE15_TM18":384,
 "FLAG_ITEM_ROUTE24_TM45":354,
 "FLAG_ITEM_ROUTE25_TM43":355,
-"FLAG_ITEM_ROUTE2_PARALYZE_HEAL":341,
 "FLAG_ITEM_ROUTE4_TM05":353,
 "FLAG_ITEM_ROUTE501_POTION":340,
+"FLAG_ITEM_ROUTE502_POKE_BALL":341,
 "FLAG_ITEM_ROUTE9_BURN_HEAL":450,
 "FLAG_ITEM_ROUTE9_TM40":363,
 "FLAG_ITEM_SAFARI_ZONE_CENTER_NUGGET":385,
@@ -1239,6 +1248,7 @@
 "FLAG_REVIVED_AMBER":750,
 "FLAG_REVIVED_DOME":748,
 "FLAG_REVIVED_HELIX":749,
+"FLAG_SEEN_WINSTRATE_INTRO":4356,
 "FLAG_SEVII_DETOUR_FINISHED":673,
 "FLAG_SHOWED_LETTER":654,
 "FLAG_SHOWED_TOGEPI_OR_TOGETIC":742,
@@ -4902,6 +4912,10 @@
 {"address":11139052,
 "default_item":13,
 "flag":1000},
+"HIDDEN_ITEM_ROUTE502_RARE_CANDY":
+{"address":11143548,
+"default_item":68,
+"flag":1001},
 "HIDDEN_ITEM_ROUTE6_RARE_CANDY":
 {"address":3904664,
 "default_item":68,
@@ -5242,10 +5256,6 @@
 {"address":3916856,
 "default_item":181,
 "flag":1189},
-"HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE":
-{"address":3868840,
-"default_item":14,
-"flag":1001},
 "ITEM_CELADON_CITY_ETHER":
 {"address":1833608,
 "default_item":34,
@@ -5626,10 +5636,6 @@
 {"address":1832217,
 "default_item":331,
 "flag":355},
-"ITEM_ROUTE2_PARALYZE_HEAL":
-{"address":1832035,
-"default_item":18,
-"flag":341},
 "ITEM_ROUTE4_TM05":
 {"address":1832191,
 "default_item":293,
@@ -5638,6 +5644,10 @@
 {"address":11547169,
 "default_item":13,
 "flag":340},
+"ITEM_ROUTE502_POKE_BALL":
+{"address":11550741,
+"default_item":4,
+"flag":341},
 "ITEM_ROUTE9_BURN_HEAL":
 {"address":1833413,
 "default_item":15,
@@ -5978,6 +5988,10 @@
 {"address":1496615,
 "default_item":360,
 "flag":625},
+"NPC_GIFT_GOT_BIG_MUSHROOM_FROM_VIOLET_WINSTRATE":
+{"address":1518025, # script addr is B040AF, but may need to rewrite to use correct getitem
+"default_item":104,
+"flag":4357},
 "NPC_GIFT_GOT_BIKE_VOUCHER":
 {"address":1498874,
 "default_item":352,
@@ -6039,7 +6053,7 @@
 "default_item":342,
 "flag":570},
 "NPC_GIFT_GOT_HM05":
-{"address":1516110,
+{"address":1516110, # script addr is B038CB, but is missing a flag and may need to rewrite to use correct getitem
 "default_item":343,
 "flag":571},
 "NPC_GIFT_GOT_HM06":
@@ -6559,7 +6573,7 @@
 "default_item":0,
 "flag":1389},
 "TRAINER_BUG_CATCHER_SAMMY_REWARD":
-{"address":3968816,
+{"address":3968816, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1384},
 "TRAINER_BUG_CATCHER_VANCE_REWARD":
@@ -7167,13 +7181,21 @@
 "default_item":0,
 "flag":1402},
 "TRAINER_LASS_ROBIN_REWARD":
-{"address":3968844,
+{"address":3968844, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1398},
 "TRAINER_LASS_SALLY_REWARD":
 {"address":3968842,
 "default_item":0,
 "flag":1397},
+"TRAINER_LASS_VIVIAN_REWARD":
+{"address":3968844, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1398},
+"TRAINER_LASS_VIVIAN_2_REWARD":
+{"address":3968844, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1398},
 "TRAINER_LEADER_BLAINE_REWARD":
 {"address":3969446,
 "default_item":0,
@@ -7574,11 +7596,27 @@
 {"address":3968878,
 "default_item":0,
 "flag":1415},
+"TRAINER_SCHOOL_KID_CHASE_REWARD":
+{"address":3969288, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1620},
+"TRAINER_SCHOOL_KID_GEORGIA_REWARD":
+{"address":3969288, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1620},
 "TRAINER_SCHOOL_KID_KAREN_REWARD":
 {"address":3969288, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1620},
 "TRAINER_SCHOOL_KID_RICH_REWARD":
+{"address":3969288, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1620},
+"TRAINER_SCHOOL_KID_VIVIAN_REWARD":
+{"address":3969288, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1620},
+"TRAINER_SCHOOL_KID_VIVIAN_2_REWARD":
 {"address":3969288, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1620},
@@ -8063,7 +8101,7 @@
 "default_item":0,
 "flag":1764},
 "TRAINER_TWINS_JOY_MEG_REWARD":
-{"address":3969728,
+{"address":3969728, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1840},
 "TRAINER_TWINS_KIRI_JAN_REWARD":
@@ -8119,7 +8157,7 @@
 "default_item":0,
 "flag":1814},
 "TRAINER_YOUNGSTER_JOSH_REWARD":
-{"address":3968790,
+{"address":3968790, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1371},
 "TRAINER_YOUNGSTER_NASH_REWARD":
@@ -8127,13 +8165,21 @@
 "default_item":0,
 "flag":1894},
 "TRAINER_YOUNGSTER_TIMMY_REWARD":
-{"address":3968792,
+{"address":3968792, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1372},
 "TRAINER_YOUNGSTER_TYLER_REWARD":
 {"address":3968800,
 "default_item":0,
 "flag":1376},
+"TRAINER_YOUNGSTER_VINCENT_REWARD":
+{"address":3968792, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1372},
+"TRAINER_YOUNGSTER_VINCENT_2_REWARD":
+{"address":3968792, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1372},
 "TRAINER_YOUNGSTER_YASU_REWARD":
 {"address":3968806,
 "default_item":0,
@@ -13881,6 +13927,16 @@
 "level":5,
 "level_address":1512283,
 "species":142},
+"GIFT_POKEMON_BULBASAUR":
+{"address":1516409, # script addr is B040AF, but may need to rewrite to use correct bufferpokemon (level_address is correct though)
+"level":5,
+"level_address":11551142,
+"species":152},
+"GIFT_POKEMON_CHARMANDER":
+{"address":1516409, # script addr is B04F31, but may need to rewrite to use correct bufferpokemon (level_address is correct though)
+"level":5,
+"level_address":11554792,
+"species":155},
 "GIFT_POKEMON_EEVEE":
 {"address":1502850,
 "level":25,
@@ -13916,6 +13972,11 @@
 "level":5,
 "level_address":1512145,
 "species":138},
+"GIFT_POKEMON_SQUIRTLE":
+{"address":1516409, # script addr is B04935, but may need to rewrite to use correct bufferpokemon (level_address is correct though)
+"level":5,
+"level_address":11553260,
+"species":158},
 "STATIC_POKEMON_ELECTRODE_1":
 {"address":1467534,
 "level":34,

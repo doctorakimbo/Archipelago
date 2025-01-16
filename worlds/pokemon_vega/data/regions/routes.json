@@ -18,7 +18,7 @@
     "events": [],
     "exits": {
       "REGION_PALLET_TOWN/MAIN": "Route 501 Exit (West)",
-      "REGION_ROUTE502/MAIN": "Route 501 Exit (Northeast)"
+      "REGION_ROUTE502/WEST": "Route 501 Exit (Northeast)"
     },
     "warps": {
 	  "MAP_ROUTE501:0/MAP_ROUTE501_HOUSE:0": "Route 501 House"
@@ -40,6 +40,98 @@
     "warps": {
       "MAP_ROUTE501_HOUSE:0/MAP_ROUTE501:0": "Route 501 House Exit"
     }
+  },
+  "REGION_ROUTE502/WEST": {
+    "parent_map": "MAP_ROUTE502",
+    "name": "Route 502 West",
+    "encounter_region": "Route 502",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+	  "NPC_GIFT_GOT_HM05",
+	  "TRAINER_YOUNGSTER_JOSH_REWARD",
+	  "TRAINER_LASS_ROBIN_REWARD",
+	  "TRAINER_TWINS_JOY_MEG_REWARD",
+	  "ITEM_ROUTE502_POKE_BALL",
+	  "TRAINER_BUG_CATCHER_SAMMY_REWARD",
+	  "TRAINER_SCHOOL_KID_GEORGIA_REWARD",
+	  "HIDDEN_ITEM_ROUTE502_RARE_CANDY",
+	  "TRAINER_YOUNGSTER_TIMMY_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_ROUTE501/MAIN": "Route 502 Exit (Southwest)",
+	  "REGION_ROUTE514/MAIN": "Route 502 Exit (North)",
+    },
+    "warps": {
+	  "MAP_ROUTE502:0/MAP_ROUTE502_GATEHOUSE_1F:0": "Route 502 Gate (West)"
+	}
+  },
+  "REGION_ROUTE502/EAST": {
+    "parent_map": "MAP_ROUTE502",
+    "name": "Route 502 East",
+    "encounter_region": "Route 502",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+	  "TRAINER_SCHOOL_KID_CHASE_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_JUNOPSIS_CITY/MAIN": "Route 502 Exit (East)"
+    },
+    "warps": {
+	  "MAP_ROUTE502:1/MAP_ROUTE502_GATEHOUSE_1F:2": "Route 502 Gate (East)"
+	}
+  },
+  "REGION_ROUTE502_GATEHOUSE_1F/MAIN": {
+    "parent_map": "MAP_ROUTE502",
+    "name": "Route 502 Gatehouse 1F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+	  "MAP_ROUTE502_GATEHOUSE_1F:0/MAP_ROUTE502:0": "Route 502 Gatehouse 1F Exit (West)",
+	  "MAP_ROUTE502_GATEHOUSE_1F:2/MAP_ROUTE502:1": "Route 502 Gatehouse 1F Exit (East)",
+	  "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 1F Stairs"
+	}
+  },
+  "REGION_ROUTE502_GATEHOUSE_2F/MAIN": {
+    "parent_map": "MAP_ROUTE502",
+    "name": "Route 502 Gatehouse 2F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+	  "TRAINER_SCHOOL_KID_VIVIAN_REWARD",
+	  "TRAINER_YOUNGSTER_VINCENT_REWARD",
+	  "TRAINER_LASS_VIOLET_REWARD",
+	  "NPC_GIFT_GOT_BIG_MUSHROOM_FROM_VIOLET_WINSTRATE",
+	  "TRAINER_SCHOOL_KID_VIVIAN_2_REWARD",
+	  "TRAINER_YOUNGSTER_VINCENT_2_REWARD",
+	  "TRAINER_LASS_VIOLET_2_REWARD"
+    ],
+    "events": [
+	  "EVENT_DEFEAT_WINSTRATES",
+      "GIFT_POKEMON_BULBASAUR",
+	  "GIFT_POKEMON_CHARMANDER",
+	  "GIFT_POKEMON_SQUIRTLE"
+    ],
+    "exits": {},
+    "warps": {
+	  "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 2F Stairs"
+	}
   },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",

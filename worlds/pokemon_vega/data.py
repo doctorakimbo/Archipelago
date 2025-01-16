@@ -1626,5 +1626,5 @@ LEGENDARY_POKEMON = frozenset([data.constants[species] for species in [
     "SPECIES_MANAPHY",
     "SPECIES_ALDINA",
     "SPECIES_ALMARIA",
-    "SPECIES_ASPHERE",
+    "SPECIES_ASPHERE"
 ]])

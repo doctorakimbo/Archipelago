@@ -37,7 +37,7 @@ ITEM_GROUPS = {
         "Fly New Island",
         "Fly Shakudo Island",
         "Fly Ravenplume City",
-        "Fly Route 510",
+        "Fly Route 510"
     },
     "HM01": {"HM01 Cut"},
     "HM02": {"HM02 Fly"},

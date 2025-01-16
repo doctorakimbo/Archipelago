@@ -227,11 +227,29 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     set_rule(get_entrance("Shakudo Island Fly Destination"), lambda state: state.has("Fly Shakudo Island", player))
 
     # Porcelia Town
-    set_rule(get_location("Professor Holly's Lab - Postgame Gift from Aide"), lambda state: state.has("Postgame", player)) # todo: call function instead (postgame_items)
+    set_rule(get_location("Professor Holly's Lab - Postgame Gift from Aide"), lambda state: state.has("Defeat Champion", player))
     set_rule(get_entrance("Porcelia Town Surfing Spot"), lambda state: can_surf(state))
     set_rule(get_entrance("Porcelia Town Exit (South)"), lambda state: can_rock_smash(state))
     set_rule(get_entrance("Porcelia Town Exit (North)"), lambda state: can_cut(state))
     set_rule(get_entrance("Porcelia Town Warp Flowers"), lambda state: state.has("Distant Island Unlock", player)) # todo: call function instead
+    
+    # Route 502
+    set_rule(get_entrance("Route 502 Exit (North)"), lambda state: can_cut(state))
+    set_rule(get_location("Route 502 Gatehouse 2F - School Kid Vivian Reward"), lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - Youngster Vincent Reward"), lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - Lass Violet Reward"), lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - School Kid Vivian Rematch Reward"), 
+             lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - School Kid Vincent Rematch Reward"), 
+             lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - School Kid Violet Rematch Reward"), 
+             lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - Postgame Gift from Violet"), 
+             lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - Postgame Gift from Vincent"), 
+             lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
+    set_rule(get_location("Route 502 Gatehouse 2F - Postgame Gift from Vivian"), 
+             lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
 
     # Viridian City
     set_rule(get_entrance("Viridian City South Surfing Spot"), lambda state: can_surf(state))

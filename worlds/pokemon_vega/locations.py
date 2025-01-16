@@ -60,7 +60,7 @@ fly_item_exclusion_map = {
     "New Island": "ITEM_FLY_NEW_ISLAND",
     "Shakudo Island": "ITEM_FLY_SHAKUDO",
     "Ravenplume City": "ITEM_FLY_RAVENPLUME",
-    "Route 510": "ITEM_FLY_ROUTE10"
+    "Route 510": "ITEM_FLY_ROUTE510"
 }
 
 
