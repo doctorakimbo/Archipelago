@@ -207,14 +207,6 @@
     "name": "Cinnabar Island - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
-  "FLY_UNLOCK_VISITED_FIVE_ISLAND": {
-    "name": "Five Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_FOUR_ISLAND": {
-    "name": "Four Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
   "FLY_UNLOCK_VISITED_FUCHSIA_CITY": {
     "name": "Fuchsia City - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
@@ -223,56 +215,32 @@
     "name": "Indigo Plateau Exterior - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
+  "FLY_UNLOCK_VISITED_JUNOPSIS_CITY": {
+    "name": "Junopsis City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
   "FLY_UNLOCK_VISITED_LAVENDER_TOWN": {
     "name": "Lavender Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_ONE_ISLAND": {
-    "name": "One Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_PALLET_TOWN": {
-    "name": "Pallet Town - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
   "FLY_UNLOCK_VISITED_PEWTER_CITY": {
     "name": "Pewter City - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
-  "FLY_UNLOCK_VISITED_ROUTE10": {
-    "name": "Route 10 Pokemon Center 1F - Unlock Fly Destination",
+  "FLY_UNLOCK_VISITED_PORCELIA_TOWN": {
+    "name": "Porcelia Town - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
-  "FLY_UNLOCK_VISITED_ROUTE4": {
-    "name": "Route 4 Pokemon Center 1F - Unlock Fly Destination",
+  "FLY_UNLOCK_VISITED_ROUTE10": {
+    "name": "Route 10 Pokemon Center 1F - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
   "FLY_UNLOCK_VISITED_SAFFRON_CITY": {
     "name": "Saffron City - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
-  "FLY_UNLOCK_VISITED_SEVEN_ISLAND": {
-    "name": "Seven Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_SIX_ISLAND": {
-    "name": "Six Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_THREE_ISLAND": {
-    "name": "Three Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_TWO_ISLAND": {
-    "name": "Two Island Town - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
   "FLY_UNLOCK_VISITED_VERMILION_CITY": {
     "name": "Vermilion City - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
-  "FLY_UNLOCK_VISITED_VIRIDIAN_CITY": {
-    "name": "Viridian City - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
 
@@ -1760,6 +1728,10 @@
     "name": "Route 502 Gate 2F - Violet Winstrate's Gift",
     "tags": ["NPCGift"]
   },
+  "NPC_GIFT_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT": {
+    "name": "Junopsis City - Black Belt's Gift",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
     "name": "Route 10 Pokemon Center 1F - Oak's Aide's Gift",
     "tags": ["NPCGift"]
@@ -1800,6 +1772,10 @@
     "name": "Three Isle Path - Prospector's Gift",
     "tags": ["NPCGift"]
   },
+  "NPC_GIFT_GOT_NUGGET_FROM_JUNOPSIS_NUGGET_MAN": {
+    "name": "Junopsis City - Nugget Man's Gift",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT": {
     "name": "Route 24 - Clear Nugget Bridge",
     "tags": ["NPCGift"]
@@ -1818,6 +1794,10 @@
   },
   "NPC_GIFT_GOT_TM06_FROM_KOGA": {
     "name": "Fuchsia Gym - Koga's TM",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM15_FROM_ANNETTE": {
+    "name": "Junopsis Gym - Annette's TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL": {
@@ -1858,10 +1838,6 @@
   },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
     "name": "Cinnabar Gym - Blaine's TM",
-    "tags": ["NPCGift"]
-  },
-  "NPC_GIFT_GOT_TM39_FROM_BROCK": {
-    "name": "Pewter Gym - Brock's TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR": {
@@ -2601,6 +2577,10 @@
     "name": "Vermilion Gym - Gentleman Tucker Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_GYM_LEADER_ANNETTE_REWARD": {
+    "name": "Junopsis Gym - Gym Leader Annette Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_HIKER_ALAN_REWARD": {
     "name": "Route 9 - Hiker Alan Reward",
     "tags": ["Trainer"]
@@ -2746,7 +2726,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_IRIS_REWARD": {
-    "name": "Mt. Moon 1F - Lass Iris Reward",
+    "name": "Junopsis Gym - Lass Iris Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_JANICE_REWARD": {
@@ -2803,10 +2783,6 @@
   },
   "TRAINER_LEADER_BLAINE_REWARD": {
     "name": "Cinnabar Gym - Leader Blaine Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_LEADER_BROCK_REWARD": {
-    "name": "Pewter Gym - Leader Brock Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LEADER_ERIKA_REWARD": {

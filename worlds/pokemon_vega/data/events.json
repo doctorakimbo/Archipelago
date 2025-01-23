@@ -146,9 +146,9 @@
     "item": "Static Squirtle",
     "tags": ["Pokemon", "Misc"]
   },
-  "TRADE_POKEMON_MR_MIME": {
-    "name": "Route 2 Trade House - Trade Abra",
-    "item": "Static Mr. Mime",
+  "TRADE_POKEMON_HOOTHOOT": {
+    "name": "Junopsis City Trade House - Trade Togepi",
+    "item": "Static Hoothoot",
     "tags": ["Pokemon", "Misc"]
   },
   "GIFT_POKEMON_MAGIKARP": {

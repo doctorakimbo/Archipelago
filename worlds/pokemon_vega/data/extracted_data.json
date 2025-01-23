@@ -560,8 +560,8 @@
 "FLAG_CINNABAR_GYM_QUIZ_5":618,
 "FLAG_CINNABAR_GYM_QUIZ_6":619,
 "FLAG_DEFEATED_AGATHA":1210,
+"FLAG_DEFEATED_ANNETTE":1200,
 "FLAG_DEFEATED_BLAINE":1206,
-"FLAG_DEFEATED_BROCK":1200,
 "FLAG_DEFEATED_BRUNO":1209,
 "FLAG_DEFEATED_CHAMP":1212,
 "FLAG_DEFEATED_CHAMP_REMATCH":1213,
@@ -631,6 +631,7 @@
 "FLAG_GOT_FAME_CHECKER":667,
 "FLAG_GOT_FIRST_POKEBALLS":578,
 "FLAG_GOT_FIVE_PASS":513,
+"FLAG_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT":4359,
 "FLAG_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE":461,
 "FLAG_GOT_FOSSIL_FROM_MT_MOON":562,
 "FLAG_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER":764,
@@ -653,6 +654,7 @@
 "FLAG_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1":729,
 "FLAG_GOT_NET_BALL_FROM_ROUTE12_FISHING_HOUSE":668,
 "FLAG_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL":738,
+"FLAG_GOT_NUGGET_FROM_JUNOPSIS_NUGGET_MAN":4358,
 "FLAG_GOT_NUGGET_FROM_ROCKET_GRUNT":604,
 "FLAG_GOT_OAKS_PARCEL":607,
 "FLAG_GOT_OLD_AMBER":606,
@@ -678,6 +680,7 @@
 "FLAG_GOT_TM03_FROM_MISTY":663,
 "FLAG_GOT_TM04_FROM_SABRINA":666,
 "FLAG_GOT_TM06_FROM_KOGA":601,
+"FLAG_GOT_TM15_FROM_ANNETTE":596,
 "FLAG_GOT_TM16_FROM_THIRSTY_GIRL":662,
 "FLAG_GOT_TM19_FROM_ERIKA":659,
 "FLAG_GOT_TM20_FROM_THIRSTY_GIRL":661,
@@ -688,7 +691,6 @@
 "FLAG_GOT_TM33_FROM_THIRSTY_GIRL":660,
 "FLAG_GOT_TM34_FROM_SURGE":561,
 "FLAG_GOT_TM38_FROM_BLAINE":590,
-"FLAG_GOT_TM39_FROM_BROCK":596,
 "FLAG_GOT_TM42_AT_MEMORIAL_PILLAR":566,
 "FLAG_GOT_TOGEPI_EGG":730,
 "FLAG_GOT_TOWN_MAP":588,
@@ -943,8 +945,8 @@
 "FLAG_HIDE_OLD_AMBER":86,
 "FLAG_HIDE_ONE_ISLAND_POKECENTER_BILL":114,
 "FLAG_HIDE_ONE_ISLAND_POKECENTER_CELIO":115,
-"FLAG_HIDE_PEWTER_CITY_GYM_GUIDE":46,
-"FLAG_HIDE_PEWTER_CITY_RUNNING_SHOES_GUY":146,
+"FLAG_HIDE_PEWTER_CITY_GYM_GUIDE":46, # set after defeating annette
+"FLAG_HIDE_PEWTER_CITY_RUNNING_SHOES_GUY":146, # cleared after defeating annette
 "FLAG_HIDE_PEWTER_MUSEUM_GUIDE":80,
 "FLAG_HIDE_POKEDEX":58,
 "FLAG_HIDE_POKEHOUSE_FUJI":53,
@@ -1223,6 +1225,7 @@
 "FLAG_NO_ROOM_FOR_JOYFUL_GAME_CORNER_MOON_STONE":766,
 "FLAG_NO_ROOM_FOR_TOGEPI_EGG":731,
 "FLAG_OAK_SKIP_22_RIVAL_CHECK":591, # set when entering hollys lab when FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL is set
+"FLAG_OPENED_JUNOPSIS_GYM":4355,
 "FLAG_OPENED_ROCKET_HIDEOUT":621,
 "FLAG_OPENED_START_MENU":2110,
 "FLAG_PALLET_LADY_NOT_BLOCKING_SIGN":657, # set when receiving first mon
@@ -1370,7 +1373,7 @@
 "FLAG_???":4633, # set during hollys lab segment of final turner intro scene
 "FLAG_???":4634, # set during hollys lab segment of final turner intro scene
 "FLAG_???":4635, # set during hollys lab segment of final turner intro scene
-"FLAG_???":4352, # cleared->set->cleared during hollys lab segment of postgame beginning scene
+"FLAG_???":4352, # cleared->set->cleared during hollys lab segment of postgame beginning scene; set after mosmero scene after beating annette; cleared after beating annette
 "FLAG_???":4437, # cleared during hollys lab segment of postgame beginning scene
 "FLAG_UNLOCKED_ROCKET_WAREHOUSE":726,
 "FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE":739,
@@ -1425,6 +1428,7 @@
 "FLAG_WORLD_MAP_FOUR_ISLAND":2206,
 "FLAG_WORLD_MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE":2232,
 "FLAG_WORLD_MAP_FUCHSIA_CITY":2199,
+"FLAG_WORLD_MAP_JUNOPSIS_CITY":2193,
 "FLAG_WORLD_MAP_INDIGO_PLATEAU_EXTERIOR":2201,
 "FLAG_WORLD_MAP_LAVENDER_TOWN":2196,
 "FLAG_WORLD_MAP_MT_EMBER_EXTERIOR":2230,
@@ -1462,7 +1466,6 @@
 "FLAG_WORLD_MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL":2215,
 "FLAG_WORLD_MAP_VERMILION_CITY":2197,
 "FLAG_WORLD_MAP_VICTORY_ROAD_1F":2218,
-"FLAG_WORLD_MAP_VIRIDIAN_CITY":2193,
 "FLAG_WORLD_MAP_VIRIDIAN_FOREST":2212,
 "GOOD_ROD":1,
 "ITEMS_COUNT":400,
@@ -4409,7 +4412,7 @@
 "species":145}},
 "locations":
 {"BADGE_1":
-{"address":1495163,
+{"address":1495163, # invalid addr and flag, wait for rom
 "default_item":226,
 "flag":1214},
 "BADGE_2":
@@ -4452,14 +4455,6 @@
 {"address":1481475,
 "default_item":242,
 "flag":1231},
-"FLY_UNLOCK_VISITED_FIVE_ISLAND":
-{"address":1485269,
-"default_item":249,
-"flag":1238},
-"FLY_UNLOCK_VISITED_FOUR_ISLAND":
-{"address":1484863,
-"default_item":248,
-"flag":1237},
 "FLY_UNLOCK_VISITED_FUCHSIA_CITY":
 {"address":1481016,
 "default_item":241,
@@ -4468,14 +4463,14 @@
 {"address":1481865,
 "default_item":243,
 "flag":1232},
+"FLY_UNLOCK_VISITED_JUNOPSIS_CITY":
+{"address":1475961, # NOT VALID, WAIT FOR ROM
+"default_item":235,
+"flag":1224},
 "FLY_UNLOCK_VISITED_LAVENDER_TOWN":
 {"address":1479540,
 "default_item":238,
 "flag":1227},
-"FLY_UNLOCK_VISITED_ONE_ISLAND":
-{"address":1482585,
-"default_item":245,
-"flag":1234},
 "FLY_UNLOCK_VISITED_PEWTER_CITY":
 {"address":1476751,
 "default_item":236,
@@ -4488,38 +4483,14 @@
 {"address":1517963,
 "default_item":253,
 "flag":1242},
-"FLY_UNLOCK_VISITED_ROUTE4":
-{"address":1516354,
-"default_item":252,
-"flag":1241},
 "FLY_UNLOCK_VISITED_SAFFRON_CITY":
 {"address":1482226,
 "default_item":244,
 "flag":1233},
-"FLY_UNLOCK_VISITED_SEVEN_ISLAND":
-{"address":1485444,
-"default_item":251,
-"flag":1240},
-"FLY_UNLOCK_VISITED_SIX_ISLAND":
-{"address":1485619,
-"default_item":250,
-"flag":1239},
-"FLY_UNLOCK_VISITED_THREE_ISLAND":
-{"address":1483496,
-"default_item":247,
-"flag":1236},
-"FLY_UNLOCK_VISITED_TWO_ISLAND":
-{"address":1482913,
-"default_item":246,
-"flag":1235},
 "FLY_UNLOCK_VISITED_VERMILION_CITY":
 {"address":1479741,
 "default_item":239,
 "flag":1228},
-"FLY_UNLOCK_VISITED_VIRIDIAN_CITY":
-{"address":1475961,
-"default_item":235,
-"flag":1224},
 "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS":
 {"address":3924088,
 "default_item":375,
@@ -6020,6 +5991,10 @@
 {"address":1485346,
 "default_item":90,
 "flag":513},
+"NPC_GIFT_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT":
+{"address":1492266, # script addr is B05DF4, but may need to rewrite to use correct getitem
+"default_item":196,
+"flag":4359},
 "NPC_GIFT_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE":
 {"address":1492266, # script addr is B0146E, but may need to rewrite to use correct getitem
 "default_item":193,
@@ -6096,6 +6071,10 @@
 {"address":1473122,
 "default_item":110,
 "flag":738},
+"NPC_GIFT_GOT_NUGGET_FROM_JUNOPSIS_NUGGET_MAN":
+{"address":1473122, # script addr is B069E7, but may need to rewrite to use correct getitem
+"default_item":110,
+"flag":4358},
 "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT":
 {"address":1488153,
 "default_item":110,
@@ -6180,6 +6159,10 @@
 {"address":1507465,
 "default_item":294,
 "flag":601},
+"NPC_GIFT_GOT_TM15_FROM_ANNETTE":
+{"address":1495221, # script addr is B07F16, but may need to rewrite to use correct getitem
+"default_item":303,
+"flag":596},
 "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL":
 {"address":1501510,
 "default_item":304,
@@ -6220,10 +6203,6 @@
 {"address":1508563,
 "default_item":326,
 "flag":590},
-"NPC_GIFT_GOT_TM39_FROM_BROCK":
-{"address":1495221,
-"default_item":327,
-"flag":596},
 "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR":
 {"address":1489133,
 "default_item":330,
@@ -6996,6 +6975,10 @@
 {"address":3969454,
 "default_item":0,
 "flag":1703},
+"TRAINER_GYM_LEADER_ANNETTE_REWARD":
+{"address":3969436, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1694},
 "TRAINER_HIKER_ALAN_REWARD":
 {"address":3968978,
 "default_item":0,
@@ -7141,7 +7124,7 @@
 "default_item":0,
 "flag":1405},
 "TRAINER_LASS_IRIS_REWARD":
-{"address":3968850,
+{"address":3968850, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1401},
 "TRAINER_LASS_JANICE_REWARD":
@@ -7200,10 +7183,6 @@
 {"address":3969446,
 "default_item":0,
 "flag":1699},
-"TRAINER_LEADER_BROCK_REWARD":
-{"address":3969436,
-"default_item":0,
-"flag":1694},
 "TRAINER_LEADER_ERIKA_REWARD":
 {"address":3969442,
 "default_item":0,
@@ -14017,6 +13996,11 @@
 "level":0,
 "level_address":0,
 "species":83},
+"TRADE_POKEMON_HOOTHOOT":
+{"address":2543512,
+"level":0,
+"level_address":0,
+"species":109},
 "TRADE_POKEMON_JYNX":
 {"address":2532612,
 "level":0,
@@ -14027,11 +14011,6 @@
 "level":0,
 "level_address":0,
 "species":108},
-"TRADE_POKEMON_MR_MIME":
-{"address":2532552,
-"level":0,
-"level_address":0,
-"species":122},
 "TRADE_POKEMON_NIDORAN":
 {"address":2532672,
 "level":0,
@@ -14052,7 +14031,7 @@
 "level":0,
 "level_address":0,
 "species":114}},
-"misc_ram_addresses":
+"misc_ram_addresses": # TODO
 {"CB2_Overworld":134572992,
 "gArchipelagoDeathLinkQueued":33814228,
 "gArchipelagoReceivedItem":33814180,
@@ -14061,7 +14040,7 @@
 "gPlayerParty":33702552,
 "gSaveBlock1Ptr":50351960,
 "gSaveBlock2Ptr":50351964},
-"misc_rom_addresses":
+"misc_rom_addresses": # TODO
 {"gArchipelagoInfo":4176184,
 "gArchipelagoItemNames":4114684,
 "gArchipelagoNameTable":4168684,

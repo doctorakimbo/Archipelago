@@ -62,6 +62,7 @@ def create_scaling_data(world: "PokemonVegaWorld"):
                                     "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
                                                           state.has("Defeat Champion", player),
                                     "data_ids": ["TRAINER_LASS_VIOLET_2"]}],
+        "Junopsis Gym": [{"name": "Junopsis Gym Trainers", "data_ids": ["TRAINER_LASS_IRIS", "TRAINER_GYM_LEADER_ANNETTE"]}],
         "Route 22": [{"name": "Route 22 Early Rival",
                       "rule": lambda state: state.has("Deliver Oak's Parcel", world.player),
                       "data_ids": ["TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR", "TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER",
@@ -76,7 +77,6 @@ def create_scaling_data(world: "PokemonVegaWorld"):
                             {"name": "Bug Catcher Anthony", "data_ids": ["TRAINER_BUG_CATCHER_ANTHONY"]},
                             {"name": "Bug Catcher Charlie", "data_ids": ["TRAINER_BUG_CATCHER_CHARLIE"]},
                             {"name": "Bug Catcher Sammy", "data_ids": ["TRAINER_BUG_CATCHER_SAMMY"]}],
-        "Pewter Gym": [{"name": "Pewter Gym Trainers", "data_ids": ["TRAINER_CAMPER_LIAM", "TRAINER_LEADER_BROCK"]}],
         "Route 3": [{"name": "Lass Janice", "data_ids": ["TRAINER_LASS_JANICE"]},
                     {"name": "Bug Catcher Colton", "data_ids": ["TRAINER_BUG_CATCHER_COLTON"]},
                     {"name": "Youngster Ben", "data_ids": ["TRAINER_YOUNGSTER_BEN"]},
@@ -1007,7 +1007,7 @@ def create_scaling_data(world: "PokemonVegaWorld"):
 
 def level_scaling(multiworld):
     # todo: this list too
-    battle_events = ["Route 502 Gatehouse 2F - Winstrate Siblings Battles", "Pewter Gym - Gym Leader Battle",
+    battle_events = ["Route 502 Gatehouse 2F - Winstrate Siblings Battles", "Junopsis Gym - Gym Leader Battle",
                      "Cerulean Gym - Gym Leader Battle", "Vermilion Gym - Gym Leader Battle",
                      "Celadon Gym - Gym Leader Battle", "Fuchsia Gym - Gym Leader Battle",
                      "Saffron Gym - Gym Leader Battle", "Cinnabar Gym - Gym Leader Battle",

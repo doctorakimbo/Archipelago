@@ -21,7 +21,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_SABRINA",
     "FLAG_DEFEATED_BLAINE",
     "FLAG_DEFEATED_LEADER_GIOVANNI",
-    "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL", # TODO: is there no flag for winstrates?
+    "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL", # TODO: is there no flag for winstrates (activating or completing)?
     "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
     "FLAG_RESCUED_MR_FUJI",
     "FLAG_HIDE_SAFFRON_ROCKETS",  # Liberated Silph Co.
@@ -42,7 +42,7 @@ EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_
 # TODO: update
 TRACKER_FLY_UNLOCK_FLAGS = [
     "FLAG_WORLD_MAP_PORCELIA_TOWN",
-    "FLAG_WORLD_MAP_VIRIDIAN_CITY",
+    "FLAG_WORLD_MAP_JUNOPSIS_CITY",
     "FLAG_WORLD_MAP_PEWTER_CITY",
     "FLAG_WORLD_MAP_CERULEAN_CITY",
     "FLAG_WORLD_MAP_VERMILION_CITY",

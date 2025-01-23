@@ -222,7 +222,7 @@
     "events": [],
     "exits": {
       "REGION_PORCELIA_TOWN/MAIN": "Porcelia Town Fly Destination",
-      "REGION_VIRIDIAN_CITY/SOUTH": "Viridian City Fly Destination",
+      "REGION_JUNOPSIS_CITY/MAIN": "Junopsis City Fly Destination",
       "REGION_PEWTER_CITY/MAIN": "Pewter City Fly Destination",
       "REGION_CERULEAN_CITY/MAIN": "Cerulean City Fly Destination",
       "REGION_VERMILION_CITY/MAIN": "Vermilion City Fly Destination",
@@ -262,8 +262,8 @@
     "locations": [],
     "events": [],
     "exits": {
-      "REGION_PORCELIA_TOWN/WATER": "Porcelia Town Surfing Spot",
       "REGION_PORCELIA_TOWN/VISIT": "Porcelia Town Visit",
+      "REGION_PORCELIA_TOWN/WATER": "Porcelia Town Surfing Spot",
       "REGION_ROUTE501/MAIN": "Porcelia Town Exit (East)",
       "REGION_ROUTE518/MAIN": "Porcelia Town Exit (South)",
       "REGION_ROUTE517/MAIN": "Porcelia Town Exit (North)",
@@ -354,191 +354,180 @@
       "MAP_PORCELIA_TOWN_PROFESSOR_HOLLYS_LAB:0/MAP_PORCELIA_TOWN:2": "Professor Holly's Lab Exit"
     }
   },
-  "REGION_VIRIDIAN_CITY/VISIT": {
-    "parent_map": "MAP_VIRIDIAN_CITY",
-    "name": "Viridian City Visit",
+  "REGION_JUNOPSIS_CITY/VISIT": {
+    "parent_map": "MAP_JUNOPSIS_CITY",
+    "name": "Junopsis City Visit",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [
-      "FLY_UNLOCK_VISITED_VIRIDIAN_CITY"
+      "FLY_UNLOCK_VISITED_JUNOPSIS_CITY"
     ],
     "events": [],
     "exits": {},
     "warps": {}
   },
-  "REGION_VIRIDIAN_CITY/SOUTH": {
-    "parent_map": "MAP_VIRIDIAN_CITY",
-    "name": "Viridian City South",
-    "encounter_region": "Viridian City",
+  "REGION_JUNOPSIS_CITY/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY",
+    "name": "Junopsis City",
+    "encounter_region": "Junopsis City",
     "has_land": false,
     "has_water": false,
-    "has_fishing": true,
-    "kanto": true,
+    "has_fishing": false,
+    "sphere_ruins": false,
     "locations": [
-      "NPC_GIFT_GOT_TEACHY_TV",
-      "ITEM_VIRIDIAN_CITY_POTION"
-    ],
-    "events": [],
-    "exits": {
-      "REGION_VIRIDIAN_CITY/NORTH": "Viridian City South Roadblock",
-      "REGION_VIRIDIAN_CITY/WATER": "Viridian City South Surfing Spot",
-      "REGION_VIRIDIAN_CITY/VISIT": "Viridian City South Visit",
-      "REGION_ROUTE1/MAIN": "Viridian City South Exit (South)",
-      "REGION_ROUTE22/MAIN": "Viridian City South Exit (West)"
-    },
-    "warps": {
-      "MAP_VIRIDIAN_CITY:0/MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F:0": "Viridian Pokemon Center",
-      "MAP_VIRIDIAN_CITY:1/MAP_VIRIDIAN_CITY_HOUSE:0": "Virdian Nickname House",
-      "MAP_VIRIDIAN_CITY:3/MAP_VIRIDIAN_CITY_SCHOOL:0": "Viridian School",
-      "MAP_VIRIDIAN_CITY:4/MAP_VIRIDIAN_CITY_MART:0": "Viridian Poke Mart"
-    }
-  },
-  "REGION_VIRIDIAN_CITY/NORTH": {
-    "parent_map": "MAP_VIRIDIAN_CITY",
-    "name": "Viridian City North",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [],
-    "exits": {
-      "REGION_VIRIDIAN_CITY/SOUTH": "Viridian City North Ledge Drop",
-      "REGION_VIRIDIAN_CITY/VISIT": "Viridian City North Visit",
-      "REGION_ROUTE2/SOUTHWEST": "Viridian City North Exit"
-    },
-    "warps": {
-      "MAP_VIRIDIAN_CITY:2/MAP_VIRIDIAN_CITY_GYM:0": "Viridian Gym"
-    }
-  },
-  "REGION_VIRIDIAN_CITY/WATER": {
-    "parent_map": "MAP_VIRIDIAN_CITY",
-    "name": "Viridian City Water",
-    "encounter_region": "Viridian City",
-    "has_land": false,
-    "has_water": true,
-    "has_fishing": true,
-    "kanto": true,
-    "locations": [],
-    "events": [],
-    "exits": {},
-    "warps": {}
-  },
-  "REGION_VIRIDIAN_CITY_POKEMON_CENTER_1F/MAIN": {
-    "parent_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F",
-    "name": "Viridian Pokemon Center 1F",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F:0/MAP_VIRIDIAN_CITY:0": "Viridian Pokemon Center 1F Exit",
-      "MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F:1/MAP_VIRIDIAN_CITY_POKEMON_CENTER_2F:0": "Viridian Pokemon Center 1F Stairs"
-    }
-  },
-  "REGION_VIRIDIAN_CITY_POKEMON_CENTER_2F/MAIN": {
-    "parent_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_2F",
-    "name": "Viridian Pokemon Center 2F",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_VIRIDIAN_CITY_POKEMON_CENTER_2F:0/MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F:1": "Viridian Pokemon Center 2F Stairs"
-    }
-  },
-  "REGION_VIRIDIAN_CITY_HOUSE/MAIN": {
-    "parent_map": "MAP_VIRIDIAN_CITY_HOUSE",
-    "name": "Viridian Nickname House",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [],
-    "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_VIRIDIAN_CITY_HOUSE:0/MAP_VIRIDIAN_CITY:1": "Viridian Nickname House Exit"
-    }
-  },
-  "REGION_VIRIDIAN_CITY_GYM/MAIN": {
-    "parent_map": "MAP_VIRIDIAN_CITY_GYM",
-    "name": "Viridian Gym",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "TRAINER_TAMER_COLE_REWARD",
-      "TRAINER_BLACK_BELT_KIYO_REWARD",
-      "TRAINER_COOLTRAINER_SAMUEL_REWARD",
-      "TRAINER_COOLTRAINER_YUJI_REWARD",
-      "TRAINER_BLACK_BELT_ATSUSHI_REWARD",
-      "TRAINER_TAMER_JASON_REWARD",
-      "TRAINER_COOLTRAINER_WARREN_REWARD",
-      "TRAINER_BLACK_BELT_TAKASHI_REWARD",
-      "TRAINER_LEADER_GIOVANNI_REWARD",
-      "FAME_CHECKER_GIOVANNI_4",
-      "BADGE_8",
-      "NPC_GIFT_GOT_TM26_FROM_GIOVANNI",
-      "HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE",
-      "FAME_CHECKER_GIOVANNI_5"
+      "NPC_GIFT_GOT_NUGGET_FROM_JUNOPSIS_NUGGET_MAN"
     ],
     "events": [
-      "EVENT_DEFEAT_GIOVANNI"
-    ],
-    "exits": {},
+	  "EVENT_ACTIVATE_WINSTRATES"
+	],
+    "exits": {
+      "REGION_JUNOPSIS_CITY/VISIT": "Junopsis City Visit",
+      "REGION_JUNOPSIS_CITY/NORTHEAST": "Junopsis City Smashable Rock",
+      "REGION_ROUTE502/EAST": "Junopsis City Exit (West)",
+      "REGION_ROUTE503/NORTH": "Junopsis City Exit (South)"
+    },
     "warps": {
-      "MAP_VIRIDIAN_CITY_GYM:0/MAP_VIRIDIAN_CITY:2": "Viridian Gym Exit"
+      "MAP_JUNOPSIS_CITY:0/MAP_JUNOPSIS_CITY_POKEMON_CENTER_1F:1": "Junopsis Pokemon Center",
+      "MAP_JUNOPSIS_CITY:1/MAP_JUNOPSIS_CITY_HOUSE1:1": "Junopsis North House",
+	  "MAP_JUNOPSIS_CITY:2/MAP_JUNOPSIS_CITY_GYM:1": "Junopsis Gym",
+      "MAP_JUNOPSIS_CITY:3/MAP_JUNOPSIS_CITY_SCHOOL:1": "Junopsis School",
+      "MAP_JUNOPSIS_CITY:4/MAP_JUNOPSIS_CITY_MART:1": "Junopsis Poke Mart",
+      "MAP_JUNOPSIS_CITY:5/MAP_JUNOPSIS_CITY_HOUSE2:1": "Junopsis Trade House"
     }
   },
-  "REGION_VIRIDIAN_CITY_SCHOOL/MAIN": {
-    "parent_map": "MAP_VIRIDIAN_CITY_SCHOOL",
-    "name": "Viridian School",
+  "REGION_JUNOPSIS_CITY/NORTHEAST": {
+    "parent_map": "MAP_JUNOPSIS_CITY",
+    "name": "Junopsis City Northeast",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [
-      "FAME_CHECKER_DAISY_4",
-      "FAME_CHECKER_OAK_4"
-    ],
+	  "NPC_GIFT_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT"
+	],
     "events": [],
-    "exits": {},
-    "warps": {
-      "MAP_VIRIDIAN_CITY_SCHOOL:0/MAP_VIRIDIAN_CITY:3": "Viridian School Exit"
-    }
+    "exits": {
+      "REGION_JUNOPSIS_CITY/MAIN": "Junopsis City Smashable Rock"
+    },
+    "warps": {}
   },
-  "REGION_VIRIDIAN_CITY_MART/MAIN": {
-    "parent_map": "MAP_VIRIDIAN_CITY_MART",
-    "name": "Viridian Poke Mart",
+  "REGION_JUNOPSIS_CITY_POKEMON_CENTER_1F/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_POKEMON_CENTER_1F",
+    "name": "Junopsis Pokemon Center 1F",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
-    "locations": [
-      "NPC_GIFT_GOT_OAKS_PARCEL"
-    ],
+    "sphere_ruins": false,
+    "locations": [],
     "events": [],
     "exits": {},
     "warps": {
-      "MAP_VIRIDIAN_CITY_MART:0/MAP_VIRIDIAN_CITY:4": "Viridian Poke Mart Exit"
+      "MAP_JUNOPSIS_CITY_POKEMON_CENTER_1F:1/MAP_JUNOPSIS_CITY:0": "Junopsis Pokemon Center 1F Exit",
+      "MAP_JUNOPSIS_CITY_POKEMON_CENTER_1F:3/MAP_JUNOPSIS_CITY_POKEMON_CENTER_2F:0": "Junopsis Pokemon Center 1F Stairs"
+    }
+  },
+  "REGION_JUNOPSIS_CITY_POKEMON_CENTER_2F/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_POKEMON_CENTER_2F",
+    "name": "Junopsis Pokemon Center 2F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_JUNOPSIS_CITY_POKEMON_CENTER_2F:0/MAP_JUNOPSIS_CITY_POKEMON_CENTER_1F:3": "Junopsis Pokemon Center 2F Stairs"
+    }
+  },
+  "REGION_JUNOPSIS_CITY_HOUSE1/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_HOUSE1",
+    "name": "Junopsis North House",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_JUNOPSIS_CITY_HOUSE1:1/MAP_JUNOPSIS_CITY:1": "Junopsis North House Exit"
+    }
+  },
+  "REGION_JUNOPSIS_CITY_GYM/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_GYM",
+    "name": "Junopsis Gym",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_LASS_IRIS_REWARD",
+      "TRAINER_GYM_LEADER_ANNETTE_REWARD",
+      "BADGE_1",
+      "NPC_GIFT_GOT_TM15_FROM_ANNETTE"
+    ],
+    "events": [
+      "EVENT_DEFEAT_ANNETTE"
+    ],
+    "exits": {},
+    "warps": {
+      "MAP_JUNOPSIS_CITY_GYM:1/MAP_JUNOPSIS_CITY:2": "Junopsis Gym Exit"
+    }
+  },
+  "REGION_JUNOPSIS_CITY_SCHOOL/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_SCHOOL",
+    "name": "Junopsis School",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_JUNOPSIS_CITY_SCHOOL:1/MAP_JUNOPSIS_CITY:3": "Junopsis School Exit"
+    }
+  },
+  "REGION_JUNOPSIS_CITY_MART/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_MART",
+    "name": "Junopsis Poke Mart",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_JUNOPSIS_CITY_MART:1/MAP_JUNOPSIS_CITY:4": "Junopsis Poke Mart Exit"
+    }
+  },
+  "REGION_JUNOPSIS_CITY_HOUSE2/MAIN": {
+    "parent_map": "MAP_JUNOPSIS_CITY_HOUSE2",
+    "name": "Junopsis Trade House",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [
+	  "TRADE_POKEMON_HOOTHOOT"
+	],
+    "exits": {},
+    "warps": {
+      "MAP_JUNOPSIS_CITY_HOUSE2:1/MAP_JUNOPSIS_CITY:5": "Junopsis Trade House Exit"
     }
   },
   "REGION_PEWTER_CITY/VISIT": {

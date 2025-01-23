@@ -251,15 +251,17 @@ def set_rules(world: "PokemonVegaWorld") -> None:
     set_rule(get_location("Route 502 Gatehouse 2F - Postgame Gift from Vivian"), 
              lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and state.has("Defeat Champion", player))
 
-    # Viridian City
-    set_rule(get_entrance("Viridian City South Surfing Spot"), lambda state: can_surf(state))
+    # Junopsis City
+    set_rule(get_entrance("Junopsis City Smashable Rock"), lambda state: can_rock_smash(state))
+    set_rule(get_entrance("Junopsis Gym"), state.has("Defeat Winstrate Siblings", player))
+    set_rule(get_location("Junopsis City Trade House - Trade Togepi"), lambda state: state.has("Togepi", player))
+    set_rule(get_entrance("Junopsis City Exit (South)"), lambda state: can_pass_junopsis_city_roadblock(state))
 
     # Route 22
     set_rule(get_location("Route 22 - Early Rival Battle"), lambda state: state.has("Deliver Oak's Parcel", player))
     set_rule(get_entrance("Route 22 Surfing Spot"), lambda state: can_surf(state))
 
     # Route 2
-    set_rule(get_location("Route 2 Trade House - Trade Abra"), lambda state: state.has("Abra", player))
     set_rule(get_entrance("Route 2 Southwest Cuttable Trees"), lambda state: can_cut(state))
     set_rule(get_entrance("Route 2 East Cuttable Tree"), lambda state: can_cut(state))
 
@@ -271,10 +273,6 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         set_rule(get_entrance("Route 2 Northwest Cuttable Tree"), lambda state: can_cut(state))
         set_rule(get_entrance("Route 2 Northeast Cuttable Tree (North)"), lambda state: can_cut(state))
         set_rule(get_entrance("Route 2 Northeast Cuttable Tree (South)"), lambda state: can_cut(state))
-
-    # Pewter City
-    set_rule(get_entrance("Pewter City Cuttable Tree"), lambda state: can_cut(state))
-    set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_junopsis_city_roadblock(state))
 
     # Route 4
     set_rule(get_location("Route 4 Pokemon Center 1F - Salesman Purchase"), lambda state: can_grind_money(state))
