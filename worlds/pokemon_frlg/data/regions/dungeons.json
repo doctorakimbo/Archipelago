@@ -3814,28 +3814,13 @@
     "has_fishing": false,
     "kanto": false,
     "locations": [],
-    "events": [],
-    "exits": {
-      "REGION_MT_EMBER_SUMMIT/NEAR_MOLTRES": "Mt. Ember Summit Strength Boulders"
-    },
-    "warps": {
-      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4": "Mt. Ember Summit Exit"
-    }
-  },
-  "REGION_MT_EMBER_SUMMIT/NEAR_MOLTRES": {
-    "parent_map": "MAP_MT_EMBER_SUMMIT",
-    "name": "Mt. Ember Summit Near Moltres",
-    "encounter_region": null,
-    "has_land": false,
-    "has_water": false,
-    "has_fishing": false,
-    "kanto": false,
-    "locations": [],
     "events": [
       "LEGENDARY_POKEMON_MOLTRES"
     ],
     "exits": {},
-    "warps": {}
+    "warps": {
+      "MAP_MT_EMBER_SUMMIT:0/MAP_MT_EMBER_EXTERIOR:4": "Mt. Ember Summit Exit"
+    }
   },
   "REGION_MT_EMBER_RUBY_PATH_1F/MAIN": {
     "parent_map": "MAP_MT_EMBER_RUBY_PATH_1F",

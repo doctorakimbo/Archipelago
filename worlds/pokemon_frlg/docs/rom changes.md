@@ -48,9 +48,10 @@ predetermined priority
   * The initial cutscene with the biker at the Two Island Game Corner has been removed
   * Three Isle Path is open immediately
   * The Rocket Warehouse requires both passwords to open
+  * You no longer need to have a max friendship Pokémon in order to get the Togepi Egg from the Gentleman in the Water Labyrinth
   * A new event was added on Seven Island where you can get a Scanner in the Tanoby Ruins after solving the puzzle in the Tanoby Key. The Scanner can be traded to the Scientist in town for a Deep Sea Scale and Deep Sea Tooth.
 * Evolutions that would be impossible have been changed:
   * Regular trade evolutions now evolve at Level 37
-  * Held item trade evolutions now evolve by using the item on the pokémon from the bag
+  * Held item trade evolutions now evolve by using the item on the Pokémon from the bag
   * Eevee can be given a Sun Stone or Moon Stone to evolve into Espeon or Umbreon respectively
   * Feebas evolves into Milotic at Level 30

@@ -1,8 +1,6 @@
 """
 Classes and functions related to creating a ROM patch
 """
-import copy
-
 import bsdiff4
 import struct
 from typing import TYPE_CHECKING, Dict, List, Tuple
@@ -13,7 +11,7 @@ from worlds.Files import APPatchExtension, APProcedurePatch, APTokenMixin, APTok
 from settings import get_settings
 from .data import data, TrainerPokemonDataTypeEnum
 from .items import get_random_item, reverse_offset_item_value
-from .locations import reverse_offset_flag
+from .locations import PokemonFRLGLocation, reverse_offset_flag
 from .options import (Dexsanity, FlashRequired, ItemfinderRequired, HmCompatibility, LevelScaling,
                       RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters, RandomizeTrainerParties,
                       RandomizeWildPokemon, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey, TmTutorCompatibility,
@@ -157,6 +155,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # Set item values
     location_info: List[Tuple[int, int, str]] = []
     for location in world.multiworld.get_locations(world.player):
+        assert isinstance(location, PokemonFRLGLocation)
         if location.address is None:
             continue
 
@@ -292,22 +291,6 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                 struct.pack("<H", new_item_id)
             )
 
-    # Set the item in the PC
-    pc_item_location = world.get_location("Player's PC - Starting Item")
-    item_id = reverse_offset_item_value(pc_item_location.item.code)
-    tokens.write_token(
-        APTokenTypes.WRITE,
-        data.rom_addresses[game_version_revision]["sArchipelagoPCItemId"],
-        struct.pack("<H", item_id)
-    )
-
-    # Set Oak's pokemon
-    tokens.write_token(
-        APTokenTypes.WRITE,
-        data.rom_addresses[game_version_revision]["sIntroSpecies"],
-        struct.pack("<H", world.random.choice(list(data.species.keys())))
-    )
-
     # Set starting items
     start_inventory = world.options.start_inventory.value.copy()
 
@@ -430,6 +413,8 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x44 */ u8 free_fly_id;
     # /* 0x45 */ u8 town_free_fly_id;
     # /* 0x46 */ u16 resortGorgeousMon;
+    # /* 0x48 */ u16 introSpecies;
+    # /* 0x4A */ u16 pcItemId;
     # }
     options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
 
@@ -696,6 +681,15 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     species_id = data.constants[world.resort_gorgeous_mon[0]]
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x46, struct.pack("<H", species_id))
 
+    # Set intro species
+    species_id = world.random.choice(list(data.species.keys()))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x48, struct.pack("<H", species_id))
+
+    # Set PC item ID
+    pc_item_location = world.get_location("Player's PC - Starting Item")
+    item_id = reverse_offset_item_value(pc_item_location.item.code)
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x4A, struct.pack("<H", item_id))
+
     # Set total darkness
     if "Total Darkness" in world.options.modify_world_state.value:
         flash_level_address = data.rom_addresses[game_version_revision]["sFlashLevelToRadius"]
@@ -707,7 +701,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         randomized_looping_music = _LOOPING_MUSIC.copy()
         world.random.shuffle(randomized_looping_music)
         sound_table_address = data.rom_addresses[game_version_revision]["gRandomizedSoundTable"]
-        for original_music, randomized_music  in zip(_LOOPING_MUSIC, randomized_looping_music):
+        for original_music, randomized_music in zip(_LOOPING_MUSIC, randomized_looping_music):
             tokens.write_token(
                 APTokenTypes.WRITE,
                 sound_table_address + (data.constants[original_music] * 2),

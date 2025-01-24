@@ -316,9 +316,9 @@ class PokemonFRLGWorld(World):
                 "Lance's Room - Elite Four Lance Rematch Reward",
                 "Champion's Room - Champion Reward",
                 "Champion's Room - Champion Rematch Reward",
-                "Hall of Fame - First Reward for Becoming Champion",
-                "Hall of Fame - Second Reward for Becoming Champion",
-                "Two Island Town - Beauty (Bruno Fame 5)"
+                "Hall of Fame - Oak 1 (Become Champion)",
+                "Hall of Fame - Oak 2 (Become Champion)",
+                "Two Island Town - Beauty Info"
             ])
 
             if (self.options.cerulean_cave_requirement == CeruleanCaveRequirement.option_vanilla or
@@ -337,24 +337,24 @@ class PokemonFRLGWorld(World):
 
             if "Early Gossipers" not in self.options.modify_world_state.value:
                 exclude_locations([
-                    "Professor Oak's Lab - Oak's Aide (Daisy Fame 1)",
-                    "Professor Oak's Lab - Oak's Aide (Oak Fame 6)",
-                    "Cerulean Pokemon Center 1F - Bookshelf (Misty Fame 6)",
-                    "Pokemon Fan Club - Worker (Daisy Fame 2)",
-                    "Lavender Pokemon Center 1F - Balding Man (Mr. Fuji Fame 4)",
-                    "Celadon Condominiums 1F - Tea Woman (Daisy Fame 5)",
-                    "Celadon Department Store 2F - Woman (Lance Fame 4)",
-                    "Fuchsia City - Koga's Daughter (Koga Fame 4)",
-                    "Pokemon Trainer Fan Club - Bookshelf (Bruno Fame 3)",
-                    "Saffron City - Reward Girl (Lance Fame 3)",
-                    "Cinnabar Pokemon Center 1F - Bookshelf (Mr. Fuji Fame 6)",
-                    "Indigo Plateau Pokemon Center 1F - Black Belt (Agatha Fame 2)",
-                    "Indigo Plateau Pokemon Center 1F - Black Belt (Agatha Fame 3)",
-                    "Indigo Plateau Pokemon Center 1F - Bookshelf (Lance Fame 5)",
-                    "Indigo Plateau Pokemon Center 1F - Cooltrainer (Lance Fame 6)",
-                    "Ember Spa - Black Belt (Bruno Fame 4)",
-                    "Five Island Pokemon Center 1F - Bookshelf (Lorelei Fame 4)",
-                    "Seven Island Pokemon Center 1F - Bookshelf (Agatha Fame 4)"
+                    "Professor Oak's Lab - Oak's Aide M Info (Right)",
+                    "Professor Oak's Lab - Oak's Aide M Info (Left)",
+                    "Cerulean Pokemon Center 1F - Bookshelf Info",
+                    "Pokemon Fan Club - Worker Info",
+                    "Lavender Pokemon Center 1F - Balding Man Info",
+                    "Celadon Condominiums 1F - Tea Woman Info",
+                    "Celadon Department Store 2F - Woman Info",
+                    "Fuchsia City - Koga's Daughter Info",
+                    "Pokemon Trainer Fan Club - Bookshelf Info",
+                    "Saffron City - Battle Girl Info",
+                    "Cinnabar Pokemon Center 1F - Bookshelf Info",
+                    "Indigo Plateau Pokemon Center 1F - Black Belt Info 1",
+                    "Indigo Plateau Pokemon Center 1F - Black Belt Info 2",
+                    "Indigo Plateau Pokemon Center 1F - Bookshelf Info",
+                    "Indigo Plateau Pokemon Center 1F - Cooltrainer Info",
+                    "Ember Spa - Black Belt Info",
+                    "Five Island Pokemon Center 1F - Bookshelf Info",
+                    "Seven Island Pokemon Center 1F - Bookshelf Info"
                 ])
 
     def create_items(self) -> None:

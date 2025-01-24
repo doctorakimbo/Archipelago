@@ -265,10 +265,6 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                                                 None,
                                                                 world.player))
                 scaling_event.show_in_spoiler = False
-
-                if scaling_data.rule is not None:
-                    scaling_event.access_rule = scaling_data.rule
-
                 region.locations.append(scaling_event)
             elif "Static" in scaling_data.tags:
                 scaling_event = PokemonFRLGLocation(
@@ -286,10 +282,6 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                                                 None,
                                                                 world.player))
                 scaling_event.show_in_spoiler = False
-
-                if scaling_data.rule is not None:
-                    scaling_event.access_rule = scaling_data.rule
-
                 region.locations.append(scaling_event)
             elif "Wild" in scaling_data.tags:
                 index = 1
@@ -328,12 +320,8 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                                                     None,
                                                                     world.player))
                     scaling_event.show_in_spoiler = False
-
                     if event[2] is not None:
                         scaling_event.access_rule = event[2]
-                    elif scaling_data.rule is not None:
-                        scaling_event.access_rule = scaling_data.rule
-
                     region.locations.append(scaling_event)
 
         for region in regions.values():

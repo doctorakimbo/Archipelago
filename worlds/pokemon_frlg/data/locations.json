@@ -49,7 +49,7 @@
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM05": {
-    "name": "Route 2 Gate - Oak's Aide (Show Dex)",
+    "name": "Route 2 Gate - Oak's Aide (Pokedex Progress)",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM06": {
@@ -98,7 +98,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "name": "Route 11 Gate 2F - Oak's Aide (Show Dex)",
+    "name": "Route 11 Gate 2F - Oak's Aide (Pokedex Progress)",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
@@ -1761,7 +1761,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
-    "name": "Route 16 Gate 2F - Oak's Aide (Show Dex)",
+    "name": "Route 16 Gate 2F - Oak's Aide (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_DEEP_SEA_SCALE": {
@@ -1773,11 +1773,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
-    "name": "Route 10 Pokemon Center 1F - Oak's Aide (Show Dex)",
+    "name": "Route 10 Pokemon Center 1F - Oak's Aide (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 Gate 2F - Oak's Aide (Show Dex)",
+    "name": "Route 15 Gate 2F - Oak's Aide (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FIRST_POKEBALLS": {
@@ -1853,7 +1853,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM27": {
-    "name": "Route 12 Gate 2F - Lass",
+    "name": "Route 12 Gate 2F - Mourning Lass",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM28_FROM_ROCKET": {
@@ -1885,11 +1885,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
-    "name": "Hall of Fame - First Reward for Becoming Champion",
+    "name": "Hall of Fame - Oak 1 (Become Champion)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Hall of Fame - Second Reward for Becoming Champion",
+    "name": "Hall of Fame - Oak 2 (Become Champion)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {
@@ -3723,387 +3723,387 @@
   },
 
   "FAME_CHECKER_AGATHA_1": {
-    "name": "Agatha's Room - Agatha (Agatha Fame 1)",
+    "name": "Agatha's Room - Agatha Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_AGATHA_2": {
-    "name": "Indigo Plateau Pokemon Center 1F - Black Belt (Agatha Fame 2)",
+    "name": "Indigo Plateau Pokemon Center 1F - Black Belt Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_AGATHA_3": {
-    "name": "Indigo Plateau Pokemon Center 1F - Black Belt (Agatha Fame 3)",
+    "name": "Indigo Plateau Pokemon Center 1F - Black Belt Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_AGATHA_4": {
-    "name": "Seven Island Pokemon Center 1F - Bookshelf (Agatha Fame 4)",
+    "name": "Seven Island Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_AGATHA_5": {
-    "name": "Agatha's Room - Agatha (Agatha Fame 5)",
+    "name": "Agatha's Room - Agatha Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_AGATHA_6": {
-    "name": "Six Island Poke Mart - Old Woman (Agatha Fame 6)",
+    "name": "Six Island Poke Mart - Old Woman Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BILL_1": {
-    "name": "Cerulean City - Rival (Bill Fame 1)",
+    "name": "Cerulean City - Rival Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BILL_2": {
-    "name": "Cerulean City Pokemon Center 1F - Youngster (Bill Fame 2)",
+    "name": "Cerulean City Pokemon Center 1F - Youngster Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BILL_3": {
-    "name": "Bill's Grandpa's House - Bill's Grandpa (Bill Fame 3)",
+    "name": "Bill's Grandpa's House - Bill's Grandpa Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BILL_4": {
-    "name": "One Island Pokemon Center 1F - Celio (Bill Fame 4)",
+    "name": "One Island Pokemon Center 1F - Celio Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BILL_5": {
-    "name": "One Island Pokemon Center 1F - Celio (Bill Fame 5)",
+    "name": "One Island Pokemon Center 1F - Celio Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BILL_6": {
-    "name": "One Island Pokemon Center 1F - Celio (Bill Fame 6)",
+    "name": "One Island Pokemon Center 1F - Celio Info 3",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BLAINE_1": {
-    "name": "Cinnabar Island - Gym Sign (Blaine Fame 1)",
+    "name": "Cinnabar Island - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BLAINE_2": {
-    "name": "Cinnabar Gym - Blaine (Blaine Fame 2)",
+    "name": "Cinnabar Gym - Blaine Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BLAINE_3": {
-    "name": "Cinnabar Gym - Super Nerd Derek (Blaine Fame 3)",
+    "name": "Cinnabar Gym - Super Nerd Derek Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BLAINE_4": {
-    "name": "Cinnabar Island - Woman (Blaine Fame 4)",
+    "name": "Cinnabar Island - Woman Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BLAINE_5": {
-    "name": "Cinnabar Gym - Photo (Blaine Fame 5)",
+    "name": "Cinnabar Gym - Photo Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BLAINE_6": {
-    "name": "Resort Gorgeous House - Bookshelf (Blaine Fame 6)",
+    "name": "Resort Gorgeous House - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BROCK_1": {
-    "name": "Pewter City - Gym Sign (Brock Fame 1)",
+    "name": "Pewter City - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BROCK_2": {
-    "name": "Pewter Gym - Brock (Brock Fame 2)",
+    "name": "Pewter Gym - Brock Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BROCK_3": {
-    "name": "Pewter City - Fat Man (Brock Fame 3)",
+    "name": "Pewter City - Fat Man Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BROCK_4": {
-    "name": "Route 4 - Boy (Brock Fame 4)",
+    "name": "Route 4 - Boy Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BROCK_5": {
-    "name": "Mt. Moon 1F - Balding Man (Brock Fame 5)",
+    "name": "Mt. Moon 1F - Balding Man Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BROCK_6": {
-    "name": "Pewter Museum 1F - Bookshelf (Brock Fame 6)",
+    "name": "Pewter Museum 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BRUNO_1": {
-    "name": "Bruno's Room - Bruno (Bruno Fame 1)",
+    "name": "Bruno's Room - Bruno Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BRUNO_2": {
-    "name": "Bruno's Room - Bruno (Bruno Fame 2)",
+    "name": "Bruno's Room - Bruno Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BRUNO_3": {
-    "name": "Pokemon Trainer Fan Club - Bookshelf (Bruno Fame 3)",
+    "name": "Pokemon Trainer Fan Club - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BRUNO_4": {
-    "name": "Ember Spa - Black Belt (Bruno Fame 4)",
+    "name": "Ember Spa - Black Belt Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BRUNO_5": {
-    "name": "Two Island Town - Beauty (Bruno Fame 5)",
+    "name": "Two Island Town - Beauty Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_BRUNO_6": {
-    "name": "Sevault Canyon - Black Belt (Bruno Fame 6)",
+    "name": "Sevault Canyon - Black Belt Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_DAISY_1": {
-    "name": "Professor Oak's Lab - Oak's Aide (Daisy Fame 1)",
+    "name": "Professor Oak's Lab - Oak's Aide M Info (Right)",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_DAISY_2": {
-    "name": "Pokemon Fan Club - Worker (Daisy Fame 2)",
+    "name": "Pokemon Fan Club - Worker Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_DAISY_3": {
-    "name": "Water Labyrinth - Gentleman (Daisy Fame 3)",
+    "name": "Water Labyrinth - Gentleman Info",
     "tags": ["FameChecker", "PokemonRequest"]
   },
   "FAME_CHECKER_DAISY_4": {
-    "name": "Viridian School - Bookshelf (Daisy Fame 4)",
+    "name": "Viridian School - Bookshelf Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_DAISY_5": {
-    "name": "Celadon Condominiums 1F - Tea Woman (Daisy Fame 5)",
+    "name": "Celadon Condominiums 1F - Tea Woman Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_DAISY_6": {
-    "name": "Four Island Pokemon Center 1F - Bookshelf (Daisy Fame 6)",
+    "name": "Four Island Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_ERIKA_1": {
-    "name": "Celadon City - Gym Sign (Erika Fame 1)",
+    "name": "Celadon City - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_ERIKA_2": {
-    "name": "Celadon Gym - Erika (Erika Fame 2)",
+    "name": "Celadon Gym - Erika Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_ERIKA_3": {
-    "name": "Celadon Gym - Lass Lisa (Erika Fame 3)",
+    "name": "Celadon Gym - Lass Lisa Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_ERIKA_4": {
-    "name": "Celadon Gym - Beauty Tamia (Erika Fame 4)",
+    "name": "Celadon Gym - Beauty Tamia Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_ERIKA_5": {
-    "name": "Celadon Gym - Erika (Erika Fame 5)",
+    "name": "Celadon Gym - Erika Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_ERIKA_6": {
-    "name": "Celadon Condominiums 2F - Bookshelf (Erika Fame 6)",
+    "name": "Celadon Condominiums 2F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_GIOVANNI_1": {
-    "name": "Rocket Hideout B4F - Giovanni (Giovanni Fame 1)",
+    "name": "Rocket Hideout B4F - Giovanni Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_GIOVANNI_2": {
-    "name": "Silph Co. 5F - Scientist (Giovanni Fame 2)",
+    "name": "Silph Co. 5F - Scientist Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_GIOVANNI_3": {
-    "name": "Silph Co. 8F - Scientist (Giovanni Fame 3)",
+    "name": "Silph Co. 8F - Scientist Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_GIOVANNI_4": {
-    "name": "Viridian Gym - Giovanni (Giovanni Fame 4)",
+    "name": "Viridian Gym - Giovanni Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_GIOVANNI_5": {
-    "name": "Viridian Gym - Gym Guy (Giovanni Fame 5)",
+    "name": "Viridian Gym - Gym Guy Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_GIOVANNI_6": {
-    "name": "Rocket Warehouse - Scientist Gideon (Giovanni Fame 6)",
+    "name": "Rocket Warehouse - Scientist Gideon Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_KOGA_1": {
-    "name": "Fuchsia City - Gym Sign (Koga Fame 1)",
+    "name": "Fuchsia City - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_KOGA_2": {
-    "name": "Fuchsia Gym - Koga (Koga Fame 2)",
+    "name": "Fuchsia Gym - Koga Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_KOGA_3": {
-    "name": "Fuchsia Gym - Juggler Kirk (Koga Fame 3)",
+    "name": "Fuchsia Gym - Juggler Kirk Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_KOGA_4": {
-    "name": "Fuchsia City - Koga's Daughter (Koga Fame 4)",
+    "name": "Fuchsia City - Koga's Daughter Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_KOGA_5": {
-    "name": "Safari Zone Warden's House - Bookshelf (Koga Fame 5)",
+    "name": "FuchSafari Zone Warden's House - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_KOGA_6": {
-    "name": "Safari Zone North Area Rest House - Balding Man (Koga Fame 6)",
+    "name": "Safari Zone North Area Rest House - Balding Man Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LANCE_1": {
-    "name": "Lance's Room - Lance (Lance Fame 1)",
+    "name": "Lance's Room - Lance Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LANCE_2": {
-    "name": "Lance's Room - Lance (Lance Fame 2)",
+    "name": "Lance's Room - Lance Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LANCE_3": {
-    "name": "Saffron City - Reward Girl (Lance Fame 3)",
+    "name": "Saffron City - Battle Girl Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LANCE_4": {
-    "name": "Celadon Department Store 2F - Woman (Lance Fame 4)",
+    "name": "Celadon Department Store 2F - Woman Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LANCE_5": {
-    "name": "Indigo Plateau Pokemon Center 1F - Bookshelf (Lance Fame 5)",
+    "name": "Indigo Plateau Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LANCE_6": {
-    "name": "Indigo Plateau Pokemon Center 1F - Cooltrainer (Lance Fame 6)",
+    "name": "Indigo Plateau Pokemon Center 1F - Cooltrainer Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LORELEI_1": {
-    "name": "Lorelei's Room - Lorelei (Lorelei Fame 1)",
+    "name": "Lorelei's Room - Lorelei Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LORELEI_2": {
-    "name": "Lorelei's Room - Lorelei (Lorelei Fame 2)",
+    "name": "Lorelei's Room - Lorelei Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LORELEI_3": {
-    "name": "Four Island Poke Mart - Old Man (Lorelei Fame 3)",
+    "name": "Four Island Poke Mart - Old Man Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LORELEI_4": {
-    "name": "Five Island Pokemon Center 1F - Bookshelf (Lorelei Fame 4)",
+    "name": "Five Island Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LORELEI_5": {
-    "name": "Four Island Town - Little Girl (Lorelei Fame 5)",
+    "name": "Four Island Town - Little Girl Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LORELEI_6": {
-    "name": "Four Island Town - Old Woman (Lorelei Fame 6)",
+    "name": "Four Island Town - Old Woman Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LTSURGE_1": {
-    "name": "Vermilion City - Gym Sign (Lt. Surge Fame 1)",
+    "name": "Vermilion City - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LTSURGE_2": {
-    "name": "Vermilion Gym - Lt. Surge (Lt. Surge Fame 2)",
+    "name": "Vermilion Gym - Lt. Surge Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LTSURGE_3": {
-    "name": "Vermilion Gym - Gentleman Tucker (Lt. Surge Fame 3)",
+    "name": "Vermilion Gym - Gentleman Tucker Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LTSURGE_4": {
-    "name": "Vermilion Gym - Gentleman Tucker (Lt. Surge Fame 4)",
+    "name": "Vermilion Gym - Gentleman Tucker Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LTSURGE_5": {
-    "name": "Vermilion Gym - Sailor Dwayne (Lt. Surge Fame 5)",
+    "name": "Vermilion Gym - Sailor Dwayne Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_LTSURGE_6": {
-    "name": "Vermilion Pokemon Center 1F - Bookshelf (Lt. Surge Fame 6)",
+    "name": "Vermilion Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MISTY_1": {
-    "name": "Cerulean City - Gym Sign (Misty Fame 1)",
+    "name": "Cerulean City - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MISTY_2": {
-    "name": "Cerulean Gym - Misty (Misty Fame 2)",
+    "name": "Cerulean Gym - Misty Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MISTY_3": {
-    "name": "Cerulean Gym - Swimmer Luis (Misty Fame 3)",
+    "name": "Cerulean Gym - Swimmer Luis Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MISTY_4": {
-    "name": "Route 20 - Camper (Misty Fame 4)",
+    "name": "Route 20 - Camper Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MISTY_5": {
-    "name": "Route 25 - Beauty (Misty Fame 5)",
+    "name": "Route 25 - Beauty Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MISTY_6": {
-    "name": "Cerulean Pokemon Center 1F - Bookshelf (Misty Fame 6)",
+    "name": "Cerulean Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MRFUJI_1": {
-    "name": "Volunteer Pokemon House - Little Girl (Mr. Fuji Fame 1)",
+    "name": "Volunteer Pokemon House - Little Girl Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MRFUJI_2": {
-    "name": "Pokemon Tower 7F - Team Rocket Grunt (Mr. Fuji Fame 2)",
+    "name": "Pokemon Tower 7F - Team Rocket Grunt Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MRFUJI_3": {
-    "name": "Volunteer Pokemon House - Journal (Mr. Fuji Fame 3)",
+    "name": "Volunteer Pokemon House - Journal Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MRFUJI_4": {
-    "name": "Lavender Pokemon Center 1F - Balding Man (Mr. Fuji Fame 4)",
+    "name": "Lavender Pokemon Center 1F - Balding Man Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MRFUJI_5": {
-    "name": "Cinnabar Gym - Photo (Mr. Fuji Fame 5)",
+    "name": "Cinnabar Gym - Photo Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_MRFUJI_6": {
-    "name": "Cinnabar Pokemon Center 1F - Bookshelf (Mr. Fuji Fame 6)",
+    "name": "Cinnabar Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_OAK_1": {
-    "name": "Pallet Town - Oak's Lab Sign (Oak Fame 1)",
+    "name": "Pallet Town - Oak's Lab Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_OAK_2": {
-    "name": "Professor Oak's Lab - Oak (Oak Fame 2)",
+    "name": "Professor Oak's Lab - Oak Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_OAK_3": {
-    "name": "Professor Oak's Lab - Oak's Aide (Oak Fame 3)",
+    "name": "Professor Oak's Lab - Oak's Aide F Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_OAK_4": {
-    "name": "Viridian School - Bookshelf (Oak Fame 4)",
+    "name": "Viridian School - Bookshelf Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_OAK_5": {
-    "name": "Agatha's Room - Agatha (Oak Fame 5)",
+    "name": "Agatha's Room - Agatha Info 3",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_OAK_6": {
-    "name": "Professor Oak's Lab - Oak's Aide (Oak Fame 6)",
+    "name": "Professor Oak's Lab - Oak's Aide M Info (Left)",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_SABRINA_1": {
-    "name": "Saffron City - Gym Sign (Sabrina Fame 1)",
+    "name": "Saffron City - Gym Sign Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_SABRINA_2": {
-    "name": "Sabrina Fan's House - Sabrina Fan (Sabrina Fame 2)",
+    "name": "Sabrina Fan's House - Sabrina Fan Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_SABRINA_3": {
-    "name": "Saffron Gym - Sabrina (Sabrina Fame 3)",
+    "name": "Saffron Gym - Sabrina Info 1",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_SABRINA_4": {
-    "name": "Saffron Gym - Sabrina (Sabrina Fame 4)",
+    "name": "Saffron Gym - Sabrina Info 2",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_SABRINA_5": {
-    "name": "Saffron Pokemon Center 1F - Bookshelf (Sabrina Fame 5)",
+    "name": "Saffron Pokemon Center 1F - Bookshelf Info",
     "tags": ["FameChecker"]
   },
   "FAME_CHECKER_SABRINA_6": {
-    "name": "Saffron Gym - Psychic Tyron (Sabrina Fame 6)",
+    "name": "Saffron Gym - Psychic Tyron Info",
     "tags": ["FameChecker"]
   },
 

@@ -1,6 +1,5 @@
 from typing import TYPE_CHECKING, Dict, List, Optional, Set, Tuple
 from NetUtils import ClientStatus
-from Options import Toggle
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
 from .data import data
