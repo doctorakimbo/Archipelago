@@ -564,7 +564,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x26, struct.pack("<B", elite_four_count))
 
     # Set Elite Four Rematch requirement
-    elite_four_rematch_requirement = world.options.elite_four_rematch_requirement.value
+    elite_four_rematch_requirement = world.options.elite_four_requirement.value
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x27, struct.pack("<B", elite_four_rematch_requirement))
 
     # Set Elite Four Rematch count

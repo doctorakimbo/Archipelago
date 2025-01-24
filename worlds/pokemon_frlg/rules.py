@@ -8,10 +8,10 @@ from worlds.generic.Rules import add_rule, set_rule
 from .data import data, EvolutionMethodEnum, NATIONAL_ID_TO_SPECIES_ID, NUM_REAL_SPECIES
 from .items import offset_item_value
 from .locations import PokemonFRLGLocation
-from .options import (CeruleanCaveRequirement, Dexsanity, EliteFourRequirement, EliteFourRematchRequirement,
-                      FlashRequired, GameVersion, Goal, ItemfinderRequired, LevelScaling, PewterCityRoadblock,
-                      Route22GateRequirement, Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems,
-                      Trainersanity, ViridianCityRoadblock, ViridianGymRequirement)
+from .options import (CeruleanCaveRequirement, Dexsanity, EliteFourRequirement, FlashRequired, GameVersion, Goal,
+                      ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
+                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, Trainersanity,
+                      ViridianCityRoadblock, ViridianGymRequirement)
 
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -206,12 +206,12 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             return has_n_gyms(state, count)
 
     def can_challenge_elite_four_rematch(state: CollectionState):
-        requirement = options.elite_four_rematch_requirement
+        requirement = options.elite_four_requirement
         count = options.elite_four_rematch_count.value
         if state.has_all(["Defeat Champion", "Restore Pokemon Network Machine"], player):
-            if requirement == EliteFourRematchRequirement.option_badges:
+            if requirement == EliteFourRequirement.option_badges:
                 return has_n_badges(state, count)
-            elif requirement == EliteFourRematchRequirement.option_gyms:
+            elif requirement == EliteFourRequirement.option_gyms:
                 return has_n_gyms(state, count)
         return False
 
