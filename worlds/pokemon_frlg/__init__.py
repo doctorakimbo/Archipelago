@@ -316,8 +316,8 @@ class PokemonFRLGWorld(World):
                 "Lance's Room - Elite Four Lance Rematch Reward",
                 "Champion's Room - Champion Reward",
                 "Champion's Room - Champion Rematch Reward",
-                "Hall of Fame - Oak 1 (Become Champion)",
-                "Hall of Fame - Oak 2 (Become Champion)",
+                "Hall of Fame - Oak Gift 1",
+                "Hall of Fame - Oak Gift 2",
                 "Two Island Town - Beauty Info"
             ])
 
@@ -705,7 +705,6 @@ class PokemonFRLGWorld(World):
             "shuffle_badges",
             "shuffle_hidden",
             "extra_key_items",
-            "trainersanity",
             "famesanity",
             "shuffle_fly_destination_unlocks",
             "pokemon_request_locations",
@@ -738,6 +737,8 @@ class PokemonFRLGWorld(World):
             "cerulean_cave_count",
             "provide_hints"
         )
+        slot_data["trainersanity"] = 1 if self.options.trainersanity != Trainersanity.special_range_names["none"] else 0
+        slot_data["elite_four_rematch_requirement"] = self.options.elite_four_requirement.value
         slot_data["free_fly_location_id"] = self.free_fly_location_id
         slot_data["town_map_fly_location_id"] = self.town_map_fly_location_id
         return slot_data

@@ -30,11 +30,11 @@ LOCATION_GROUPS = {
         "Viridian Gym - Giovanni TM"
     },
     "Oak's Aides": {
-        "Route 2 Gate - Oak's Aide (Pokedex Progress)",
-        "Route 10 Pokemon Center 1F - Oak's Aide (Pokedex Progress)",
-        "Route 11 Gate 2F - Oak's Aide (Pokedex Progress)",
-        "Route 16 Gate 2F - Oak's Aide (Pokedex Progress)",
-        "Route 15 Gate 2F - Oak's Aide (Pokedex Progress)"
+        "Route 2 Gate - Oak's Aide Gift (Pokedex Progress)",
+        "Route 10 Pokemon Center 1F - Oak's Aide Gift (Pokedex Progress)",
+        "Route 11 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
+        "Route 16 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
+        "Route 15 Gate 2F - Oak's Aide Gift (Pokedex Progress)"
     }
 }
 

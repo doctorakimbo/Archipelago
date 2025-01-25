@@ -571,7 +571,7 @@
       "MAP_CERULEAN_CITY:4/MAP_CERULEAN_CITY_GYM:0": "Cerulean Gym",
       "MAP_CERULEAN_CITY:5,6/MAP_CERULEAN_CITY_BIKE_SHOP:0": "Bike Shop",
       "MAP_CERULEAN_CITY:7/MAP_CERULEAN_CITY_MART:0": "Cerulean Poke Mart",
-      "MAP_CERULEAN_CITY:11/MAP_CERULEAN_CITY_HOUSE4:0": "Cerulean Wonder News House",
+      "MAP_CERULEAN_CITY:11/MAP_CERULEAN_CITY_HOUSE4:0": "Wonder News House",
       "MAP_CERULEAN_CITY:12/MAP_CERULEAN_CITY_HOUSE5:0": "Berry Powder Man's House"
     }
   },
@@ -796,7 +796,7 @@
   },
   "REGION_CERULEAN_CITY_HOUSE4/MAIN": {
     "parent_map": "MAP_CERULEAN_CITY_HOUSE4",
-    "name": "Cerulean Wonder News House",
+    "name": "Wonder News House",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -806,7 +806,7 @@
     "events": [],
     "exits": {},
     "warps": {
-      "MAP_CERULEAN_CITY_HOUSE4:0/MAP_CERULEAN_CITY:11": "Cerulean Wonder News House Exit"
+      "MAP_CERULEAN_CITY_HOUSE4:0/MAP_CERULEAN_CITY:11": "Wonder News House Exit"
     }
   },
   "REGION_CERULEAN_CITY_HOUSE5/MAIN": {
@@ -1792,7 +1792,7 @@
       "REGION_ROUTE19/MAIN": "Fuchsia City Exit (South)"
     },
     "warps": {
-      "MAP_FUCHSIA_CITY:0/MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:1": "Safari Zone Lobby",
+      "MAP_FUCHSIA_CITY:0/MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:1": "Safari Zone Entrance",
       "MAP_FUCHSIA_CITY:1/MAP_FUCHSIA_CITY_WARDENS_HOUSE:0": "Safari Zone Warden's House",
       "MAP_FUCHSIA_CITY:2/MAP_FUCHSIA_CITY_MART:0": "Fuchsia Poke Mart",
       "MAP_FUCHSIA_CITY:3/MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE:0": "Safari Zone Office",
@@ -1838,7 +1838,7 @@
   },
   "REGION_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE/MAIN": {
     "parent_map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE",
-    "name": "Safari Zone Lobby",
+    "name": "Safari Zone Entrance",
     "encounter_region": null,
     "has_land": false,
     "has_water": false,
@@ -1849,7 +1849,7 @@
     "exits": {},
     "warps": {
       "MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:0/MAP_SAFARI_ZONE_CENTER:0": "Safari Zone",
-      "MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:1/MAP_FUCHSIA_CITY:0": "Safari Zone Lobby Exit"
+      "MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE:1/MAP_FUCHSIA_CITY:0": "Safari Zone Entrance Exit"
     }
   },
   "REGION_FUCHSIA_CITY_WARDENS_HOUSE/MAIN": {

@@ -293,7 +293,7 @@ class ModifyWorldState(OptionSet):
     - Modify Route 12: Adds impassable rocks to Route 12 that prevent surfing around Snorlax.
     - Modify Route 16: Adds a smashable rock to Route 16 that allows you to bypass the Snorlax.
     - Open Silph: Moves the Team Rocket Grunt that blocks the entrance to Silph Co.
-    - Remove Saffron Rockets: Removed the Team Rocket Grunts from Saffron City
+    - Remove Saffron Rockets: Removed the Team Rocket Grunts from Saffron City.
     - Route 23 Trees: Adds cuttable trees to Route 23 under the sixth checkpoint.
     - Modify Route 23: Adds a waterfall to Route 23 at the end of the water section.
     - Victory Road Rocks: Adds smashable rocks to Victory Road that block the floor switches.

@@ -33,11 +33,11 @@
   },
 
   "NPC_GIFT_GOT_HM01": {
-    "name": "S.S. Anne Captain's Office - Captain",
+    "name": "S.S. Anne Captain's Office - Captain Gift",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM02": {
-    "name": "Route 16 Fly House - Woman",
+    "name": "Route 16 Fly House - Woman Gift",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM03": {
@@ -45,15 +45,15 @@
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM04": {
-    "name": "Safari Zone Warden's House - Warden (Return Teeth)",
+    "name": "Safari Zone Warden's House - Warden Gift (Return Teeth)",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM05": {
-    "name": "Route 2 Gate - Oak's Aide (Pokedex Progress)",
+    "name": "Route 2 Gate - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM06": {
-    "name": "Ember Spa - Rock Smash Man",
+    "name": "Ember Spa - Rock Smash Man Gift",
     "tags": ["HM"]
   },
   "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07": {
@@ -66,7 +66,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_BIKE_VOUCHER": {
-    "name": "Pokemon Fan Club - Chairman",
+    "name": "Pokemon Fan Club - Chairman Gift",
     "tags": ["KeyItem"]
   },
   "ITEM_SILPH_CO_5F_CARD_KEY": {
@@ -74,7 +74,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_COIN_CASE": {
-    "name": "Celadon Restaurant - Coin Case Man",
+    "name": "Celadon Restaurant - Coin Case Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_DOME_FOSSIL": {
@@ -82,11 +82,11 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_FAME_CHECKER": {
-    "name": "Cerulean City - Rival",
+    "name": "Cerulean City - Rival Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_GOOD_ROD": {
-    "name": "Fuchsia Fishing House - Fishing Guru's Brother",
+    "name": "Fuchsia Fishing House - Fishing Guru Gift",
     "tags": ["KeyItem"]
   },
   "ITEM_SAFARI_ZONE_WEST_GOLD_TEETH": {
@@ -98,7 +98,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "name": "Route 11 Gate 2F - Oak's Aide (Pokedex Progress)",
+    "name": "Route 11 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
@@ -114,23 +114,23 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_AMBER": {
-    "name": "Pewter Museum 1F - Scientist",
+    "name": "Pewter Museum 1F - Scientist Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_ROD": {
-    "name": "Vermilion Fishing House - Fishing Guru",
+    "name": "Vermilion Fishing House - Fishing Guru Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POKE_FLUTE": {
-    "name": "Volunteer Pokemon House - Mr. Fuji",
+    "name": "Volunteer Pokemon House - Mr. Fuji Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POWDER_JAR": {
-    "name": "Berry Powder Man's House - Berry Powder Man",
+    "name": "Berry Powder Man's House - Berry Powder Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RAINBOW_PASS": {
-    "name": "One Island Pokemon Center 1F - Celio (Deliver Ruby)",
+    "name": "One Island Pokemon Center 1F - Celio Gift (Deliver Ruby)",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RUBY": {
@@ -158,23 +158,23 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SS_TICKET": {
-    "name": "Sea Cottage - Bill",
+    "name": "Sea Cottage - Bill Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SUPER_ROD": {
-    "name": "Route 12 Fishing House - Fishing Guru's Brother",
+    "name": "Route 12 Fishing House - Fishing Guru Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEA": {
-    "name": "Celadon Condominiums 1F - Tea Woman",
+    "name": "Celadon Condominiums 1F - Tea Woman Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEACHY_TV": {
-    "name": "Viridian City - Old Man",
+    "name": "Viridian City - Old Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TOWN_MAP": {
-    "name": "Rival's House - Daisy",
+    "name": "Rival's House - Daisy Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TRI_PASS": {
@@ -182,9 +182,10 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_VS_SEEKER": {
-    "name": "Vermilion Pokemon Center 1F - Vs. Seeker Woman",
+    "name": "Vermilion Pokemon Center 1F - Vs. Seeker Woman Gift",
     "tags": ["KeyItem"]
   },
+
   "ITEM_CELADON_CITY_HOUSE_HIDEOUT_KEY": {
     "name": "Celadon Rocket House - Item",
     "tags": ["ExtraKeyItem"]
@@ -1749,67 +1750,67 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_10_COINS_FROM_GAMBLER": {
-    "name": "Celadon Game Corner - Fisherman",
+    "name": "Celadon Game Corner - Fisherman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_20_COINS_FROM_GAMBLER": {
-    "name": "Celadon Game Corner - Scientist",
+    "name": "Celadon Game Corner - Scientist Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_20_COINS_FROM_GAMBLER_2": {
-    "name": "Celadon Game Corner - Gentleman",
+    "name": "Celadon Game Corner - Gentleman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
-    "name": "Route 16 Gate 2F - Oak's Aide (Pokedex Progress)",
+    "name": "Route 16 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_DEEP_SEA_SCALE": {
-    "name": "Seven Island Town - Scientist 1 (Trade Scanner)",
+    "name": "Seven Island Town - Scientist Gift 1 (Trade Scanner)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_DEEP_SEA_TOOTH": {
-    "name": "Seven Island Town - Scientist 2 (Trade Scanner)",
+    "name": "Seven Island Town - Scientist Gift 2 (Trade Scanner)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
-    "name": "Route 10 Pokemon Center 1F - Oak's Aide (Pokedex Progress)",
+    "name": "Route 10 Pokemon Center 1F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 Gate 2F - Oak's Aide (Pokedex Progress)",
+    "name": "Route 15 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FIRST_POKEBALLS": {
-    "name": "Professor Oak's Lab - Oak (Deliver Parcel)",
+    "name": "Professor Oak's Lab - Oak Gift (Deliver Parcel)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
-    "name": "Three Island Town - Anti-Biker",
+    "name": "Three Island Town - Anti-Biker Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE": {
-    "name": "Resort Gorgeous House - Selphy (Show Pokemon)",
+    "name": "Resort Gorgeous House - Selphy Gift (Show Pokemon)",
     "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH": {
-    "name": "Silph Co. 11F - President",
+    "name": "Silph Co. 11F - President Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER": {
-    "name": "Two Island Game Corner - Lostelle's Dad (Deliver Meteorite)",
+    "name": "Two Island Game Corner - Lostelle's Dad Gift (Deliver Meteorite)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1": {
-    "name": "Water Path Heracross Woman's House - Woman (Show Heracross)",
+    "name": "Water Path Heracross Woman's House - Woman Gift (Show Heracross)",
     "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_NET_BALL_FROM_ROUTE12_FISHING_HOUSE": {
-    "name": "Route 12 Fishing House - Fishing Guru's Brother (Show Magikarp)",
+    "name": "Route 12 Fishing House - Fishing Guru Gift (Show Magikarp)",
     "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL": {
-    "name": "Three Isle Path - Prospector",
+    "name": "Three Isle Path - Prospector Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT": {
@@ -1817,7 +1818,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL": {
-    "name":"Professor Oak's Lab - Oak (Post Route 22 Rival)",
+    "name":"Professor Oak's Lab - Oak Gift (Post Route 22 Rival)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POTION_ON_ROUTE_1": {
@@ -1837,7 +1838,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Thirsty Girl (Give Fresh Water)",
+    "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Fresh Water)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
@@ -1845,7 +1846,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Thirsty Girl (Give Soda Pop)",
+    "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Soda Pop)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
@@ -1853,7 +1854,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM27": {
-    "name": "Route 12 Gate 2F - Mourning Lass",
+    "name": "Route 12 Gate 2F - Mourning Lass Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM28_FROM_ROCKET": {
@@ -1861,11 +1862,11 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC": {
-    "name": "Mr. Psychic's House - Mr. Psychic",
+    "name": "Mr. Psychic's House - Mr. Psychic Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Thirsty Girl (Give Lemonade)",
+    "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Lemonade)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
@@ -1881,19 +1882,19 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR": {
-    "name": "Memorial Pillar - Memorial Man",
+    "name": "Memorial Pillar - Memorial Man Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
-    "name": "Hall of Fame - Oak 1 (Become Champion)",
+    "name": "Hall of Fame - Oak Gift 1",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Hall of Fame - Oak 2 (Become Champion)",
+    "name": "Hall of Fame - Oak Gift 2",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {
-    "name": "Berry Forest - Lostelle",
+    "name": "Berry Forest - Lostelle Gift",
     "tags": ["NPCGift"]
   },
 
