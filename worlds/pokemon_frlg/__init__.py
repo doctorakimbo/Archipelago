@@ -660,33 +660,30 @@ class PokemonFRLGWorld(World):
 
             species_locations = defaultdict(set)
 
-            if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
-                pokemon_locations: List[PokemonFRLGLocation] = [
-                    location for location in self.multiworld.get_locations(self.player)
-                    if "Pokemon" in location.tags and "Wild" in location.tags
-                ]
-                for location in pokemon_locations:
-                    species_locations[location.item.name].add(location.spoiler_name)
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Wild" in location.tags
+            ]
+            for location in pokemon_locations:
+                species_locations[location.item.name].add(location.spoiler_name)
 
-            if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
-                pokemon_locations: List[PokemonFRLGLocation] = [
-                    location for location in self.multiworld.get_locations(self.player)
-                    if "Pokemon" in location.tags and "Misc" in location.tags
-                ]
-                for location in pokemon_locations:
-                    if location.item.name.startswith("Missable"):
-                        continue
-                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Misc" in location.tags
+            ]
+            for location in pokemon_locations:
+                if location.item.name.startswith("Missable"):
+                    continue
+                species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
 
-            if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
-                pokemon_locations: List[PokemonFRLGLocation] = [
-                    location for location in self.multiworld.get_locations(self.player)
-                    if "Pokemon" in location.tags and "Legendary" in location.tags
-                ]
-                for location in pokemon_locations:
-                    if location.item.name.startswith("Missable"):
-                        continue
-                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+            pokemon_locations: List[PokemonFRLGLocation] = [
+                location for location in self.multiworld.get_locations(self.player)
+                if "Pokemon" in location.tags and "Legendary" in location.tags
+            ]
+            for location in pokemon_locations:
+                if location.item.name.startswith("Missable"):
+                    continue
+                species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
 
             hint_data[self.player] = {
                 self.location_name_to_id[f"Pokedex - {species}"]: ", ".join(sorted(maps))
