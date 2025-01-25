@@ -73,13 +73,47 @@ class ExtraKeyItems(Toggle):
     display_name = "Extra Key Items"
 
 
-class Trainersanity(Toggle):
+class Trainersanity(NamedRange):
     """
     Defeating a trainer gives you an item.
+
+    You can specify how many Trainers should be a check between 1 and 456. If you have Kanto Only on, the amount of
+    Trainer checks might be lower than the amount you specify. Trainers that have checks will periodically have an
+    exclamation mark appear above their head in game.
 
     Trainers are no longer missable. Each trainer will add a random filler item into the pool.
     """
     display_name = "Trainersanity"
+    default = 0
+    range_start = 1
+    range_end = 456
+    special_range_names = {
+        "none": 0,
+        "all": 456,
+    }
+
+
+class Dexsanity(NamedRange):
+    """
+    Adding a "caught" Pokedex entry gives you an item (catching, evolving, trading, etc.).
+
+    You can specify how many Pokedex entries should be a check between 1 and 386. Depending on your settings for
+    randomizing wild Pokemon, there might not actually be as many locations as you specify. Pokemon that have checks
+    will have a black silhouette of a pokeball in the Pokedex and in the battle HUD if you have seen them already.
+
+    Defeating Gym Leaders provides seen Pokedex info, allowing you to see on the map where a Pokemon can be found in
+    the wild.
+
+    Each entry will add a random filler item into the pool.
+    """
+    display_name = "Dexsanity"
+    default = 0
+    range_start = 1
+    range_end = 386
+    special_range_names = {
+        "none": 0,
+        "all": 386,
+    }
 
 
 class Famesanity(Toggle):
@@ -108,9 +142,21 @@ class PokemonRequestLocations(Toggle):
     display_name = "Pokemon Request Locations"
 
 
+class ShuffleRunningShoes(Choice):
+    """
+    Shuffle the running shoes into the item pool, or start with it.
+    """
+    display_name = "Shuffle Running Shoes"
+    default = 2
+    option_vanilla = 0
+    option_shuffle = 1
+    option_start_with = 2
+
+
 class SilphCoCardKey(Choice):
     """
-    Sets how the card key that unlocks the doors in Silph Co. is handled.
+    Sets how the card key that unlocks the doors in Silph Co. is handled. If Split or Progressive, nine new locations
+    will be added to Silph Co. in the form of item balls on floors 2 through 11 (except for floor five).
 
     - Vanilla: There is one Card Key in the pool that unlocks every door in Silph Co.
     - Split: The Card Key is split into ten items, one for each floor of Silph Co. that has doors.
@@ -125,7 +171,8 @@ class SilphCoCardKey(Choice):
 
 class SeviiIslandPasses(Choice):
     """
-    Sets how the passes that allow you to travel to the Sevii Islands are handled.
+    Sets how the passes that allow you to travel to the Sevii Islands are handled. If Split or Progressive, five new
+    locations will be added to events related to the Sevii Islands.
 
     - Vanilla: The Tri Pass and Rainbow Pass are two separate items in the pool and can be found in any order.
     - Progressive: There are two Progressive Passes in the pool. You will always obtain the Tri Pass before the Rainbow
@@ -140,6 +187,20 @@ class SeviiIslandPasses(Choice):
     option_progressive = 1
     option_split = 2
     option_progressive_split = 3
+
+
+class SplitTeas(Toggle):
+    """
+    Splits the Tea item into four different items. Each guard to Saffron City will require a different Tea to pass.
+    Brock, Misty, and Erika will appear in the Celadon Condominiums after beating them and give you a randomized item.
+
+    The Tea required to get past each guard are as follows:
+    - Route 5: Blue Tea
+    - Route 6: Red Tea
+    - Route 7: Green Tea
+    - Route 8: Purple Tea
+    """
+    display_name = "Split Teas"
 
 
 class ItemfinderRequired(Choice):
@@ -231,16 +292,21 @@ class ModifyWorldState(OptionSet):
     - Route 12 Boulders: Adds boulders to Route 12 that block the exits to Route 11 & 13.
     - Modify Route 12: Adds impassable rocks to Route 12 that prevent surfing around Snorlax.
     - Modify Route 16: Adds a smashable rock to Route 16 that allows you to bypass the Snorlax.
+    - Open Silph: Moves the Team Rocket Grunt that blocks the entrance to Silph Co.
+    - Remove Saffron Rockets: Removed the Team Rocket Grunts from Saffron City.
     - Route 23 Trees: Adds cuttable trees to Route 23 under the sixth checkpoint.
     - Modify Route 23: Adds a waterfall to Route 23 at the end of the water section.
     - Victory Road Rocks: Adds smashable rocks to Victory Road that block the floor switches.
     - Early Gossipers: Removes the requirement to have entered the Hall of Fame from various Famesanity locations.
     - Total Darkness: Changes dark caves to be completely black and provide no vision without Flash.
+    - Block Vermilion Sailing: Prevents you from sailing to Vermilion City on the Seagallop until you have gotten
+                               the S.S. Ticket.
     """
     display_name = "Modify World State"
     valid_keys = ["Modify Route 2", "Remove Cerulean Roadblocks", "Block Tunnels", "Modify Route 9",
                   "Modify Route 10", "Block Tower", "Route 12 Boulders", "Modify Route 12", "Modify Route 16",
-                  "Route 23 Trees", "Modify Route 23", "Victory Road Rocks", "Early Gossipers", "Total Darkness"]
+                  "Open Silph", "Remove Saffron Rockets", "Route 23 Trees", "Modify Route 23", "Victory Road Rocks",
+                  "Early Gossipers", "Total Darkness", "Block Vermilion Sailing"]
 
 
 class AdditionalDarkCaves(OptionSet):
@@ -408,6 +474,16 @@ class EliteFourCount(Range):
     Sets the number of Badges/Gyms required to challenge the Elite Four.
     """
     display_name = "Elite Four Count"
+    default = 8
+    range_start = 0
+    range_end = 8
+
+
+class EliteFourRematchCount(Range):
+    """
+    Sets the number of Badges/Gyms required to challenge the Elite Four Rematch.
+    """
+    display_name = "Elite Four Rematch Count"
     default = 8
     range_start = 0
     range_end = 8
@@ -685,6 +761,8 @@ class MoveBlacklist(OptionSet):
 class HmCompatibility(NamedRange):
     """
     Sets the percent chance that a given HM is compatible with a species.
+
+    If you have seen a Pokemon already, the HMs it can use are listed in the Pokedex.
     """
     display_name = "HM Compatibility"
     default = -1
@@ -741,7 +819,24 @@ class GuaranteedCatch(Toggle):
     """
     Pokeballs are guaranteed to catch wild Pokemon regardless of catch rate.
     """
-    display_name = "Guarenteed Catch"
+    display_name = "Guaranteed Catch"
+
+
+class NormalizeEncounterRates(Toggle):
+    """
+    Make every slot on an encounter table approximately equally likely.
+
+    This does NOT mean each species is equally likely. Each species may occupy more than one slot and slots vary in
+    probability.
+    """
+    display_name = "Normalize Encounter Rates"
+
+
+class AllPokemonSeen(Toggle):
+    """
+    Start will all Pokemon seen in you Pokedex. This allows you to see where the Pokemon can be encountered in the wild.
+    """
+    display_name = "All Pokemon Seen"
 
 
 class ExpModifier(Range):
@@ -834,6 +929,31 @@ class ReceiveItemMessages(Choice):
     option_none = 2
 
 
+class RandomizeMusic(Toggle):
+    """
+    Shuffles music played in any situation where it loops.
+    """
+    display_name = "Randomize Music"
+
+
+class RandomizeFanfares(Toggle):
+    """
+    Shuffles fanfares for item pickups, healing at the pokecenter, etc.
+
+    When this option is enabled, pressing B will interrupt most fanfares.
+    """
+    display_name = "Randomize Fanfares"
+
+
+class ProvideHints(Toggle):
+    """
+    Provides an Archipelago Hint for locations that tell you what item they give once you've gotten the in game hint.
+
+    This includes the Oak's Aides, Bicycle Shop, and Pokemon Request Locations
+    """
+    display_name = "Provide Hints"
+
+
 @dataclass
 class PokemonFRLGOptions(PerGameCommonOptions):
     game_version: GameVersion
@@ -845,11 +965,14 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     shuffle_hidden: ShuffleHiddenItems
     extra_key_items: ExtraKeyItems
     trainersanity: Trainersanity
+    dexsanity: Dexsanity
     famesanity: Famesanity
     shuffle_fly_destination_unlocks: ShuffleFlyDestinationUnlocks
     pokemon_request_locations: PokemonRequestLocations
+    shuffle_running_shoes: ShuffleRunningShoes
     card_key: SilphCoCardKey
     island_passes: SeviiIslandPasses
+    split_teas: SplitTeas
 
     itemfinder_required: ItemfinderRequired
     flash_required: FlashRequired
@@ -874,6 +997,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     route23_guard_count: Route23GuardCount
     elite_four_requirement: EliteFourRequirement
     elite_four_count: EliteFourCount
+    elite_four_rematch_count: EliteFourRematchCount
     cerulean_cave_requirement: CeruleanCaveRequirement
     cerulean_cave_count: CeruleanCaveCount
 
@@ -901,6 +1025,8 @@ class PokemonFRLGOptions(PerGameCommonOptions):
     reusable_tm_tutors: ReusableTmsTutors
     min_catch_rate: MinCatchRate
     guaranteed_catch: GuaranteedCatch
+    normalize_encounter_rates: NormalizeEncounterRates
+    all_pokemon_seen: AllPokemonSeen
     exp_modifier: ExpModifier
     starting_money: StartingMoney
     blind_trainers: BlindTrainers
@@ -910,3 +1036,6 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     turbo_a: TurboA
     receive_item_messages: ReceiveItemMessages
+    randomize_music: RandomizeMusic
+    randomize_fanfares: RandomizeFanfares
+    provide_hints: ProvideHints
