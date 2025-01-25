@@ -422,7 +422,7 @@ class PokemonFRLGWorld(World):
                     itempool.append(self.create_item(get_random_item(self, ItemClassification.filler)))
                     removed_items_count -= 1
 
-        self.filler_items = [item for item in itempool if item.filler]
+        self.filler_items = [item for item in itempool if item.classification == ItemClassification.filler]
         self.random.shuffle(self.filler_items)
         self.multiworld.itempool += itempool
 
