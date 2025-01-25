@@ -33,7 +33,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL",
     "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
     "FLAG_RESCUED_MR_FUJI",
-    "FLAG_HIDE_SAFFRON_ROCKETS",  # Liberated Silph Co.
+    "FLAG_HIDE_SILPH_GIOVANNI",  # Liberated Silph Co.
     "FLAG_DEFEATED_CHAMP",
     "FLAG_RESCUED_LOSTELLE",
     "FLAG_SEVII_DETOUR_FINISHED",  # Gave Meteorite to Lostelle's Dad
