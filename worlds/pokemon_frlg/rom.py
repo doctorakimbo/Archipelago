@@ -687,7 +687,10 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
 
     # Set PC item ID
     pc_item_location = world.get_location("Player's PC - Starting Item")
-    item_id = reverse_offset_item_value(pc_item_location.item.code)
+    if pc_item_location.item.player == world.player:
+        item_id = reverse_offset_item_value(pc_item_location.item.code)
+    else:
+        item_id = data.constants["ITEM_ARCHIPELAGO_PROGRESSION"]
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x4A, struct.pack("<H", item_id))
 
     # Set total darkness
