@@ -7,7 +7,7 @@ from .options import LevelScaling
 from .util import bound
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 
 @dataclass
@@ -21,14 +21,48 @@ class ScalingData:
     tags: FrozenSet
 
 
-def create_scaling_data(world: "PokemonFRLGWorld"):
+# todo: all this
+def create_scaling_data(world: "PokemonVegaWorld"):
     if world.options.level_scaling == LevelScaling.option_off:
         return
 
     kanto_trainer_data = {
-        "Professor Oak's Lab": [{"name": "Oak's Lab Rival", "data_ids": ["TRAINER_RIVAL_OAKS_LAB_BULBASAUR",
-                                                                         "TRAINER_RIVAL_OAKS_LAB_CHARMANDER",
-                                                                         "TRAINER_RIVAL_OAKS_LAB_SQUIRTLE"]}],
+        "Professor Holly's Lab": [{"name": "Holly's Lab Rival", "data_ids": ["TRAINER_RIVAL_HOLLYS_LAB_NIMBLEAF",
+                                                                         "TRAINER_RIVAL_HOLLYS_LAB_PEYERO",
+                                                                         "TRAINER_RIVAL_HOLLYS_LAB_LIQUIPUT"]}],
+        "Route 501": [{"name": "Youngster Ben", "data_ids": ["TRAINER_YOUNGSTER_BEN"]},
+                      {"name": "Lass Crissy", "data_ids": ["TRAINER_LASS_CRISSY"]},
+                      {"name": "School Kid Rich", "data_ids": ["TRAINER_SCHOOL_KID_RICH"]},
+                      {"name": "School Kid Karen", "data_ids": ["TRAINER_SCHOOL_KID_KAREN"]}],
+        "Route 502 West": [{"name": "Youngster Josh", "data_ids": ["TRAINER_YOUNGSTER_JOSH"]},
+                           {"name": "Lass Robin", "data_ids": ["TRAINER_LASS_ROBIN"]},
+                           {"name": "Twins Joy & Meg", "data_ids": ["TRAINER_TWINS_JOY_MEG"]},
+                           {"name": "Bug Catcher Sammy", "data_ids": ["TRAINER_BUG_CATCHER_SAMMY"]},
+                           {"name": "School Kid Georgia", "data_ids": ["TRAINER_SCHOOL_KID_GEORGIA"]},
+                           {"name": "Youngster Timmy", "data_ids": ["TRAINER_YOUNGSTER_TIMMY"]}],
+        "Route 502 East": [{"name": "School Kid Chase", "data_ids": ["TRAINER_SCHOOL_KID_CHASE"]}],
+        "Route 502 Gatehouse 2F": [{"name": "School Kid Vivian",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player),
+                                    "data_ids": ["TRAINER_SCHOOL KID_VIVIAN"]},
+                                   {"name": "Youngster Vincent",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player),
+                                    "data_ids": ["TRAINER_YOUNGSTER_VINCENT"]},
+                                   {"name": "Lass Violet",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player),
+                                    "data_ids": ["TRAINER_LASS_VIOLET"]},
+                                   {"name": "School Kid Vivian Rematch",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["TRAINER_SCHOOL KID_VIVIAN_2"]},
+                                   {"name": "Youngster Vincent Rematch",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["TRAINER_YOUNGSTER_VINCENT_2"]},
+                                   {"name": "Lass Violet Rematch",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["TRAINER_LASS_VIOLET_2"]}],
+        "Junopsis Gym": [{"name": "Junopsis Gym Trainers", "data_ids": ["TRAINER_LASS_IRIS", "TRAINER_GYM_LEADER_ANNETTE"]}],
         "Route 22": [{"name": "Route 22 Early Rival",
                       "rule": lambda state: state.has("Deliver Oak's Parcel", world.player),
                       "data_ids": ["TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR", "TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER",
@@ -43,7 +77,6 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
                             {"name": "Bug Catcher Anthony", "data_ids": ["TRAINER_BUG_CATCHER_ANTHONY"]},
                             {"name": "Bug Catcher Charlie", "data_ids": ["TRAINER_BUG_CATCHER_CHARLIE"]},
                             {"name": "Bug Catcher Sammy", "data_ids": ["TRAINER_BUG_CATCHER_SAMMY"]}],
-        "Pewter Gym": [{"name": "Pewter Gym Trainers", "data_ids": ["TRAINER_CAMPER_LIAM", "TRAINER_LEADER_BROCK"]}],
         "Route 3": [{"name": "Lass Janice", "data_ids": ["TRAINER_LASS_JANICE"]},
                     {"name": "Bug Catcher Colton", "data_ids": ["TRAINER_BUG_CATCHER_COLTON"]},
                     {"name": "Youngster Ben", "data_ids": ["TRAINER_YOUNGSTER_BEN"]},
@@ -506,9 +539,9 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
     }
 
     kanto_wild_encounter_data = {
-        "Route 1 Land Encounters": [{"name": "Route 1 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE1"]}],
+        "Route 501 Land Encounters": [{"name": "Route 501 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE501"]}],
+        "Route 502 Land Encounters": [{"name": "Route 502 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE502"]}],
         "Route 22 Land Encounters": [{"name": "Route 22 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE22"]}],
-        "Route 2 Land Encounters": [{"name": "Route 2 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE2"]}],
         "Viridian Forest Land Encounters": [{"name": "Viridian Forest Land Scaling", "type": "Land",
                                              "data_ids": ["MAP_VIRIDIAN_FOREST"]}],
         "Route 3 Land Encounters": [{"name": "Route 3 Land Scaling", "type": "Land", "data_ids": ["MAP_ROUTE3"]}],
@@ -594,16 +627,10 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
                                               "data_ids": ["MAP_CERULEAN_CAVE_2F"]}],
         "Cerulean Cave B1F Land Encounters": [{"name": "Cerulean Cave B1F Land Scaling", "type": "Land",
                                                "data_ids": ["MAP_CERULEAN_CAVE_B1F"]}],
-        "Pallet/Cinnabar/Rt 19,20,21 Water Encounters": [{"name": "Pallet/Cinnabar/Rt 19,20,21 Water Scaling",
+        "Porcelia Town Water Encounters": [{"name": "Porcelia Town Water Scaling",
                                                           "type": "Water",
-                                                          "connections": ["Pallet Town Water Encounters",
-                                                                          "Cinnabar Island Water Encounters",
-                                                                          "Route 19 Water Encounters",
-                                                                          "Route 20 Water Encounters",
-                                                                          "Route 21 Water Encounters"],
-                                                          "data_ids": ["MAP_PALLET_TOWN", "MAP_CINNABAR_ISLAND",
-                                                                       "MAP_ROUTE19", "MAP_ROUTE20",
-                                                                       "MAP_ROUTE21_NORTH", "MAP_ROUTE21_SOUTH"]}],
+                                                          "connections": ["Porcelia Town Water Encounters"],
+                                                          "data_ids": ["MAP_PORCELIA_TOWN"]}],
         "Viridian/Rt 22 Water Encounters": [{"name": "Viridian/Rt 22 Water Scaling", "type": "Water",
                                              "connections": ["Viridian City Water Encounters",
                                                              "Route 22 Water Encounters"],
@@ -646,7 +673,7 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
         "Cerulean Cave B1F Water Encounters": [{"name": "Cerulean Cave B1F Water Scaling", "type": "Water",
                                                 "data_ids": ["MAP_CERULEAN_CAVE_B1F"]}],
         "Fishing Encounters": [{"name": "Fishing Scaling", "type": "Fishing",
-                                "connections": ["Pallet Town Fishing Encounters", "Viridian City Fishing Encounters",
+                                "connections": ["Porcelia Town Fishing Encounters", "Viridian City Fishing Encounters",
                                                 "Cerulean City Fishing Encounters", "Vermilion City Fishing Encounters",
                                                 "Celadon City Fishing Encounters", "Fuchsia City Fishing Encounters",
                                                 "Cinnabar Island Fishing Encounters",
@@ -666,7 +693,7 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
                                                 "Route 21 Fishing Encounters", "Route 22 Fishing Encounters",
                                                 "Route 23 Fishing Encounters", "Route 24 Fishing Encounters",
                                                 "Route 25 Fishing Encounters"],
-                                "data_ids": ["MAP_PALLET_TOWN", "MAP_VIRIDIAN_CITY", "MAP_CERULEAN_CITY",
+                                "data_ids": ["MAP_PORCELIA_TOWN", "MAP_VIRIDIAN_CITY", "MAP_CERULEAN_CITY",
                                              "MAP_VERMILION_CITY", "MAP_CELADON_CITY", "MAP_FUCHSIA_CITY",
                                              "MAP_CINNABAR_ISLAND", "MAP_SSANNE_EXTERIOR", "MAP_SAFARI_ZONE_CENTER",
                                              "MAP_SAFARI_ZONE_EAST", "MAP_SAFARI_ZONE_NORTH", "MAP_SAFARI_ZONE_WEST",
@@ -855,6 +882,18 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
     }
 
     kanto_static_encounter_data = {
+        "Route 502 Gatehouse 2F": [{"name": "Gift Bulbasaur",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["GIFT_POKEMON_BULBASAUR"]},
+                                    {"name": "Gift Charmander",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["GIFT_POKEMON_CHARMANDER"]},
+                                    {"name": "Gift Squirtle",
+                                    "rule": lambda state: state.has("Talk to Girl Blocking Junopsis Gym", player) and
+                                                          state.has("Defeat Champion", player),
+                                    "data_ids": ["GIFT_POKEMON_SQUIRTLE"]}],
         "Route 4 Pokemon Center 1F": [{"name": "Gift Magikarp", "data_ids": ["GIFT_POKEMON_MAGIKARP"]}],
         "Power Plant": [{"name": "Static Electrode 1", "data_ids": ["STATIC_POKEMON_ELECTRODE_1"]},
                         {"name": "Static Electrode 2", "data_ids": ["STATIC_POKEMON_ELECTRODE_2"]},
@@ -967,7 +1006,8 @@ def create_scaling_data(world: "PokemonFRLGWorld"):
 
 
 def level_scaling(multiworld):
-    battle_events = ["Route 22 - Early Rival Battle", "Pewter Gym - Gym Leader Battle",
+    # todo: this list too
+    battle_events = ["Route 502 Gatehouse 2F - Winstrate Siblings Battles", "Junopsis Gym - Gym Leader Battle",
                      "Cerulean Gym - Gym Leader Battle", "Vermilion Gym - Gym Leader Battle",
                      "Celadon Gym - Gym Leader Battle", "Fuchsia Gym - Gym Leader Battle",
                      "Saffron Gym - Gym Leader Battle", "Cinnabar Gym - Gym Leader Battle",
@@ -979,11 +1019,11 @@ def level_scaling(multiworld):
     level_scaling_required = False
     state = CollectionState(multiworld)
     locations = {loc for loc in multiworld.get_filled_locations()
-                 if loc.item.advancement or loc.game == "Pokemon FireRed and LeafGreen" and "Scaling" in loc.tags}
+                 if loc.item.advancement or loc.game == "Pokemon Vega" and "Scaling" in loc.tags}
     collected_locations = set()
     spheres = []
 
-    for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+    for world in multiworld.get_game_worlds("Pokemon Vega"):
         if world.options.level_scaling != LevelScaling.option_off:
             level_scaling_required = True
         else:
@@ -1007,7 +1047,7 @@ def level_scaling(multiworld):
             while events_found:
                 events_found = False
 
-                for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+                for world in multiworld.get_game_worlds("Pokemon Vega"):
                     if world.options.level_scaling != LevelScaling.option_spheres_and_distance:
                         continue
                     regions = {multiworld.get_region("Menu", world.player)}
@@ -1094,11 +1134,11 @@ def level_scaling(multiworld):
             spheres.append(locations)
             break
 
-    for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
+    for world in multiworld.get_game_worlds("Pokemon Vega"):
         if world.options.level_scaling == LevelScaling.option_off:
             continue
 
-        game_version = world.options.game_version.current_key
+        # todo: find whatever this was derived from and change it
         e4_rematch_adjustment = 63 / 51
         e4_base_level = 51
 
@@ -1114,6 +1154,7 @@ def level_scaling(multiworld):
                 new_base_level = world.trainer_level_list.pop(0)
                 old_base_level = world.trainer_name_level_dict[trainer_location.name]
 
+                # todo: ???
                 if trainer_location.name == "Elite Four":
                     e4_base_level = new_base_level
                 elif trainer_location.name == "Elite Four Rematch":
@@ -1140,14 +1181,14 @@ def level_scaling(multiworld):
                         elif data_id in world.modified_legendary_pokemon:
                             pokemon_data = world.modified_legendary_pokemon[data_id]
 
-                        pokemon_data.level[game_version] = new_base_level
+                        pokemon_data.level = new_base_level
                     elif "Wild" in encounter_location.tags:
                         data_ids = data_id.split()
                         map_data = world.modified_maps[data_ids[0]]
                         encounters = (map_data.land_encounters if "Land" in encounter_location.tags else
                                       map_data.water_encounters if "Water" in encounter_location.tags else
                                       map_data.fishing_encounters)
-                        encounter_data = encounters.slots[game_version][int(data_ids[1])]
+                        encounter_data = encounters.slots[int(data_ids[1])]
                         new_max_level = round(max((new_base_level * encounter_data.max_level / old_base_level),
                                                   (new_base_level + encounter_data.max_level - old_base_level)))
                         new_min_level = round(max((new_base_level * encounter_data.min_level / old_base_level),

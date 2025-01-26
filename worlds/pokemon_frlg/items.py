@@ -3,18 +3,18 @@ from BaseClasses import Item, ItemClassification
 from .data import data, BASE_OFFSET
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 ITEM_GROUPS = {
     "Badges": {
-        "Boulder Badge",
-        "Cascade Badge",
-        "Thunder Badge",
-        "Rainbow Badge",
-        "Soul Badge",
-        "Marsh Badge",
-        "Volcano Badge",
-        "Earth Badge"
+        "Elnath Badge",
+        "Arneb Badge",
+        "Phact Badge",
+        "Sarfah Badge",
+        "Gemma Badge",
+        "Hadar Badge",
+        "Prior Badge",
+        "Mirach Badge"
     },
     "HMs": {
         "HM01 Cut",
@@ -26,26 +26,18 @@ ITEM_GROUPS = {
         "HM07 Waterfall"
     },
     "Fly Points": {
-        "Fly Pallet Town",
-        "Fly Viridian City",
-        "Fly Pewter City",
-        "Fly Cerulean City",
-        "Fly Lavender Town",
-        "Fly Vermilion City",
-        "Fly Celadon City",
-        "Fly Fuchsia City",
-        "Fly Cinnabar Island",
-        "Fly Indigo Plateau",
-        "Fly Saffron City",
-        "Fly One Island",
-        "Fly Two Island",
-        "Fly Three Island",
-        "Fly Four Island",
-        "Fly Five Island",
-        "Fly Seven Island",
-        "Fly Six Island",
-        "Fly Route 4",
-        "Fly Route 10",
+        "Fly Porcelia Town",
+        "Fly Junopsis City",
+        "Fly Seafin City",
+        "Fly Gamboge City",
+        "Fly Shamouti Island",
+        "Fly Nephrite City",
+        "Fly Orpimence City",
+        "Fly Lapizula City",
+        "Fly New Island",
+        "Fly Shakudo Island",
+        "Fly Ravenplume City",
+        "Fly Route 510"
     },
     "HM01": {"HM01 Cut"},
     "HM02": {"HM02 Fly"},
@@ -57,8 +49,8 @@ ITEM_GROUPS = {
 }
 
 
-class PokemonFRLGItem(Item):
-    game: str = "Pokemon FireRed and LeafGreen"
+class PokemonVegaItem(Item):
+    game: str = "Pokemon Vega"
     tags: FrozenSet[str]
 
     def __init__(self, name: str, classification: ItemClassification, code: Optional[int], player: int) -> None:
@@ -96,7 +88,7 @@ def get_item_classification(item_id: int) -> ItemClassification:
     return data.items[reverse_offset_item_value(item_id)].classification
 
 
-def get_random_item(world: "PokemonFRLGWorld", item_classification: ItemClassification = None) -> str:
+def get_random_item(world: "PokemonVegaWorld", item_classification: ItemClassification = None) -> str:
     if item_classification is None:
         item_classification = ItemClassification.useful if world.random.random() < 0.20 else ItemClassification.filler
     items = [item for item in data.items.values()

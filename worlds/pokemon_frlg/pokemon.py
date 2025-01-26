@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
 from .data import (data, LEGENDARY_POKEMON, NUM_REAL_SPECIES, EncounterSpeciesData, EventData, LearnsetMove,
                    SpeciesData, TrainerPokemonData)
-from .options import (GameVersion, HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
+from .options import (HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
                       TmTutorCompatibility, WildPokemonGroups)
 from .util import bool_array_to_int, int_to_bool_array
 
 if TYPE_CHECKING:
     from random import Random
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
 _DAMAGING_MOVES = frozenset({
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -33,7 +33,20 @@ _DAMAGING_MOVES = frozenset({
     307, 308, 309, 310, 311, 314, 315, 317, 318, 323,
     324, 325, 326, 327, 328, 330, 331, 332, 333, 337,
     338, 340, 341, 342, 343, 344, 345, 348, 350, 351,
-    352, 353, 354
+    352, 353, 354, 355, 356, 357, 358, 359, 360, 361,
+    362, 363, 364, 365, 366, 368, 369, 370, 371, 372,
+    373, 374, 375, 376, 377, 378, 379, 380, 381, 382,
+    383, 384, 386, 387, 388, 389, 390, 391, 392, 393,
+    394, 395, 396, 397, 398, 399, 400, 401, 402, 403,
+    404, 405, 406, 407, 408, 409, 410, 411, 412, 415,
+    416, 417, 418, 420, 421, 422, 423, 424, 425, 426,
+    427, 428, 431, 432, 433, 434, 435, 436, 437, 438,
+    439, 441, 442, 443, 444, 446, 447, 448, 449, 450,
+    451, 452, 453, 454, 455, 456, 457, 458, 459, 460,
+    461, 462, 463, 464, 465, 466, 467, 468, 469, 470,
+    471, 473, 474, 475, 476, 477, 479, 480, 481, 482,
+    485, 486, 487, 488, 489, 491, 493, 494, 495, 496,
+    499, 501, 502, 503, 505, 506, 507, 508, 509, 510
 })
 
 _HM_MOVES = frozenset({
@@ -45,105 +58,123 @@ _MOVE_BLACKLIST = frozenset({
 })
 
 _DUNGEON_GROUPS: Dict[str, str] = {
-    "MAP_MT_MOON_1F": "MAP_MT_MOON",
-    "MAP_MT_MOON_B1F": "MAP_MT_MOON",
-    "MAP_MT_MOON_B2F": "MAP_MT_MOON",
-    "MAP_ROCK_TUNNEL_1F": "MAP_ROCK_TUNNEL",
-    "MAP_ROCK_TUNNEL_B1F": "MAP_ROCK_TUNNEL",
-    "MAP_POKEMON_TOWER_3F": "MAP_POKEMON_TOWER",
-    "MAP_POKEMON_TOWER_4F": "MAP_POKEMON_TOWER",
-    "MAP_POKEMON_TOWER_5F": "MAP_POKEMON_TOWER",
-    "MAP_POKEMON_TOWER_6F": "MAP_POKEMON_TOWER",
-    "MAP_POKEMON_TOWER_7F": "MAP_POKEMON_TOWER",
+    "MAP_WISEMANS_CAVE_B1F": "MAP_WISEMANS_CAVE",
+    "MAP_WISEMANS_CAVE_B2F": "MAP_WISEMANS_CAVE",
+    "MAP_SPIRIT_MANSION_1F": "MAP_SPIRIT_MANSION",
+    "MAP_SPIRIT_MANSION_2F": "MAP_SPIRIT_MANSION",
+    "MAP_SPIRIT_MANSION_B1F": "MAP_SPIRIT_MANSION",
+    "MAP_UNDERSEA_TUNNEL_1F": "MAP_UNDERSEA_TUNNEL",
+    "MAP_UNDERSEA_TUNNEL_B1F": "MAP_UNDERSEA_TUNNEL",
+    "MAP_UNDERSEA_TUNNEL_B2F": "MAP_UNDERSEA_TUNNEL",
+    "MAP_UNDERSEA_TUNNEL_B3F": "MAP_UNDERSEA_TUNNEL",
+    "MAP_DH_BUILDING_AFTER_TELEPORT": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_B1F": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_DILFORD_CHAMBER": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_LIPTOO_CHAMBER": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_MONEAN_CHAMBER": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_RIXY_CHAMBER": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_SCUFIB_CHAMBER": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_VIAPOIS_CHAMBER": "MAP_DH_BUILDING",
+    "MAP_DH_BUILDING_WEEPTH_CHAMBER": "MAP_DH_BUILDING",
     "MAP_SAFARI_ZONE_CENTER": "MAP_SAFARI_ZONE",
     "MAP_SAFARI_ZONE_EAST": "MAP_SAFARI_ZONE",
     "MAP_SAFARI_ZONE_NORTH": "MAP_SAFARI_ZONE",
     "MAP_SAFARI_ZONE_WEST": "MAP_SAFARI_ZONE",
-    "MAP_SEAFOAM_ISLANDS_1F": "MAP_SEAFOAM_ISLANDS",
-    "MAP_SEAFOAM_ISLANDS_B1F": "MAP_SEAFOAM_ISLANDS",
-    "MAP_SEAFOAM_ISLANDS_B2F": "MAP_SEAFOAM_ISLANDS",
-    "MAP_SEAFOAM_ISLANDS_B3F": "MAP_SEAFOAM_ISLANDS",
-    "MAP_SEAFOAM_ISLANDS_B4F": "MAP_SEAFOAM_ISLANDS",
-    "MAP_POKEMON_MANSION_1F": "MAP_POKEMON_MANSION",
-    "MAP_POKEMON_MANSION_2F": "MAP_POKEMON_MANSION",
-    "MAP_POKEMON_MANSION_3F": "MAP_POKEMON_MANSION",
-    "MAP_POKEMON_MANSION_B1F": "MAP_POKEMON_MANSION",
+    "MAP_TOWER_OF_DARKNESS_B1F": "MAP_TOWER_OF_DARKNESS",
+    "MAP_TOWER_OF_DARKNESS_B2F": "MAP_TOWER_OF_DARKNESS",
+    "MAP_PORCELIA_FOREST_EAST": "MAP_PORCELIA_FOREST",
+    "MAP_PORCELIA_FOREST_WEST": "MAP_PORCELIA_FOREST",
+    "MAP_CHATEAU_OF_TIME_1F_ENTRANCE": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_1F_TUNNELS": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_2F_1R": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_2F_2R": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_2F_DUSKNOIR_ROOM": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_2F_LEGENDARIES_ROOM": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_3F": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_B1F_MAZE": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_B1F_SOUTH_OF_MAZE": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_B1F_STAIRS_ROOM": "MAP_CHATEAU_OF_TIME",
+    "MAP_CHATEAU_OF_TIME_B2F": "MAP_CHATEAU_OF_TIME",
+    "MAP_MT_SNOWFALL_1F": "MAP_MT_SNOWFALL",
+    "MAP_MT_SNOWFALL_2F": "MAP_MT_SNOWFALL",
+    "MAP_MT_SNOWFALL_3F_EAST": "MAP_MT_SNOWFALL",
+    "MAP_MT_SNOWFALL_3F_WEST": "MAP_MT_SNOWFALL",
+    "MAP_MT_SNOWFALL_B1F": "MAP_MT_SNOWFALL",
+    "MAP_MT_SNOWFALL_B2F": "MAP_MT_SNOWFALL",
+    "MAP_DH_HIDEOUT_B5F": "MAP_DH_HIDEOUT",
+    "MAP_DH_HIDEOUT_B6F": "MAP_DH_HIDEOUT",
+    "MAP_DH_HIDEOUT_B7F": "MAP_DH_HIDEOUT",
+    "MAP_ICE_ISLAND_1F": "MAP_ICE_ISLAND",
+    "MAP_ICE_ISLAND_B1F": "MAP_ICE_ISLAND",
+    "MAP_ICE_ISLAND_B2F": "MAP_ICE_ISLAND",
+    "MAP_ICE_ISLAND_B3F": "MAP_ICE_ISLAND",
+    "MAP_ICE_ISLAND_B4F_APRIL_ROOM": "MAP_ICE_ISLAND",
+    "MAP_ICE_ISLAND_B4F_GORDON_ROOM": "MAP_ICE_ISLAND",
+    "MAP_LIGHTNING_ISLAND_B1F": "MAP_LIGHTNING_ISLAND",
+    "MAP_LIGHTNING_ISLAND_B2F": "MAP_LIGHTNING_ISLAND",
+    "MAP_LIGHTNING_ISLAND_B3F": "MAP_LIGHTNING_ISLAND",
+    "MAP_LIGHTNING_ISLAND_B4F": "MAP_LIGHTNING_ISLAND",
+    "MAP_LIGHTNING_ISLAND_ENTRANCE": "MAP_LIGHTNING_ISLAND",
+    "MAP_FIRE_ISLAND_B1F": "MAP_FIRE_ISLAND",
+    "MAP_FIRE_ISLAND_B2F": "MAP_FIRE_ISLAND",
+    "MAP_FIRE_ISLAND_B3F": "MAP_FIRE_ISLAND",
+    "MAP_FIRE_ISLAND_B4F": "MAP_FIRE_ISLAND",
+    "MAP_FIRE_ISLAND_ENTRANCE": "MAP_FIRE_ISLAND",
+    "MAP_POKEMON_CASTLE_4F": "MAP_POKEMON_CASTLE",
+    "MAP_POKEMON_CASTLE_5F": "MAP_POKEMON_CASTLE",
+    "MAP_POKEMON_CASTLE_6F": "MAP_POKEMON_CASTLE",
+    "MAP_POKEMON_CASTLE_7F": "MAP_POKEMON_CASTLE",
+    "MAP_POKEMON_CASTLE_8F": "MAP_POKEMON_CASTLE",
     "MAP_VICTORY_ROAD_1F": "MAP_VICTORY_ROAD",
-    "MAP_VICTORY_ROAD_2F": "MAP_VICTORY_ROAD",
-    "MAP_VICTORY_ROAD_3F": "MAP_VICTORY_ROAD",
-    "MAP_MT_EMBER_EXTERIOR": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_SUMMIT_PATH_1F": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_SUMMIT_PATH_2F": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_SUMMIT_PATH_3F": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_RUBY_PATH_1F": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_RUBY_PATH_B1F": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_RUBY_PATH_B2F": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS": "MAP_MT_EMBER",
-    "MAP_MT_EMBER_RUBY_PATH_B3F": "MAP_MT_EMBER",
-    "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE": "MAP_FOUR_ISLAND_ICEFALL_CAVE",
-    "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F": "MAP_FOUR_ISLAND_ICEFALL_CAVE",
-    "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F": "MAP_FOUR_ISLAND_ICEFALL_CAVE",
-    "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK": "MAP_FOUR_ISLAND_ICEFALL_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM1": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM2": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM3": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM4": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM5": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM6": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM7": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM8": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM9": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM10": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM11": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM12": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM13": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_FIVE_ISLAND_LOST_CAVE_ROOM14": "MAP_FIVE_ISLAND_LOST_CAVE",
-    "MAP_CERULEAN_CAVE_1F": "MAP_CERULEAN_CAVE",
-    "MAP_CERULEAN_CAVE_2F": "MAP_CERULEAN_CAVE",
-    "MAP_CERULEAN_CAVE_B1F": "MAP_CERULEAN_CAVE"
+    "MAP_VICTORY_ROAD_B1F": "MAP_VICTORY_ROAD",
+    "MAP_VICTORY_ROAD_B2F": "MAP_VICTORY_ROAD",
+    "MAP_VICTORY_ROAD_B3F": "MAP_VICTORY_ROAD",
+    "MAP_VICTORY_ROAD_B4F": "MAP_VICTORY_ROAD",
+    "MAP_VICTORY_ROAD_B5F": "MAP_VICTORY_ROAD",
+    "MAP_VICTORY_ROAD_B6F": "MAP_VICTORY_ROAD",
+    "MAP_SPHERE_RUINS_1F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B1F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B2F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B3F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B4F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B5F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B6F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B7F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B8F": "MAP_SPHERE_RUINS",
+    "MAP_SPHERE_RUINS_B9F": "MAP_SPHERE_RUINS"
 }
 
 STARTER_INDEX: Dict[str, int] = {
-    "STARTER_POKEMON_BULBASAUR": 0,
-    "STARTER_POKEMON_SQUIRTLE": 1,
-    "STARTER_POKEMON_CHARMANDER": 2,
+    "STARTER_POKEMON_NIMBLEAF": 0,
+    "STARTER_POKEMON_LIQUIPUT": 1,
+    "STARTER_POKEMON_PEYERO": 2,
 }
 
 # The tuple represnts (trainer name, starter index in party, starter evolution stage)
 _RIVAL_STARTER_POKEMON: List[Tuple[str, int, int]] = [
     [
-        ("TRAINER_RIVAL_OAKS_LAB_BULBASAUR", 0, 0),
-        ("TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR", 1, 0),
-        ("TRAINER_RIVAL_CERULEAN_BULBASAUR", 3, 0),
-        ("TRAINER_RIVAL_SS_ANNE_BULBASAUR", 3, 1),
-        ("TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR", 4, 1),
-        ("TRAINER_RIVAL_SILPH_BULBASAUR", 4, 2),
-        ("TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR", 5, 2),
-        ("TRAINER_CHAMPION_FIRST_BULBASAUR", 5, 2),
-        ("TRAINER_CHAMPION_REMATCH_BULBASAUR", 5, 2),
+        ("TRAINER_RIVAL_HOLLYS_LAB_NIMBLEAF", 0, 0),
+        ("TRAINER_RIVAL_SEAFIN_NIMBLEAF", 1, 0),
+        ("TRAINER_MOS_RANGER_SQUAD_NIMBLEAF", 3, 1),
+        ("TRAINER_RIVAL_ORPIMENCE_NIMBLEAF", 2, 2),
+        ("TRAINER_RIVAL_RAVENPLUME_NIMBLEAF", 3, 2),
+        ("TRAINER_RIVAL_VICTORY_ROAD_NIMBLEAF", 4, 2),
     ],
     [
-        ("TRAINER_RIVAL_OAKS_LAB_CHARMANDER", 0, 0),
-        ("TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER", 1, 0),
-        ("TRAINER_RIVAL_CERULEAN_CHARMANDER", 3, 0),
-        ("TRAINER_RIVAL_SS_ANNE_CHARMANDER", 3, 1),
-        ("TRAINER_RIVAL_POKEMON_TOWER_CHARMANDER", 4, 1),
-        ("TRAINER_RIVAL_SILPH_CHARMANDER", 4, 2),
-        ("TRAINER_RIVAL_ROUTE22_LATE_CHARMANDER", 5, 2),
-        ("TRAINER_CHAMPION_FIRST_CHARMANDER", 5, 2),
-        ("TRAINER_CHAMPION_REMATCH_CHARMANDER", 5, 2),
+        ("TRAINER_RIVAL_HOLLYS_LAB_PEYERO", 0, 0),
+        ("TRAINER_RIVAL_SEAFIN_PEYERO", 1, 0),
+        ("TRAINER_MOS_RANGER_SQUAD_PEYERO", 3, 1),
+        ("TRAINER_RIVAL_ORPIMENCE_PEYERO", 2, 2),
+        ("TRAINER_RIVAL_RAVENPLUME_PEYERO", 3, 2),
+        ("TRAINER_RIVAL_VICTORY_ROAD_PEYERO", 4, 2),
     ],
     [
-        ("TRAINER_RIVAL_OAKS_LAB_SQUIRTLE", 0, 0),
-        ("TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE", 1, 0),
-        ("TRAINER_RIVAL_CERULEAN_SQUIRTLE", 3, 0),
-        ("TRAINER_RIVAL_SS_ANNE_SQUIRTLE", 3, 1),
-        ("TRAINER_RIVAL_POKEMON_TOWER_SQUIRTLE", 4, 1),
-        ("TRAINER_RIVAL_SILPH_SQUIRTLE", 4, 2),
-        ("TRAINER_RIVAL_ROUTE22_LATE_SQUIRTLE", 5, 2),
-        ("TRAINER_CHAMPION_FIRST_SQUIRTLE", 5, 2),
-        ("TRAINER_CHAMPION_REMATCH_SQUIRTLE", 5, 2)
+        ("TRAINER_RIVAL_HOLLYS_LAB_LIQUIPUT", 0, 0),
+        ("TRAINER_RIVAL_SEAFIN_LIQUIPUT", 1, 0),
+        ("TRAINER_MOS_RANGER_SQUAD_LIQUIPUT", 3, 1),
+        ("TRAINER_RIVAL_ORPIMENCE_LIQUIPUT", 2, 2),
+        ("TRAINER_RIVAL_RAVENPLUME_LIQUIPUT", 3, 2),
+        ("TRAINER_RIVAL_VICTORY_ROAD_LIQUIPUT", 4, 2),
     ]
 ]
 
@@ -182,7 +213,7 @@ def _filter_species_by_nearby_bst(species: List[SpeciesData], target_bst: int) -
     return species[:cutoff_index + 1]
 
 
-def _get_trainer_pokemon_moves(world: "PokemonFRLGWorld",
+def _get_trainer_pokemon_moves(world: "PokemonVegaWorld",
                                species: SpeciesData,
                                pokemon: TrainerPokemonData) -> Tuple[int, int, int, int]:
     if species.species_id not in world.per_species_tmhm_moves:
@@ -225,7 +256,7 @@ def _get_trainer_pokemon_moves(world: "PokemonFRLGWorld",
     return new_moves
 
 
-def randomize_types(world: "PokemonFRLGWorld") -> None:
+def randomize_types(world: "PokemonVegaWorld") -> None:
     if world.options.types == RandomizeTypes.option_shuffle:
         type_map = list(range(18))
         world.random.shuffle(type_map)
@@ -270,7 +301,7 @@ def randomize_types(world: "PokemonFRLGWorld") -> None:
                 evolutions += [world.modified_species[evo.species_id] for evo in evolution.evolutions]
 
 
-def randomize_abilities(world: "PokemonFRLGWorld") -> None:
+def randomize_abilities(world: "PokemonVegaWorld") -> None:
     if world.options.abilities == RandomizeAbilities.option_vanilla:
         return
 
@@ -313,7 +344,7 @@ def randomize_abilities(world: "PokemonFRLGWorld") -> None:
             species.abilities = new_abilities
 
 
-def randomize_moves(world: "PokemonFRLGWorld") -> None:
+def randomize_moves(world: "PokemonVegaWorld") -> None:
     if world.options.moves == RandomizeMoves.option_vanilla:
         return
 
@@ -346,25 +377,9 @@ def randomize_moves(world: "PokemonFRLGWorld") -> None:
         species.learnset = new_learnset
 
 
-def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
-    game_version = world.options.game_version.current_key
-
-    if world.options.wild_pokemon == RandomizeWildPokemon.option_vanilla:
-        # If Famesanity and Pokémon Request locations are on, we need to place Togepi somewhere
-        if world.options.famesanity and world.options.pokemon_request_locations and not world.options.kanto_only:
-            map_data = world.modified_maps["MAP_FIVE_ISLAND_MEMORIAL_PILLAR"]
-            slots = map_data.land_encounters.slots[game_version]
-            for slot in slots:
-                slot.species_id = data.constants["SPECIES_TOGEPI"]
-        return
-
+def randomize_wild_encounters(world: "PokemonVegaWorld") -> None:
     from collections import defaultdict
 
-    min_pokemon_needed = math.ceil(max(world.options.oaks_aide_route_2.value,
-                                       world.options.oaks_aide_route_10.value,
-                                       world.options.oaks_aide_route_11.value,
-                                       world.options.oaks_aide_route_16.value,
-                                       world.options.oaks_aide_route_15.value) * 1.2)
     should_match_bst = world.options.wild_pokemon in {
         RandomizeWildPokemon.option_match_base_stats,
         RandomizeWildPokemon.option_match_base_stats_and_type
@@ -380,18 +395,8 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         if map_group not in dungeon_species_map:
             dungeon_species_map[map_group] = {}
 
-    # Route 21 is split into a North and South Map. We'll set this after we randomize one of them
-    # in order to ensure that both maps have the same encounters
-    route_21_randomized = False
-
     placed_species = set()
     priority_species = list()
-    if world.options.pokemon_request_locations:
-        priority_species.append(data.constants["SPECIES_MAGIKARP"])
-        if not world.options.kanto_only:
-            priority_species.append(data.constants["SPECIES_HERACROSS"])
-            if world.options.famesanity:
-                priority_species.extend([data.constants["SPECIES_TOGEPI"], data.constants["SPECIES_TOGETIC"]])
 
     map_names = list(world.modified_maps.keys())
     world.random.shuffle(map_names)
@@ -399,7 +404,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         placed_priority_species = False
         map_data = world.modified_maps[map_name]
 
-        if not map_data.kanto and world.options.kanto_only:
+        if map_data.sphere_ruins and world.options.exclude_sphere_ruins:
             continue
 
         new_encounter_slots: List[List[int]] = [None, None, None]
@@ -407,35 +412,13 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                           map_data.water_encounters,
                           map_data.fishing_encounters]
 
-        # Check if the current map is a Route 21 map and the other one has already been randomized.
-        # If so, set the encounters of the current map based on the other Route 21 map.
-        if map_name == "MAP_ROUTE21_NORTH" and route_21_randomized:
-            map_data.land_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].land_encounters.slots[game_version])
-            map_data.water_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].water_encounters.slots[game_version])
-            map_data.fishing_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_SOUTH"].fishing_encounters.slots[game_version])
-            continue
-        elif map_name == "MAP_ROUTE21_SOUTH" and route_21_randomized:
-            map_data.land_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].land_encounters.slots[game_version])
-            map_data.water_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].water_encounters.slots[game_version])
-            map_data.fishing_encounters.slots[game_version] = \
-                copy.deepcopy(world.modified_maps["MAP_ROUTE21_NORTH"].fishing_encounters.slots[game_version])
-            continue
-
-        if map_name == "MAP_ROUTE21_NORTH" or map_name == "MAP_ROUTE21_SOUTH":
-            route_21_randomized = True
-
         for i, table in enumerate(old_encounters):
             if table is not None:
                 # Create a map from the original species to new species
                 # instead of just randomizing every slot.
                 # Force area 1-to-1 mapping, in other words.
                 species_old_to_new_map: Dict[int, int] = {}
-                for species_data in table.slots[game_version]:
+                for species_data in table.slots:
                     species_id = species_data.species_id
                     if species_id not in species_old_to_new_map:
                         original_species = data.species[species_id]
@@ -467,11 +450,6 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                                 elif (world.options.wild_pokemon_groups == WildPokemonGroups.option_dungeons and
                                       map_name in _DUNGEON_GROUPS):
                                     blacklists[0].append(set(dungeon_species_map[_DUNGEON_GROUPS[map_name]].values()))
-
-                                # If we haven't placed enough species for Oak's Aides yet, blacklist
-                                # species that have already been placed until we reach that number
-                                if len(placed_species) < min_pokemon_needed:
-                                    blacklists[1].append(placed_species)
 
                                 # Blacklist from player's options
                                 blacklists[2].append(world.blacklisted_wild_pokemon)
@@ -516,7 +494,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
 
                 # Actually create the new list of slots and encounter table
                 new_slots: List[EncounterSpeciesData] = []
-                for species_data in table.slots[game_version]:
+                for species_data in table.slots:
                     new_slots.append(EncounterSpeciesData(
                         species_old_to_new_map[species_data.species_id],
                         species_data.min_level,
@@ -526,14 +504,14 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                 new_encounter_slots[i] = new_slots
 
         if map_data.land_encounters is not None:
-            map_data.land_encounters.slots[game_version] = new_encounter_slots[0]
+            map_data.land_encounters.slots = new_encounter_slots[0]
         if map_data.water_encounters is not None:
-            map_data.water_encounters.slots[game_version] = new_encounter_slots[1]
+            map_data.water_encounters.slots = new_encounter_slots[1]
         if map_data.fishing_encounters is not None:
-            map_data.fishing_encounters.slots[game_version] = new_encounter_slots[2]
+            map_data.fishing_encounters.slots = new_encounter_slots[2]
 
 
-def randomize_starters(world: "PokemonFRLGWorld") -> None:
+def randomize_starters(world: "PokemonVegaWorld") -> None:
     if world.options.starters == RandomizeStarters.option_vanilla:
         return
 
@@ -602,11 +580,9 @@ def randomize_starters(world: "PokemonFRLGWorld") -> None:
                                                                            True)
 
 
-def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
+def randomize_legendaries(world: "PokemonVegaWorld") -> None:
     if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla:
         return
-
-    game_version = world.options.game_version.current_key
 
     should_match_bst = world.options.legendary_pokemon in {
         RandomizeLegendaryPokemon.option_match_base_stats,
@@ -620,7 +596,7 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
     placed_species = set()
 
     for name, legendary in data.legendary_pokemon.items():
-        original_species = world.modified_species[legendary.species_id[game_version]]
+        original_species = world.modified_species[legendary.species_id]
 
         if world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_legendaries:
             candidates = [species for species in world.modified_species.values() if
@@ -637,7 +613,7 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
             candidates = _filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
 
         new_species_id = world.random.choice(candidates).species_id
-        world.modified_legendary_pokemon[name].species_id[game_version] = new_species_id
+        world.modified_legendary_pokemon[name].species_id = new_species_id
         placed_species.add(new_species_id)
 
     # Update the events that correspond to the legendary Pokémon
@@ -645,7 +621,7 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
         if name not in world.modified_events:
             continue
 
-        species = world.modified_species[legendary_pokemon.species_id[game_version]]
+        species = world.modified_species[legendary_pokemon.species_id]
         item_name = data.events[name].item.split()
 
         if item_name[0] == "Static":
@@ -666,11 +642,9 @@ def randomize_legendaries(world: "PokemonFRLGWorld") -> None:
         world.modified_events[name] = new_event
 
 
-def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
+def randomize_misc_pokemon(world: "PokemonVegaWorld") -> None:
     if world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla:
         return
-
-    game_version = world.options.game_version.current_key
 
     should_match_bst = world.options.misc_pokemon in {
         RandomizeMiscPokemon.option_match_base_stats,
@@ -682,7 +656,7 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
     }
 
     for name, misc_pokemon in data.misc_pokemon.items():
-        original_species = world.modified_species[misc_pokemon.species_id[game_version]]
+        original_species = world.modified_species[misc_pokemon.species_id]
 
         candidates = list(world.modified_species.values())
         if should_match_type:
@@ -694,22 +668,16 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
         if should_match_bst:
             candidates = _filter_species_by_nearby_bst(candidates, sum(original_species.base_stats))
 
-        world.modified_misc_pokemon[name].species_id[game_version] = world.random.choice(candidates).species_id
+        world.modified_misc_pokemon[name].species_id = world.random.choice(candidates).species_id
 
     # Update the events that correspond to the misc Pokémon
     for name, misc_pokemon in world.modified_misc_pokemon.items():
         if name not in world.modified_events:
             continue
 
-        species = world.modified_species[misc_pokemon.species_id[game_version]]
+        species = world.modified_species[misc_pokemon.species_id]
 
-        if type(data.events[name].item) is list:
-            if game_version == GameVersion.option_firered:
-                item_name = data.events[name].item[0].split()
-            else:
-                item_name = data.events[name].item[1].split()
-        else:
-            item_name = data.events[name].item.split()
+        item_name = data.events[name].item.split()
 
         if item_name[0] == "Static":
             item = f"Static {species.name}"
@@ -729,7 +697,7 @@ def randomize_misc_pokemon(world: "PokemonFRLGWorld") -> None:
         world.modified_events[name] = new_event
 
 
-def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
+def randomize_trainer_parties(world: "PokemonVegaWorld") -> None:
     if world.options.trainers == RandomizeTrainerParties.option_vanilla:
         return
 
@@ -777,7 +745,7 @@ def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
                                                               False)
 
 
-def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
+def randomize_tm_hm_compatibility(world: "PokemonVegaWorld") -> None:
     for species in world.modified_species.values():
         compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
 
@@ -792,7 +760,7 @@ def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
         species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
 
 
-def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
+def randomize_tm_moves(world: "PokemonVegaWorld") -> None:
     if not world.options.tm_tutor_moves:
         return
 
@@ -804,7 +772,7 @@ def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
         world.modified_tmhm_moves[i] = new_move
 
 
-def randomize_tutor_moves(world: "PokemonFRLGWorld") -> List[int]:
+def randomize_tutor_moves(world: "PokemonVegaWorld") -> List[int]:
     new_moves = []
 
     for i in range(15):

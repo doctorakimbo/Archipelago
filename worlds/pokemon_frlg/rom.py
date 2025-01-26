@@ -14,37 +14,27 @@ from .items import get_random_item, reverse_offset_item_value
 from .locations import reverse_offset_flag
 from .options import (FlashRequired, ItemfinderRequired, HmCompatibility, LevelScaling, RandomizeLegendaryPokemon,
                       RandomizeMiscPokemon, RandomizeStarters, RandomizeTrainerParties, RandomizeWildPokemon,
-                      SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey, TmTutorCompatibility,
-                      ViridianCityRoadblock)
+                      ShuffleHiddenItems, TmTutorCompatibility)
 from .pokemon import STARTER_INDEX, randomize_tutor_moves
 from .util import bool_array_to_int, bound, encode_string
 
 if TYPE_CHECKING:
-    from . import PokemonFRLGWorld
+    from . import PokemonVegaWorld
 
-FIRERED_REV0_HASH = "e26ee0d44e809351c8ce2d73c7400cdd"
-FIRERED_REV1_HASH = "51901a6e40661b3914aa333c802e24e8"
-LEAFGREEN_REV0_HASH = "612ca9473451fa42b51d1711031ed5f6"
-LEAFGREEN_REV1_HASH = "9d33a02159e018d09073e700e1fd10fd"
+VEGA_HASH = "e26ee0d44e809351c8ce2d73c7400cdd"
 
 
-class PokemonFRLGPatchExtension(APPatchExtension):
-    game = "Pokemon FireRed and LeafGreen"
+class PokemonVegaPatchExtension(APPatchExtension):
+    game = "Pokemon Vega"
 
     @staticmethod
     def apply_bsdiff4(caller: APProcedurePatch, rom: bytes, patch: str) -> bytes:
-        rom_data = bytearray(rom)
-        if rom_data[0xBC] == 1:
-            return bsdiff4.patch(rom, caller.get_file("base_patch_rev1.bsdiff4"))
         return bsdiff4.patch(rom, caller.get_file(patch))
 
     @staticmethod
     def apply_tokens(caller: APProcedurePatch, rom: bytes, token_file: str) -> bytes:
         rom_data = bytearray(rom)
-        if rom_data[0xBC] == 1:
-            token_data = caller.get_file("token_data_rev1.bin")
-        else:
-            token_data = caller.get_file(token_file)
+        token_data = caller.get_file(token_file)
         token_count = int.from_bytes(token_data[0:4], "little")
         bpr = 4
         for _ in range(token_count):
@@ -73,50 +63,26 @@ class PokemonFRLGPatchExtension(APPatchExtension):
         return bytes(rom_data)
 
 
-class PokemonFireRedProcedurePatch(APProcedurePatch, APTokenMixin):
-    game = "Pokemon FireRed and LeafGreen"
-    hash = [FIRERED_REV0_HASH, FIRERED_REV1_HASH]
-    patch_file_ending = ".apfirered"
+class PokemonVegaProcedurePatch(APProcedurePatch, APTokenMixin):
+    game = "Pokemon Vega"
+    hash = VEGA_HASH
+    patch_file_ending = ".apvega"
     result_file_ending = ".gba"
 
     procedure = [
-        ("apply_bsdiff4", ["base_patch_rev0.bsdiff4"]),
-        ("apply_tokens", ["token_data_rev0.bin"])
+        ("apply_bsdiff4", ["base_patch.bsdiff4"]),
+        ("apply_tokens", ["token_data.bin"])
     ]
 
     @classmethod
     def get_source_data(cls) -> bytes:
-        with open(get_settings().pokemon_frlg_settings.firered_rom_file, "rb") as infile:
+        with open(get_settings().pokemon_vega_settings.vega_rom_file, "rb") as infile:
             base_rom_bytes = bytes(infile.read())
         return base_rom_bytes
 
 
-class PokemonLeafGreenProcedurePatch(APProcedurePatch, APTokenMixin):
-    game = "Pokemon FireRed and LeafGreen"
-    hash = [LEAFGREEN_REV0_HASH, LEAFGREEN_REV1_HASH]
-    patch_file_ending = ".apleafgreen"
-    result_file_ending = ".gba"
-
-    procedure = [
-        ("apply_bsdiff4", ["base_patch_rev0.bsdiff4"]),
-        ("apply_tokens", ["token_data_rev0.bin"])
-    ]
-
-    @classmethod
-    def get_source_data(cls) -> bytes:
-        with open(get_settings().pokemon_frlg_settings.leafgreen_rom_file, "rb") as infile:
-            base_rom_bytes = bytes(infile.read())
-        return base_rom_bytes
-
-
-def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
+def get_tokens(world: "PokemonVegaWorld") -> APTokenMixin:
     tokens: APTokenMixin = APTokenMixin()
-    game_version = world.options.game_version.current_key
-
-    if game_revision == 0:
-        game_version_revision = game_version
-    else:
-        game_version_revision = f'{game_version}_rev1'
 
     # Set item values
     location_info: List[Tuple[int, int, str]] = []
@@ -124,7 +90,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         if location.address is None:
             continue
 
-        item_address = location.item_address[game_version_revision]
+        item_address = location.item_address
 
         if location.item.player == world.player:
             if type(item_address) is int:
@@ -161,16 +127,15 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         location_info.append((reverse_offset_flag(location.address), location.item.player, location.item.name))
 
     if world.options.trainersanity:
-        rival_rewards = ["RIVAL_OAKS_LAB", "RIVAL_ROUTE22_EARLY", "RIVAL_CERULEAN", "RIVAL_SS_ANNE",
-                         "RIVAL_POKEMON_TOWER", "RIVAL_SILPH", "RIVAL_ROUTE22_LATE", "CHAMPION_FIRST"]
-        if not world.options.kanto_only:
-            rival_rewards.append("CHAMPION_REMATCH")
+        # Sphere Ruins rival left his starter in the PC, and Mirage System isn't part of Trainersanity
+        rival_rewards = ["RIVAL_HOLLYS_LAB", "RIVAL_SEAFIN", "MOS_RANGER_SQUAD", "RIVAL_ORPIMENCE",
+                         "RIVAL_RAVENPLUME", "RIVAL_VICTORY_ROAD"]
         for trainer in rival_rewards:
-            location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_BULBASAUR_REWARD"].name,
+            location = world.multiworld.get_location(data.locations[f"TRAINER_{trainer}_NIMBLEAF_REWARD"].name,
                                                      world.player)
             alternates = [
-                f"TRAINER_{trainer}_CHARMANDER",
-                f"TRAINER_{trainer}_SQUIRTLE"
+                f"TRAINER_{trainer}_PEYERO",
+                f"TRAINER_{trainer}_LIQUIPUT"
             ]
 
             location_info.extend(
@@ -192,7 +157,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
                 continue
 
             player_name_ids[player_name] = len(player_name_ids)
-            player_name_address = data.rom_addresses[game_version_revision]["gArchipelagoPlayerNames"]
+            player_name_address = data.rom_addresses["gArchipelagoPlayerNames"]
             for j, b in enumerate(encode_string(player_name, 17)):
                 tokens.write_token(
                     APTokenTypes.WRITE,
@@ -210,7 +175,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
 
             item_name_offsets[item_name] = next_item_name_offset
             next_item_name_offset += len(item_name) + 1
-            item_name_address = data.rom_addresses[game_version_revision]["gArchipelagoItemNames"]
+            item_name_address = data.rom_addresses["gArchipelagoItemNames"]
             tokens.write_token(
                 APTokenTypes.WRITE,
                 item_name_address + (item_name_offsets[item_name]),
@@ -218,7 +183,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
             )
 
         # There should always be enough space for one entry per location
-        name_table_address = data.rom_addresses[game_version_revision]["gArchipelagoNameTable"]
+        name_table_address = data.rom_addresses["gArchipelagoNameTable"]
         tokens.write_token(
             APTokenTypes.WRITE,
             name_table_address + (i * 5) + 0,
@@ -235,89 +200,52 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
             struct.pack("<B", player_name_ids[player_name])
         )
 
-    # Replace unique items if necessary
-    if world.options.kanto_only:
-        location_ids = ["NPC_GIFT_GOT_HM06", "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07"]
-        for location_id in location_ids:
-            location_data = data.locations[location_id]
-            new_item_id = reverse_offset_item_value(
-                world.item_name_to_id[get_random_item(world, ItemClassification.filler)]
-            )
-
-            tokens.write_token(
-                APTokenTypes.WRITE,
-                location_data.address[game_version_revision],
-                struct.pack("<H", new_item_id)
-            )
-
     # Set starting items
     start_inventory = world.options.start_inventory.value.copy()
 
     starting_badges = 0
-    if start_inventory.pop("Boulder Badge", 0) > 0:
+    if start_inventory.pop("Elnath Badge", 0) > 0:
         starting_badges |= (1 << 0)
-    if start_inventory.pop("Cascade Badge", 0) > 0:
+    if start_inventory.pop("Gemma Badge", 0) > 0:
         starting_badges |= (1 << 1)
-    if start_inventory.pop("Thunder Badge", 0) > 0:
+    if start_inventory.pop("Hadar Badge", 0) > 0:
         starting_badges |= (1 << 2)
-    if start_inventory.pop("Rainbow Badge", 0) > 0:
+    if start_inventory.pop("Arneb Badge", 0) > 0:
         starting_badges |= (1 << 3)
-    if start_inventory.pop("Soul Badge", 0) > 0:
+    if start_inventory.pop("Phact Badge", 0) > 0:
         starting_badges |= (1 << 4)
-    if start_inventory.pop("Marsh Badge", 0) > 0:
+    if start_inventory.pop("Sarfah Badge", 0) > 0:
         starting_badges |= (1 << 5)
-    if start_inventory.pop("Volcano Badge", 0) > 0:
+    if start_inventory.pop("Prior Badge", 0) > 0:
         starting_badges |= (1 << 6)
-    if start_inventory.pop("Earth Badge", 0) > 0:
+    if start_inventory.pop("Mirach Badge", 0) > 0:
         starting_badges |= (1 << 7)
 
     starting_fly_unlocks = 0
-    if start_inventory.pop("Fly Pallet Town", 0) > 0:
+    if start_inventory.pop("Fly Porcelia Town", 0) > 0:
         starting_fly_unlocks |= (1 << 0)
-    if start_inventory.pop("Fly Viridian City", 0) > 0:
+    if start_inventory.pop("Fly Junopsis City", 0) > 0:
         starting_fly_unlocks |= (1 << 1)
-    if start_inventory.pop("Fly Pewter City", 0) > 0:
+    if start_inventory.pop("Fly Seafin City", 0) > 0:
         starting_fly_unlocks |= (1 << 2)
-    if start_inventory.pop("Fly Cerulean City", 0) > 0:
+    if start_inventory.pop("Fly Gamboge City", 0) > 0:
         starting_fly_unlocks |= (1 << 3)
-    if start_inventory.pop("Fly Lavender Town", 0) > 0:
+    if start_inventory.pop("Fly Shamouti Island", 0) > 0:
         starting_fly_unlocks |= (1 << 4)
-    if start_inventory.pop("Fly Vermilion City", 0) > 0:
+    if start_inventory.pop("Fly Nephrite City", 0) > 0:
         starting_fly_unlocks |= (1 << 5)
-    if start_inventory.pop("Fly Celadon City", 0) > 0:
+    if start_inventory.pop("Fly Orpimence City", 0) > 0:
         starting_fly_unlocks |= (1 << 6)
-    if start_inventory.pop("Fly Fuchsia City", 0) > 0:
+    if start_inventory.pop("Fly Lapizula City", 0) > 0:
         starting_fly_unlocks |= (1 << 7)
-    if start_inventory.pop("Fly Cinnabar Island", 0) > 0:
+    if start_inventory.pop("Fly New Island", 0) > 0:
         starting_fly_unlocks |= (1 << 8)
-    if start_inventory.pop("Fly Indigo Plateau", 0) > 0:
+    if start_inventory.pop("Fly Shakudo Island", 0) > 0:
         starting_fly_unlocks |= (1 << 9)
-    if start_inventory.pop("Fly Saffron City", 0) > 0:
+    if start_inventory.pop("Fly Ravenplume City", 0) > 0:
         starting_fly_unlocks |= (1 << 10)
-    if start_inventory.pop("Fly One Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 11)
-    if start_inventory.pop("Fly Two Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 12)
-    if start_inventory.pop("Fly Three Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 13)
-    if start_inventory.pop("Fly Four Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 14)
-    if start_inventory.pop("Fly Five Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 15)
-    if start_inventory.pop("Fly Seven Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 16)
-    if start_inventory.pop("Fly Six Island", 0) > 0:
-        starting_fly_unlocks |= (1 << 17)
-    if start_inventory.pop("Fly Route 4", 0) > 0:
-        starting_fly_unlocks |= (1 << 18)
-    if start_inventory.pop("Fly Route 10", 0) > 0:
+    if start_inventory.pop("Fly Route 510", 0) > 0:
         starting_fly_unlocks |= (1 << 19)
-
-    starting_prog_card_keys = min(start_inventory.pop("Progressive Card Key", 0), 10)
-    if world.options.island_passes == SeviiIslandPasses.option_progressive:
-        starting_prog_passes = min(start_inventory.pop("Progressive Pass", 0), 2)
-    else:
-        starting_prog_passes = min(start_inventory.pop("Progressive Pass", 0), 7)
 
     starting_items: List[Tuple[str, int]] = []
     for item, quantity in start_inventory.items():
@@ -328,38 +256,38 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
         starting_items.append([item, quantity])
 
     for i, starting_item in enumerate(starting_items, 1):
-        item_address = data.rom_addresses[game_version_revision]["gArchipelagoStartingItems"] + (i * 2)
-        count_address = data.rom_addresses[game_version_revision]["gArchipelagoStartingItemsCount"] + (i * 2)
+        item_address = data.rom_addresses["gArchipelagoStartingItems"] + (i * 2)
+        count_address = data.rom_addresses["gArchipelagoStartingItemsCount"] + (i * 2)
         item = reverse_offset_item_value(world.item_name_to_id[starting_item[0]])
         tokens.write_token(APTokenTypes.WRITE, item_address, struct.pack("<H", item))
         tokens.write_token(APTokenTypes.WRITE, count_address, struct.pack("<H", starting_item[1]))
 
     # Set species data
-    _set_species_info(world, tokens, game_version_revision)
+    _set_species_info(world, tokens)
 
     # Set wild encounters
-    _set_wild_encounters(world, tokens, game_version, game_version_revision)
+    _set_wild_encounters(world, tokens)
 
     # Set starters
-    _set_starters(world, tokens, game_version_revision)
+    _set_starters(world, tokens)
 
     # Set legendaries
-    _set_legendaries(world, tokens, game_version, game_version_revision)
+    _set_legendaries(world, tokens)
 
     # Set misc pokemon
-    _set_misc_pokemon(world, tokens, game_version, game_version_revision)
+    _set_misc_pokemon(world, tokens)
 
     # Set trainer parties
-    _set_trainer_parties(world, tokens, game_version_revision)
+    _set_trainer_parties(world, tokens)
 
     # Set TM/HM compatibility
-    _set_tmhm_compatibility(world, tokens, game_version_revision)
+    _set_tmhm_compatibility(world, tokens)
 
     # Set TM Moves
-    _set_tm_moves(world, tokens, game_version_revision)
+    _set_tm_moves(world, tokens)
 
     # Randomize move tutors
-    _randomize_move_tutors(world, tokens, game_version_revision)
+    _randomize_move_tutors(world, tokens)
 
     # Options
     # struct
@@ -375,8 +303,8 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x08 */ u16 expMultiplierDenominator;
     #
     # /* 0x0A */ bool8 openViridianCity;
-    # /* 0x0B */ u8 route3Requirement; // 0 = Open, 1 = Defeat Brock, 2 = Defeat Any Gym Leader,
-    #                                     3 = Boulder Badge, 4 = Any Badge
+    # /* 0x0B */ u8 route503Requirement; // 0 = Open, 1 = Defeat Annette, 2 = Defeat Any Gym Leader,
+    #                                     3 = Elnath Badge, 4 = Any Badge
     # /* 0x0C */ bool8 saveBillRequired;
     # /* 0x0D */ bool8 modifyRoute2;
     # /* 0x0E */ bool8 modifyRoute9;
@@ -395,8 +323,8 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x1A */ u8 giovanniRequiredCount;
     # /* 0x1B */ bool8 route22GateRequiresGyms;
     # /* 0x1C */ u8 route22GateRequiredCount;
-    # /* 0x1D */ bool8 route23GuardRequiresGyms;
-    # /* 0x1E */ u8 route23GuardRequiredCount;
+    # /* 0x1D */ bool8 route523GuardRequiresGyms;
+    # /* 0x1E */ u8 route523GuardRequiredCount;
     # /* 0x1F */ bool8 eliteFourRequiresGyms;
     # /* 0x20 */ u8 eliteFourRequiredCount;
     # /* 0x21 */ u8 ceruleanCaveRequirement; // 0 = Vanilla, 1 = Become Champion, 2 = Restore Network Center,
@@ -418,7 +346,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x36 */ bool8 reccuringHiddenItems;
     # /* 0x37 */ bool8 isTrainersanity;
     # /* 0x38 */ bool8 extraKeyItems;
-    # /* 0x39 */ bool8 kantoOnly;
+    # /* 0x39 */ bool8 excludeSphereRuins;
     # /* 0x3A */ bool8 flyUnlocks;
     # /* 0x3B */ bool8 isFamesanity;
     #
@@ -433,7 +361,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # /* 0x42 */ u8 town_free_fly_id;
     # /* 0x43 */ u16 resortGorgeousMon;
     # }
-    options_address = data.rom_addresses[game_version_revision]["gArchipelagoOptions"]
+    options_address = data.rom_addresses["gArchipelagoOptions"]
 
     # Set hold A to advance text
     turbo_a = 1 if world.options.turbo_a else 0
@@ -464,13 +392,9 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x06, struct.pack("<H", numerator))
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x08, struct.pack("<H", 100))
 
-    # Set Viridian City roadblock
-    open_viridian = 1 if world.options.viridian_city_roadblock.value == ViridianCityRoadblock.option_open else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0A, struct.pack("<B", open_viridian))
-
-    # Set Pewter City roadblock
-    route_3_condition = world.options.pewter_city_roadblock.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0B, struct.pack("<B", route_3_condition))
+    # Set Junopsis City roadblock
+    route_503_condition = world.options.junopsis_city_roadblock.value
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x0B, struct.pack("<B", route_503_condition))
 
     # Set Cerulean City roadblocks
     save_bill = 0 if "Remove Cerulean Roadblocks" in world.options.modify_world_state.value else 1
@@ -524,29 +448,13 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     early_gossipers = 1 if "Early Gossipers" in world.options.modify_world_state.value else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x18, struct.pack("<B", early_gossipers))
 
-    # Set Viridian Gym Rrquirement
-    viridian_gym_requirement = world.options.viridian_gym_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x19, struct.pack("<B", viridian_gym_requirement))
+    # Set Route 523 requirement
+    route_523_requirement = world.options.route523_guard_requirement.value
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", route_523_requirement))
 
-    # Set Viridian Gym count
-    viridian_gym_count = world.options.viridian_gym_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1A, struct.pack("<B", viridian_gym_count))
-
-    # Set Route 22 requirement
-    route_22_requirement = world.options.route22_gate_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1B, struct.pack("<B", route_22_requirement))
-
-    # Set Route 22 count
-    route_22_count = world.options.route22_gate_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1C, struct.pack("<B", route_22_count))
-
-    # Set Route 23 requirement
-    route_23_requirement = world.options.route23_guard_requirement.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1D, struct.pack("<B", route_23_requirement))
-
-    # Set Route 23 count
-    route_23_count = world.options.route23_guard_count.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", route_23_count))
+    # Set Route 523 count
+    route_523_count = world.options.route523_guard_count.value
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x1E, struct.pack("<B", route_523_count))
 
     # Set Elite Four requirement
     elite_four_requirement = world.options.elite_four_requirement.value
@@ -567,12 +475,6 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # Set starting badges
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x23, struct.pack("<B", starting_badges))
 
-    # Set starting progressive card keys
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x24, struct.pack("<B", starting_prog_card_keys))
-
-    # Set starting progressive passes
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x25, struct.pack("<B", starting_prog_passes))
-
     # Set starting fly unlocks
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x26, struct.pack("<I", starting_fly_unlocks))
 
@@ -587,22 +489,6 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     flash_required = 1 if world.options.flash_required.value == FlashRequired.option_required else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x2F, struct.pack("<B", flash_required))
 
-    # Set fame checker required
-    fame_checker_required = 1 if world.options.fame_checker_required else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x30, struct.pack("<B", fame_checker_required))
-
-    # Set Oak's Aides counts
-    oaks_aide_route_2 = world.options.oaks_aide_route_2.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x31, struct.pack("<B", oaks_aide_route_2))
-    oaks_aide_route_10 = world.options.oaks_aide_route_10.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x32, struct.pack("<B", oaks_aide_route_10))
-    oaks_aide_route_11 = world.options.oaks_aide_route_11.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x33, struct.pack("<B", oaks_aide_route_11))
-    oaks_aide_route_16 = world.options.oaks_aide_route_16.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x34, struct.pack("<B", oaks_aide_route_16))
-    oaks_aide_route_15 = world.options.oaks_aide_route_15.value
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x35, struct.pack("<B", oaks_aide_route_15))
-
     # Set recurring hidden items shuffled
     recurring_hidden_items = 1 if world.options.shuffle_hidden.value == ShuffleHiddenItems.option_all else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x36, struct.pack("<B", recurring_hidden_items))
@@ -615,17 +501,13 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     extra_key_items = 1 if world.options.extra_key_items else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x38, struct.pack("<B", extra_key_items))
 
-    # Set kanto only
-    kanto_only = 1 if world.options.kanto_only else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x39, struct.pack("<B", kanto_only))
+    # Set exclude sphere ruins
+    exclude_sphere_ruins = 1 if world.options.exclude_sphere_ruins else 0
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x39, struct.pack("<B", exclude_sphere_ruins))
 
     # Set fly unlocks
     fly_unlocks = 1 if world.options.shuffle_fly_destination_unlocks else 0
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x3A, struct.pack("B", fly_unlocks))
-
-    # Set famesanity
-    famesanity = 1 if world.options.famesanity else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3B, struct.pack("B", famesanity))
 
     # Set remove badge requirements
     hms = ["Flash", "Cut", "Fly", "Strength", "Surf", "Rock Smash", "Waterfall"]
@@ -646,19 +528,9 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
             additional_dark_caves |= (1 << i)
             for map_id in map_ids[i]:
                 map_data = world.modified_maps[map_id]
-                header_address = map_data.header_address[game_version_revision]
+                header_address = map_data.header_address
                 tokens.write_token(APTokenTypes.WRITE, header_address + 21, struct.pack("<B", 1))
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x3D, struct.pack("<B", additional_dark_caves))
-
-    # Set passes split
-    passes_split = 1 if world.options.island_passes.value in [SeviiIslandPasses.option_split,
-                                                              SeviiIslandPasses.option_progressive_split] else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3E, struct.pack("<B", passes_split))
-
-    # Set card keys split
-    card_keys_split = 1 if world.options.card_key.value in [SilphCoCardKey.option_split,
-                                                            SilphCoCardKey.option_progressive] else 0
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x3F, struct.pack("<B", card_keys_split))
 
     # Set free fly location
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x41, struct.pack("<B", world.free_fly_location_id))
@@ -666,24 +538,20 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     # Set town map fly location
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x42, struct.pack("<B", world.town_map_fly_location_id))
 
-    # Set resort gorgeous mon
-    species_id = data.constants[world.resort_gorgeous_mon[0]]
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x43, struct.pack("<H", species_id))
-
     # Set total darkness
     if "Total Darkness" in world.options.modify_world_state.value:
-        flash_level_address = data.rom_addresses[game_version_revision]["sFlashLevelToRadius"]
+        flash_level_address = data.rom_addresses["sFlashLevelToRadius"]
         tokens.write_token(APTokenTypes.WRITE, flash_level_address + 8, struct.pack("<H", 0))
 
     # Set slot auth
-    tokens.write_token(APTokenTypes.WRITE, data.rom_addresses[game_version_revision]["gArchipelagoInfo"], world.auth)
+    tokens.write_token(APTokenTypes.WRITE, data.rom_addresses["gArchipelagoInfo"], world.auth)
 
     return tokens
 
 
-def _set_species_info(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
+def _set_species_info(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     for species in world.modified_species.values():
-        address = species.address[game_version_revision]
+        address = species.address
 
         tokens.write_token(APTokenTypes.WRITE, address + 0x06, struct.pack("<B", species.types[0]))
         tokens.write_token(APTokenTypes.WRITE, address + 0x07, struct.pack("<B", species.types[1]))
@@ -692,13 +560,12 @@ def _set_species_info(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_vers
         tokens.write_token(APTokenTypes.WRITE, address + 0x17, struct.pack("<B", species.abilities[1]))
 
         for i, learnset_move in enumerate(species.learnset):
-            learnset_address = species.learnset_address[game_version_revision]
+            learnset_address = species.learnset_address
             level_move = learnset_move.level << 9 | learnset_move.move_id
             tokens.write_token(APTokenTypes.WRITE, learnset_address + (i * 2), struct.pack("<H", level_move))
 
 
-def _set_wild_encounters(world: "PokemonFRLGWorld", tokens: APTokenMixin,
-                         game_version: str, game_version_revision: str) -> None:
+def _set_wild_encounters(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if (world.options.level_scaling == LevelScaling.option_off and
             world.options.wild_pokemon == RandomizeWildPokemon.option_vanilla):
         return
@@ -717,60 +584,58 @@ def _set_wild_encounters(world: "PokemonFRLGWorld", tokens: APTokenMixin,
                   map_data.fishing_encounters]
         for table in tables:
             if table is not None:
-                for i, species_data in enumerate(table.slots[game_version]):
-                    address = table.address[game_version_revision] + (i * 4)
+                for i, species_data in enumerate(table.slots):
+                    address = table.address + (i * 4)
                     tokens.write_token(APTokenTypes.WRITE, address, struct.pack("<B", species_data.min_level))
                     tokens.write_token(APTokenTypes.WRITE, address + 0x01, struct.pack("<B", species_data.max_level))
                     tokens.write_token(APTokenTypes.WRITE, address + 0x02, struct.pack("<H", species_data.species_id))
 
 
-def _set_starters(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
+def _set_starters(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if world.options.starters == RandomizeStarters.option_vanilla:
         return
 
     for name, starter in world.modified_starters.items():
-        starter_address = data.rom_addresses[game_version_revision]["sStarterSpecies"] + (STARTER_INDEX[name] * 2)
+        starter_address = data.rom_addresses["sStarterSpecies"] + (STARTER_INDEX[name] * 2)
         tokens.write_token(APTokenTypes.WRITE, starter_address, struct.pack("<H", starter.species_id))
         tokens.write_token(APTokenTypes.WRITE,
-                           starter.player_address[game_version_revision],
+                           starter.player_address,
                            struct.pack("<H", starter.species_id))
         tokens.write_token(APTokenTypes.WRITE,
-                           starter.rival_address[game_version_revision],
+                           starter.rival_address,
                            struct.pack("<H", starter.species_id))
 
 
-def _set_legendaries(world: "PokemonFRLGWorld", tokens: APTokenMixin,
-                     game_version: str, game_version_revision: str) -> None:
+def _set_legendaries(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if (world.options.level_scaling == LevelScaling.option_off and
             world.options.legendary_pokemon == RandomizeLegendaryPokemon.option_vanilla):
         return
 
     for name, legendary in world.modified_legendary_pokemon.items():
         tokens.write_token(APTokenTypes.WRITE,
-                           legendary.address[game_version_revision],
-                           struct.pack("<H", legendary.species_id[game_version]))
+                           legendary.address,
+                           struct.pack("<H", legendary.species_id))
         tokens.write_token(APTokenTypes.WRITE,
-                           legendary.level_address[game_version_revision],
-                           struct.pack("<B", legendary.level[game_version]))
+                           legendary.level_address,
+                           struct.pack("<B", legendary.level))
 
 
-def _set_misc_pokemon(world: "PokemonFRLGWorld", tokens: APTokenMixin,
-                      game_version: str, game_version_revision: str) -> None:
+def _set_misc_pokemon(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if (world.options.level_scaling == LevelScaling.option_off and
             world.options.misc_pokemon == RandomizeMiscPokemon.option_vanilla):
         return
 
     for name, misc_pokemon in world.modified_misc_pokemon.items():
         tokens.write_token(APTokenTypes.WRITE,
-                           misc_pokemon.address[game_version_revision],
-                           struct.pack("<H", misc_pokemon.species_id[game_version]))
-        if misc_pokemon.level[game_version] != 0:
+                           misc_pokemon.address,
+                           struct.pack("<H", misc_pokemon.species_id))
+        if misc_pokemon.level != 0:
             tokens.write_token(APTokenTypes.WRITE,
-                               misc_pokemon.level_address[game_version_revision],
-                               struct.pack("<B", misc_pokemon.level[game_version]))
+                               misc_pokemon.level_address,
+                               struct.pack("<B", misc_pokemon.level))
 
 
-def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
+def _set_trainer_parties(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if (world.options.level_scaling == LevelScaling.option_off and
             world.options.trainers == RandomizeTrainerParties.option_vanilla and
             world.options.starters == RandomizeStarters.option_vanilla and
@@ -778,7 +643,7 @@ def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_v
         return
 
     for trainer in world.modified_trainers.values():
-        party_address = trainer.party.address[game_version_revision]
+        party_address = trainer.party.address
 
         if trainer.party.pokemon_data_type in {TrainerPokemonDataTypeEnum.NO_ITEM_DEFAULT_MOVES,
                                                TrainerPokemonDataTypeEnum.ITEM_DEFAULT_MOVES}:
@@ -812,12 +677,12 @@ def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_v
                                    struct.pack("<H", pokemon.moves[3]))
 
 
-def _set_tmhm_compatibility(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
+def _set_tmhm_compatibility(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if (world.options.hm_compatibility == HmCompatibility.special_range_names["vanilla"] and
             world.options.tm_tutor_compatibility == TmTutorCompatibility.special_range_names["vanilla"]):
         return
 
-    learnsets_address = data.rom_addresses[game_version_revision]["sTMHMLearnsets"]
+    learnsets_address = data.rom_addresses["sTMHMLearnsets"]
 
     for species in world.modified_species.values():
         tokens.write_token(
@@ -827,11 +692,11 @@ def _set_tmhm_compatibility(world: "PokemonFRLGWorld", tokens: APTokenMixin, gam
         )
 
 
-def _set_tm_moves(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
+def _set_tm_moves(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if not world.options.tm_tutor_moves:
         return
 
-    address = data.rom_addresses[game_version_revision]["sTMHMMoves"]
+    address = data.rom_addresses["sTMHMMoves"]
 
     for i, move in enumerate(world.modified_tmhm_moves):
         # Don't modify HMs
@@ -841,16 +706,16 @@ def _set_tm_moves(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_
         tokens.write_token(APTokenTypes.WRITE, address + (i * 2), struct.pack("<H", move))
 
 
-def _randomize_move_tutors(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_version_revision: str) -> None:
+def _randomize_move_tutors(world: "PokemonVegaWorld", tokens: APTokenMixin) -> None:
     if world.options.tm_tutor_moves:
         new_tutor_moves = randomize_tutor_moves(world)
-        address = data.rom_addresses[game_version_revision]["gTutorMoves"]
+        address = data.rom_addresses["gTutorMoves"]
 
         for i, move in enumerate(new_tutor_moves):
             tokens.write_token(APTokenTypes.WRITE, address + (i * 2), struct.pack("<H", move))
 
     if world.options.tm_tutor_compatibility != TmTutorCompatibility.special_range_names["vanilla"]:
-        learnsets_address = data.rom_addresses[game_version_revision]["sTutorLearnsets"]
+        learnsets_address = data.rom_addresses["sTutorLearnsets"]
 
         for species in world.modified_species.values():
             tokens.write_token(
