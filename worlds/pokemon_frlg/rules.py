@@ -10,8 +10,8 @@ from .items import offset_item_value
 from .locations import PokemonFRLGLocation
 from .options import (CeruleanCaveRequirement, Dexsanity, EliteFourRequirement, FlashRequired, GameVersion, Goal,
                       ItemfinderRequired, LevelScaling, PewterCityRoadblock, Route22GateRequirement,
-                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, Trainersanity,
-                      ViridianCityRoadblock, ViridianGymRequirement)
+                      Route23GuardRequirement, SeviiIslandPasses, ShuffleHiddenItems, ShuffleRunningShoes,
+                      Trainersanity, ViridianCityRoadblock, ViridianGymRequirement)
 
 if TYPE_CHECKING:
     from . import PokemonFRLGWorld
@@ -331,8 +331,9 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
             set_rule(get_entrance("Route 2 Northeast Cuttable Tree (South)"), lambda state: can_cut(state))
 
         # Pewter City
-        set_rule(get_location("Pewter City - Gift from Mom"),
-                 lambda state: state.has("Defeat Brock", player) and state.can_reach_region("Route 3", player))
+        if options.shuffle_running_shoes != ShuffleRunningShoes.option_vanilla:
+            set_rule(get_location("Pewter City - Gift from Mom"),
+                     lambda state: state.has("Defeat Brock", player) and state.can_reach_region("Route 3", player))
         set_rule(get_entrance("Pewter City Cuttable Tree"), lambda state: can_cut(state))
         set_rule(get_entrance("Pewter City Exit (East)"), lambda state: can_pass_pewter_city_roadblock(state))
 
