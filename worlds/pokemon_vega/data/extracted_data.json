@@ -1233,6 +1233,8 @@
 "FLAG_ITEM_ROUTE4_TM05":353,
 "FLAG_ITEM_ROUTE501_POTION":340,
 "FLAG_ITEM_ROUTE502_POKE_BALL":341,
+"FLAG_ITEM_ROUTE503_TM03":342,
+"FLAG_ITEM_ROUTE503_X_ACCURACY":343,
 "FLAG_ITEM_ROUTE9_BURN_HEAL":450,
 "FLAG_ITEM_ROUTE9_TM40":363,
 "FLAG_ITEM_SAFARI_ZONE_CENTER_NUGGET":385,
@@ -1308,8 +1310,6 @@
 "FLAG_ITEM_VICTORY_ROAD_2F_TM37":430,
 "FLAG_ITEM_VICTORY_ROAD_3F_MAX_REVIVE":431,
 "FLAG_ITEM_VICTORY_ROAD_3F_TM50":432,
-"FLAG_ITEM_VIRIDIAN_FOREST_ANTIDOTE":343,
-"FLAG_ITEM_VIRIDIAN_FOREST_POKE_BALL":342,
 "FLAG_ITEM_VIRIDIAN_FOREST_POTION":344,
 "FLAG_ITEM_VIRIDIAN_FOREST_POTION_2":446,
 "FLAG_LATIAS_LATIOS_IS_RECOVERING":798,
@@ -1318,6 +1318,7 @@
 "FLAG_LEARNED_YES_NAH_CHANSEY":722,
 "FLAG_LUGIA_IS_RECOVERING":790,
 "FLAG_MET_STICKER_MAN":656,
+"FLAG_MET_TURNER_ROUTE503":4366,
 "FLAG_MEWTWO_IS_RECOVERING":786,
 "FLAG_MEW_IS_RECOVERING":796,
 "FLAG_MOLTRES_IS_RECOVERING":787,
@@ -5727,6 +5728,14 @@
 {"address":11550741,
 "default_item":4,
 "flag":341},
+"ITEM_ROUTE503_X_ACCURACY":
+{"address":11571647,
+"default_item":78,
+"flag":342},
+"ITEM_ROUTE503_TM03":
+{"address":11571634,
+"default_item":291,
+"flag":343},
 "ITEM_ROUTE9_BURN_HEAL":
 {"address":1833413,
 "default_item":15,
@@ -5991,14 +6000,6 @@
 {"address":1833205,
 "default_item":338,
 "flag":432},
-"ITEM_VIRIDIAN_FOREST_ANTIDOTE":
-{"address":1832061,
-"default_item":14,
-"flag":343},
-"ITEM_VIRIDIAN_FOREST_POKE_BALL":
-{"address":1832048,
-"default_item":4,
-"flag":342},
 "ITEM_VIRIDIAN_FOREST_POTION":
 {"address":1832074,
 "default_item":13,
@@ -8200,7 +8201,7 @@
 "default_item":0,
 "flag":1388},
 "TRAINER_BUG_CATCHER_RICK_REWARD":
-{"address":3968812,
+{"address":3968812, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1382},
 "TRAINER_BUG_CATCHER_ROBBY_REWARD":
@@ -8268,7 +8269,7 @@
 "default_item":0,
 "flag":1757},
 "TRAINER_CAMPER_LIAM_REWARD":
-{"address":3968892,
+{"address":3968892, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1422},
 "TRAINER_CAMPER_RICKY_REWARD":
@@ -8644,11 +8645,11 @@
 "default_item":0,
 "flag":1470},
 "TRAINER_HIKER_BRICE_REWARD":
-{"address":3968980,
+{"address":3968980, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1466},
 "TRAINER_HIKER_CLARK_REWARD":
-{"address":3968982,
+{"address":3968982, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1467},
 "TRAINER_HIKER_DARYL_REWARD":
@@ -8744,7 +8745,7 @@
 "default_item":0,
 "flag":1844},
 "TRAINER_LADY_JACKI_REWARD":
-{"address":3969658,
+{"address":3969658, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1805},
 "TRAINER_LADY_SELPHY_REWARD":
@@ -8808,7 +8809,7 @@
 "default_item":0,
 "flag":1410},
 "TRAINER_LASS_MIRIAM_REWARD":
-{"address":3968848,
+{"address":3968848, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1400},
 "TRAINER_LASS_PAIGE_REWARD":
@@ -8916,7 +8917,7 @@
 "default_item":0,
 "flag":1754},
 "TRAINER_PICNICKER_DIANA_REWARD":
-{"address":3968908,
+{"address":3968908, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1430},
 "TRAINER_PICNICKER_GWEN_REWARD":
@@ -9083,6 +9084,10 @@
 {"address":3969170,
 "default_item":0,
 "flag":1561},
+"TRAINER_RICH_BOY_EVERETT_REWARD":
+{"address":3969170, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1561},
 "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD":
 {"address":3969274,
 "default_item":0,
@@ -9100,11 +9105,11 @@
 "default_item":0,
 "flag":1606},
 "TRAINER_RIVAL_HOLLYS_LAB_NIMBLEAF_REWARD":
-{"address":3969262,
+{"address":3969262, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1607},
 "TRAINER_RIVAL_HOLLYS_LAB_PEYERO_REWARD":
-{"address":3969264,
+{"address":3969264, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1608},
 "TRAINER_RIVAL_POKEMON_TOWER_BULBASAUR_REWARD":
@@ -9235,6 +9240,10 @@
 {"address":3969288, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1620},
+"TRAINER_SCHOOL_KID_FABIAN_REWARD":
+{"address":3969288, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1620},
 "TRAINER_SCHOOL_KID_GEORGIA_REWARD":
 {"address":3969288, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
@@ -9244,6 +9253,10 @@
 "default_item":0,
 "flag":1620},
 "TRAINER_SCHOOL_KID_RICH_REWARD":
+{"address":3969288, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1620},
+"TRAINER_SCHOOL_KID_OLIVIA_REWARD":
 {"address":3969288, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1620},
@@ -9731,6 +9744,10 @@
 {"address":3969646,
 "default_item":0,
 "flag":1799},
+"TRAINER_TWINS_ANN_ANNE_REWARD":
+{"address":3969728, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1840},
 "TRAINER_TWINS_ELI_ANNE_REWARD":
 {"address":3969576,
 "default_item":0,
@@ -9752,7 +9769,7 @@
 "default_item":0,
 "flag":1369},
 "TRAINER_YOUNGSTER_CALVIN_REWARD":
-{"address":3968788,
+{"address":3968788, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1370},
 "TRAINER_YOUNGSTER_CHAD_REWARD":
