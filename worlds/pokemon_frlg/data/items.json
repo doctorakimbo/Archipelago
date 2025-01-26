@@ -173,7 +173,7 @@
   },
   "ITEM_POWDER_JAR": {
     "name": "Powder Jar",
-    "classification": "FILLER",
+    "classification": "USEFUL",
     "tags": ["Unique"]
   },
   "ITEM_RED_SHARD": {
@@ -184,6 +184,11 @@
   "ITEM_ROOT_FOSSIL": {
     "name": "Root Fossil",
     "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_RUNNING_SHOES": {
+    "name": "Running Shoes",
+    "classification": "USEFUL",
     "tags": ["Unique"]
   },
   "ITEM_SAFARI_PASS": {
@@ -218,7 +223,7 @@
   },
   "ITEM_VS_SEEKER": {
     "name": "Vs. Seeker",
-    "classification": "PROGRESSION",
+    "classification": "USEFUL",
     "tags": ["Unique"]
   },
   "ITEM_WING_FOSSIL": {
@@ -646,33 +651,33 @@
 
   "ITEM_SUN_STONE": {
     "name": "Sun Stone",
-    "classification": "USEFUL",
-    "tags": ["EvoStone"]
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
   },
   "ITEM_MOON_STONE": {
     "name": "Moon Stone",
-    "classification": "USEFUL",
-    "tags": ["EvoStone"]
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
   },
   "ITEM_FIRE_STONE": {
     "name": "Fire Stone",
-    "classification": "USEFUL",
-    "tags": ["EvoStone"]
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
   },
   "ITEM_THUNDER_STONE": {
     "name": "Thunder Stone",
-    "classification": "USEFUL",
-    "tags": ["EvoStone"]
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
   },
   "ITEM_WATER_STONE": {
     "name": "Water Stone",
-    "classification": "USEFUL",
-    "tags": ["EvoStone"]
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
   },
   "ITEM_LEAF_STONE": {
     "name": "Leaf Stone",
-    "classification": "USEFUL",
-    "tags": ["EvoStone"]
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
   },
 
   "ITEM_TINY_MUSHROOM": {

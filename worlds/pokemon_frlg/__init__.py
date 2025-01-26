@@ -21,9 +21,9 @@ from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, ge
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonVegaLocation)
-from .options import (PokemonVegaOptions, CeruleanCaveRequirement, FlashRequired, FreeFlyLocation, Goal,
-                      RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon,
-                      ShuffleHiddenItems, ShuffleBadges, TownMapFlyLocation)
+from .options import (PokemonVegaOptions, CeruleanCaveRequirement, Dexsanity, FlashRequired, FreeFlyLocation,
+                      Goal, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon,
+                      ShuffleHiddenItems, ShuffleBadges, ShuffleRunningShoes, TownMapFlyLocation, Trainersanity)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -103,6 +103,7 @@ class PokemonVegaWorld(World):
     encounter_name_list: List[str]
     encounter_level_list: List[int]
     scaling_data: List[ScalingData]
+    filler_items: List[PokemonVegaItem]
     auth: bytes
 
     def __init__(self, multiworld, player):
@@ -127,6 +128,7 @@ class PokemonVegaWorld(World):
         self.encounter_name_list = []
         self.encounter_level_list = []
         self.scaling_data = []
+        self.filler_items = []
         self.finished_level_scaling = threading.Event()
 
     @classmethod
@@ -170,10 +172,6 @@ class PokemonVegaWorld(World):
                                 "Setting goal to Distant Island.", self.player, self.player_name)
                 self.options.goal.value = Goal.option_distant_island
 
-        if ("Total Darkness" in self.options.modify_world_state.value and
-                self.options.flash_required == FlashRequired.option_off):
-            self.options.flash_required.value = FlashRequired.option_logic
-
         create_scaling_data(self)
         randomize_types(self)
         randomize_abilities(self)
@@ -190,7 +188,7 @@ class PokemonVegaWorld(World):
 
         regions = create_regions(self)
 
-        tags = {"Badge", "HM", "KeyItem", "FlyUnlock", "Overworld", "NPCGift"}
+        tags = {"Badge", "HM", "KeyItem", "FlyUnlock", "Overworld", "NPCGift", "RunningShoes"}
         if self.options.shuffle_hidden == ShuffleHiddenItems.option_all:
             tags.add("Hidden")
             tags.add("Recurring")
@@ -198,8 +196,10 @@ class PokemonVegaWorld(World):
             tags.add("Hidden")
         if self.options.extra_key_items:
             tags.add("ExtraKeyItem")
-        if self.options.trainersanity:
+        if self.options.trainersanity != Trainersanity.special_range_names["none"]:
             tags.add("Trainer")
+        if self.options.dexsanity != Dexsanity.special_range_names["none"]:
+            tags.add("Pokedex")
         create_locations_from_tags(self, regions, tags)
 
         self.multiworld.regions.extend(regions.values())
@@ -225,6 +225,8 @@ class PokemonVegaWorld(World):
             item_locations = [location for location in item_locations if "Badge" not in location.tags]
         if not self.options.shuffle_fly_destination_unlocks:
             item_locations = [location for location in item_locations if "FlyUnlock" not in location.tags]
+        if self.options.shuffle_running_shoes == ShuffleRunningShoes.option_vanilla:
+            item_locations = [location for location in item_locations if "RunningShoes" not in location.tags]
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
 
@@ -242,6 +244,8 @@ class PokemonVegaWorld(World):
                     itempool.append(self.create_item(get_random_item(self, ItemClassification.filler)))
                     removed_items_count -= 1
 
+        self.filler_items = [item for item in itempool if item.classification == ItemClassification.filler]
+        self.random.shuffle(self.filler_items)
         self.multiworld.itempool += itempool
 
     def set_rules(self) -> None:
@@ -268,6 +272,58 @@ class PokemonVegaWorld(World):
 
         if not self.options.shuffle_fly_destination_unlocks:
             create_events_for_unrandomized_items("FlyUnlock")
+        if self.options.shuffle_running_shoes == ShuffleRunningShoes.option_vanilla:
+            create_events_for_unrandomized_items("RunningShoes")
+
+        collection_state = self.multiworld.get_all_state(False)
+
+        # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
+        evolution_region = self.multiworld.get_region("Evolutions", self.player)
+        for location in evolution_region.locations.copy():
+            if not collection_state.can_reach(location, player=self.player):
+                evolution_region.locations.remove(location)
+
+        # Delete trades that are not in logic in an all_state so that the accessibility check doesn't fail
+        for trade in self.trade_pokemon:
+            location = self.multiworld.get_location(trade[1], self.player)
+            if not collection_state.can_reach(location, player=self.player):
+                region = self.multiworld.get_region(trade[0], self.player)
+                region.locations.remove(location)
+
+        # Delete trainersanity locations if there are more than the amount specified in the settings
+        trainer_locations = [loc for loc in self.multiworld.get_locations(self.player)
+                             if "Trainer" in loc.tags
+                             and not loc.is_event]
+        locs_to_remove = len(trainer_locations) - self.options.trainersanity.value
+        if locs_to_remove > 0:
+            self.random.shuffle(trainer_locations)
+            for location in trainer_locations:
+                region = location.parent_region
+                region.locations.remove(location)
+                item_to_remove = self.filler_items.pop(0)
+                self.multiworld.itempool.remove(item_to_remove)
+                locs_to_remove -= 1
+                if locs_to_remove <= 0:
+                    break
+
+        # Delete dexsanity locations that are not in logic in an all_state since they aren't accessible
+        pokedex_region = self.multiworld.get_region("Pokedex", self.player)
+        for location in pokedex_region.locations.copy():
+            if not collection_state.can_reach(location, player=self.player):
+                pokedex_region.locations.remove(location)
+                item_to_remove = self.filler_items.pop(0)
+                self.multiworld.itempool.remove(item_to_remove)
+
+        # Delete dexsanity locations if there are more than the amount specified in the settings
+        if len(pokedex_region.locations) > self.options.dexsanity.value:
+            pokedex_region_locations = pokedex_region.locations.copy()
+            self.random.shuffle(pokedex_region_locations)
+            for location in pokedex_region_locations:
+                pokedex_region.locations.remove(location)
+                item_to_remove = self.filler_items.pop(0)
+                self.multiworld.itempool.remove(item_to_remove)
+                if len(pokedex_region.locations) <= self.options.dexsanity.value:
+                    break
 
     def pre_fill(self) -> None:
         # If badges aren't shuffled among all locations, shuffle them among themselves
@@ -293,21 +349,6 @@ class PokemonVegaWorld(World):
                     if attempts_remaining == 0:
                         raise exc
 
-        collection_state = self.multiworld.get_all_state(False)
-
-        # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
-        evolution_region = self.multiworld.get_region("Evolutions", self.player)
-        for location in evolution_region.locations.copy():
-            if not collection_state.can_reach(location, player=self.player):
-                evolution_region.locations.remove(location)
-
-        # Delete trades that are not in logic in an all_state so that the accessibility check doesn't fail
-        for trade in self.trade_pokemon:
-            location = self.multiworld.get_location(trade[1], self.player)
-            if not collection_state.can_reach(location, player=self.player):
-                region = self.multiworld.get_region(trade[0], self.player)
-                region.locations.remove(location)
-
     @classmethod
     def stage_post_fill(cls, multiworld):
         # Change all but one instance of a Pokémon in each sphere to useful classification
@@ -317,6 +358,7 @@ class PokemonVegaWorld(World):
         for sphere in multiworld.get_spheres():
             for location in sphere:
                 if (location.game == "Pokemon Vega" and
+                        location.item.game == "Pokemon Vega" and
                         (location.item.name in pokemon or "Static " in location.item.name)
                         and location.item.advancement):
                     key = (location.player, location.item.name)
@@ -381,37 +423,79 @@ class PokemonVegaWorld(World):
                 self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla):
             spoiler_handle.write(f"\n\nPokemon Locations ({self.multiworld.player_name[self.player]}):\n\n")
 
-        if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
+            from collections import defaultdict
+
+            species_locations = defaultdict(set)
+
+            if self.options.wild_pokemon != RandomizeWildPokemon.option_vanilla:
+                pokemon_locations: List[PokemonVegaLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Wild" in location.tags
+                ]
+                for location in pokemon_locations:
+                    species_locations[location.item.name].add(location.spoiler_name)
+
+            if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
+                pokemon_locations: List[PokemonVegaLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Misc" in location.tags
+                ]
+                for location in pokemon_locations:
+                    if location.item.name.startswith("Missable"):
+                        continue
+                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
+                pokemon_locations: List[PokemonVegaLocation] = [
+                    location for location in self.multiworld.get_locations(self.player)
+                    if "Pokemon" in location.tags and "Legendary" in location.tags
+                ]
+                for location in pokemon_locations:
+                    if location.item.name.startswith("Missable"):
+                        continue
+                    species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            lines = [f"{species}: {', '.join(sorted(locations))}\n"
+                     for species, locations in species_locations.items()]
+            lines.sort()
+            for line in lines:
+                spoiler_handle.write(line)
+
+    def extend_hint_information(self, hint_data):
+        if self.options.dexsanity != Dexsanity.special_range_names["none"]:
+            from collections import defaultdict
+
+            species_locations = defaultdict(set)
+
             pokemon_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Wild" in location.tags
             ]
             for location in pokemon_locations:
-                spoiler_handle.write(location.name + ": " + location.item.name + "\n")
+                species_locations[location.item.name].add(location.spoiler_name)
 
-        if self.options.misc_pokemon != RandomizeMiscPokemon.option_vanilla:
             pokemon_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Misc" in location.tags
             ]
             for location in pokemon_locations:
-                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
-                    name = location.item.name.split()[1]
-                else:
-                    name = location.item.name
-                spoiler_handle.write(location.name + ": " + name + "\n")
+                if location.item.name.startswith("Missable"):
+                    continue
+                species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
 
-        if self.options.legendary_pokemon != RandomizeLegendaryPokemon.option_vanilla:
             pokemon_locations: List[PokemonVegaLocation] = [
                 location for location in self.multiworld.get_locations(self.player)
                 if "Pokemon" in location.tags and "Legendary" in location.tags
             ]
             for location in pokemon_locations:
-                if location.item.name.startswith("Static") or location.item.name.startswith("Missable"):
-                    name = location.item.name.split()[1]
-                else:
-                    name = location.item.name
-                spoiler_handle.write(location.name + ": " + name + "\n")
+                if location.item.name.startswith("Missable"):
+                    continue
+                species_locations[location.item.name.replace("Static ", "")].add(location.spoiler_name)
+
+            hint_data[self.player] = {
+                self.location_name_to_id[f"Pokedex - {species}"]: ", ".join(sorted(maps))
+                for species, maps in species_locations.items()
+            }
 
     def modify_multidata(self, multidata: Dict[str, Any]):
         import base64
@@ -425,7 +509,6 @@ class PokemonVegaWorld(World):
             "shuffle_badges",
             "shuffle_hidden",
             "extra_key_items",
-            "trainersanity",
             "shuffle_fly_destination_unlocks",
             "itemfinder_required",
             "flash_required",
@@ -437,9 +520,13 @@ class PokemonVegaWorld(World):
             "route523_guard_count",
             "elite_four_requirement",
             "elite_four_count",
+            "elite_four_rematch_count",
             "cerulean_cave_requirement",
             "cerulean_cave_count",
+            "provide_hints"
         )
+        slot_data["trainersanity"] = 1 if self.options.trainersanity != Trainersanity.special_range_names["none"] else 0
+        slot_data["elite_four_rematch_requirement"] = self.options.elite_four_requirement.value
         slot_data["free_fly_location_id"] = self.free_fly_location_id
         slot_data["town_map_fly_location_id"] = self.town_map_fly_location_id
         return slot_data

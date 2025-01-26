@@ -1,10 +1,9 @@
 import copy
-import stat
 from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Union
 from BaseClasses import CollectionState, Location, Region, ItemClassification
 from .data import data, BASE_OFFSET
 from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonVegaItem
-from .options import FreeFlyLocation, JunopsisCityRoadblock, TownMapFlyLocation
+from .options import FreeFlyLocation, TownMapFlyLocation
 
 if TYPE_CHECKING:
     from . import PokemonVegaWorld
@@ -21,14 +20,14 @@ LOCATION_GROUPS = {
         "New Island Gym - Prize"
     },
     "Gym TMs": {
-        "Junopsis Gym - Annette's TM",
-        "Seafin Gym - Geoff's TM",
-        "Gamboge Gym - Brooke's TM",
-        "Nephrite Gym - Avery's TM",
-        "Orpimence Gym - Chie and Rito's TM",
-        "Ravenplume Gym - Fenton's TM",
-        "Lapizula Gym - Tara's TM",
-        "New Island Gym - Mewtwo's TM"
+        "Junopsis Gym - Annette TM",
+        "Seafin Gym - Geoff TM",
+        "Gamboge Gym - Brooke TM",
+        "Nephrite Gym - Avery TM",
+        "Orpimence Gym - Chie and Rito TM",
+        "Ravenplume Gym - Fenton TM",
+        "Lapizula Gym - Tara TM",
+        "New Island Gym - Mewtwo TM"
     }
 }
 
@@ -70,6 +69,7 @@ class PokemonVegaLocation(Location):
     default_item_id: Optional[int]
     tags: FrozenSet[str]
     data_ids: Optional[List[str]]
+    spoiler_name: str
 
     def __init__(
             self,
@@ -80,13 +80,14 @@ class PokemonVegaLocation(Location):
             item_address: Optional[Dict[str, Union[int, List[int]]]] = None,
             default_item_id: Optional[int] = None,
             tags: FrozenSet[str] = frozenset(),
-            data_ids: Optional[List[str]] = None) -> None:
+            data_ids: Optional[List[str]] = None,
+            spoiler_name: Optional[str] = None) -> None:
         super().__init__(player, name, address, parent)
         self.default_item_id = None if default_item_id is None else offset_item_value(default_item_id)
         self.item_address = item_address
         self.tags = tags
         self.data_ids = data_ids
-
+        self.spoiler_name = spoiler_name if spoiler_name is not None else name
 
 def offset_flag(flag: int) -> int:
     if flag is None:

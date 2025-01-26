@@ -33,27 +33,27 @@
   },
 
   "NPC_GIFT_GOT_HM01": {
-    "name": "S.S. Anne Captain's Office - Captain's Gift",
+    "name": "S.S. Anne Captain's Office - Captain Gift",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM02": {
-    "name": "Route 16 Fly House - Woman's Gift",
+    "name": "Route 16 Fly House - Woman Gift",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM03": {
-    "name": "Safari Zone Secret House - Attendant's Gift",
+    "name": "Safari Zone Secret House - Campaign Prize",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM04": {
-    "name": "Safari Zone Warden's House - Safari Zone Warden's Gift",
+    "name": "Safari Zone Warden's House - Warden Gift (Return Teeth)",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM05": {
-    "name": "Route 502 - Man's Gift",
+    "name": "Route 502 - Man Gift",
     "tags": ["HM"]
   },
   "NPC_GIFT_GOT_HM06": {
-    "name": "Ember Spa - Rock Smash Man's Gift",
+    "name": "Ember Spa - Rock Smash Man Gift",
     "tags": ["HM"]
   },
   "ITEM_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07": {
@@ -66,7 +66,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_BIKE_VOUCHER": {
-    "name": "Pokemon Fan Club - Chairman's Gift",
+    "name": "Pokemon Fan Club - Chairman Gift",
     "tags": ["KeyItem"]
   },
   "ITEM_SILPH_CO_5F_CARD_KEY": {
@@ -74,7 +74,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_COIN_CASE": {
-    "name": "Celadon Restaurant - Coin Case Man's Gift",
+    "name": "Celadon Restaurant - Coin Case Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_DOME_FOSSIL": {
@@ -82,11 +82,11 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_FAME_CHECKER": {
-    "name": "Cerulean City - Rival's Gift",
+    "name": "Cerulean City - Rival Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_GOOD_ROD": {
-    "name": "Fuchsia Fishing House - Fishing Guru's Brother's Gift",
+    "name": "Fuchsia Fishing House - Fishing Guru Gift",
     "tags": ["KeyItem"]
   },
   "ITEM_SAFARI_ZONE_WEST_GOLD_TEETH": {
@@ -98,11 +98,11 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "name": "Route 11 Gate 2F - Oak's Aide's Gift",
+    "name": "Route 11 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
-    "name": "Rocket Hideout B4F - Rocket Grunt's Item",
+    "name": "Rocket Hideout B4F - Team Rocket Grunt Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_METEORITE": {
@@ -114,28 +114,32 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_AMBER": {
-    "name": "Pewter Museum 1F - Scientist's Gift",
+    "name": "Pewter Museum 1F - Scientist Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_OLD_ROD": {
-    "name": "Vermilion Fishing House - Fishing Guru's Gift",
+    "name": "Vermilion Fishing House - Fishing Guru Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POKE_FLUTE": {
-    "name": "Volunteer Pokemon House - Mr. Fuji's Gift",
+    "name": "Volunteer Pokemon House - Mr. Fuji Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_POWDER_JAR": {
-    "name": "Berry Powder Man's House - Berry Powder Man's Gift",
+    "name": "Berry Powder Man's House - Berry Powder Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RAINBOW_PASS": {
-    "name": "One Island Pokemon Center 1F - Celio's Gift (Deliver Ruby)",
+    "name": "One Island Pokemon Center 1F - Celio Gift (Deliver Ruby)",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RUBY": {
     "name": "Mt. Ember Ruby Path B5F - Ruby",
     "tags": ["KeyItem"]
+  },
+  "NPC_GIFT_GOT_RUNNING_SHOES": {
+    "name": "Player's House 1F - Gift from Mom 1",
+    "tags": ["KeyItem", "RunningShoes"]
   },
   "NPC_GIFT_RECOVERED_SAPPHIRE": {
     "name": "Rocket Warehouse - Recover Stolen Gem",
@@ -145,36 +149,40 @@
     "name": "Pokemon Mansion B1F - Northwest Room Item",
     "tags": ["KeyItem"]
   },
+  "NPC_GIFT_GOT_SCANNER": {
+    "name": "Tanoby Ruins - Island Item",
+    "tags": ["KeyItem"]
+  },
   "NPC_GIFT_GOT_SILPH_SCOPE": {
-    "name": "Rocket Hideout B4F - Giovanni's Item",
+    "name": "Rocket Hideout B4F - Giovanni Item",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SS_TICKET": {
-    "name": "Sea Cottage - Bill's Gift",
+    "name": "Sea Cottage - Bill Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_SUPER_ROD": {
-    "name": "Route 12 Fishing House - Fishing Guru's Brother's Gift",
+    "name": "Route 12 Fishing House - Fishing Guru Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEA": {
-    "name": "Celadon Condominiums 1F - Tea Woman's Gift",
+    "name": "Celadon Condominiums 1F - Tea Woman Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TEACHY_TV": {
-    "name": "Viridian City - Old Man's Gift",
+    "name": "Viridian City - Old Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TOWN_MAP": {
-    "name": "Player's House 1F - Mom's Gift",
+    "name": "Player's House 1F - Gift from Mom 2",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_TRI_PASS": {
-    "name": "One Island Pokemon Center 1F - Celio's Gift (First Visit)",
+    "name": "One Island Pokemon Center 1F - Meet Celio",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_VS_SEEKER": {
-    "name": "Vermilion Pokemon Center 1F - Vs. Seeker Woman's Gift",
+    "name": "Vermilion Pokemon Center 1F - Vs. Seeker Woman Gift",
     "tags": ["KeyItem"]
   },
 
@@ -183,7 +191,7 @@
     "tags": ["ExtraKeyItem"]
   },
   "NPC_GIFT_GOT_LETTER": {
-    "name": "Pokemon Lab Research Room - Scientist's Gift",
+    "name": "Pokemon Lab Research Room - Scientist",
     "tags": ["ExtraKeyItem"]
   },
   "HIDDEN_ITEM_CERULEAN_CITY_GYM_MACHINE_PART": {
@@ -191,7 +199,7 @@
     "tags": ["ExtraKeyItem"]
   },
   "NPC_GIFT_GOT_SAFARI_PASS": {
-    "name": "Fuchsia Safari Zone Office - Safari Zone Worker's Gift",
+    "name": "Fuchsia Safari Zone Office - Safari Zone Worker",
     "tags": ["ExtraKeyItem"]
   },
 
@@ -244,62 +252,75 @@
     "tags": ["FlyUnlock"]
   },
 
-  "NPC_GIFT_GOT_2F_CARD_KEY": {
-    "name": "Silph Co. 1F - Receptionist's Gift",
+  "ITEM_SILPH_CO_2F_CARD_KEY_2F": {
+    "name": "Silph Co. 2F - Southeast Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_3F_CARD_KEY": {
-    "name": "Silph Co. 3F - Worker's Gift",
+  "ITEM_SILPH_CO_3F_CARD_KEY_5F": {
+    "name": "Silph Co. 3F - East Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_4F_CARD_KEY": {
-    "name": "Silph Co. 4F - Worker's Gift",
+  "ITEM_SILPH_CO_4F_CARD_KEY_4F": {
+    "name": "Silph Co. 4F - North Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_5F_CARD_KEY": {
-    "name": "Silph Co. 5F - Worker's Gift",
+  "ITEM_SILPH_CO_6F_CARD_KEY_6F": {
+    "name": "Silph Co. 6F - Center Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_6F_CARD_KEY": {
-    "name": "Silph Co. 6F - Worker's Gift",
+  "ITEM_SILPH_CO_7F_CARD_KEY_7F": {
+    "name": "Silph Co. 7F - Northwest Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_7F_CARD_KEY": {
-    "name": "Silph Co. 7F - Worker's Gift",
+  "ITEM_SILPH_CO_8F_CARD_KEY_8F": {
+    "name": "Silph Co. 8F - West Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_8F_CARD_KEY": {
-    "name": "Silph Co. 8F - Worker's Gift",
+  "ITEM_SILPH_CO_9F_CARD_KEY_9F": {
+    "name": "Silph Co. 9F - Northwest Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_9F_CARD_KEY": {
-    "name": "Silph Co. 9F - Nurse's Gift",
+  "ITEM_SILPH_CO_10F_CARD_KEY_10F": {
+    "name": "Silph Co. 10F - Southeast Room Item",
     "tags": ["SplitCardKey"]
   },
-  "NPC_GIFT_GOT_10F_CARD_KEY": {
-    "name": "Silph Co. 10F - Worker's Gift",
+  "ITEM_SILPH_CO_11F_CARD_KEY_11F": {
+    "name": "Silph Co. 11F - West Hallway Item",
     "tags": ["SplitCardKey"]
   },
 
-  "NPC_GIFT_GOT_FIVE_PASS": {
-    "name": "Five Island Town - Fisherman's Gift",
-    "tags": ["SplitIslandPasses"]
-  },
-  "NPC_GIFT_GOT_SEVEN_PASS": {
-    "name": "Seven Island Town - Old Woman's Gift",
-    "tags": ["SplitIslandPasses"]
-  },
-  "NPC_GIFT_GOT_SIX_PASS": {
-    "name": "Six Island Town - Boy's Gift",
-    "tags": ["SplitIslandPasses"]
-  },
-  "NPC_GIFT_GOT_THREE_PASS": {
-    "name": "Three Island Town - Woman's Gift",
+  "NPC_GIFT_GOT_ONE_PASS": {
+    "name": "One Cinnabar Pokemon Center 1F - Bill",
     "tags": ["SplitIslandPasses"]
   },
   "NPC_GIFT_GOT_TWO_PASS": {
-    "name": "Two Island Town - Sailor's Gift",
+    "name": "Lostelle's House - Lostelle",
     "tags": ["SplitIslandPasses"]
+  },
+  "NPC_GIFT_GOT_FIVE_PASS": {
+    "name": "Dotted Hole 1F - Dropped Item",
+    "tags": ["SplitIslandPasses"]
+  },
+  "NPC_GIFT_GOT_SIX_PASS": {
+    "name": "Icefall Cave Back - Lorelei",
+    "tags": ["SplitIslandPasses"]
+  },
+  "NPC_GIFT_GOT_SEVEN_PASS": {
+    "name": "One Island Pokemon Center 1F - Celio (Deliver Sapphire)",
+    "tags": ["SplitIslandPasses"]
+  },
+
+  "NPC_GIFT_GOT_RED_TEA": {
+    "name": "Celadon Condominiums 1F - Brock",
+    "tags": ["SplitTeas"]
+  },
+  "NPC_GIFT_GOT_BLUE_TEA": {
+    "name": "Celadon Condominiums 1F - Misty",
+    "tags": ["SplitTeas"]
+  },
+  "NPC_GIFT_GOT_PURPLE_TEA": {
+    "name": "Celadon Condominiums 1F - Erika",
+    "tags": ["SplitTeas"]
   },
 
   "ITEM_CELADON_CITY_ETHER": {
@@ -1708,36 +1729,48 @@
     "tags": ["Hidden"]
   },
 
+  "PC_ITEM_POTION": {
+    "name": "Player's PC - Starting Item",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_10_COINS_FROM_GAMBLER": {
-    "name": "Celadon Game Corner - Fisherman's Gift",
+    "name": "Celadon Game Corner - Fisherman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_20_COINS_FROM_GAMBLER": {
-    "name": "Celadon Game Corner - Scientist's Gift",
+    "name": "Celadon Game Corner - Scientist Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_20_COINS_FROM_GAMBLER_2": {
-    "name": "Celadon Game Corner - Gentleman's Gift",
+    "name": "Celadon Game Corner - Gentleman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_AMULET_COIN_FROM_OAKS_AIDE": {
-    "name": "Route 16 Gate 2F - Oak's Aide's Gift",
+    "name": "Route 16 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_DEEP_SEA_SCALE": {
+    "name": "Seven Island Town - Scientist Gift 1 (Trade Scanner)",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_DEEP_SEA_TOOTH": {
+    "name": "Seven Island Town - Scientist Gift 2 (Trade Scanner)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_BIG_MUSHROOM_FROM_VIOLET_WINSTRATE": {
-    "name": "Route 502 Gate 2F - Violet Winstrate's Gift",
+    "name": "Route 502 Gate 2F - Violet Winstrate Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT": {
-    "name": "Junopsis City - Black Belt's Gift",
+    "name": "Junopsis City - Black Belt Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EVERSTONE_FROM_OAKS_AIDE": {
-    "name": "Route 10 Pokemon Center 1F - Oak's Aide's Gift",
+    "name": "Route 10 Pokemon Center 1F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 Gate 2F - Oak's Aide's Gift",
+    "name": "Route 15 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE": {
@@ -1745,35 +1778,35 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FULL_RESTORE_FROM_THREE_ISLAND_DEFENDER": {
-    "name": "Three Island Town - Anti-Biker's Gift",
+    "name": "Three Island Town - Anti-Biker Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE": {
-    "name": "Resort Gorgeous House - Selphy's Gift",
+    "name": "Resort Gorgeous House - Selphy Gift (Show Pokemon)",
     "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_MASTER_BALL_FROM_SILPH": {
-    "name": "Silph Co. 11F - President's Gift",
+    "name": "Silph Co. 11F - President Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_MOON_STONE_FROM_JOYFUL_GAME_CORNER": {
-    "name": "Two Island Game Corner - Lostelle's Dad's Gift",
+    "name": "Two Island Game Corner - Lostelle's Dad Gift (Deliver Meteorite)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NEST_BALL_FROM_WATER_PATH_HOUSE_1": {
-    "name": "Water Path Heracross Woman's House - Heracross Woman's Gift",
+    "name": "Water Path Heracross Woman's House - Woman Gift (Show Heracross)",
     "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_NET_BALL_FROM_ROUTE12_FISHING_HOUSE": {
-    "name": "Route 12 Fishing House - Fishing Guru's Brother's Gift (Show Magikarp)",
+    "name": "Route 12 Fishing House - Fishing Guru Gift (Show Magikarp)",
     "tags": ["NPCGift", "PokemonRequest"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_DUNSPARCE_TUNNEL": {
-    "name": "Three Isle Path - Prospector's Gift",
+    "name": "Three Isle Path - Prospector Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_JUNOPSIS_NUGGET_MAN": {
-    "name": "Junopsis City - Nugget Man's Gift",
+    "name": "Junopsis City - Nugget Man Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_NUGGET_FROM_ROCKET_GRUNT": {
@@ -1781,43 +1814,43 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POKE_BALL_FROM_ROUTE501_HOUSE": {
-    "name": "Route 501 - Woman's Gift",
+    "name": "Route 501 - Woman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM03_FROM_MISTY": {
-    "name": "Cerulean Gym - Misty's TM",
+    "name": "Cerulean Gym - Misty TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM04_FROM_SABRINA": {
-    "name": "Saffron Gym - Sabrina's TM",
+    "name": "Saffron Gym - Sabrina TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM06_FROM_KOGA": {
-    "name": "Fuchsia Gym - Koga's TM",
+    "name": "Fuchsia Gym - Koga TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM15_FROM_ANNETTE": {
-    "name": "Junopsis Gym - Annette's TM",
+    "name": "Junopsis Gym - Annette TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM16_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Thirsty Girl's Gift (Give Fresh Water)",
+    "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Fresh Water)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
-    "name": "Celadon Gym - Erika's TM",
+    "name": "Celadon Gym - Erika TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Thirsty Girl's Gift (Give Soda Pop)",
+    "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Soda Pop)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
-    "name": "Viridian Gym - Giovanni's TM",
+    "name": "Viridian Gym - Giovanni TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM27": {
-    "name": "Route 12 Gate 2F - Mourning Lass' Gift",
+    "name": "Route 12 Gate 2F - Mourning Lass Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM28_FROM_ROCKET": {
@@ -1825,35 +1858,35 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM29_FROM_MR_PSYCHIC": {
-    "name": "Mr. Psychic's House - Mr. Psychic's Gift",
+    "name": "Mr. Psychic's House - Mr. Psychic Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM33_FROM_THIRSTY_GIRL": {
-    "name": "Celadon Department Store Roof - Thirsty Girl's Gift (Give Lemonade)",
+    "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Lemonade)",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
-    "name": "Vermilion Gym - Lt. Surge's TM",
+    "name": "Vermilion Gym - Lt. Surge TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
-    "name": "Cinnabar Gym - Blaine's TM",
+    "name": "Cinnabar Gym - Blaine TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM42_AT_MEMORIAL_PILLAR": {
-    "name": "Memorial Pillar - Memorial Man's Gift",
+    "name": "Memorial Pillar - Memorial Man Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_MYSTIC_TICKET": {
-    "name": "Hall of Fame - Oak's Gift (First)",
+    "name": "Hall of Fame - Oak Gift 1",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RECEIVED_AURORA_TICKET": {
-    "name": "Hall of Fame - Oak's Gift (Second)",
+    "name": "Hall of Fame - Oak Gift 2",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_RESCUED_LOSTELLE": {
-    "name": "Berry Forest - Lostelle's Gift",
+    "name": "Berry Forest - Lostelle Gift",
     "tags": ["NPCGift"]
   },
 
@@ -1918,15 +1951,15 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_REWARD": {
-    "name": "Three Island Town - Biker Goon Reward (Left)",
+    "name": "Three Island Town - Biker Goon 1 Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_2_REWARD": {
-    "name": "Three Island Town - Biker Goon Reward (Right)",
+    "name": "Three Island Town - Biker Goon 2 Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_GOON_3_REWARD": {
-    "name": "Three Island Town - Biker Goon Reward (Top)",
+    "name": "Three Island Town - Biker Goon 3 Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BIKER_HIDEO_REWARD": {
@@ -3720,5 +3753,1550 @@
   "TRAINER_YOUNG_COUPLE_LEA_JED_REWARD": {
     "name": "Route 16 - Young Couple Lea & Jed Reward",
     "tags": ["Trainer"]
+  },
+
+  "POKEDEX_REWARD_001": {
+    "name": "Pokedex - Nimbleaf",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_002": {
+    "name": "Pokedex - Leafrond",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_003": {
+    "name": "Pokedex - Syleafid",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_004": {
+    "name": "Pokedex - Peyero",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_005": {
+    "name": "Pokedex - Infiris",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_006": {
+    "name": "Pokedex - Astignite",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_007": {
+    "name": "Pokedex - Liquiput",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_008": {
+    "name": "Pokedex - Hydrush",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_009": {
+    "name": "Pokedex - Correncid",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_010": {
+    "name": "Pokedex - Taillow",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_011": {
+    "name": "Pokedex - Swellow",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_012": {
+    "name": "Pokedex - Riolu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_013": {
+    "name": "Pokedex - Lucario",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_014": {
+    "name": "Pokedex - Houndour",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_015": {
+    "name": "Pokedex - Houndoom",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_016": {
+    "name": "Pokedex - Diglett",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_017": {
+    "name": "Pokedex - Dugtrio",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_018": {
+    "name": "Pokedex - Togepi",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_019": {
+    "name": "Pokedex - Togetic",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_020": {
+    "name": "Pokedex - Togekiss",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_021": {
+    "name": "Pokedex - Glachild",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_022": {
+    "name": "Pokedex - Frozaiden",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_023": {
+    "name": "Pokedex - Aurostice",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_024": {
+    "name": "Pokedex - Pichu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_025": {
+    "name": "Pokedex - Pikachu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_026": {
+    "name": "Pokedex - Raichu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_027": {
+    "name": "Pokedex - Machu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_028": {
+    "name": "Pokedex - Skarmory",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_029": {
+    "name": "Pokedex - Nidoran F",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_030": {
+    "name": "Pokedex - Nidorina",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_031": {
+    "name": "Pokedex - Nidoqueen",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_032": {
+    "name": "Pokedex - Nidoran M",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_033": {
+    "name": "Pokedex - Nidorino",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_034": {
+    "name": "Pokedex - Nidoking",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_035": {
+    "name": "Pokedex - Buizel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_036": {
+    "name": "Pokedex - Floatzel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_037": {
+    "name": "Pokedex - Jamberree",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_038": {
+    "name": "Pokedex - Strawna",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_039": {
+    "name": "Pokedex - Pineco",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_040": {
+    "name": "Pokedex - Forretress",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_041": {
+    "name": "Pokedex - Shellder",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_042": {
+    "name": "Pokedex - Cloyster",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_043": {
+    "name": "Pokedex - Psycolt",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_044": {
+    "name": "Pokedex - Kinegasus",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_045": {
+    "name": "Pokedex - Yunesis",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_046": {
+    "name": "Pokedex - Tyrogue",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_047": {
+    "name": "Pokedex - Hitmonlee",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_048": {
+    "name": "Pokedex - Hitmonchan",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_049": {
+    "name": "Pokedex - Hitmontop",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_050": {
+    "name": "Pokedex - Rynos",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_051": {
+    "name": "Pokedex - Feroceros",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_052": {
+    "name": "Pokedex - Absol",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_053": {
+    "name": "Pokedex - Dizasol",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_054": {
+    "name": "Pokedex - Girafarig",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_055": {
+    "name": "Pokedex - Folifarig",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_056": {
+    "name": "Pokedex - Willisp",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_057": {
+    "name": "Pokedex - Wisplode",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_058": {
+    "name": "Pokedex - Magnemite",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_059": {
+    "name": "Pokedex - Magneton",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_060": {
+    "name": "Pokedex - Magnezone",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_061": {
+    "name": "Pokedex - Staryu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_062": {
+    "name": "Pokedex - Starmie",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_063": {
+    "name": "Pokedex - Gastly",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_064": {
+    "name": "Pokedex - Haunter",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_065": {
+    "name": "Pokedex - Gengar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_066": {
+    "name": "Pokedex - Exeggcute",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_067": {
+    "name": "Pokedex - Exeggutor",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_068": {
+    "name": "Pokedex - Velvelt",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_069": {
+    "name": "Pokedex - Grissly",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_070": {
+    "name": "Pokedex - Hantama",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_071": {
+    "name": "Pokedex - Rhyhorn",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_072": {
+    "name": "Pokedex - Rhydon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_073": {
+    "name": "Pokedex - Rhyperior",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_074": {
+    "name": "Pokedex - Tropius",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_075": {
+    "name": "Pokedex - Porygon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_076": {
+    "name": "Pokedex - Porygon2",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_077": {
+    "name": "Pokedex - Porygon-Z",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_078": {
+    "name": "Pokedex - Spheal",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_079": {
+    "name": "Pokedex - Sealeo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_080": {
+    "name": "Pokedex - Walrein",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_081": {
+    "name": "Pokedex - Rollder",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_082": {
+    "name": "Pokedex - Rotillo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_083": {
+    "name": "Pokedex - Snalo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_084": {
+    "name": "Pokedex - Serplant",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_085": {
+    "name": "Pokedex - Snover",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_086": {
+    "name": "Pokedex - Abomasnow",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_087": {
+    "name": "Pokedex - Yucarlia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_088": {
+    "name": "Pokedex - Necrosia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_089": {
+    "name": "Pokedex - Cupricorn",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_090": {
+    "name": "Pokedex - Hornikel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_091": {
+    "name": "Pokedex - Goabalt",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_092": {
+    "name": "Pokedex - Miltank",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_093": {
+    "name": "Pokedex - Shuckle",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_094": {
+    "name": "Pokedex - Mornwing",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_095": {
+    "name": "Pokedex - Guldawn",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_096": {
+    "name": "Pokedex - Solarisen",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_097": {
+    "name": "Pokedex - Mintch",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_098": {
+    "name": "Pokedex - Blakjak",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_099": {
+    "name": "Pokedex - Maneko",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_100": {
+    "name": "Pokedex - Bakeko",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_101": {
+    "name": "Pokedex - Plasmox",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_102": {
+    "name": "Pokedex - Blitzune",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_103": {
+    "name": "Pokedex - Cuppa",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_104": {
+    "name": "Pokedex - Kapwondo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_105": {
+    "name": "Pokedex - Spelven",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_106": {
+    "name": "Pokedex - Clotaku",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_107": {
+    "name": "Pokedex - Ajarimus",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_108": {
+    "name": "Pokedex - Jarmit",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_109": {
+    "name": "Pokedex - Hoothoot",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_110": {
+    "name": "Pokedex - Noctowl",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_111": {
+    "name": "Pokedex - Baizeast",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_112": {
+    "name": "Pokedex - Elekid",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_113": {
+    "name": "Pokedex - Electabuzz",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_114": {
+    "name": "Pokedex - Electivire",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_115": {
+    "name": "Pokedex - Magby",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_116": {
+    "name": "Pokedex - Magmar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_117": {
+    "name": "Pokedex - Magmortar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_118": {
+    "name": "Pokedex - Kangaskhan",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_119": {
+    "name": "Pokedex - Lileep",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_120": {
+    "name": "Pokedex - Cradily",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_121": {
+    "name": "Pokedex - Grindon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_122": {
+    "name": "Pokedex - Scimitooth",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_123": {
+    "name": "Pokedex - Aerodactyl",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_124": {
+    "name": "Pokedex - Larvitar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_125": {
+    "name": "Pokedex - Pupitar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_126": {
+    "name": "Pokedex - Tyranitar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_127": {
+    "name": "Pokedex - Beldum",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_128": {
+    "name": "Pokedex - Metang",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_129": {
+    "name": "Pokedex - Metagross",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_130": {
+    "name": "Pokedex - Gible",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_131": {
+    "name": "Pokedex - Gabite",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_132": {
+    "name": "Pokedex - Garchomp",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_133": {
+    "name": "Pokedex - Laquagon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_134": {
+    "name": "Pokedex - Dragune",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_135": {
+    "name": "Pokedex - Nostratos",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_136": {
+    "name": "Pokedex - Articuno",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_137": {
+    "name": "Pokedex - Zapdos",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_138": {
+    "name": "Pokedex - Moltres",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_139": {
+    "name": "Pokedex - Raikou",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_140": {
+    "name": "Pokedex - Entei",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_141": {
+    "name": "Pokedex - Suicune",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_142": {
+    "name": "Pokedex - Lylapse",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_143": {
+    "name": "Pokedex - Ganimede",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_144": {
+    "name": "Pokedex - Nemea",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_145": {
+    "name": "Pokedex - Dialga",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_146": {
+    "name": "Pokedex - Palkia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_147": {
+    "name": "Pokedex - Darkrai",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_148": {
+    "name": "Pokedex - Lugia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_149": {
+    "name": "Pokedex - Ho-Oh",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_150": {
+    "name": "Pokedex - Mewtwo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_151": {
+    "name": "Pokedex - Mew",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_152": {
+    "name": "Pokedex - Bulbasaur",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_153": {
+    "name": "Pokedex - Ivysaur",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_154": {
+    "name": "Pokedex - Venusaur",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_155": {
+    "name": "Pokedex - Charmander",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_156": {
+    "name": "Pokedex - Charmeleon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_157": {
+    "name": "Pokedex - Charizard",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_158": {
+    "name": "Pokedex - Squirtle",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_159": {
+    "name": "Pokedex - Wartortle",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_160": {
+    "name": "Pokedex - Blastoise",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_161": {
+    "name": "Pokedex - Basille",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_162": {
+    "name": "Pokedex - Basield",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_163": {
+    "name": "Pokedex - Basilux",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_164": {
+    "name": "Pokedex - Patroleo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_165": {
+    "name": "Pokedex - Gardleon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_166": {
+    "name": "Pokedex - Royalert",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_167": {
+    "name": "Pokedex - Katuna",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_168": {
+    "name": "Pokedex - Maelstream",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_169": {
+    "name": "Pokedex - Skelachone",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_170": {
+    "name": "Pokedex - Cheshile",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_171": {
+    "name": "Pokedex - Cheshess",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_172": {
+    "name": "Pokedex - Chessire",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_173": {
+    "name": "Pokedex - Rivird",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_174": {
+    "name": "Pokedex - Mingola",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_175": {
+    "name": "Pokedex - Pachirisu",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_176": {
+    "name": "Pokedex - Pachirikku",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_177": {
+    "name": "Pokedex - Pumpkid",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_178": {
+    "name": "Pokedex - Wikkin",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_179": {
+    "name": "Pokedex - Lunabitt",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_180": {
+    "name": "Pokedex - Lunabain",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_181": {
+    "name": "Pokedex - Liepus",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_182": {
+    "name": "Pokedex - Liedoro",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_183": {
+    "name": "Pokedex - Ditto",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_184": {
+    "name": "Pokedex - Smoochum",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_185": {
+    "name": "Pokedex - Jynx",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_186": {
+    "name": "Pokedex - Rougella",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_187": {
+    "name": "Pokedex - Takuni",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_188": {
+    "name": "Pokedex - Percussoon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_189": {
+    "name": "Pokedex - Tanuking",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_190": {
+    "name": "Pokedex - Switza",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_191": {
+    "name": "Pokedex - Shivermin",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_192": {
+    "name": "Pokedex - Nymphrost",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_193": {
+    "name": "Pokedex - Chatot",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_194": {
+    "name": "Pokedex - Conductot",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_195": {
+    "name": "Pokedex - Violo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_196": {
+    "name": "Pokedex - Rumpet",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_197": {
+    "name": "Pokedex - Pianon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_198": {
+    "name": "Pokedex - Ledyba",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_199": {
+    "name": "Pokedex - Ledian",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_200": {
+    "name": "Pokedex - Ledybulk",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_201": {
+    "name": "Pokedex - Unown",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_202": {
+    "name": "Pokedex - Bisos",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_203": {
+    "name": "Pokedex - Tauros",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_204": {
+    "name": "Pokedex - Lunatone",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_205": {
+    "name": "Pokedex - Solrock",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_206": {
+    "name": "Pokedex - Stellith",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_207": {
+    "name": "Pokedex - Planite",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_208": {
+    "name": "Pokedex - Modra",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_209": {
+    "name": "Pokedex - Komoragon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_210": {
+    "name": "Pokedex - Remoraid",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_211": {
+    "name": "Pokedex - Octillery",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_212": {
+    "name": "Pokedex - Tentacool",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_213": {
+    "name": "Pokedex - Tentacruel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_214": {
+    "name": "Pokedex - Tentyrant",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_215": {
+    "name": "Pokedex - Lilynary",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_216": {
+    "name": "Pokedex - Kaminary",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_217": {
+    "name": "Pokedex - Grieflame",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_218": {
+    "name": "Pokedex - Scorment",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_219": {
+    "name": "Pokedex - Rubball",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_220": {
+    "name": "Pokedex - Phantonate",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_221": {
+    "name": "Pokedex - Strawick",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_222": {
+    "name": "Pokedex - Strawicked",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_223": {
+    "name": "Pokedex - Voltorb",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_224": {
+    "name": "Pokedex - Electrode",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_225": {
+    "name": "Pokedex - Sphericoil",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_226": {
+    "name": "Pokedex - Murkrow",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_227": {
+    "name": "Pokedex - Honchkrow",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_228": {
+    "name": "Pokedex - Whismur",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_229": {
+    "name": "Pokedex - Loudred",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_230": {
+    "name": "Pokedex - Exploud",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_231": {
+    "name": "Pokedex - Krabby",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_232": {
+    "name": "Pokedex - Kingler",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_233": {
+    "name": "Pokedex - Puffume",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_234": {
+    "name": "Pokedex - Turblimp",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_235": {
+    "name": "Pokedex - Yolkid",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_236": {
+    "name": "Pokedex - Corenom",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_237": {
+    "name": "Pokedex - Coropper",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_238": {
+    "name": "Pokedex - Coruda",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_239": {
+    "name": "Pokedex - Coraga",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_240": {
+    "name": "Pokedex - Lizzle",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_241": {
+    "name": "Pokedex - Drizzlob",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_242": {
+    "name": "Pokedex - Droudrop",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_243": {
+    "name": "Pokedex - Droudrum",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_244": {
+    "name": "Pokedex - Clouff",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_245": {
+    "name": "Pokedex - Cloubus",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_246": {
+    "name": "Pokedex - Dvaarak",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_247": {
+    "name": "Pokedex - Sneasel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_248": {
+    "name": "Pokedex - Weavile",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_249": {
+    "name": "Pokedex - Shroomish",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_250": {
+    "name": "Pokedex - Breloom",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_251": {
+    "name": "Pokedex - Doodloo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_252": {
+    "name": "Pokedex - Billserk",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_253": {
+    "name": "Pokedex - Sableye",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_254": {
+    "name": "Pokedex - Sableater",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_255": {
+    "name": "Pokedex - Mawile",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_256": {
+    "name": "Pokedex - Jawile",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_257": {
+    "name": "Pokedex - Scyther",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_258": {
+    "name": "Pokedex - Scizor",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_259": {
+    "name": "Pokedex - Pinsir",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_260": {
+    "name": "Pokedex - Pinchor",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_261": {
+    "name": "Pokedex - Ekans",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_262": {
+    "name": "Pokedex - Arbok",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_263": {
+    "name": "Pokedex - Adnokana",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_264": {
+    "name": "Pokedex - Koffing",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_265": {
+    "name": "Pokedex - Weezing",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_266": {
+    "name": "Pokedex - Cheauking",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_267": {
+    "name": "Pokedex - Duskull",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_268": {
+    "name": "Pokedex - Dusclops",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_269": {
+    "name": "Pokedex - Dusknoir",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_270": {
+    "name": "Pokedex - Lickitung",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_271": {
+    "name": "Pokedex - Lickilicky",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_272": {
+    "name": "Pokedex - Spinarak",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_273": {
+    "name": "Pokedex - Ariados",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_274": {
+    "name": "Pokedex - Joltik",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_275": {
+    "name": "Pokedex - Galvantula",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_276": {
+    "name": "Pokedex - Guppyre",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_277": {
+    "name": "Pokedex - Diaduna",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_278": {
+    "name": "Pokedex - Relicanth",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_279": {
+    "name": "Pokedex - Relicore",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_280": {
+    "name": "Pokedex - Fujinel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_281": {
+    "name": "Pokedex - Sabrinel",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_282": {
+    "name": "Pokedex - Smalmon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_283": {
+    "name": "Pokedex - Trojalmon",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_284": {
+    "name": "Pokedex - Punchild",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_285": {
+    "name": "Pokedex - Combound",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_286": {
+    "name": "Pokedex - Wombaton",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_287": {
+    "name": "Pokedex - Happiny",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_288": {
+    "name": "Pokedex - Chansey",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_289": {
+    "name": "Pokedex - Blissey",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_290": {
+    "name": "Pokedex - Nincada",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_291": {
+    "name": "Pokedex - Ninjask",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_292": {
+    "name": "Pokedex - Shedinja",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_293": {
+    "name": "Pokedex - Sandshrew",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_294": {
+    "name": "Pokedex - Sandslash",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_295": {
+    "name": "Pokedex - Sandrill",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_296": {
+    "name": "Pokedex - Yulfoe",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_297": {
+    "name": "Pokedex - Dorfin",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_298": {
+    "name": "Pokedex - Darca",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_299": {
+    "name": "Pokedex - Narwhail",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_300": {
+    "name": "Pokedex - Ralts",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_301": {
+    "name": "Pokedex - Kirlia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_302": {
+    "name": "Pokedex - Gardevoir",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_303": {
+    "name": "Pokedex - Gallade",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_304": {
+    "name": "Pokedex - Kirgicia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_305": {
+    "name": "Pokedex - Glamarde",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_306": {
+    "name": "Pokedex - Sealkie",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_307": {
+    "name": "Pokedex - Selody",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_308": {
+    "name": "Pokedex - Rooten",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_309": {
+    "name": "Pokedex - Rudebarb",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_310": {
+    "name": "Pokedex - Dislichen",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_311": {
+    "name": "Pokedex - Lumoss",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_312": {
+    "name": "Pokedex - Cryogonal",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_313": {
+    "name": "Pokedex - Combant",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_314": {
+    "name": "Pokedex - Arincess",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_315": {
+    "name": "Pokedex - Geodude",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_316": {
+    "name": "Pokedex - Graveler",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_317": {
+    "name": "Pokedex - Golem",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_318": {
+    "name": "Pokedex - Skorupi",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_319": {
+    "name": "Pokedex - Drapion",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_320": {
+    "name": "Pokedex - Shuppet",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_321": {
+    "name": "Pokedex - Banette",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_322": {
+    "name": "Pokedex - Ranconette",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_323": {
+    "name": "Pokedex - Swinub",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_324": {
+    "name": "Pokedex - Piloswine",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_325": {
+    "name": "Pokedex - Mamoswine",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_326": {
+    "name": "Pokedex - Stunfisk",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_327": {
+    "name": "Pokedex - Spinda",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_328": {
+    "name": "Pokedex - Carnivine",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_329": {
+    "name": "Pokedex - Carnivice",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_330": {
+    "name": "Pokedex - Toxroach",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_331": {
+    "name": "Pokedex - Cocrogue",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_332": {
+    "name": "Pokedex - Lephan",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_333": {
+    "name": "Pokedex - Ganerth",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_334": {
+    "name": "Pokedex - Klink",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_335": {
+    "name": "Pokedex - Klang",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_336": {
+    "name": "Pokedex - Klinklang",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_337": {
+    "name": "Pokedex - Luvdisc",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_338": {
+    "name": "Pokedex - Valentide",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_339": {
+    "name": "Pokedex - Pressie",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_340": {
+    "name": "Pokedex - Lapras",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_341": {
+    "name": "Pokedex - Shretainer",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_342": {
+    "name": "Pokedex - Samushrai",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_343": {
+    "name": "Pokedex - Cacnea",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_344": {
+    "name": "Pokedex - Cacturne",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_345": {
+    "name": "Pokedex - Ptervus",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_346": {
+    "name": "Pokedex - Pteriarch",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_347": {
+    "name": "Pokedex - Tyranos",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_348": {
+    "name": "Pokedex - Ambilade",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_349": {
+    "name": "Pokedex - Mandiblade",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_350": {
+    "name": "Pokedex - Mercenade",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_351": {
+    "name": "Pokedex - Terubim",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_352": {
+    "name": "Pokedex - Dwebble",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_353": {
+    "name": "Pokedex - Crustle",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_354": {
+    "name": "Pokedex - Ferroseed",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_355": {
+    "name": "Pokedex - Ferrothorn",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_356": {
+    "name": "Pokedex - Tynamo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_357": {
+    "name": "Pokedex - Eelektrik",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_358": {
+    "name": "Pokedex - Eelektross",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_359": {
+    "name": "Pokedex - Delibird",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_360": {
+    "name": "Pokedex - Blizentork",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_361": {
+    "name": "Pokedex - Torkoal",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_362": {
+    "name": "Pokedex - Galavagos",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_363": {
+    "name": "Pokedex - Dunsparce",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_364": {
+    "name": "Pokedex - Auldsparce",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_365": {
+    "name": "Pokedex - Farfetch'd",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_366": {
+    "name": "Pokedex - R'duckulus",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_367": {
+    "name": "Pokedex - Scraggy",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_368": {
+    "name": "Pokedex - Scrafty",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_369": {
+    "name": "Pokedex - Petilil",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_370": {
+    "name": "Pokedex - Lilligant",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_371": {
+    "name": "Pokedex - Mienfoo",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_372": {
+    "name": "Pokedex - Mienshao",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_373": {
+    "name": "Pokedex - Sandile",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_374": {
+    "name": "Pokedex - Krokorok",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_375": {
+    "name": "Pokedex - Krookodile",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_376": {
+    "name": "Pokedex - Roytsar",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_377": {
+    "name": "Pokedex - Gatanoia",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_378": {
+    "name": "Pokedex - Lukewran",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_379": {
+    "name": "Pokedex - Heatran",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_380": {
+    "name": "Pokedex - Latias",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_381": {
+    "name": "Pokedex - Latios",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_382": {
+    "name": "Pokedex - Phione",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_383": {
+    "name": "Pokedex - Manaphy",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_384": {
+    "name": "Pokedex - Aldina",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_385": {
+    "name": "Pokedex - Almaria",
+    "tags": ["Pokedex"]
+  },
+  "POKEDEX_REWARD_386": {
+    "name": "Pokedex - Asphere",
+    "tags": ["Pokedex"]
   }
 }
