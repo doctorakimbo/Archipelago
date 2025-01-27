@@ -678,8 +678,7 @@ def get_tokens(world: "PokemonFRLGWorld", game_revision: int) -> APTokenMixin:
     tokens.write_token(APTokenTypes.WRITE, options_address + 0x45, struct.pack("<B", world.town_map_fly_location_id))
 
     # Set resort gorgeous mon
-    species_id = data.constants[world.resort_gorgeous_mon[0]]
-    tokens.write_token(APTokenTypes.WRITE, options_address + 0x46, struct.pack("<H", species_id))
+    tokens.write_token(APTokenTypes.WRITE, options_address + 0x46, struct.pack("<H", world.resort_gorgeous_mon))
 
     # Set intro species
     species_id = world.random.choice(list(data.species.keys()))

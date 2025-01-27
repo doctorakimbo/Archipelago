@@ -1493,3 +1493,4 @@ LEGENDARY_POKEMON = frozenset([data.constants[species] for species in [
 ]])
 
 NATIONAL_ID_TO_SPECIES_ID = {species.national_dex_number: i for i, species in data.species.items()}
+NAME_TO_SPECIES_ID = {species.name: i for i, species in data.species.items()}

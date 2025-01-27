@@ -10,7 +10,7 @@ import pkgutil
 
 from typing import Any, ClassVar, Dict, List, Set, TextIO, Tuple
 
-from BaseClasses import Tutorial, MultiWorld, ItemClassification, LocationProgressType
+from BaseClasses import CollectionState, ItemClassification, LocationProgressType, MultiWorld, Tutorial
 from Fill import fill_restrictive, FillError
 from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
@@ -27,7 +27,7 @@ from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, Dexsanity, Fl
                       TownMapFlyLocation, Trainersanity, ViridianCityRoadblock)
 from .pokemon import (randomize_abilities, randomize_legendaries, randomize_misc_pokemon, randomize_moves,
                       randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
-                      randomize_trainer_parties, randomize_types, randomize_wild_encounters)
+                      randomize_trainer_parties, randomize_types, randomize_wild_encounters, swap_hm_species)
 from .rom import get_tokens, PokemonFireRedProcedurePatch, PokemonLeafGreenProcedurePatch
 from .util import int_to_bool_array, HM_TO_COMPATIBILITY_ID
 
@@ -91,7 +91,7 @@ class PokemonFRLGWorld(World):
 
     free_fly_location_id: int
     town_map_fly_location_id: int
-    resort_gorgeous_mon: Tuple[str, str, int]
+    resort_gorgeous_mon: int
     modified_species: Dict[int, SpeciesData]
     modified_maps: Dict[str, MapData]
     modified_starters: Dict[str, StarterData]
@@ -116,13 +116,14 @@ class PokemonFRLGWorld(World):
     encounter_level_list: List[int]
     scaling_data: List[ScalingData]
     filler_items: List[PokemonFRLGItem]
+    wild_pokemon_species: Set[int]
     auth: bytes
 
     def __init__(self, multiworld, player):
         super(PokemonFRLGWorld, self).__init__(multiworld, player)
         self.free_fly_location_id = 0
         self.town_map_fly_location_id = 0
-        self.resort_gorgeous_mon = ("SPECIES_PIKACHU", "Pikachu", 25)
+        self.resort_gorgeous_mon = frlg_data.constants["SPECIES_PIKACHU"]
         self.modified_species = copy.deepcopy(frlg_data.species)
         self.modified_maps = copy.deepcopy(frlg_data.maps)
         self.modified_starters = copy.deepcopy(frlg_data.starters)
@@ -131,17 +132,18 @@ class PokemonFRLGWorld(World):
         self.modified_misc_pokemon = copy.deepcopy(frlg_data.misc_pokemon)
         self.modified_trainers = copy.deepcopy(frlg_data.trainers)
         self.modified_tmhm_moves = copy.deepcopy(frlg_data.tmhm_moves)
-        self.hm_compatibility = {}
-        self.per_species_tmhm_moves = {}
-        self.trade_pokemon = []
-        self.trainer_name_level_dict = {}
-        self.trainer_name_list = []
-        self.trainer_level_list = []
-        self.encounter_name_level_dict = {}
-        self.encounter_name_list = []
-        self.encounter_level_list = []
-        self.scaling_data = []
-        self.filler_items = []
+        self.hm_compatibility = dict()
+        self.per_species_tmhm_moves = dict()
+        self.trade_pokemon = list()
+        self.trainer_name_level_dict = dict()
+        self.trainer_name_list = list()
+        self.trainer_level_list = list()
+        self.encounter_name_level_dict = dict()
+        self.encounter_name_list = list()
+        self.encounter_level_list = list()
+        self.scaling_data = list()
+        self.filler_items = list()
+        self.wild_pokemon_species = set()
         self.finished_level_scaling = threading.Event()
 
     @classmethod
@@ -302,12 +304,7 @@ class PokemonFRLGWorld(World):
 
         # Choose Selphy's requested Pokémon among available wild encounters if necessary
         if self.options.pokemon_request_locations and not self.options.kanto_only:
-            wild_encounter_locations: List[PokemonFRLGLocation] = [
-                location for location in self.multiworld.get_locations(self.player)
-                if "Pokemon" in location.tags and "Wild" in location.tags
-            ]
-            location = self.random.choice(wild_encounter_locations)
-            self.resort_gorgeous_mon = next(species for species in ALL_SPECIES if species[1] == location.item.name)
+            self.resort_gorgeous_mon = self.random.choice(list(self.wild_pokemon_species))
 
         def exclude_locations(locations: List[str]):
             for location in locations:
@@ -463,6 +460,8 @@ class PokemonFRLGWorld(World):
             badge_items = [item for item in frlg_data.items.values() if "Badge" in item.tags]
             for item in badge_items:
                 collection_state.collect(self.create_item(item.name))
+
+        self.verify_hm_accessability(collection_state.copy())
 
         # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
         evolution_region = self.multiworld.get_region("Evolutions", self.player)
@@ -770,3 +769,26 @@ class PokemonFRLGWorld(World):
                 combatibility_array = int_to_bool_array(species.tm_hm_compatibility)
                 if combatibility_array[HM_TO_COMPATIBILITY_ID[hm]] == 1:
                     self.hm_compatibility[hm].append(species.name)
+
+    def verify_hm_accessability(self, collection_state: CollectionState):
+        def modify_hm_species(hm: str, old_species: List[str]):
+            new_species = swap_hm_species(self, hm, old_species)
+            self.hm_compatibility[hm] = new_species
+
+        hms = frozenset({"Cut", "Fly", "Surf", "Strength", "Flash", "Rock Smash", "Waterfall"})
+        for hm in hms:
+            hm_unreachable = True
+            while hm_unreachable:
+                hm_collection_state = collection_state.copy()
+                for species in self.hm_compatibility[hm]:
+                    hm_collection_state.prog_items[self.player][species] = 0
+                species_locations = [loc for loc in self.multiworld.get_locations(self.player)
+                                     if loc.item is not None and loc.item.name in self.hm_compatibility[hm]]
+                for location in species_locations:
+                    if hm_collection_state.can_reach(location):
+                        hm_unreachable = False
+                        break
+                if hm_unreachable:
+                    modify_hm_species(hm, self.hm_compatibility[hm])
+
+

@@ -1230,7 +1230,7 @@ def set_rules(world: "PokemonFRLGWorld") -> None:
     def set_sevii_pokemon_request_rules():
         # Resort Gorgeous
         set_rule(get_location("Resort Gorgeous House - Selphy Gift (Show Pokemon)"),
-                 lambda state: state.has_all(["Rescue Selphy", world.resort_gorgeous_mon[1]], player))
+                 lambda state: state.has_all(["Rescue Selphy", data.species[world.resort_gorgeous_mon].name], player))
 
         # Water Path
         set_rule(get_location("Water Path Heracross Woman's House - Woman Gift (Show Heracross)"),

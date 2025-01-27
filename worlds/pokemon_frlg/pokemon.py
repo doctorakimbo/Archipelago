@@ -2,12 +2,12 @@ import copy
 import math
 from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
-from .data import (data, LEGENDARY_POKEMON, NUM_REAL_SPECIES, EncounterSpeciesData, EventData, LearnsetMove,
-                   SpeciesData, TrainerPokemonData)
+from .data import (data, LEGENDARY_POKEMON, NUM_REAL_SPECIES, NAME_TO_SPECIES_ID, EncounterSpeciesData, EventData,
+                   LearnsetMove, SpeciesData, TrainerPokemonData)
 from .options import (GameVersion, HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
                       RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
                       TmTutorCompatibility, WildPokemonGroups)
-from .util import bool_array_to_int, int_to_bool_array
+from .util import bool_array_to_int, int_to_bool_array, HM_TO_COMPATIBILITY_ID
 
 if TYPE_CHECKING:
     from random import Random
@@ -365,6 +365,16 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
             slots = map_data.land_encounters.slots[game_version]
             for slot in slots:
                 slot.species_id = data.constants["SPECIES_TOGEPI"]
+        for map_name in world.modified_maps.keys():
+            map_data = world.modified_maps[map_name]
+            if not map_data.kanto and world.options.kanto_only:
+                continue
+            encounters = [map_data.land_encounters,  map_data.water_encounters, map_data.fishing_encounters]
+
+            for i, table in enumerate(encounters):
+                if table is not None:
+                    for species_data in table.slots[game_version]:
+                        world.wild_pokemon_species.add(species_data.species_id)
         return
 
     from collections import defaultdict
@@ -394,7 +404,6 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
     # in order to ensure that both maps have the same encounters
     route_21_randomized = False
 
-    placed_species = set()
     priority_species = list()
     if world.options.pokemon_request_locations:
         priority_species.append(data.constants["SPECIES_MAGIKARP"])
@@ -413,9 +422,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
             continue
 
         new_encounter_slots: List[List[int]] = [None, None, None]
-        old_encounters = [map_data.land_encounters,
-                          map_data.water_encounters,
-                          map_data.fishing_encounters]
+        old_encounters = [map_data.land_encounters, map_data.water_encounters, map_data.fishing_encounters]
 
         # Check if the current map is a Route 21 map and the other one has already been randomized.
         # If so, set the encounters of the current map based on the other Route 21 map.
@@ -476,8 +483,8 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
 
                             # If we haven't placed enough species for Oak's Aides yet, blacklist
                             # species that have already been placed until we reach that number
-                            if len(placed_species) < aide_pokemon_needed:
-                                blacklists[1].append(placed_species)
+                            if len(world.wild_pokemon_species) < aide_pokemon_needed:
+                                blacklists[1].append(world.wild_pokemon_species)
 
                             # Blacklist from player's options
                             blacklists[2].append(world.blacklisted_wild_pokemon)
@@ -492,8 +499,8 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
 
                             # If we haven't placed enough species for dexsanity yet, blacklist species
                             # that have already been places until we reach that number
-                            if len(placed_species) < dexsanity_pokemon_needed:
-                                blacklists[4].append(placed_species)
+                            if len(world.wild_pokemon_species) < dexsanity_pokemon_needed:
+                                blacklists[4].append(world.wild_pokemon_species)
 
                             merged_blacklist: Set[int] = set()
                             for max_priority in reversed(sorted(blacklists.keys())):
@@ -533,7 +540,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
                                     new_species_id
 
                         species_old_to_new_map[species_id] = new_species_id
-                        placed_species.add(new_species_id)
+                        world.wild_pokemon_species.add(new_species_id)
 
                 # Actually create the new list of slots and encounter table
                 new_slots: List[EncounterSpeciesData] = []
@@ -559,18 +566,21 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
         slots = map_data.fishing_encounters.slots[game_version]
         for i in [0, 1, 3]:
             slots[i].species_id = data.constants["SPECIES_MAGIKARP"]
+        world.wild_pokemon_species.add(data.constants["SPECIES_MAGIKARP"])
 
     if data.constants["SPECIES_HERACROSS"] in priority_species:
         map_data = world.modified_maps["MAP_SIX_ISLAND_PATTERN_BUSH"]
         slots = map_data.land_encounters.slots[game_version]
         for i in [5, 7, 9, 11]:
             slots[i].species_id = data.constants["SPECIES_HERACROSS"]
+        world.wild_pokemon_species.add(data.constants["SPECIES_HERACROSS"])
 
     if data.constants["SPECIES_TOGEPI"] in priority_species:
         map_data = world.modified_maps["MAP_FIVE_ISLAND_MEMORIAL_PILLAR"]
         slots = map_data.land_encounters.slots[game_version]
         for slot in slots:
             slot.species_id = data.constants["SPECIES_TOGEPI"]
+        world.wild_pokemon_species.add(data.constants["SPECIES_TOGEPI"])
 
 
 def randomize_starters(world: "PokemonFRLGWorld") -> None:
@@ -818,6 +828,10 @@ def randomize_trainer_parties(world: "PokemonFRLGWorld") -> None:
 
 
 def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
+    hms_placed = {}
+    for i in range(50, 58):
+        hms_placed[i] = False
+
     for species in world.modified_species.values():
         compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
 
@@ -828,8 +842,38 @@ def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
         if world.options.hm_compatibility != HmCompatibility.special_range_names["vanilla"]:
             for i in range(50, 58):
                 compatibility_array[i] = world.random.random() < world.options.hm_compatibility / 100
+                if compatibility_array[i]:
+                    hms_placed[i] = True
 
         species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
+
+    for hm, placed in hms_placed.items():
+        if placed:
+            continue
+        species_id = world.random.choice(list(world.wild_pokemon_species))
+        species = world.modified_species[species_id]
+        compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
+        compatibility_array[hm] = True
+        species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
+
+
+def swap_hm_species(world: "PokemonFRLGWorld", hm: str, old_species: List[str]) -> List[str]:
+    new_species: List[str] = []
+    for species_name in old_species:
+        # Remove the HM compatability from the old species
+        species = world.modified_species[NAME_TO_SPECIES_ID[species_name]]
+        compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
+        compatibility_array[HM_TO_COMPATIBILITY_ID[hm]] = False
+        species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
+
+        # Add the HM compatability to a new species
+        species_id = world.random.choice(list(world.wild_pokemon_species))
+        species = world.modified_species[species_id]
+        compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
+        compatibility_array[HM_TO_COMPATIBILITY_ID[hm]] = True
+        species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
+        new_species.append(species.name)
+    return new_species
 
 
 def randomize_tm_moves(world: "PokemonFRLGWorld") -> None:
