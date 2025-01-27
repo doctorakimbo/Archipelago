@@ -243,6 +243,12 @@ class PokemonFRLGWorld(World):
         self.options.start_inventory.value = {k: v for k, v in self.options.start_inventory.value.items()
                                               if k not in not_allowed_tea}
 
+        # Set badges as local items if not shuffled
+        if not self.options.shuffle_badges:
+            badge_items = [item for item in frlg_data.items.values() if "Badge" in item.tags]
+            for item in badge_items:
+                self.options.local_items.value.add(item.name)
+
         # Add starting items from settings
         if self.options.shuffle_running_shoes == ShuffleRunningShoes.option_start_with:
             self.options.start_inventory.value["Running Shoes"] = 1
@@ -467,7 +473,7 @@ class PokemonFRLGWorld(World):
                 attempts_remaining -= 1
                 self.random.shuffle(badge_locations)
                 try:
-                    fill_restrictive(self.multiworld, collection_state, badge_locations, badge_items,
+                    fill_restrictive(self.multiworld, collection_state, badge_locations.copy(), badge_items.copy(),
                                      single_player_placement=True, lock=True, allow_excluded=True)
                     break
                 except FillError as exc:
