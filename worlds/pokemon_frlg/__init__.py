@@ -456,6 +456,62 @@ class PokemonFRLGWorld(World):
         if not self.options.shuffle_fly_destination_unlocks:
             create_events_for_unrandomized_items("FlyUnlock")
 
+        collection_state = self.multiworld.get_all_state(False)
+
+        # If badges are not shuffled add them to the collection state
+        if not self.options.shuffle_badges:
+            badge_items = [item for item in frlg_data.items.values() if "Badge" in item.tags]
+            for item in badge_items:
+                collection_state.collect(self.create_item(item.name))
+
+        # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
+        evolution_region = self.multiworld.get_region("Evolutions", self.player)
+        for location in evolution_region.locations.copy():
+            if not collection_state.can_reach(location, player=self.player):
+                evolution_region.locations.remove(location)
+
+        # Delete trades that are not in logic in an all_state so that the accessibility check doesn't fail
+        for trade in self.trade_pokemon:
+            location = self.multiworld.get_location(trade[1], self.player)
+            if not collection_state.can_reach(location, player=self.player):
+                region = self.multiworld.get_region(trade[0], self.player)
+                region.locations.remove(location)
+
+        # Delete trainersanity locations if there are more than the amount specified in the settings
+        trainer_locations = [loc for loc in self.multiworld.get_locations(self.player)
+                             if "Trainer" in loc.tags
+                             and not loc.is_event]
+        locs_to_remove = len(trainer_locations) - self.options.trainersanity.value
+        if locs_to_remove > 0:
+            self.random.shuffle(trainer_locations)
+            for location in trainer_locations:
+                region = location.parent_region
+                region.locations.remove(location)
+                item_to_remove = self.filler_items.pop(0)
+                self.multiworld.itempool.remove(item_to_remove)
+                locs_to_remove -= 1
+                if locs_to_remove <= 0:
+                    break
+
+        # Delete dexsanity locations that are not in logic in an all_state since they aren't accessible
+        pokedex_region = self.multiworld.get_region("Pokedex", self.player)
+        for location in pokedex_region.locations.copy():
+            if not collection_state.can_reach(location, player=self.player):
+                pokedex_region.locations.remove(location)
+                item_to_remove = self.filler_items.pop(0)
+                self.multiworld.itempool.remove(item_to_remove)
+
+        # Delete dexsanity locations if there are more than the amount specified in the settings
+        if len(pokedex_region.locations) > self.options.dexsanity.value:
+            pokedex_region_locations = pokedex_region.locations.copy()
+            self.random.shuffle(pokedex_region_locations)
+            for location in pokedex_region_locations:
+                pokedex_region.locations.remove(location)
+                item_to_remove = self.filler_items.pop(0)
+                self.multiworld.itempool.remove(item_to_remove)
+                if len(pokedex_region.locations) <= self.options.dexsanity.value:
+                    break
+
     def pre_fill(self) -> None:
         # If badges aren't shuffled among all locations, shuffle them among themselves
         if not self.options.shuffle_badges:
@@ -484,58 +540,6 @@ class PokemonFRLGWorld(World):
 
         if self.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel:
             self.multiworld.local_early_items[self.player]["Oak's Parcel"] = 1
-
-    @classmethod
-    def stage_pre_fill(cls, multiworld):
-        collection_state = multiworld.get_all_state(False)
-        for world in multiworld.get_game_worlds("Pokemon FireRed and LeafGreen"):
-            # Delete evolutions that are not in logic in an all_state so that the accessibility check doesn't fail
-            evolution_region = multiworld.get_region("Evolutions", world.player)
-            for location in evolution_region.locations.copy():
-                if not collection_state.can_reach(location, player=world.player):
-                    evolution_region.locations.remove(location)
-
-            # Delete trades that are not in logic in an all_state so that the accessibility check doesn't fail
-            for trade in world.trade_pokemon:
-                location = multiworld.get_location(trade[1], world.player)
-                if not collection_state.can_reach(location, player=world.player):
-                    region = multiworld.get_region(trade[0], world.player)
-                    region.locations.remove(location)
-
-            # Delete trainersanity locations if there are more than the amount specified in the settings
-            trainer_locations = [loc for loc in multiworld.get_locations(world.player)
-                                 if "Trainer" in loc.tags
-                                 and not loc.is_event]
-            locs_to_remove = len(trainer_locations) - world.options.trainersanity.value
-            if locs_to_remove > 0:
-                world.random.shuffle(trainer_locations)
-                for location in trainer_locations:
-                    region = location.parent_region
-                    region.locations.remove(location)
-                    item_to_remove = world.filler_items.pop(0)
-                    multiworld.itempool.remove(item_to_remove)
-                    locs_to_remove -= 1
-                    if locs_to_remove <= 0:
-                        break
-
-            # Delete dexsanity locations that are not in logic in an all_state since they aren't accessible
-            pokedex_region = multiworld.get_region("Pokedex", world.player)
-            for location in pokedex_region.locations.copy():
-                if not collection_state.can_reach(location, player=world.player):
-                    pokedex_region.locations.remove(location)
-                    item_to_remove = world.filler_items.pop(0)
-                    multiworld.itempool.remove(item_to_remove)
-
-            # Delete dexsanity locations if there are more than the amount specified in the settings
-            if len(pokedex_region.locations) > world.options.dexsanity.value:
-                pokedex_region_locations = pokedex_region.locations.copy()
-                world.random.shuffle(pokedex_region_locations)
-                for location in pokedex_region_locations:
-                    pokedex_region.locations.remove(location)
-                    item_to_remove = world.filler_items.pop(0)
-                    multiworld.itempool.remove(item_to_remove)
-                    if len(pokedex_region.locations) <= world.options.dexsanity.value:
-                        break
 
     @classmethod
     def stage_post_fill(cls, multiworld):
