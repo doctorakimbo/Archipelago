@@ -667,6 +667,14 @@
     "name": "Route 502 - Item",
     "tags": ["Overworld"]
   },
+  "ITEM_ROUTE503_TM03": {
+    "name": "Route 503 - Southeast Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_ROUTE503_X_ACCURACY": {
+    "name": "Route 503 - Northwest Item",
+    "tags": ["Overworld"]
+  },
   "ITEM_ROUTE2_ETHER": {
     "name": "Route 2 - North Item",
     "tags": ["Overworld"]
@@ -2195,7 +2203,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BUG_CATCHER_RICK_REWARD": {
-    "name": "Viridian Forest - Bug Catcher Rick Reward",
+    "name": "Route 503 - Bug Catcher Rick Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BUG_CATCHER_ROBBY_REWARD": {
@@ -2263,7 +2271,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_LIAM_REWARD": {
-    "name": "Pewter Gym - Camper Liam Reward",
+    "name": "Route 503 - Camper Liam Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_RICKY_REWARD": {
@@ -2623,11 +2631,11 @@
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_BRICE_REWARD": {
-    "name": "Route 9 - Hiker Brice Reward",
+    "name": "Route 503 - Hiker Brice Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_CLARK_REWARD": {
-    "name": "Route 10 - Hiker Clark Reward",
+    "name": "Route 503 - Hiker Clark Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_DARYL_REWARD": {
@@ -2723,7 +2731,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_LADY_JACKI_REWARD": {
-    "name": "Resort Gorgeous - Lady Jacki Reward",
+    "name": "Route 503 - Lady Jacki Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LADY_SELPHY_REWARD": {
@@ -2787,7 +2795,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_MIRIAM_REWARD": {
-    "name": "Mt. Moon 1F - Lass Miriam Reward",
+    "name": "Route 503 - Lass Miriam Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_PAIGE_REWARD": {
@@ -2895,7 +2903,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_PICNICKER_DIANA_REWARD": {
-    "name": "Cerulean Gym - Picnicker Diana Reward",
+    "name": "Route 503 - Picnicker Diana Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_PICNICKER_GWEN_REWARD": {
@@ -3062,6 +3070,10 @@
     "name": "Saffron Gym - Psychic Tyron Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_RICH_BOY_EVERETT_REWARD": {
+    "name": "Route 503 - Rich Boy Everett Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_RIVAL_CERULEAN_BULBASAUR_REWARD": {
     "name": "Cerulean City - Rival Reward",
     "tags": ["Trainer"]
@@ -3158,12 +3170,20 @@
     "name": "Route 502 - School Kid Chase Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_SCHOOL_KID_FABIAN_REWARD": {
+    "name": "Route 503 - School Kid Fabian Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_SCHOOL_KID_GEORGIA_REWARD": {
     "name": "Route 502 - School Kid Georgia Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SCHOOL_KID_KAREN_REWARD": {
     "name": "Route 501 - School Kid Karen Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SCHOOL_KID_OLIVIA_REWARD": {
+    "name": "Route 503 - School Kid Olivia Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SCHOOL_KID_RICH_REWARD": {
@@ -3654,6 +3674,10 @@
     "name": "Bond Bridge - Tuber Amira Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_TWINS_ANN_ANNE_REWARD": {
+    "name": "Route 503 - Twins Ann & Anne Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_TWINS_ELI_ANNE_REWARD": {
     "name": "Route 8 - Twins Eli & Anne Reward",
     "tags": ["Trainer"]
@@ -3675,7 +3699,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_CALVIN_REWARD": {
-    "name": "Route 3 - Youngster Calvin Reward",
+    "name": "Route 503 - Youngster Calvin Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_CHAD_REWARD": {

@@ -133,6 +133,56 @@
 	  "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 2F Stairs"
 	}
   },
+  "REGION_ROUTE503/NORTH": {
+    "parent_map": "MAP_ROUTE503",
+    "name": "Route 503",
+    "encounter_region": "Route 503",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "ITEM_ROUTE503_X_ACCURACY",
+      "TRAINER_YOUNGSTER_CALVIN_REWARD",
+      "TRAINER_CAMPER_LIAM_REWARD",
+      "TRAINER_PICNICKER_DIANA_REWARD",
+      "TRAINER_TWINS_ANN_ANNE_REWARD",
+      "TRAINER_BUG_CATCHER_RICK_REWARD",
+      "TRAINER_HIKER_CLARK_REWARD",
+      "TRAINER_RICH_BOY_EVERETT_REWARD",
+      "TRAINER_LADY_JACKI_REWARD",
+      "ITEM_ROUTE503_TM03",
+      "TRAINER_LASS_MIRIAM_REWARD",
+      "TRAINER_SCHOOL_KID_OLIVIA_REWARD",
+      "TRAINER_HIKER_BRICE_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_JUNOPSIS_CITY/MAIN": "Route 503 Exit (North)"
+    },
+    "warps": {
+      "MAP_ROUTE503:0/MAP_WISEMANS_CAVE_NORTH_ENTRANCE:1": "Wiseman's Cave (North)"
+    }
+  },
+  "REGION_ROUTE503/SOUTH": {
+    "parent_map": "MAP_ROUTE503",
+    "name": "Route 503",
+    "encounter_region": "Route 503",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_SCHOOL_KID_FABIAN_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_ROUTE504/MAIN": "Route 503 Exit (Southwest)"
+    },
+    "warps": {
+      "MAP_ROUTE503:1/MAP_WISEMANS_CAVE_SOUTH_ENTRANCE:0": "Wiseman's Cave (South)"
+    }
+  },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",
     "name": "Route 2 Southwest",
