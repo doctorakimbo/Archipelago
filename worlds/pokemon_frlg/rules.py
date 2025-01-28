@@ -9,7 +9,7 @@ from .data import data, EvolutionMethodEnum, NATIONAL_ID_TO_SPECIES_ID, NUM_REAL
 from .items import offset_item_value
 from .locations import PokemonVegaLocation
 from .options import (CeruleanCaveRequirement, Dexsanity, EliteFourRequirement, FlashRequired, Goal,
-                      ItemfinderRequired, LevelScaling, JunopsisCityRoadblock, Route523GuardRequirement,
+                      ItemfinderRequired, JunopsisCityRoadblock, LevelScaling, Route523GuardRequirement,
                       ShuffleHiddenItems, Trainersanity)
 
 if TYPE_CHECKING:

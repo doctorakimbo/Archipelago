@@ -142,7 +142,7 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
                             # Fill the location with an event for catching that species
                             encounter_location.place_locked_item(PokemonVegaItem(
                                 data.species[species_id].name,
-                                ItemClassification.progression,
+                                ItemClassification.progression_skip_balancing,
                                 None,
                                 world.player
                             ))
