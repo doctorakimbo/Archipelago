@@ -146,6 +146,7 @@ def create_regions(world: "PokemonFRLGWorld") -> Dict[str, Region]:
                                 None,
                                 world.player
                             ))
+                            world.repeatable_pokemon.add(data.species[species_id].name)
                             encounter_region.locations.append(encounter_location)
 
                     # Add the new encounter region to the multiworld
