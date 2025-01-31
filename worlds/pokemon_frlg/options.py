@@ -786,6 +786,7 @@ class HmCompatibility(NamedRange):
     range_end = 100
     special_range_names = {
         "vanilla": -1,
+        "none": 0,
         "full": 100,
     }
 
@@ -800,6 +801,7 @@ class TmTutorCompatibility(NamedRange):
     range_end = 100
     special_range_names = {
         "vanilla": -1,
+        "none": 0,
         "full": 100,
     }
 
