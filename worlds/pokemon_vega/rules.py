@@ -261,6 +261,15 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         set_rule(get_entrance("Junopsis Gym"), state.has("Defeat Winstrate Siblings", player))
         set_rule(get_location("Junopsis City Trade House - Trade Togepi"), lambda state: state.has("Togepi", player))
         set_rule(get_entrance("Junopsis City Exit (South)"), lambda state: can_pass_junopsis_city_roadblock(state))
+        
+        # Wiseman's Cave
+        set_rule(get_entrance("Wiseman's Cave B1F Disappearing Rock"), lambda state: state.has("Go Through Wiseman's Cave Teleport Loop", player))
+        set_rule(get_entrance("Wiseman's Cave B1F Ladder (Southeast)"), state.has("Defeat Champion", player)) # todo: option for open early
+        set_rule(get_entrance("Wiseman's Cave B2F Ladder"), state.has("Defeat Champion", player)) # for entrance rando; todo: option for open early
+        set_rule(get_entrance("Wiseman's Cave B2F South Smashable Rocks"), lambda state: can_rock_smash(state))
+        set_rule(get_entrance("Wiseman's Cave B2F East Smashable Rock"), lambda state: can_rock_smash(state))
+        set_rule(get_entrance("Wiseman's Cave B2F Northeast Smashable Rocks"), lambda state: can_rock_smash(state))
+        set_rule(get_entrance("Wiseman's Cave B2F Strength Boulders"), lambda state: can_strength(state))
 
         # Route 22
         set_rule(get_location("Route 22 - Early Rival Battle"), lambda state: state.has("Deliver Oak's Parcel", player))

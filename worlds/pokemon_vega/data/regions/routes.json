@@ -135,7 +135,7 @@
   },
   "REGION_ROUTE503/NORTH": {
     "parent_map": "MAP_ROUTE503",
-    "name": "Route 503",
+    "name": "Route 503 North",
     "encounter_region": "Route 503",
     "has_land": true,
     "has_water": false,
@@ -166,7 +166,7 @@
   },
   "REGION_ROUTE503/SOUTH": {
     "parent_map": "MAP_ROUTE503",
-    "name": "Route 503",
+    "name": "Route 503 South",
     "encounter_region": "Route 503",
     "has_land": true,
     "has_water": false,

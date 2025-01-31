@@ -1,4 +1,186 @@
 {
+  "REGION_WISEMANS_CAVE_NORTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_WISEMANS_CAVE_NORTH_ENTRANCE",
+    "name": "Wiseman's Cave North Entrance",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_WISEMANS_CAVE_NORTH_ENTRANCE:0/MAP_WISEMANS_CAVE_B1F:0": "Wiseman's Cave North Entrance Ladder",
+      "MAP_WISEMANS_CAVE_NORTH_ENTRANCE:1/MAP_ROUTE503:0": "Wiseman's Cave North Entrance Exit"
+    }
+  },
+  "REGION_WISEMANS_CAVE_SOUTH_ENTRANCE/MAIN": {
+    "parent_map": "MAP_WISEMANS_CAVE_SOUTH_ENTRANCE",
+    "name": "Wiseman's Cave South Entrance",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "NPC_GIFT_GOT_ROOT_FOSSIL"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_WISEMANS_CAVE_SOUTH_ENTRANCE:0/MAP_ROUTE503:1": "Wiseman's Cave South Entrance Exit",
+      "MAP_WISEMANS_CAVE_SOUTH_ENTRANCE:1/MAP_WISEMANS_CAVE_B1F:1": "Wiseman's Cave South Entrance Ladder"
+    }
+  },
+  "REGION_WISEMANS_CAVE_B1F/EAST": {
+    "parent_map": "MAP_WISEMANS_CAVE_B1F",
+    "name": "Wiseman's Cave B1F East",
+    "encounter_region": "Wiseman's Cave B1F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_TEAM_DH_GRUNT_60_REWARD",
+      "TRAINER_TEAM_DH_GRUNT_61_REWARD",
+      "TRAINER_TEAM_DH_GRUNT_62_REWARD",
+      "ITEM_WISEMANS_CAVE_B1F_SILVER_POWDER",
+      "ITEM_WISEMANS_CAVE_B1F_ESCAPE_ROPE",
+      "TRAINER_TEAM_DH_GRUNT_77_REWARD"
+    ],
+    "events": [
+      "EVENT_WISEMAN_LOOP"
+    ],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B1F/WEST": "Wiseman's Cave B1F Disappearing Rock"
+    },
+    "warps": {
+      "MAP_WISEMANS_CAVE_B1F:0/MAP_WISEMANS_CAVE_NORTH_ENTRANCE:0": "Wiseman's Cave B1F Ladder (North)",
+      "MAP_WISEMANS_CAVE_B1F:2/MAP_WISEMANS_CAVE_B2F:1": "Wiseman's Cave B1F Ladder (Southeast)"
+    }
+  },
+  "REGION_WISEMANS_CAVE_B1F/WEST": {
+    "parent_map": "MAP_WISEMANS_CAVE_B1F",
+    "name": "Wiseman's Cave B1F West",
+    "encounter_region": "Wiseman's Cave B1F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "HIDDEN_ITEM_WISEMANS_CAVE_B1F_ETHER",
+      "TRAINER_TEAM_DH_GRUNT_68_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B1F/EAST": "Wiseman's Cave B1F Disappearing Rock"
+    },
+    "warps": {
+      "MAP_WISEMANS_CAVE_B1F:1/MAP_WISEMANS_CAVE_SOUTH_ENTRANCE:1": "Wiseman's Cave B1F Ladder (Southwest)"
+    }
+  },
+  "REGION_WISEMANS_CAVE_B2F/SOUTHEAST": {
+    "parent_map": "MAP_WISEMANS_CAVE_B2F",
+    "name": "Wiseman's Cave B2F Southeast",
+    "encounter_region": "Wiseman's Cave B2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_PKMN_RANGER_JACKSON_REWARD",
+      "TRAINER_HIKER_WAYNE_REWARD",
+      "TRAINER_BATTLE_GIRL_JOCELYN_REWARD",
+      "TRAINER_HIKER_QUINCY_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B2F/SOUTHWEST": "Wiseman's Cave B2F South Smashable Rocks",
+      "REGION_WISEMANS_CAVE_B2F/EAST": "Wiseman's Cave B2F East Smashable Rock",
+      "REGION_WISEMANS_CAVE_B2F/NORTH": "Wiseman's Cave B2F Northeast Smashable Rocks"
+    },
+    "warps": {
+      "MAP_WISEMANS_CAVE_B2F:1/MAP_WISEMANS_CAVE_B1F:2": "Wiseman's Cave B2F Ladder"
+    }
+  },
+  "REGION_WISEMANS_CAVE_B2F/SOUTHWEST": {
+    "parent_map": "MAP_WISEMANS_CAVE_B2F",
+    "name": "Wiseman's Cave B2F Southwest",
+    "encounter_region": "Wiseman's Cave B2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_BLACK_BELT_HIDEKI_REWARD",
+      "TRAINER_EXPERT_AURON_REWARD",
+      "ITEM_WISEMANS_CAVE_B2F_REVIVE"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B2F/SOUTHEAST": "Wiseman's Cave B2F South Smashable Rocks"
+    },
+    "warps": {}
+  },
+  "REGION_WISEMANS_CAVE_B2F/EAST": {
+    "parent_map": "MAP_WISEMANS_CAVE_B2F",
+    "name": "Wiseman's Cave B2F East",
+    "encounter_region": "Wiseman's Cave B2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_POKE_MANIAC_MARK_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B2F/SOUTHEAST": "Wiseman's Cave B2F East Smashable Rock"
+    },
+    "warps": {}
+  },
+  "REGION_WISEMANS_CAVE_B2F/NORTH": {
+    "parent_map": "MAP_WISEMANS_CAVE_B2F",
+    "name": "Wiseman's Cave B2F North",
+    "encounter_region": "Wiseman's Cave B2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_PKMN_BREEDER_MILES_REWARD",
+      "TRAINER_CRUSH_KIN_RON_MIA_REWARD",
+      "ITEM_WISEMANS_CAVE_B2F_HARD_STONE",
+      "TRAINER_ACE_TRAINER_HARRISON_REWARD",
+      "TRAINER_ACE_TRAINER_CAROLINE_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B2F/SOUTHEAST": "Wiseman's Cave B2F Northeast Smashable Rocks",
+      "REGION_WISEMANS_CAVE_B2F/NORTHWEST": "Wiseman's Cave B2F Strength Boulders"
+    },
+    "warps": {}
+  },
+  "REGION_WISEMANS_CAVE_B2F/NORTHWEST": {
+    "parent_map": "MAP_WISEMANS_CAVE_B2F",
+    "name": "Wiseman's Cave B2F Northwest",
+    "encounter_region": "Wiseman's Cave B2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_GYM_LEADER_AVERY_4_REWARD"
+    ],
+    "events": [
+      "EVENT_DEFEAT_AVERY_REMATCH"
+    ],
+    "exits": {
+      "REGION_WISEMANS_CAVE_B2F/NORTH": "Wiseman's Cave B2F Strength Boulders"
+    },
+    "warps": {}
+  },
   "REGION_VIRIDIAN_FOREST/MAIN": {
     "parent_map": "MAP_VIRIDIAN_FOREST",
     "name": "Viridian Forest",
