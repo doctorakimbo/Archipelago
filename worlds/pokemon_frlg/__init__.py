@@ -24,8 +24,8 @@ from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_
 from .logic import can_cut, can_flash, can_fly, can_rock_smash, can_strength, can_surf, can_waterfall
 from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, Dexsanity, FlashRequired, FreeFlyLocation,
                       GameVersion, Goal, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon,
-                      SeviiIslandPasses, ShuffleHiddenItems, ShuffleBadges, ShuffleRunningShoes, SilphCoCardKey,
-                      TownMapFlyLocation, Trainersanity, ViridianCityRoadblock)
+                      SeviiIslandPasses, ShuffleFlyDestinationUnlocks, ShuffleHiddenItems, ShuffleBadges,
+                      ShuffleRunningShoes, SilphCoCardKey, TownMapFlyLocation, Trainersanity, ViridianCityRoadblock)
 from .pokemon import (add_hm_compatability, randomize_abilities, randomize_legendaries, randomize_misc_pokemon,
                       randomize_moves, randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
@@ -370,7 +370,7 @@ class PokemonFRLGWorld(World):
             location for location in self.multiworld.get_locations(self.player) if location.address is not None
         ]
 
-        if not self.options.shuffle_fly_destination_unlocks:
+        if self.options.shuffle_fly_destination_unlocks == ShuffleFlyDestinationUnlocks.option_off:
             item_locations = [location for location in item_locations if "FlyUnlock" not in location.tags]
 
         itempool = [self.create_item_by_id(location.default_item_id) for location in item_locations]
@@ -453,8 +453,18 @@ class PokemonFRLGWorld(World):
                 location.address = None
                 location.show_in_spoiler = False
 
-        if not self.options.shuffle_fly_destination_unlocks:
+        if self.options.shuffle_fly_destination_unlocks == ShuffleFlyDestinationUnlocks.option_off:
             create_events_for_unrandomized_items("FlyUnlock")
+        elif self.options.shuffle_fly_destination_unlocks == ShuffleFlyDestinationUnlocks.option_exclude_indigo:
+            location = self.get_location("Indigo Plateau - Unlock Fly Destination")
+            location.place_locked_item(PokemonFRLGItem(self.item_id_to_name[location.default_item_id],
+                                                       ItemClassification.progression,
+                                                       None,
+                                                       self.player))
+            location.progress_type = LocationProgressType.DEFAULT
+            location.address = None
+            location.show_in_spoiler = False
+            self.multiworld.itempool.remove(self.create_item("Fly Indigo Plateau"))
 
         self.verify_hm_accessibility()
 

@@ -133,12 +133,20 @@ class Famesanity(Toggle):
     display_name = "Famesanity"
 
 
-class ShuffleFlyDestinationUnlocks(Toggle):
+class ShuffleFlyDestinationUnlocks(Choice):
     """
     Shuffles the ability to fly to Pokemon Centers into the pool. Entering the map that normally would unlock the
     fly destination gives a random item.
+
+    - Off: Fly Destination Unlocks are not shuffled.
+    - Exclude Indigo: Fly Destination Unlocks are shuffled. Indigo Plateau Fly Unlock is vanilla.
+    - All: Fly Destination Unlocks are shuffled.
     """
     display_name = "Shuffle Fly Destination Unlocks"
+    default = 0
+    option_off = 0
+    option_exclude_indigo = 1
+    option_all = 2
 
 
 class PokemonRequestLocations(Toggle):
