@@ -830,9 +830,9 @@ def randomize_tm_hm_compatibility(world: "PokemonFRLGWorld") -> None:
         species.tm_hm_compatibility = bool_array_to_int(compatibility_array)
 
 
-def add_hm_compatability(pokemon: str, hm: str):
+def add_hm_compatability(world: "PokemonFRLGWorld", pokemon: str, hm: str):
     species_id = NAME_TO_SPECIES_ID[pokemon]
-    species = data.species[species_id]
+    species = world.modified_species[species_id]
     compatibility_array = int_to_bool_array(species.tm_hm_compatibility)
     compatibility_array[HM_TO_COMPATIBILITY_ID[hm]] = True
     species.tm_hm_compatibility = bool_array_to_int(compatibility_array)

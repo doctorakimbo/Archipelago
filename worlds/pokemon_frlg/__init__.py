@@ -29,7 +29,7 @@ from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, Dexsanity, Fl
 from .pokemon import (add_hm_compatability, randomize_abilities, randomize_legendaries, randomize_misc_pokemon,
                       randomize_moves, randomize_starters, randomize_tm_hm_compatibility, randomize_tm_moves,
                       randomize_trainer_parties, randomize_types, randomize_wild_encounters)
-from .regions import create_indirect_conditions, create_regions
+from .regions import STARTING_TOWNS, create_indirect_conditions, create_regions
 from .rules import set_rules
 from .rom import get_tokens, PokemonFireRedProcedurePatch, PokemonLeafGreenProcedurePatch
 from .util import int_to_bool_array, HM_TO_COMPATIBILITY_ID
@@ -92,6 +92,7 @@ class PokemonFRLGWorld(World):
 
     required_client_version = (0, 5, 0)
 
+    starting_town: str
     free_fly_location_id: int
     town_map_fly_location_id: int
     resort_gorgeous_mon: int
@@ -124,6 +125,7 @@ class PokemonFRLGWorld(World):
 
     def __init__(self, multiworld, player):
         super(PokemonFRLGWorld, self).__init__(multiworld, player)
+        self.starting_town = "SPAWN_PALLET_TOWN"
         self.free_fly_location_id = 0
         self.town_map_fly_location_id = 0
         self.resort_gorgeous_mon = frlg_data.constants["SPECIES_PIKACHU"]
@@ -549,7 +551,8 @@ class PokemonFRLGWorld(World):
                 raise FillError(f"Failed to place badges for player {self.player}")
             self.verify_hm_accessibility()
 
-        if self.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel:
+        if (self.options.viridian_city_roadblock == ViridianCityRoadblock.option_early_parcel and
+                not self.options.random_starting_town):
             self.multiworld.local_early_items[self.player]["Oak's Parcel"] = 1
 
     @classmethod
@@ -624,6 +627,11 @@ class PokemonFRLGWorld(World):
         del self.scaling_data
 
     def write_spoiler_header(self, spoiler_handle: TextIO) -> None:
+        if self.options.random_starting_town:
+            starting_town = STARTING_TOWNS[self.starting_town]
+            if starting_town == "Viridian City South":
+                starting_town = starting_town[:-6]
+            spoiler_handle.write(f"Starting Town:                   {starting_town}\n")
         if self.options.free_fly_location != FreeFlyLocation.option_off:
             free_fly_location = self.multiworld.get_location("Free Fly Location", self.player)
             spoiler_handle.write(f"Free Fly Location:               {free_fly_location.item.name[4:]}\n")
@@ -758,6 +766,7 @@ class PokemonFRLGWorld(World):
         )
         slot_data["trainersanity"] = 1 if self.options.trainersanity != Trainersanity.special_range_names["none"] else 0
         slot_data["elite_four_rematch_requirement"] = self.options.elite_four_requirement.value
+        slot_data["starting_town"] = frlg_data.constants[self.starting_town]
         slot_data["free_fly_location_id"] = self.free_fly_location_id
         slot_data["town_map_fly_location_id"] = self.town_map_fly_location_id
         return slot_data
@@ -811,7 +820,7 @@ class PokemonFRLGWorld(World):
                 last_hm_verified = hm_to_verify
                 valid_mons = [mon for mon in self.repeatable_pokemon if all_state.has(mon, self.player)]
                 mon = self.random.choice(valid_mons)
-                add_hm_compatability(mon, hm_to_verify)
+                add_hm_compatability(self, mon, hm_to_verify)
                 self.hm_compatibility[hm_to_verify].add(mon)
             else:
                 hms.pop(0)

@@ -38,6 +38,14 @@ class KantoOnly(Toggle):
     display_name = "Kanto Only"
 
 
+class RandomStartingTown(Toggle):
+    """
+    Randomizes the town that you start in. This includes any area that has a Pokemon Center except for Route 10 and
+    Indigo Plateau.
+    """
+    display_name = "Random Starting Town"
+
+
 class ShuffleBadges(DefaultOnToggle):
     """
     Shuffle Gym Badges into the general item pool. If turned off, Badges will be shuffled among themselves.
@@ -960,6 +968,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     goal: Goal
     kanto_only: KantoOnly
+    random_starting_town: RandomStartingTown
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
