@@ -24,7 +24,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_BLAINE",
     "FLAG_DEFEATED_LEADER_GIOVANNI",
     "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL", # TODO: is there no flag for winstrates (activating or completing)?
-    "FLAG_GOT_SS_TICKET",  # Saved Bill in the Route 25 Sea Cottage
+    "FLAG_WISEMAN_LOOP",
     "FLAG_RESCUED_MR_FUJI",
     "FLAG_HIDE_SILPH_GIOVANNI",  # Liberated Silph Co.
     "FLAG_DEFEATED_CHAMP",

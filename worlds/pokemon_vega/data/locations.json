@@ -679,6 +679,10 @@
     "name": "Route 503 - Northwest Item",
     "tags": ["Overworld"]
   },
+  "ITEM_ROUTE504_POKE_BALL": {
+    "name": "Route 504 - Item",
+    "tags": ["Overworld"]
+  },
   "ITEM_ROUTE2_ETHER": {
     "name": "Route 2 - North Item",
     "tags": ["Overworld"]
@@ -1258,6 +1262,14 @@
   },
   "HIDDEN_ITEM_ROUTE502_RARE_CANDY": {
     "name": "Route 502 - Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE504_HEART_SCALE": {
+    "name": "Route 504 - Hidden Item In Rock",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE504_STARDUST": {
+    "name": "Route 504 - Hidden Item In Bush",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
@@ -1935,7 +1947,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_AROMA_LADY_NIKKI_REWARD": {
-    "name": "Bond Bridge - Aroma Lady Nikki Reward",
+    "name": "Route 504 - Aroma Lady Nikki Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_AROMA_LADY_ROSE_REWARD": {
@@ -2207,7 +2219,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BUG_CATCHER_DOUG_REWARD": {
-    "name": "Viridian Forest - Bug Catcher Doug Reward",
+    "name": "Route 504 - Bug Catcher Doug Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BUG_CATCHER_ELIJAH_REWARD": {
@@ -2743,7 +2755,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_TRENT_REWARD": {
-    "name": "Route 10 - Hiker Trent Reward",
+    "name": "Route 504 - Hiker Trent Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_WAYNE_REWARD": {
@@ -2768,10 +2780,6 @@
   },
   "TRAINER_JUGGLER_KIRK_REWARD": {
     "name": "Fuchsia Gym - Juggler Kirk Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_JUGGLER_MASON_REWARD": {
-    "name": "Canyon Entrance - Juggler Mason Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_JUGGLER_NATE_REWARD": {
@@ -3070,6 +3078,14 @@
     "name": "Canyon Entrance - Pokemon Ranger Nicolas Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_POKE_FAN_COLIN_REWARD": {
+    "name": "Route 504 - Poke Fan Colin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKE_FAN_LINDA_REWARD": {
+    "name": "Route 504 - Poke Fan Linda Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_POKE_MANIAC_MARK_REWARD": {
     "name": "Wiseman's Cave B2F - Poke Maniac Mark Reward",
     "tags": ["Trainer"]
@@ -3328,6 +3344,14 @@
   },
   "TRAINER_SIS_AND_BRO_LIL_IAN_REWARD": {
     "name": "Route 21 - Sis and Bro Lil & Ian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_LYDIA_REWARD": {
+    "name": "Route 504 - Skier Lydia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_MASON_REWARD": {
+    "name": "Route 504 - Skier Mason Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_AIDAN_REWARD": {
@@ -3795,7 +3819,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_JOEY_REWARD": {
-    "name": "Route 25 - Youngster Joey Reward",
+    "name": "Route 504 - Youngster Joey Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_JOHNSON_REWARD": {
