@@ -1288,13 +1288,6 @@ def set_famesanity_rules(world: "PokemonFRLGWorld"):
     set_rule(world.get_location("Indigo Plateau Pokemon Center 1F - Cooltrainer Info"),
              lambda state: post_game_gossipers(state, player, options))
 
-    # Add rules for fame checker locations
-    if world.options.fame_checker_required:
-        for location in world.multiworld.get_locations(player):
-            assert isinstance(location, PokemonFRLGLocation)
-            if location.tags is not None and ("FameChecker" in location.tags):
-                add_rule(location, lambda state: state.has("Fame Checker", player))
-
     if not options.kanto_only:
         # One Island Town
         set_rule(world.get_location("One Island Pokemon Center 1F - Celio Info 1"),
@@ -1332,6 +1325,13 @@ def set_famesanity_rules(world: "PokemonFRLGWorld"):
         # Seven Island
         set_rule(world.get_location("Seven Island Pokemon Center 1F - Bookshelf Info"),
                  lambda state: post_game_gossipers(state, player, options))
+
+    # Add rules for fame checker locations
+    if world.options.fame_checker_required:
+        for location in world.multiworld.get_locations(player):
+            assert isinstance(location, PokemonFRLGLocation)
+            if location.tags is not None and ("FameChecker" in location.tags):
+                add_rule(location, lambda state: state.has("Fame Checker", player))
 
 
 def set_pokemon_request_rules(world: "PokemonFRLGWorld"):
