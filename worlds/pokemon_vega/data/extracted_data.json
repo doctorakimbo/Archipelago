@@ -706,6 +706,7 @@
 "FLAG_ENABLE_SHIP_NAVEL_ROCK":2122,
 "FLAG_ENTEI_IS_RECOVERING":793,
 "FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES":612,
+"FLAG_GAVE_LETTER":4382,
 "FLAG_GAVE_SCANNER":805,
 "FLAG_GOT_10_COINS_FROM_GAMBLER":622,
 "FLAG_GOT_20_COINS_FROM_GAMBLER":623,
@@ -887,7 +888,6 @@
 "FLAG_HIDDEN_ITEM_ROUTE23_ULTRA_BALL":1035,
 "FLAG_HIDDEN_ITEM_ROUTE24_PECHA_BERRY":1115,
 "FLAG_HIDDEN_ITEM_ROUTE25_BLUK_BERRY":1117,
-"FLAG_HIDDEN_ITEM_ROUTE25_ELIXIR":1004,
 "FLAG_HIDDEN_ITEM_ROUTE25_ETHER":1005,
 "FLAG_HIDDEN_ITEM_ROUTE25_ORAN_BERRY":1116,
 "FLAG_HIDDEN_ITEM_ROUTE3_ORAN_BERRY":1113,
@@ -898,6 +898,7 @@
 "FLAG_HIDDEN_ITEM_ROUTE502_RARE_CANDY":1001,
 "FLAG_HIDDEN_ITEM_ROUTE504_HEART_SCALE":1002,
 "FLAG_HIDDEN_ITEM_ROUTE504_STARDUST":1003,
+"FLAG_HIDDEN_ITEM_ROUTE505_X_ATTACK":1004,
 "FLAG_HIDDEN_ITEM_ROUTE6_RARE_CANDY":1119,
 "FLAG_HIDDEN_ITEM_ROUTE6_SITRUS_BERRY":1118,
 "FLAG_HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY":1152,
@@ -1170,10 +1171,8 @@
 "FLAG_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL":493,
 "FLAG_ITEM_MT_MOON_1F_ESCAPE_ROPE":349,
 "FLAG_ITEM_MT_MOON_1F_MOON_STONE":350,
-"FLAG_ITEM_MT_MOON_1F_PARALYZE_HEAL":345,
 "FLAG_ITEM_MT_MOON_1F_POTION":347,
 "FLAG_ITEM_MT_MOON_1F_RARE_CANDY":348,
-"FLAG_ITEM_MT_MOON_1F_TM09":346,
 "FLAG_ITEM_MT_MOON_B2F_ANTIDOTE":448,
 "FLAG_ITEM_MT_MOON_B2F_REVIVE":447,
 "FLAG_ITEM_MT_MOON_B2F_STAR_PIECE":351,
@@ -1235,6 +1234,8 @@
 "FLAG_ITEM_ROUTE503_TM03":342,
 "FLAG_ITEM_ROUTE503_X_ACCURACY":343,
 "FLAG_ITEM_ROUTE504_POKE_BALL":344,
+"FLAG_ITEM_ROUTE505_REPEL":346,
+"FLAG_ITEM_ROUTE505_SOOTHE_BELL":345,
 "FLAG_ITEM_ROUTE9_BURN_HEAL":450,
 "FLAG_ITEM_ROUTE9_TM40":363,
 "FLAG_ITEM_SAFARI_ZONE_CENTER_NUGGET":385,
@@ -1367,6 +1368,7 @@
 "FLAG_RECEIVED_MYSTIC_TICKET":680,
 "FLAG_RECEIVED_OLD_SEA_MAP":681,
 "FLAG_RECOVERED_SAPPHIRE":726,
+"FLAG_REMOVED_DUGTRIO":4380,
 "FLAG_RESCUED_LOSTELLE":675,
 "FLAG_RESCUED_MR_FUJI":572,
 "FLAG_RESCUED_SELPHY":739,
@@ -1499,7 +1501,7 @@
 "FLAG_???":4634, # set during hollys lab segment of final turner intro scene
 "FLAG_???":4635, # set during hollys lab segment of final turner intro scene
 "FLAG_???":4639, # set after dh battle in wisemans cave
-"FLAG_???":4352, # cleared->set->cleared during hollys lab segment of postgame beginning scene; set after mosmero scene after beating annette; cleared after beating annette
+"FLAG_???":4352, # cleared->set->cleared during hollys lab segment of postgame beginning scene; set after mosmero scene after beating annette; cleared after beating annette; cleared when starting dugtrio ranger cutscene and set at end of it
 "FLAG_???":4437, # cleared during hollys lab segment of postgame beginning scene
 "FLAG_UNLOCKED_ROCKET_WAREHOUSE":720,
 "FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE":733,
@@ -4954,10 +4956,6 @@
 {"address":3911352,
 "default_item":149,
 "flag":1117},
-"HIDDEN_ITEM_ROUTE25_ELIXIR":
-{"address":3911316,
-"default_item":36,
-"flag":1004},
 "HIDDEN_ITEM_ROUTE25_ETHER":
 {"address":3911328,
 "default_item":34,
@@ -4998,6 +4996,10 @@
 {"address":11158236,
 "default_item":108,
 "flag":1003},
+"HIDDEN_ITEM_ROUTE505_X_ATTACK":
+{"address":11162460,
+"default_item":75,
+"flag":1004},
 "HIDDEN_ITEM_ROUTE6_RARE_CANDY":
 {"address":3904664,
 "default_item":68,
@@ -5470,10 +5472,6 @@
 {"address":1832152,
 "default_item":94,
 "flag":350},
-"ITEM_MT_MOON_1F_PARALYZE_HEAL":
-{"address":1832087,
-"default_item":18,
-"flag":345},
 "ITEM_MT_MOON_1F_POTION":
 {"address":1832113,
 "default_item":13,
@@ -5482,10 +5480,6 @@
 {"address":1832126,
 "default_item":68,
 "flag":348},
-"ITEM_MT_MOON_1F_TM09":
-{"address":1832100,
-"default_item":297,
-"flag":346},
 "ITEM_MT_MOON_B2F_ANTIDOTE":
 {"address":1833387,
 "default_item":14,
@@ -5730,6 +5724,14 @@
 {"address":11578647,
 "default_item":4,
 "flag":344},
+"ITEM_ROUTE505_REPEL":
+{"address":11581335,
+"default_item":86,
+"flag":346},
+"ITEM_ROUTE505_SOOTHE_BELL":
+{"address":11581322,
+"default_item":184,
+"flag":345},
 "ITEM_ROUTE9_BURN_HEAL":
 {"address":1833413,
 "default_item":15,
@@ -8822,10 +8824,6 @@
 {"address":3968872,
 "default_item":0,
 "flag":1412},
-"TRAINER_LASS_LISA_REWARD":
-{"address":3968874,
-"default_item":0,
-"flag":1413},
 "TRAINER_LASS_MEGAN_REWARD":
 {"address":3968868,
 "default_item":0,
@@ -9016,6 +9014,10 @@
 "flag":1890},
 "TRAINER_PKMN_BREEDER_BETHANY_REWARD":
 {"address":3969826,
+"default_item":0,
+"flag":1889},
+"TRAINER_PKMN_BREEDER_CORY_REWARD":
+{"address":3969826, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1889},
 "TRAINER_PKMN_BREEDER_MILES_REWARD":
@@ -9370,6 +9372,10 @@
 {"address":3969590,
 "default_item":0,
 "flag":1771},
+"TRAINER_SKIER_LISA_REWARD":
+{"address":3968950, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1451},
 "TRAINER_SKIER_LYDIA_REWARD":
 {"address":3968950, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
@@ -9796,6 +9802,14 @@
 "flag":1639},
 "TRAINER_TEAM_ROCKET_GRUNT_REWARD":
 {"address":3969310,
+"default_item":0,
+"flag":1631},
+"TRAINER_TEAMMATES_KATE_JOY_REWARD":
+{"address":3969310, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1631},
+"TRAINER_TEAMMATES_SARA_IVY_REWARD":
+{"address":3969310, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1631},
 "TRAINER_TUBER_ALEXIS_REWARD":

@@ -683,6 +683,14 @@
     "name": "Route 504 - Item",
     "tags": ["Overworld"]
   },
+  "ITEM_ROUTE505_REPEL": {
+    "name": "Route 505 - Northeast Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_ROUTE505_SOOTHE_BELL": {
+    "name": "Route 505 - Southwest Item",
+    "tags": ["Overworld"]
+  },
   "ITEM_ROUTE2_ETHER": {
     "name": "Route 2 - North Item",
     "tags": ["Overworld"]
@@ -1270,6 +1278,10 @@
   },
   "HIDDEN_ITEM_ROUTE504_STARDUST": {
     "name": "Route 504 - Hidden Item In Bush",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE505_X_ATTACK": {
+    "name": "Route 505 - Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
@@ -2854,10 +2866,6 @@
     "name": "Celadon Gym - Lass Kay Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_LASS_LISA_REWARD": {
-    "name": "Celadon Gym - Lass Lisa Reward",
-    "tags": ["Trainer"]
-  },
   "TRAINER_LASS_MEGAN_REWARD": {
     "name": "Route 8 - Lass Megan Reward",
     "tags": ["Trainer"]
@@ -3048,6 +3056,10 @@
   },
   "TRAINER_PKMN_BREEDER_BETHANY_REWARD": {
     "name": "Pattern Bush - Pokemon Breeder Bethany Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_BREEDER_CORY_REWARD": {
+    "name": "Route 505 - Pokemon Breeder Cory Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_PKMN_BREEDER_MILES_REWARD": {
@@ -3344,6 +3356,10 @@
   },
   "TRAINER_SIS_AND_BRO_LIL_IAN_REWARD": {
     "name": "Route 21 - Sis and Bro Lil & Ian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_LISA_REWARD": {
+    "name": "Route 505 - Skier Lisa Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SKIER_LYDIA_REWARD": {
@@ -3752,6 +3768,14 @@
   },
   "TRAINER_TEAM_ROCKET_GRUNT_51_REWARD": {
     "name": "Five Isle Meadow - Center Team Rocket Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAMMATES_KATE_JOY_REWARD": {
+    "name": "Route 505 - Teammates Kate & Joy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAMMATES_SARA_IVY_REWARD": {
+    "name": "Route 505 - Teammates Sara & Ivy Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_TUBER_ALEXIS_REWARD": {
