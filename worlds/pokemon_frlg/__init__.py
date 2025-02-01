@@ -21,7 +21,8 @@ from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, ge
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
-from .logic import can_cut, can_flash, can_fly, can_rock_smash, can_strength, can_surf, can_waterfall
+from .logic import (can_cut, can_flash, can_fly, can_rock_smash, can_strength, can_surf, can_waterfall,
+                    has_badge_requirement)
 from .options import (PokemonFRLGOptions, CeruleanCaveRequirement, Dexsanity, FlashRequired, FreeFlyLocation,
                       GameVersion, Goal, RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeWildPokemon,
                       SeviiIslandPasses, ShuffleFlyDestinationUnlocks, ShuffleHiddenItems, ShuffleBadges,
@@ -824,7 +825,8 @@ class PokemonFRLGWorld(World):
         while len(hms) > 0:
             hm_to_verify = hms[0]
             all_state = self.multiworld.get_all_state(False)
-            if not can_use_hm(all_state, hm_to_verify):
+            if (not can_use_hm(all_state, hm_to_verify) and
+                    has_badge_requirement(all_state, self.player, self.options, hm_to_verify)):
                 if hm_to_verify == last_hm_verified:
                     raise Exception(f"Failed to ensure access to {hm_to_verify} for player {self.player}")
                 last_hm_verified = hm_to_verify
