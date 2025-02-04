@@ -296,6 +296,203 @@
       "MAP_JUNOPSIS_CITY_HOUSE2:1/MAP_JUNOPSIS_CITY:5": "Junopsis Trade House Exit"
     }
   },
+  "REGION_SEAFIN_CITY/VISIT": {
+    "parent_map": "MAP_SEAFIN_CITY",
+    "name": "Seafin City Visit",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "FLY_UNLOCK_VISITED_SEAFIN_CITY"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {}
+  },
+  "REGION_SEAFIN_CITY/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY",
+    "name": "Seafin City",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_RIVAL_SEAFIN_NIMBLEAF_REWARD",
+      "NPC_GIFT_GOT_EXP_SHARE_FROM_SEAFIN_RIVAL"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_SEAFIN_CITY/VISIT": "Seafin City Visit",
+      "REGION_ROUTE505/MAIN": "Seafin City Exit (North)",
+      "REGION_ROUTE506/MAIN": "Seafin City Exit (West)",
+      "REGION_ROUTE507/MAIN": "Seafin City Exit (South)"
+    },
+    "warps": {
+      "MAP_SEAFIN_CITY:0/MAP_SEAFIN_CITY_MUSEUM_1F:1": "Seafin Museum",
+      "MAP_SEAFIN_CITY:1/MAP_SEAFIN_CITY_HOUSE3:0": "Seafin North House",
+      "MAP_SEAFIN_CITY:2/MAP_SEAFIN_CITY_GYM:1": "Seafin Gym",
+      "MAP_SEAFIN_CITY:3/MAP_SEAFIN_CITY_MART:1": "Seafin Poke Mart",
+      "MAP_SEAFIN_CITY:4/MAP_SEAFIN_CITY_HOUSE2:1": "Name Rater's House",
+      "MAP_SEAFIN_CITY:5/MAP_SEAFIN_CITY_POKEMON_CENTER_1F:1": "Seafin Pokemon Center",
+      "MAP_SEAFIN_CITY:6/MAP_SEAFIN_CITY_HOUSE1:1": "Seafin Southeast House",
+      "MAP_SEAFIN_CITY:7/MAP_SPIRIT_MANSION_1F:1": "Spirit Mansion"
+    }
+  },
+  "REGION_MAP_SEAFIN_CITY_MUSEUM_1F/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_MUSEUM_1F",
+    "name": "Seafin Museum 1F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "NPC_GIFT_GOT_DARK_FOSSIL"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_MUSEUM_1F:1/MAP_SEAFIN_CITY:0": "Seafin Museum 1F Exit",
+      "MAP_SEAFIN_CITY_MUSEUM_1F:5/MAP_SEAFIN_CITY_MUSEUM_2F:0": "Seafin Museum 1F Stairs"
+    }
+  },
+  "REGION_MAP_SEAFIN_CITY_MUSEUM_2F/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_MUSEUM_2F",
+    "name": "Seafin Museum 2F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [
+      "EVENT_DELIVER_LETTER"
+    ],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_MUSEUM_2F:0/MAP_SEAFIN_CITY_MUSEUM_1F:5": "Seafin Museum 2F Stairs"
+    }
+  },
+  "REGION_SEAFIN_CITY_HOUSE3/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_HOUSE3",
+    "name": "Seafin Northwest House",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "NPC_GIFT_GOT_TM21",
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_HOUSE3:0/MAP_SEAFIN_CITY:1": "Seafin Northwest House Exit"
+    }
+  },
+  "REGION_MAP_SEAFIN_CITY_GYM/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_GYM",
+    "name": "Seafin Gym",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_CAMPER_DREW_REWARD",
+      "TRAINER_HIKER_DUDLEY_REWARD",
+      "TRAINER_YOUNGSTER_TYLER_REWARD",
+      "TRAINER_GYM_LEADER_GEOFF_REWARD",
+      "BADGE_4",
+      "NPC_GIFT_GOT_TM37_FROM_GEOFF"
+    ],
+    "events": [
+      "EVENT_DEFEAT_GEOFF"
+    ],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_GYM:1/MAP_SEAFIN_CITY:2": "Seafin Gym Exit"
+    }
+  },
+  "REGION_SEAFIN_CITY_MART/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_MART",
+    "name": "Seafin Poke Mart",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_MART:1/MAP_SEAFIN_CITY:3": "Seafin Poke Mart Exit"
+    }
+  },
+  "REGION_SEAFIN_CITY_HOUSE2/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_HOUSE2",
+    "name": "Name Rater's House",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_HOUSE2:1/MAP_SEAFIN_CITY:4": "Name Rater's House Exit"
+    }
+  },
+  "REGION_SEAFIN_CITY_POKEMON_CENTER_1F/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_POKEMON_CENTER_1F",
+    "name": "Seafin Pokemon Center 1F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_POKEMON_CENTER_1F:1/MAP_SEAFIN_CITY:5": "Seafin Pokemon Center 1F Exit",
+      "MAP_SEAFIN_CITY_POKEMON_CENTER_1F:3/MAP_SEAFIN_CITY_POKEMON_CENTER_2F:0": "Seafin Pokemon Center 1F Stairs"
+    }
+  },
+  "REGION_SEAFIN_CITY_POKEMON_CENTER_2F/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_POKEMON_CENTER_2F",
+    "name": "Seafin Pokemon Center 2F",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_POKEMON_CENTER_2F:0/MAP_SEAFIN_CITY_POKEMON_CENTER_1F:3": "Seafin Pokemon Center 2F Stairs"
+    }
+  },
+  "REGION_SEAFIN_CITY_HOUSE1/MAIN": {
+    "parent_map": "MAP_SEAFIN_CITY_HOUSE1",
+    "name": "Seafin Southeast House",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SEAFIN_CITY_HOUSE1:1/MAP_SEAFIN_CITY:6": "Seafin Southeast House Exit"
+    }
+  },
   "REGION_PEWTER_CITY/VISIT": {
     "parent_map": "MAP_PEWTER_CITY",
     "name": "Pewter City Visit",

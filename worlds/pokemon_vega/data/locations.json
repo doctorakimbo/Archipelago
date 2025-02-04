@@ -77,6 +77,10 @@
     "name": "Celadon Restaurant - Coin Case Man Gift",
     "tags": ["KeyItem"]
   },
+  "NPC_GIFT_GOT_DARK_FOSSIL": {
+    "name": "Seafin Museum 1F - Postgame Gift from Scientist",
+    "tags": ["KeyItem"]
+  },
   "NPC_GIFT_GOT_DOME_FOSSIL": {
     "name": "Mt. Moon B2F - Dome Fossil",
     "tags": ["KeyItem"]
@@ -235,10 +239,6 @@
     "name": "Lavender Town - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
-  "FLY_UNLOCK_VISITED_PEWTER_CITY": {
-    "name": "Pewter City - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
   "FLY_UNLOCK_VISITED_PORCELIA_TOWN": {
     "name": "Porcelia Town - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
@@ -249,6 +249,10 @@
   },
   "FLY_UNLOCK_VISITED_SAFFRON_CITY": {
     "name": "Saffron City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_SEAFIN_CITY": {
+    "name": "Seafin City - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
   "FLY_UNLOCK_VISITED_VERMILION_CITY": {
@@ -1825,8 +1829,8 @@
     "name": "Route 10 Pokemon Center 1F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
+  "NPC_GIFT_GOT_EXP_SHARE_FROM_SEAFIN_RIVAL": {
+    "name": "Seafin City - Rival Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE": {
@@ -1893,12 +1897,12 @@
     "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Fresh Water)",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
-    "name": "Celadon Gym - Erika TM",
-    "tags": ["NPCGift"]
-  },
   "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
     "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Soda Pop)",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM21": {
+    "name": "Seafin Northwest House - Sadistic Woman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
@@ -1923,6 +1927,10 @@
   },
   "NPC_GIFT_GOT_TM34_FROM_SURGE": {
     "name": "Vermilion Gym - Lt. Surge TM",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM37_FROM_GEOFF": {
+    "name": "Seafin Gym - Geoff TM",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
@@ -2311,7 +2319,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_DREW_REWARD": {
-    "name": "Route 9 - Camper Drew Reward",
+    "name": "Seafin Gym - Camper Drew Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_ETHAN_REWARD": {
@@ -2702,6 +2710,10 @@
     "name": "Wiseman's Cave B2F - Gym Leader Avery Rematch Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_GYM_LEADER_GEOFF_REWARD": {
+    "name": "Seafin Gym - Gym Leader Geoff Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_HIKER_ALAN_REWARD": {
     "name": "Route 9 - Hiker Alan Reward",
     "tags": ["Trainer"]
@@ -2723,7 +2735,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_DUDLEY_REWARD": {
-    "name": "Rock Tunnel B1F - Hiker Dudley Reward",
+    "name": "Seafin Gym - Hiker Dudley Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_EARL_REWARD": {
@@ -2900,10 +2912,6 @@
   },
   "TRAINER_LEADER_BLAINE_REWARD": {
     "name": "Cinnabar Gym - Leader Blaine Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_LEADER_ERIKA_REWARD": {
-    "name": "Celadon Gym - Leader Erika Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LEADER_GIOVANNI_REWARD": {
@@ -3184,6 +3192,10 @@
   },
   "TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR_REWARD": {
     "name": "Route 22 - Late Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_SEAFIN_NIMBLEAF_REWARD": {
+    "name": "Seafin City - Rival Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD": {
@@ -3863,7 +3875,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_TYLER_REWARD": {
-    "name": "S.S. Anne 1F Room 2 - Youngster Tyler Reward",
+    "name": "Seafin Gym - Youngster Tyler Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_VINCENT_REWARD": {

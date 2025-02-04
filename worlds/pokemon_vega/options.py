@@ -65,7 +65,7 @@ class ExtraKeyItems(Toggle): # todo: edit rules; edit baserom; different item fo
     Adds four new locations:
     - Item in the house leading to DH Hideout
     - Item given by the man with the hungry Rynos
-    - Second item given by your rival outside Spirit Mansion
+    - Item given by Mosmero on the roof of the Dept. Store
     - Item given by the Perimeter Labs receptionist
     """
     display_name = "Extra Key Items"

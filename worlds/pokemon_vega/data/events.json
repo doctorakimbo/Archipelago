@@ -105,6 +105,11 @@
     "item": "Go Through Wiseman's Cave Teleport Loop",
     "tags": ["Event"]
   },
+  "EVENT_DELIVER_LETTER": {
+    "name": "Seafin Museum 2F - Give Letter to Scientist",
+    "item": "Give Letter to Scientist",
+    "tags": ["Event"]
+  },
   "EVENT_DELIVER_OAKS_PARCEL": {
     "name": "Professor Oak's Lab - Oak's Delivery",
     "item": "Deliver Oak's Parcel",

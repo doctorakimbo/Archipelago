@@ -270,6 +270,12 @@ def set_rules(world: "PokemonVegaWorld") -> None:
         set_rule(get_entrance("Wiseman's Cave B2F East Smashable Rock"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Wiseman's Cave B2F Northeast Smashable Rocks"), lambda state: can_rock_smash(state))
         set_rule(get_entrance("Wiseman's Cave B2F Strength Boulders"), lambda state: can_strength(state))
+        
+        # Seafin City
+        set_rule(get_location("Seafin Museum 1F - Postgame Gift from Scientist"), lambda state: state.has("Defeat Champion", player))
+        set_rule(get_location("Give Letter to Scientist"), 
+                 lambda state: state.has("Arneb Badge", player) and state.has("Letter", player))
+        set_rule(get_entrance("Seafin City Exit (West)"), lambda state: state.has("Give Letter to Scientist", player))
 
         # Route 22
         set_rule(get_location("Route 22 - Early Rival Battle"), lambda state: state.has("Deliver Oak's Parcel", player))

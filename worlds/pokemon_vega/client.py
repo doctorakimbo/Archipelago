@@ -25,7 +25,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_DEFEATED_LEADER_GIOVANNI",
     "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL", # TODO: is there no flag for winstrates (activating or completing)?
     "FLAG_WISEMAN_LOOP",
-    "FLAG_GAVE_LETTER",
+    "FLAG_DELIVERED_LETTER",
     "FLAG_HIDE_SILPH_GIOVANNI",  # Liberated Silph Co.
     "FLAG_DEFEATED_CHAMP",
     "FLAG_RESCUED_LOSTELLE",
@@ -47,7 +47,7 @@ EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_
 TRACKER_FLY_UNLOCK_FLAGS = [
     "FLAG_WORLD_MAP_PORCELIA_TOWN",
     "FLAG_WORLD_MAP_JUNOPSIS_CITY",
-    "FLAG_WORLD_MAP_PEWTER_CITY",
+    "FLAG_WORLD_MAP_SEAFIN_CITY",
     "FLAG_WORLD_MAP_CERULEAN_CITY",
     "FLAG_WORLD_MAP_VERMILION_CITY",
     "FLAG_WORLD_MAP_ROUTE10_POKEMON_CENTER_1F",
@@ -60,9 +60,9 @@ TRACKER_FLY_UNLOCK_FLAGS = [
 ]
 FLY_UNLOCK_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_FLY_UNLOCK_FLAGS}
 
-# TODO: update with board name; also are there any others?
+# TODO: are there any others?
 HINT_FLAGS = {
-    "FLAG_HINT_BICYCLE_SHOP": "NPC_GIFT_GOT_BICYCLE"
+    "FLAG_HINT_BOARD_SHOP": "NPC_GIFT_GOT_DOUBLE_BOARD"
 }
 HINT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in HINT_FLAGS.keys()}
 
