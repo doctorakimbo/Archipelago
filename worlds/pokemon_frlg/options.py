@@ -85,7 +85,7 @@ class Trainersanity(NamedRange):
     """
     Defeating a trainer gives you an item.
 
-    You can specify how many Trainers should be a check between 1 and 456. If you have Kanto Only on, the amount of
+    You can specify how many Trainers should be a check between 0 and 456. If you have Kanto Only on, the amount of
     Trainer checks might be lower than the amount you specify. Trainers that have checks will periodically have an
     exclamation mark appear above their head in game.
 
@@ -105,7 +105,7 @@ class Dexsanity(NamedRange):
     """
     Adding a "caught" Pokedex entry gives you an item (catching, evolving, trading, etc.).
 
-    You can specify how many Pokedex entries should be a check between 1 and 386. Depending on your settings for
+    You can specify how many Pokedex entries should be a check between 0 and 386. Depending on your settings for
     randomizing wild Pokemon, there might not actually be as many locations as you specify. Pokemon that have checks
     will have a black silhouette of a pokeball in the Pokedex and in the battle HUD if you have seen them already.
 
