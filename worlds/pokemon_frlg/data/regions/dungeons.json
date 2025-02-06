@@ -2949,9 +2949,9 @@
       "MAP_SEAFOAM_ISLANDS_B2F:6/MAP_SEAFOAM_ISLANDS_B1F:6": "Seafoam Islands B2F Southeast Ladder (North)"
     }
   },
-  "REGION_SEAFOAM_ISLANDS_B3F/WEST": {
+  "REGION_SEAFOAM_ISLANDS_B3F/SOUTHWEST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F West",
+    "name": "Seafoam Islands B3F Southwest",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
@@ -2962,7 +2962,7 @@
     ],
     "events": [],
     "exits": {
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER": "Seafoam Islands B3F West Surfing Spot"
+      "REGION_SEAFOAM_ISLANDS_B3F/SOUTH_WATER": "Seafoam Islands B3F Southwest Surfing Spot"
     },
     "warps": {
       "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0": "Seafoam Islands B3F West Ladder (South)",
@@ -2971,9 +2971,9 @@
       "MAP_SEAFOAM_ISLANDS_B3F:8/MAP_SEAFOAM_ISLANDS_B4F:3": "Seafoam Islands B3F West Drop (East)"
     }
   },
-  "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST": {
+  "REGION_SEAFOAM_ISLANDS_B3F/ISOLATED_PLATEAU": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F Northeast",
+    "name": "Seafoam Islands B3F Isolated Plateau",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
@@ -2987,9 +2987,9 @@
       "MAP_SEAFOAM_ISLANDS_B3F:4/MAP_SEAFOAM_ISLANDS_B4F:1": "Seafoam Islands B3F Northeast Ladder (West)"
     }
   },
-  "REGION_SEAFOAM_ISLANDS_B3F/WATER": {
+  "REGION_SEAFOAM_ISLANDS_B3F/SOUTH_WATER": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F Water",
+    "name": "Seafoam Islands B3F South Water",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": false,
     "has_water": true,
@@ -2998,18 +2998,18 @@
     "locations": [],
     "events": [],
     "exits": {
-      "REGION_SEAFOAM_ISLANDS_B3F/WEST": "Seafoam Islands B3F West Landing",
-      "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST": "Seafoam Islands B3F Southeast Landing",
-      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER": "Seafoam Islands B3F Waterfall Drop"
+      "REGION_SEAFOAM_ISLANDS_B3F/SOUTHWEST": "Seafoam Islands B3F Southwest Landing",
+      "REGION_SEAFOAM_ISLANDS_B3F/EAST": "Seafoam Islands B3F East Landing (South)",
+      "REGION_SEAFOAM_ISLANDS_B4F/EAST_WATER": "Seafoam Islands B3F Waterfall Drop (South)"
     },
     "warps": {
       "MAP_SEAFOAM_ISLANDS_B3F:5/MAP_SEAFOAM_ISLANDS_B2F:9": "",
       "MAP_SEAFOAM_ISLANDS_B3F:6/MAP_SEAFOAM_ISLANDS_B2F:10": ""
     }
   },
-  "REGION_SEAFOAM_ISLANDS_B3F/SOUTHEAST": {
+  "REGION_SEAFOAM_ISLANDS_B3F/EAST": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
-    "name": "Seafoam Islands B3F Southeast",
+    "name": "Seafoam Islands B3F East",
     "encounter_region": "Seafoam Islands B3F",
     "has_land": true,
     "has_water": false,
@@ -3018,11 +3018,76 @@
     "locations": [],
     "events": [],
     "exits": {
-      "REGION_SEAFOAM_ISLANDS_B3F/WATER": "Seafoam Islands B3F Southeast Surfing Spot"
+      "REGION_SEAFOAM_ISLANDS_B3F/SOUTH_WATER": "Seafoam Islands B3F East Surfing Spot (South)",
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST_WATER": "Seafoam Islands B3F East Surfing Spot (North)"
     },
     "warps": {
       "MAP_SEAFOAM_ISLANDS_B3F:2/MAP_SEAFOAM_ISLANDS_B2F:2": "Seafoam Islands B3F Southeast Ladder"
     }
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST_WATER": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "name": "Seafoam Islands B3F Northeast Water",
+    "encounter_region": "Seafoam Islands B3F",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
+    "kanto": true,
+    "locations": [],
+    "events": [],
+    "exits": {
+      "REGION_SEAFOAM_ISLANDS_B3F/EAST": "Seafoam Islands B3F East Landing (North)",
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTH_WATER": "Seafoam Islands B3F Waterfall Ascend (Northeast)"
+    },
+    "warps": {}
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/NORTH_WATER": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "name": "Seafoam Islands B3F North Water",
+    "encounter_region": "Seafoam Islands B3F",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
+    "kanto": true,
+    "locations": [],
+    "events": [],
+    "exits": {
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTHEAST_WATER": "Seafoam Islands B3F Waterfall Drop (Northeast)",
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTHWEST_WATER": "Seafoam Islands B3F Waterfall Drop (Northwest)"
+    },
+    "warps": {}
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/NORTHWEST_WATER": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "name": "Seafoam Islands B3F Northwest Water",
+    "encounter_region": "Seafoam Islands B3F",
+    "has_land": false,
+    "has_water": true,
+    "has_fishing": true,
+    "kanto": true,
+    "locations": [],
+    "events": [],
+    "exits": {
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTHWEST": "Seafoam Islands B3F Northwest Landing",
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTH_WATER": "Seafoam Islands B3F Waterfall Ascend (Northwest)"
+    },
+    "warps": {}
+  },
+  "REGION_SEAFOAM_ISLANDS_B3F/NORTHWEST": {
+    "parent_map": "MAP_SEAFOAM_ISLANDS_B3F",
+    "name": "Seafoam Islands B3F Northwest",
+    "encounter_region": "Seafoam Islands B3F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": true,
+    "kanto": true,
+    "locations": [],
+    "events": [],
+    "exits": {
+      "REGION_SEAFOAM_ISLANDS_B3F/SOUTHWEST": "Seafoam Islands B3F Northwest Ledge Drop",
+      "REGION_SEAFOAM_ISLANDS_B3F/NORTHWEST_WATER": "Seafoam Islands B3F Northwest Surfing Spot"
+    },
+    "warps": {}
   },
   "REGION_SEAFOAM_ISLANDS_B4F/MAIN": {
     "parent_map": "MAP_SEAFOAM_ISLANDS_B4F",

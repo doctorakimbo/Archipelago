@@ -668,20 +668,32 @@ def set_default_rules(world: "PokemonFRLGWorld"):
              lambda state: can_surf(state, player, world))
 
     # Seafoam Islands
-    set_rule(world.get_entrance("Seafoam Islands B3F West Surfing Spot"),
+    set_rule(world.get_entrance("Seafoam Islands B3F Southwest Surfing Spot"),
              lambda state: can_surf(state, player, world) and
                            can_strength(state, player, world) and
                            state.can_reach_region("Seafoam Islands 1F", player))
-    set_rule(world.get_entrance("Seafoam Islands B3F Southeast Surfing Spot"),
+    set_rule(world.get_entrance("Seafoam Islands B3F Southwest Landing"),
+             lambda state: can_strength(state, player, world) and
+                           state.can_reach_region("Seafoam Islands 1F", player))
+    set_rule(world.get_entrance("Seafoam Islands B3F East Landing (South)"),
+             lambda state: can_strength(state, player, world) and
+                           state.can_reach_region("Seafoam Islands 1F", player))
+    set_rule(world.get_entrance("Seafoam Islands B3F East Surfing Spot (South)"),
              lambda state: can_surf(state, player, world) and
                            can_strength(state, player, world) and
                            state.can_reach_region("Seafoam Islands 1F", player))
-    set_rule(world.get_entrance("Seafoam Islands B3F West Landing"),
-             lambda state: can_strength(state, player, world) and
-                           state.can_reach_region("Seafoam Islands 1F", player))
-    set_rule(world.get_entrance("Seafoam Islands B3F Southeast Landing"),
-             lambda state: can_strength(state, player, world) and
-                           state.can_reach_region("Seafoam Islands 1F", player))
+    set_rule(world.get_entrance("Seafoam Islands B3F East Surfing Spot (North)"),
+             lambda state: can_surf(state, player, world))
+    set_rule(world.get_entrance("Seafoam Islands B3F Waterfall Ascend (Northeast)"),
+             lambda state: can_waterfall(state, player, world))
+    set_rule(world.get_entrance("Seafoam Islands B3F Waterfall Drop (Northeast)"),
+             lambda state: can_waterfall(state, player, world))
+    set_rule(world.get_entrance("Seafoam Islands B3F Waterfall Drop (Northwest)"),
+             lambda state: can_waterfall(state, player, world))
+    set_rule(world.get_entrance("Seafoam Islands B3F Waterfall Ascend (Northwest)"),
+             lambda state: can_waterfall(state, player, world))
+    set_rule(world.get_entrance("Seafoam Islands B3F Northwest Surfing Spot"),
+             lambda state: can_surf(state, player, world))
     set_rule(world.get_entrance("Seafoam Islands B4F Surfing Spot (West)"),
              lambda state: can_surf(state, player, world) and
                            can_strength(state, player, world) and
@@ -690,10 +702,9 @@ def set_default_rules(world: "PokemonFRLGWorld"):
              lambda state: can_strength(state, player, world) and
                            state.can_reach_region("Seafoam Islands B3F West", player))
 
-    for i in range(1, 6):
-        set_rule(world.get_location(f"Seafoam Islands B3F - Water Encounter {i}"),
-                 lambda state: can_strength(state, player, world) and
-                               state.can_reach_region("Seafoam Islands 1F", player))
+    set_rule(world.get_entrance("Seafoam Islands B3F South Water (Water Battle)"),
+             lambda state: can_strength(state, player, world) and
+                    state.can_reach_region("Seafoam Islands 1F", player))
 
     # Cinnabar Island
     set_rule(world.get_location("Pokemon Lab Lounge - Trade Raichu"),
