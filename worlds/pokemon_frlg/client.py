@@ -3,8 +3,6 @@ from NetUtils import ClientStatus
 import worlds._bizhawk as bizhawk
 from worlds._bizhawk.client import BizHawkClient
 from .data import data
-from .items import reverse_offset_item_value
-from .locations import offset_flag
 from .options import Goal
 
 if TYPE_CHECKING:
@@ -308,23 +306,22 @@ class PokemonFRLGClient(BizHawkClient):
             for byte_i, byte in enumerate(flag_bytes):
                 for i in range(8):
                     if byte & (1 << i) != 0:
-                        flag_id = byte_i * 8 + i
+                        location_id = byte_i * 8 + i
 
-                        location_id = offset_flag(flag_id)
                         if location_id in ctx.server_locations:
                             local_checked_locations.add(location_id)
 
-                        if flag_id == self.goal_flag:
+                        if location_id == self.goal_flag:
                             game_clear = True
 
-                        if flag_id in EVENT_FLAG_MAP:
-                            local_set_events[EVENT_FLAG_MAP[flag_id]] = True
+                        if location_id in EVENT_FLAG_MAP:
+                            local_set_events[EVENT_FLAG_MAP[location_id]] = True
 
-                        if flag_id in FLY_UNLOCK_FLAG_MAP:
-                            local_set_fly_unlocks[FLY_UNLOCK_FLAG_MAP[flag_id]] = True
+                        if location_id in FLY_UNLOCK_FLAG_MAP:
+                            local_set_fly_unlocks[FLY_UNLOCK_FLAG_MAP[location_id]] = True
 
-                        if flag_id in HINT_FLAG_MAP:
-                            local_hints[HINT_FLAG_MAP[flag_id]] = True
+                        if location_id in HINT_FLAG_MAP:
+                            local_hints[HINT_FLAG_MAP[location_id]] = True
 
             # Check set fame checker flags
             if fame_checker_read_status:
@@ -333,7 +330,7 @@ class PokemonFRLGClient(BizHawkClient):
                     if byte_i % 4 == 0:  # The Fame Checker flags are every 4 bytes
                         for i in range(2, 8):
                             if byte & (1 << i) != 0:
-                                location_id = offset_flag(FAMESANITY_OFFSET + fame_checker_index)
+                                location_id = FAMESANITY_OFFSET + fame_checker_index
                                 if location_id in ctx.server_locations:
                                     local_checked_locations.add(location_id)
                             fame_checker_index += 1
@@ -344,7 +341,7 @@ class PokemonFRLGClient(BizHawkClient):
                     for i in range(8):
                         if byte & (1 << i) != 0:
                             dex_number = byte_i * 8 + i
-                            location_id = offset_flag(DEXSANITY_OFFSET + dex_number)
+                            location_id = DEXSANITY_OFFSET + dex_number
                             if location_id in ctx.server_locations:
                                 local_checked_locations.add(location_id)
                             caught_pokemon += 1
@@ -418,8 +415,8 @@ class PokemonFRLGClient(BizHawkClient):
                     if local_hints[flag_name] and flag_name not in self.local_hints:
                         hints_locations.append(loc_name)
                         self.local_hints.append(flag_name)
-                hint_ids = [offset_flag(data.locations[loc].flag) for loc in hints_locations
-                            if offset_flag(data.locations[loc].flag) in ctx.missing_locations]
+                hint_ids = [data.locations[loc].flag for loc in hints_locations
+                            if data.locations[loc].flag in ctx.missing_locations]
                 if hint_ids:
                     await ctx.send_msgs([{
                         "cmd": "LocationScouts",
@@ -460,7 +457,7 @@ class PokemonFRLGClient(BizHawkClient):
             next_item = ctx.items_received[num_received_items]
             should_display = 1 if next_item.flags & 1 or next_item.player == ctx.slot else 0
             await bizhawk.write(ctx.bizhawk_ctx, [
-                (received_item_address, reverse_offset_item_value(next_item.item).to_bytes(2, "little"), "System Bus"),
+                (received_item_address, next_item.item.to_bytes(2, "little"), "System Bus"),
                 (received_item_address + 2, (num_received_items + 1).to_bytes(2, "little"), "System Bus"),
                 (received_item_address + 4, [1], "System Bus"),
                 (received_item_address + 5, [should_display], "System Bus")

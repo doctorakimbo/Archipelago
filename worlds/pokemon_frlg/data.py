@@ -12,7 +12,6 @@ from enum import IntEnum
 from typing import Dict, List, NamedTuple, Optional, Set, FrozenSet, Any, Union, Tuple
 from BaseClasses import ItemClassification
 
-BASE_OFFSET = 6420000
 NUM_REAL_SPECIES = 386
 
 

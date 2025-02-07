@@ -16,8 +16,7 @@ from worlds.AutoWorld import WebWorld, World
 from .client import PokemonFRLGClient
 from .data import (data as frlg_data, ALL_SPECIES, LEGENDARY_POKEMON, NAME_TO_SPECIES_ID, EventData, MapData,
                    MiscPokemonData, SpeciesData, StarterData, TrainerData)
-from .items import (ITEM_GROUPS, create_item_name_to_id_map, get_random_item, get_item_classification,
-                    reverse_offset_item_value, PokemonFRLGItem)
+from .items import (PokemonFRLGItem, ITEM_GROUPS, create_item_name_to_id_map, get_random_item, get_item_classification)
 from .level_scaling import ScalingData, create_scaling_data, level_scaling
 from .locations import (LOCATION_GROUPS, create_location_name_to_id_map, create_locations_from_tags, set_free_fly,
                         PokemonFRLGLocation)
@@ -425,9 +424,9 @@ class PokemonFRLGWorld(World):
                 itempool.remove(item_to_remove)
 
         for item, quantity in self.options.start_inventory.value.items():
-            if "Unique" in frlg_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags:
+            if "Unique" in frlg_data.items[self.item_name_to_id[item]].tags:
                 if (not self.options.shuffle_badges and
-                        "Badge" in frlg_data.items[reverse_offset_item_value(self.item_name_to_id[item])].tags):
+                        "Badge" in frlg_data.items[self.item_name_to_id[item]].tags):
                     continue
                 removed_items_count = 0
                 for _ in range(quantity):
