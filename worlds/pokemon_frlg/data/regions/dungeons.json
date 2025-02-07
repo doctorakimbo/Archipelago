@@ -2521,6 +2521,7 @@
     "kanto": true,
     "locations": [
       "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD",
+      "NPC_GIFT_GOT_LINK_CABLE",
       "ITEM_SILPH_CO_7F_CARD_KEY_7F"
     ],
     "events": [
@@ -2965,10 +2966,10 @@
       "REGION_SEAFOAM_ISLANDS_B3F/SOUTH_WATER": "Seafoam Islands B3F Southwest Surfing Spot"
     },
     "warps": {
-      "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0": "Seafoam Islands B3F West Ladder (South)",
-      "MAP_SEAFOAM_ISLANDS_B3F:3/MAP_SEAFOAM_ISLANDS_B4F:0": "Seafoam Islands B3F West Ladder (North)",
-      "MAP_SEAFOAM_ISLANDS_B3F:7/MAP_SEAFOAM_ISLANDS_B4F:2": "Seafoam Islands B3F West Drop (West)",
-      "MAP_SEAFOAM_ISLANDS_B3F:8/MAP_SEAFOAM_ISLANDS_B4F:3": "Seafoam Islands B3F West Drop (East)"
+      "MAP_SEAFOAM_ISLANDS_B3F:0/MAP_SEAFOAM_ISLANDS_B2F:0": "Seafoam Islands B3F Southwest Ladder (South)",
+      "MAP_SEAFOAM_ISLANDS_B3F:3/MAP_SEAFOAM_ISLANDS_B4F:0": "Seafoam Islands B3F Southwest Ladder (North)",
+      "MAP_SEAFOAM_ISLANDS_B3F:7/MAP_SEAFOAM_ISLANDS_B4F:2": "Seafoam Islands B3F Southwest Drop (West)",
+      "MAP_SEAFOAM_ISLANDS_B3F:8/MAP_SEAFOAM_ISLANDS_B4F:3": "Seafoam Islands B3F Southwest Drop (East)"
     }
   },
   "REGION_SEAFOAM_ISLANDS_B3F/ISOLATED_PLATEAU": {

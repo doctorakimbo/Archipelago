@@ -246,6 +246,9 @@ def can_evolve(state: CollectionState, player: int, world: "PokemonFRLGWorld", p
     if state.has(pokemon, player):
         if evolution_data.method == EvolutionMethodEnum.ITEM:
             return state.has(world.item_id_to_name[offset_item_value(evolution_data.param)], player)
+        elif evolution_data.method == EvolutionMethodEnum.ITEM_HELD:
+            return state.has_all([world.item_id_to_name[offset_item_value(evolution_data.param)],
+                                  world.item_id_to_name[offset_item_value(evolution_data.param2)]], player)
         elif evolution_data.method == EvolutionMethodEnum.FRIENDSHIP:
             return has_n_gyms(state, player, 4)
         else:

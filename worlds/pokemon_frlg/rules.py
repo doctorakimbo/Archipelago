@@ -697,10 +697,10 @@ def set_default_rules(world: "PokemonFRLGWorld"):
     set_rule(world.get_entrance("Seafoam Islands B4F Surfing Spot (West)"),
              lambda state: can_surf(state, player, world) and
                            can_strength(state, player, world) and
-                           state.can_reach_region("Seafoam Islands B3F West", player))
+                           state.can_reach_region("Seafoam Islands B3F Southwest", player))
     set_rule(world.get_entrance("Seafoam Islands B4F Near Articuno Landing"),
              lambda state: can_strength(state, player, world) and
-                           state.can_reach_region("Seafoam Islands B3F West", player))
+                           state.can_reach_region("Seafoam Islands B3F Southwest", player))
 
     set_rule(world.get_entrance("Seafoam Islands B3F South Water (Water Battle)"),
              lambda state: can_strength(state, player, world) and
@@ -961,7 +961,7 @@ def set_default_rules(world: "PokemonFRLGWorld"):
                  lambda state: can_cut(state, player, world))
         set_rule(world.get_location("Two Island Game Corner - Lostelle's Dad Gift (Deliver Meteorite)"),
                  lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
-        set_rule(world.get_location("Two Island Town - Market Stall"),
+        set_rule(world.get_location("Two Island Town - Market Stall Item 4"),
                  lambda state: state.has_all(["Rescue Lostelle", "Defeat Champion"], player))
         set_rule(world.get_location("Two Island Game Corner - Lostelle's Dad's Delivery"),
                  lambda state: state.has_all(["Rescue Lostelle", "Meteorite"], player))
@@ -1020,7 +1020,7 @@ def set_default_rules(world: "PokemonFRLGWorld"):
 
         # Memorial Pillar
         set_rule(world.get_location("Memorial Pillar - Memorial Man Gift"),
-                 lambda state: state.has("Buy Lemonade", player))
+                 lambda state: state.has("Lemonade", player))
 
         # Resort Gorgeous
         set_rule(world.get_entrance("Resort Gorgeous Near Resort Surfing Spot"),

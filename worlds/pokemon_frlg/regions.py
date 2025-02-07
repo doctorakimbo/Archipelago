@@ -12,10 +12,11 @@ if TYPE_CHECKING:
     from . import PokemonFRLGWorld
 
 INDIRECT_CONDITIONS: Dict[str, List[str]] = {
-    "Seafoam Islands 1F": ["Seafoam Islands B3F West Surfing Spot", "Seafoam Islands B3F Southeast Surfing Spot",
-                           "Seafoam Islands B3F West Landing", "Seafoam Islands B3F Southeast Landing"],
-    "Seafoam Islands B3F West": ["Seafoam Islands B4F Surfing Spot (West)",
-                                 "Seafoam Islands B4F Near Articuno Landing"],
+    "Seafoam Islands 1F": ["Seafoam Islands B3F Southwest Surfing Spot", "Seafoam Islands B3F Southwest Landing",
+                           "Seafoam Islands B3F East Landing (South)", "Seafoam Islands B3F East Surfing Spot (South)",
+                           "Seafoam Islands B3F South Water (Water Battle)"],
+    "Seafoam Islands B3F Southwest": ["Seafoam Islands B4F Surfing Spot (West)",
+                                      "Seafoam Islands B4F Near Articuno Landing"],
     "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"],
     "Vermilion City": ["Navel Rock Arrival", "Birth Island Arrival"]
 }

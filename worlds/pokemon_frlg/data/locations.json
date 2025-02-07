@@ -1789,6 +1789,10 @@
     "name": "Three Island Town - Anti-Biker Gift",
     "tags": ["NPCGift"]
   },
+  "NPC_GIFT_GOT_LINK_CABLE": {
+    "name": "Silph Co. 7F - Rival Gift",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE": {
     "name": "Resort Gorgeous House - Selphy Gift (Show Pokemon)",
     "tags": ["NPCGift", "PokemonRequest"]

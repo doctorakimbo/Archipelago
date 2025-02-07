@@ -172,6 +172,7 @@ class EvolutionMethodEnum(IntEnum):
     LEVEL_SHEDINJA = 7
     ITEM = 8
     FRIENDSHIP = 9
+    ITEM_HELD = 10
 
 
 EVOLUTION_METHOD_TYPE: Dict[str, EvolutionMethodEnum] = {
@@ -184,12 +185,14 @@ EVOLUTION_METHOD_TYPE: Dict[str, EvolutionMethodEnum] = {
     "LEVEL_NINJASK": EvolutionMethodEnum.LEVEL_NINJASK,
     "LEVEL_SHEDINJA": EvolutionMethodEnum.LEVEL_SHEDINJA,
     "ITEM": EvolutionMethodEnum.ITEM,
-    "FRIENDSHIP": EvolutionMethodEnum.FRIENDSHIP
+    "FRIENDSHIP": EvolutionMethodEnum.FRIENDSHIP,
+    "ITEM_HELD": EvolutionMethodEnum.ITEM_HELD
 }
 
 
 class EvolutionData(NamedTuple):
     param: int
+    param2: int
     species_id: int
     method: EvolutionMethodEnum
 
@@ -912,12 +915,6 @@ def _init() -> None:
 
     # Create species data
     max_species_id = 0
-    evo_item_map: Dict[int, int] = {
-        data.constants["ITEM_KINGS_ROCK_EVO"]: data.constants["ITEM_KINGS_ROCK"],
-        data.constants["ITEM_METAL_COAT_EVO"]: data.constants["ITEM_METAL_COAT"],
-        data.constants["ITEM_DEEP_SEA_SCALE_EVO"]: data.constants["ITEM_DEEP_SEA_SCALE"],
-        data.constants["ITEM_DEEP_SEA_TOOTH_EVO"]: data.constants["ITEM_DEEP_SEA_TOOTH"]
-    }
     for species_id_name, species_name, species_dex_number in ALL_SPECIES:
         species_id = data.constants[species_id_name]
         max_species_id = max(species_id, max_species_id)
@@ -943,8 +940,8 @@ def _init() -> None:
             (species_data["types"][0], species_data["types"][1]),
             (species_data["abilities"][0], species_data["abilities"][1]),
             [EvolutionData(
-                evo_item_map[evolution_data["param"]]
-                if evolution_data["param"] in evo_item_map else evolution_data["param"],
+                evolution_data["param"],
+                evolution_data["param2"],
                 evolution_data["species"],
                 EVOLUTION_METHOD_TYPE[evolution_data["method"]]
             ) for evolution_data in species_data["evolutions"]],
@@ -961,6 +958,7 @@ def _init() -> None:
             if num_evolutions > 1:
                 data.evolutions[f"{species_name} {evolution_index}"] = EvolutionData(
                     evolution_data.param,
+                    evolution_data.param2,
                     evolution_data.species_id,
                     evolution_data.method
                 )
@@ -968,6 +966,7 @@ def _init() -> None:
             else:
                 data.evolutions[species_name] = EvolutionData(
                     evolution_data.param,
+                    evolution_data.param2,
                     evolution_data.species_id,
                     evolution_data.method
                 )

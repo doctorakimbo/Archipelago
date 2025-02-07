@@ -404,7 +404,17 @@ class PokemonFRLGWorld(World):
             itempool = [item for item in itempool if item.name != "Tea"]
             itempool.append(self.create_item("Green Tea"))
 
-        self.filler_items = [item for item in itempool if item.classification == ItemClassification.filler]
+        unique_items = set()
+        for item in itempool.copy():
+            if "Unique" in item.tags:
+                if item in unique_items:
+                    itempool.remove(item)
+                    itempool.append(self.create_item(get_random_item(self, ItemClassification.filler)))
+                else:
+                    unique_items.add(item)
+
+        self.filler_items = [item for item in itempool if item.classification == ItemClassification.filler and
+                             "Unique" not in item.tags]
         self.random.shuffle(self.filler_items)
 
         if self.options.kanto_only:
