@@ -4,9 +4,9 @@ from typing import TYPE_CHECKING, Dict, List, Set, Tuple
 
 from .data import (data, LEGENDARY_POKEMON, NUM_REAL_SPECIES, NAME_TO_SPECIES_ID, EncounterSpeciesData, EventData,
                    LearnsetMove, SpeciesData, TrainerPokemonData)
-from .options import (GameVersion, HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon, RandomizeMiscPokemon,
-                      RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes, RandomizeWildPokemon,
-                      TmTutorCompatibility, WildPokemonGroups)
+from .options import (Dexsanity, GameVersion, HmCompatibility, RandomizeAbilities, RandomizeLegendaryPokemon,
+                      RandomizeMiscPokemon, RandomizeMoves, RandomizeStarters, RandomizeTrainerParties, RandomizeTypes,
+                      RandomizeWildPokemon, TmTutorCompatibility, WildPokemonGroups)
 from .util import bool_array_to_int, int_to_bool_array, HM_TO_COMPATIBILITY_ID
 
 if TYPE_CHECKING:
@@ -395,13 +395,18 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
     route_21_randomized = False
 
     placed_species = set()
-    priority_species = list()
+    priority_species = set()
     if world.options.pokemon_request_locations:
-        priority_species.append(data.constants["SPECIES_MAGIKARP"])
+        priority_species.add(data.constants["SPECIES_MAGIKARP"])
         if not world.options.kanto_only:
-            priority_species.append(data.constants["SPECIES_HERACROSS"])
+            priority_species.add(data.constants["SPECIES_HERACROSS"])
             if world.options.famesanity:
-                priority_species.extend([data.constants["SPECIES_TOGEPI"], data.constants["SPECIES_TOGETIC"]])
+                priority_species.update([data.constants["SPECIES_TOGEPI"], data.constants["SPECIES_TOGETIC"]])
+    if world.options.dexsanity != Dexsanity.special_range_names["none"]:
+        dexsanity_priority_locations = [loc for loc in world.multiworld.priority_locations[world.player]
+                                        if loc.startswith("Pokedex -")]
+        for location in dexsanity_priority_locations:
+            priority_species.add(NAME_TO_SPECIES_ID[location.split("-")[1].strip()])
 
     map_names = list(world.modified_maps.keys())
     world.random.shuffle(map_names)
