@@ -405,7 +405,7 @@ class PokemonFRLGWorld(World):
 
         unique_items = set()
         for item in itempool.copy():
-            if "Unique" in item.tags:
+            if "Unique" in item.tags and "Progressive" not in item.name:
                 if item in unique_items:
                     itempool.remove(item)
                     itempool.append(self.create_item(get_random_item(self, ItemClassification.filler)))
