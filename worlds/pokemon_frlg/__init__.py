@@ -502,7 +502,7 @@ class PokemonFRLGWorld(World):
             if locs_to_remove > 0:
                 self.random.shuffle(trainer_locations)
                 for location in trainer_locations:
-                    if location.name in self.multiworld.priority_locations[self.player]:
+                    if location.name in self.options.priority_locations.value:
                         continue
                     region = location.parent_region
                     region.locations.remove(location)
@@ -526,7 +526,7 @@ class PokemonFRLGWorld(World):
                 pokedex_region_locations = pokedex_region.locations.copy()
                 self.random.shuffle(pokedex_region_locations)
                 for location in pokedex_region_locations:
-                    if location.name in self.multiworld.priority_locations[self.player]:
+                    if location.name in self.options.priority_locations.value:
                         continue
                     pokedex_region.locations.remove(location)
                     item_to_remove = self.filler_items.pop(0)

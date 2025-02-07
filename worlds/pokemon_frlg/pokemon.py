@@ -397,7 +397,7 @@ def randomize_wild_encounters(world: "PokemonFRLGWorld") -> None:
             if world.options.famesanity:
                 priority_species.update([data.constants["SPECIES_TOGEPI"], data.constants["SPECIES_TOGETIC"]])
     if world.options.dexsanity != Dexsanity.special_range_names["none"]:
-        dexsanity_priority_locations = [loc for loc in world.multiworld.priority_locations[world.player]
+        dexsanity_priority_locations = [loc for loc in world.options.priority_locations.value
                                         if loc.startswith("Pokedex -")]
         for location in dexsanity_priority_locations:
             priority_species.add(NAME_TO_SPECIES_ID[location.split("-")[1].strip()])
