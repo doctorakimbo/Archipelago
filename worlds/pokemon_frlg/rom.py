@@ -854,7 +854,7 @@ def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_v
             pokemon.level = round(pokemon.level + (pokemon.level * (world.options.modify_trainer_levels.value / 100)))
             pokemon.level = bound(pokemon.level, 1, 100)
 
-            if world.options.force_fully_evolved != ForceFullyEvolved.special_range_names["off"]:
+            if world.options.force_fully_evolved != ForceFullyEvolved.special_range_names["never"]:
                 evolve = True
                 if world.options.force_fully_evolved == ForceFullyEvolved.special_range_names["species"]:
                     while evolve:

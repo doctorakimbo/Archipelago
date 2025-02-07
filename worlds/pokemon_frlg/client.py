@@ -157,6 +157,8 @@ class PokemonFRLGClient(BizHawkClient):
             game_version = int.from_bytes(game_version_bytes, "little")
             game_revision_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(0xBC, 1, "ROM")]))[0]
             game_revision = int.from_bytes(game_revision_bytes, "little")
+            rom_checksum_bytes = (await bizhawk.read(ctx.bizhawk_ctx, [(0x1B8, 4, "ROM")]))[0]
+            rom_checksum = int.from_bytes(rom_checksum_bytes, "little")
 
             if game_version == 0x4:
                 if game_revision == 0x0:
@@ -175,16 +177,19 @@ class PokemonFRLGClient(BizHawkClient):
             else:
                 return False
 
-            if not rom_name.startswith(BASE_ROM_NAME[self.game_version]):
-                return False
             if rom_name == BASE_ROM_NAME[self.game_version]:
                 logger.info("ERROR: You appear to be running an unpatched version of Pokemon FireRed or LeafGreen."
                             "You need to generate a patch file and use it to create a patched ROM.")
                 return False
-            if not rom_name.startswith(data.rom_names[self.game_version]):
+            if rom_name != data.rom_names[self.game_version]:
+                return False
+            if data.rom_checksum != rom_checksum:
+                generator_checksum = "{0:x}".format(rom_checksum).upper() if rom_checksum != 0 else "Undefined"
+                client_checksum = "{0:x}".format(data.rom_checksum).upper() if data.rom_checksum != 0 else "Undefined"
                 logger.info("ERROR: The patch file used to create this ROM is not compatible with "
-                            "this client. Double check your client version against the version being "
+                            "this client. Double check your pokemon_frlg.apworld against the version being "
                             "used by the generator.")
+                logger.info(f"Client checksum: {client_checksum}, Generator checksum: {generator_checksum}")
                 return False
         except UnicodeDecodeError:
             return False

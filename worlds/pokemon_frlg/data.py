@@ -268,6 +268,7 @@ class TrainerData:
 
 class PokemonFRLGData:
     rom_names: Dict[str, str]
+    rom_checksum: int
     constants: Dict[str, int]
     ram_addresses: Dict[str, Dict[str, int]]
     rom_addresses: Dict[str, Dict[str, int]]
@@ -708,6 +709,7 @@ def load_json_data(data_name: str) -> Union[List[Any], Dict[str, Any]]:
 def _init() -> None:
     extracted_data: Dict[str, Any] = load_json_data("extracted_data.json")
     data.rom_names = extracted_data["rom_names"]
+    data.rom_checksum = extracted_data["rom_checksum"]
     data.constants = extracted_data["constants"]
     data.ram_addresses = extracted_data["misc_ram_addresses"]
     data.rom_addresses = extracted_data["misc_rom_addresses"]
