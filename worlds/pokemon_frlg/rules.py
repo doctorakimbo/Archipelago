@@ -10,7 +10,7 @@ from .logic import (can_challenge_elite_four, can_challenge_elite_four_rematch, 
                     can_leave_viridian, can_navigate_dark_caves, can_open_silph_door, can_pass_route_22_gate,
                     can_pass_route_23_guard, can_rock_smash, can_sail_island, can_sail_vermilion, can_strength,
                     can_surf, can_waterfall, has_n_pokemon, has_pokemon, post_game_gossipers, saffron_rockets_gone)
-from .options import (Dexsanity, FlashRequired, GameVersion, Goal, ItemfinderRequired, LevelScaling, SeviiIslandPasses,
+from .options import (Dexsanity, GameVersion, Goal, ItemfinderRequired, LevelScaling, SeviiIslandPasses,
                       ShuffleHiddenItems, ShuffleRunningShoes, Trainersanity)
 
 if TYPE_CHECKING:
@@ -134,57 +134,15 @@ def set_default_rules(world: "PokemonFRLGWorld"):
 
     # Mt. Moon
     if "Mt. Moon" in options.additional_dark_caves.value:
-        set_rule(world.get_entrance("Mt. Moon 1F Leave South Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon 1F Leave Center-Right Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon 1F Leave Center-Left Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon 1F Leave Northwest Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave First Tunnel Northeast Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave First Tunnel Southeast Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave Second Tunnel East Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave Second Tunnel West Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave Third Tunnel Northwest Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave Third Tunnel Southeast Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave Fourth Tunnel West Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B1F Leave Fourth Tunnel East Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B2F Leave South Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B2F Leave Northeast Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B2F Leave Center Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Mt. Moon B2F Leave Northwest Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-
-        for i in range(1, 5):
-            set_rule(world.get_location(f"Mt. Moon 1F - Land Encounter {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            set_rule(world.get_location(f"Mt. Moon B2F - Land Encounter {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            if (options.flash_required == FlashRequired.option_required and
-                    options.level_scaling != LevelScaling.option_off):
-                set_rule(world.get_location(f"Mt. Moon 1F Land Scaling {i}"),
-                         lambda state: can_navigate_dark_caves(state, player, world))
-                set_rule(world.get_location(f"Mt. Moon B2F Land Scaling {i}"),
-                         lambda state: can_navigate_dark_caves(state, player, world))
-
-        set_rule(world.get_location("Mt. Moon B1F - Land Encounter 1"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        if (options.flash_required == FlashRequired.option_required and
-                options.level_scaling != LevelScaling.option_off):
-            set_rule(world.get_location("Mt. Moon B1F Land Scaling 1"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
+        mt_moon_regions = ["Mt. Moon 1F", "Mt. Moon B1F First Tunnel", "Mt. Moon B1F Second Tunnel",
+                           "Mt. Moon B1F Third Tunnel", "Mt. Moon B1F Fourth Tunnel", "Mt. Moon B2F South",
+                           "Mt. Moon B2F Northeast", "Mt. Moon B2F", "Mt. Moon 1F Land Encounters",
+                           "Mt. Moon B1F Land Encounters", "Mt. Moon B2F Land Encounters"]
+        for region in mt_moon_regions:
+            for entrance in world.get_region(region).entrances:
+                add_rule(entrance, lambda state: can_navigate_dark_caves(state, player, world))
+            for location in world.get_region(region).locations:
+                add_rule(location, lambda state: can_navigate_dark_caves(state, player, world))
 
     # Cerulean City
     set_rule(world.get_location("Bike Shop - Bicycle Purchase"),
@@ -291,18 +249,12 @@ def set_default_rules(world: "PokemonFRLGWorld"):
 
     # Diglett's Cave
     if "Diglett's Cave" in options.additional_dark_caves.value:
-        set_rule(world.get_entrance("Diglett's Cave B1F Leave Northwest Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Diglett's Cave B1F Leave Southeast Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-
-        for i in range(1, 3):
-            set_rule(world.get_location(f"Diglett's Cave B1F - Land Encounter {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            if (options.flash_required == FlashRequired.option_required and
-                    options.level_scaling != LevelScaling.option_off):
-                set_rule(world.get_location(f"Diglett's Cave B1F Land Scaling {i}"),
-                         lambda state: can_navigate_dark_caves(state, player, world))
+        digletts_cave_regions = ["Diglett's Cave B1F", "Diglett's Cave B1F Land Encounters"]
+        for region in digletts_cave_regions:
+            for entrance in world.get_region(region).entrances:
+                add_rule(entrance, lambda state: can_navigate_dark_caves(state, player, world))
+            for location in world.get_region(region).locations:
+                add_rule(location, lambda state: can_navigate_dark_caves(state, player, world))
 
     # Route 9
     if "Modify Route 9" in options.modify_world_state.value:
@@ -339,38 +291,14 @@ def set_default_rules(world: "PokemonFRLGWorld"):
                  lambda state: False)
 
     # Rock Tunnel
-    set_rule(world.get_entrance("Rock Tunnel 1F Leave Northeast Entry (Northeast)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel 1F Leave Northeast Entry (Northwest)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel 1F Leave Northwest Entry (Northwest)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel 1F Leave Northwest Entry (East)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel 1F Leave South Entry (Northeast)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel 1F Leave South Entry (South)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel B1F Leave Southeast Entry (Southeast)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel B1F Leave Southeast Entry (Northeast)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel B1F Leave Northwest Entry (East)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-    set_rule(world.get_entrance("Rock Tunnel B1F Leave Northwest Entry (Northwest)"),
-             lambda state: can_navigate_dark_caves(state, player, world))
-
-    for i in range(1, 6):
-        set_rule(world.get_location(f"Rock Tunnel 1F - Land Encounter {i}"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_location(f"Rock Tunnel B1F - Land Encounter {i}"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        if (options.flash_required == FlashRequired.option_required and
-                options.level_scaling != LevelScaling.option_off):
-            set_rule(world.get_location(f"Rock Tunnel 1F Land Scaling {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            set_rule(world.get_location(f"Rock Tunnel B1F Land Scaling {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
+    rock_tunnel_regions = ["Rock Tunnel 1F Northeast", "Rock Tunnel 1F Northwest", "Rock Tunnel 1F South",
+                           "Rock Tunnel B1F Southeast", "Rock Tunnel B1F Northwest", "Rock Tunnel 1F Land Encounters",
+                           "Rock Tunnel B1F Land Encounters"]
+    for region in rock_tunnel_regions:
+        for entrance in world.get_region(region).entrances:
+            add_rule(entrance, lambda state: can_navigate_dark_caves(state, player, world))
+        for location in world.get_region(region).locations:
+            add_rule(location, lambda state: can_navigate_dark_caves(state, player, world))
 
     # Lavender Town
     set_rule(world.get_location("Volunteer Pokemon House - Mr. Fuji Gift"),
@@ -783,53 +711,16 @@ def set_default_rules(world: "PokemonFRLGWorld"):
                  lambda state: can_strength(state, player, world))
 
     if "Victory Road" in options.additional_dark_caves.value:
-        set_rule(world.get_entrance("Victory Road 1F Leave South Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 1F Leave North Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 2F Leave Southwest Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 2F Leave Center Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 2F Leave Northwest Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 2F Leave Southeast Entry"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 2F Leave East Entry (West)"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 2F Leave East Entry (East)"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 3F Leave North Entry (West)"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 3F Leave North Entry (East)"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 3F Leave Southeast Entry (North)"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        set_rule(world.get_entrance("Victory Road 3F Leave Southeast Entry (South)"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-
-        for i in range(1, 9):
-            set_rule(world.get_location(f"Victory Road 1F - Land Encounter {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            set_rule(world.get_location(f"Victory Road 2F - Land Encounter {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            set_rule(world.get_location(f"Victory Road 3F - Land Encounter {i}"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
-            if (options.flash_required == FlashRequired.option_required and
-                    options.level_scaling != LevelScaling.option_off):
-                set_rule(world.get_location(f"Victory Road 1F Land Scaling {i}"),
-                         lambda state: can_navigate_dark_caves(state, player, world))
-                set_rule(world.get_location(f"Victory Road 2F Land Scaling {i}"),
-                         lambda state: can_navigate_dark_caves(state, player, world))
-                set_rule(world.get_location(f"Victory Road 3F Land Scaling {i}"),
-                         lambda state: can_navigate_dark_caves(state, player, world))
-
-        set_rule(world.get_location("Victory Road 2F - Land Encounter 9"),
-                 lambda state: can_navigate_dark_caves(state, player, world))
-        if (options.flash_required == FlashRequired.option_required and
-                options.level_scaling != LevelScaling.option_off):
-            set_rule(world.get_location("Victory Road 2F Land Scaling 9"),
-                     lambda state: can_navigate_dark_caves(state, player, world))
+        victory_road_regions = ["Victory Road 1F South", "Victory Road 1F North", "Victory Road 2F Southwest",
+                                "Victory Road 2F Center", "Victory Road 2F Northwest", "Victory Road 2F Southeast",
+                                "Victory Road 2F East", "Victory Road 3F North", "Victory Road 3F Southwest",
+                                "Victory Road 3F Southeast", "Victory Road 1F Land Encounters",
+                                "Victory Road 2F Land Encounters", "Victory Road 3F Land Encounters"]
+        for region in victory_road_regions:
+            for entrance in world.get_region(region).entrances:
+                add_rule(entrance, lambda state: can_navigate_dark_caves(state, player, world))
+            for location in world.get_region(region).locations:
+                add_rule(location, lambda state: can_navigate_dark_caves(state, player, world))
 
     # Indigo Plateau
     set_rule(world.get_entrance("Pokemon League"),
