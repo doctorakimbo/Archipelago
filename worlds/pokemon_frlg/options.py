@@ -560,6 +560,25 @@ class ModifyTrainerLevels(Range):
     range_end = 100
 
 
+class ForceFullyEvolved(NamedRange):
+    """
+    Forces opponent's Pokemon to be fully evolved if they are greater than or equal to the specified level.
+
+    If set to "species" will force opponent's Pokemon to be evolved based on the level the species would normally
+    evolve. For species that don't evolve based on levels, the level they will be evolved at is determined by their BST.
+
+    Only applies when trainer parties are randomized.
+    """
+    display_name = "Force Fully Evolved"
+    default = 0
+    range_start = 1
+    range_end = 100
+    special_range_names = {
+        "off": 0,
+        "species": -1
+    }
+
+
 class RandomizeWildPokemon(Choice):
     """
     Randomizes wild Pokemon encounters (grass, caves, water, fishing)
@@ -1022,6 +1041,7 @@ class PokemonFRLGOptions(PerGameCommonOptions):
 
     level_scaling: LevelScaling
     modify_trainer_levels: ModifyTrainerLevels
+    force_fully_evolved: ForceFullyEvolved
 
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups

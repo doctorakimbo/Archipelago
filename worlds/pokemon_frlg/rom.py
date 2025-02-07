@@ -9,10 +9,10 @@ from BaseClasses import ItemClassification
 
 from worlds.Files import APPatchExtension, APProcedurePatch, APTokenMixin, APTokenTypes
 from settings import get_settings
-from .data import data, TrainerPokemonDataTypeEnum
+from .data import data, EvolutionMethodEnum, TrainerPokemonDataTypeEnum
 from .items import get_random_item, reverse_offset_item_value
 from .locations import PokemonFRLGLocation, reverse_offset_flag
-from .options import (Dexsanity, FlashRequired, ItemfinderRequired, HmCompatibility, LevelScaling,
+from .options import (Dexsanity, FlashRequired, ForceFullyEvolved, ItemfinderRequired, HmCompatibility, LevelScaling,
                       RandomizeLegendaryPokemon, RandomizeMiscPokemon, RandomizeStarters, RandomizeTrainerParties,
                       RandomizeWildPokemon, SeviiIslandPasses, ShuffleHiddenItems, SilphCoCardKey, TmTutorCompatibility,
                       ViridianCityRoadblock)
@@ -851,10 +851,40 @@ def _set_trainer_parties(world: "PokemonFRLGWorld", tokens: APTokenMixin, game_v
         for i, pokemon in enumerate(trainer.party.pokemon):
             pokemon_address = party_address + (i * pokemon_data_size)
 
-            level = round(pokemon.level + (pokemon.level * (world.options.modify_trainer_levels.value / 100)))
-            level = bound(level, 1, 100)
+            pokemon.level = round(pokemon.level + (pokemon.level * (world.options.modify_trainer_levels.value / 100)))
+            pokemon.level = bound(pokemon.level, 1, 100)
 
-            tokens.write_token(APTokenTypes.WRITE, pokemon_address + 0x02, struct.pack("<B", level))
+            if world.options.force_fully_evolved != ForceFullyEvolved.special_range_names["off"]:
+                evolve = True
+                if world.options.force_fully_evolved == ForceFullyEvolved.special_range_names["species"]:
+                    while evolve:
+                        evolve = False
+                        species_data = world.modified_species[pokemon.species_id]
+                        evolutions = species_data.evolutions.copy()
+                        world.random.shuffle(evolutions)
+                        for evolution in evolutions:
+                            if evolution.method in range(EvolutionMethodEnum.LEVEL, EvolutionMethodEnum.ITEM):
+                                if pokemon.level >= evolution.param:
+                                    pokemon.species_id = evolution.species_id
+                                    evolve = True
+                                    break
+                            else:
+                                evolution_data = world.modified_species[evolution.species_id]
+                                evolution_level = sum(evolution_data.base_stats) / 15
+                                if pokemon.level > evolution_level:
+                                    pokemon.species_id = evolution.species_id
+                                    evolve = True
+                                    break
+                elif pokemon.level >= world.options.force_fully_evolved.value:
+                    while evolve:
+                        species_data = world.modified_species[pokemon.species_id]
+                        if len(species_data.evolutions) > 0:
+                            evolution = world.random.choice(species_data.evolutions)
+                            pokemon.species_id = evolution.species_id
+                        else:
+                            evolve = False
+
+            tokens.write_token(APTokenTypes.WRITE, pokemon_address + 0x02, struct.pack("<B", pokemon.level))
             tokens.write_token(APTokenTypes.WRITE, pokemon_address + 0x04, struct.pack("<H", pokemon.species_id))
 
             if trainer.party.pokemon_data_type in {TrainerPokemonDataTypeEnum.NO_ITEM_CUSTOM_MOVES,
