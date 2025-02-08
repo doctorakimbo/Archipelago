@@ -135,7 +135,7 @@
   },
   "REGION_ROUTE503/NORTH": {
     "parent_map": "MAP_ROUTE503",
-    "name": "Route 503",
+    "name": "Route 503 North",
     "encounter_region": "Route 503",
     "has_land": true,
     "has_water": false,
@@ -166,7 +166,7 @@
   },
   "REGION_ROUTE503/SOUTH": {
     "parent_map": "MAP_ROUTE503",
-    "name": "Route 503",
+    "name": "Route 503 South",
     "encounter_region": "Route 503",
     "has_land": true,
     "has_water": false,
@@ -182,6 +182,58 @@
     "warps": {
       "MAP_ROUTE503:1/MAP_WISEMANS_CAVE_SOUTH_ENTRANCE:0": "Wiseman's Cave (South)"
     }
+  },
+  "REGION_ROUTE504/MAIN": {
+    "parent_map": "MAP_ROUTE504",
+    "name": "Route 504",
+    "encounter_region": "Route 504",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_YOUNGSTER_JOEY_REWARD",
+      "HIDDEN_ITEM_ROUTE504_HEART_SCALE",
+      "TRAINER_HIKER_TRENT_REWARD",
+      "TRAINER_BUG_CATCHER_DOUG_REWARD",
+      "TRAINER_SKIER_MASON_REWARD",
+      "TRAINER_AROMA_LADY_NIKKI_REWARD",
+      "TRAINER_POKE_FAN_COLIN_REWARD",
+      "ITEM_ROUTE504_POKE_BALL",
+      "TRAINER_POKE_FAN_LINDA_REWARD",
+      "TRAINER_SKIER_LYDIA_REWARD",
+      "HIDDEN_ITEM_ROUTE504_STARDUST"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_ROUTE503/SOUTH": "Route 504 Exit (East)",
+	  "REGION_ROUTE505/MAIN": "Route 504 Exit (Southwest)",
+    },
+    "warps": {}
+  },
+  "REGION_ROUTE505/MAIN": {
+    "parent_map": "MAP_ROUTE505",
+    "name": "Route 505",
+    "encounter_region": "Route 505",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_PKMN_BREEDER_CORY_REWARD",
+      "ITEM_ROUTE505_SOOTHE_BELL",
+      "TRAINER_TEAMMATES_SARA_IVY_REWARD",
+      "ITEM_ROUTE505_REPEL",
+      "HIDDEN_ITEM_ROUTE505_X_ATTACK",
+      "TRAINER_SKIER_LISA_REWARD",
+      "TRAINER_TEAMMATES_KATE_JOY_REWARD"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_ROUTE505/MAIN": "Route 505 Exit (North)",
+	  "REGION_SEAFIN_CITY/MAIN": "Route 505 Exit (South)",
+    },
+    "warps": {}
   },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",

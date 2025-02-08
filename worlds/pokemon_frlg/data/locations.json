@@ -77,6 +77,10 @@
     "name": "Celadon Restaurant - Coin Case Man Gift",
     "tags": ["KeyItem"]
   },
+  "NPC_GIFT_GOT_DARK_FOSSIL": {
+    "name": "Seafin Museum 1F - Postgame Gift from Scientist",
+    "tags": ["KeyItem"]
+  },
   "NPC_GIFT_GOT_DOME_FOSSIL": {
     "name": "Mt. Moon B2F - Dome Fossil",
     "tags": ["KeyItem"]
@@ -131,6 +135,10 @@
   },
   "NPC_GIFT_GOT_RAINBOW_PASS": {
     "name": "One Island Pokemon Center 1F - Celio Gift (Deliver Ruby)",
+    "tags": ["KeyItem"]
+  },
+  "NPC_GIFT_GOT_ROOT_FOSSIL": {
+    "name": "Wiseman's Cave South Entrance - Old Man Gift",
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_RUBY": {
@@ -231,10 +239,6 @@
     "name": "Lavender Town - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
-  "FLY_UNLOCK_VISITED_PEWTER_CITY": {
-    "name": "Pewter City - Unlock Fly Destination",
-    "tags": ["FlyUnlock"]
-  },
   "FLY_UNLOCK_VISITED_PORCELIA_TOWN": {
     "name": "Porcelia Town - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
@@ -245,6 +249,10 @@
   },
   "FLY_UNLOCK_VISITED_SAFFRON_CITY": {
     "name": "Saffron City - Unlock Fly Destination",
+    "tags": ["FlyUnlock"]
+  },
+  "FLY_UNLOCK_VISITED_SEAFIN_CITY": {
+    "name": "Seafin City - Unlock Fly Destination",
     "tags": ["FlyUnlock"]
   },
   "FLY_UNLOCK_VISITED_VERMILION_CITY": {
@@ -675,6 +683,18 @@
     "name": "Route 503 - Northwest Item",
     "tags": ["Overworld"]
   },
+  "ITEM_ROUTE504_POKE_BALL": {
+    "name": "Route 504 - Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_ROUTE505_REPEL": {
+    "name": "Route 505 - Northeast Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_ROUTE505_SOOTHE_BELL": {
+    "name": "Route 505 - Southwest Item",
+    "tags": ["Overworld"]
+  },
   "ITEM_ROUTE2_ETHER": {
     "name": "Route 2 - North Item",
     "tags": ["Overworld"]
@@ -995,6 +1015,22 @@
     "name": "Viridian Forest - Southeast Item",
     "tags": ["Overworld"]
   },
+  "ITEM_WISEMANS_CAVE_B1F_ESCAPE_ROPE": {
+    "name": "Wiseman's Cave B1F - West Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_WISEMANS_CAVE_B1F_SILVER_POWDER": {
+    "name": "Wiseman's Cave B1F - South Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_WISEMANS_CAVE_B2F_HARD_STONE": {
+    "name": "Wiseman's Cave B2F - North Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_WISEMANS_CAVE_B2F_REVIVE": {
+    "name": "Wiseman's Cave B2F - Southwest Item",
+    "tags": ["Overworld"]
+  },
 
   "HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS": {
     "name": "Celadon Game Corner - Northwest Hidden Item",
@@ -1238,6 +1274,18 @@
   },
   "HIDDEN_ITEM_ROUTE502_RARE_CANDY": {
     "name": "Route 502 - Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE504_HEART_SCALE": {
+    "name": "Route 504 - Hidden Item In Rock",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE504_STARDUST": {
+    "name": "Route 504 - Hidden Item In Bush",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_ROUTE505_X_ATTACK": {
+    "name": "Route 505 - Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
@@ -1736,6 +1784,10 @@
     "name": "Viridian Forest - Hidden Item Near North Entrance",
     "tags": ["Hidden"]
   },
+  "HIDDEN_ITEM_WISEMANS_CAVE_B1F_ETHER": {
+    "name": "Wiseman's Cave B1F - Hidden Item",
+    "tags": ["Hidden"]
+  },
 
   "PC_ITEM_POTION": {
     "name": "Player's PC - Starting Item",
@@ -1777,8 +1829,8 @@
     "name": "Route 10 Pokemon Center 1F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE": {
-    "name": "Route 15 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
+  "NPC_GIFT_GOT_EXP_SHARE_FROM_SEAFIN_RIVAL": {
+    "name": "Seafin City - Rival Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_FORECAST_MAP_FROM_HOLLYS_AIDE": {
@@ -1845,12 +1897,12 @@
     "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Fresh Water)",
     "tags": ["NPCGift"]
   },
-  "NPC_GIFT_GOT_TM19_FROM_ERIKA": {
-    "name": "Celadon Gym - Erika TM",
-    "tags": ["NPCGift"]
-  },
   "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL": {
     "name": "Celadon Department Store Roof - Thirsty Girl Gift (Give Soda Pop)",
+    "tags": ["NPCGift"]
+  },
+  "NPC_GIFT_GOT_TM21": {
+    "name": "Seafin Northwest House - Sadistic Woman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM26_FROM_GIOVANNI": {
@@ -1877,6 +1929,10 @@
     "name": "Vermilion Gym - Lt. Surge TM",
     "tags": ["NPCGift"]
   },
+  "NPC_GIFT_GOT_TM37_FROM_GEOFF": {
+    "name": "Seafin Gym - Geoff TM",
+    "tags": ["NPCGift"]
+  },
   "NPC_GIFT_GOT_TM38_FROM_BLAINE": {
     "name": "Cinnabar Gym - Blaine TM",
     "tags": ["NPCGift"]
@@ -1898,12 +1954,20 @@
     "tags": ["NPCGift"]
   },
 
+  "TRAINER_ACE_TRAINER_CAROLINE_REWARD": {
+    "name": "Wiseman's Cave B2F - Ace Trainer Caroline Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_ACE_TRAINER_HARRISON_REWARD": {
+    "name": "Wiseman's Cave B2F - Ace Trainer Harrison Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_AROMA_LADY_MIAH_REWARD": {
     "name": "Canyon Entrance - Aroma Lady Miah Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_AROMA_LADY_NIKKI_REWARD": {
-    "name": "Bond Bridge - Aroma Lady Nikki Reward",
+    "name": "Route 504 - Aroma Lady Nikki Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_AROMA_LADY_ROSE_REWARD": {
@@ -1912,6 +1976,10 @@
   },
   "TRAINER_AROMA_LADY_VIOLET_REWARD": {
     "name": "Bond Bridge - Aroma Lady Violet Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_BATTLE_GIRL_JOCELYN_REWARD": {
+    "name": "Wiseman's Cave B2F - Battle Girl Jocelyn Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BEAUTY_BRIDGET_REWARD": {
@@ -2107,7 +2175,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BLACK_BELT_HIDEKI_REWARD": {
-    "name": "Saffron Dojo - Black Belt Hideki Reward",
+    "name": "Wiseman's Cave B2F - Black Belt Hideki Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BLACK_BELT_HITOSHI_REWARD": {
@@ -2171,7 +2239,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BUG_CATCHER_DOUG_REWARD": {
-    "name": "Viridian Forest - Bug Catcher Doug Reward",
+    "name": "Route 504 - Bug Catcher Doug Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BUG_CATCHER_ELIJAH_REWARD": {
@@ -2251,7 +2319,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_DREW_REWARD": {
-    "name": "Route 9 - Camper Drew Reward",
+    "name": "Seafin Gym - Camper Drew Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_ETHAN_REWARD": {
@@ -2362,10 +2430,6 @@
     "name": "Victory Road 3F - Cooltrainer Alexa Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_COOLTRAINER_CAROLINE_REWARD": {
-    "name": "Victory Road 3F - Cooltrainer Caroline Reward",
-    "tags": ["Trainer"]
-  },
   "TRAINER_COOLTRAINER_COLBY_REWARD": {
     "name": "Victory Road 3F - Cooltrainer Colby Reward",
     "tags": ["Trainer"]
@@ -2418,10 +2482,6 @@
     "name": "Sevault Canyon - Crush Girl Cyndy Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_CRUSH_GIRL_JOCELYN_REWARD": {
-    "name": "Mt. Ember Exterior - Crush Girl Jocelyn Reward",
-    "tags": ["Trainer"]
-  },
   "TRAINER_CRUSH_GIRL_SHARON_REWARD": {
     "name": "Kindle Road - Crush Girl Sharon Reward",
     "tags": ["Trainer"]
@@ -2434,8 +2494,8 @@
     "name": "Kindle Road - Crush Kin Mik & Kia Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_CRUSH_KIN_RON_MYA_REWARD": {
-    "name": "Route 15 - Crush Kin Ron & Mya Reward",
+  "TRAINER_CRUSH_KIN_RON_MIA_REWARD": {
+    "name": "Wiseman's Cave B2F - Crush Kin Ron & Mia Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CUE_BALL_CAMRON_REWARD": {
@@ -2472,6 +2532,26 @@
   },
   "TRAINER_CUE_BALL_ZEEK_REWARD": {
     "name": "Route 17 - Cue Ball Zeek Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_DH_GRUNT_60_REWARD": {
+    "name": "Wiseman's Cave B1F - Northeast DH Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_DH_GRUNT_61_REWARD": {
+    "name": "Wiseman's Cave B1F - Southeast DH Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_DH_GRUNT_62_REWARD": {
+    "name": "Wiseman's Cave B1F - South DH Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_DH_GRUNT_68_REWARD": {
+    "name": "Wiseman's Cave B1F - Cutscene DH Grunt Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_DH_GRUNT_77_REWARD": {
+    "name": "Wiseman's Cave B1F - Between Ledges DH Grunt Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_ELITE_FOUR_AGATHA_REWARD": {
@@ -2516,6 +2596,10 @@
   },
   "TRAINER_ENGINEER_BRAXTON_REWARD": {
     "name": "Route 11 - Engineer Braxton Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_EXPERT_AURON_REWARD": {
+    "name": "Wiseman's Cave B2F - Expert Auron Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_FISHERMAN_ANDREW_REWARD": {
@@ -2622,6 +2706,14 @@
     "name": "Junopsis Gym - Gym Leader Annette Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_GYM_LEADER_AVERY_4_REWARD": {
+    "name": "Wiseman's Cave B2F - Gym Leader Avery Rematch Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GYM_LEADER_GEOFF_REWARD": {
+    "name": "Seafin Gym - Gym Leader Geoff Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_HIKER_ALAN_REWARD": {
     "name": "Route 9 - Hiker Alan Reward",
     "tags": ["Trainer"]
@@ -2643,7 +2735,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_DUDLEY_REWARD": {
-    "name": "Rock Tunnel B1F - Hiker Dudley Reward",
+    "name": "Seafin Gym - Hiker Dudley Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_EARL_REWARD": {
@@ -2682,12 +2774,16 @@
     "name": "Rock Tunnel 1F - Hiker Oliver Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_HIKER_QUINCY_REWARD": {
+    "name": "Wiseman's Cave B2F - Hiker Quincy Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_HIKER_TRENT_REWARD": {
-    "name": "Route 10 - Hiker Trent Reward",
+    "name": "Route 504 - Hiker Trent Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_WAYNE_REWARD": {
-    "name": "Route 25 - Hiker Wayne Reward",
+    "name": "Wiseman's Cave B2F - Hiker Wayne Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_JUGGLER_DALTON_REWARD": {
@@ -2708,10 +2804,6 @@
   },
   "TRAINER_JUGGLER_KIRK_REWARD": {
     "name": "Fuchsia Gym - Juggler Kirk Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_JUGGLER_MASON_REWARD": {
-    "name": "Canyon Entrance - Juggler Mason Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_JUGGLER_NATE_REWARD": {
@@ -2786,10 +2878,6 @@
     "name": "Celadon Gym - Lass Kay Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_LASS_LISA_REWARD": {
-    "name": "Celadon Gym - Lass Lisa Reward",
-    "tags": ["Trainer"]
-  },
   "TRAINER_LASS_MEGAN_REWARD": {
     "name": "Route 8 - Lass Megan Reward",
     "tags": ["Trainer"]
@@ -2824,10 +2912,6 @@
   },
   "TRAINER_LEADER_BLAINE_REWARD": {
     "name": "Cinnabar Gym - Leader Blaine Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_LEADER_ERIKA_REWARD": {
-    "name": "Celadon Gym - Leader Erika Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LEADER_GIOVANNI_REWARD": {
@@ -2982,12 +3066,20 @@
     "name": "Pattern Bush - Pokemon Breeder Bethany Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_PKMN_BREEDER_CORY_REWARD": {
+    "name": "Route 505 - Pokemon Breeder Cory Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_PKMN_BREEDER_MILES_REWARD": {
+    "name": "Wiseman's Cave B2F - Pokemon Breeder Miles Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_PKMN_RANGER_BETH_REWARD": {
     "name": "Mt. Ember Exterior - Pokemon Ranger Beth Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_PKMN_RANGER_JACKSON_REWARD": {
-    "name": "Sevault Canyon - Pokemon Ranger Jackson Reward",
+    "name": "Wiseman's Cave B2F - Pokemon Ranger Jackson Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_PKMN_RANGER_KATELYN_REWARD": {
@@ -3004,6 +3096,18 @@
   },
   "TRAINER_PKMN_RANGER_NICOLAS_REWARD": {
     "name": "Canyon Entrance - Pokemon Ranger Nicolas Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKE_FAN_COLIN_REWARD": {
+    "name": "Route 504 - Poke Fan Colin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKE_FAN_LINDA_REWARD": {
+    "name": "Route 504 - Poke Fan Linda Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKE_MANIAC_MARK_REWARD": {
+    "name": "Wiseman's Cave B2F - Poke Maniac Mark Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_POKEMANIAC_ASHTON_REWARD": {
@@ -3024,10 +3128,6 @@
   },
   "TRAINER_POKEMANIAC_HERMAN_REWARD": {
     "name": "Route 10 - PokeManiac Herman Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_POKEMANIAC_MARK_REWARD": {
-    "name": "Route 10 - PokeManiac Mark Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_POKEMANIAC_STEVE_REWARD": {
@@ -3092,6 +3192,10 @@
   },
   "TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR_REWARD": {
     "name": "Route 22 - Late Rival Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_RIVAL_SEAFIN_NIMBLEAF_REWARD": {
+    "name": "Seafin City - Rival Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD": {
@@ -3264,6 +3368,18 @@
   },
   "TRAINER_SIS_AND_BRO_LIL_IAN_REWARD": {
     "name": "Route 21 - Sis and Bro Lil & Ian Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_LISA_REWARD": {
+    "name": "Route 505 - Skier Lisa Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_LYDIA_REWARD": {
+    "name": "Route 504 - Skier Lydia Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_MASON_REWARD": {
+    "name": "Route 504 - Skier Mason Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_AIDAN_REWARD": {
@@ -3666,6 +3782,14 @@
     "name": "Five Isle Meadow - Center Team Rocket Grunt Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_TEAMMATES_KATE_JOY_REWARD": {
+    "name": "Route 505 - Teammates Kate & Joy Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_TEAMMATES_SARA_IVY_REWARD": {
+    "name": "Route 505 - Teammates Sara & Ivy Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_TUBER_ALEXIS_REWARD": {
     "name": "Bond Bridge - Tuber Alexis Reward",
     "tags": ["Trainer"]
@@ -3731,7 +3855,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_JOEY_REWARD": {
-    "name": "Route 25 - Youngster Joey Reward",
+    "name": "Route 504 - Youngster Joey Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_JOHNSON_REWARD": {
@@ -3751,7 +3875,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_TYLER_REWARD": {
-    "name": "S.S. Anne 1F Room 2 - Youngster Tyler Reward",
+    "name": "Seafin Gym - Youngster Tyler Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_VINCENT_REWARD": {

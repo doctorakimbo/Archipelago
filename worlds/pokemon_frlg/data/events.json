@@ -49,6 +49,46 @@
     "item": "Defeat Champion",
     "tags": ["Event"]
   },
+  "EVENT_DEFEAT_ANNETTE_REMATCH": {
+    "name": "Porcelia Forest West - Gym Leader Annette Rematch",
+    "item": "Defeat Annette Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_GEOFF_REMATCH": {
+    "name": "Spirit Mansion B1F - Gym Leader Geoff Rematch",
+    "item": "Defeat Geoff Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_BROOKE_REMATCH": {
+    "name": "Undersea Tunnel B3F - Gym Leader Brooke Rematch",
+    "item": "Defeat Brooke Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_AVERY_REMATCH": {
+    "name": "Wiseman's Cave B2F - Gym Leader Avery Rematch",
+    "item": "Defeat Avery Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_CHIE_RITO_REMATCH": {
+    "name": "Tower of Darkness B2F - Gym Leaders Chie & Rito Rematch",
+    "item": "Defeat Chie & Rito Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_FENTON_REMATCH": {
+    "name": "Mt. Snowfall B2F - Gym Leader Fenton Rematch",
+    "item": "Defeat Fenton Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_TARA_REMATCH": {
+    "name": "DH Hideout B6F - Gym Leader Tara Rematch",
+    "item": "Defeat Tara Rematch",
+    "tags": ["Event"]
+  },
+  "EVENT_DEFEAT_FRANCIS": {
+    "name": "Pokemon Castle 8F - Gym Leader Francis Battle",
+    "item": "Defeat Francis",
+    "tags": ["Event"]
+  },
   "EVENT_DEFEAT_CHAMPION_REMATCH": {
     "name": "Champion's Room - Champion Rematch Battle",
     "item": "Defeat Champion (Rematch)",
@@ -58,6 +98,16 @@
   "EVENT_ACTIVATE_WINSTRATES": {
     "name": "Junopsis City - Talk to Girl Blocking Gym",
     "item": "Talk to Girl Blocking Junopsis Gym",
+    "tags": ["Event"]
+  },
+  "EVENT_WISEMAN_LOOP": {
+    "name": "Wiseman's Cave B1F - Jump Down Center Ledges",
+    "item": "Go Through Wiseman's Cave Teleport Loop",
+    "tags": ["Event"]
+  },
+  "EVENT_DELIVER_LETTER": {
+    "name": "Seafin Museum 2F - Give Letter to Scientist",
+    "item": "Give Letter to Scientist",
     "tags": ["Event"]
   },
   "EVENT_DELIVER_OAKS_PARCEL": {

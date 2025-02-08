@@ -656,15 +656,17 @@
 "FLAG_DEFEATED_AGATHA":1210,
 "FLAG_DEFEATED_ANNETTE":1200,
 "FLAG_DEFEATED_ARTICUNO":775,
+"FLAG_DEFEATED_AVERY_REMATCH":4559,
 "FLAG_DEFEATED_BLAINE":1206,
 "FLAG_DEFEATED_BRUNO":1209,
 "FLAG_DEFEATED_CELEBI":784,
 "FLAG_DEFEATED_CHAMP":1212,
 "FLAG_DEFEATED_CHAMP_REMATCH":1213,
 "FLAG_DEFEATED_DEOXYS":779,
+"FLAG_DEFEATED_DH_IN_WISEMANS_CAVE":4368,
 "FLAG_DEFEATED_ELITE_FOUR":32,
 "FLAG_DEFEATED_ENTEI":780,
-"FLAG_DEFEATED_ERIKA":1203,
+"FLAG_DEFEATED_GEOFF":1203,
 "FLAG_DEFEATED_HO_OH":778,
 "FLAG_DEFEATED_KOGA":1204,
 "FLAG_DEFEATED_LANCE":1211,
@@ -681,11 +683,13 @@
 "FLAG_DEFEATED_ROCKETS_IN_WAREHOUSE":719,
 "FLAG_DEFEATED_ROUTE22_EARLY_RIVAL":631,
 "FLAG_DEFEATED_SABRINA":1205,
+"FLAG_DEFEATED_SEAFIN_CITY_RIVAL":4381,
 "FLAG_DEFEATED_SUICUNE":782,
 "FLAG_DEFEATED_VINCENT_REMATCH":4551,
 "FLAG_DEFEATED_VIOLET_REMATCH":4552,
 "FLAG_DEFEATED_VIVIAN_REMATCH":4550,
 "FLAG_DEFEATED_ZAPDOS":776,
+"FLAG_DELIVERED_LETTER":4382,
 "FLAG_DELIVERED_OAKS_PARCEL":610,
 "FLAG_DEOXYS_IS_RECOVERING":792,
 "FLAG_DID_CH_DING_TRADE":589,
@@ -716,6 +720,7 @@
 "FLAG_GOT_CHARMANDER":4554,
 "FLAG_GOT_BLUE_TEA":696,
 "FLAG_GOT_COIN_CASE":579,
+"FLAG_GOT_DARK_FOSSIL":4547,
 "FLAG_GOT_DEEP_SEA_SCALE":806,
 "FLAG_GOT_DEEP_SEA_TOOTH":807,
 "FLAG_GOT_DOME_FOSSIL":626,
@@ -763,6 +768,7 @@
 "FLAG_GOT_PURPLE_TEA":698,
 "FLAG_GOT_RAINBOW_PASS":609,
 "FLAG_GOT_RED_TEA":697,
+"FLAG_GOT_ROOT_FOSSIL":4371,
 "FLAG_GOT_RUBY":727,
 "FLAG_GOT_RUNNING_SHOES":804,
 "FLAG_GOT_SAFARI_PASS":655,
@@ -780,14 +786,15 @@
 "FLAG_GOT_TM06_FROM_KOGA":601,
 "FLAG_GOT_TM15_FROM_ANNETTE":596,
 "FLAG_GOT_TM16_FROM_THIRSTY_GIRL":662,
-"FLAG_GOT_TM19_FROM_ERIKA":659,
 "FLAG_GOT_TM20_FROM_THIRSTY_GIRL":661,
+"FLAG_GOT_TM21":4379,
 "FLAG_GOT_TM26_FROM_GIOVANNI":664,
 "FLAG_GOT_TM27":603,
 "FLAG_GOT_TM28_FROM_ROCKET":575,
 "FLAG_GOT_TM29_FROM_MR_PSYCHIC":581,
 "FLAG_GOT_TM33_FROM_THIRSTY_GIRL":660,
 "FLAG_GOT_TM34_FROM_SURGE":561,
+"FLAG_GOT_TM37_FROM_GEOFF":659,
 "FLAG_GOT_TM38_FROM_BLAINE":590,
 "FLAG_GOT_TM42_AT_MEMORIAL_PILLAR":566,
 "FLAG_GOT_TOGEPI_EGG":724,
@@ -834,8 +841,6 @@
 "FLAG_HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM":1084,
 "FLAG_HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2":1085,
 "FLAG_HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3":1086,
-"FLAG_HIDDEN_ITEM_MT_MOON_B2F_ETHER":1003,
-"FLAG_HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE":1002,
 "FLAG_HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH":1160,
 "FLAG_HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL":1110,
 "FLAG_HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL":1105,
@@ -858,7 +863,6 @@
 "FLAG_HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NEST_BALL":1013,
 "FLAG_HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL":1134,
 "FLAG_HIDDEN_ITEM_ROUTE10_CHERI_BERRY":1126,
-"FLAG_HIDDEN_ITEM_ROUTE10_MAX_ETHER":1010,
 "FLAG_HIDDEN_ITEM_ROUTE10_NANAB_BERRY":1151,
 "FLAG_HIDDEN_ITEM_ROUTE10_PERSIM_BERRY":1125,
 "FLAG_HIDDEN_ITEM_ROUTE10_SUPER_POTION":1009,
@@ -887,7 +891,6 @@
 "FLAG_HIDDEN_ITEM_ROUTE23_ULTRA_BALL":1035,
 "FLAG_HIDDEN_ITEM_ROUTE24_PECHA_BERRY":1115,
 "FLAG_HIDDEN_ITEM_ROUTE25_BLUK_BERRY":1117,
-"FLAG_HIDDEN_ITEM_ROUTE25_ELIXIR":1004,
 "FLAG_HIDDEN_ITEM_ROUTE25_ETHER":1005,
 "FLAG_HIDDEN_ITEM_ROUTE25_ORAN_BERRY":1116,
 "FLAG_HIDDEN_ITEM_ROUTE3_ORAN_BERRY":1113,
@@ -896,6 +899,9 @@
 "FLAG_HIDDEN_ITEM_ROUTE4_RAZZ_BERRY":1156,
 "FLAG_HIDDEN_ITEM_ROUTE501_POTION":1000,
 "FLAG_HIDDEN_ITEM_ROUTE502_RARE_CANDY":1001,
+"FLAG_HIDDEN_ITEM_ROUTE504_HEART_SCALE":1002,
+"FLAG_HIDDEN_ITEM_ROUTE504_STARDUST":1003,
+"FLAG_HIDDEN_ITEM_ROUTE505_X_ATTACK":1004,
 "FLAG_HIDDEN_ITEM_ROUTE6_RARE_CANDY":1119,
 "FLAG_HIDDEN_ITEM_ROUTE6_SITRUS_BERRY":1118,
 "FLAG_HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY":1152,
@@ -988,6 +994,8 @@
 "FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE":1038,
 "FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL":1037,
 "FLAG_HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE":1189,
+"FLAG_HIDDEN_ITEM_WISEMANS_CAVE_B1F_ETHER":1010,
+"FLAG_HIDE_AND_SEEK_IN_PROGRESS":4388,
 "FLAG_HIDE_ARTICUNO":130,
 "FLAG_HIDE_BILL_CLEFAIRY":50,
 "FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE":51,
@@ -1011,7 +1019,7 @@
 "FLAG_HIDE_DOME_FOSSIL":47,
 "FLAG_HIDE_DOTTED_HOLE_SCIENTIST":144,
 "FLAG_HIDE_EEVEE_BALL":87,
-"FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS":158,
+"FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS":158, # cleared after defeating geoff
 "FLAG_HIDE_FAME_CHECKER_KOGA_JOURNAL":159,
 "FLAG_HIDE_FAME_CHECKER_LT_SURGE_JOURNAL":160,
 "FLAG_HIDE_FIVE_ISLAND_ROCKETS":136,
@@ -1072,6 +1080,12 @@
 "FLAG_HIDE_SAFFRON_ROCKETS":62,
 "FLAG_HIDE_SAPPHIRE":143,
 "FLAG_HIDE_SCANNER":112,
+"FLAG_HIDE_SEAFIN_GYM_DIGLETT_1":4372,
+"FLAG_HIDE_SEAFIN_GYM_DIGLETT_2":4373,
+"FLAG_HIDE_SEAFIN_GYM_DIGLETT_3":4374,
+"FLAG_HIDE_SEAFIN_GYM_DIGLETT_4":4375,
+"FLAG_HIDE_SEAFIN_GYM_DIGLETT_5":4376,
+"FLAG_HIDE_SEAFIN_GYM_DIGLETT_6":4377,
 "FLAG_HIDE_SEAFOAM_1F_BOULDER_1":64,
 "FLAG_HIDE_SEAFOAM_1F_BOULDER_2":65,
 "FLAG_HIDE_SEAFOAM_B1F_BOULDER_1":66,
@@ -1120,7 +1134,7 @@
 "FLAG_HIDE_VICTORY_ROAD_3F_BOULDER":89,
 "FLAG_HIDE_VIRIDIAN_GIOVANNI":85,
 "FLAG_HIDE_ZAPDOS":93,
-"FLAG_HINT_BICYCLE_SHOP":979,
+"FLAG_HINT_BOARD_SHOP":979,
 "FLAG_HINT_ROUTE_10_OAKS_AIDE":975,
 "FLAG_HINT_ROUTE_11_OAKS_AIDE":976,
 "FLAG_HINT_ROUTE_15_OAKS_AIDE":978,
@@ -1138,8 +1152,6 @@
 "FLAG_ITEM_CELADON_CITY_ETHER":465,
 "FLAG_ITEM_CELADON_CITY_HOUSE_HIDEOUT_KEY":422,
 "FLAG_ITEM_CERULEAN_CAVE_1F_FULL_RESTORE":435,
-"FLAG_ITEM_CERULEAN_CAVE_1F_MAX_ELIXIR":433,
-"FLAG_ITEM_CERULEAN_CAVE_1F_NUGGET":434,
 "FLAG_ITEM_CERULEAN_CAVE_2F_FULL_RESTORE":436,
 "FLAG_ITEM_CERULEAN_CAVE_2F_PP_UP":437,
 "FLAG_ITEM_CERULEAN_CAVE_2F_ULTRA_BALL":438,
@@ -1169,10 +1181,8 @@
 "FLAG_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL":493,
 "FLAG_ITEM_MT_MOON_1F_ESCAPE_ROPE":349,
 "FLAG_ITEM_MT_MOON_1F_MOON_STONE":350,
-"FLAG_ITEM_MT_MOON_1F_PARALYZE_HEAL":345,
 "FLAG_ITEM_MT_MOON_1F_POTION":347,
 "FLAG_ITEM_MT_MOON_1F_RARE_CANDY":348,
-"FLAG_ITEM_MT_MOON_1F_TM09":346,
 "FLAG_ITEM_MT_MOON_B2F_ANTIDOTE":448,
 "FLAG_ITEM_MT_MOON_B2F_REVIVE":447,
 "FLAG_ITEM_MT_MOON_B2F_STAR_PIECE":351,
@@ -1206,11 +1216,9 @@
 "FLAG_ITEM_POWER_PLANT_TM17":411,
 "FLAG_ITEM_POWER_PLANT_TM25":412,
 "FLAG_ITEM_ROCKET_HIDEOUT_B1F_ESCAPE_ROPE":364,
-"FLAG_ITEM_ROCKET_HIDEOUT_B1F_HYPER_POTION":365,
 "FLAG_ITEM_ROCKET_HIDEOUT_B2F_MOON_STONE":367,
 "FLAG_ITEM_ROCKET_HIDEOUT_B2F_SUPER_POTION":369,
 "FLAG_ITEM_ROCKET_HIDEOUT_B2F_TM12":368,
-"FLAG_ITEM_ROCKET_HIDEOUT_B2F_X_SPEED":366,
 "FLAG_ITEM_ROCKET_HIDEOUT_B3F_BLACK_GLASSES":466,
 "FLAG_ITEM_ROCKET_HIDEOUT_B3F_RARE_CANDY":370,
 "FLAG_ITEM_ROCKET_HIDEOUT_B3F_TM21":371,
@@ -1235,6 +1243,9 @@
 "FLAG_ITEM_ROUTE502_POKE_BALL":341,
 "FLAG_ITEM_ROUTE503_TM03":342,
 "FLAG_ITEM_ROUTE503_X_ACCURACY":343,
+"FLAG_ITEM_ROUTE504_POKE_BALL":344,
+"FLAG_ITEM_ROUTE505_REPEL":346,
+"FLAG_ITEM_ROUTE505_SOOTHE_BELL":345,
 "FLAG_ITEM_ROUTE9_BURN_HEAL":450,
 "FLAG_ITEM_ROUTE9_TM40":363,
 "FLAG_ITEM_SAFARI_ZONE_CENTER_NUGGET":385,
@@ -1310,15 +1321,18 @@
 "FLAG_ITEM_VICTORY_ROAD_2F_TM37":430,
 "FLAG_ITEM_VICTORY_ROAD_3F_MAX_REVIVE":431,
 "FLAG_ITEM_VICTORY_ROAD_3F_TM50":432,
-"FLAG_ITEM_VIRIDIAN_FOREST_POTION":344,
 "FLAG_ITEM_VIRIDIAN_FOREST_POTION_2":446,
+"FLAG_ITEM_WISEMANS_CAVE_B1F_ESCAPE_ROPE":366,
+"FLAG_ITEM_WISEMANS_CAVE_B1F_SILVER_POWDER":365,
+"FLAG_ITEM_WISEMANS_CAVE_B2F_HARD_STONE":433,
+"FLAG_ITEM_WISEMANS_CAVE_B2F_REVIVE":434,
 "FLAG_LATIAS_LATIOS_IS_RECOVERING":798,
 "FLAG_LEARNED_ALL_MOVES_AT_CAPE_BRINK":731,
 "FLAG_LEARNED_GOLDEEN_NEED_LOG":721,
 "FLAG_LEARNED_YES_NAH_CHANSEY":722,
 "FLAG_LUGIA_IS_RECOVERING":790,
 "FLAG_MET_STICKER_MAN":656,
-"FLAG_MET_TURNER_ROUTE503":4366,
+"FLAG_MET_TURNER_ROUTE503":4366, # also set after dh battle in wiseman's cave?
 "FLAG_MEWTWO_IS_RECOVERING":786,
 "FLAG_MEW_IS_RECOVERING":796,
 "FLAG_MOLTRES_IS_RECOVERING":787,
@@ -1364,6 +1378,7 @@
 "FLAG_RECEIVED_MYSTIC_TICKET":680,
 "FLAG_RECEIVED_OLD_SEA_MAP":681,
 "FLAG_RECOVERED_SAPPHIRE":726,
+"FLAG_REMOVED_DUGTRIO":4380,
 "FLAG_RESCUED_LOSTELLE":675,
 "FLAG_RESCUED_MR_FUJI":572,
 "FLAG_RESCUED_SELPHY":739,
@@ -1372,6 +1387,8 @@
 "FLAG_REVIVED_HELIX":742,
 "FLAG_ROUTE_12_SNORLAX_IS_RECOVERING":801,
 "FLAG_ROUTE_16_SNORLAX_IS_RECOVERING":802,
+"FLAG_SEAFIN_GYM_PUZZLE_STARTED":4378,
+"FLAG_SEEN_ROUTE504_CUTSCENE":4370,
 "FLAG_SEVII_DETOUR_FINISHED":673,
 "FLAG_SHOWED_LETTER":654,
 "FLAG_SHOWED_TOGEPI_OR_TOGETIC":735,
@@ -1434,6 +1451,7 @@
 "FLAG_TALKED_ABOUT_SAPPHIRE":676,
 "FLAG_TALKED_TO_LORELEI_AFTER_WAREHOUSE":718,
 "FLAG_TALKED_TO_OAKS_AIDE_IN_VERMILION":749,
+"FLAG_TALKED_TO_RYDELS_SEAFIN_CITY_FRIEND":4387,
 "FLAG_TALKED_TO_TEA_LADY_AFTER_HOF":748,
 "FLAG_TEMP_1":1,
 "FLAG_TEMP_10":16,
@@ -1494,7 +1512,8 @@
 "FLAG_???":4633, # set during hollys lab segment of final turner intro scene
 "FLAG_???":4634, # set during hollys lab segment of final turner intro scene
 "FLAG_???":4635, # set during hollys lab segment of final turner intro scene
-"FLAG_???":4352, # cleared->set->cleared during hollys lab segment of postgame beginning scene; set after mosmero scene after beating annette; cleared after beating annette
+"FLAG_???":4639, # set after dh battle in wisemans cave
+"FLAG_???":4352, # cleared->set->cleared during hollys lab segment of postgame beginning scene; set after mosmero scene after beating annette; cleared after beating annette; cleared when starting dugtrio ranger cutscene and set at end of it
 "FLAG_???":4437, # cleared during hollys lab segment of postgame beginning scene
 "FLAG_UNLOCKED_ROCKET_WAREHOUSE":720,
 "FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE":733,
@@ -1519,13 +1538,13 @@
 "FLAG_VISITED_TWO_ISLAND":1235,
 "FLAG_VISITED_VERMILION_CITY":1228,
 "FLAG_VISITED_VIRIDIAN_CITY":1224,
+"FLAG_WISEMAN_LOOP":4367,
 "FLAG_WOKE_UP_ROUTE_12_SNORLAX":595,
 "FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR":2242,
 "FLAG_WORLD_MAP_CELADON_CITY":2198,
 "FLAG_WORLD_MAP_CERULEAN_CAVE_1F":2227,
 "FLAG_WORLD_MAP_CERULEAN_CITY":2195,
 "FLAG_WORLD_MAP_CINNABAR_ISLAND":2200,
-"FLAG_WORLD_MAP_DIGLETTS_CAVE_B1F":2217,
 "FLAG_WORLD_MAP_FIVE_ISLAND":2207,
 "FLAG_WORLD_MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE":2236,
 "FLAG_WORLD_MAP_FIVE_ISLAND_ROCKET_WAREHOUSE":2233,
@@ -1539,7 +1558,6 @@
 "FLAG_WORLD_MAP_MT_MOON_1F":2213,
 "FLAG_WORLD_MAP_NAVEL_ROCK_EXTERIOR":2229,
 "FLAG_WORLD_MAP_ONE_ISLAND":2203,
-"FLAG_WORLD_MAP_PEWTER_CITY":2194,
 "FLAG_WORLD_MAP_POKEMON_LEAGUE_LORELEIS_ROOM":2223,
 "FLAG_WORLD_MAP_POKEMON_MANSION_1F":2221,
 "FLAG_WORLD_MAP_POKEMON_TOWER_1F":2226,
@@ -1551,6 +1569,7 @@
 "FLAG_WORLD_MAP_ROUTE4_POKEMON_CENTER_1F":2210,
 "FLAG_WORLD_MAP_SAFARI_ZONE_CENTER":2222,
 "FLAG_WORLD_MAP_SAFFRON_CITY":2202,
+"FLAG_WORLD_MAP_SEAFIN_CITY":2194,
 "FLAG_WORLD_MAP_SEAFOAM_ISLANDS_1F":2225,
 "FLAG_WORLD_MAP_SEVEN_ISLAND":2208,
 "FLAG_WORLD_MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY":2241,
@@ -1571,6 +1590,7 @@
 "FLAG_WORLD_MAP_VERMILION_CITY":2197,
 "FLAG_WORLD_MAP_VICTORY_ROAD_1F":2218,
 "FLAG_WORLD_MAP_VIRIDIAN_FOREST":2212,
+"FLAG_WORLD_MAP_WISEMANS_CAVE_NORTH_ENTRANCE":2217,
 "FLAG_ZAPDOS_IS_RECOVERING":789,
 "FLY_UNLOCK_NAME_LENGTH":15,
 "GOOD_ROD":1,
@@ -4533,7 +4553,7 @@
 "default_item":228,
 "flag":1216},
 "BADGE_4":
-{"address":1506089,
+{"address":1506089, # invalid addr and flag, wait for rom
 "default_item":229,
 "flag":1217},
 "BADGE_5":
@@ -4580,10 +4600,6 @@
 {"address":1479540,
 "default_item":238,
 "flag":1227},
-"FLY_UNLOCK_VISITED_PEWTER_CITY":
-{"address":1476751,
-"default_item":236,
-"flag":1225},
 "FLY_UNLOCK_VISITED_PORCELIA_TOWN":
 {"address":1474969, # NOT VALID, WAIT FOR ROM
 "default_item":234,
@@ -4596,6 +4612,10 @@
 {"address":1482226,
 "default_item":244,
 "flag":1233},
+"FLY_UNLOCK_VISITED_SEAFIN_CITY":
+{"address":1476751, # NOT VALID, WAIT FOR ROM
+"default_item":236,
+"flag":1225},
 "FLY_UNLOCK_VISITED_VERMILION_CITY":
 {"address":1479741,
 "default_item":239,
@@ -4748,14 +4768,6 @@
 {"address":3869984,
 "default_item":103,
 "flag":1086},
-"HIDDEN_ITEM_MT_MOON_B2F_ETHER":
-{"address":3870536,
-"default_item":34,
-"flag":1003},
-"HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE":
-{"address":3870524,
-"default_item":94,
-"flag":1002},
 "HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH":
 {"address":3896056,
 "default_item":45,
@@ -4844,10 +4856,6 @@
 {"address":3906184,
 "default_item":133,
 "flag":1126},
-"HIDDEN_ITEM_ROUTE10_MAX_ETHER":
-{"address":3906172,
-"default_item":35,
-"flag":1010},
 "HIDDEN_ITEM_ROUTE10_NANAB_BERRY":
 {"address":3906208,
 "default_item":150,
@@ -4960,10 +4968,6 @@
 {"address":3911352,
 "default_item":149,
 "flag":1117},
-"HIDDEN_ITEM_ROUTE25_ELIXIR":
-{"address":3911316,
-"default_item":36,
-"flag":1004},
 "HIDDEN_ITEM_ROUTE25_ETHER":
 {"address":3911328,
 "default_item":34,
@@ -4996,6 +5000,18 @@
 {"address":11143548,
 "default_item":68,
 "flag":1001},
+"HIDDEN_ITEM_ROUTE504_HEART_SCALE":
+{"address":11158212,
+"default_item":111,
+"flag":1002},
+"HIDDEN_ITEM_ROUTE504_STARDUST":
+{"address":11158236,
+"default_item":108,
+"flag":1003},
+"HIDDEN_ITEM_ROUTE505_X_ATTACK":
+{"address":11162460,
+"default_item":75,
+"flag":1004},
 "HIDDEN_ITEM_ROUTE6_RARE_CANDY":
 {"address":3904664,
 "default_item":68,
@@ -5336,6 +5352,10 @@
 {"address":3916856,
 "default_item":181,
 "flag":1189},
+"HIDDEN_ITEM_WISEMANS_CAVE_B1F_ETHER":
+{"address":11169908,
+"default_item":34,
+"flag":1010},
 "ITEM_CELADON_CITY_ETHER":
 {"address":1833608,
 "default_item":34,
@@ -5348,14 +5368,6 @@
 {"address":1833244,
 "default_item":19,
 "flag":435},
-"ITEM_CERULEAN_CAVE_1F_MAX_ELIXIR":
-{"address":1833218,
-"default_item":37,
-"flag":433},
-"ITEM_CERULEAN_CAVE_1F_NUGGET":
-{"address":1833231,
-"default_item":110,
-"flag":434},
 "ITEM_CERULEAN_CAVE_2F_FULL_RESTORE":
 {"address":1833257,
 "default_item":19,
@@ -5472,10 +5484,6 @@
 {"address":1832152,
 "default_item":94,
 "flag":350},
-"ITEM_MT_MOON_1F_PARALYZE_HEAL":
-{"address":1832087,
-"default_item":18,
-"flag":345},
 "ITEM_MT_MOON_1F_POTION":
 {"address":1832113,
 "default_item":13,
@@ -5484,10 +5492,6 @@
 {"address":1832126,
 "default_item":68,
 "flag":348},
-"ITEM_MT_MOON_1F_TM09":
-{"address":1832100,
-"default_item":297,
-"flag":346},
 "ITEM_MT_MOON_B2F_ANTIDOTE":
 {"address":1833387,
 "default_item":14,
@@ -5620,10 +5624,6 @@
 {"address":1832334,
 "default_item":85,
 "flag":364},
-"ITEM_ROCKET_HIDEOUT_B1F_HYPER_POTION":
-{"address":1832347,
-"default_item":21,
-"flag":365},
 "ITEM_ROCKET_HIDEOUT_B2F_MOON_STONE":
 {"address":1832373,
 "default_item":94,
@@ -5636,10 +5636,6 @@
 {"address":1832386,
 "default_item":300,
 "flag":368},
-"ITEM_ROCKET_HIDEOUT_B2F_X_SPEED":
-{"address":1832360,
-"default_item":77,
-"flag":366},
 "ITEM_ROCKET_HIDEOUT_B3F_BLACK_GLASSES":
 {"address":1833621,
 "default_item":206,
@@ -5736,6 +5732,18 @@
 {"address":11571634,
 "default_item":291,
 "flag":343},
+"ITEM_ROUTE504_POKE_BALL":
+{"address":11578647,
+"default_item":4,
+"flag":344},
+"ITEM_ROUTE505_REPEL":
+{"address":11581335,
+"default_item":86,
+"flag":346},
+"ITEM_ROUTE505_SOOTHE_BELL":
+{"address":11581322,
+"default_item":184,
+"flag":345},
 "ITEM_ROUTE9_BURN_HEAL":
 {"address":1833413,
 "default_item":15,
@@ -6000,14 +6008,26 @@
 {"address":1833205,
 "default_item":338,
 "flag":432},
-"ITEM_VIRIDIAN_FOREST_POTION":
-{"address":1832074,
-"default_item":13,
-"flag":344},
 "ITEM_VIRIDIAN_FOREST_POTION_2":
 {"address":1833361,
 "default_item":13,
 "flag":446},
+"ITEM_WISEMANS_CAVE_B1F_ESCAPE_ROPE":
+{"address":11574723,
+"default_item":85,
+"flag":366},
+"ITEM_WISEMANS_CAVE_B1F_SILVER_POWDER":
+{"address":11574710,
+"default_item":188,
+"flag":365},
+"ITEM_WISEMANS_CAVE_B2F_HARD_STONE":
+{"address":3211707,
+"default_item":204,
+"flag":433},
+"ITEM_WISEMANS_CAVE_B2F_REVIVE":
+{"address":3211721,
+"default_item":24,
+"flag":434},
 "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT":
 {"address":1457588,
 "default_item":356,
@@ -6080,6 +6100,10 @@
 {"address":1506426,
 "default_item":260,
 "flag":579},
+"NPC_GIFT_GOT_DARK_FOSSIL":
+{"address":1454544, # script addr is B0CF5B, but may need to rewrite to use correct getitem
+"default_item":357,
+"flag":4547},
 "NPC_GIFT_GOT_DOME_FOSSIL":
 {"address":1454544,
 "default_item":358,
@@ -6088,10 +6112,10 @@
 {"address":1518025,
 "default_item":195,
 "flag":762},
-"NPC_GIFT_GOT_EXP_SHARE_FROM_OAKS_AIDE":
-{"address":1519102,
+"NPC_GIFT_GOT_EXP_SHARE_FROM_SEAFIN_RIVAL":
+{"address":1519102, # script addr is B0BD34, but may need to rewrite to use correct getitem
 "default_item":182,
-"flag":598},
+"flag":4381},
 "NPC_GIFT_GOT_FAME_CHECKER":
 {"address":1478414,
 "default_item":363,
@@ -6216,6 +6240,10 @@
 {"address":1523449,
 "default_item":368,
 "flag":609},
+"NPC_GIFT_GOT_ROOT_FOSSIL":
+{"address":1523449, # script addr is 3101D4, but may need to rewrite to use correct getitem
+"default_item":286,
+"flag":4371},
 "NPC_GIFT_GOT_RUBY":
 {"address":1468568,
 "default_item":373,
@@ -6276,14 +6304,14 @@
 {"address":1501510,
 "default_item":304,
 "flag":662},
-"NPC_GIFT_GOT_TM19_FROM_ERIKA":
-{"address":1506144,
-"default_item":307,
-"flag":659},
 "NPC_GIFT_GOT_TM20_FROM_THIRSTY_GIRL":
 {"address":1501555,
 "default_item":308,
 "flag":661},
+"NPC_GIFT_GOT_TM21":
+{"address":1518570, # script addr is B0CAAE, but may need to rewrite to use correct getitem
+"default_item":309,
+"flag":4379},
 "NPC_GIFT_GOT_TM26_FROM_GIOVANNI":
 {"address":1493585,
 "default_item":314,
@@ -6308,6 +6336,10 @@
 {"address":1500139,
 "default_item":322,
 "flag":561},
+"NPC_GIFT_GOT_TM37_FROM_GEOFF":
+{"address":1506144, # script addr is B0E30B, but may need to rewrite to use correct getitem
+"default_item":325,
+"flag":659},
 "NPC_GIFT_GOT_TM38_FROM_BLAINE":
 {"address":1508563,
 "default_item":326,
@@ -7896,12 +7928,20 @@
 {"address":4621138,
 "default_item":0,
 "flag":20865},
+"TRAINER_ACE_TRAINER_CAROLINE_REWARD":
+{"address":3969414, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1683},
+"TRAINER_ACE_TRAINER_HARRISON_REWARD":
+{"address":3969414, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1683},
 "TRAINER_AROMA_LADY_MIAH_REWARD":
 {"address":3969784,
 "default_item":0,
 "flag":1868},
 "TRAINER_AROMA_LADY_NIKKI_REWARD":
-{"address":3969654,
+{"address":3969654, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1803},
 "TRAINER_AROMA_LADY_ROSE_REWARD":
@@ -7912,6 +7952,10 @@
 {"address":3969724,
 "default_item":0,
 "flag":1838},
+"TRAINER_BATTLE_GIRL_JOCELYN_REWARD":
+{"address":3969792, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1872},
 "TRAINER_BEAUTY_BRIDGET_REWARD":
 {"address":3969138,
 "default_item":0,
@@ -8105,7 +8149,7 @@
 "default_item":0,
 "flag":1605},
 "TRAINER_BLACK_BELT_HIDEKI_REWARD":
-{"address":3969246,
+{"address":3969246, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1599},
 "TRAINER_BLACK_BELT_HITOSHI_REWARD":
@@ -8169,7 +8213,7 @@
 "default_item":0,
 "flag":1395},
 "TRAINER_BUG_CATCHER_DOUG_REWARD":
-{"address":3968814,
+{"address":3968814, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1383},
 "TRAINER_BUG_CATCHER_ELIJAH_REWARD":
@@ -8249,7 +8293,7 @@
 "default_item":0,
 "flag":1428},
 "TRAINER_CAMPER_DREW_REWARD":
-{"address":3968906,
+{"address":3968906, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1429},
 "TRAINER_CAMPER_ETHAN_REWARD":
@@ -8376,10 +8420,6 @@
 {"address":3969416,
 "default_item":0,
 "flag":1684},
-"TRAINER_COOLTRAINER_CAROLINE_REWARD":
-{"address":3969414,
-"default_item":0,
-"flag":1683},
 "TRAINER_COOLTRAINER_COLBY_REWARD":
 {"address":3969396,
 "default_item":0,
@@ -8432,10 +8472,6 @@
 {"address":3969790,
 "default_item":0,
 "flag":1871},
-"TRAINER_CRUSH_GIRL_JOCELYN_REWARD":
-{"address":3969792,
-"default_item":0,
-"flag":1872},
 "TRAINER_CRUSH_GIRL_SHARON_REWARD":
 {"address":3969644,
 "default_item":0,
@@ -8448,8 +8484,8 @@
 {"address":3969722,
 "default_item":0,
 "flag":1837},
-"TRAINER_CRUSH_KIN_RON_MYA_REWARD":
-{"address":3969584,
+"TRAINER_CRUSH_KIN_RON_MIA_REWARD":
+{"address":3969584, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1768},
 "TRAINER_CUE_BALL_CAMRON_REWARD":
@@ -8530,6 +8566,10 @@
 "flag":1502},
 "TRAINER_ENGINEER_BRAXTON_REWARD":
 {"address":3969050,
+"default_item":0,
+"flag":1501},
+"TRAINER_EXPERT_AURON_REWARD":
+{"address":3969050, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1501},
 "TRAINER_FISHERMAN_ANDREW_REWARD":
@@ -8636,6 +8676,14 @@
 {"address":3969436, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1694},
+"TRAINER_GYM_LEADER_AVERY_4_REWARD":
+{"address":3969436, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1694},
+"TRAINER_GYM_LEADER_GEOFF_REWARD":
+{"address":3969442, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1697},
 "TRAINER_HIKER_ALAN_REWARD":
 {"address":3968978,
 "default_item":0,
@@ -8657,7 +8705,7 @@
 "default_item":0,
 "flag":1864},
 "TRAINER_HIKER_DUDLEY_REWARD":
-{"address":3968986,
+{"address":3968986, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1469},
 "TRAINER_HIKER_EARL_REWARD":
@@ -8696,12 +8744,16 @@
 {"address":3968994,
 "default_item":0,
 "flag":1473},
+"TRAINER_HIKER_QUINCY_REWARD":
+{"address":3968976, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1464},
 "TRAINER_HIKER_TRENT_REWARD":
-{"address":3968984,
+{"address":3968984, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1468},
 "TRAINER_HIKER_WAYNE_REWARD":
-{"address":3968976,
+{"address":3968976, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1464},
 "TRAINER_JUGGLER_DALTON_REWARD":
@@ -8724,10 +8776,6 @@
 {"address":3969184,
 "default_item":0,
 "flag":1568},
-"TRAINER_JUGGLER_MASON_REWARD":
-{"address":3969788,
-"default_item":0,
-"flag":1870},
 "TRAINER_JUGGLER_NATE_REWARD":
 {"address":3969194,
 "default_item":0,
@@ -8800,10 +8848,6 @@
 {"address":3968872,
 "default_item":0,
 "flag":1412},
-"TRAINER_LASS_LISA_REWARD":
-{"address":3968874,
-"default_item":0,
-"flag":1413},
 "TRAINER_LASS_MEGAN_REWARD":
 {"address":3968868,
 "default_item":0,
@@ -8840,10 +8884,6 @@
 {"address":3969446,
 "default_item":0,
 "flag":1699},
-"TRAINER_LEADER_ERIKA_REWARD":
-{"address":3969442,
-"default_item":0,
-"flag":1697},
 "TRAINER_LEADER_GIOVANNI_REWARD":
 {"address":3969308,
 "default_item":0,
@@ -8996,12 +9036,20 @@
 {"address":3969826,
 "default_item":0,
 "flag":1889},
+"TRAINER_PKMN_BREEDER_CORY_REWARD":
+{"address":3969826, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1889},
+"TRAINER_PKMN_BREEDER_MILES_REWARD":
+{"address":3969826, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1889},
 "TRAINER_PKMN_RANGER_BETH_REWARD":
 {"address":3969802,
 "default_item":0,
 "flag":1877},
 "TRAINER_PKMN_RANGER_JACKSON_REWARD":
-{"address":3969800,
+{"address":3969800, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1876},
 "TRAINER_PKMN_RANGER_KATELYN_REWARD":
@@ -9020,6 +9068,18 @@
 {"address":3969650,
 "default_item":0,
 "flag":1801},
+"TRAINER_POKE_FAN_COLIN_REWARD":
+{"address":3968932, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1442},
+"TRAINER_POKE_FAN_LINDA_REWARD":
+{"address":3968932, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1442},
+"TRAINER_POKE_MANIAC_MARK_REWARD":
+{"address":3968932, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1442},
 "TRAINER_POKEMANIAC_ASHTON_REWARD":
 {"address":3968944,
 "default_item":0,
@@ -9040,10 +9100,6 @@
 {"address":3968934,
 "default_item":0,
 "flag":1443},
-"TRAINER_POKEMANIAC_MARK_REWARD":
-{"address":3968932,
-"default_item":0,
-"flag":1442},
 "TRAINER_POKEMANIAC_STEVE_REWARD":
 {"address":3968938,
 "default_item":0,
@@ -9148,6 +9204,18 @@
 {"address":3969478,
 "default_item":0,
 "flag":1715},
+"TRAINER_RIVAL_SEAFIN_LIQUIPUT_REWARD":
+{"address":3969272, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1612},
+"TRAINER_RIVAL_SEAFIN_NIMBLEAF_REWARD":
+{"address":3969274, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1613},
+"TRAINER_RIVAL_SEAFIN_PEYERO_REWARD":
+{"address":3969276, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1614},
 "TRAINER_RIVAL_SILPH_BULBASAUR_REWARD":
 {"address":3969474,
 "default_item":0,
@@ -9336,6 +9404,18 @@
 {"address":3969590,
 "default_item":0,
 "flag":1771},
+"TRAINER_SKIER_LISA_REWARD":
+{"address":3968950, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1451},
+"TRAINER_SKIER_LYDIA_REWARD":
+{"address":3968950, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1451},
+"TRAINER_SKIER_MASON_REWARD":
+{"address":3968950, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1451},
 "TRAINER_SUPER_NERD_AIDAN_REWARD":
 {"address":3968950,
 "default_item":0,
@@ -9528,6 +9608,26 @@
 {"address":3969204,
 "default_item":0,
 "flag":1578},
+"TRAINER_TEAM_DH_GRUNT_60_REWARD":
+{"address":3969328, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1640},
+"TRAINER_TEAM_DH_GRUNT_61_REWARD":
+{"address":3969328, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1640},
+"TRAINER_TEAM_DH_GRUNT_62_REWARD":
+{"address":3969328, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1640},
+"TRAINER_TEAM_DH_GRUNT_68_REWARD":
+{"address":3969328, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1640},
+"TRAINER_TEAM_DH_GRUNT_77_REWARD":
+{"address":3969328, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1640},
 "TRAINER_TEAM_ROCKET_ADMIN_2_REWARD":
 {"address":3969696,
 "default_item":0,
@@ -9736,6 +9836,14 @@
 {"address":3969310,
 "default_item":0,
 "flag":1631},
+"TRAINER_TEAMMATES_KATE_JOY_REWARD":
+{"address":3969310, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1631},
+"TRAINER_TEAMMATES_SARA_IVY_REWARD":
+{"address":3969310, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1631},
 "TRAINER_TUBER_ALEXIS_REWARD":
 {"address":3969726,
 "default_item":0,
@@ -9801,7 +9909,7 @@
 "default_item":0,
 "flag":1377},
 "TRAINER_YOUNGSTER_JOEY_REWARD":
-{"address":3968794,
+{"address":3968794, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1373},
 "TRAINER_YOUNGSTER_JOHNSON_REWARD":
@@ -9821,7 +9929,7 @@
 "default_item":0,
 "flag":1372},
 "TRAINER_YOUNGSTER_TYLER_REWARD":
-{"address":3968800,
+{"address":3968800, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1376},
 "TRAINER_YOUNGSTER_VINCENT_REWARD":
