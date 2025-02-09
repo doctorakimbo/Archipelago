@@ -13,10 +13,11 @@ if TYPE_CHECKING:
 
 # todo: vega
 INDIRECT_CONDITIONS: Dict[str, List[str]] = {
-    "Seafoam Islands 1F": ["Seafoam Islands B3F West Surfing Spot", "Seafoam Islands B3F Southeast Surfing Spot",
-                           "Seafoam Islands B3F West Landing", "Seafoam Islands B3F Southeast Landing"],
-    "Seafoam Islands B3F West": ["Seafoam Islands B4F Surfing Spot (West)",
-                                 "Seafoam Islands B4F Near Articuno Landing"],
+    "Seafoam Islands 1F": ["Seafoam Islands B3F Southwest Surfing Spot", "Seafoam Islands B3F Southwest Landing",
+                           "Seafoam Islands B3F East Landing (South)", "Seafoam Islands B3F East Surfing Spot (South)",
+                           "Seafoam Islands B3F South Water (Water Battle)"],
+    "Seafoam Islands B3F Southwest": ["Seafoam Islands B4F Surfing Spot (West)",
+                                      "Seafoam Islands B4F Near Articuno Landing"],
     "Victory Road 3F Southwest": ["Victory Road 2F Center Rock Barrier"],
     "Vermilion City": ["Navel Rock Arrival", "Birth Island Arrival"]
 }
@@ -51,6 +52,21 @@ STATIC_POKEMON_SPOILER_NAMES = {
     "LEGENDARY_POKEMON_HO_OH": "Navel Rock Summit",
     "LEGENDARY_POKEMON_LUGIA": "Navel Rock Base",
     "LEGENDARY_POKEMON_DEOXYS": "Birth Island Exterior"
+}
+
+STARTING_TOWNS = {
+    "SPAWN_PORCELIA_TOWN": "Porcelia Town",
+    "SPAWN_JUNOPSIS_CITY": "Junopsis City",
+    "SPAWN_SEAFIN_CITY": "Seafin City",
+    "SPAWN_GAMBOGE_CITY": "Gamboge City",
+    "SPAWN_SHAMOUTI_ISLAND": "Shamouti Island",
+    "SPAWN_NEPHRITE_CITY": "Nephrite City",
+    "SPAWN_ORPIMENCE_CITY": "Orpimence City",
+    "SPAWN_LAPIZULA_CITY": "Lapizula City",
+    "SPAWN_NEW_ISLAND": "New Island",
+    "SPAWN_SHAKUDO_ISLAND": "Shakudo Island",
+    "SPAWN_RAVENPLUME_CITY": "Ravenplume City",
+    "SPAWN_ROUTE510": "Route 510 Island"
 }
 
 
@@ -146,6 +162,7 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
                                 None,
                                 world.player
                             ))
+                            world.repeatable_pokemon.add(data.species[species_id].name)
                             encounter_region.locations.append(encounter_location)
 
                     # Add the new encounter region to the multiworld
@@ -353,8 +370,14 @@ def create_regions(world: "PokemonVegaWorld") -> Dict[str, Region]:
         world.encounter_name_list = [i[0] for i in encounter_name_level_list]
         world.encounter_level_list = [i[1] for i in encounter_name_level_list]
 
+    if world.options.random_starting_town:
+        forbidden_starting_towns = ["SPAWN_SHAKUDO_ISLAND", "SPAWN_ROUTE510"]
+        allowed_starting_towns = [town for town in STARTING_TOWNS.keys() if town not in forbidden_starting_towns]
+        world.starting_town = world.random.choice(allowed_starting_towns)
+
     regions["Menu"] = PokemonVegaRegion("Menu", world.player, world.multiworld)
-    regions["Menu"].connect(regions["Player's House 2F"], "Start Game")
+    regions["Menu"].connect(regions[STARTING_TOWNS[world.starting_town]], "Start Game")
+    regions["Menu"].connect(regions["Player's PC"], "Use PC")
     regions["Menu"].connect(regions["Pokedex"], "Pokedex")
     regions["Menu"].connect(regions["Evolutions"], "Evolve")
     regions["Menu"].connect(regions["Sky"], "Flying")

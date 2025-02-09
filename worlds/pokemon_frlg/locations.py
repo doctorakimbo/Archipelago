@@ -1,8 +1,8 @@
 import copy
 from typing import TYPE_CHECKING, Dict, FrozenSet, Iterable, List, Optional, Union
 from BaseClasses import CollectionState, Location, Region, ItemClassification
-from .data import data, BASE_OFFSET
-from .items import get_random_item, offset_item_value, reverse_offset_item_value, PokemonVegaItem
+from .data import data
+from .items import PokemonVegaItem, get_random_item
 from .options import FreeFlyLocation, TownMapFlyLocation
 
 if TYPE_CHECKING:
@@ -59,7 +59,7 @@ fly_item_exclusion_map = {
     "New Island": "ITEM_FLY_NEW_ISLAND",
     "Shakudo Island": "ITEM_FLY_SHAKUDO",
     "Ravenplume City": "ITEM_FLY_RAVENPLUME",
-    "Route 510": "ITEM_FLY_ROUTE510"
+    "Route 510 Island": "ITEM_FLY_ROUTE510"
 }
 
 
@@ -83,22 +83,11 @@ class PokemonVegaLocation(Location):
             data_ids: Optional[List[str]] = None,
             spoiler_name: Optional[str] = None) -> None:
         super().__init__(player, name, address, parent)
-        self.default_item_id = None if default_item_id is None else offset_item_value(default_item_id)
+        self.default_item_id = default_item_id
         self.item_address = item_address
         self.tags = tags
         self.data_ids = data_ids
         self.spoiler_name = spoiler_name if spoiler_name is not None else name
-
-def offset_flag(flag: int) -> int:
-    if flag is None:
-        return None
-    return flag + BASE_OFFSET
-
-
-def reverse_offset_flag(location_id: int) -> int:
-    if location_id is None:
-        return None
-    return location_id - BASE_OFFSET
 
 
 def create_location_name_to_id_map() -> Dict[str, int]:
@@ -109,7 +98,7 @@ def create_location_name_to_id_map() -> Dict[str, int]:
     for region_data in data.regions.values():
         for location_id in region_data.locations:
             location_data = data.locations[location_id]
-            name_to_id_mapping[location_data.name] = offset_flag(location_data.flag)
+            name_to_id_mapping[location_data.name] = location_data.flag
 
     return name_to_id_mapping
 
@@ -132,19 +121,15 @@ def create_locations_from_tags(world: "PokemonVegaWorld", regions: Dict[str, Reg
         for location_flag in included_locations:
             location_data = data.locations[location_flag]
 
-            location_id = offset_flag(location_data.flag)
-
             if location_data.default_item == data.constants["ITEM_NONE"]:
-                default_item = reverse_offset_item_value(
-                    world.item_name_to_id[get_random_item(world, ItemClassification.filler)]
-                )
+                default_item = world.item_name_to_id[get_random_item(world, ItemClassification.filler)]
             else:
                 default_item = location_data.default_item
 
             location = PokemonVegaLocation(
                 world.player,
                 location_data.name,
-                location_id,
+                location_data.flag,
                 region,
                 location_data.address,
                 default_item,

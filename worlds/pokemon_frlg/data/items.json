@@ -106,6 +106,11 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_FIRE_STONE": {
+    "name": "Fire Stone",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_GOOD_ROD": {
     "name": "Good Rod",
     "classification": "PROGRESSION",
@@ -126,6 +131,11 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_LEAF_STONE": {
+    "name": "Leaf Stone",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_LETTER": {
     "name": "Letter",
     "classification": "PROGRESSION",
@@ -141,8 +151,18 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_LINK_CABLE": {
+    "name": "Link Cable",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_METEORITE": {
     "name": "Meteorite",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_MOON_STONE": {
+    "name": "Moon Stone",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -206,8 +226,23 @@
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
+  "ITEM_SUN_STONE": {
+    "name": "Sun Stone",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
   "ITEM_SUPER_ROD": {
     "name": "Super Rod",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_TEA": {
+    "name": "Tea",
+    "classification": "PROGRESSION",
+    "tags": ["Unique"]
+  },
+  "ITEM_THUNDER_STONE": {
+    "name": "Thunder Stone",
     "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
@@ -224,6 +259,11 @@
   "ITEM_VS_SEEKER": {
     "name": "Vs. Seeker",
     "classification": "USEFUL",
+    "tags": ["Unique"]
+  },
+  "ITEM_WATER_STONE": {
+    "name": "Water Stone",
+    "classification": "PROGRESSION",
     "tags": ["Unique"]
   },
   "ITEM_WING_FOSSIL": {
@@ -647,37 +687,6 @@
     "name": "Repel",
     "classification": "FILLER",
     "tags": ["Misc"]
-  },
-
-  "ITEM_SUN_STONE": {
-    "name": "Sun Stone",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_MOON_STONE": {
-    "name": "Moon Stone",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_FIRE_STONE": {
-    "name": "Fire Stone",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_THUNDER_STONE": {
-    "name": "Thunder Stone",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_WATER_STONE": {
-    "name": "Water Stone",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
-  },
-  "ITEM_LEAF_STONE": {
-    "name": "Leaf Stone",
-    "classification": "PROGRESSION",
-    "tags": ["Unique"]
   },
 
   "ITEM_TINY_MUSHROOM": {

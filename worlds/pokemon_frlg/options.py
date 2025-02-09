@@ -36,6 +36,14 @@ class ExcludeSphereRuins(DefaultOnToggle): #todo: make sure this works
 # todo: option to remove hax items from trainers (replace with type-booster)
 
 
+class RandomStartingTown(Toggle):
+    """
+    Randomizes the town that you start in. This includes any area that has a Pokemon Center except for Route 510 and
+    Shakudo Island.
+    """
+    display_name = "Random Starting Town"
+
+
 class ShuffleBadges(DefaultOnToggle):
     """
     Shuffle Gym Badges into the general item pool. If turned off, Badges will be shuffled among themselves.
@@ -58,7 +66,7 @@ class ShuffleHiddenItems(Choice): # note: are there even recurring hidden items 
     option_all = 2
 
 
-class ExtraKeyItems(Toggle): # todo: edit rules; edit baserom; different item for Spirit Mansion; Machine Part -> Lab Pass
+class ExtraKeyItems(Toggle): # todo: edit rules; edit baserom; Machine Part -> Lab Pass; Letter -> Tea
     """
     Adds key items that are required to access the DH Hideout, Safari Zone, Spirit Mansion, and the back room of Perimeter Labs.
 
@@ -75,9 +83,8 @@ class Trainersanity(NamedRange):
     """
     Defeating a trainer gives you an item.
 
-    You can specify how many Trainers should be a check between 1 and 456. If you have Kanto Only on, the amount of
-    Trainer checks might be lower than the amount you specify. Trainers that have checks will periodically have an
-    exclamation mark appear above their head in game.
+    You can specify how many Trainers should be a check between 0 and 456. Trainers that have checks will
+    periodically have an exclamation mark appear above their head in game.
 
     Trainers are no longer missable. Each trainer will add a random filler item into the pool.
     """
@@ -95,7 +102,7 @@ class Dexsanity(NamedRange):
     """
     Adding a "caught" Pokedex entry gives you an item (catching, evolving, trading, etc.).
 
-    You can specify how many Pokedex entries should be a check between 1 and 386. Depending on your settings for
+    You can specify how many Pokedex entries should be a check between 0 and 386. Depending on your settings for
     randomizing wild Pokemon, there might not actually be as many locations as you specify. Pokemon that have checks
     will have a black silhouette of a pokeball in the Pokedex and in the battle HUD if you have seen them already.
 
@@ -114,12 +121,20 @@ class Dexsanity(NamedRange):
     }
 
 
-class ShuffleFlyDestinationUnlocks(Toggle): # todo: don't have an item for distant island fly, as it's pointless - just unlock it immediately
+class ShuffleFlyDestinationUnlocks(Choice): # todo: don't have an item for distant island fly, as it's pointless - just unlock it immediately
     """
     Shuffles the ability to fly to Pokemon Centers into the pool. Entering the map that normally would unlock the
     fly destination gives a random item.
+
+    - Off: Fly Destination Unlocks are not shuffled.
+    - Exclude Shakudo: Fly Destination Unlocks are shuffled. Shakudo Island Fly Unlock is vanilla.
+    - All: Fly Destination Unlocks are shuffled.
     """
     display_name = "Shuffle Fly Destination Unlocks"
+    default = 0
+    option_off = 0
+    option_exclude_shakudo = 1
+    option_all = 2
 
 
 class ShuffleRunningShoes(Choice):
@@ -338,6 +353,25 @@ class ModifyTrainerLevels(Range):
     default = 0
     range_start = -100
     range_end = 100
+
+
+class ForceFullyEvolved(NamedRange):
+    """
+    Forces opponent's Pokemon to be fully evolved if they are greater than or equal to the specified level.
+
+    If set to "species" will force opponent's Pokemon to be evolved based on the level the species would normally
+    evolve. For species that don't evolve based on levels, the level they will be evolved at is determined by their BST.
+
+    Only applies when trainer parties are randomized.
+    """
+    display_name = "Force Fully Evolved"
+    default = 0
+    range_start = 1
+    range_end = 100
+    special_range_names = {
+        "never": 0,
+        "species": -1
+    }
 
 
 class RandomizeWildPokemon(Choice):
@@ -566,10 +600,11 @@ class HmCompatibility(NamedRange):
     """
     display_name = "HM Compatibility"
     default = -1
-    range_start = 50
+    range_start = 0
     range_end = 100
     special_range_names = {
         "vanilla": -1,
+        "none": 0,
         "full": 100,
     }
 
@@ -584,6 +619,7 @@ class TmTutorCompatibility(NamedRange):
     range_end = 100
     special_range_names = {
         "vanilla": -1,
+        "none": 0,
         "full": 100,
     }
 
@@ -759,7 +795,7 @@ class ProvideHints(Toggle): # todo: what else does it include?
 @dataclass
 class PokemonVegaOptions(PerGameCommonOptions):
     goal: Goal
-    exclude_sphere_ruins: ExcludeSphereRuins
+    random_starting_town: RandomStartingTown
 
     shuffle_badges: ShuffleBadges
     shuffle_hidden: ShuffleHiddenItems
@@ -785,6 +821,7 @@ class PokemonVegaOptions(PerGameCommonOptions):
 
     level_scaling: LevelScaling
     modify_trainer_levels: ModifyTrainerLevels
+    force_fully_evolved: ForceFullyEvolved
 
     wild_pokemon: RandomizeWildPokemon
     wild_pokemon_groups: WildPokemonGroups

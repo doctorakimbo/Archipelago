@@ -305,7 +305,6 @@
 "FLAG_0x22D":557,
 "FLAG_0x22E":558,
 "FLAG_0x22F":559,
-"FLAG_0x2AE":686,
 "FLAG_0x2AF":687,
 "FLAG_0x2B0":688,
 "FLAG_0x2B1":689,
@@ -746,6 +745,7 @@
 "FLAG_GOT_ITEMFINDER":594,
 "FLAG_GOT_LAPRAS_FROM_SILPH":582,
 "FLAG_GOT_LETTER":665,
+"FLAG_GOT_LINK_CABLE":686,
 "FLAG_GOT_LUXURY_BALL_FROM_RESORT_GORGEOUS_HOUSE":734,
 "FLAG_GOT_MASTER_BALL_FROM_SILPH":592,
 "FLAG_GOT_METEORITE":608,
@@ -1048,6 +1048,7 @@
 "FLAG_HIDE_MEWTWO":129,
 "FLAG_HIDE_MISC_KANTO_ROCKETS":173,
 "FLAG_HIDE_MOLTRES":82,
+"FLAG_HIDE_MOVE_MANIAC":148,
 "FLAG_HIDE_MT_EMBER_EXTERIOR_ROCKETS":137,
 "FLAG_HIDE_NUGGET_BRIDGE_ROCKET":49,
 "FLAG_HIDE_OAK_IN_CHAMP_ROOM":90,
@@ -1596,9 +1597,12 @@
 "GOOD_ROD":1,
 "ITEMS_COUNT":400,
 "ITEM_03E":62,
-"ITEM_048":72,
-"ITEM_066":102,
+"ITEM_048":72,		   
 "ITEM_069":105,
+"ITEM_075":117,
+"ITEM_076":118,
+"ITEM_077":119,
+"ITEM_078":120,
 "ITEM_0F5":245,
 "ITEM_0F6":246,
 "ITEM_0F7":247,
@@ -1691,8 +1695,6 @@
 "ITEM_CONTEST_PASS":266,
 "ITEM_CORNN_BERRY":159,
 "ITEM_DARK_FOSSIL":357,
-"ITEM_DEEP_SEA_SCALE_EVO":119,
-"ITEM_DEEP_SEA_TOOTH_EVO":120,
 "ITEM_DEVON_GOODS":269,
 "ITEM_DEVON_SCOPE":288,
 "ITEM_DIRE_HIT":74,
@@ -1751,7 +1753,7 @@
 "ITEM_HARD_STONE":204,
 "ITEM_HEAL_POWDER":32,
 "ITEM_HEART_SCALE":111,
-"ITEM_HIDEOUT_KEY":99,
+"ITEM_HIDEOUT_KEY":100,
 "ITEM_HM01":339,
 "ITEM_HM01_CUT":339,
 "ITEM_HM02":340,
@@ -1786,8 +1788,7 @@
 "ITEM_ITEMFINDER":261,
 "ITEM_KELPSY_BERRY":154,
 "ITEM_KINGS_ROCK":187,
-"ITEM_KINGS_ROCK_EVO":117,
-"ITEM_LAB_PASS":101,
+"ITEM_LAB_PASS":102,
 "ITEM_LANSAT_BERRY":173,
 "ITEM_LAVA_COOKIE":38,
 "ITEM_LAX_INCENSE":221,
@@ -1799,6 +1800,7 @@
 "ITEM_LIECHI_BERRY":168,
 "ITEM_LIFT_KEY":356,
 "ITEM_LIGHT_BALL":202,
+"ITEM_LINK_CABLE":99,
 "ITEM_LUCKY_EGG":197,
 "ITEM_LUCKY_PUNCH":222,
 "ITEM_LUM_BERRY":141,
@@ -1817,7 +1819,6 @@
 "ITEM_MECH_MAIL":124,
 "ITEM_MENTAL_HERB":185,
 "ITEM_METAL_COAT":199,
-"ITEM_METAL_COAT_EVO":118,
 "ITEM_METAL_POWDER":223,
 "ITEM_METEORITE":280,
 "ITEM_MIRACLE_SEED":205,
@@ -1887,7 +1888,7 @@
 "ITEM_RUNNING_SHOES":267,
 "ITEM_SACRED_ASH":45,
 "ITEM_SAFARI_BALL":5,
-"ITEM_SAFARI_PASS":100,
+"ITEM_SAFARI_PASS":101,
 "ITEM_SALAC_BERRY":170,
 "ITEM_SCANNER":278,
 "ITEM_SCOPE_LENS":198,
@@ -15911,6 +15912,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":2}],
 "friendship":70,
 "id":1,
@@ -15966,6 +15968,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":34,
+"param2":0,
 "species":3}],
 "friendship":70,
 "id":2,
@@ -16088,6 +16091,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":18,
+"param2":0,
 "species":5}],
 "friendship":70,
 "id":4,
@@ -16143,6 +16147,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":6}],
 "friendship":70,
 "id":5,
@@ -16265,6 +16270,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":14,
+"param2":0,
 "species":8}],
 "friendship":70,
 "id":7,
@@ -16318,6 +16324,8 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
+"param2":0,
 "species":9}],
 "friendship":70,
 "id":8,
@@ -16440,6 +16448,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":22,
+"param2":0,
 "species":11}],
 "friendship":70,
 "id":10,
@@ -16550,6 +16559,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":13}],
 "friendship":70,
 "id":12,
@@ -16662,6 +16672,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":24,
+"param2":0,
 "species":15}],
 "friendship":35,
 "id":14,
@@ -16780,6 +16791,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":26,
+"param2":0,
 "species":17}],
 "friendship":70,
 "id":16,
@@ -16894,6 +16906,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":19}],
 "friendship":70,
 "id":18,
@@ -16949,6 +16962,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":20}],
 "friendship":70,
 "id":19,
@@ -17041,6 +17055,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":22}],
 "friendship":70,
 "id":21,
@@ -17092,6 +17107,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":23}],
 "friendship":70,
 "id":22,
@@ -17206,6 +17222,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":25}],
 "friendship":70,
 "id":24,
@@ -17245,9 +17262,11 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":27},
 {"method":"ITEM",
 "param":96,
+"param2":0,
 "species":26}],
 "friendship":70,
 "id":25,
@@ -17444,6 +17463,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":30}],
 "friendship":70,
 "id":29,
@@ -17497,6 +17517,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":31}],
 "friendship":70,
 "id":30,
@@ -17595,6 +17616,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":33}],
 "friendship":70,
 "id":32,
@@ -17648,6 +17670,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":34}],
 "friendship":70,
 "id":33,
@@ -17746,6 +17769,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":26,
+"param2":0,
 "species":36}],
 "friendship":70,
 "id":35,
@@ -17856,6 +17880,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":25,
+"param2":0,
 "species":38}],
 "friendship":70,
 "id":37,
@@ -17972,6 +17997,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":31,
+"param2":0,
 "species":40}],
 "friendship":70,
 "id":39,
@@ -18092,6 +18118,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":97,
+"param2":0,
 "species":42}],
 "friendship":70,
 "id":41,
@@ -18196,9 +18223,11 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":45},
 {"method":"ITEM",
 "param":94,
+"param2":0,
 "species":44}],
 "friendship":70,
 "id":43,
@@ -18338,12 +18367,15 @@
 "evolutions":
 [{"method":"LEVEL_ATK_GT_DEF",
 "param":20,
+"param2":0,
 "species":47},
 {"method":"LEVEL_ATK_EQ_DEF",
 "param":20,
+"param2":0,
 "species":49},
 {"method":"LEVEL_ATK_LT_DEF",
 "param":20,
+"param2":0,
 "species":48}],
 "friendship":70,
 "id":46,
@@ -18550,6 +18582,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":51}],
 "friendship":70,
 "id":50,
@@ -18660,6 +18693,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":53}],
 "friendship":35,
 "id":52,
@@ -18790,6 +18824,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":55}],
 "friendship":70,
 "id":54,
@@ -18908,6 +18943,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":95,
+"param2":0,
 "species":57}],
 "friendship":70,
 "id":56,
@@ -19010,6 +19046,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":59}],
 "friendship":70,
 "id":58,
@@ -19067,6 +19104,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":60}],
 "friendship":70,
 "id":59,
@@ -19193,6 +19231,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":97,
+"param2":0,
 "species":62}],
 "friendship":70,
 "id":61,
@@ -19291,6 +19330,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":25,
+"param2":0,
 "species":64}],
 "friendship":70,
 "id":63,
@@ -19346,6 +19386,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":38,
+"param2":0,
 "species":65}],
 "friendship":70,
 "id":64,
@@ -19468,6 +19509,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":98,
+"param2":0,
 "species":67}],
 "friendship":70,
 "id":66,
@@ -19566,6 +19608,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":69}],
 "friendship":70,
 "id":68,
@@ -19741,6 +19784,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":42,
+"param2":0,
 "species":72}],
 "friendship":70,
 "id":71,
@@ -19796,6 +19840,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":73}],
 "friendship":70,
 "id":72,
@@ -19975,6 +20020,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":76}],
 "friendship":70,
 "id":75,
@@ -20032,6 +20078,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":77}],
 "friendship":70,
 "id":76,
@@ -20150,6 +20197,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":79}],
 "friendship":70,
 "id":78,
@@ -20205,6 +20253,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":44,
+"param2":0,
 "species":80}],
 "friendship":70,
 "id":79,
@@ -20321,6 +20370,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":25,
+"param2":0,
 "species":82}],
 "friendship":70,
 "id":81,
@@ -20439,6 +20489,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":84}],
 "friendship":70,
 "id":83,
@@ -20553,6 +20604,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":86}],
 "friendship":70,
 "id":85,
@@ -20669,6 +20721,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":88}],
 "friendship":35,
 "id":87,
@@ -20783,6 +20836,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":18,
+"param2":0,
 "species":90}],
 "friendship":35,
 "id":89,
@@ -20832,6 +20886,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":91}],
 "friendship":35,
 "id":90,
@@ -21054,6 +21109,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":95}],
 "friendship":70,
 "id":94,
@@ -21107,6 +21163,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":45,
+"param2":0,
 "species":96}],
 "friendship":70,
 "id":95,
@@ -21227,6 +21284,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":18,
+"param2":0,
 "species":98}],
 "friendship":70,
 "id":97,
@@ -21343,6 +21401,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":18,
+"param2":0,
 "species":100}],
 "friendship":70,
 "id":99,
@@ -21459,6 +21518,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":96,
+"param2":0,
 "species":102}],
 "friendship":70,
 "id":101,
@@ -21557,6 +21617,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":28,
+"param2":0,
 "species":104}],
 "friendship":70,
 "id":103,
@@ -21728,6 +21789,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":107}],
 "friendship":35,
 "id":106,
@@ -21783,6 +21845,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":108}],
 "friendship":35,
 "id":107,
@@ -21891,6 +21954,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":110}],
 "friendship":70,
 "id":109,
@@ -22070,6 +22134,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":113}],
 "friendship":70,
 "id":112,
@@ -22123,6 +22188,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":96,
+"param2":0,
 "species":114}],
 "friendship":70,
 "id":113,
@@ -22237,6 +22303,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":116}],
 "friendship":70,
 "id":115,
@@ -22290,6 +22357,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":95,
+"param2":0,
 "species":117}],
 "friendship":70,
 "id":116,
@@ -22459,6 +22527,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":120}],
 "friendship":70,
 "id":119,
@@ -22571,6 +22640,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":122}],
 "friendship":70,
 "id":121,
@@ -22740,6 +22810,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":125}],
 "friendship":35,
 "id":124,
@@ -22793,6 +22864,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":55,
+"param2":0,
 "species":126}],
 "friendship":35,
 "id":125,
@@ -22913,6 +22985,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":128}],
 "friendship":35,
 "id":127,
@@ -22940,6 +23013,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":45,
+"param2":0,
 "species":129}],
 "friendship":35,
 "id":128,
@@ -23050,6 +23124,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":24,
+"param2":0,
 "species":131}],
 "friendship":70,
 "id":130,
@@ -23099,6 +23174,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":48,
+"param2":0,
 "species":132}],
 "friendship":70,
 "id":131,
@@ -23207,6 +23283,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":134}],
 "friendship":35,
 "id":133,
@@ -23256,6 +23333,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":50,
+"param2":0,
 "species":135}],
 "friendship":35,
 "id":134,
@@ -24210,6 +24288,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":153}],
 "friendship":70,
 "id":152,
@@ -24265,6 +24344,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":154}],
 "friendship":70,
 "id":153,
@@ -24391,6 +24471,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":156}],
 "friendship":70,
 "id":155,
@@ -24442,6 +24523,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":157}],
 "friendship":70,
 "id":156,
@@ -24560,6 +24642,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":159}],
 "friendship":70,
 "id":158,
@@ -24613,6 +24696,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":160}],
 "friendship":70,
 "id":159,
@@ -24733,6 +24817,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":162}],
 "friendship":70,
 "id":161,
@@ -24786,6 +24871,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":34,
+"param2":0,
 "species":163}],
 "friendship":70,
 "id":162,
@@ -24906,6 +24992,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":165}],
 "friendship":70,
 "id":164,
@@ -24957,6 +25044,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":166}],
 "friendship":70,
 "id":165,
@@ -25073,6 +25161,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":16,
+"param2":0,
 "species":168}],
 "friendship":70,
 "id":167,
@@ -25124,6 +25213,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":169}],
 "friendship":70,
 "id":168,
@@ -25240,9 +25330,11 @@
 "evolutions":
 [{"method":"LEVEL_SILCOON",
 "param":24,
+"param2":0,
 "species":171},
 {"method":"LEVEL_CASCOON",
 "param":24,
+"param2":0,
 "species":172}],
 "friendship":35,
 "id":170,
@@ -25406,6 +25498,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":23,
+"param2":0,
 "species":174}],
 "friendship":70,
 "id":173,
@@ -25512,6 +25605,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":26,
+"param2":0,
 "species":176}],
 "friendship":70,
 "id":175,
@@ -25624,6 +25718,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":31,
+"param2":0,
 "species":178}],
 "friendship":70,
 "id":177,
@@ -25732,6 +25827,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":180}],
 "friendship":70,
 "id":179,
@@ -25848,6 +25944,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":182}],
 "friendship":35,
 "id":181,
@@ -25985,6 +26082,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":185}],
 "friendship":70,
 "id":184,
@@ -26040,6 +26138,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":45,
+"param2":0,
 "species":186}],
 "friendship":70,
 "id":185,
@@ -26162,6 +26261,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":188}],
 "friendship":70,
 "id":187,
@@ -26211,6 +26311,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":34,
+"param2":0,
 "species":189}],
 "friendship":70,
 "id":188,
@@ -26378,6 +26479,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":29,
+"param2":0,
 "species":192}],
 "friendship":70,
 "id":191,
@@ -26490,6 +26592,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":42,
+"param2":0,
 "species":194}],
 "friendship":35,
 "id":193,
@@ -26763,6 +26866,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":18,
+"param2":0,
 "species":199}],
 "friendship":70,
 "id":198,
@@ -26816,6 +26920,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":38,
+"param2":0,
 "species":200}],
 "friendship":70,
 "id":199,
@@ -26969,6 +27074,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":203}],
 "friendship":70,
 "id":202,
@@ -27077,6 +27183,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":207}],
 "friendship":70,
 "id":204,
@@ -27136,6 +27243,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":207}],
 "friendship":70,
 "id":205,
@@ -27195,9 +27303,11 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":207},
 {"method":"ITEM",
 "param":94,
+"param2":0,
 "species":207}],
 "friendship":70,
 "id":206,
@@ -27281,6 +27391,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":209}],
 "friendship":70,
 "id":208,
@@ -27387,6 +27498,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":25,
+"param2":0,
 "species":211}],
 "friendship":70,
 "id":210,
@@ -27497,6 +27609,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":213}],
 "friendship":70,
 "id":212,
@@ -27554,6 +27667,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":97,
+"param2":0,
 "species":214}],
 "friendship":70,
 "id":213,
@@ -27658,6 +27772,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":216}],
 "friendship":70,
 "id":215,
@@ -27784,6 +27899,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":38,
+"param2":0,
 "species":218}],
 "friendship":70,
 "id":217,
@@ -27998,6 +28114,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":96,
+"param2":0,
 "species":222}],
 "friendship":70,
 "id":221,
@@ -28100,6 +28217,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":224}],
 "friendship":70,
 "id":223,
@@ -28155,6 +28273,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":96,
+"param2":0,
 "species":225}],
 "friendship":70,
 "id":224,
@@ -28257,6 +28376,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":227}],
 "friendship":35,
 "id":226,
@@ -28359,6 +28479,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":229}],
 "friendship":70,
 "id":228,
@@ -28410,6 +28531,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":230}],
 "friendship":70,
 "id":229,
@@ -28534,6 +28656,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":28,
+"param2":0,
 "species":232}],
 "friendship":70,
 "id":231,
@@ -28652,6 +28775,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":31,
+"param2":0,
 "species":234}],
 "friendship":70,
 "id":233,
@@ -28772,15 +28896,19 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":238},
 {"method":"ITEM",
 "param":94,
+"param2":0,
 "species":239},
 {"method":"ITEM",
 "param":97,
+"param2":0,
 "species":236},
 {"method":"ITEM",
 "param":98,
+"param2":0,
 "species":237}],
 "friendship":70,
 "id":235,
@@ -29068,6 +29196,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":33,
+"param2":0,
 "species":241}],
 "friendship":70,
 "id":240,
@@ -29184,6 +29313,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":33,
+"param2":0,
 "species":243}],
 "friendship":70,
 "id":242,
@@ -29300,6 +29430,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":33,
+"param2":0,
 "species":245}],
 "friendship":70,
 "id":244,
@@ -29477,6 +29608,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":38,
+"param2":0,
 "species":248}],
 "friendship":35,
 "id":247,
@@ -29595,6 +29727,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":23,
+"param2":0,
 "species":250}],
 "friendship":70,
 "id":249,
@@ -30788,6 +30921,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":279}],
 "friendship":35,
 "id":278,
@@ -30922,6 +31056,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":281}],
 "friendship":70,
 "id":280,
@@ -31048,6 +31183,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":283}],
 "friendship":70,
 "id":282,
@@ -31168,6 +31304,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":285}],
 "friendship":70,
 "id":284,
@@ -31288,6 +31425,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":22,
+"param2":0,
 "species":287}],
 "friendship":70,
 "id":286,
@@ -31347,6 +31485,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":44,
+"param2":0,
 "species":288}],
 "friendship":70,
 "id":287,
@@ -31491,6 +31630,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":290}],
 "friendship":70,
 "id":289,
@@ -31546,6 +31686,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":45,
+"param2":0,
 "species":291}],
 "friendship":70,
 "id":290,
@@ -31674,6 +31815,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":37,
+"param2":0,
 "species":293}],
 "friendship":35,
 "id":292,
@@ -31729,6 +31871,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":48,
+"param2":0,
 "species":294}],
 "friendship":35,
 "id":293,
@@ -31867,6 +32010,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":33,
+"param2":0,
 "species":296}],
 "friendship":70,
 "id":295,
@@ -31983,6 +32127,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":22,
+"param2":0,
 "species":298}],
 "friendship":70,
 "id":297,
@@ -32103,6 +32248,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":300}],
 "friendship":70,
 "id":299,
@@ -32221,9 +32367,11 @@
 "evolutions":
 [{"method":"LEVEL_NINJASK",
 "param":20,
+"param2":0,
 "species":302},
 {"method":"LEVEL_SHEDINJA",
 "param":20,
+"param2":0,
 "species":303}],
 "friendship":70,
 "id":301,
@@ -32391,6 +32539,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":28,
+"param2":0,
 "species":305}],
 "friendship":70,
 "id":304,
@@ -32684,6 +32833,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":48,
+"param2":0,
 "species":310}],
 "friendship":70,
 "id":309,
@@ -32865,6 +33015,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":306}],
 "friendship":70,
 "id":312,
@@ -32924,6 +33075,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":37,
+"param2":0,
 "species":314}],
 "friendship":35,
 "id":313,
@@ -32983,6 +33135,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":47,
+"param2":0,
 "species":339}],
 "friendship":35,
 "id":314,
@@ -33048,9 +33201,11 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":316},
 {"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":382}],
 "friendship":35,
 "id":315,
@@ -33108,12 +33263,15 @@
 "evolutions":
 [{"method":"LEVEL_ATK_GT_DEF",
 "param":30,
+"param2":0,
 "species":322},
 {"method":"LEVEL_ATK_EQ_DEF",
 "param":30,
+"param2":0,
 "species":355},
 {"method":"LEVEL_ATK_LT_DEF",
 "param":30,
+"param2":0,
 "species":322}],
 "friendship":35,
 "id":316,
@@ -33177,6 +33335,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":34,
+"param2":0,
 "species":377}],
 "friendship":70,
 "id":317,
@@ -33234,6 +33393,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":32,
+"param2":0,
 "species":319}],
 "friendship":35,
 "id":318,
@@ -33415,6 +33575,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":351}],
 "friendship":70,
 "id":321,
@@ -33541,6 +33702,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":324}],
 "friendship":70,
 "id":323,
@@ -33696,6 +33858,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":95,
+"param2":0,
 "species":327}],
 "friendship":70,
 "id":326,
@@ -33930,6 +34093,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":331}],
 "friendship":70,
 "id":330,
@@ -34042,6 +34206,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":333}],
 "friendship":70,
 "id":332,
@@ -34156,6 +34321,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":25,
+"param2":0,
 "species":344}],
 "friendship":70,
 "id":334,
@@ -34282,9 +34448,11 @@
 "evolutions":
 [{"method":"LEVEL_SILCOON",
 "param":25,
+"param2":0,
 "species":320},
 {"method":"LEVEL_CASCOON",
 "param":25,
+"param2":0,
 "species":350}],
 "friendship":35,
 "id":336,
@@ -34403,6 +34571,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":33,
+"param2":0,
 "species":353}],
 "friendship":70,
 "id":338,
@@ -34527,6 +34696,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":33,
+"param2":0,
 "species":321}],
 "friendship":70,
 "id":340,
@@ -34582,6 +34752,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":42,
+"param2":0,
 "species":342}],
 "friendship":70,
 "id":341,
@@ -34712,6 +34883,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":373}],
 "friendship":70,
 "id":343,
@@ -34834,6 +35006,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":358}],
 "friendship":70,
 "id":345,
@@ -34891,6 +35064,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":45,
+"param2":0,
 "species":347}],
 "friendship":70,
 "id":346,
@@ -35021,6 +35195,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":349}],
 "friendship":70,
 "id":348,
@@ -35570,6 +35745,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":29,
+"param2":0,
 "species":337}],
 "friendship":70,
 "id":357,
@@ -35688,6 +35864,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":38,
+"param2":0,
 "species":380}],
 "friendship":70,
 "id":359,
@@ -35857,6 +36034,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":39,
+"param2":0,
 "species":369}],
 "friendship":70,
 "id":362,
@@ -35890,6 +36068,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":25,
+"param2":0,
 "species":367}],
 "friendship":70,
 "id":363,
@@ -35947,6 +36126,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":20,
+"param2":0,
 "species":365}],
 "friendship":140,
 "id":364,
@@ -35982,6 +36162,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":366}],
 "friendship":140,
 "id":365,
@@ -36098,6 +36279,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":38,
+"param2":0,
 "species":368}],
 "friendship":70,
 "id":367,
@@ -36220,6 +36402,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":96,
+"param2":0,
 "species":411}],
 "friendship":70,
 "id":369,
@@ -36277,6 +36460,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":22,
+"param2":0,
 "species":371}],
 "friendship":70,
 "id":370,
@@ -36334,6 +36518,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":36,
+"param2":0,
 "species":372}],
 "friendship":70,
 "id":371,
@@ -36529,6 +36714,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":39,
+"param2":0,
 "species":375}],
 "friendship":35,
 "id":374,
@@ -36647,6 +36833,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":30,
+"param2":0,
 "species":360}],
 "friendship":70,
 "id":376,
@@ -36735,6 +36922,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":361}],
 "friendship":70,
 "id":378,
@@ -36855,6 +37043,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":49,
+"param2":0,
 "species":379}],
 "friendship":70,
 "id":380,
@@ -36920,6 +37109,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":93,
+"param2":0,
 "species":325}],
 "friendship":70,
 "id":381,
@@ -36979,6 +37169,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":94,
+"param2":0,
 "species":383}],
 "friendship":35,
 "id":382,
@@ -37117,6 +37308,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":35,
+"param2":0,
 "species":356}],
 "friendship":70,
 "id":384,
@@ -37357,6 +37549,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":389}],
 "friendship":70,
 "id":388,
@@ -37534,9 +37727,11 @@
 "evolutions":
 [{"method":"LEVEL_SILCOON",
 "param":38,
+"param2":0,
 "species":329},
 {"method":"LEVEL_CASCOON",
 "param":38,
+"param2":0,
 "species":328}],
 "friendship":70,
 "id":391,
@@ -37592,6 +37787,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":24,
+"param2":0,
 "species":393}],
 "friendship":70,
 "id":392,
@@ -37712,6 +37908,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":34,
+"param2":0,
 "species":311}],
 "friendship":70,
 "id":394,
@@ -37769,6 +37966,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":50,
+"param2":0,
 "species":396}],
 "friendship":70,
 "id":395,
@@ -37889,6 +38087,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":29,
+"param2":0,
 "species":398}],
 "friendship":70,
 "id":397,
@@ -37948,6 +38147,7 @@
 "evolutions":
 [{"method":"LEVEL",
 "param":40,
+"param2":0,
 "species":399}],
 "friendship":70,
 "id":398,
@@ -38186,6 +38386,7 @@
 "evolutions":
 [{"method":"ITEM",
 "param":95,
+"param2":0,
 "species":403}],
 "friendship":100,
 "id":402,
@@ -38296,6 +38497,7 @@
 "evolutions":
 [{"method":"WONT_EVOLVE",
 "param":0,
+"param2":0,
 "species":405}],
 "friendship":70,
 "id":404,
@@ -38402,6 +38604,7 @@
 "evolutions":
 [{"method":"FRIENDSHIP",
 "param":0,
+"param2":0,
 "species":409}],
 "friendship":100,
 "id":406,
@@ -38725,18 +38928,15 @@
 "types":
 [13,
 13]}],
-"starter_pokemon":
+"starter_pokemon": # TODO
 {"STARTER_POKEMON_BULBASAUR":
-{"player_address":1492614,
-"rival_address":1493090,
+{"address":4241464,
 "species":1},
 "STARTER_POKEMON_CHARMANDER":
-{"player_address":1493139,
-"rival_address":1492619,
+{"address":4241468,
 "species":4},
 "STARTER_POKEMON_SQUIRTLE":
-{"player_address":1493085,
-"rival_address":1493144,
+{"address":4241466,
 "species":7}},
 "tmhm_moves":
 [14,
