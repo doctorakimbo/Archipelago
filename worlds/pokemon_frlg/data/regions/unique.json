@@ -6,7 +6,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [
       "PC_ITEM_POTION"
     ],
@@ -21,7 +21,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [
       "POKEDEX_REWARD_001",
       "POKEDEX_REWARD_002",
@@ -421,7 +421,7 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [],
     "events": [
       "EVOLVE_NIMBLEAF",
@@ -632,13 +632,13 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [],
     "events": [],
     "exits": {
       "REGION_PORCELIA_TOWN/MAIN": "Porcelia Town Fly Destination",
       "REGION_JUNOPSIS_CITY/MAIN": "Junopsis City Fly Destination",
-      "REGION_PEWTER_CITY/MAIN": "Pewter City Fly Destination",
+      "REGION_SEAFIN_CITY/MAIN": "Seafin City Fly Destination",
       "REGION_CERULEAN_CITY/MAIN": "Cerulean City Fly Destination",
       "REGION_VERMILION_CITY/MAIN": "Vermilion City Fly Destination",
       "REGION_ROUTE10/NORTH": "Route 10 Fly Destination",
