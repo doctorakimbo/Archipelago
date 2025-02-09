@@ -37,6 +37,7 @@ TRACKER_EVENT_FLAGS = [
     "FLAG_SYS_CAN_LINK_WITH_RS",  # Restored Pokémon Network Machine
     "FLAG_DEFEATED_CHAMP_REMATCH",
     "FLAG_PURCHASED_LEMONADE",
+    "FLAG_DEFEATED_GEOFF_REMATCH",
     "FLAG_DEFEATED_AVERY_REMATCH"
 ]
 EVENT_FLAG_MAP = {data.constants[flag_name]: flag_name for flag_name in TRACKER_EVENT_FLAGS}

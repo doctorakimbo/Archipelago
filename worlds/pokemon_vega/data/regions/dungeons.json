@@ -181,6 +181,149 @@
     },
     "warps": {}
   },
+  "REGION_SPIRIT_MANSION_1F/MAIN": {
+    "parent_map": "MAP_SPIRIT_MANSION_1F",
+    "name": "Spirit Mansion 1F",
+    "encounter_region": "Spirit Mansion 1F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_BURGLAR_QUINN_REWARD",
+      "ITEM_SPIRIT_MANSION_1F_MENTAL_HERB",
+      "HIDDEN_ITEM_SPIRIT_MANSION_1F_PEARL",
+      "TRAINER_COLLECTOR_JULIO_REWARD",
+      "ITEM_SPIRIT_MANSION_1F_ETHER"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_1F:1/MAP_SEAFIN_CITY:7": "Spirit Mansion 1F Exit",
+      "MAP_SPIRIT_MANSION_1F:3/MAP_SPIRIT_MANSION_2F:0": "Spirit Mansion 1F Stairs (Southwest)",
+      "MAP_SPIRIT_MANSION_1F:4/MAP_SPIRIT_MANSION_2F:1": "Spirit Mansion 1F Stairs (Northwest)",
+      "MAP_SPIRIT_MANSION_1F:5/MAP_SPIRIT_MANSION_2F:2": "Spirit Mansion 1F Stairs (Northeast)",
+      "MAP_SPIRIT_MANSION_1F:9/MAP_SPIRIT_MANSION_B1F:0": "Spirit Mansion 1F Stairs (Center-West)",
+      "MAP_SPIRIT_MANSION_1F:7/MAP_SPIRIT_MANSION_2F:4": "",
+      "MAP_SPIRIT_MANSION_1F:8/MAP_SPIRIT_MANSION_2F:5": "",
+    }
+  },
+  "REGION_SPIRIT_MANSION_1F/SOUTHEAST": {
+    "parent_map": "MAP_SPIRIT_MANSION_1F",
+    "name": "Spirit Mansion 1F Southeast",
+    "encounter_region": "Spirit Mansion 1F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_SUPER_NERD_MIGUEL_REWARD",
+      "ITEM_SPIRIT_MANSION_1F_ICE_HEAL"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_1F:6/MAP_SPIRIT_MANSION_2F:3": "Spirit Mansion 1F Stairs (Southeast)"
+    }
+  },
+  "REGION_SPIRIT_MANSION_2F/SOUTHWEST": {
+    "parent_map": "MAP_SPIRIT_MANSION_2F",
+    "name": "Spirit Mansion 2F Southwest",
+    "encounter_region": "Spirit Mansion 2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_ENGINEER_BRAXTON_REWARD",
+      "ITEM_SPIRIT_MANSION_2F_BERRY_JUICE"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_2F:0/MAP_SPIRIT_MANSION_1F:3": "Spirit Mansion 2F Stairs (Southwest)"
+    }
+  },
+  "REGION_SPIRIT_MANSION_2F/NORTHWEST": {
+    "parent_map": "MAP_SPIRIT_MANSION_2F",
+    "name": "Spirit Mansion 2F Northwest",
+    "encounter_region": "Spirit Mansion 2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "ITEM_SPIRIT_MANSION_2F_TM09"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_2F:1/MAP_SPIRIT_MANSION_1F:4": "Spirit Mansion 2F Stairs (Northwest)"
+    }
+  },
+  "REGION_SPIRIT_MANSION_2F/NORTHEAST": {
+    "parent_map": "MAP_SPIRIT_MANSION_2F",
+    "name": "Spirit Mansion 2F Northeast",
+    "encounter_region": "Spirit Mansion 2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_SUPER_NERD_JOVAN_REWARD",
+      "ITEM_SPIRIT_MANSION_2F_QUICK_CLAW"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_2F:2/MAP_SPIRIT_MANSION_1F:5": "Spirit Mansion 2F Stairs (Northeast)",
+      "MAP_SPIRIT_MANSION_2F:4/MAP_SPIRIT_MANSION_1F:7": "Spirit Mansion 2F Drop (East)"
+    }
+  },
+  "REGION_SPIRIT_MANSION_2F/SOUTHEAST": {
+    "parent_map": "MAP_SPIRIT_MANSION_2F",
+    "name": "Spirit Mansion 2F Southeast",
+    "encounter_region": "Spirit Mansion 2F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "ITEM_SPIRIT_MANSION_2F_LETTER"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_2F:3/MAP_SPIRIT_MANSION_1F:6": "Spirit Mansion 2F Stairs (Southeast)",
+      "MAP_SPIRIT_MANSION_2F:5/MAP_SPIRIT_MANSION_1F:8": "Spirit Mansion 2F Drop (West)"
+    }
+  },
+  "REGION_SPIRIT_MANSION_B1F/MAIN": {
+    "parent_map": "MAP_SPIRIT_MANSION_B1F",
+    "name": "Spirit Mansion B1F",
+    "encounter_region": "Spirit Mansion B1F",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_COLLECTOR_WADE_REWARD",
+      "TRAINER_YOUNG_COUPLE_GIA_JES_REWARD",
+      "TRAINER_GAMBLER_HUGO_REWARD",
+      "ITEM_SPIRIT_MANSION_B1F_RARE_CANDY",
+      "TRAINER_ENGINEER_BAILY_REWARD",
+      "TRAINER_PKMN_RANGER_MADELINE_REWARD",
+      "TRAINER_TEAMMATES_ANNA_MEG_REWARD",
+      "TRAINER_GYM_LEADER_GEOFF_4_REWARD"
+    ],
+    "events": [
+      "EVENT_DEFEAT_GEOFF_REMATCH"
+    ],
+    "exits": {},
+    "warps": {
+      "MAP_SPIRIT_MANSION_B1F:0/MAP_SPIRIT_MANSION_1F:9": "Spirit Mansion B1F Stairs"
+    }
+  },
   "REGION_VIRIDIAN_FOREST/MAIN": {
     "parent_map": "MAP_VIRIDIAN_FOREST",
     "name": "Viridian Forest",

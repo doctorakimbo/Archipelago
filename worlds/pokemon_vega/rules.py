@@ -118,6 +118,22 @@ def set_default_rules(world: "PokemonVegaWorld"):
                            state.has("Letter", player))
     set_rule(get_entrance("Seafin City Exit (West)"),
              lambda state: state.has("Give Letter to Scientist", player))
+             
+    # Spirit Mansion
+    set_rule(get_entrance("Spirit Mansion 1F Stairs (Center-West)"),
+             state.has("Defeat Champion", player)) # todo: option for open early
+    set_rule(get_entrance("Spirit Mansion B1F Stairs"),
+             state.has("Defeat Champion", player)) # for entrance rando; todo: option for open early
+
+    spirit_mansion_regions = ["Spirit Mansion 1F", "Spirit Mansion 1F Southeast", "Spirit Mansion 2F Southwest",
+                              "Spirit Mansion 2F Northwest", "Spirit Mansion 2F Northeast", "Spirit Mansion 2F Southeast", 
+                              "Spirit Mansion B1F", "Spirit Mansion 1F Land Encounters", "Spirit Mansion 2F Land Encounters", 
+                              "Spirit Mansion B2F Land Encounters"]
+    for region in spirit_mansion_regions:
+        for entrance in world.get_region(region).entrances:
+            add_rule(entrance, lambda state: can_navigate_dark_caves(state, player, world))
+        for location in world.get_region(region).locations:
+            add_rule(location, lambda state: can_navigate_dark_caves(state, player, world))
 
     # Pallet Town
     set_rule(world.get_location("Rival's House - Daisy Gift"),

@@ -105,6 +105,10 @@
     "name": "Route 11 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
     "tags": ["KeyItem"]
   },
+  "ITEM_SPIRIT_MANSION_2F_LETTER": {
+    "name": "Spirit Mansion 2F - Inspect Back of Statue",
+    "tags": ["KeyItem"]
+  },
   "NPC_GIFT_CAN_USE_ROCKET_HIDEOUT_LIFT": {
     "name": "Rocket Hideout B4F - Team Rocket Grunt Item",
     "tags": ["KeyItem"]
@@ -915,6 +919,34 @@
     "name": "Water Path - North Island Item",
     "tags": ["Overworld"]
   },
+  "ITEM_SPIRIT_MANSION_1F_ETHER": {
+    "name": "Spirit Mansion 1F - Northeast Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_SPIRIT_MANSION_1F_ICE_HEAL": {
+    "name": "Spirit Mansion 1F - Southeast Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_SPIRIT_MANSION_1F_MENTAL_HERB": {
+    "name": "Spirit Mansion 1F - Southwest Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_SPIRIT_MANSION_2F_BERRY_JUICE": {
+    "name": "Spirit Mansion 2F - South Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_SPIRIT_MANSION_2F_QUICK_CLAW": {
+    "name": "Spirit Mansion 2F - Northeast Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_SPIRIT_MANSION_2F_TM09": {
+    "name": "Spirit Mansion 2F - Northwest Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_SPIRIT_MANSION_B1F_ICE_HEAL": {
+    "name": "Spirit Mansion B1F - Item",
+    "tags": ["Overworld"]
+  },
   "ITEM_SSANNE_1F_ROOM2_TM31": {
     "name": "S.S. Anne 1F Room 2 - Item",
     "tags": ["Overworld"]
@@ -1602,6 +1634,10 @@
   },
   "HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_PINAP_BERRY": {
     "name": "Water Path - Tall Grass North Hidden Item",
+    "tags": ["Hidden"]
+  },
+  "HIDDEN_ITEM_SPIRIT_MANSION_1F_PEARL": {
+    "name": "Spirit Mansion 1F - Hidden Item",
     "tags": ["Hidden"]
   },
   "HIDDEN_ITEM_SSANNE_B1F_CORRIDOR_HYPER_POTION": {
@@ -2303,7 +2339,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_BURGLAR_QUINN_REWARD": {
-    "name": "Cinnabar Gym - Burglar Quinn Reward",
+    "name": "Spirit Mansion 1F - Burglar Quinn Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_BURGLAR_RAMON_REWARD": {
@@ -2428,6 +2464,14 @@
   },
   "TRAINER_CHANNELER_TASHA_REWARD": {
     "name": "Saffron Gym - Channeler Tasha Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COLLECTOR_JULIO_REWARD": {
+    "name": "Spirit Mansion 1F - Collector Julio Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_COLLECTOR_WADE_REWARD": {
+    "name": "Spirit Mansion B1F - Collector Wade Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_COOLTRAINER_ALEXA_REWARD": {
@@ -2591,7 +2635,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_ENGINEER_BAILY_REWARD": {
-    "name": "Vermilion Gym - Engineer Baily Reward",
+    "name": "Spirit Mansion B1F - Engineer Baily Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_ENGINEER_BERNIE_REWARD": {
@@ -2599,7 +2643,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_ENGINEER_BRAXTON_REWARD": {
-    "name": "Route 11 - Engineer Braxton Reward",
+    "name": "Spirit Mansion 2F - Engineer Braxton Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_EXPERT_AURON_REWARD": {
@@ -2658,16 +2702,16 @@
     "name": "Route 21 - Fisherman Wade Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_GAMBLER_HUGO_REWARD": {
+    "name": "Spirit Mansion B1F - Gambler Hugo Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_GAMER_DARIAN_REWARD": {
     "name": "Route 11 - Gamer Darian Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_GAMER_DIRK_REWARD": {
     "name": "Route 11 - Gamer Dirk Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_GAMER_HUGO_REWARD": {
-    "name": "Route 11 - Gamer Hugo Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_GAMER_JASPER_REWARD": {
@@ -2716,6 +2760,10 @@
   },
   "TRAINER_GYM_LEADER_GEOFF_REWARD": {
     "name": "Seafin Gym - Gym Leader Geoff Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_GYM_LEADER_GEOFF_4_REWARD": {
+    "name": "Spirit Mansion B1F - Gym Leader Geoff Rematch Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_HIKER_ALAN_REWARD": {
@@ -3095,7 +3143,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_PKMN_RANGER_MADELINE_REWARD": {
-    "name": "Canyon Entrance - Pokemon Ranger Madeline Reward",
+    "name": "Spirit Mansion B1F - Pokemon Ranger Madeline Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_PKMN_RANGER_NICOLAS_REWARD": {
@@ -3407,7 +3455,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_JOVAN_REWARD": {
-    "name": "Mt. Moon 1F - Super Nerd Jovan Reward",
+    "name": "Spirit Mansion 2F - Super Nerd Jovan Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_LESLIE_REWARD": {
@@ -3415,7 +3463,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_MIGUEL_REWARD": {
-    "name": "Mt. Moon B2F - Super Nerd Miguel Reward",
+    "name": "Spirit Mansion 1F - Super Nerd Miguel Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_ZAC_REWARD": {
@@ -3786,6 +3834,10 @@
     "name": "Five Isle Meadow - Center Team Rocket Grunt Reward",
     "tags": ["Trainer"]
   },
+  "TRAINER_TEAMMATES_ANNA_MEG_REWARD": {
+    "name": "Spirit Mansion B1F - Teammates Anna & Meg Reward",
+    "tags": ["Trainer"]
+  },
   "TRAINER_TEAMMATES_KATE_JOY_REWARD": {
     "name": "Route 505 - Teammates Kate & Joy Reward",
     "tags": ["Trainer"]
@@ -3899,7 +3951,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNG_COUPLE_GIA_JES_REWARD": {
-    "name": "Route 12 - Young Couple Gia & Jes Reward",
+    "name": "Spirit Mansion B1F - Young Couple Gia & Jes Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNG_COUPLE_LEA_JED_REWARD": {
