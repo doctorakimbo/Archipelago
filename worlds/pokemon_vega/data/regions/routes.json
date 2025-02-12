@@ -8,12 +8,12 @@
     "has_fishing": false,
     "sphere_ruins": false,
     "locations": [
-	  "ITEM_ROUTE501_POTION",
-	  "TRAINER_YOUNGSTER_BEN_REWARD",
-	  "HIDDEN_ITEM_ROUTE501_POTION",
-	  "TRAINER_LASS_CRISSY_REWARD",
-	  "TRAINER_SCHOOL_KID_RICH_REWARD",
-	  "TRAINER_SCHOOL_KID_KAREN_REWARD"
+      "ITEM_ROUTE501_POTION",
+      "TRAINER_YOUNGSTER_BEN_REWARD",
+      "HIDDEN_ITEM_ROUTE501_POTION",
+      "TRAINER_LASS_CRISSY_REWARD",
+      "TRAINER_SCHOOL_KID_RICH_REWARD",
+      "TRAINER_SCHOOL_KID_KAREN_REWARD"
     ],
     "events": [],
     "exits": {
@@ -21,8 +21,8 @@
       "REGION_ROUTE502/WEST": "Route 501 Exit (Northeast)"
     },
     "warps": {
-	  "MAP_ROUTE501:0/MAP_ROUTE501_HOUSE:0": "Route 501 House"
-	}
+      "MAP_ROUTE501:0/MAP_ROUTE501_HOUSE:0": "Route 501 House"
+    }
   },
   "REGION_ROUTE501_HOUSE/MAIN": {
     "parent_map": "MAP_ROUTE501_HOUSE",
@@ -31,10 +31,10 @@
     "has_land": false,
     "has_water": false,
     "has_fishing": false,
-    "kanto": true,
+    "sphere_ruins": false,
     "locations": [
-	  "NPC_GIFT_GOT_POKE_BALL_FROM_ROUTE501_HOUSE"
-	],
+      "NPC_GIFT_GOT_POKE_BALL_FROM_ROUTE501_HOUSE"
+    ],
     "events": [],
     "exits": {},
     "warps": {
@@ -50,24 +50,24 @@
     "has_fishing": false,
     "sphere_ruins": false,
     "locations": [
-	  "NPC_GIFT_GOT_HM05",
-	  "TRAINER_YOUNGSTER_JOSH_REWARD",
-	  "TRAINER_LASS_ROBIN_REWARD",
-	  "TRAINER_TWINS_JOY_MEG_REWARD",
-	  "ITEM_ROUTE502_POKE_BALL",
-	  "TRAINER_BUG_CATCHER_SAMMY_REWARD",
-	  "TRAINER_SCHOOL_KID_GEORGIA_REWARD",
-	  "HIDDEN_ITEM_ROUTE502_RARE_CANDY",
-	  "TRAINER_YOUNGSTER_TIMMY_REWARD"
+      "NPC_GIFT_GOT_HM05",
+      "TRAINER_YOUNGSTER_JOSH_REWARD",
+      "TRAINER_LASS_ROBIN_REWARD",
+      "TRAINER_TWINS_JOY_MEG_REWARD",
+      "ITEM_ROUTE502_POKE_BALL",
+      "TRAINER_BUG_CATCHER_SAMMY_REWARD",
+      "TRAINER_SCHOOL_KID_GEORGIA_REWARD",
+      "HIDDEN_ITEM_ROUTE502_RARE_CANDY",
+      "TRAINER_YOUNGSTER_TIMMY_REWARD"
     ],
     "events": [],
     "exits": {
       "REGION_ROUTE501/MAIN": "Route 502 Exit (Southwest)",
-	  "REGION_ROUTE514/MAIN": "Route 502 Exit (North)",
+      "REGION_ROUTE514/MAIN": "Route 502 Exit (North)",
     },
     "warps": {
-	  "MAP_ROUTE502:0/MAP_ROUTE502_GATEHOUSE_1F:0": "Route 502 Gate (West)"
-	}
+      "MAP_ROUTE502:0/MAP_ROUTE502_GATEHOUSE_1F:0": "Route 502 Gate (West)"
+    }
   },
   "REGION_ROUTE502/EAST": {
     "parent_map": "MAP_ROUTE502",
@@ -78,15 +78,15 @@
     "has_fishing": false,
     "sphere_ruins": false,
     "locations": [
-	  "TRAINER_SCHOOL_KID_CHASE_REWARD"
+      "TRAINER_SCHOOL_KID_CHASE_REWARD"
     ],
     "events": [],
     "exits": {
       "REGION_JUNOPSIS_CITY/MAIN": "Route 502 Exit (East)"
     },
     "warps": {
-	  "MAP_ROUTE502:1/MAP_ROUTE502_GATEHOUSE_1F:2": "Route 502 Gate (East)"
-	}
+      "MAP_ROUTE502:1/MAP_ROUTE502_GATEHOUSE_1F:2": "Route 502 Gate (East)"
+    }
   },
   "REGION_ROUTE502_GATEHOUSE_1F/MAIN": {
     "parent_map": "MAP_ROUTE502",
@@ -100,10 +100,10 @@
     "events": [],
     "exits": {},
     "warps": {
-	  "MAP_ROUTE502_GATEHOUSE_1F:0/MAP_ROUTE502:0": "Route 502 Gatehouse 1F Exit (West)",
-	  "MAP_ROUTE502_GATEHOUSE_1F:2/MAP_ROUTE502:1": "Route 502 Gatehouse 1F Exit (East)",
-	  "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 1F Stairs"
-	}
+      "MAP_ROUTE502_GATEHOUSE_1F:0/MAP_ROUTE502:0": "Route 502 Gatehouse 1F Exit (West)",
+      "MAP_ROUTE502_GATEHOUSE_1F:2/MAP_ROUTE502:1": "Route 502 Gatehouse 1F Exit (East)",
+      "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 1F Stairs"
+    }
   },
   "REGION_ROUTE502_GATEHOUSE_2F/MAIN": {
     "parent_map": "MAP_ROUTE502",
@@ -114,24 +114,24 @@
     "has_fishing": false,
     "sphere_ruins": false,
     "locations": [
-	  "TRAINER_SCHOOL_KID_VIVIAN_REWARD",
-	  "TRAINER_YOUNGSTER_VINCENT_REWARD",
-	  "TRAINER_LASS_VIOLET_REWARD",
-	  "NPC_GIFT_GOT_BIG_MUSHROOM_FROM_VIOLET_WINSTRATE",
-	  "TRAINER_SCHOOL_KID_VIVIAN_2_REWARD",
-	  "TRAINER_YOUNGSTER_VINCENT_2_REWARD",
-	  "TRAINER_LASS_VIOLET_2_REWARD"
+      "TRAINER_SCHOOL_KID_VIVIAN_REWARD",
+      "TRAINER_YOUNGSTER_VINCENT_REWARD",
+      "TRAINER_LASS_VIOLET_REWARD",
+      "NPC_GIFT_GOT_BIG_MUSHROOM_FROM_VIOLET_WINSTRATE",
+      "TRAINER_SCHOOL_KID_VIVIAN_2_REWARD",
+      "TRAINER_YOUNGSTER_VINCENT_2_REWARD",
+      "TRAINER_LASS_VIOLET_2_REWARD"
     ],
     "events": [
-	  "EVENT_DEFEAT_WINSTRATES",
+      "EVENT_DEFEAT_WINSTRATES",
       "GIFT_POKEMON_BULBASAUR",
-	  "GIFT_POKEMON_CHARMANDER",
-	  "GIFT_POKEMON_SQUIRTLE"
+      "GIFT_POKEMON_CHARMANDER",
+      "GIFT_POKEMON_SQUIRTLE"
     ],
     "exits": {},
     "warps": {
-	  "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 2F Stairs"
-	}
+      "MAP_ROUTE502_GATEHOUSE_1F:4/MAP_ROUTE502_GATEHOUSE_2F:0": "Route 502 Gatehouse 2F Stairs"
+    }
   },
   "REGION_ROUTE503/NORTH": {
     "parent_map": "MAP_ROUTE503",
@@ -207,7 +207,7 @@
     "events": [],
     "exits": {
       "REGION_ROUTE503/SOUTH": "Route 504 Exit (East)",
-	  "REGION_ROUTE505/MAIN": "Route 504 Exit (Southwest)",
+      "REGION_ROUTE505/MAIN": "Route 504 Exit (Southwest)",
     },
     "warps": {}
   },
@@ -230,10 +230,58 @@
     ],
     "events": [],
     "exits": {
-      "REGION_ROUTE505/MAIN": "Route 505 Exit (North)",
-	  "REGION_SEAFIN_CITY/MAIN": "Route 505 Exit (South)",
+      "REGION_ROUTE504/MAIN": "Route 505 Exit (North)",
+      "REGION_SEAFIN_CITY/MAIN": "Route 505 Exit (South)",
     },
     "warps": {}
+  },
+  "REGION_ROUTE506/MAIN": {
+    "parent_map": "MAP_ROUTE506",
+    "name": "Route 506",
+    "encounter_region": "Route 506",
+    "has_land": true,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "TRAINER_CAMPER_RICKY_REWARD",
+      "TRAINER_PICNICKER_ISABELLE_REWARD",
+      "TRAINER_POKE_FAN_KALEB_REWARD",
+      "TRAINER_POKE_FAN_DONNA_REWARD",
+      "TRAINER_AROMA_LADY_JANICE_REWARD",
+      "HIDDEN_ITEM_ROUTE506_TINY_MUSHROOM",
+      "TRAINER_SKIER_TAMMY_REWARD",
+      "TRAINER_YOUNGSTER_DAN_REWARD",
+      "TRAINER_LASS_SALLY_REWARD",
+      "TRAINER_CAMPER_SHANE_REWARD",
+      "TRAINER_TWINS_KIRI_JAN_REWARD",
+      "ITEM_ROUTE506_GUARD_SPEC"
+    ],
+    "events": [],
+    "exits": {
+      "REGION_SEAFIN_CITY/MAIN": "Route 506 Exit (East)",
+      "REGION_ROUTE519/MAIN": "Route 506 Exit (West)",
+    },
+    "warps": {
+      "MAP_ROUTE506:0/MAP_ROUTE506_HOUSE:0": "Route 506 House"
+    }
+  },
+  "REGION_ROUTE506_HOUSE/MAIN": {
+    "parent_map": "MAP_ROUTE506_HOUSE",
+    "name": "Route 506 House",
+    "encounter_region": null,
+    "has_land": false,
+    "has_water": false,
+    "has_fishing": false,
+    "sphere_ruins": false,
+    "locations": [
+      "NPC_GIFT_GOT_ITEMFINDER"
+    ],
+    "events": [],
+    "exits": {},
+    "warps": {
+      "MAP_ROUTE506_HOUSE:0/MAP_ROUTE506:0": "Route 506 House Exit"
+    }
   },
   "REGION_ROUTE2/SOUTHWEST": {
     "parent_map": "MAP_ROUTE2",

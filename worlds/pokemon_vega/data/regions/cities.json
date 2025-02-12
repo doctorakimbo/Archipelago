@@ -145,8 +145,8 @@
       "NPC_GIFT_GOT_NUGGET_FROM_JUNOPSIS_NUGGET_MAN"
     ],
     "events": [
-	  "EVENT_ACTIVATE_WINSTRATES"
-	],
+      "EVENT_ACTIVATE_WINSTRATES"
+    ],
     "exits": {
       "REGION_JUNOPSIS_CITY/VISIT": "Junopsis City Visit",
       "REGION_JUNOPSIS_CITY/NORTHEAST": "Junopsis City Smashable Rock",
@@ -156,7 +156,7 @@
     "warps": {
       "MAP_JUNOPSIS_CITY:0/MAP_JUNOPSIS_CITY_POKEMON_CENTER_1F:1": "Junopsis Pokemon Center",
       "MAP_JUNOPSIS_CITY:1/MAP_JUNOPSIS_CITY_HOUSE1:1": "Junopsis North House",
-	  "MAP_JUNOPSIS_CITY:2/MAP_JUNOPSIS_CITY_GYM:1": "Junopsis Gym",
+      "MAP_JUNOPSIS_CITY:2/MAP_JUNOPSIS_CITY_GYM:1": "Junopsis Gym",
       "MAP_JUNOPSIS_CITY:3/MAP_JUNOPSIS_CITY_SCHOOL:1": "Junopsis School",
       "MAP_JUNOPSIS_CITY:4/MAP_JUNOPSIS_CITY_MART:1": "Junopsis Poke Mart",
       "MAP_JUNOPSIS_CITY:5/MAP_JUNOPSIS_CITY_HOUSE2:1": "Junopsis Trade House"
@@ -171,8 +171,8 @@
     "has_fishing": false,
     "sphere_ruins": false,
     "locations": [
-	  "NPC_GIFT_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT"
-	],
+      "NPC_GIFT_GOT_FOCUS_BAND_FROM_JUNOPSIS_BLACK_BELT"
+    ],
     "events": [],
     "exits": {
       "REGION_JUNOPSIS_CITY/MAIN": "Junopsis City Smashable Rock"
@@ -287,8 +287,8 @@
     "sphere_ruins": false,
     "locations": [],
     "events": [
-	  "TRADE_POKEMON_HOOTHOOT"
-	],
+      "TRADE_POKEMON_HOOTHOOT"
+    ],
     "exits": {},
     "warps": {
       "MAP_JUNOPSIS_CITY_HOUSE2:1/MAP_JUNOPSIS_CITY:5": "Junopsis Trade House Exit"

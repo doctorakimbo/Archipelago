@@ -102,7 +102,7 @@
     "tags": ["KeyItem"]
   },
   "NPC_GIFT_GOT_ITEMFINDER": {
-    "name": "Route 11 Gate 2F - Oak's Aide Gift (Pokedex Progress)",
+    "name": "Route 506 House - Pickup Master Gift",
     "tags": ["KeyItem"]
   },
   "ITEM_SPIRIT_MANSION_2F_LETTER": {
@@ -697,6 +697,10 @@
   },
   "ITEM_ROUTE505_SOOTHE_BELL": {
     "name": "Route 505 - Southwest Item",
+    "tags": ["Overworld"]
+  },
+  "ITEM_ROUTE506_GUARD_SPEC": {
+    "name": "Route 506 - Item",
     "tags": ["Overworld"]
   },
   "ITEM_ROUTE2_ETHER": {
@@ -1320,6 +1324,10 @@
     "name": "Route 505 - Hidden Item",
     "tags": ["Hidden"]
   },
+  "HIDDEN_ITEM_ROUTE506_TINY_MUSHROOM": {
+    "name": "Route 506 - Hidden Item",
+    "tags": ["Hidden"]
+  },
   "HIDDEN_ITEM_ROUTE3_ORAN_BERRY": {
     "name": "Route 3 - Hidden Item Between Ledges",
     "tags": ["Hidden"]
@@ -1914,7 +1922,7 @@
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_POKE_BALL_FROM_ROUTE501_HOUSE": {
-    "name": "Route 501 - Woman Gift",
+    "name": "Route 501 House - Woman Gift",
     "tags": ["NPCGift"]
   },
   "NPC_GIFT_GOT_TM03_FROM_MISTY": {
@@ -2000,6 +2008,10 @@
   },
   "TRAINER_ACE_TRAINER_HARRISON_REWARD": {
     "name": "Wiseman's Cave B2F - Ace Trainer Harrison Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_AROMA_LADY_JANICE_REWARD": {
+    "name": "Route 506 - Aroma Lady Janice Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_AROMA_LADY_MIAH_REWARD": {
@@ -2383,7 +2395,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_RICKY_REWARD": {
-    "name": "Route 6 - Camper Ricky Reward",
+    "name": "Route 506 - Camper Ricky Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_RILEY_REWARD": {
@@ -2391,7 +2403,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_CAMPER_SHANE_REWARD": {
-    "name": "Route 24 - Camper Shane Reward",
+    "name": "Route 506 - Camper Shane Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD": {
@@ -2456,10 +2468,6 @@
   },
   "TRAINER_CHANNELER_STACY_REWARD": {
     "name": "Saffron Gym - Channeler Stacy Reward",
-    "tags": ["Trainer"]
-  },
-  "TRAINER_CHANNELER_TAMMY_REWARD": {
-    "name": "Pokemon Tower 5F - Channeler Tammy Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_CHANNELER_TASHA_REWARD": {
@@ -2914,10 +2922,6 @@
     "name": "Junopsis Gym - Lass Iris Reward",
     "tags": ["Trainer"]
   },
-  "TRAINER_LASS_JANICE_REWARD": {
-    "name": "Route 3 - Lass Janice Reward",
-    "tags": ["Trainer"]
-  },
   "TRAINER_LASS_JOANA_REWARD": {
     "name": "Pattern Bush - Lass Joana Reward",
     "tags": ["Trainer"]
@@ -2951,7 +2955,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_SALLY_REWARD": {
-    "name": "Route 3 - Lass Sally Reward",
+    "name": "Route 506 - Lass Sally Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_LASS_VIOLET_REWARD": {
@@ -3055,7 +3059,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_PICNICKER_ISABELLE_REWARD": {
-    "name": "Route 6 - Picnicker Isabelle Reward",
+    "name": "Route 506 - Picnicker Isabelle Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_PICNICKER_KELSEY_REWARD": {
@@ -3152,6 +3156,14 @@
   },
   "TRAINER_POKE_FAN_COLIN_REWARD": {
     "name": "Route 504 - Poke Fan Colin Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKE_FAN_DONNA_REWARD": {
+    "name": "Route 506 - Poke Fan Donna Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_POKE_FAN_KALEB_REWARD": {
+    "name": "Route 506 - Poke Fan Kaleb Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_POKE_FAN_LINDA_REWARD": {
@@ -3432,6 +3444,10 @@
   },
   "TRAINER_SKIER_MASON_REWARD": {
     "name": "Route 504 - Skier Mason Reward",
+    "tags": ["Trainer"]
+  },
+  "TRAINER_SKIER_TAMMY_REWARD": {
+    "name": "Route 506 - Skier Tammy Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_SUPER_NERD_AIDAN_REWARD": {
@@ -3867,7 +3883,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_TWINS_KIRI_JAN_REWARD": {
-    "name": "Route 14 - Twins Kiri & Jan Reward",
+    "name": "Route 506 - Twins Kiri & Jan Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_TWINS_MIU_MIA_REWARD": {
@@ -3891,7 +3907,7 @@
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_DAN_REWARD": {
-    "name": "Route 25 - Youngster Dan Reward",
+    "name": "Route 506 - Youngster Dan Reward",
     "tags": ["Trainer"]
   },
   "TRAINER_YOUNGSTER_DAVE_REWARD": {

@@ -738,12 +738,12 @@
 "FLAG_GOT_HELIX_FOSSIL":627,
 "FLAG_GOT_HITMON_FROM_DOJO":632,
 "FLAG_GOT_HM01":567,
-"FLAG_GOT_HM02":568,
 "FLAG_GOT_HM03":569,
 "FLAG_GOT_HM04":570,
 "FLAG_GOT_HM05":571,
 "FLAG_GOT_HM06":744,
-"FLAG_GOT_ITEMFINDER":594,
+"FLAG_GOT_ITEMFINDER":568,
+"FLAG_GOT_ITEMFINDER_FRLG":594,
 "FLAG_GOT_LAPRAS_FROM_SILPH":582,
 "FLAG_GOT_LETTER":665,
 "FLAG_GOT_LINK_CABLE":686,
@@ -891,7 +891,6 @@
 "FLAG_HIDDEN_ITEM_ROUTE23_ULTRA_BALL":1035,
 "FLAG_HIDDEN_ITEM_ROUTE24_PECHA_BERRY":1115,
 "FLAG_HIDDEN_ITEM_ROUTE25_BLUK_BERRY":1117,
-"FLAG_HIDDEN_ITEM_ROUTE25_ETHER":1005,
 "FLAG_HIDDEN_ITEM_ROUTE25_ORAN_BERRY":1116,
 "FLAG_HIDDEN_ITEM_ROUTE3_ORAN_BERRY":1113,
 "FLAG_HIDDEN_ITEM_ROUTE4_GREAT_BALL":1050,
@@ -902,6 +901,7 @@
 "FLAG_HIDDEN_ITEM_ROUTE504_HEART_SCALE":1002,
 "FLAG_HIDDEN_ITEM_ROUTE504_STARDUST":1003,
 "FLAG_HIDDEN_ITEM_ROUTE505_X_ATTACK":1004,
+"FLAG_HIDDEN_ITEM_ROUTE506_TINY_MUSHROOM":1005,
 "FLAG_HIDDEN_ITEM_ROUTE6_RARE_CANDY":1119,
 "FLAG_HIDDEN_ITEM_ROUTE6_SITRUS_BERRY":1118,
 "FLAG_HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY":1152,
@@ -1182,7 +1182,6 @@
 "FLAG_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL":493,
 "FLAG_ITEM_MT_MOON_1F_ESCAPE_ROPE":349,
 "FLAG_ITEM_MT_MOON_1F_MOON_STONE":350,
-"FLAG_ITEM_MT_MOON_1F_POTION":347,
 "FLAG_ITEM_MT_MOON_1F_RARE_CANDY":348,
 "FLAG_ITEM_MT_MOON_B2F_ANTIDOTE":448,
 "FLAG_ITEM_MT_MOON_B2F_REVIVE":447,
@@ -1241,6 +1240,7 @@
 "FLAG_ITEM_ROUTE504_POKE_BALL":344,
 "FLAG_ITEM_ROUTE505_REPEL":346,
 "FLAG_ITEM_ROUTE505_SOOTHE_BELL":345,
+"FLAG_ITEM_ROUTE506_GUARD_SPEC":347,
 "FLAG_ITEM_ROUTE9_BURN_HEAL":450,
 "FLAG_ITEM_ROUTE9_TM40":363,
 "FLAG_ITEM_SAFARI_ZONE_CENTER_NUGGET":385,
@@ -1603,7 +1603,7 @@
 "GOOD_ROD":1,
 "ITEMS_COUNT":400,
 "ITEM_03E":62,
-"ITEM_048":72,		   
+"ITEM_048":72,
 "ITEM_069":105,
 "ITEM_075":117,
 "ITEM_076":118,
@@ -4971,10 +4971,6 @@
 {"address":3911352,
 "default_item":149,
 "flag":1117},
-"HIDDEN_ITEM_ROUTE25_ETHER":
-{"address":3911328,
-"default_item":34,
-"flag":1005},
 "HIDDEN_ITEM_ROUTE25_ORAN_BERRY":
 {"address":3911340,
 "default_item":139,
@@ -5015,6 +5011,10 @@
 {"address":11162460,
 "default_item":75,
 "flag":1004},
+"HIDDEN_ITEM_ROUTE506_TINY_MUSHROOM":
+{"address":11198440,
+"default_item":103,
+"flag":1005},
 "HIDDEN_ITEM_ROUTE6_RARE_CANDY":
 {"address":3904664,
 "default_item":68,
@@ -5487,10 +5487,6 @@
 {"address":1832152,
 "default_item":94,
 "flag":350},
-"ITEM_MT_MOON_1F_POTION":
-{"address":1832113,
-"default_item":13,
-"flag":347},
 "ITEM_MT_MOON_1F_RARE_CANDY":
 {"address":1832126,
 "default_item":68,
@@ -5723,6 +5719,10 @@
 {"address":11581322,
 "default_item":184,
 "flag":345},
+"ITEM_ROUTE506_GUARD_SPEC":
+{"address":11601561,
+"default_item":73,
+"flag":347},
 "ITEM_ROUTE9_BURN_HEAL":
 {"address":1833413,
 "default_item":15,
@@ -6180,9 +6180,9 @@
 "default_item":344,
 "flag":751},
 "NPC_GIFT_GOT_ITEMFINDER":
-{"address":1518377,
+{"address":1518377, # script addr is 546779, but may need to rewrite to use correct getitem
 "default_item":261,
-"flag":594},
+"flag":568},
 "NPC_GIFT_GOT_LETTER":
 {"address":1511042,
 "default_item":274,
@@ -7947,6 +7947,10 @@
 {"address":3969414, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1683},
+"TRAINER_AROMA_LADY_JANICE_REWARD":
+{"address":3968840, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1396},
 "TRAINER_AROMA_LADY_MIAH_REWARD":
 {"address":3969784,
 "default_item":0,
@@ -8328,7 +8332,7 @@
 "default_item":0,
 "flag":1422},
 "TRAINER_CAMPER_RICKY_REWARD":
-{"address":3968898,
+{"address":3968898, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1425},
 "TRAINER_CAMPER_RILEY_REWARD":
@@ -8336,7 +8340,7 @@
 "default_item":0,
 "flag":1898},
 "TRAINER_CAMPER_SHANE_REWARD":
-{"address":3968894,
+{"address":3968894, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1423},
 "TRAINER_CHAMPION_FIRST_BULBASAUR_REWARD":
@@ -8419,10 +8423,6 @@
 {"address":3969534,
 "default_item":0,
 "flag":1743},
-"TRAINER_CHANNELER_TAMMY_REWARD":
-{"address":3969502,
-"default_item":0,
-"flag":1727},
 "TRAINER_CHANNELER_TASHA_REWARD":
 {"address":3969536,
 "default_item":0,
@@ -8855,10 +8855,6 @@
 {"address":3968850, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1401},
-"TRAINER_LASS_JANICE_REWARD":
-{"address":3968840,
-"default_item":0,
-"flag":1396},
 "TRAINER_LASS_JOANA_REWARD":
 {"address":3969842,
 "default_item":0,
@@ -8892,7 +8888,7 @@
 "default_item":0,
 "flag":1398},
 "TRAINER_LASS_SALLY_REWARD":
-{"address":3968842,
+{"address":3968842, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1397},
 "TRAINER_LASS_VIVIAN_REWARD":
@@ -8996,7 +8992,7 @@
 "default_item":0,
 "flag":1753},
 "TRAINER_PICNICKER_ISABELLE_REWARD":
-{"address":3968912,
+{"address":3968912, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1432},
 "TRAINER_PICNICKER_KELSEY_REWARD":
@@ -9092,6 +9088,14 @@
 "default_item":0,
 "flag":1801},
 "TRAINER_POKE_FAN_COLIN_REWARD":
+{"address":3968932, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1442},
+"TRAINER_POKE_FAN_DONNA_REWARD":
+{"address":3968932, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1442},
+"TRAINER_POKE_FAN_KALEB_REWARD":
 {"address":3968932, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1442},
@@ -9439,6 +9443,10 @@
 {"address":3968950, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1451},
+"TRAINER_SKIER_TAMMY_REWARD":
+{"address":3969502, # ??? addr is blank, flag is nonexistent?
+"default_item":0,
+"flag":1727},
 "TRAINER_SUPER_NERD_AIDAN_REWARD":
 {"address":3968950,
 "default_item":0,
@@ -9892,7 +9900,7 @@
 "default_item":0,
 "flag":1840},
 "TRAINER_TWINS_KIRI_JAN_REWARD":
-{"address":3969582,
+{"address":3969582, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1767},
 "TRAINER_TWINS_MIU_MIA_REWARD":
@@ -9916,7 +9924,7 @@
 "default_item":0,
 "flag":1895},
 "TRAINER_YOUNGSTER_DAN_REWARD":
-{"address":3968796,
+{"address":3968796, # ??? addr is blank, flag is nonexistent?
 "default_item":0,
 "flag":1374},
 "TRAINER_YOUNGSTER_DAVE_REWARD":
